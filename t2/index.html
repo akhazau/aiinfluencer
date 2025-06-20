@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .rainbow-bg {
+            background: linear-gradient(-45deg, 
+                #ff3366, #ff6633, #ffcc33, 
+                #33ff66, #3366ff, #6633ff, 
+                #cc33ff, #ff33cc, #ff3366);
+            background-size: 800% 800%;
+            animation: rainbow 15s ease infinite;
+        }
+        
+        .card-hover-effect {
+            transition: all 0.3s ease;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+        }
+        
+        .card-hover-effect:hover {
+            transform: perspective(1000px) rotateX(3deg) rotateY(3deg) scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, 
+                #ff3366, #ff6633, #ffcc33, 
+                #33ff66, #3366ff, #6633ff, 
+                #cc33ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+        
+        .cursor-trail {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased overflow-x-hidden">
+    <!-- Cursor Trail -->
+    <div class="cursor-trail"></div>
+    
+    <!-- Floating Particles -->
+    <div id="particles" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+    
+    <!-- Navbar -->
+    <nav class="fixed w-full py-4 px-6 z-50 backdrop-blur-md bg-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">SPECTRUM</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-pink-300 transition-colors">Home</a>
+                <a href="#" class="text-white hover:text-yellow-300 transition-colors">Features</a>
+                <a href="#" class="text-white hover:text-green-300 transition-colors">Gallery</a>
+                <a href="#" class="text-white hover:text-blue-300 transition-colors">About</a>
+                <a href="#" class="text-white hover:text-purple-300 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 rainbow-bg opacity-90 z-0"></div>
+        <div class="max-w-4xl mx-auto relative z-10 pt-20">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">
+                <span class="gradient-text">Experience the Rainbow</span>
+            </h1>
+            <p class="text-xl text-gray-200 mb-10">Discover the vibrant world of colors in our interactive digital playground</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="px-8 py-3 bg-white rounded-full font-semibold text-gray-900 hover:bg-gray-200 transition-all hover:-translate-y-1 glow-effect">
+                    Explore Now
+                </button>
+                <button class="px-8 py-3 border-2 border-white rounded-full font-semibold text-white hover:bg-white hover:text-gray-900 transition-all hover:-translate-y-1">
+                    Learn More
+                </button>
+            </div>
+        </div>
+        
+        <!-- Animated Shape -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <div class="animate-bounce text-white text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Color Spectrum Section -->
+    <section class="py-20 bg-gray-50 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 rainbow-bg"></div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Color Your World</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Each hue in our spectrum represents different emotions, ideas, and possibilities. 
+                    Dive into the colors that shape our digital universe.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect">
+                    <div class="w-16 h-16 rainbow-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Creative Palette</h3>
+                    <p class="text-gray-600">
+                        Unleash your creativity with our dynamic color generator that provides endless inspiration.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect">
+                    <div class="w-16 h-16 rainbow-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Color Psychology</h3>
+                    <p class="text-gray-600">
+                        Understand how different colors affect mood and perception in this interactive guide.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover-effect">
+                    <div class="w-16 h-16 rainbow-bg rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-sliders-h text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Dynamic Adjustments</h3>
+                    <p class="text-gray-600">
+                        Fine-tune every aspect of your color experience with our powerful customization tools.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interactive Color Wheel -->
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-white">Interactive Color Wheel</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Spin the wheel to discover new color combinations and palettes
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+                    <!-- Color Wheel -->
+                    <div id="colorWheel" class="w-full h-full rounded-full overflow-hidden relative">
+                        <!-- Color slices will be generated by JS -->
+                    </div>
+                    <div id="wheelPointer" class="absolute top-1/2 left-1/2 w-12 h-12 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                        <div class="w-4 h-4 rounded-full rainbow-bg"></div>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <div id="selectedColor" class="w-32 h-32 rounded-lg mx-auto md:mx-0 rainbow-bg mb-6 shadow-lg"></div>
+                    <h3 id="colorName" class="text-2xl font-bold mb-2 gradient-text">Rainbow Spectrum</h3>
+                    <p id="colorDetails" class="text-gray-400 max-w-md">
+                        The perfect blend of all colors in the visible spectrum. A symbol of diversity and creativity.
+                    </p>
+                    <button id="randomizeBtn" class="mt-6 px-6 py-2 rainbow-bg text-white font-medium rounded-lg hover:opacity-90 transition-opacity">
+                        Randomize
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gradient Gallery -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Gradient Gallery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Explore our collection of stunning gradient combinations curated by color experts
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gradient Cards -->
+                <div class="h-64 rounded-xl shadow-md relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-600 transition-all duration-500 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white z-10">
+                        <h3 class="text-xl font-bold">Blissful Berry</h3>
+                        <p class="opacity-0 group-hover:opacity-100 transition-opacity">Pink to Purple</p>
+                    </div>
+                </div>
+                
+                <div class="h-64 rounded-xl shadow-md relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 to-red-500 transition-all duration-500 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white z-10">
+                        <h3 class="text-xl font-bold">Sunset Glow</h3>
+                        <p class="opacity-0 group-hover:opacity-100 transition-opacity">Yellow to Red</p>
+                    </div>
+                </div>
+                
+                <div class="h-64 rounded-xl shadow-md relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 transition-all duration-500 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white z-10">
+                        <h3 class="text-xl font-bold">Ocean Breeze</h3>
+                        <p class="opacity-0 group-hover:opacity-100 transition-opacity">Green to Blue</p>
+                    </div>
+                </div>
+                
+                <div class="h-64 rounded-xl shadow-md relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-600 transition-all duration-500 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white z-10">
+                        <h3 class="text-xl font-bold">Deep Space</h3>
+                        <p class="opacity-0 group-hover:opacity-100 transition-opacity">Blue to Indigo</p>
+                    </div>
+                </div>
+                
+                <div class="h-64 rounded-xl shadow-md relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-500 to-yellow-400 transition-all duration-500 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white z-10">
+                        <h3 class="text-xl font-bold">Fiery Dawn</h3>
+                        <p class="opacity-0 group-hover:opacity-100 transition-opacity">Red to Yellow</p>
+                    </div>
+                </div>
+                
+                <div class="h-64 rounded-xl shadow-md relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 transition-all duration-500 group-hover:scale-110"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white z-10">
+                        <h3 class="text-xl font-bold">Sweet Berry</h3>
+                        <p class="opacity-0 group-hover:opacity-100 transition-opacity">Purple to Pink</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="py-20 rainbow-bg relative">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="bg-white rounded-xl shadow-2xl p-8 md:p-12">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold mb-2 gradient-text">Join Our Color Community</h2>
+                    <p class="text-gray-600 mb-8">Get the latest color trends, palettes, and design inspiration delivered to your inbox</p>
+                </div>
+                
+                <form class="max-w-md mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <button type="submit" class="px-6 py-3 rainbow-bg text-white font-medium rounded-lg hover:opacity-90 transition-opacity">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">SPECTRUM</h3>
+                    <p class="mb-4">Exploring the colorful digital landscape since 2023</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-pink-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-400 transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-purple-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-red-400 transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Color Palettes</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gradients</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Color Theory</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Inspiration</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tools</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">hello@spectrum.com</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">1-800-COLORFUL</a></li>
+                        <li>123 Rainbow Road</li>
+                        <li>Colorville, CV 12345</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center md:text-left">
+                <p>&copy; 2023 Spectrum. All rights reserved. | <a href="#" class="hover:text-white transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-white transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Create color wheel slices
+        function createColorWheel() {
+            const wheel = document.getElementById('colorWheel');
+            const colors = [
+                { name: "Red", value: "#ff3366", desc: "Passion, energy, and excitement. Red demands attention." },
+                { name: "Orange", value: "#ff6633", desc: "Creativity, enthusiasm, and warmth. Orange inspires action." },
+                { name: "Yellow", value: "#ffcc33", desc: "Optimism, happiness, and intellect. Yellow brings sunshine." },
+                { name: "Green", value: "#33ff66", desc: "Growth, harmony, and renewal. Green balances mind and spirit." },
+                { name: "Blue", value: "#3366ff", desc: "Trust, wisdom, and confidence. Blue calms the soul." },
+                { name: "Indigo", value: "#6633ff", desc: "Intuition, perception, and mysticism. Indigo connects to deeper thoughts." },
+                { name: "Violet", value: "#cc33ff", desc: "Imagination, spirituality, and luxury. Violet stimulates creativity." }
+            ];
+            
+            const sliceAngle = 360 / colors.length;
+            let rotation = 0;
+            
+            colors.forEach((color, index) => {
+                const slice = document.createElement('div');
+                slice.className = 'absolute inset-0 origin-bottom transition-transform duration-500';
+                slice.style.transform = `rotate(${rotation}deg)`;
+                slice.style.clipPath = 'polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 50% 50%)';
+                slice.style.backgroundColor = color.value;
+                slice.dataset.color = color.value;
+                slice.dataset.name = color.name;
+                slice.dataset.desc = color.desc;
+                
+                const hoverZone = document.createElement('div');
+                hoverZone.className = 'absolute inset-0 w-1/2 origin-right pointer-events-none';
+                hoverZone.style.transform = `rotate(${sliceAngle}deg)`;
+                hoverZone.style.clipPath = 'polygon(50% 50%, 0% 0%, 0% 100%, 50% 50%)';
+                hoverZone.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                
+                slice.appendChild(hoverZone);
+                wheel.appendChild(slice);
+                
+                rotation += sliceAngle;
+            });
+            
+            // Set initial color (rainbow)
+            updateColorInfo('Rainbow Spectrum', 
+                          'The perfect blend of all colors in the visible spectrum. A symbol of diversity and creativity.',
+                          'linear-gradient(-45deg, #ff3366, #ff6633, #ffcc33, #33ff66, #3366ff, #6633ff, #cc33ff, #ff33cc, #ff3366)');
+        }
+        
+        // Update color info display
+        function updateColorInfo(name, desc, value) {
+            document.getElementById('selectedColor').style.background = value;
+            document.getElementById('colorName').textContent = name;
+            document.getElementById('colorDetails').textContent = desc;
+        }
+        
+        // Randomize color wheel
+        function randomizeColor() {
+            const wheel = document.getElementById('colorWheel');
+            const slices = wheel.querySelectorAll('div');
+            const randomAngle = Math.floor(Math.random() * 360);
+            
+            if (randomAngle % 360 === 0) {
+                // Rainbow display
+                updateColorInfo('Rainbow Spectrum', 
+                              'The perfect blend of all colors in the visible spectrum. A symbol of diversity and creativity.',
+                              'linear-gradient(-45deg, #ff3366, #ff6633, #ffcc33, #33ff66, #3366ff, #6633ff, #cc33ff, #ff33cc, #ff3366)');
+            } else {
+                // Find which color is selected
+                const colorCount = slices.length;
+                const sliceAngle = 360 / colorCount;
+                const selectedIndex = Math.floor((randomAngle % 360) / sliceAngle);
+                
+                const selectedSlice = slices[selectedIndex];
+                updateColorInfo(selectedSlice.dataset.name, 
+                              selectedSlice.dataset.desc,
+                              selectedSlice.dataset.color);
+            }
+            
+            wheel.style.transform = `rotate(${-randomAngle}deg)`;
+        }
+        
+        // Floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const count = window.innerWidth < 768 ? 30 : 80;
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'absolute rounded-full pointer-events-none';
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random color from pastel palette
+                const colors = [
+                    'rgba(255, 157, 180, 0.7)',
+                    'rgba(255, 215, 137, 0.7)',
+                    'rgba(199, 255, 190, 0.7)',
+                    'rgba(178, 255, 255, 0.7)',
+                    'rgba(180, 188, 255, 0.7)',
+                    'rgba(230, 184, 255, 0.7)'
+                ];
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Animation
+                const duration = Math.random() * 20 + 10;
+                const xMovement = (Math.random() - 0.5) * 100;
+                const yMovement = (Math.random() - 0.5) * 100;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                
+                // Create keyframes dynamically
+                const keyframes = `
+                    @keyframes float {
+                        0% {
+                            transform: translate(0, 0);
+                            opacity: 1;
+                        }
+                        50% {
+                            transform: translate(${xMovement}px, ${yMovement}px);
+                        }
+                        100% {
+                            transform: translate(0, 0);
+                            opacity: 0.5;
+                        }
+                    }
+                `;
+                
+                // Add keyframes to head if not already added
+                if (!document.getElementById('particle-animations')) {
+                    const style = document.createElement('style');
+                    style.id = 'particle-animations';
+                    document.head.appendChild(style);
+                }
+                
+                document.getElementById('particle-animations').innerHTML += keyframes;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Cursor trail effect
+        function setupCursorTrail() {
+            const trail = document.querySelector('.cursor-trail');
+            let mouseX = 0, mouseY = 0;
+            let trailX = 0, trailY = 0;
+            let isMoving = false;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                trail.style.opacity = '1';
+                isMoving = true;
+            });
+            
+            // Select some elements that should have special trail colors
+            document.querySelectorAll('a, button, .card-hover-effect').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    trail.classList.add('rainbow-bg');
+                    trail.style.width = '40px';
+                    trail.style.height = '40px';
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    trail.classList.remove('rainbow-bg');
+                    trail.style.width = '20px';
+                    trail.style.height = '20px';
+                });
+            });
+            
+            function animate() {
+                trailX += (mouseX - trailX) * 0.1;
+                trailY += (mouseY - trailY) * 0.1;
+                
+                trail.style.left = `${trailX}px`;
+                trail.style.top = `${trailY}px`;
+                
+                if (!isMoving) {
+                    trail.style.opacity = '0';
+                }
+                
+                isMoving = false;
+                requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createColorWheel();
+            createParticles();
+            setupCursorTrail();
+            
+            // Randomize button click
+            document.getElementById('randomizeBtn').addEventListener('click', randomizeColor);
+            
+            // Color wheel click handler
+            document.getElementById('colorWheel').addEventListener('click', () => {
+                randomizeColor();
+            });
+            
+            // Add ripple effect to buttons
+            document.querySelectorAll('button, a').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.className = 'absolute rounded-full bg-white/30';
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    ripple.style.width = '0';
+                    ripple.style.height = '0';
+                    ripple.style.transform = 'translate(-50%, -50%)';
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.style.width = `${this.offsetWidth * 2}px`;
+                        ripple.style.height = `${this.offsetWidth * 2}px`;
+                        ripple.style.opacity = '0';
+                    }, 10);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 500);
+                });
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - <a href="https://enzostvs-deepsite.hf.space?remix=DiyDev/beautiful-colors" style="color: #fff;text-decoration: underline;" target="_blank" >🧬 Remix</a></p></body>
+</html>
