@@ -34,7 +34,7 @@ p {
   background: transparent;
   color: #fff;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   letter-spacing: normal;
   transition: background 0.2s, color 0.2s, border 0.2s;
@@ -53,10 +53,10 @@ p {
   margin-right: 0;
 }
 
-.lang-btn.active-lang {
-  background: #fff !important;
-  color: #000 !important;
-  font-weight: 700;
-  border: 2px solid #fff !important;
-  box-shadow: none !important;
+.lang-btn.active {
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+  color: #fff;
+  font-weight: 400;
+  border: 2px solid #fff;
+  box-shadow: none;
 }
