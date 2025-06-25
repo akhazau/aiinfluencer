@@ -28,21 +28,21 @@ p {
 }
 
 .lang-btn {
-  padding: 4px 12px;
-  border: 1px solid #fff;
-  border-radius: 6px;
+  padding: 6px 18px;
+  border: 2px solid #fff;
+  border-radius: 8px;
   background: transparent;
   color: #fff;
   font-family: inherit;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: normal;
   transition: background 0.2s, color 0.2s, border 0.2s;
-  margin-right: 6px;
+  margin-right: 8px;
   outline: none;
   box-shadow: none;
-  min-width: 40px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 36px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -57,6 +57,6 @@ p {
   background: #fff !important;
   color: #000 !important;
   font-weight: 700;
-  border: 1px solid #fff !important;
+  border: 2px solid #fff !important;
   box-shadow: none !important;
 }
