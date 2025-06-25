@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtAI - Validate the Future of Digital Art</title>
+    <title>AI Influencer 3.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -62,15 +62,13 @@
     </style>
 </head>
 <body>
-    <!-- Language Selector -->
-    <div class="language-selector fixed top-4 right-4 z-50 rounded-full p-2">
-        <select id="language-select" class="bg-transparent text-white border-none focus:ring-0 text-sm">
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-        </select>
+        <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 space-x-2">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
     </div>
 
-    <!-- Hero Section -->
+    <!-- #1 ГЛАВНАЯ-->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <!-- Animated background elements -->
         <div class="absolute inset-0 overflow-hidden">
@@ -83,7 +81,7 @@
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        <span class="gradient-text" id="hero-title-1">AI-Generated Art</span><br>
+                        <span class="gradient-text" id="hero-title-1">AI Influencer 3.0</span><br>
                         <span id="hero-title-2">Is This The Future?</span>
                     </h1>
                     <p class="text-lg text-gray-300 mb-8 max-w-lg" id="hero-subtitle">
@@ -92,37 +90,37 @@
                     </p>
                     
                     <!-- Countdown -->
-<div class="mb-8">
-  <div class="text-gray-400 mb-2">Until the end of the early bird discount:</div>
-  <div class="flex gap-2">
-    <div class="timer-block px-4 py-2 rounded text-center">
-      <div id="hours" class="text-2xl font-bold text-pink-500">03</div>
-      <div class="text-xs text-gray-400">hour</div>
-    </div>
-    <div class="timer-block px-4 py-2 rounded text-center">
-      <div id="minutes" class="text-2xl font-bold text-pink-500">00</div>
-      <div class="text-xs text-gray-400">minute</div>
-    </div>
-    <div class="timer-block px-4 py-2 rounded text-center">
-      <div id="seconds" class="text-2xl font-bold text-pink-500">00</div>
-      <div class="text-xs text-gray-400">seconds</div>
-    </div>
-  </div>
-</div>
+                    <div class="mb-8">
+                      <div class="text-gray-400 mb-2">Until the end of the early bird discount:</div>
+                      <div class="flex gap-2">
+                        <div class="timer-block px-4 py-2 rounded text-center">
+                          <div id="hours" class="text-2xl font-bold text-pink-500">03</div>
+                          <div class="text-xs text-gray-400">hour</div>
+                        </div>
+                        <div class="timer-block px-4 py-2 rounded text-center">
+                          <div id="minutes" class="text-2xl font-bold text-pink-500">00</div>
+                          <div class="text-xs text-gray-400">minute</div>
+                        </div>
+                        <div class="timer-block px-4 py-2 rounded text-center">
+                          <div id="seconds" class="text-2xl font-bold text-pink-500">00</div>
+                          <div class="text-xs text-gray-400">seconds</div>
+                        </div>
+                      </div>
+                    </div>
 
-<!-- Email form -->
-<div class="max-w-md">
-  <form id="lead-form" class="mb-4">
-    <div class="flex flex-col sm:flex-row gap-2">
-      <input type="email" required placeholder="Please enter your email address." 
-             class="form-input flex-grow px-4 py-3 rounded-full text-white">
-      <button type="submit" class="glow-btn text-black font-bold px-6 py-3 rounded-full whitespace-nowrap">
-        Get
-      </button>
-    </div>
-  </form>
-  <p class="text-xs text-gray-500">We will send you a free lecture sample and checklist when you register.</p>
-</div>
+                    <!-- Email form -->
+                    <div class="max-w-md">
+                      <form id="lead-form" class="mb-4">
+                        <div class="flex flex-col sm:flex-row gap-2">
+                          <input type="email" required placeholder="Please enter your email address." 
+                                 class="form-input flex-grow px-4 py-3 rounded-full text-white">
+                          <button type="submit" class="glow-btn text-black font-bold px-6 py-3 rounded-full whitespace-nowrap">
+                            Get
+                          </button>
+                        </div>
+                      </form>
+                      <p class="text-xs text-gray-500">We will send you a free lecture sample and checklist when you register.</p>
+                    </div>
                     
                     <div class="mt-8 flex items-center space-x-4">
                         <div class="flex -space-x-2">
@@ -157,7 +155,7 @@
         </div>
     </section>
 
-    <!-- AI Art Showcase -->
+    <!-- #2 БОЛЬ/РЕШЕНИЕ -->
     <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -223,7 +221,7 @@
         </div>
     </section>
 
-    <!-- Value Proposition -->
+    <!-- #3 КЕМ ТЫ СТАНЕШЬ ПОСЛЕ КУРСА -->
     <section class="py-20 bg-slate-800">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center">
@@ -278,7 +276,7 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- #4 СТОИМОСТЬ И КОЛЛИЧЕСТВО КОНТЕНТА-->
     <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -541,75 +539,18 @@
                 "modal-message": "Thank you for joining our waitlist. We'll be in touch soon with exclusive access to our AI art platform.",
                 "modal-button": "Continue Exploring"
             },
-            zh: {
-                // Hero section
-                "hero-title-1": "AI生成艺术",
-                "hero-title-2": "这是未来吗？",
-                "hero-subtitle": "加入我们的专属等候名单，帮助验证AI生成艺术品的市场。早期订阅者将获得平台特别访问权限和折扣。",
-                "form-title": "获取早期访问权限",
-                "email-placeholder": "您的电子邮件地址",
-                "join-button": "加入等候名单",
-                "privacy-text": "我们尊重您的隐私。可随时取消订阅。",
-                "join-text": "加入",
-                "members-text": "艺术家和收藏家",
-                "rating-text": "5.0 (300+ 评价)",
-                
-                // Showcase section
-                "showcase-title": "见证",
-                "showcase-subtitle": "这些令人惊叹的艺术作品完全由人工智能生成。创作过程中没有任何人类艺术家参与。",
-                "art-title-1": "宇宙梦境",
-                "art-title-2": "神经星云",
-                "art-title-3": "数字乌托邦",
-                "art-desc-1": "使用我们的AI模型在12秒内生成",
-                "art-desc-2": "使用我们的AI模型在8秒内生成",
-                "art-desc-3": "使用我们的AI模型在15秒内生成",
-                "view-button-1": "查看详情",
-                "view-button-2": "查看详情",
-                "view-button-3": "查看详情",
-                
-                // Value proposition
-                "value-title": "为何",
-                "matters-text": "重要",
-                "value-description": "AI生成艺术正在革命创意产业，它让艺术表达人人可及，同时突破了可能性的边界。",
-                "feature-1-title": "即时创作",
-                "feature-2-title": "无限可能",
-                "feature-3-title": "价格亲民",
-                "feature-1-desc": "几秒钟即可生成独特艺术品，无需数周",
-                "feature-2-desc": "探索超越人类想象力的风格和概念",
-                "feature-3-desc": "高品质艺术品，价格仅为传统艺术的一小部分",
-                
-                // Testimonials
-                "testimonial-title": "用户",
-                "testimonial-subtitle": "不要只听我们说。以下是早期采用者对AI生成艺术的看法。",
-                "person-1-role": "数字艺术家",
-                "person-2-role": "艺术收藏家",
-                "person-3-role": "室内设计师",
-                "testimonial-1": "\"作为传统艺术家，起初我很怀疑。但AI艺术已成为我创作过程中不可思议的工具，帮助我探索从未考虑过的想法。\"",
-                "testimonial-2": "\"在我的收藏中，AI生成的作品总是最能吸引访客的注意。它们有种独特的魅力。\"",
-                "testimonial-3": "\"我的客户非常喜欢我为他们的空间挑选的独特AI艺术品。能够生成完全匹配他们风格的艺术作品是革命性的。\"",
-                
-                // CTA
-                "cta-title": "准备好探索",
-                "cta-subtitle": "立即加入我们的等候名单，成为首批体验艺术创作下一阶段的人。",
-                "days-label": "天",
-                "hours-label": "小时",
-                "minutes-label": "分钟",
-                "limited-access": "限量早期访问",
-                "join-now": "立即加入等候名单",
-                "spots-left": "仅剩247个名额",
-                
-                // Footer
-                "footer-tagline": "探索艺术与人工智能的交汇点",
-                "privacy-link": "隐私政策",
-                "terms-link": "服务条款",
-                "contact-link": "联系我们",
-                "faq-link": "常见问题",
-                
-                // Modal
-                "modal-title": "您已加入列表!",
-                "modal-message": "感谢您加入我们的等候名单。我们将很快与您联系，提供AI艺术平台的专属访问权限。",
-                "modal-button": "继续探索"
-            }
+            ru: {
+  "hero-title-1": "Искусство, созданное ИИ",
+  "hero-title-2": "Это будущее?",
+  "hero-subtitle": "Присоединяйтесь к листу ожидания, чтобы помочь проверить рынок AI-арта. Ранние подписчики получат доступ и скидки.",
+  "form-title": "Получите ранний доступ",
+  "email-placeholder": "Введите ваш email",
+  "join-button": "Получить",
+  "privacy-text": "Мы уважаем вашу конфиденциальность. Вы можете отписаться в любое время.",
+  "join-text": "Присоединились",
+  "members-text": "художников и коллекционеров",
+  "rating-text": "5.0 (300+ отзывов)"
+}
         };
 
         // Function to change language
