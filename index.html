@@ -468,6 +468,26 @@
     </div>
 
     <script>
+        window.addEventListener('error', function(e) {
+            console.error('Глобальная ошибка JS:', e.message, e);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const langSelector = document.getElementById('language-selector');
+            if (!langSelector) {
+                console.error('Не найден элемент #language-selector');
+                return;
+            }
+            langSelector.addEventListener('click', function(e) {
+                if (e.target.classList.contains('lang-btn')) {
+                    changeLanguage(e.target.dataset.lang);
+                    console.log('Клик по кнопке языка:', e.target.dataset.lang);
+                }
+            });
+            const savedLang = localStorage.getItem('selectedLang') || 'en';
+            changeLanguage(savedLang);
+            console.log('Инициализация: выбран язык', savedLang);
+        });
+
         // Language translations
         const translations = {
             en: {
@@ -583,19 +603,6 @@
             // Сохраняем выбор
             localStorage.setItem('selectedLang', language);
         }
-
-        // Обработчик клика по кнопкам EN/RU
-        document.getElementById('language-selector').addEventListener('click', function(e) {
-            if (e.target.classList.contains('lang-btn')) {
-                changeLanguage(e.target.dataset.lang);
-            }
-        });
-
-        // При загрузке страницы — восстановить выбор и применить перевод
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('selectedLang') || 'en';
-            changeLanguage(savedLang);
-        });
 
         // Form submission
         document.getElementById('email-form').addEventListener('submit', function(e) {
