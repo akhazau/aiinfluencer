@@ -26,3 +26,18 @@ p {
 .card p:last-child {
 	margin-bottom: 0;
 }
+
+.lang-btn {
+  border: 1px solid white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.lang-btn.active {
+  background: white;
+  color: black;
+}

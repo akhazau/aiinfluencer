@@ -63,10 +63,10 @@
 </head>
 <body>
         <!-- Language Selector -->
-    <div class="fixed top-4 right-4 z-50 space-x-2">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="ru">RU</button>
-    </div>
+<div class="fixed top-4 right-4 z-50 space-x-2">
+  <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+  <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+</div>
 
     <!-- #1 ГЛАВНАЯ-->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
@@ -540,6 +540,7 @@
                 "modal-button": "Continue Exploring"
             },
             ru: {
+                // Hero section
   "hero-title-1": "Искусство, созданное ИИ",
   "hero-title-2": "Это будущее?",
   "hero-subtitle": "Присоединяйтесь к листу ожидания, чтобы помочь проверить рынок AI-арта. Ранние подписчики получат доступ и скидки.",
@@ -573,6 +574,10 @@
         // Initial language setup
         let currentLanguage = 'en';
         changeLanguage(currentLanguage);
+
+        document.querySelectorAll('.lang-btn').forEach(btn =>
+  btn.classList.toggle('active', btn.textContent === language.toUpperCase())
+);
 
         // Language selector functionality
         document.getElementById('language-select').addEventListener('change', function() {
