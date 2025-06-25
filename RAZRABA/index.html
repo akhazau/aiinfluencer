@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtAI - Validate the Future of Digital Art</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .art-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .art-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .language-selector {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+        }
+        
+        .input-glow:focus {
+            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.5);
+        }
+        
+        .countdown-number {
+            min-width: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- #1 ГЛАВНАЯ -->
+<section class="hero-section min-h-screen flex items-center relative overflow-hidden px-6 py-20">
+  <div class="absolute inset-0 opacity-20" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+
+  <div class="container mx-auto flex flex-col lg:flex-row items-center gap-12 z-10">
+    <div class="lg:w-1/2">
+      <div class="inline-block mb-4 px-4 py-1 bg-black/50 rounded-full border border-cyan-400 text-sm text-cyan-400 font-bold">
+        Только 30 мест!
+      </div>
+      <h1 class="pixel-font text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+        <span class="logo-text">Создай AI-инфлюенсера</span><br>
+        <span class="text-cyan-400">всего за 3 дня</span>
+      </h1>
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        Прокачай свои навыки и создай реалистичного персонажа, способного зарабатывать. Лёгкий вход, максимум практики и пользы.
+      </p>
+
+      <form id="lead-form" class="flex flex-col sm:flex-row gap-3 max-w-md mb-4">
+        <input type="email" required placeholder="Твой email" class="form-input flex-grow px-4 py-3 rounded-full text-white">
+        <button type="submit" class="glow-btn text-black font-bold px-6 py-3 rounded-full whitespace-nowrap">
+          Получить гайд
+        </button>
+      </form>
+      <p class="text-sm text-gray-500">Мы пришлём тебе бесплатный гайд и приглашение на курс</p>
+    </div>
+
+    <div class="lg:w-1/2 relative">
+      <div class="pixel-card rounded-2xl overflow-hidden border border-cyan-400/30 shadow-xl shadow-cyan-400/10">
+        <img src="https://images.unsplash.com/photo-1637858868799-7f26a0640eb6" alt="AI influencer preview" class="w-full h-auto object-cover">
+      </div>
+      <div class="absolute -top-5 -left-5 w-12 h-12 bg-cyan-400 pixel-corners z-10"></div>
+      <div class="absolute -bottom-5 -right-5 w-16 h-16 bg-pink-500 pixel-corners z-10"></div>
+    </div>
+  </div>
+</section>
+
+    <!-- AI Art Showcase -->
+    <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="showcase-title">Witness the Power of</span> <span class="gradient-text">AI Creativity</span></h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto" id="showcase-subtitle">
+                    These stunning artworks were generated entirely by artificial intelligence. 
+                    No human artist was involved in the creation process.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Art Card 1 -->
+                <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&auto=format" alt="AI Art 1" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" id="art-title-1">Cosmic Dreams</h3>
+                        <p class="text-gray-400 text-sm mb-4" id="art-desc-1">Generated in 12 seconds using our AI model</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-300 font-medium">$249</span>
+                            <button class="text-sm bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition">
+                                <span id="view-button-1">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Art Card 2 -->
+                <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&auto=format" alt="AI Art 2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" id="art-title-2">Neural Nebula</h3>
+                        <p class="text-gray-400 text-sm mb-4" id="art-desc-2">Generated in 8 seconds using our AI model</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-300 font-medium">$189</span>
+                            <button class="text-sm bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition">
+                                <span id="view-button-2">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Art Card 3 -->
+                <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1634117623696-62659227e1a1?w=600&auto=format" alt="AI Art 3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" id="art-title-3">Digital Utopia</h3>
+                        <p class="text-gray-400 text-sm mb-4" id="art-desc-3">Generated in 15 seconds using our AI model</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-purple-300 font-medium">$329</span>
+                            <button class="text-sm bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition">
+                                <span id="view-button-3">View Details</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="py-20 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6"><span id="value-title">Why</span> <span class="gradient-text">AI Art</span> <span id="matters-text">Matters</span></h2>
+                    <p class="text-lg text-gray-300 mb-8" id="value-description">
+                        AI-generated art is revolutionizing the creative industry by making artistic expression 
+                        accessible to everyone while pushing the boundaries of what's possible.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-purple-500/20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-bolt text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2" id="feature-1-title">Instant Creation</h3>
+                                <p class="text-gray-400" id="feature-1-desc">Generate unique artworks in seconds, not weeks</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-pink-500/20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-infinity text-pink-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2" id="feature-2-title">Infinite Possibilities</h3>
+                                <p class="text-gray-400" id="feature-2-desc">Explore styles and concepts beyond human imagination</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-indigo-500/20 p-3 rounded-lg mr-4">
+                                <i class="fas fa-dollar-sign text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2" id="feature-3-title">Affordable Art</h3>
+                                <p class="text-gray-400" id="feature-3-desc">High-quality artwork at a fraction of traditional prices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&auto=format" alt="AI Art Process" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto border-4 border-white/10">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-pink-500 to-red-500 rounded-2xl -z-10"></div>
+                        <div class="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="testimonial-title">What</span> <span class="gradient-text">People Say</span></h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto" id="testimonial-subtitle">
+                    Don't just take our word for it. Here's what early adopters think about AI-generated art.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-400" id="person-1-role">Digital Artist</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4" id="testimonial-1">
+                        "As a traditional artist, I was skeptical at first. But AI art has become an incredible tool in my creative process, helping me explore ideas I never would have considered."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=200&auto=format" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-sm text-gray-400" id="person-2-role">Art Collector</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4" id="testimonial-2">
+                        "The AI-generated pieces in my collection consistently get the most attention from visitors. There's something uniquely captivating about them."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Emma Rodriguez</h4>
+                            <p class="text-sm text-gray-400" id="person-3-role">Interior Designer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4" id="testimonial-3">
+                        "My clients love the unique AI art pieces I incorporate into their spaces. The ability to generate artwork that perfectly matches their style is revolutionary."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-20">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-500 blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-pink-500 blur-3xl animate-pulse delay-300"></div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6"><span id="cta-title">Ready to Explore the</span> <span class="gradient-text">Future of Art</span>?</h2>
+                <p class="text-xl text-gray-300 mb-8" id="cta-subtitle">
+                    Join our waitlist today and be among the first to experience the next evolution in artistic creation.
+                </p>
+                
+                <!-- Countdown Timer -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 flex space-x-4">
+                        <div class="text-center">
+                            <div class="countdown-number bg-purple-600 text-white font-bold rounded-lg py-2 px-3 text-xl">07</div>
+                            <div class="text-xs mt-1 text-gray-300" id="days-label">Days</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-number bg-pink-600 text-white font-bold rounded-lg py-2 px-3 text-xl">23</div>
+                            <div class="text-xs mt-1 text-gray-300" id="hours-label">Hours</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-number bg-indigo-600 text-white font-bold rounded-lg py-2 px-3 text-xl">45</div>
+                            <div class="text-xs mt-1 text-gray-300" id="minutes-label">Minutes</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Email Collection Form -->
+                <div class="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-xl p-6 glow">
+                    <h3 class="text-xl font-semibold mb-4" id="limited-access">Limited Early Access</h3>
+                    <form id="email-form-2" class="space-y-4">
+                        <div>
+                            <input type="email" id="email-2" placeholder="Your email address" 
+                                class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 input-glow focus:outline-none focus:border-purple-400 transition">
+                        </div>
+                        <button type="submit" 
+                            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-all transform hover:scale-[1.02]">
+                            <span id="join-now">Join Waitlist Now</span>
+                        </button>
+                    </form>
+                    <p class="text-xs text-gray-400 mt-3" id="spots-left">Only 247 spots remaining</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold gradient-text">ArtAI</h2>
+                    <p class="text-gray-400 mt-2" id="footer-tagline">Exploring the intersection of art and artificial intelligence</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between">
+                <div class="text-gray-400 text-sm mb-4 md:mb-0" id="copyright">
+                    &copy; 2023 ArtAI. All rights reserved.
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition" id="privacy-link">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition" id="terms-link">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition" id="contact-link">Contact Us</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition" id="faq-link">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center hidden">
+        <div class="bg-slate-800 rounded-xl max-w-md w-full p-8 mx-4 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-green-400 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2" id="modal-title">You're on the list!</h3>
+                <p class="text-gray-300 mb-6" id="modal-message">
+                    Thank you for joining our waitlist. We'll be in touch soon with exclusive access to our AI art platform.
+                </p>
+                <button id="modal-close-btn" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium py-2 px-6 rounded-lg hover:opacity-90 transition">
+                    <span id="modal-button">Continue Exploring</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                // Hero section
+                "hero-title-1": "AI-Generated Art",
+                "hero-title-2": "Is This The Future?",
+                "hero-subtitle": "Join our exclusive waitlist to help validate the market for AI-generated artwork. Early subscribers will get special access to our platform and discounts.",
+                "form-title": "Get Early Access",
+                "email-placeholder": "Your email address",
+                "join-button": "Join Waitlist",
+                "privacy-text": "We respect your privacy. Unsubscribe at any time.",
+                "join-text": "Join",
+                "members-text": "artists and collectors",
+                "rating-text": "5.0 (300+ reviews)",
+                
+                // Showcase section
+                "showcase-title": "Witness the Power of",
+                "showcase-subtitle": "These stunning artworks were generated entirely by artificial intelligence. No human artist was involved in the creation process.",
+                "art-title-1": "Cosmic Dreams",
+                "art-title-2": "Neural Nebula",
+                "art-title-3": "Digital Utopia",
+                "art-desc-1": "Generated in 12 seconds using our AI model",
+                "art-desc-2": "Generated in 8 seconds using our AI model",
+                "art-desc-3": "Generated in 15 seconds using our AI model",
+                "view-button-1": "View Details",
+                "view-button-2": "View Details",
+                "view-button-3": "View Details",
+                
+                // Value proposition
+                "value-title": "Why",
+                "matters-text": "Matters",
+                "value-description": "AI-generated art is revolutionizing the creative industry by making artistic expression accessible to everyone while pushing the boundaries of what's possible.",
+                "feature-1-title": "Instant Creation",
+                "feature-2-title": "Infinite Possibilities",
+                "feature-3-title": "Affordable Art",
+                "feature-1-desc": "Generate unique artworks in seconds, not weeks",
+                "feature-2-desc": "Explore styles and concepts beyond human imagination",
+                "feature-3-desc": "High-quality artwork at a fraction of traditional prices",
+                
+                // Testimonials
+                "testimonial-title": "What",
+                "testimonial-subtitle": "Don't just take our word for it. Here's what early adopters think about AI-generated art.",
+                "person-1-role": "Digital Artist",
+                "person-2-role": "Art Collector",
+                "person-3-role": "Interior Designer",
+                "testimonial-1": "\"As a traditional artist, I was skeptical at first. But AI art has become an incredible tool in my creative process, helping me explore ideas I never would have considered.\"",
+                "testimonial-2": "\"The AI-generated pieces in my collection consistently get the most attention from visitors. There's something uniquely captivating about them.\"",
+                "testimonial-3": "\"My clients love the unique AI art pieces I incorporate into their spaces. The ability to generate artwork that perfectly matches their style is revolutionary.\"",
+                
+                // CTA
+                "cta-title": "Ready to Explore the",
+                "cta-subtitle": "Join our waitlist today and be among the first to experience the next evolution in artistic creation.",
+                "days-label": "Days",
+                "hours-label": "Hours",
+                "minutes-label": "Minutes",
+                "limited-access": "Limited Early Access",
+                "join-now": "Join Waitlist Now",
+                "spots-left": "Only 247 spots remaining",
+                
+                // Footer
+                "footer-tagline": "Exploring the intersection of art and artificial intelligence",
+                "privacy-link": "Privacy Policy",
+                "terms-link": "Terms of Service",
+                "contact-link": "Contact Us",
+                "faq-link": "FAQ",
+                
+                // Modal
+                "modal-title": "You're on the list!",
+                "modal-message": "Thank you for joining our waitlist. We'll be in touch soon with exclusive access to our AI art platform.",
+                "modal-button": "Continue Exploring"
+            },
+            zh: {
+                // Hero section
+                "hero-title-1": "AI生成艺术",
+                "hero-title-2": "这是未来吗？",
+                "hero-subtitle": "加入我们的专属等候名单，帮助验证AI生成艺术品的市场。早期订阅者将获得平台特别访问权限和折扣。",
+                "form-title": "获取早期访问权限",
+                "email-placeholder": "您的电子邮件地址",
+                "join-button": "加入等候名单",
+                "privacy-text": "我们尊重您的隐私。可随时取消订阅。",
+                "join-text": "加入",
+                "members-text": "艺术家和收藏家",
+                "rating-text": "5.0 (300+ 评价)",
+                
+                // Showcase section
+                "showcase-title": "见证",
+                "showcase-subtitle": "这些令人惊叹的艺术作品完全由人工智能生成。创作过程中没有任何人类艺术家参与。",
+                "art-title-1": "宇宙梦境",
+                "art-title-2": "神经星云",
+                "art-title-3": "数字乌托邦",
+                "art-desc-1": "使用我们的AI模型在12秒内生成",
+                "art-desc-2": "使用我们的AI模型在8秒内生成",
+                "art-desc-3": "使用我们的AI模型在15秒内生成",
+                "view-button-1": "查看详情",
+                "view-button-2": "查看详情",
+                "view-button-3": "查看详情",
+                
+                // Value proposition
+                "value-title": "为何",
+                "matters-text": "重要",
+                "value-description": "AI生成艺术正在革命创意产业，它让艺术表达人人可及，同时突破了可能性的边界。",
+                "feature-1-title": "即时创作",
+                "feature-2-title": "无限可能",
+                "feature-3-title": "价格亲民",
+                "feature-1-desc": "几秒钟即可生成独特艺术品，无需数周",
+                "feature-2-desc": "探索超越人类想象力的风格和概念",
+                "feature-3-desc": "高品质艺术品，价格仅为传统艺术的一小部分",
+                
+                // Testimonials
+                "testimonial-title": "用户",
+                "testimonial-subtitle": "不要只听我们说。以下是早期采用者对AI生成艺术的看法。",
+                "person-1-role": "数字艺术家",
+                "person-2-role": "艺术收藏家",
+                "person-3-role": "室内设计师",
+                "testimonial-1": "\"作为传统艺术家，起初我很怀疑。但AI艺术已成为我创作过程中不可思议的工具，帮助我探索从未考虑过的想法。\"",
+                "testimonial-2": "\"在我的收藏中，AI生成的作品总是最能吸引访客的注意。它们有种独特的魅力。\"",
+                "testimonial-3": "\"我的客户非常喜欢我为他们的空间挑选的独特AI艺术品。能够生成完全匹配他们风格的艺术作品是革命性的。\"",
+                
+                // CTA
+                "cta-title": "准备好探索",
+                "cta-subtitle": "立即加入我们的等候名单，成为首批体验艺术创作下一阶段的人。",
+                "days-label": "天",
+                "hours-label": "小时",
+                "minutes-label": "分钟",
+                "limited-access": "限量早期访问",
+                "join-now": "立即加入等候名单",
+                "spots-left": "仅剩247个名额",
+                
+                // Footer
+                "footer-tagline": "探索艺术与人工智能的交汇点",
+                "privacy-link": "隐私政策",
+                "terms-link": "服务条款",
+                "contact-link": "联系我们",
+                "faq-link": "常见问题",
+                
+                // Modal
+                "modal-title": "您已加入列表!",
+                "modal-message": "感谢您加入我们的等候名单。我们将很快与您联系，提供AI艺术平台的专属访问权限。",
+                "modal-button": "继续探索"
+            }
+        };
+
+        // Function to change language
+        function changeLanguage(language) {
+            document.documentElement.lang = language;
+            const elements = document.querySelectorAll('[id]');
+            
+            elements.forEach(element => {
+                const id = element.id;
+                if (translations[language][id]) {
+                    if (element.placeholder) {
+                        element.placeholder = translations[language][id];
+                    } else {
+                        element.textContent = translations[language][id];
+                    }
+                }
+            });
+        }
+
+        // Initial language setup
+        let currentLanguage = 'en';
+        changeLanguage(currentLanguage);
+
+        // Language selector functionality
+        document.getElementById('language-select').addEventListener('change', function() {
+            currentLanguage = this.value;
+            changeLanguage(currentLanguage);
+        });
+
+        // Form submission
+        document.getElementById('email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            if(email) {
+                console.log('Email submitted:', email);
+                document.getElementById('success-modal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        
+        document.getElementById('email-form-2').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email-2').value;
+            if(email) {
+                console.log('Email submitted:', email);
+                document.getElementById('success-modal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        
+        // Close modal
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        document.getElementById('modal-close-btn').addEventListener('click', function() {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Countdown timer (example)
+        function updateCountdown() {
+            const days = document.querySelector('.countdown-number:nth-child(1)');
+            const hours = document.querySelector('.countdown-number:nth-child(2)');
+            const minutes = document.querySelector('.countdown-number:nth-child(3)');
+            
+            if(Math.random() > 0.7) {
+                const current = parseInt(minutes.textContent);
+                if(current > 0) minutes.textContent = (current - 1).toString().padStart(2, '0');
+                else {
+                    minutes.textContent = '59';
+                    const currentHours = parseInt(hours.textContent);
+                    if(currentHours > 0) hours.textContent = (currentHours - 1).toString().padStart(2, '0');
+                    else {
+                        hours.textContent = '23';
+                        const currentDays = parseInt(days.textContent);
+                        if(currentDays > 0) days.textContent = (currentDays - 1).toString().padStart(2, '0');
+                    }
+                }
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        
+        // Animate elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.art-card, .flex.items-start').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
