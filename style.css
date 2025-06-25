@@ -41,3 +41,11 @@ p {
   background: white;
   color: black;
 }
+
+.lang-btn.active-lang {
+  background: #a855f7;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  box-shadow: 0 0 8px #a855f7;
+}
