@@ -64,8 +64,8 @@
 <body>
         <!-- Language Selector -->
 <div class="fixed top-4 right-4 z-50 space-x-2">
-  <button class="lang-btn active" onclick="changeLanguage('en')">EN</button>
-  <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+<button class="lang-btn" data-lang="en">EN</button>
+<button class="lang-btn" data-lang="ru">RU</button>
 </div>
 
     <!-- #1 ГЛАВНАЯ-->
@@ -572,8 +572,7 @@ function changeLanguage(language) {
   });
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent === language.toUpperCase());
-  });
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === language);
 }
 
         // Language selector functionality
