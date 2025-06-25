@@ -43,8 +43,8 @@ p {
 }
 
 .lang-btn.active-lang {
-  background: #a855f7;
-  color: #fff;
+  background: #a855f7 !important;
+  color: #fff !important;
   border-radius: 0.5rem;
   font-weight: bold;
   box-shadow: 0 0 8px #a855f7;
