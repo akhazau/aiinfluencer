@@ -38,15 +38,14 @@ p {
   transition: all 0.2s ease;
   margin-right: 8px;
 }
-.lang-btn.active {
-  background: white;
-  color: black;
-}
 
 .lang-btn.active-lang {
   background: #a855f7 !important;
   color: #fff !important;
-  font-weight: bold;
-  box-shadow: none;
-  border: 2px solid white;
+  font-weight: bold !important;
+  border: 2px solid white !important;
+  box-shadow: none !important;
+  outline: 2px solid #fff !important;
+  outline-offset: 0 !important;
+  z-index: 1;
 }
