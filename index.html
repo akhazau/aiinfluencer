@@ -107,16 +107,18 @@
         }
         .animated-gradient-btn {
             position: relative;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 0 32px;
             height: 50px;
             min-width: 120px;
             border: none;
             border-radius: 999px;
-            background: linear-gradient(90deg, #6ee7f7, #a855f7, #ec4899, #6ee7f7);
+            background: linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #7c3aed);
             background-size: 300% 300%;
             color: #fff;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 1rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -130,6 +132,7 @@
             position: relative;
             z-index: 2;
             white-space: nowrap;
+            font-weight: 600;
         }
         .animated-gradient-btn::before {
             content: '';
@@ -208,13 +211,13 @@
         .gradient-border-input {
             border: 2px solid transparent;
             border-radius: 999px;
-            background: linear-gradient(#1e293b, #1e293b) padding-box, linear-gradient(90deg, #6ee7f7, #a855f7, #ec4899, #6ee7f7) border-box;
+            background: linear-gradient(#1e293b, #1e293b) padding-box, linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #7c3aed) border-box;
             background-size: 300% 300%;
             animation: gradient-move 16s ease-in-out infinite;
             color: #fff;
             height: 50px;
             min-width: 180px;
-            max-width: 540px;
+            max-width: 700px;
             width: 100%;
             padding: 0 24px;
             font-size: 1.25rem;
@@ -256,7 +259,7 @@
                 <div class="lg:w-1/2 mb-12 lg:mb-0">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                         <span class="gradient-text" id="hero-title-1">AI Influencer 3.0</span><br>
-                        <span id="hero-title-2" class="block text-white font-semibold text-3xl md:text-5xl" style="font-weight:600;">already easy!</span>
+                        <span id="hero-title-2" class="block text-white font-semibold text-3xl md:text-5xl" style="font-weight:600;">Magic Already Easy!</span>
                     </h1>
                     <p class="text-lg text-gray-300 mb-8 max-w-lg" id="hero-subtitle">
                         Join our exclusive waitlist to help validate the market for AI-generated artwork. 
@@ -686,7 +689,7 @@
             en: {
                 // Main section
                 "hero-title-1": "AI Influencer 3.0",
-                "hero-title-2": "already easy!",
+                "hero-title-2": "Magic Already Easy!",
                 "hero-subtitle": "Join our exclusive waitlist to help validate the market for AI-generated artwork. Early subscribers will get special access to our platform and discounts.",
                 "form-title": "Get Early Access",
                 "email-placeholder": "Your email address",
