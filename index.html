@@ -129,6 +129,7 @@
         .animated-gradient-btn span {
             position: relative;
             z-index: 2;
+            white-space: nowrap;
         }
         .animated-gradient-btn::before {
             content: '';
@@ -138,7 +139,7 @@
             background: inherit;
             background-size: 300% 300%;
             z-index: 1;
-            animation: gradient-move 7s ease-in-out infinite;
+            animation: gradient-move 16s ease-in-out infinite;
             opacity: 1;
         }
         .animated-gradient-btn:focus {
@@ -202,7 +203,7 @@
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0">
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        <span class="gradient-text" id="hero-title-1">AI Influencer 3.0</span><br>
+                        <span class="gradient-text" id="hero-title-1">AI INFLUENCER 3.0</span><br>
                         <span id="hero-title-2">Already Easy!</span>
                     </h1>
                     <p class="text-lg text-gray-300 mb-8 max-w-lg" id="hero-subtitle">
@@ -233,7 +234,7 @@
                     <div class="max-w-md">
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
                         <input type="email" required placeholder="Please enter your email address." 
-                               class="form-input flex-grow px-4 py-3 rounded-full text-white bg-transparent border border-cyan-400 text-lg" style="height:50px; min-width: 180px; max-width: 340px;">
+                               class="form-input flex-grow px-4 py-3 rounded-full text-white bg-transparent border border-cyan-400 text-lg" style="height:50px; min-width: 180px; max-width: 480px;">
                         <button type="submit" class="animated-gradient-btn">
                           <span>GET NOW</span>
                         </button>
@@ -281,7 +282,7 @@
     <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="showcase-title">Tired of</span> <span class="gradient-text">plastic AI faces?</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="showcase-title">Tired of those flat,</span> <span class="gradient-text">plastic AI faces?</span></h2>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto" id="showcase-subtitle">
                     These stunning artworks were generated entirely by artificial intelligence. 
                     No human artist was involved in the creation process.
@@ -633,8 +634,8 @@
         const translations = {
             en: {
                 // Main section
-                "hero-title-1": "AI Influencer 3.0",
-                "hero-title-2": "Magic Already Easy!",
+                "hero-title-1": "AI INFLUENCER 3.0",
+                "hero-title-2": "Already Easy!",
                 "hero-subtitle": "Join our exclusive waitlist to help validate the market for AI-generated artwork. Early subscribers will get special access to our platform and discounts.",
                 "form-title": "Get Early Access",
                 "email-placeholder": "Your email address",
@@ -645,7 +646,7 @@
                 "rating-text": "5.0 (300+ reviews)",
                 
                 // Showcase section
-                "showcase-title": "Witness the Power of",
+                "showcase-title": "Tired of those flat, plastic AI faces?",
                 "showcase-subtitle": "These stunning artworks were generated entirely by artificial intelligence. No human artist was involved in the creation process.",
                 "art-title-1": "Cosmic Dreams",
                 "art-title-2": "Neural Nebula",
