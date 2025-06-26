@@ -204,6 +204,29 @@
             color: #cbd5e1;
             opacity: 1;
         }
+
+        .gradient-border-input {
+            border: 2px solid transparent;
+            border-radius: 999px;
+            background: linear-gradient(#1e293b, #1e293b) padding-box, linear-gradient(90deg, #6ee7f7, #a855f7, #ec4899, #6ee7f7) border-box;
+            background-size: 300% 300%;
+            animation: gradient-move 16s ease-in-out infinite;
+            color: #fff;
+            height: 50px;
+            min-width: 180px;
+            max-width: 540px;
+            width: 100%;
+            padding: 0 24px;
+            font-size: 1.25rem;
+        }
+        .gradient-border-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px #a855f755;
+        }
+        .gradient-border-input::placeholder {
+            color: #cbd5e1;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -262,9 +285,7 @@
                     <!-- Email form -->
                     <div class="max-w-md">
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
-                        <div class="gradient-border-wrap flex-grow">
-                          <input type="email" required placeholder="Please enter your email address." name="email">
-                        </div>
+                        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow">
                         <button type="submit" class="animated-gradient-btn">
                           <span>GET NOW</span>
                         </button>
