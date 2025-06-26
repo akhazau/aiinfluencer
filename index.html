@@ -96,11 +96,21 @@
         .floating-purple { animation: float2 7s ease-in-out infinite; }
         .floating-blue { animation: float3 5.5s ease-in-out infinite; }
 
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes glow-breath {
+            0%, 100% { box-shadow: 0 0 24px 8px #a855f7aa, 0 0 40px 12px #6ee7f799; }
+            50% { box-shadow: 0 0 40px 20px #a855f788, 0 0 80px 32px #6ee7f755; }
+        }
         .animated-gradient-btn {
             position: relative;
             display: inline-block;
-            padding: 0 32px;
+            padding: 0 48px;
             height: 56px;
+            min-width: 220px;
             border: none;
             border-radius: 999px;
             background: linear-gradient(90deg, #6ee7f7, #a855f7, #ec4899, #6ee7f7);
@@ -116,6 +126,7 @@
             transition: box-shadow 0.2s;
             z-index: 1;
             vertical-align: middle;
+            animation: glow-breath 4.5s ease-in-out infinite;
         }
         .animated-gradient-btn span {
             position: relative;
@@ -129,13 +140,8 @@
             background: inherit;
             background-size: 300% 300%;
             z-index: 1;
-            animation: gradient-move 3.5s ease-in-out infinite;
+            animation: gradient-move 7s ease-in-out infinite;
             opacity: 1;
-        }
-        @keyframes gradient-move {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         .animated-gradient-btn:focus {
             outline: none;
@@ -200,7 +206,7 @@
                     <div class="max-w-md">
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
                         <input type="email" required placeholder="Please enter your email address." 
-                               class="form-input flex-grow px-4 py-3 rounded-full text-white bg-transparent border border-cyan-400 text-lg" style="height:56px;">
+                               class="form-input flex-grow px-4 py-3 rounded-full text-white bg-transparent border border-cyan-400 text-lg" style="height:56px; min-width: 180px; max-width: 340px;">
                         <button type="submit" class="animated-gradient-btn">
                           <span>GET ACCESS NOW</span>
                         </button>
@@ -598,7 +604,7 @@
             en: {
                 // Main section
                 "hero-title-1": "AI Influencer 3.0",
-                "hero-title-2": "Is This Th?",
+                "hero-title-2": "AI Magic Already Easy !",
                 "hero-subtitle": "Join our exclusive waitlist to help validate the market for AI-generated artwork. Early subscribers will get special access to our platform and discounts.",
                 "form-title": "Get Early Access",
                 "email-placeholder": "Your email address",
