@@ -201,7 +201,7 @@
     <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="showcase-title">Witness the Power of</span> <span class="gradient-text">AI Creativity</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="showcase-title">Tired of</span> <span class="gradient-text">plastic AI faces?</span></h2>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto" id="showcase-subtitle">
                     These stunning artworks were generated entirely by artificial intelligence. 
                     No human artist was involved in the creation process.
@@ -528,6 +528,25 @@
             const savedLang = localStorage.getItem('selectedLang') || 'en';
             changeLanguage(savedLang);
             console.log('Инициализация: выбран язык', savedLang);
+
+            // Слайдер для фото
+            const sliderImages = [
+              'media/av01.png',
+              'media/av02.png',
+              'media/av03.png',
+              'media/av04.png',
+              'media/av05.png',
+              'media/av06.png',
+              'media/av07.png',
+            ];
+            let sliderIndex = 0;
+            const sliderImg = document.querySelector('img[alt="AI Art Example"]');
+            if (sliderImg) {
+              setInterval(() => {
+                sliderIndex = (sliderIndex + 1) % sliderImages.length;
+                sliderImg.src = sliderImages[sliderIndex];
+              }, 4000);
+            }
         });
 
         // Language translations
@@ -716,25 +735,6 @@
         document.querySelectorAll('.art-card, .flex.items-start').forEach(el => {
             observer.observe(el);
         });
-
-        // Слайдер для фото
-        const sliderImages = [
-          'media/av01.png',
-          'media/av02.png',
-          'media/av03.png',
-          'media/av04.png',
-          'media/av05.png',
-          'media/av06.png',
-          'media/av07.png',
-        ];
-        let sliderIndex = 0;
-        const sliderImg = document.querySelector('img[alt="AI Art Example"]');
-        if (sliderImg) {
-          setInterval(() => {
-            sliderIndex = (sliderIndex + 1) % sliderImages.length;
-            sliderImg.src = sliderImages[sliderIndex];
-          }, 4000);
-        }
     </script>
 </body>
 </html>
