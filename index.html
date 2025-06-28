@@ -131,7 +131,9 @@
             animation: gradient-move 4s ease-in-out infinite;
         }
         .animated-gradient-btn:hover {
-            box-shadow: 0 4px 24px 0 #a855f7aa;
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+            transition: box-shadow 0.3s, transform 0.3s;
         }
         .animated-gradient-btn span {
             position: relative;
@@ -330,7 +332,7 @@
         <div class="absolute inset-0">
             <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-purple-500 opacity-20 blur-3xl animate-pulse"></div>
             <div class="absolute top-3/4 right-1/4 w-40 h-40 rounded-full bg-pink-500 opacity-20 blur-3xl animate-pulse delay-300"></div>
-            <div class="absolute bottom-1/4 right-2/3 w-28 h-28 rounded-full bg-indigo-500 opacity-20 blur-3xl animate-pulse delay-700"></div>
+            <div class="absolute bottom-1/4 right-2/3 w-26 h-26 rounded-full bg-indigo-500 opacity-20 blur-3xl animate-pulse delay-700"></div>
         </div>
         
         <div class="container mx-auto px-6 z-10">
@@ -340,7 +342,7 @@
                         <span class="gradient-text" id="hero-title-1">AI Influencer 3.0</span><br>
                         <span id="hero-title-2" class="block text-white font-bold text-3xl md:text-5xl" style="font-weight:800;">ALREADY EASY.</span>
                     </h1>
-                    <p class="text-lg text-gray-300 mb-8 max-w-lg" id="hero-subtitle" style="max-width:44rem;">
+                    <p class="text-lg text-gray-300 mb-6 max-w-lg" id="hero-subtitle" style="max-width:44rem;">
                         AI magic is now available for you! Master the tools in couple of the days. Create your AI Model. Check it how to working the market for AI Instagram Influencers. 
                     </p>
                     
@@ -369,7 +371,7 @@
                         <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
                           <input type="email" required placeholder="Your email address" name="email" style="border-radius:18px; background:#232733; border:none; outline:none; color:#fff; font-size:1.15rem; width: 366px; padding: 0 20px;" />
                         </div>
-                        <button type="submit" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 370px; font-size:1.15rem; margin-bottom:28px; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
+                        <button type="submit" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 370px; font-size:1.15rem; margin-bottom:24px; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
                           <span>GET – </span>
                           <span class="line-through text-gray-200 font-normal">$127</span>
                           <span class="text-yellow-300">$27</span>
