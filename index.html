@@ -124,11 +124,15 @@
             text-transform: uppercase;
             cursor: pointer;
             overflow: hidden;
-            transition: box-shadow 0.2s;
+            transition: box-shadow 0.2s, transform 0.3s;
             z-index: 1;
             vertical-align: middle;
             animation: gradient-move 4s ease-in-out infinite;
             box-shadow: 0 2px 16px 0 #a855f7cc;
+        }
+        .animated-gradient-btn:hover {
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+            transform: translateY(-10px) scale(1.03);
         }
         .animated-gradient-btn span {
             position: relative;
