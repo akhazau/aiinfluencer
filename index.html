@@ -237,31 +237,6 @@
     </style>
 </head>
 <body>
-    <!-- Sticky Top Panel (hidden by default) -->
-    <div id="sticky-panel" class="fixed top-0 left-0 w-full z-50 flex justify-center items-center bg-gradient-to-r from-slate-900/95 to-indigo-900/95 shadow-lg transition-all duration-300 translate-y-[-100%] opacity-0 pointer-events-none" style="height: 110px;">
-      <div class="flex items-center gap-8 px-4 py-4 w-full max-w-2xl">
-        <!-- Таймер -->
-        <div class="flex gap-6" id="sticky-timer">
-          <div class="timer-block px-6 py-2 rounded text-center">
-            <div id="sticky-hours" class="text-3xl font-bold text-pink-500">03</div>
-            <div class="text-xs text-gray-400">hour</div>
-          </div>
-          <div class="timer-block px-6 py-2 rounded text-center">
-            <div id="sticky-minutes" class="text-3xl font-bold text-pink-500">00</div>
-            <div class="text-xs text-gray-400">minute</div>
-          </div>
-          <div class="timer-block px-6 py-2 rounded text-center">
-            <div id="sticky-seconds" class="text-3xl font-bold text-pink-500">00</div>
-            <div class="text-xs text-gray-400">seconds</div>
-          </div>
-        </div>
-        <!-- Кнопка -->
-        <button id="sticky-btn" class="animated-gradient-btn flex-grow max-w-xl justify-center text-2xl h-16" style="min-width:320px; font-size:2rem;">
-          <span style="font-weight:700; letter-spacing:0.02em;"><b>GET – <s style='color:#fff;font-weight:400;'>$127</s> <span style='color:#ffe066;font-weight:700;'>$27</span> now</b></span>
-        </button>
-      </div>
-    </div>
-
     <!-- Языковой переключатель теперь внутри главного контейнера -->
     <div class="container mx-auto px-6 pt-4 flex justify-end">
       <div class="space-x-2" id="language-selector">
@@ -310,7 +285,7 @@
                     </div>
 
                     <!-- Email form -->
-                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300" id="sticky-lead-block">
+                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300 bg-gradient-to-r from-slate-900/95 to-indigo-900/95 shadow-lg rounded-xl" id="sticky-lead-block">
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
                         <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow" id="lead-email">
                         <button type="submit" class="animated-gradient-btn" id="lead-btn">
@@ -894,23 +869,6 @@
                 countEl.textContent = n;
             }
             setInterval(update, 1800);
-        })();
-
-        // Sticky panel logic
-        (function() {
-          const mainBtnBlock = document.querySelector('#lead-form')?.parentElement;
-          const stickyPanel = document.getElementById('sticky-panel');
-          window.addEventListener('scroll', function() {
-            if (!mainBtnBlock) return;
-            const btnBottom = mainBtnBlock.getBoundingClientRect().bottom;
-            if(btnBottom <= 10) {
-              stickyPanel.classList.remove('translate-y-[-100%]','opacity-0','pointer-events-none');
-              stickyPanel.classList.add('translate-y-0','opacity-100');
-            } else {
-              stickyPanel.classList.add('translate-y-[-100%]','opacity-0','pointer-events-none');
-              stickyPanel.classList.remove('translate-y-0','opacity-100');
-            }
-          });
         })();
 
         // Email form logic
