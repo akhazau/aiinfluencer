@@ -658,31 +658,34 @@
         </div>
     </div>
 
-    <!-- Sticky motion lead block -->
-    <div class="max-w-md relative" id="motion-lead-block">
-      <form id="motion-lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center transition-all duration-500">
-        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow transition-all duration-500" id="motion-lead-email">
-        <button type="submit" class="animated-gradient-btn transition-all duration-500" id="motion-lead-btn">
+    <!-- Motion sticky block: только кнопка и таймер -->
+    <div class="max-w-md mx-auto" style="position:relative;">
+      <!-- Email и viewers вне sticky, исчезают при скролле -->
+      <div id="motion-nonsticky">
+        <input type="email" required placeholder="Please enter your email address." class="gradient-border-input w-full mb-2 transition-all duration-500" id="motion-email">
+        <div class="live-viewers transition-all duration-500" id="motion-viewers">
+          <span class="live-dot"></span>
+          <span id="motion-viewers-count">21</span> people currently viewing this page
+        </div>
+      </div>
+      <!-- Sticky-кнопка и таймер -->
+      <div id="motion-sticky-btn-wrap" style="position:relative; height:60px;">
+        <button class="animated-gradient-btn transition-all duration-500 w-full" id="motion-sticky-btn" style="position:static;">
           <span>GET—$27</span>
         </button>
-      </form>
-      <div class="live-viewers transition-all duration-500" id="motion-live-viewers-row">
-        <span class="live-dot"></span>
-        <span id="motion-live-viewers-count">21</span> people currently viewing this page
-      </div>
-      <!-- Таймер, hidden по умолчанию -->
-      <div id="motion-timer" class="flex gap-2 justify-center absolute left-0 right-0 mx-auto" style="top:-60px; opacity:0; pointer-events:none; transition:all 0.5s cubic-bezier(.4,0,.2,1);">
-        <div class="timer-block px-3 py-1 rounded text-center">
-          <div id="motion-hours" class="text-xl font-bold text-pink-500">03</div>
-          <div class="text-xs text-gray-400">h</div>
-        </div>
-        <div class="timer-block px-3 py-1 rounded text-center">
-          <div id="motion-minutes" class="text-xl font-bold text-pink-500">00</div>
-          <div class="text-xs text-gray-400">m</div>
-        </div>
-        <div class="timer-block px-3 py-1 rounded text-center">
-          <div id="motion-seconds" class="text-xl font-bold text-pink-500">00</div>
-          <div class="text-xs text-gray-400">s</div>
+        <div id="motion-timer" class="flex gap-2 justify-center absolute left-0 right-0 mx-auto" style="top:-60px; opacity:0; pointer-events:none; transition:all 0.5s cubic-bezier(.4,0,.2,1);">
+          <div class="timer-block px-3 py-1 rounded text-center">
+            <div id="motion-hours" class="text-xl font-bold text-pink-500">03</div>
+            <div class="text-xs text-gray-400">h</div>
+          </div>
+          <div class="timer-block px-3 py-1 rounded text-center">
+            <div id="motion-minutes" class="text-xl font-bold text-pink-500">00</div>
+            <div class="text-xs text-gray-400">m</div>
+          </div>
+          <div class="timer-block px-3 py-1 rounded text-center">
+            <div id="motion-seconds" class="text-xl font-bold text-pink-500">00</div>
+            <div class="text-xs text-gray-400">s</div>
+          </div>
         </div>
       </div>
     </div>
@@ -917,28 +920,27 @@
 
         // --- Sticky Lead Form: минимальный JS ---
         (function() {
-          const block = document.getElementById('motion-lead-block');
-          const form = document.getElementById('motion-lead-form');
-          const email = document.getElementById('motion-lead-email');
-          const btn = document.getElementById('motion-lead-btn');
-          const viewers = document.getElementById('motion-live-viewers-row');
+          const nonsticky = document.getElementById('motion-nonsticky');
+          const email = document.getElementById('motion-email');
+          const viewers = document.getElementById('motion-viewers');
+          const btnWrap = document.getElementById('motion-sticky-btn-wrap');
+          const btn = document.getElementById('motion-sticky-btn');
           const timer = document.getElementById('motion-timer');
           const footer = document.querySelector('footer');
           let stickyMode = false;
           let stuck = false;
           window.addEventListener('scroll', function() {
-            const rect = block.getBoundingClientRect();
+            const wrapRect = btnWrap.getBoundingClientRect();
             const footerRect = footer.getBoundingClientRect();
-            // stickyMode: кнопка становится sticky, исчезают email/viewers, появляется таймер
-            if(rect.top <= 0 && !stickyMode && footerRect.top > btn.offsetHeight + 32) {
+            // Включаем sticky motion
+            if(wrapRect.top <= 0 && !stickyMode && footerRect.top > btn.offsetHeight + 32) {
               stickyMode = true;
               stuck = false;
-              email.style.transform = 'translateY(-40px)';
-              email.style.opacity = '0';
-              email.style.pointerEvents = 'none';
-              viewers.style.transform = 'translateY(-40px)';
-              viewers.style.opacity = '0';
-              viewers.style.pointerEvents = 'none';
+              // Email и viewers исчезают
+              nonsticky.style.transform = 'translateY(-40px)';
+              nonsticky.style.opacity = '0';
+              nonsticky.style.pointerEvents = 'none';
+              // Кнопка становится fixed и расширяется
               btn.style.position = 'fixed';
               btn.style.top = '16px';
               btn.style.left = '50%';
@@ -947,6 +949,7 @@
               btn.style.minWidth = '420px';
               btn.style.zIndex = '1000';
               btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
+              // Таймер приплывает сверху
               timer.style.top = '70px';
               timer.style.opacity = '1';
               timer.style.pointerEvents = 'auto';
@@ -955,14 +958,14 @@
             else if(stickyMode && footerRect.top <= btn.offsetHeight + 32 && !stuck) {
               stuck = true;
               btn.style.position = 'absolute';
-              btn.style.top = (footer.offsetTop - block.offsetTop - btn.offsetHeight - 32) + 'px';
+              btn.style.top = (footer.offsetTop - btnWrap.offsetTop - btn.offsetHeight - 32) + 'px';
               btn.style.left = '50%';
               btn.style.transform = 'translateX(-60%)';
               btn.style.width = '420px';
               btn.style.minWidth = '420px';
               btn.style.zIndex = '1000';
               btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
-              timer.style.top = (footer.offsetTop - block.offsetTop - btn.offsetHeight - 32 - 54) + 'px';
+              timer.style.top = (footer.offsetTop - btnWrap.offsetTop - btn.offsetHeight - 32 - 54) + 'px';
               timer.style.opacity = '1';
               timer.style.pointerEvents = 'auto';
             }
@@ -982,16 +985,13 @@
               timer.style.pointerEvents = 'auto';
             }
             // возвращаем обычный режим
-            else if(rect.top > 0 && (stickyMode || stuck)) {
+            else if(wrapRect.top > 0 && (stickyMode || stuck)) {
               stickyMode = false;
               stuck = false;
-              email.style.transform = '';
-              email.style.opacity = '';
-              email.style.pointerEvents = '';
-              viewers.style.transform = '';
-              viewers.style.opacity = '';
-              viewers.style.pointerEvents = '';
-              btn.style.position = '';
+              nonsticky.style.transform = '';
+              nonsticky.style.opacity = '';
+              nonsticky.style.pointerEvents = '';
+              btn.style.position = 'static';
               btn.style.top = '';
               btn.style.left = '';
               btn.style.transform = '';
