@@ -950,28 +950,6 @@ function changeLanguage(language) {
             }
             setInterval(update, 1800);
         })();
-
-        // --- Sticky Lead Form: расширенная логика ---
-        (function() {
-          const leadBlock = document.getElementById('sticky-lead-block');
-          const form = document.getElementById('lead-form');
-          const emailInput = document.getElementById('lead-email');
-          const btn = document.getElementById('lead-btn');
-          const timer = document.getElementById('lead-timer');
-
-          function updateSticky() {
-            const rect = leadBlock.getBoundingClientRect();
-            const scrollY = window.scrollY;
-            // Если верх leadBlock дошёл до верха окна — фиксируем
-            if (rect.top <= 0) {
-              leadBlock.classList.add('sticky-mode');
-            } else {
-              leadBlock.classList.remove('sticky-mode');
-            }
-          }
-
-          window.addEventListener('scroll', updateSticky);
-        })();
     </script>
 </body>
 </html>
