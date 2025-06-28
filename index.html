@@ -241,9 +241,9 @@
     <div class="container mx-auto px-6 pt-4 flex justify-end">
       <div class="space-x-2" id="language-selector">
         <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ru">RU</button>
+<button class="lang-btn" data-lang="ru">RU</button>
       </div>
-    </div>
+</div>
 
     <!-- #1 ГЛАВНАЯ-->
     <section class="min-h-screen flex items-center justify-center relative pt-20">
@@ -265,35 +265,51 @@
                         AI magic is now available for you! Master the tools in couple of the days. Create your AI Model. Check it how to working the market for AI Instagram Influencers. 
                     </p>
                     
-                    <!-- Motion sticky block: только кнопка и таймер -->
-                    <div class="max-w-md mx-auto" style="position:relative;">
-                      <!-- Email и viewers вне sticky, исчезают при скролле -->
-                      <div id="motion-nonsticky">
-                        <input type="email" required placeholder="Please enter your email address." class="gradient-border-input w-full mb-2 transition-all duration-500" id="motion-email">
-                        <div class="live-viewers transition-all duration-500" id="motion-viewers">
-                          <span class="live-dot"></span>
-                          <span id="motion-viewers-count">21</span> people currently viewing this page
+                    <!-- Countdown -->
+                    <div class="mb-8" style="display:none;">
+                      <div class="text-gray-400 mb-2">Until the end of the early bird discount:</div>
+                      <div class="flex gap-2">
+                        <div class="timer-block px-4 py-2 rounded text-center">
+                          <div id="hours" class="text-2xl font-bold text-pink-500">03</div>
+                          <div class="text-xs text-gray-400">hour</div>
+                        </div>
+                        <div class="timer-block px-4 py-2 rounded text-center">
+                          <div id="minutes" class="text-2xl font-bold text-pink-500">00</div>
+                          <div class="text-xs text-gray-400">minute</div>
+                        </div>
+                        <div class="timer-block px-4 py-2 rounded text-center">
+                          <div id="seconds" class="text-2xl font-bold text-pink-500">00</div>
+                          <div class="text-xs text-gray-400">seconds</div>
                         </div>
                       </div>
-                      <!-- Sticky-кнопка и таймер -->
-                      <div id="motion-sticky-btn-wrap" style="position:relative; height:60px;">
-                        <button class="animated-gradient-btn transition-all duration-500 w-full" id="motion-sticky-btn" style="position:static;">
-                          <span>GET</span>
-                        </button>
-                        <div id="motion-timer" class="flex gap-2 justify-center absolute left-0 right-0 mx-auto" style="top:-60px; opacity:0; pointer-events:none; transition:all 0.5s cubic-bezier(.4,0,.2,1);">
+                    </div>
+
+                    <!-- Email form (sticky lead block, минимализм) -->
+                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300" id="sticky-lead-block">
+                      <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
+                        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow" id="lead-email">
+                        <button type="submit" class="animated-gradient-btn" id="lead-btn">
+                          <span>GET—$27</span>
+                          </button>
+                        <!-- Таймер, скрыт по умолчанию, будет показан в sticky -->
+                        <div class="flex gap-2 ml-2" id="lead-timer" style="display:none;">
                           <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="motion-hours" class="text-xl font-bold text-pink-500">03</div>
+                            <div id="hours" class="text-xl font-bold text-pink-500">03</div>
                             <div class="text-xs text-gray-400">h</div>
                           </div>
                           <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="motion-minutes" class="text-xl font-bold text-pink-500">00</div>
+                            <div id="minutes" class="text-xl font-bold text-pink-500">00</div>
                             <div class="text-xs text-gray-400">m</div>
                           </div>
                           <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="motion-seconds" class="text-xl font-bold text-pink-500">00</div>
+                            <div id="seconds" class="text-xl font-bold text-pink-500">00</div>
                             <div class="text-xs text-gray-400">s</div>
                           </div>
                         </div>
+                      </form>
+                      <div class="live-viewers" id="live-viewers-row">
+                        <span class="live-dot"></span>
+                        <span id="live-viewers-count">21</span> people currently viewing this page
                       </div>
                     </div>
                     
@@ -770,21 +786,21 @@
         let currentLanguage = 'en';
 
         // Функция смены языка и подсветки
-        function changeLanguage(language) {
-            currentLanguage = language;
-            document.documentElement.lang = language;
+function changeLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
             // Переводим все элементы с id
-            const elements = document.querySelectorAll('[id]');
-            elements.forEach(element => {
-                const id = element.id;
-                if (translations[language][id]) {
+  const elements = document.querySelectorAll('[id]');
+  elements.forEach(element => {
+    const id = element.id;
+    if (translations[language][id]) {
                     if (element.placeholder !== undefined) {
-                        element.placeholder = translations[language][id];
-                    } else {
-                        element.textContent = translations[language][id];
-                    }
-                }
-            });
+        element.placeholder = translations[language][id];
+      } else {
+        element.textContent = translations[language][id];
+      }
+    }
+  });
             // Подсветка кнопки
             document.querySelectorAll('.lang-btn').forEach(btn =>
                 btn.classList.toggle('active', btn.dataset.lang === language)
@@ -872,88 +888,26 @@
 
         // --- Sticky Lead Form: минимальный JS ---
         (function() {
-          const nonsticky = document.getElementById('motion-nonsticky');
-          const email = document.getElementById('motion-email');
-          const viewers = document.getElementById('motion-viewers');
-          const btnWrap = document.getElementById('motion-sticky-btn-wrap');
-          const btn = document.getElementById('motion-sticky-btn');
-          const timer = document.getElementById('motion-timer');
-          const footer = document.querySelector('footer');
+          const leadBlock = document.getElementById('sticky-lead-block');
+          const form = document.getElementById('lead-form');
+          const emailInput = document.getElementById('lead-email');
+          const btn = document.getElementById('lead-btn');
+          const timer = document.getElementById('lead-timer');
           let stickyMode = false;
-          let stuck = false;
           window.addEventListener('scroll', function() {
-            const wrapRect = btnWrap.getBoundingClientRect();
-            const footerRect = footer.getBoundingClientRect();
-            // Включаем sticky motion
-            if(wrapRect.top <= 0 && !stickyMode && footerRect.top > btn.offsetHeight + 32) {
+            const rect = leadBlock.getBoundingClientRect();
+            if(rect.top <= 0 && !stickyMode) {
               stickyMode = true;
-              stuck = false;
-              // Email и viewers исчезают
-              nonsticky.style.transform = 'translateY(-40px)';
-              nonsticky.style.opacity = '0';
-              nonsticky.style.pointerEvents = 'none';
-              // Кнопка становится fixed и расширяется
-              btn.style.position = 'fixed';
-              btn.style.top = '16px';
-              btn.style.left = '50%';
-              btn.style.transform = 'translateX(-60%)';
-              btn.style.width = '420px';
-              btn.style.minWidth = '420px';
-              btn.style.zIndex = '1000';
-              btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
-              // Таймер приплывает сверху
-              timer.style.top = '70px';
-              timer.style.opacity = '1';
-              timer.style.pointerEvents = 'auto';
-            }
-            // стоппер: кнопка доходит до футера, "отлипает" и становится absolute
-            else if(stickyMode && footerRect.top <= btn.offsetHeight + 32 && !stuck) {
-              stuck = true;
-              btn.style.position = 'absolute';
-              btn.style.top = (footer.offsetTop - btnWrap.offsetTop - btn.offsetHeight - 32) + 'px';
-              btn.style.left = '50%';
-              btn.style.transform = 'translateX(-60%)';
-              btn.style.width = '420px';
-              btn.style.minWidth = '420px';
-              btn.style.zIndex = '1000';
-              btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
-              timer.style.top = (footer.offsetTop - btnWrap.offsetTop - btn.offsetHeight - 32 - 54) + 'px';
-              timer.style.opacity = '1';
-              timer.style.pointerEvents = 'auto';
-            }
-            // возвращаем sticky, если футер ушёл вверх
-            else if(stuck && footerRect.top > btn.offsetHeight + 32) {
-              stuck = false;
-              btn.style.position = 'fixed';
-              btn.style.top = '16px';
-              btn.style.left = '50%';
-              btn.style.transform = 'translateX(-60%)';
-              btn.style.width = '420px';
-              btn.style.minWidth = '420px';
-              btn.style.zIndex = '1000';
-              btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
-              timer.style.top = '70px';
-              timer.style.opacity = '1';
-              timer.style.pointerEvents = 'auto';
-            }
-            // возвращаем обычный режим
-            else if(wrapRect.top > 0 && (stickyMode || stuck)) {
+              emailInput.style.display = 'none';
+              timer.style.display = 'flex';
+              btn.style.minWidth = '200px';
+              btn.innerHTML = `<b>GET – <s style='color:#fff;font-weight:400;'>$127</s> <span style='color:#ffe066;font-weight:700;'>$27</span> NOW</b>`;
+            } else if(rect.top > 0 && stickyMode) {
               stickyMode = false;
-              stuck = false;
-              nonsticky.style.transform = '';
-              nonsticky.style.opacity = '';
-              nonsticky.style.pointerEvents = '';
-              btn.style.position = 'static';
-              btn.style.top = '';
-              btn.style.left = '';
-              btn.style.transform = '';
-              btn.style.width = '';
+              emailInput.style.display = '';
+              timer.style.display = 'none';
               btn.style.minWidth = '';
-              btn.style.zIndex = '';
-              btn.style.transition = '';
-              timer.style.top = '-60px';
-              timer.style.opacity = '0';
-              timer.style.pointerEvents = 'none';
+              btn.innerHTML = `<span>GET—$27</span>`;
             }
           });
         })();
