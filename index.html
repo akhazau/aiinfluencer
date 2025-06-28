@@ -658,6 +658,35 @@
         </div>
     </div>
 
+    <!-- Sticky motion lead block -->
+    <div class="max-w-md relative" id="motion-lead-block">
+      <form id="motion-lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center transition-all duration-500">
+        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow transition-all duration-500" id="motion-lead-email">
+        <button type="submit" class="animated-gradient-btn transition-all duration-500" id="motion-lead-btn">
+          <span>GET—$27</span>
+        </button>
+      </form>
+      <div class="live-viewers transition-all duration-500" id="motion-live-viewers-row">
+        <span class="live-dot"></span>
+        <span id="motion-live-viewers-count">21</span> people currently viewing this page
+      </div>
+      <!-- Таймер, hidden по умолчанию -->
+      <div id="motion-timer" class="flex gap-2 justify-center absolute left-0 right-0 mx-auto" style="top:-60px; opacity:0; pointer-events:none; transition:all 0.5s cubic-bezier(.4,0,.2,1);">
+        <div class="timer-block px-3 py-1 rounded text-center">
+          <div id="motion-hours" class="text-xl font-bold text-pink-500">03</div>
+          <div class="text-xs text-gray-400">h</div>
+        </div>
+        <div class="timer-block px-3 py-1 rounded text-center">
+          <div id="motion-minutes" class="text-xl font-bold text-pink-500">00</div>
+          <div class="text-xs text-gray-400">m</div>
+        </div>
+        <div class="timer-block px-3 py-1 rounded text-center">
+          <div id="motion-seconds" class="text-xl font-bold text-pink-500">00</div>
+          <div class="text-xs text-gray-400">s</div>
+        </div>
+      </div>
+    </div>
+
     <script>
         window.addEventListener('error', function(e) {
             console.error('Глобальная ошибка JS:', e.message, e);
@@ -888,26 +917,91 @@
 
         // --- Sticky Lead Form: минимальный JS ---
         (function() {
-          const leadBlock = document.getElementById('sticky-lead-block');
-          const form = document.getElementById('lead-form');
-          const emailInput = document.getElementById('lead-email');
-          const btn = document.getElementById('lead-btn');
-          const timer = document.getElementById('lead-timer');
+          const block = document.getElementById('motion-lead-block');
+          const form = document.getElementById('motion-lead-form');
+          const email = document.getElementById('motion-lead-email');
+          const btn = document.getElementById('motion-lead-btn');
+          const viewers = document.getElementById('motion-live-viewers-row');
+          const timer = document.getElementById('motion-timer');
+          const footer = document.querySelector('footer');
           let stickyMode = false;
+          let stuck = false;
           window.addEventListener('scroll', function() {
-            const rect = leadBlock.getBoundingClientRect();
-            if(rect.top <= 0 && !stickyMode) {
+            const rect = block.getBoundingClientRect();
+            const footerRect = footer.getBoundingClientRect();
+            // stickyMode: кнопка становится sticky, исчезают email/viewers, появляется таймер
+            if(rect.top <= 0 && !stickyMode && footerRect.top > btn.offsetHeight + 32) {
               stickyMode = true;
-              emailInput.style.display = 'none';
-              timer.style.display = 'flex';
-              btn.style.minWidth = '200px';
-              btn.innerHTML = `<b>GET – <s style='color:#fff;font-weight:400;'>$127</s> <span style='color:#ffe066;font-weight:700;'>$27</span> NOW</b>`;
-            } else if(rect.top > 0 && stickyMode) {
+              stuck = false;
+              email.style.transform = 'translateY(-40px)';
+              email.style.opacity = '0';
+              email.style.pointerEvents = 'none';
+              viewers.style.transform = 'translateY(-40px)';
+              viewers.style.opacity = '0';
+              viewers.style.pointerEvents = 'none';
+              btn.style.position = 'fixed';
+              btn.style.top = '16px';
+              btn.style.left = '50%';
+              btn.style.transform = 'translateX(-60%)';
+              btn.style.width = '420px';
+              btn.style.minWidth = '420px';
+              btn.style.zIndex = '1000';
+              btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
+              timer.style.top = '70px';
+              timer.style.opacity = '1';
+              timer.style.pointerEvents = 'auto';
+            }
+            // стоппер: кнопка доходит до футера, "отлипает" и становится absolute
+            else if(stickyMode && footerRect.top <= btn.offsetHeight + 32 && !stuck) {
+              stuck = true;
+              btn.style.position = 'absolute';
+              btn.style.top = (footer.offsetTop - block.offsetTop - btn.offsetHeight - 32) + 'px';
+              btn.style.left = '50%';
+              btn.style.transform = 'translateX(-60%)';
+              btn.style.width = '420px';
+              btn.style.minWidth = '420px';
+              btn.style.zIndex = '1000';
+              btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
+              timer.style.top = (footer.offsetTop - block.offsetTop - btn.offsetHeight - 32 - 54) + 'px';
+              timer.style.opacity = '1';
+              timer.style.pointerEvents = 'auto';
+            }
+            // возвращаем sticky, если футер ушёл вверх
+            else if(stuck && footerRect.top > btn.offsetHeight + 32) {
+              stuck = false;
+              btn.style.position = 'fixed';
+              btn.style.top = '16px';
+              btn.style.left = '50%';
+              btn.style.transform = 'translateX(-60%)';
+              btn.style.width = '420px';
+              btn.style.minWidth = '420px';
+              btn.style.zIndex = '1000';
+              btn.style.transition = 'all 0.5s cubic-bezier(.4,0,.2,1)';
+              timer.style.top = '70px';
+              timer.style.opacity = '1';
+              timer.style.pointerEvents = 'auto';
+            }
+            // возвращаем обычный режим
+            else if(rect.top > 0 && (stickyMode || stuck)) {
               stickyMode = false;
-              emailInput.style.display = '';
-              timer.style.display = 'none';
+              stuck = false;
+              email.style.transform = '';
+              email.style.opacity = '';
+              email.style.pointerEvents = '';
+              viewers.style.transform = '';
+              viewers.style.opacity = '';
+              viewers.style.pointerEvents = '';
+              btn.style.position = '';
+              btn.style.top = '';
+              btn.style.left = '';
+              btn.style.transform = '';
+              btn.style.width = '';
               btn.style.minWidth = '';
-              btn.innerHTML = `<span>GET—$27</span>`;
+              btn.style.zIndex = '';
+              btn.style.transition = '';
+              timer.style.top = '-60px';
+              timer.style.opacity = '0';
+              timer.style.pointerEvents = 'none';
             }
           });
         })();
