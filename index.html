@@ -265,51 +265,35 @@
                         AI magic is now available for you! Master the tools in couple of the days. Create your AI Model. Check it how to working the market for AI Instagram Influencers. 
                     </p>
                     
-                    <!-- Countdown -->
-                    <div class="mb-8" style="display:none;">
-                      <div class="text-gray-400 mb-2">Until the end of the early bird discount:</div>
-                      <div class="flex gap-2">
-                        <div class="timer-block px-4 py-2 rounded text-center">
-                          <div id="hours" class="text-2xl font-bold text-pink-500">03</div>
-                          <div class="text-xs text-gray-400">hour</div>
-                        </div>
-                        <div class="timer-block px-4 py-2 rounded text-center">
-                          <div id="minutes" class="text-2xl font-bold text-pink-500">00</div>
-                          <div class="text-xs text-gray-400">minute</div>
-                        </div>
-                        <div class="timer-block px-4 py-2 rounded text-center">
-                          <div id="seconds" class="text-2xl font-bold text-pink-500">00</div>
-                          <div class="text-xs text-gray-400">seconds</div>
+                    <!-- Motion sticky block: только кнопка и таймер -->
+                    <div class="max-w-md mx-auto" style="position:relative;">
+                      <!-- Email и viewers вне sticky, исчезают при скролле -->
+                      <div id="motion-nonsticky">
+                        <input type="email" required placeholder="Please enter your email address." class="gradient-border-input w-full mb-2 transition-all duration-500" id="motion-email">
+                        <div class="live-viewers transition-all duration-500" id="motion-viewers">
+                          <span class="live-dot"></span>
+                          <span id="motion-viewers-count">21</span> people currently viewing this page
                         </div>
                       </div>
-                    </div>
-
-                    <!-- Email form (sticky lead block, минимализм) -->
-                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300" id="sticky-lead-block">
-                      <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
-                        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow" id="lead-email">
-                        <button type="submit" class="animated-gradient-btn" id="lead-btn">
+                      <!-- Sticky-кнопка и таймер -->
+                      <div id="motion-sticky-btn-wrap" style="position:relative; height:60px;">
+                        <button class="animated-gradient-btn transition-all duration-500 w-full" id="motion-sticky-btn" style="position:static;">
                           <span>GET—$27</span>
                         </button>
-                        <!-- Таймер, скрыт по умолчанию, будет показан в sticky -->
-                        <div class="flex gap-2 ml-2" id="lead-timer" style="display:none;">
+                        <div id="motion-timer" class="flex gap-2 justify-center absolute left-0 right-0 mx-auto" style="top:-60px; opacity:0; pointer-events:none; transition:all 0.5s cubic-bezier(.4,0,.2,1);">
                           <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="hours" class="text-xl font-bold text-pink-500">03</div>
+                            <div id="motion-hours" class="text-xl font-bold text-pink-500">03</div>
                             <div class="text-xs text-gray-400">h</div>
                           </div>
                           <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="minutes" class="text-xl font-bold text-pink-500">00</div>
+                            <div id="motion-minutes" class="text-xl font-bold text-pink-500">00</div>
                             <div class="text-xs text-gray-400">m</div>
                           </div>
                           <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="seconds" class="text-xl font-bold text-pink-500">00</div>
+                            <div id="motion-seconds" class="text-xl font-bold text-pink-500">00</div>
                             <div class="text-xs text-gray-400">s</div>
                           </div>
                         </div>
-                      </form>
-                      <div class="live-viewers" id="live-viewers-row">
-                        <span class="live-dot"></span>
-                        <span id="live-viewers-count">21</span> people currently viewing this page
                       </div>
                     </div>
                     
@@ -656,38 +640,6 @@
                 </button>
             </div>
         </div>
-    </div>
-
-    <!-- Motion sticky block: только кнопка и таймер -->
-    <div class="max-w-md mx-auto" style="position:relative;">
-      <!-- Email и viewers вне sticky, исчезают при скролле -->
-      <div id="motion-nonsticky">
-        <input type="email" required placeholder="Please enter your email address." class="gradient-border-input w-full mb-2 transition-all duration-500" id="motion-email">
-        <div class="live-viewers transition-all duration-500" id="motion-viewers">
-          <span class="live-dot"></span>
-          <span id="motion-viewers-count">21</span> people currently viewing this page
-        </div>
-      </div>
-      <!-- Sticky-кнопка и таймер -->
-      <div id="motion-sticky-btn-wrap" style="position:relative; height:60px;">
-        <button class="animated-gradient-btn transition-all duration-500 w-full" id="motion-sticky-btn" style="position:static;">
-          <span>GET—$27</span>
-        </button>
-        <div id="motion-timer" class="flex gap-2 justify-center absolute left-0 right-0 mx-auto" style="top:-60px; opacity:0; pointer-events:none; transition:all 0.5s cubic-bezier(.4,0,.2,1);">
-          <div class="timer-block px-3 py-1 rounded text-center">
-            <div id="motion-hours" class="text-xl font-bold text-pink-500">03</div>
-            <div class="text-xs text-gray-400">h</div>
-          </div>
-          <div class="timer-block px-3 py-1 rounded text-center">
-            <div id="motion-minutes" class="text-xl font-bold text-pink-500">00</div>
-            <div class="text-xs text-gray-400">m</div>
-          </div>
-          <div class="timer-block px-3 py-1 rounded text-center">
-            <div id="motion-seconds" class="text-xl font-bold text-pink-500">00</div>
-            <div class="text-xs text-gray-400">s</div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <script>
