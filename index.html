@@ -240,11 +240,15 @@
             position: relative;
             z-index: 50;
             transition: none;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
         }
         #sticky-lead-block.sticky-mode {
             position: fixed;
             top: 0 !important;
             left: 0;
+            right: 0;
             width: 100vw;
             background: #181a2a;
             box-shadow: 0 2px 16px 0 #a855f7cc;
@@ -255,6 +259,9 @@
             margin-top: 0 !important;
             z-index: 1002;
             transition: box-shadow 0.4s;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
         }
         #lead-form {
             width: 100%;
@@ -266,14 +273,17 @@
         }
         #lead-btn {
             transition: width 0.5s, left 0.5s, border-radius 0.5s, font-size 0.5s;
-            min-width: 180px;
+            min-width: 160px;
+            max-width: 220px;
+            width: 200px;
             font-size: 1.1rem;
         }
         #sticky-lead-block.sticky-mode #lead-btn {
-            width: 340px;
-            font-size: 1.5rem;
+            width: 200px;
+            font-size: 1.3rem;
             border-radius: 999px;
-            min-width: 220px;
+            min-width: 160px;
+            max-width: 220px;
             text-align: center;
             padding-left: 0;
             padding-right: 0;
