@@ -827,16 +827,6 @@
         changeLanguage(savedLang);
 
         // Form submission
-        document.getElementById('email-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            if(email) {
-                console.log('Email submitted:', email);
-                document.getElementById('success-modal').classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-        
         document.getElementById('email-form-2').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('email-2').value;
