@@ -358,30 +358,18 @@
                       </div>
                     </div>
 
-                    <!-- Email form (sticky lead block, минимализм) -->
-                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300" id="sticky-lead-block">
-                      <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
-                        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow" id="lead-email">
-                        <button type="submit" class="animated-gradient-btn" id="lead-btn">
-                          <span>GET—$27</span>
+                    <!-- Новый sticky lead блок -->
+                    <section id="sticky-lead-block" class="max-w-md bg-[#232733] rounded-2xl p-6 shadow-2xl mb-4">
+                      <form id="lead-form" class="space-y-4">
+                        <input type="email" required placeholder="Your email address" name="email" class="w-full px-4 py-3 rounded-lg bg-transparent border border-gray-400 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition" />
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-extrabold py-3 px-6 rounded-lg text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+                          <span>GET –</span>
+                          <span class="line-through text-gray-200 font-normal">$127</span>
+                          <span class="text-yellow-300">$27</span>
+                          <span class="font-bold text-white">now</span>
                         </button>
-                        <!-- Таймер, скрыт по умолчанию, будет показан в sticky -->
-                        <div class="flex gap-2 ml-2" id="lead-timer" style="display:none;">
-                          <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="hours" class="text-xl font-bold text-pink-500">03</div>
-                            <div class="text-xs text-gray-400">h</div>
-                          </div>
-                          <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="minutes" class="text-xl font-bold text-pink-500">00</div>
-                            <div class="text-xs text-gray-400">m</div>
-                          </div>
-                          <div class="timer-block px-3 py-1 rounded text-center">
-                            <div id="seconds" class="text-xl font-bold text-pink-500">00</div>
-                            <div class="text-xs text-gray-400">s</div>
-                          </div>
-                        </div>
                       </form>
-                    </div>
+                    </section>
                     <!-- live viewers теперь вне sticky блока -->
                     <div class="live-viewers" id="live-viewers-row">
                       <span class="live-dot"></span>
@@ -732,19 +720,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Новый блок формы в стиле "Get Early Access" -->
-    <section id="sticky-lead-block" class="max-w-md mx-auto mt-12 bg-[#232733] rounded-2xl p-6 shadow-2xl">
-      <form id="lead-form" class="space-y-4">
-        <input type="email" required placeholder="Your email address" name="email" class="w-full px-4 py-3 rounded-lg bg-transparent border border-gray-400 text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition" />
-        <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-extrabold py-3 px-6 rounded-lg text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-all">
-          <span>GET –</span>
-          <span class="line-through text-gray-200 font-normal">$127</span>
-          <span class="text-yellow-300">$27</span>
-          <span class="font-bold text-white">now</span>
-        </button>
-      </form>
-    </section>
 
     <script>
         window.addEventListener('error', function(e) {
