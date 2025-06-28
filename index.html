@@ -234,6 +234,53 @@
             color: #cbd5e1;
             opacity: 1;
         }
+
+        /* --- Sticky Lead Block Animations --- */
+        #sticky-lead-block {
+            transition: transform 0.6s cubic-bezier(.4,2,.6,1), opacity 0.5s;
+        }
+        #sticky-lead-block.slide-up {
+            transform: translateY(-120px) scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #lead-btn.sticky {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1002;
+            border-radius: 0 0 32px 32px;
+            min-width: 180px;
+            transition: width 0.5s, left 0.5s, border-radius 0.5s;
+        }
+        #lead-btn.expanded {
+            width: 96vw;
+            left: 2vw;
+            border-radius: 0 0 32px 32px;
+            font-size: 1.5rem;
+            justify-content: flex-start;
+            text-align: left;
+            padding-left: 2.5rem;
+        }
+        #lead-timer.sticky-show {
+            display: flex !important;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background: #181a2a;
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 16px 0 #a855f7cc;
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        #lead-timer {
+            transition: opacity 0.5s;
+        }
     </style>
 </head>
 <body>
@@ -886,7 +933,7 @@ function changeLanguage(language) {
             setInterval(update, 1800);
         })();
 
-        // --- Sticky Lead Form: минимальный JS ---
+        // --- Sticky Lead Form: расширенная логика ---
         (function() {
           const leadBlock = document.getElementById('sticky-lead-block');
           const form = document.getElementById('lead-form');
@@ -894,21 +941,41 @@ function changeLanguage(language) {
           const btn = document.getElementById('lead-btn');
           const timer = document.getElementById('lead-timer');
           let stickyMode = false;
-          window.addEventListener('scroll', function() {
+          let expandedMode = false;
+          let emailSent = false;
+
+          function updateSticky() {
             const rect = leadBlock.getBoundingClientRect();
-            if(rect.top <= 0 && !stickyMode) {
-              stickyMode = true;
-              emailInput.style.display = 'none';
-              timer.style.display = 'flex';
-              btn.style.minWidth = '200px';
-              btn.innerHTML = `<b>GET – <s style='color:#fff;font-weight:400;'>$127</s> <span style='color:#ffe066;font-weight:700;'>$27</span> NOW</b>`;
-            } else if(rect.top > 0 && stickyMode) {
-              stickyMode = false;
-              emailInput.style.display = '';
-              timer.style.display = 'none';
-              btn.style.minWidth = '';
-              btn.innerHTML = `<span>GET—$27</span>`;
+            const scrollY = window.scrollY;
+            // 1. Slide up email input on scroll or after email sent
+            if ((scrollY > 40 || emailSent) && !leadBlock.classList.contains('slide-up')) {
+              leadBlock.classList.add('slide-up');
+              setTimeout(() => {
+                btn.classList.add('sticky');
+                timer.classList.add('sticky-show');
+              }, 400);
+            } else if (scrollY <= 40 && !emailSent && leadBlock.classList.contains('slide-up')) {
+              leadBlock.classList.remove('slide-up');
+              btn.classList.remove('sticky', 'expanded');
+              timer.classList.remove('sticky-show');
             }
+            // 2. Expand button on further scroll
+            if ((scrollY > 180) && btn.classList.contains('sticky')) {
+              btn.classList.add('expanded');
+              btn.innerHTML = '<b>$27</b>';
+            } else if (btn.classList.contains('expanded') && scrollY <= 180) {
+              btn.classList.remove('expanded');
+              btn.innerHTML = '<span>GET—$27</span>';
+            }
+          }
+
+          window.addEventListener('scroll', updateSticky);
+
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            emailSent = true;
+            updateSticky();
+            // Здесь можно добавить ajax/email-отправку
           });
         })();
     </script>
