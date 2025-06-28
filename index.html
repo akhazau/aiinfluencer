@@ -405,14 +405,14 @@
                           <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
                             <input type="email" required placeholder="Your email address" name="email" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#b5b4b4; font-size:1rem; width: 366px; padding: 0 20px;" />
                           </div>
-                          <button id="lead-btn" type="submit" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 100%; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
+                          <button id="main-btn" type="submit" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 100%; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
                             <span>GET – </span>
                             <span class="line-through text-gray-200 font-normal">$127</span>
                             <span class="text-yellow-300">$27</span>
                             <span class="font-bold text-white">NOW</span>
                           </button>
                         </form>
-                        <button id="fixed-lead-btn" class="animated-gradient-btn fixed-sticky-btn text-white font-extrabold" style="border-radius:18px; font-size:1.15rem; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
+                        <button id="fixed-btn" class="animated-gradient-btn text-white font-extrabold" style="display:none; position:fixed; top:8px; left:0; width:370px; border-radius:18px; font-size:1.15rem; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center; z-index:2000;">
                           <span>GET – </span>
                           <span class="line-through text-gray-200 font-normal">$127</span>
                           <span class="text-yellow-300">$27</span>
@@ -886,14 +886,23 @@ function changeLanguage(language) {
             setInterval(update, 1800);
         })();
 
-        // Sticky button Intersection Observer
+        // Sticky button: финальный паттерн
         document.addEventListener('DOMContentLoaded', function() {
-          const btn = document.getElementById('lead-btn');
-          const form = document.getElementById('lead-form');
-          const observer = new IntersectionObserver(([entry]) => {
-            btn.classList.toggle('is-sticky', !entry.isIntersecting);
-          }, {threshold: 0, rootMargin: '-8px 0px 0px 0px'});
-          observer.observe(form);
+          const mainBtn = document.getElementById('main-btn');
+          const fixedBtn = document.getElementById('fixed-btn');
+          function toggleStickyBtn() {
+            const rect = mainBtn.getBoundingClientRect();
+            if(rect.top < 8) {
+              fixedBtn.style.display = 'flex';
+              mainBtn.style.visibility = 'hidden';
+            } else {
+              fixedBtn.style.display = 'none';
+              mainBtn.style.visibility = 'visible';
+            }
+          }
+          window.addEventListener('scroll', toggleStickyBtn);
+          window.addEventListener('resize', toggleStickyBtn);
+          toggleStickyBtn();
         });
     </script>
 </body>
