@@ -310,10 +310,10 @@
                     </div>
 
                     <!-- Email form -->
-                    <div class="max-w-md">
+                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300" id="sticky-lead-block">
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
-                        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow">
-                        <button type="submit" class="animated-gradient-btn">
+                        <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow" id="lead-email">
+                        <button type="submit" class="animated-gradient-btn" id="lead-btn">
                           <span>GET—$27</span>
                         </button>
                       </form>
@@ -909,6 +909,65 @@
             } else {
               stickyPanel.classList.add('translate-y-[-100%]','opacity-0','pointer-events-none');
               stickyPanel.classList.remove('translate-y-0','opacity-100');
+            }
+          });
+        })();
+
+        // Email form logic
+        (function() {
+          const leadBlock = document.getElementById('sticky-lead-block');
+          const form = document.getElementById('lead-form');
+          const emailInput = document.getElementById('lead-email');
+          const btn = document.getElementById('lead-btn');
+          // Таймер для sticky-режима
+          const timerHTML = `
+            <div class="flex gap-6 mr-4" id="sticky-timer">
+              <div class="timer-block px-6 py-2 rounded text-center">
+                <div id="sticky-hours" class="text-3xl font-bold text-pink-500">03</div>
+                <div class="text-xs text-gray-400">hour</div>
+              </div>
+              <div class="timer-block px-6 py-2 rounded text-center">
+                <div id="sticky-minutes" class="text-3xl font-bold text-pink-500">00</div>
+                <div class="text-xs text-gray-400">minute</div>
+              </div>
+              <div class="timer-block px-6 py-2 rounded text-center">
+                <div id="sticky-seconds" class="text-3xl font-bold text-pink-500">00</div>
+                <div class="text-xs text-gray-400">seconds</div>
+              </div>
+            </div>`;
+          let stickyMode = false;
+          function syncStickyTimer() {
+            const h = document.getElementById('hours')?.textContent || '03';
+            const m = document.getElementById('minutes')?.textContent || '00';
+            const s = document.getElementById('seconds')?.textContent || '00';
+            document.getElementById('sticky-hours').textContent = h;
+            document.getElementById('sticky-minutes').textContent = m;
+            document.getElementById('sticky-seconds').textContent = s;
+          }
+          let timerInterval = null;
+          window.addEventListener('scroll', function() {
+            const rect = leadBlock.getBoundingClientRect();
+            if(rect.top <= 0 && !stickyMode) {
+              stickyMode = true;
+              // Заменяем email на таймер
+              emailInput.style.display = 'none';
+              if(!document.getElementById('sticky-timer')) {
+                form.insertAdjacentHTML('afterbegin', timerHTML);
+              }
+              btn.style.minWidth = '320px';
+              btn.style.fontSize = '2rem';
+              btn.innerHTML = `<b>GET – <s style='color:#fff;font-weight:400;'>$127</s> <span style='color:#ffe066;font-weight:700;'>$27</span> NOW</b>`;
+              timerInterval = setInterval(syncStickyTimer, 1000);
+            } else if(rect.top > 0 && stickyMode) {
+              stickyMode = false;
+              // Возвращаем email
+              emailInput.style.display = '';
+              const stickyTimer = document.getElementById('sticky-timer');
+              if(stickyTimer) stickyTimer.remove();
+              btn.style.minWidth = '';
+              btn.style.fontSize = '';
+              btn.innerHTML = `<span>GET—$27</span>`;
+              clearInterval(timerInterval);
             }
           });
         })();
