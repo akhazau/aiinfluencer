@@ -940,21 +940,19 @@ function changeLanguage(language) {
           const emailInput = document.getElementById('lead-email');
           const btn = document.getElementById('lead-btn');
           const timer = document.getElementById('lead-timer');
-          let stickyMode = false;
           let expandedMode = false;
-          let emailSent = false;
 
           function updateSticky() {
             const rect = leadBlock.getBoundingClientRect();
             const scrollY = window.scrollY;
-            // 1. Slide up email input on scroll or after email sent
-            if ((scrollY > 40 || emailSent) && !leadBlock.classList.contains('slide-up')) {
+            // 1. Slide up email input только при скролле
+            if ((scrollY > 40) && !leadBlock.classList.contains('slide-up')) {
               leadBlock.classList.add('slide-up');
               setTimeout(() => {
                 btn.classList.add('sticky');
                 timer.classList.add('sticky-show');
               }, 400);
-            } else if (scrollY <= 40 && !emailSent && leadBlock.classList.contains('slide-up')) {
+            } else if (scrollY <= 40 && leadBlock.classList.contains('slide-up')) {
               leadBlock.classList.remove('slide-up');
               btn.classList.remove('sticky', 'expanded');
               timer.classList.remove('sticky-show');
@@ -970,13 +968,6 @@ function changeLanguage(language) {
           }
 
           window.addEventListener('scroll', updateSticky);
-
-          form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            emailSent = true;
-            updateSticky();
-            // Здесь можно добавить ajax/email-отправку
-          });
         })();
     </script>
 </body>
