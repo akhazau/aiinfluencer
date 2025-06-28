@@ -235,51 +235,67 @@
             opacity: 1;
         }
 
-        /* --- Sticky Lead Block Animations --- */
+        /* --- Sticky Button & Timer --- */
         #sticky-lead-block {
-            transition: transform 0.6s cubic-bezier(.4,2,.6,1), opacity 0.5s;
+            position: relative;
+            z-index: 50;
+            transition: none;
         }
-        #sticky-lead-block.slide-up {
-            transform: translateY(-120px) scale(0.95);
-            opacity: 0;
-            pointer-events: none;
-        }
-        #lead-btn.sticky {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1002;
-            border-radius: 0 0 32px 32px;
-            min-width: 180px;
-            transition: width 0.5s, left 0.5s, border-radius 0.5s;
-        }
-        #lead-btn.expanded {
-            width: 96vw;
-            left: 2vw;
-            border-radius: 0 0 32px 32px;
-            font-size: 1.5rem;
-            justify-content: flex-start;
-            text-align: left;
-            padding-left: 2.5rem;
-        }
-        #lead-timer.sticky-show {
-            display: flex !important;
+        #sticky-lead-block.sticky-mode {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             background: #181a2a;
-            z-index: 1001;
+            box-shadow: 0 2px 16px 0 #a855f7cc;
+            display: flex;
             justify-content: center;
             align-items: center;
             padding: 0.5rem 0;
-            box-shadow: 0 2px 16px 0 #a855f7cc;
-            opacity: 1;
-            transition: opacity 0.5s;
+            z-index: 1002;
+            transition: box-shadow 0.4s;
+        }
+        #lead-form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 0;
+        }
+        #lead-btn {
+            transition: width 0.5s, left 0.5s, border-radius 0.5s, font-size 0.5s;
+            min-width: 180px;
+            font-size: 1.1rem;
+        }
+        #sticky-lead-block.sticky-mode #lead-btn {
+            width: 340px;
+            font-size: 1.5rem;
+            border-radius: 999px;
+            min-width: 220px;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
         }
         #lead-timer {
+            display: none;
+            margin-right: 2rem;
             transition: opacity 0.5s;
+        }
+        #sticky-lead-block.sticky-mode #lead-timer {
+            display: flex !important;
+            opacity: 1;
+        }
+        #lead-email {
+            transition: opacity 0.4s;
+        }
+        #sticky-lead-block.sticky-mode #lead-email {
+            opacity: 0;
+            pointer-events: none;
+            width: 0;
+            min-width: 0;
+            padding: 0;
+            margin: 0;
         }
     </style>
 </head>
@@ -940,30 +956,15 @@ function changeLanguage(language) {
           const emailInput = document.getElementById('lead-email');
           const btn = document.getElementById('lead-btn');
           const timer = document.getElementById('lead-timer');
-          let expandedMode = false;
 
           function updateSticky() {
             const rect = leadBlock.getBoundingClientRect();
             const scrollY = window.scrollY;
-            // 1. Slide up email input только при скролле
-            if ((scrollY > 40) && !leadBlock.classList.contains('slide-up')) {
-              leadBlock.classList.add('slide-up');
-              setTimeout(() => {
-                btn.classList.add('sticky');
-                timer.classList.add('sticky-show');
-              }, 400);
-            } else if (scrollY <= 40 && leadBlock.classList.contains('slide-up')) {
-              leadBlock.classList.remove('slide-up');
-              btn.classList.remove('sticky', 'expanded');
-              timer.classList.remove('sticky-show');
-            }
-            // 2. Expand button on further scroll
-            if ((scrollY > 180) && btn.classList.contains('sticky')) {
-              btn.classList.add('expanded');
-              btn.innerHTML = '<b>$27</b>';
-            } else if (btn.classList.contains('expanded') && scrollY <= 180) {
-              btn.classList.remove('expanded');
-              btn.innerHTML = '<span>GET—$27</span>';
+            // Если верх leadBlock дошёл до верха окна — фиксируем
+            if (rect.top <= 0) {
+              leadBlock.classList.add('sticky-mode');
+            } else {
+              leadBlock.classList.remove('sticky-mode');
             }
           }
 
