@@ -284,33 +284,32 @@
                       </div>
                     </div>
 
-                    <!-- Email form -->
-                    <!-- Для sticky-эффекта: не должно быть overflow:hidden у родителей! -->
-                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300 bg-transparent" id="sticky-lead-block">
+                    <!-- Email form (sticky lead block, минимализм) -->
+                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300" id="sticky-lead-block">
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
                         <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow" id="lead-email">
                         <button type="submit" class="animated-gradient-btn" id="lead-btn">
                           <span>GET—$27</span>
                         </button>
+                        <!-- Таймер, скрыт по умолчанию, будет показан в sticky -->
+                        <div class="flex gap-2 ml-2" id="lead-timer" style="display:none;">
+                          <div class="timer-block px-3 py-1 rounded text-center">
+                            <div id="hours" class="text-xl font-bold text-pink-500">03</div>
+                            <div class="text-xs text-gray-400">h</div>
+                          </div>
+                          <div class="timer-block px-3 py-1 rounded text-center">
+                            <div id="minutes" class="text-xl font-bold text-pink-500">00</div>
+                            <div class="text-xs text-gray-400">m</div>
+                          </div>
+                          <div class="timer-block px-3 py-1 rounded text-center">
+                            <div id="seconds" class="text-xl font-bold text-pink-500">00</div>
+                            <div class="text-xs text-gray-400">s</div>
+                          </div>
+                        </div>
                       </form>
                       <div class="live-viewers" id="live-viewers-row">
                         <span class="live-dot"></span>
                         <span id="live-viewers-count">21</span> people currently viewing this page
-                      </div>
-                      <!-- Sticky timer, hidden по умолчанию -->
-                      <div id="sticky-timer-block" class="w-full flex gap-2 mb-2" style="display:none;">
-                        <div class="timer-block px-4 py-2 rounded text-center">
-                          <div id="sticky-hours" class="text-2xl font-bold text-pink-500">03</div>
-                          <div class="text-xs text-gray-400">hour</div>
-                        </div>
-                        <div class="timer-block px-4 py-2 rounded text-center">
-                          <div id="sticky-minutes" class="text-2xl font-bold text-pink-500">00</div>
-                          <div class="text-xs text-gray-400">minute</div>
-                        </div>
-                        <div class="timer-block px-4 py-2 rounded text-center">
-                          <div id="sticky-seconds" class="text-2xl font-bold text-pink-500">00</div>
-                          <div class="text-xs text-gray-400">seconds</div>
-                        </div>
                       </div>
                     </div>
                     
@@ -887,44 +886,28 @@
             setInterval(update, 1800);
         })();
 
-        // Email form logic
+        // --- Sticky Lead Form: минимальный JS ---
         (function() {
           const leadBlock = document.getElementById('sticky-lead-block');
           const form = document.getElementById('lead-form');
           const emailInput = document.getElementById('lead-email');
           const btn = document.getElementById('lead-btn');
-          const stickyTimerBlock = document.getElementById('sticky-timer-block');
-          // Синхронизация таймера
-          function syncStickyTimer() {
-            const h = document.getElementById('hours')?.textContent || '03';
-            const m = document.getElementById('minutes')?.textContent || '00';
-            const s = document.getElementById('seconds')?.textContent || '00';
-            document.getElementById('sticky-hours').textContent = h;
-            document.getElementById('sticky-minutes').textContent = m;
-            document.getElementById('sticky-seconds').textContent = s;
-          }
+          const timer = document.getElementById('lead-timer');
           let stickyMode = false;
-          let timerInterval = null;
           window.addEventListener('scroll', function() {
             const rect = leadBlock.getBoundingClientRect();
             if(rect.top <= 0 && !stickyMode) {
               stickyMode = true;
-              // Показываем таймер, скрываем email
               emailInput.style.display = 'none';
-              stickyTimerBlock.style.display = 'flex';
-              btn.style.minWidth = '220px';
-              btn.style.fontSize = '1.3rem';
+              timer.style.display = 'flex';
+              btn.style.minWidth = '200px';
               btn.innerHTML = `<b>GET – <s style='color:#fff;font-weight:400;'>$127</s> <span style='color:#ffe066;font-weight:700;'>$27</span> NOW</b>`;
-              timerInterval = setInterval(syncStickyTimer, 1000);
             } else if(rect.top > 0 && stickyMode) {
               stickyMode = false;
-              // Возвращаем email, скрываем таймер
               emailInput.style.display = '';
-              stickyTimerBlock.style.display = 'none';
+              timer.style.display = 'none';
               btn.style.minWidth = '';
-              btn.style.fontSize = '';
               btn.innerHTML = `<span>GET—$27</span>`;
-              clearInterval(timerInterval);
             }
           });
         })();
