@@ -114,7 +114,7 @@
             height: 50px;
             min-width: 120px;
             border: none;
-            border-radius: 18px !important;
+            border-radius: 24px !important;
             background: linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #7c3aed);
             background-size: 400% 400%;
             background-position: center;
@@ -365,12 +365,12 @@
                     </div>
 
                     <!-- Новый sticky lead блок с шириной как у заголовка и одинаковым скруглением -->
-                    <div id="hero-form-wrap" class="mt-8 mx-auto" style="width: 370px;">
-                      <form id="lead-form" class="flex flex-col items-center" style="width: 370px;">
-                        <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
-                          <input type="email" required placeholder="Your email address" name="email" class="w-full" style="height:56px; border-radius:18px; background:#232733; border:none; outline:none; color:#fff; font-size:1.15rem; width: 370px; padding: 0 20px;" />
+                    <div id="hero-form-wrap" class="mt-8 mx-auto">
+                      <form id="lead-form" class="flex flex-col items-center">
+                        <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%;">
+                          <input type="email" required placeholder="Your email address" name="email" class="w-full" style="border-radius:18px; background:#232733; border:none; outline:none; color:#fff; font-size:1.15rem; padding: 0 20px;" />
                         </div>
-                        <button type="submit" class="animated-gradient-btn text-white font-extrabold" style="height:56px; border-radius:18px; width: 370px; font-size:1.15rem; margin-bottom:28px; display:flex; align-items:center; justify-content:center; gap:10px; overflow: hidden;">
+                        <button type="submit" class="animated-gradient-btn text-white font-extrabold w-full" style="border-radius:18px; font-size:1.15rem; margin-bottom:28px; display:flex; align-items:center; justify-content:center; gap:10px; overflow: hidden;">
                           <span>GET – </span>
                           <span class="line-through text-gray-200 font-normal">$127</span>
                           <span class="text-yellow-300">$27</span>
@@ -378,12 +378,12 @@
                         </button>
                       </form>
                     </div>
-                    <div class="live-viewers mx-auto" id="live-viewers-row" style="margin-bottom:20px; width:370px;">
+                    <div class="live-viewers mx-auto" id="live-viewers-row" style="margin-bottom:20px;">
                       <span class="live-dot"></span>
                       <span id="live-viewers-count">21</span> people currently viewing this page
                     </div>
                     
-                    <div class="mt-8 flex items-center space-x-4">
+                    <div class="flex items-center space-x-4">
                         <div class="flex -space-x-2">
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format" class="w-10 h-10 rounded-full border-2 border-white">
                             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format" class="w-10 h-10 rounded-full border-2 border-white">
@@ -482,192 +482,6 @@
         </div>
     </section>
 
-    <!-- #3 КЕМ ТЫ СТАНЕШЬ ПОСЛЕ КУРСА -->
-    <section class="py-20 bg-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6"><span id="value-title">Why</span> <span class="gradient-text">AI Art</span> <span id="matters-text">Matters</span></h2>
-                    <p class="text-lg text-gray-300 mb-8" id="value-description">
-                        AI-generated art is revolutionizing the creative industry by making artistic expression 
-                        accessible to everyone while pushing the boundaries of what's possible.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-purple-500/20 p-3 rounded-lg mr-4">
-                                <i class="fas fa-bolt text-purple-400"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2" id="feature-1-title">Instant Creation</h3>
-                                <p class="text-gray-400" id="feature-1-desc">Generate unique artworks in seconds, not weeks</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-pink-500/20 p-3 rounded-lg mr-4">
-                                <i class="fas fa-infinity text-pink-400"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2" id="feature-2-title">Infinite Possibilities</h3>
-                                <p class="text-gray-400" id="feature-2-desc">Explore styles and concepts beyond human imagination</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-indigo-500/20 p-3 rounded-lg mr-4">
-                                <i class="fas fa-dollar-sign text-indigo-400"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2" id="feature-3-title">Affordable Art</h3>
-                                <p class="text-gray-400" id="feature-3-desc">High-quality artwork at a fraction of traditional prices</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:w-1/2 relative">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&auto=format" alt="AI Art Process" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto border-4 border-white/10">
-                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-pink-500 to-red-500 rounded-2xl -z-10"></div>
-                        <div class="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl -z-10"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- #4 СТОИМОСТЬ И КОЛЛИЧЕСТВО КОНТЕНТА-->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="testimonial-title">What</span> <span class="gradient-text">People Say</span></h2>
-                <p class="text-lg text-gray-300 max-w-2xl mx-auto" id="testimonial-subtitle">
-                    Don't just take our word for it. Here's what early adopters think about AI-generated art.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-semibold">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-400" id="person-1-role">Digital Artist</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4" id="testimonial-1">
-                        "As a traditional artist, I was skeptical at first. But AI art has become an incredible tool in my creative process, helping me explore ideas I never would have considered."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=200&auto=format" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-semibold">Michael Chen</h4>
-                            <p class="text-sm text-gray-400" id="person-2-role">Art Collector</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4" id="testimonial-2">
-                        "The AI-generated pieces in my collection consistently get the most attention from visitors. There's something uniquely captivating about them."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-semibold">Emma Rodriguez</h4>
-                            <p class="text-sm text-gray-400" id="person-3-role">Interior Designer</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-300 mb-4" id="testimonial-3">
-                        "My clients love the unique AI art pieces I incorporate into their spaces. The ability to generate artwork that perfectly matches their style is revolutionary."
-                    </p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 relative overflow-hidden">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-full opacity-20">
-                <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-500 blur-3xl animate-pulse"></div>
-                <div class="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-pink-500 blur-3xl animate-pulse delay-300"></div>
-            </div>
-        </div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6"><span id="cta-title">Ready to Explore the</span> <span class="gradient-text">Future of Art</span>?</h2>
-                <p class="text-xl text-gray-300 mb-8" id="cta-subtitle">
-                    Join our waitlist today and be among the first to experience the next evolution in artistic creation.
-                </p>
-                
-                <!-- Countdown Timer -->
-                <div class="flex justify-center mb-8">
-                    <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 flex space-x-4">
-                        <div class="text-center">
-                            <div class="countdown-number bg-purple-600 text-white font-bold rounded-lg py-2 px-3 text-xl">07</div>
-                            <div class="text-xs mt-1 text-gray-300" id="days-label">Days</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="countdown-number bg-pink-600 text-white font-bold rounded-lg py-2 px-3 text-xl">23</div>
-                            <div class="text-xs mt-1 text-gray-300" id="hours-label">Hours</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="countdown-number bg-indigo-600 text-white font-bold rounded-lg py-2 px-3 text-xl">45</div>
-                            <div class="text-xs mt-1 text-gray-300" id="minutes-label">Minutes</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Email Collection Form -->
-                <div class="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-xl p-6 glow">
-                    <h3 class="text-xl font-semibold mb-4" id="limited-access">Limited Early Access</h3>
-                    <form id="email-form-2" class="space-y-4">
-                        <div>
-                            <input type="email" id="email-2" placeholder="Your email address" 
-                                class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 input-glow focus:outline-none focus:border-purple-400 transition">
-                        </div>
-                        <button type="submit" 
-                            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-all transform hover:scale-[1.02]">
-                            <span id="join-now">Join Waitlist Now</span>
-                        </button>
-                    </form>
-                    <p class="text-xs text-gray-400 mt-3" id="spots-left">Only 247 spots remaining</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="bg-slate-900 py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
