@@ -881,7 +881,8 @@ function changeLanguage(language) {
           function checkStickyBtn() {
             var rect = mainBtn.getBoundingClientRect();
             var heroRect = heroSection.getBoundingClientRect();
-            if(rect.bottom < 16 && heroRect.bottom > 0) {
+            console.log('mainBtn rect:', rect, 'heroRect:', heroRect);
+            if(rect.top < 8 && heroRect.bottom > 0) {
               fixedBtn.classList.add('visible');
             } else {
               fixedBtn.classList.remove('visible');
