@@ -149,6 +149,10 @@
             outline: none;
             box-shadow: 0 0 32px 12px #a855f7cc, 0 0 60px 20px #6ee7f799;
         }
+        .animated-gradient-btn:hover, #sticky-btn:hover {
+            box-shadow: 0 0 32px 8px #a855f7cc, 0 0 80px 24px #a855f755;
+            transition: box-shadow 0.3s;
+        }
 
         @keyframes pulse-zoom {
             0%, 100% { transform: scale(1); }
@@ -233,17 +237,38 @@
     </style>
 </head>
 <body>
-        <!-- Language Selector (новый вариант, старый закомментирован ниже) -->
-<div class="fixed top-4 right-4 z-50 space-x-2" id="language-selector">
-  <button class="lang-btn active" data-lang="en">EN</button>
-  <button class="lang-btn" data-lang="ru">RU</button>
-</div>
-<!--
-<div class="fixed top-4 right-4 z-50 space-x-2" id="language-selector">
-  <button class="lang-btn" data-lang="en">EN</button>
-  <button class="lang-btn" data-lang="ru">RU</button>
-</div>
--->
+    <!-- Sticky Top Panel (hidden by default) -->
+    <div id="sticky-panel" class="fixed top-0 left-0 w-full z-50 flex justify-center items-center bg-gradient-to-r from-slate-900/95 to-indigo-900/95 shadow-lg transition-all duration-300 translate-y-[-100%] opacity-0 pointer-events-none" style="height: 84px;">
+      <div class="flex items-center gap-6 px-4 py-2 w-full max-w-3xl">
+        <!-- Таймер -->
+        <div class="flex gap-2" id="sticky-timer">
+          <div class="timer-block px-4 py-2 rounded text-center">
+            <div id="sticky-hours" class="text-2xl font-bold text-pink-500">03</div>
+            <div class="text-xs text-gray-400">hour</div>
+          </div>
+          <div class="timer-block px-4 py-2 rounded text-center">
+            <div id="sticky-minutes" class="text-2xl font-bold text-pink-500">00</div>
+            <div class="text-xs text-gray-400">minute</div>
+          </div>
+          <div class="timer-block px-4 py-2 rounded text-center">
+            <div id="sticky-seconds" class="text-2xl font-bold text-pink-500">00</div>
+            <div class="text-xs text-gray-400">seconds</div>
+          </div>
+        </div>
+        <!-- Кнопка -->
+        <button id="sticky-btn" class="animated-gradient-btn flex-grow max-w-xl justify-center text-2xl h-16" style="min-width:260px;">
+          <span><b>GET</b> <s style='color:#fff;font-weight:400;'>$127</s> <span style='color:#ffe066;font-weight:700;'>$27</span> <b>now</b></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Языковой переключатель теперь внутри главного контейнера -->
+    <div class="container mx-auto px-6 pt-4 flex justify-end">
+      <div class="space-x-2" id="language-selector">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+      </div>
+    </div>
 
     <!-- #1 ГЛАВНАЯ-->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
@@ -262,7 +287,7 @@
                         <span id="hero-title-2" class="block text-white font-bold text-3xl md:text-5xl" style="font-weight:800;">ALREADY EASY.</span>
                     </h1>
                     <p class="text-lg text-gray-300 mb-8 max-w-lg" id="hero-subtitle">
-                        AI magic is now available for you!  Master the tools in couple of the days. Check ithow to working the market for AI-generated Influencres. 
+                        AI magic is now available for you! Master the tools in couple of the days. Create your AI Model. Check it how to working the market for AI Instagram Influencers. 
                     </p>
                     
                     <!-- Countdown -->
@@ -289,7 +314,7 @@
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
                         <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow">
                         <button type="submit" class="animated-gradient-btn">
-                          <span>GET — $27</span>
+                          <span>GET—$27</span>
                         </button>
                       </form>
                       <div class="live-viewers" id="live-viewers-row">
@@ -689,17 +714,17 @@
                 // Main section
                 "hero-title-1": "AI Influencer 3.0",
                 "hero-title-2": "ALREADY EASY.",
-                "hero-subtitle": "Join our exclusive waitlist to help validate the market for AI-generated artwork. Early subscribers will get special access to our platform and discounts.",
+                "hero-subtitle": "AI magic is now available for you! Master the tools in couple of the days. Create your AI Model. Check it how to working the market for AI Instagram Influencers. ",
                 "form-title": "Get Early Access",
                 "email-placeholder": "Your email address",
                 "join-button": "Join Waitlist",
                 "privacy-text": "We respect your privacy. Unsubscribe at any time.",
                 "join-text": "Join",
-                "members-text": "artists and collectors",
-                "rating-text": "5.0 (300+ reviews)",
+                "members-text": "digital creators",
+                "rating-text": "4.9 (300+ reviews)",
                 
                 // Showcase section
-                "showcase-title": "Tired of those flat, plastic AI faces?",
+                "showcase-title": "Tired of those flat,",
                 "showcase-subtitle": "These stunning artworks were generated entirely by artificial intelligence. No human artist was involved in the creation process.",
                 "art-title-1": "Cosmic Dreams",
                 "art-title-2": "Neural Nebula",
@@ -879,6 +904,38 @@
                 countEl.textContent = n;
             }
             setInterval(update, 1800);
+        })();
+
+        // Sticky panel logic
+        (function() {
+          const stickyPanel = document.getElementById('sticky-panel');
+          const heroSection = document.querySelector('section.min-h-screen');
+          const stickyTimer = {
+            hours: document.getElementById('sticky-hours'),
+            minutes: document.getElementById('sticky-minutes'),
+            seconds: document.getElementById('sticky-seconds')
+          };
+          // Синхронизируем таймер с главным (если нужно)
+          function syncStickyTimer() {
+            const h = document.getElementById('hours').textContent;
+            const m = document.getElementById('minutes').textContent;
+            const s = document.getElementById('seconds').textContent;
+            stickyTimer.hours.textContent = h;
+            stickyTimer.minutes.textContent = m;
+            stickyTimer.seconds.textContent = s;
+          }
+          setInterval(syncStickyTimer, 1000);
+          // Показ/скрытие панели при скролле
+          window.addEventListener('scroll', function() {
+            const trigger = heroSection.offsetHeight - 80;
+            if(window.scrollY > trigger) {
+              stickyPanel.classList.remove('translate-y-[-100%]','opacity-0','pointer-events-none');
+              stickyPanel.classList.add('translate-y-0','opacity-100');
+            } else {
+              stickyPanel.classList.add('translate-y-[-100%]','opacity-0','pointer-events-none');
+              stickyPanel.classList.remove('translate-y-0','opacity-100');
+            }
+          });
         })();
     </script>
 </body>
