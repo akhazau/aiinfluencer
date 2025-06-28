@@ -928,7 +928,8 @@
           // Показ/скрытие панели при скролле
           window.addEventListener('scroll', function() {
             const heroBottom = heroSection.getBoundingClientRect().bottom;
-            if(heroBottom <= 0) {
+            const offset = 20; // px, чтобы панель появлялась чуть раньше
+            if(heroBottom <= offset) {
               stickyPanel.classList.remove('translate-y-[-100%]','opacity-0','pointer-events-none');
               stickyPanel.classList.add('translate-y-0','opacity-100');
             } else {
