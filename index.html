@@ -898,11 +898,12 @@
 
         // Sticky panel logic
         (function() {
+          const mainBtnBlock = document.querySelector('#lead-form')?.parentElement;
           const stickyPanel = document.getElementById('sticky-panel');
-          const heroSection = document.querySelector('section.min-h-screen');
           window.addEventListener('scroll', function() {
-            const heroBottom = heroSection.getBoundingClientRect().bottom;
-            if(heroBottom <= 10) {
+            if (!mainBtnBlock) return;
+            const btnBottom = mainBtnBlock.getBoundingClientRect().bottom;
+            if(btnBottom <= 10) {
               stickyPanel.classList.remove('translate-y-[-100%]','opacity-0','pointer-events-none');
               stickyPanel.classList.add('translate-y-0','opacity-100');
             } else {
