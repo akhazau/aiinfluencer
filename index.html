@@ -910,26 +910,9 @@
         (function() {
           const stickyPanel = document.getElementById('sticky-panel');
           const heroSection = document.querySelector('section.min-h-screen');
-          const stickyTimer = {
-            hours: document.getElementById('sticky-hours'),
-            minutes: document.getElementById('sticky-minutes'),
-            seconds: document.getElementById('sticky-seconds')
-          };
-          // Синхронизируем таймер с главным (если нужно)
-          function syncStickyTimer() {
-            const h = document.getElementById('hours').textContent;
-            const m = document.getElementById('minutes').textContent;
-            const s = document.getElementById('seconds').textContent;
-            stickyTimer.hours.textContent = h;
-            stickyTimer.minutes.textContent = m;
-            stickyTimer.seconds.textContent = s;
-          }
-          setInterval(syncStickyTimer, 1000);
-          // Показ/скрытие панели при скролле
           window.addEventListener('scroll', function() {
             const heroBottom = heroSection.getBoundingClientRect().bottom;
-            const offset = 20; // px, чтобы панель появлялась чуть раньше
-            if(heroBottom <= offset) {
+            if(heroBottom <= 10) {
               stickyPanel.classList.remove('translate-y-[-100%]','opacity-0','pointer-events-none');
               stickyPanel.classList.add('translate-y-0','opacity-100');
             } else {
