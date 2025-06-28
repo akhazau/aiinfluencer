@@ -335,6 +335,19 @@
                 left: 1vw;
             }
         }
+        .is-sticky {
+            position: fixed !important;
+            top: 8px;
+            left: 0;
+            width: 370px;
+            z-index: 2000;
+        }
+        @media (max-width: 500px) {
+            .is-sticky {
+                width: 98vw;
+                left: 1vw;
+            }
+        }
     </style>
 </head>
 <body>
@@ -392,7 +405,7 @@
                           <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
                             <input type="email" required placeholder="Your email address" name="email" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#b5b4b4; font-size:1rem; width: 366px; padding: 0 20px;" />
                           </div>
-                          <button id="main-lead-btn" type="submit" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 100%; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
+                          <button id="lead-btn" type="submit" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 100%; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
                             <span>GET – </span>
                             <span class="line-through text-gray-200 font-normal">$127</span>
                             <span class="text-yellow-300">$27</span>
@@ -873,24 +886,14 @@ function changeLanguage(language) {
             setInterval(update, 1800);
         })();
 
-        // Sticky button show/hide logic
+        // Sticky button Intersection Observer
         document.addEventListener('DOMContentLoaded', function() {
-          var mainBtn = document.getElementById('main-lead-btn');
-          var fixedBtn = document.getElementById('fixed-lead-btn');
-          var heroSection = document.getElementById('hero-section');
-          function checkStickyBtn() {
-            var rect = mainBtn.getBoundingClientRect();
-            var heroRect = heroSection.getBoundingClientRect();
-            console.log('mainBtn rect:', rect, 'heroRect:', heroRect);
-            if(rect.top < 8 && heroRect.bottom > 0) {
-              fixedBtn.classList.add('visible');
-            } else {
-              fixedBtn.classList.remove('visible');
-            }
-          }
-          window.addEventListener('scroll', checkStickyBtn);
-          window.addEventListener('resize', checkStickyBtn);
-          checkStickyBtn();
+          const btn = document.getElementById('lead-btn');
+          const form = document.getElementById('lead-form');
+          const observer = new IntersectionObserver(([entry]) => {
+            btn.classList.toggle('is-sticky', !entry.isIntersecting);
+          }, {threshold: 0, rootMargin: '-8px 0px 0px 0px'});
+          observer.observe(form);
         });
     </script>
 </body>
