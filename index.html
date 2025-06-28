@@ -285,7 +285,8 @@
                     </div>
 
                     <!-- Email form -->
-                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300 bg-gradient-to-r from-slate-900/95 to-indigo-900/95 shadow-lg rounded-xl" id="sticky-lead-block">
+                    <!-- Для sticky-эффекта: не должно быть overflow:hidden у родителей! -->
+                    <div class="max-w-md sticky top-0 z-50 transition-all duration-300" id="sticky-lead-block">
                       <form id="lead-form" class="mb-4 flex flex-col sm:flex-row gap-2 items-center">
                         <input type="email" required placeholder="Please enter your email address." name="email" class="gradient-border-input flex-grow" id="lead-email">
                         <button type="submit" class="animated-gradient-btn" id="lead-btn">
