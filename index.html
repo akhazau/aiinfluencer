@@ -127,6 +127,8 @@
             transition: box-shadow 0.2s;
             z-index: 1;
             vertical-align: middle;
+            animation: gradient-move 4s ease-in-out infinite;
+            box-shadow: 0 2px 16px 0 #a855f7cc;
         }
         .animated-gradient-btn span {
             position: relative;
@@ -364,7 +366,7 @@
                         <div class="gradient-border-wrap" style="padding:2px; border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%;">
                           <input type="email" required placeholder="Your email address" name="email" class="w-full px-5" style="height:56px; border-radius:18px; background:#232733; border:none; outline:none; color:#fff; font-size:1.15rem;" />
                         </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-extrabold" style="height:56px; border-radius:18px; font-size:1.15rem; margin-top:16px; display:flex; align-items:center; justify-content:center; gap:10px;">
+                        <button type="submit" class="w-full animated-gradient-btn text-white font-extrabold" style="height:56px; border-radius:18px; font-size:1.15rem; margin-top:8px; display:flex; align-items:center; justify-content:center; gap:10px;">
                           <span>GET –</span>
                           <span class="line-through text-gray-200 font-normal">$127</span>
                           <span class="text-yellow-300">$27</span>
