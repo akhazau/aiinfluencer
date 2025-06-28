@@ -150,7 +150,7 @@
             box-shadow: 0 0 32px 12px #a855f7cc, 0 0 60px 20px #6ee7f799;
         }
         .animated-gradient-btn:hover, #sticky-btn:hover {
-            box-shadow: 0 0 32px 8px #a855f7cc, 0 0 80px 24px #a855f755;
+            box-shadow: 0 25px 50px -12px #a855f7, 0 0 40px 8px #ec4899;
             transition: box-shadow 0.3s;
         }
 
@@ -291,7 +291,7 @@
                     </p>
                     
                     <!-- Countdown -->
-                    <div class="mb-8 hidden">
+                    <div class="mb-8" style="display:none;">
                       <div class="text-gray-400 mb-2">Until the end of the early bird discount:</div>
                       <div class="flex gap-2">
                         <div class="timer-block px-4 py-2 rounded text-center">
@@ -360,7 +360,7 @@
     <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="showcase-title">Tired of those flat,</span> <span class="gradient-text">plastic AI faces?</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span id="showcase-title">Tired of</span> <span class="gradient-text">plastic AI faces?</span></h2>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto" id="showcase-subtitle">
                     These stunning artworks were generated entirely by artificial intelligence. 
                     No human artist was involved in the creation process.
@@ -724,7 +724,7 @@
                 "rating-text": "4.9 (300+ reviews)",
                 
                 // Showcase section
-                "showcase-title": "Tired of those flat,",
+                "showcase-title": "Tired of",
                 "showcase-subtitle": "These stunning artworks were generated entirely by artificial intelligence. No human artist was involved in the creation process.",
                 "art-title-1": "Cosmic Dreams",
                 "art-title-2": "Neural Nebula",
@@ -927,8 +927,8 @@
           setInterval(syncStickyTimer, 1000);
           // Показ/скрытие панели при скролле
           window.addEventListener('scroll', function() {
-            const trigger = heroSection.offsetHeight - 80;
-            if(window.scrollY > trigger) {
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            if(heroBottom <= 0) {
               stickyPanel.classList.remove('translate-y-[-100%]','opacity-0','pointer-events-none');
               stickyPanel.classList.add('translate-y-0','opacity-100');
             } else {
