@@ -114,7 +114,7 @@
             height: 50px;
             min-width: 120px;
             border: none;
-            border-radius: 999px;
+            border-radius: 18px !important;
             background: linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #7c3aed);
             background-size: 300% 300%;
             color: #fff;
@@ -361,12 +361,12 @@
                     </div>
 
                     <!-- Новый sticky lead блок с шириной как у заголовка и одинаковым скруглением -->
-                    <div id="hero-form-wrap" class="mt-8" style="width: 420px;">
+                    <div id="hero-form-wrap" class="mt-8" style="width: 420px; margin-left:0;">
                       <form id="lead-form" class="flex flex-col" style="width: 420px;">
                         <div class="gradient-border-wrap" style="padding:2px; border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%;">
                           <input type="email" required placeholder="Your email address" name="email" class="w-full px-5" style="height:56px; border-radius:18px; background:#232733; border:none; outline:none; color:#fff; font-size:1.15rem;" />
                         </div>
-                        <button type="submit" class="w-full animated-gradient-btn text-white font-extrabold" style="height:56px; border-radius:18px; font-size:1.15rem; margin-top:8px; display:flex; align-items:center; justify-content:center; gap:10px;">
+                        <button type="submit" class="w-full animated-gradient-btn text-white font-extrabold" style="height:56px; border-radius:18px; font-size:1.15rem; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:10px;">
                           <span>GET –</span>
                           <span class="line-through text-gray-200 font-normal">$127</span>
                           <span class="text-yellow-300">$27</span>
@@ -374,11 +374,12 @@
                         </button>
                       </form>
                     </div>
-                    <!-- live viewers теперь вне sticky блока -->
-                    <div class="live-viewers" id="live-viewers-row">
+                    <div style="height: 20px;"></div>
+                    <div class="live-viewers" id="live-viewers-row" style="margin-top:0; margin-bottom:12px;">
                       <span class="live-dot"></span>
                       <span id="live-viewers-count">21</span> people currently viewing this page
                     </div>
+                    <div style="height: 20px;"></div>
                     
                     <div class="mt-8 flex items-center space-x-4">
                         <div class="flex -space-x-2">
