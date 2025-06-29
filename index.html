@@ -378,16 +378,13 @@
         #sticky-banner .banner-btn {
             width: 370px;
             height: 56px;
-            margin-left: 40px;
+            margin-left: 32px;
             border-radius: 18px;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.15rem;
             gap: 10px;
-            overflow: hidden;
-            background-size: 120% 120%;
-            background-position: center;
         }
         #banner-timer {
             position: absolute;
@@ -399,27 +396,30 @@
             gap: 32px;
         }
         #banner-timer .timer-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 64px;
+            background: none;
+            min-width: 0;
+            padding: 0;
         }
         #banner-timer .timer-value {
-            background: linear-gradient(90deg,#ec4899,#a855f7);
-            color: #fff;
+            background: none;
+            color: #ff4fa3;
             font-weight: bold;
-            font-size: 1.6rem;
-            border-radius: 12px;
-            padding: 8px 16px;
-            min-width: 44px;
+            font-size: 2.2rem;
+            border-radius: 0;
+            padding: 0;
+            min-width: 0;
             text-align: center;
             margin-bottom: 2px;
+            line-height: 1;
         }
         #banner-timer .timer-label {
             color: #b5b4b4;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 400;
             letter-spacing: 0.04em;
+            background: none;
+            padding: 0;
+            margin: 0;
         }
         @media (max-width: 600px) {
             #sticky-banner .banner-inner {
