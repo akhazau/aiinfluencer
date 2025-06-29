@@ -401,23 +401,16 @@
                     <!-- Новый sticky lead блок с шириной как у заголовка и одинаковым скруглением -->
                     <div id="hero-form-wrap">
                       <div style="width: 370px;">
-                        <form id="lead-form" style="display: flex; flex-direction: column; gap: 20px; width: 370px;">
+                        <form id="lead-form" style="width:370px; margin-bottom: 0;">
                           <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
                             <input type="email" required placeholder="Your email address" name="email" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#b5b4b4; font-size:1rem; width: 366px; padding: 0 20px;" />
                           </div>
-                          <button id="main-btn" type="submit" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 100%; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
-                            <span>GET – </span>
-                            <span class="line-through text-gray-200 font-normal">$127</span>
-                            <span class="text-yellow-300">$27</span>
-                            <span class="font-bold text-white">NOW</span>
-                          </button>
                         </form>
-                        <button id="fixed-btn" class="animated-gradient-btn text-white font-extrabold" style="display:none;position:fixed;top:8px;left:80px;width:370px;border-radius:18px;font-size:1.15rem;align-items:center;gap:10px;overflow:hidden;background-size:120% 120%;background-position:center;z-index:2000;">
-                          <span>GET – </span>
-                          <span class="line-through text-gray-200 font-normal">$127</span>
-                          <span class="text-yellow-300">$27</span>
-                          <span class="font-bold text-white">NOW</span>
-                        </button>
+                        <div style="width:370px;">
+                          <button class="sticky top-4 z-40 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 px-6 rounded-full shadow-lg w-full" style="width: 100%;">
+                            GET – $27 NOW
+                          </button>
+                        </div>
                         <div class="live-viewers mx-auto" id="live-viewers-row" style="margin-bottom:20px; margin-left: 24px;">
                           <span class="live-dot"></span>
                           <span id="live-viewers-count">21</span> people currently viewing this page
