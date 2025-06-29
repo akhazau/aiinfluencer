@@ -400,12 +400,38 @@
 
                     <!-- Новый sticky lead блок с шириной как у заголовка и одинаковым скруглением -->
                     <div id="hero-form-wrap">
-                      <div style="width: 370px;">
-                        <div style="display: grid; gap: 20px;">
-                          <input type="email" required placeholder="Your email address" name="email" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#b5b4b4; font-size:1rem; width: 366px; padding: 0 20px;" />
+                      <div style="width:370px;">
+                        <form id="lead-form" style="display: flex; flex-direction: column; gap: 20px; width: 370px;">
+                          <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
+                            <input type="email" required placeholder="Your email address" name="email" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#b5b4b4; font-size:1rem; width: 366px; padding: 0 20px;" />
+                          </div>
                           <button id="main-btn" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 px-6 rounded-full shadow-lg w-full" style="width: 100%;">
                             GET – $27 NOW
                           </button>
+                        </form>
+                        <div class="live-viewers mx-auto" id="live-viewers-row" style="margin-bottom:20px; margin-left: 24px;">
+                          <span class="live-dot"></span>
+                          <span id="live-viewers-count">21</span> people currently viewing this page
+                        </div>
+                        <div class="flex items-center space-x-4">
+                          <div class="flex -space-x-2">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200&auto=format" class="w-10 h-10 rounded-full border-2 border-white">
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium"><span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">digital creators already inside</span></p>
+                            <div class="flex items-center">
+                              <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </div>
+                              <span class="text-xs ml-1" id="rating-text">4.9 (300+ reviews)</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -418,11 +444,6 @@
                         </button>
                         <div id="timer" style="color:#ffe066; font-weight:bold; font-size:1.1rem;">00:59:12</div>
                       </div>
-                    </div>
-                    
-                    <div class="live-viewers mx-auto" id="live-viewers-row" style="margin-bottom:20px; margin-left: 24px;">
-                      <span class="live-dot"></span>
-                      <span id="live-viewers-count">21</span> people currently viewing this page
                     </div>
                 </div>
                 
@@ -634,6 +655,16 @@
                 </button>
             </div>
         </div>
+    </div>
+
+    <!-- Sticky-баннер (шторка) -->
+    <div id="sticky-banner" style="display:none; position:fixed; top:0; left:0; width:100%; z-index:3000; background:#181a2a; box-shadow:0 2px 16px #a855f7cc;">
+      <div style="max-width:370px; margin:0 auto; display:flex; align-items:center; gap:16px; padding:8px 0; justify-content:center;">
+        <button class="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-2 px-5 rounded-full shadow-lg">
+          GET – $27 NOW
+        </button>
+        <div id="banner-timer" style="color:#ffe066; font-weight:bold; font-size:1.1rem; margin-left:16px;">00:59:12</div>
+      </div>
     </div>
 
     <script>
@@ -866,10 +897,10 @@ function changeLanguage(language) {
 
         // Sticky button: финальный паттерн
         const mainBtn = document.getElementById('main-btn');
-        const stickyPanel = document.getElementById('sticky-panel');
+        const stickyBanner = document.getElementById('sticky-banner');
         window.addEventListener('scroll', () => {
           const rect = mainBtn.getBoundingClientRect();
-          stickyPanel.style.display = rect.top < 8 ? 'block' : 'none';
+          stickyBanner.style.display = rect.top < 8 ? 'block' : 'none';
         });
     </script>
 </body>
