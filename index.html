@@ -352,7 +352,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 100vw;
             z-index: 3000;
             background: #181a2a;
             box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25);
@@ -360,6 +360,7 @@
             transform: translateY(-32px);
             pointer-events: none;
             transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+            padding: 0;
         }
         #sticky-banner.visible {
             opacity: 1;
@@ -367,32 +368,41 @@
             pointer-events: auto;
         }
         #sticky-banner .banner-inner {
-            max-width: 370px;
-            margin-left: 40px;
-            margin-right: 0;
+            position: relative;
+            width: 100vw;
+            height: 72px;
             display: flex;
             align-items: center;
-            gap: 24px;
-            padding: 12px 0;
-            justify-content: flex-start;
+            padding: 0;
         }
         #sticky-banner .banner-btn {
             width: 370px;
-            align-self: flex-start;
-            margin: 0;
+            height: 56px;
+            margin-left: 40px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            gap: 10px;
+            overflow: hidden;
+            background-size: 120% 120%;
+            background-position: center;
         }
         #banner-timer {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
-            flex: 1 1 0%;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 24px;
+            align-items: center;
+            gap: 32px;
         }
         #banner-timer .timer-block {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 48px;
+            min-width: 64px;
         }
         #banner-timer .timer-value {
             background: linear-gradient(90deg,#ec4899,#a855f7);
@@ -413,13 +423,17 @@
         }
         @media (max-width: 600px) {
             #sticky-banner .banner-inner {
-                margin-left: 8px;
-                max-width: 98vw;
-                gap: 12px;
+                height: auto;
             }
             #sticky-banner .banner-btn {
                 width: 98vw;
                 min-width: 0;
+                margin-left: 1vw;
+                height: 48px;
+                font-size: 1rem;
+            }
+            #banner-timer {
+                gap: 12px;
             }
         }
     </style>
@@ -732,32 +746,6 @@
                 </button>
             </div>
         </div>
-    </div>
-
-    <!-- Sticky-баннер (шторка) -->
-    <div id="sticky-banner">
-      <div class="banner-inner">
-        <button class="animated-gradient-btn text-white font-extrabold banner-btn" style="border-radius:18px; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow:hidden; background-size:120% 120%; background-position:center;">
-          <span>GET – </span>
-          <span class="line-through text-gray-200 font-normal">$127</span>
-          <span class="text-yellow-300">$27</span>
-          <span class="font-bold text-white">NOW</span>
-        </button>
-        <div id="banner-timer">
-          <div class="timer-block">
-            <span class="timer-value">03</span>
-            <span class="timer-label">h</span>
-          </div>
-          <div class="timer-block">
-            <span class="timer-value">00</span>
-            <span class="timer-label">m</span>
-          </div>
-          <div class="timer-block">
-            <span class="timer-value">00</span>
-            <span class="timer-label">s</span>
-          </div>
-        </div>
-      </div>
     </div>
 
     <script>
