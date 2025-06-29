@@ -412,7 +412,7 @@
                             <span class="font-bold text-white">NOW</span>
                           </button>
                         </form>
-                        <button id="fixed-btn" class="animated-gradient-btn text-white font-extrabold" style="display:none; position:fixed; top:8px; left:0; width:370px; border-radius:18px; font-size:1.15rem; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center; z-index:2000;">
+                        <button id="fixed-btn" class="animated-gradient-btn text-white font-extrabold" style="display:none;position:fixed;top:8px;left:0;width:370px;border-radius:18px;font-size:1.15rem;align-items:center;gap:10px;overflow:hidden;background-size:120% 120%;background-position:center;z-index:2000;">
                           <span>GET – </span>
                           <span class="line-through text-gray-200 font-normal">$127</span>
                           <span class="text-yellow-300">$27</span>
@@ -887,22 +887,12 @@ function changeLanguage(language) {
         })();
 
         // Sticky button: финальный паттерн
-        document.addEventListener('DOMContentLoaded', function() {
-          const mainBtn = document.getElementById('main-btn');
-          const fixedBtn = document.getElementById('fixed-btn');
-          function toggleStickyBtn() {
-            const rect = mainBtn.getBoundingClientRect();
-            if(rect.top < 8) {
-              fixedBtn.style.display = 'flex';
-              mainBtn.style.visibility = 'hidden';
-            } else {
-              fixedBtn.style.display = 'none';
-              mainBtn.style.visibility = 'visible';
-            }
-          }
-          window.addEventListener('scroll', toggleStickyBtn);
-          window.addEventListener('resize', toggleStickyBtn);
-          toggleStickyBtn();
+        const mainBtn = document.getElementById('main-btn');
+        const fixedBtn = document.getElementById('fixed-btn');
+        window.addEventListener('scroll',()=>{
+          const t=mainBtn.getBoundingClientRect().top;
+          fixedBtn.style.display=t<8?'flex':'none';
+          mainBtn.style.visibility=t<8?'hidden':'visible';
         });
     </script>
 </body>
