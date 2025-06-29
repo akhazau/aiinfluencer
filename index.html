@@ -349,7 +349,6 @@
             }
         }
         #sticky-banner {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -358,13 +357,14 @@
             background: #181a2a;
             box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25);
             opacity: 0;
-            transform: translateY(-16px);
+            transform: translateY(-32px);
+            pointer-events: none;
             transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
         }
         #sticky-banner.visible {
-            display: block;
             opacity: 1;
             transform: translateY(0);
+            pointer-events: auto;
         }
         #sticky-banner .banner-inner {
             max-width: 370px;
@@ -381,10 +381,33 @@
         }
         #banner-timer {
             display: flex;
-            gap: 8px;
-            align-items: center;
+            flex: 1 1 0%;
             justify-content: center;
-            margin: 0 auto;
+            align-items: flex-end;
+            gap: 24px;
+        }
+        #banner-timer .timer-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 48px;
+        }
+        #banner-timer .timer-value {
+            background: linear-gradient(90deg,#ec4899,#a855f7);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.6rem;
+            border-radius: 12px;
+            padding: 8px 16px;
+            min-width: 44px;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        #banner-timer .timer-label {
+            color: #b5b4b4;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
         }
     </style>
 </head>
@@ -708,11 +731,18 @@
           <span class="font-bold text-white">NOW</span>
         </button>
         <div id="banner-timer">
-          <span style="background:linear-gradient(90deg,#ec4899,#a855f7);color:#fff;font-weight:bold;font-size:1.35rem;border-radius:12px;padding:8px 16px;min-width:44px;text-align:center;">00</span>
-          <span style="color:#ffe066;font-size:1.3rem;font-weight:bold;">:</span>
-          <span style="background:linear-gradient(90deg,#ec4899,#a855f7);color:#fff;font-weight:bold;font-size:1.35rem;border-radius:12px;padding:8px 16px;min-width:44px;text-align:center;">59</span>
-          <span style="color:#ffe066;font-size:1.3rem;font-weight:bold;">:</span>
-          <span style="background:linear-gradient(90deg,#ec4899,#a855f7);color:#fff;font-weight:bold;font-size:1.35rem;border-radius:12px;padding:8px 16px;min-width:44px;text-align:center;">12</span>
+          <div class="timer-block">
+            <span class="timer-value">03</span>
+            <span class="timer-label">h</span>
+          </div>
+          <div class="timer-block">
+            <span class="timer-value">00</span>
+            <span class="timer-label">m</span>
+          </div>
+          <div class="timer-block">
+            <span class="timer-value">00</span>
+            <span class="timer-label">s</span>
+          </div>
         </div>
       </div>
     </div>
