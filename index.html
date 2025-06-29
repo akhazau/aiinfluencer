@@ -661,15 +661,21 @@
     </div>
 
     <!-- Sticky-баннер (шторка) -->
-    <div id="sticky-banner" style="display:none; position:fixed; top:0; left:0; width:100%; z-index:3000; background:#181a2a; box-shadow:0 2px 16px #a855f7cc;">
-      <div style="max-width:370px; margin:0 auto; display:flex; align-items:center; gap:16px; padding:8px 0; justify-content:center;">
-        <button class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow:hidden; background-size:120% 120%; background-position:center;">
+    <div id="sticky-banner" style="display:none; position:fixed; top:0; left:0; width:100%; z-index:3000; background:#181a2a; box-shadow:0 16px 40px -12px rgba(236,72,153,0.25);">
+      <div style="max-width:370px; margin:0 auto; display:flex; align-items:center; gap:24px; padding:12px 0; justify-content:flex-start;">
+        <button class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow:hidden; background-size:120% 120%; background-position:center; min-width:180px;">
           <span>GET – </span>
           <span class="line-through text-gray-200 font-normal">$127</span>
           <span class="text-yellow-300">$27</span>
           <span class="font-bold text-white">NOW</span>
         </button>
-        <div id="banner-timer" style="color:#ffe066; font-weight:bold; font-size:1.1rem; margin-left:16px;">00:59:12</div>
+        <div id="banner-timer" style="display:flex; gap:8px; align-items:center; justify-content:center;">
+          <span style="background:linear-gradient(90deg,#ec4899,#a855f7);color:#fff;font-weight:bold;font-size:1.35rem;border-radius:12px;padding:8px 16px;min-width:44px;text-align:center;">00</span>
+          <span style="color:#ffe066;font-size:1.3rem;font-weight:bold;">:</span>
+          <span style="background:linear-gradient(90deg,#ec4899,#a855f7);color:#fff;font-weight:bold;font-size:1.35rem;border-radius:12px;padding:8px 16px;min-width:44px;text-align:center;">59</span>
+          <span style="color:#ffe066;font-size:1.3rem;font-weight:bold;">:</span>
+          <span style="background:linear-gradient(90deg,#ec4899,#a855f7);color:#fff;font-weight:bold;font-size:1.35rem;border-radius:12px;padding:8px 16px;min-width:44px;text-align:center;">12</span>
+        </div>
       </div>
     </div>
 
