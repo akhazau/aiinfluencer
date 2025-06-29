@@ -711,6 +711,14 @@
                 sliderImg.src = sliderImages[sliderIndex];
               }, 4000);
             }
+
+            const mainBtn = document.getElementById('main-btn');
+            const stickyBanner = document.getElementById('sticky-banner');
+            window.addEventListener('scroll', () => {
+              if (!mainBtn || !stickyBanner) return;
+              const rect = mainBtn.getBoundingClientRect();
+              stickyBanner.style.display = rect.top < 8 ? 'block' : 'none';
+            });
         });
 
         // Language translations
@@ -900,14 +908,6 @@ function changeLanguage(language) {
             }
             setInterval(update, 1800);
         })();
-
-        // Sticky button: финальный паттерн
-        const mainBtn = document.getElementById('main-btn');
-        const stickyBanner = document.getElementById('sticky-banner');
-        window.addEventListener('scroll', () => {
-          const rect = mainBtn.getBoundingClientRect();
-          stickyBanner.style.display = rect.top < 8 ? 'block' : 'none';
-        });
     </script>
 </body>
 </html>
