@@ -822,7 +822,7 @@
             function toggleBanner() {
                 if (!mainBtn || !stickyBanner) return;
                 const rect = mainBtn.getBoundingClientRect();
-                if(rect.top < 8) {
+                if(rect.top < 48) {
                     stickyBanner.classList.add('visible');
                 } else {
                     stickyBanner.classList.remove('visible');
