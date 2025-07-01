@@ -1151,7 +1151,6 @@
         // Функция смены языка
         function changeLanguage(language) {
             document.documentElement.lang = language;
-            
             // Перевод элементов
             document.querySelectorAll('[id]').forEach(element => {
                 const id = element.id;
@@ -1163,14 +1162,22 @@
                     }
                 }
             });
-            
-            // Подсветка кнопки
-            document.querySelectorAll('.lang-btn').forEach(btn =>
-                btn.classList.toggle('active', btn.dataset.lang === language)
-            );
-            
+            // Сбросить выделение у всех кнопок
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.style.border = '1px solid #fff';
+            });
+            // Выделить только выбранную
+            const activeBtn = document.querySelector('.lang-btn[data-lang="' + language + '"]');
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.style.background = 'linear-gradient(90deg, #6366f1, #a855f7, #ec4899)';
+                activeBtn.style.color = '#fff';
+                activeBtn.style.border = 'none';
+            }
             localStorage.setItem('selectedLang', language);
-            
             // Обработка заголовка "About"
             const aboutTitle = translations[language]["about-title"];
             const aboutTitleText = document.getElementById("about-title-text");
