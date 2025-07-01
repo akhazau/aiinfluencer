@@ -415,7 +415,16 @@
             }
         }
         .sticky-glow-line {
-            display: none;
+            position: fixed;
+            top: 74px;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background: #ff0033;
+            z-index: 3000;
+            opacity: 0;
+            transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+            pointer-events: none;
         }
     </style>
 </head>
