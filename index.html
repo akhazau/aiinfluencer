@@ -12,7 +12,7 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
             color: #f8fafc;
         }
         
@@ -454,10 +454,10 @@
     <!-- #1 ГЛАВНАЯ-->
     <section id="hero-section" class="min-h-screen flex items-center justify-center relative pt-12">
         <!-- Animated background elements -->
-        <div class="absolute inset-0">
-            <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-purple-500 opacity-20 blur-3xl animate-pulse"></div>
-            <div class="absolute top-3/4 right-1/4 w-40 h-40 rounded-full bg-pink-500 opacity-20 blur-3xl animate-pulse delay-300"></div>
-            <div class="absolute bottom-1/4 right-2/3 w-26 h-26 rounded-full bg-indigo-500 opacity-20 blur-3xl animate-pulse delay-700"></div>
+        <div class="absolute inset-0 pointer-events-none select-none">
+          <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-purple-500 opacity-20 blur-3xl animate-pulse"></div>
+          <div class="absolute top-3/4 right-1/4 w-24 h-24 rounded-full bg-pink-500 opacity-20 blur-2xl animate-pulse delay-300"></div>
+          <div class="absolute bottom-1/4 right-2/3 w-16 h-16 rounded-full bg-indigo-400 opacity-20 blur-2xl animate-pulse delay-700"></div>
         </div>
         
         <div class="container mx-auto px-6 z-10">
@@ -621,27 +621,19 @@
       <div class="absolute top-8 left-1/4 w-8 h-8 rounded-full bg-pink-500 opacity-20 blur-2xl animate-pulse"></div>
       <div class="absolute bottom-10 right-1/3 w-6 h-6 rounded-full bg-indigo-400 opacity-30 blur-2xl animate-pulse delay-300"></div>
       <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight text-center">
-        Why AI Model Topic Should I Even Care?
+        Why <span class="gradient-text">AI Model</span> Topic Should I Even Care?
       </h2>
-      <p class="text-base text-center mb-4">
-        Start seeing like an artist. Feel like a designer, a visual architect, a creative producer — no tech background needed.
-      </p>
       <p class="text-base text-center mb-8">
         Building parasocial relationships: your audience feels a real connection with a media figure.
       </p>
       <div class="flex flex-row items-center gap-10">
-        <!-- Левая колонка: картинки -->
-        <div class="flex flex-col gap-6 w-1/2">
-          <img src="media/av01.png" alt="Preview 1" class="rounded-2xl shadow-lg object-cover w-full" style="aspect-ratio: 5/2;">
-          <img src="media/av01.png" alt="Preview 2" class="rounded-2xl shadow-lg object-cover w-full" style="aspect-ratio: 5/2;">
-          <img src="media/av01.png" alt="Preview 3" class="rounded-2xl shadow-lg object-cover w-full" style="aspect-ratio: 5/2;">
-        </div>
-        <!-- Правая колонка: текстовый блок -->
+        <!-- Левая колонка: текстовый блок -->
         <div class="w-1/2 flex flex-col justify-center">
-          <h3 class="text-3xl md:text-4xl font-bold mb-6 leading-tight text-pink-400">Start seeing like an artist.</h3>
-          <p class="text-xl mb-10">
-            Feel like a designer, a visual architect, a creative producer — no tech background needed.<br>
-            This course unlocks not just tools, but the mindset to create with confidence.
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight text-center">
+            Why <span class="gradient-text">AI Model</span> Topic Should I Even Care?
+          </h2>
+          <p class="text-base text-center mb-8">
+            Building parasocial relationships: your audience feels a real connection with a media figure.
           </p>
           <div class="space-y-6 text-lg">
             <div>
@@ -663,6 +655,10 @@
               Influencers and creators are already earning from AI-powered content — this is your entry point.</span>
             </div>
           </div>
+        </div>
+        <!-- Правая колонка: одна картинка -->
+        <div class="w-1/2 flex justify-end">
+          <img src="media/av01.png" alt="Preview" class="rounded-2xl shadow-lg object-cover w-full max-w-md" style="aspect-ratio: 5/2;">
         </div>
       </div>
     </section>
