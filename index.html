@@ -452,7 +452,7 @@
 </head>
 <body>
     <!-- Sticky-баннер (шторка) -->
-    <div id="sticky-banner">
+    <div id="sticky-banner" style="display: flex; align-items: center; justify-content: center; width: 100vw; position: fixed; top: 0; left: 0; z-index: 3000; background: linear-gradient(to bottom, #ff0033 80%, transparent 100%); box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25); opacity: 0; transform: translateY(-32px); pointer-events: none; transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);">
       <div class="banner-inner" style="width: 100vw; max-width: 540px; display: flex; align-items: center; justify-content: flex-start; padding: 0.5rem 0;">
         <button class="animated-gradient-btn text-white font-extrabold banner-btn" style="width: 350px; height: 45px; margin-left: 113px; border-radius: 18px; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; gap: 10px;">
           <span>GET – </span>
@@ -1042,15 +1042,13 @@
                 if (!mainBtn || !stickyBanner) return;
                 const rect = mainBtn.getBoundingClientRect();
                 if(rect.top < 28) {
-                    stickyBanner.classList.add('visible');
-                    stickyBanner.style.opacity = '';
-                    stickyBanner.style.transform = '';
-                    stickyBanner.style.pointerEvents = '';
+                    stickyBanner.style.opacity = '1';
+                    stickyBanner.style.transform = 'translateY(0)';
+                    stickyBanner.style.pointerEvents = 'auto';
                 } else {
-                    stickyBanner.classList.remove('visible');
-                    stickyBanner.style.opacity = '';
-                    stickyBanner.style.transform = '';
-                    stickyBanner.style.pointerEvents = '';
+                    stickyBanner.style.opacity = '0';
+                    stickyBanner.style.transform = 'translateY(-32px)';
+                    stickyBanner.style.pointerEvents = 'none';
                 }
             }
             window.addEventListener('scroll', toggleBanner);
