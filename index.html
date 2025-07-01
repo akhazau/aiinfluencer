@@ -444,7 +444,7 @@
 </head>
 <body>
     <!-- Sticky-баннер (шторка) -->
-    <div id="sticky-banner">
+    <div id="sticky-banner" style="display: flex; align-items: center; justify-content: center; width: 100vw; position: fixed; top: 0; left: 0; z-index: 3000; background: #181a2a; box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25); opacity: 0; transform: translateY(-32px); pointer-events: none; transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);">
       <div class="banner-inner" style="width: 100vw; max-width: 540px; display: flex; align-items: center; justify-content: flex-start; padding: 0.5rem 0;">
         <button class="animated-gradient-btn text-white font-extrabold banner-btn" style="width: 370px; margin-left: 0;">
           <span>Enroll Course for</span>
@@ -523,8 +523,8 @@
                           <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
                             <input type="email" required placeholder="Your email address" name="email" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#b5b4b4; font-size:1rem; width: 366px; padding: 0 20px;" />
                           </div>
-                          <button id="main-btn" class="animated-gradient-btn text-white font-extrabold banner-btn" style="width: 370px; margin-left: 0;">
-                            <span>Enroll Course for</span>
+                          <button id="main-btn" class="animated-gradient-btn text-white font-extrabold" style="border-radius:18px; width: 100%; font-size:1.15rem; display:flex; align-items:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center;">
+                            <span>GET – </span>
                             <span class="line-through text-gray-200 font-normal">$127</span>
                             <span class="text-yellow-300">$27</span>
                             <span class="font-bold text-white">NOW</span>
