@@ -455,6 +455,18 @@
                 gap: 12px;
             }
         }
+        .sticky-glow-line {
+            position: fixed;
+            top: 74px;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background: #ff0033;
+            z-index: 3000;
+            opacity: 0;
+            transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -483,6 +495,7 @@
             </div>
         </div>
     </div>
+    <div class="sticky-glow-line"></div>
     <div class="sticky-glow"></div>
 
     <!-- Языковой переключатель теперь внутри главного контейнера -->
@@ -1047,6 +1060,7 @@
             const mainBtn = document.getElementById('main-btn');
             const stickyBanner = document.getElementById('sticky-banner');
             const stickyGlow = document.querySelector('.sticky-glow');
+            const stickyGlowLine = document.querySelector('.sticky-glow-line');
             function toggleBanner() {
                 if (!mainBtn || !stickyBanner) return;
                 const rect = mainBtn.getBoundingClientRect();
@@ -1057,12 +1071,18 @@
                     if (stickyGlow) {
                         stickyGlow.style.opacity = '0.95';
                     }
+                    if (stickyGlowLine) {
+                        stickyGlowLine.style.opacity = '1';
+                    }
                 } else {
                     stickyBanner.style.opacity = '0';
                     stickyBanner.style.transform = 'translateY(-32px)';
                     stickyBanner.style.pointerEvents = 'none';
                     if (stickyGlow) {
                         stickyGlow.style.opacity = '0';
+                    }
+                    if (stickyGlowLine) {
+                        stickyGlowLine.style.opacity = '0';
                     }
                 }
             }
