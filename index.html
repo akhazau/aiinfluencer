@@ -444,7 +444,7 @@
 </head>
 <body>
     <!-- Sticky-баннер (шторка) -->
-    <div id="sticky-banner" style="display: flex; align-items: center; justify-content: center; width: 100vw; position: fixed; top: 0; left: 0; z-index: 99999; background: #ff0033; box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25); opacity: 0; transform: translateY(-32px); pointer-events: none; transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);">
+    <div id="sticky-banner" style="display: flex; align-items: center; justify-content: center; width: 100vw; position: fixed; top: 0; left: 0; z-index: 3000; background: #181a2a; box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25); opacity: 0; transform: translateY(-32px); pointer-events: none; transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);">
       <div class="banner-inner" style="width: 100vw; max-width: 540px; display: flex; align-items: center; justify-content: flex-start; padding: 0.5rem 0;">
         <button class="animated-gradient-btn text-white font-extrabold banner-btn" style="width: 350px; height: 45px; margin-left: 113px; border-radius: 18px; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; gap: 10px;">
           <span>GET – </span>
@@ -1031,25 +1031,18 @@
             const mainBtn = document.getElementById('main-btn');
             const stickyBanner = document.getElementById('sticky-banner');
             function toggleBanner() {
-                console.log('[DEBUG] toggleBanner called');
-                if (!mainBtn || !stickyBanner) {
-                  console.log('[DEBUG] mainBtn или stickyBanner не найден', {mainBtn, stickyBanner});
-                  return;
-                }
+                if (!mainBtn || !stickyBanner) return;
                 const rect = mainBtn.getBoundingClientRect();
-                console.log('[DEBUG] mainBtn rect.top:', rect.top, 'window.scrollY:', window.scrollY);
                 if(rect.top < 28) {
-                    console.log('[DEBUG] Показываю шторку');
                     stickyBanner.classList.add('visible');
-                    stickyBanner.style.setProperty('opacity', '1', 'important');
-                    stickyBanner.style.setProperty('transform', 'none', 'important');
-                    stickyBanner.style.setProperty('pointer-events', 'auto', 'important');
+                    stickyBanner.style.opacity = '';
+                    stickyBanner.style.transform = '';
+                    stickyBanner.style.pointerEvents = '';
                 } else {
-                    console.log('[DEBUG] Скрываю шторку');
                     stickyBanner.classList.remove('visible');
-                    stickyBanner.style.setProperty('opacity', '0', 'important');
-                    stickyBanner.style.setProperty('transform', 'translateY(-32px)', 'important');
-                    stickyBanner.style.setProperty('pointer-events', 'none', 'important');
+                    stickyBanner.style.opacity = '';
+                    stickyBanner.style.transform = '';
+                    stickyBanner.style.pointerEvents = '';
                 }
             }
             window.addEventListener('scroll', toggleBanner);
