@@ -373,7 +373,13 @@
             height: 16px;
             pointer-events: none;
             z-index: 2999;
-            background: linear-gradient(to bottom, #ff0033 60%, transparent 100%);
+            background: linear-gradient(
+                to bottom,
+                #ff0033 0%,
+                #ff0033cc 25%,
+                #ff003380 40%,
+                transparent 100%
+            );
             filter: blur(10px);
             opacity: 0;
             transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
