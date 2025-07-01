@@ -349,7 +349,7 @@
             }
         }
         #sticky-banner {
-            background: linear-gradient(90deg, #ff0033 0%, #ff3366 100%) !important;
+            background: #181a2a !important;
             position: fixed;
             top: 0;
             left: 0;
@@ -365,13 +365,24 @@
         #sticky-banner::after {
             content: '';
             position: absolute;
-            left: 0; right: 0; bottom: 0;
-            height: 32px;
+            left: 0; right: 0; bottom: 1px;
+            height: 18px;
             background: linear-gradient(to bottom, #ff0033, transparent 80%);
-            filter: blur(16px);
-            opacity: 1;
+            filter: blur(8px);
+            opacity: 0.95;
             z-index: 1;
             pointer-events: none;
+        }
+        #sticky-banner::before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1px;
+            background: #ff0033;
+            z-index: 2;
+        }
+        #sticky-banner .banner-btn {
+            /* убраны box-shadow и border, чтобы работал стандартный hover-эффект */
         }
         #sticky-banner .banner-inner {
             position: relative;
