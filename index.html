@@ -1166,6 +1166,90 @@
         document.querySelectorAll('.lang-btn').forEach(btn =>
             btn.addEventListener('click', () => changeLanguage(btn.dataset.lang))
         );
+
+        // --- Слайдер отзывов ---
+        const reviews = [
+          {
+            text: "I made $1.2k in an hour through tips alone - thanks to this method!",
+            photo: "media/av01.png",
+            name: "Mark",
+            role: "AI Creator"
+          },
+          {
+            text: "After failing with dropshipping and Amazon FBA, their Fanvue optimization strategies helped me earn $6.5K part-time in just one month of joining the program.",
+            photo: "media/av02.png",
+            name: "Alex",
+            role: "Digital Marketer"
+          },
+          {
+            text: "As a complete beginner with no technical background, their simple Genfluence tutorials and Discord community helped me make $500 in my first week.",
+            photo: "media/av03.png",
+            name: "James",
+            role: "Community Member"
+          },
+          {
+            text: "I scaled to $16.6K in less than 2 months through AI Models!",
+            photo: "media/av04.png",
+            name: "Pav",
+            role: "Entrepreneur"
+          },
+          {
+            text: "My followers can't believe my influencer isn't real.",
+            photo: "media/av00.png",
+            name: "Ayşe",
+            role: "Social Media Manager"
+          },
+          {
+            text: "Running full ad campaigns with AI models now—clients love it.",
+            photo: "media/av00.png",
+            name: "Murat",
+            role: "Creative Producer"
+          }
+        ];
+
+        let reviewIndex = 0;
+        const reviewText = document.getElementById('review-text');
+        const reviewPhoto = document.getElementById('review-photo');
+        const reviewName = document.getElementById('review-name');
+        const reviewRole = document.getElementById('review-role');
+        const dotsWrap = document.getElementById('reviews-dots');
+
+        function renderReview(idx) {
+          const r = reviews[idx];
+          reviewText.textContent = r.text;
+          reviewPhoto.src = r.photo;
+          reviewName.textContent = r.name;
+          reviewRole.textContent = r.role;
+          // Обновить индикатор
+          dotsWrap.innerHTML = '';
+          reviews.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'w-3 h-3 rounded-full ' + (i === idx ? 'bg-purple-400' : 'bg-white/20') + ' transition';
+            dot.style.outline = 'none';
+            dot.onclick = () => { reviewIndex = i; renderReview(reviewIndex); };
+            dotsWrap.appendChild(dot);
+          });
+        }
+
+        // Стрелки
+        const prevBtn = document.getElementById('reviews-prev');
+        const nextBtn = document.getElementById('reviews-next');
+        if (prevBtn && nextBtn) {
+          prevBtn.onclick = () => {
+            reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
+            renderReview(reviewIndex);
+          };
+          nextBtn.onclick = () => {
+            reviewIndex = (reviewIndex + 1) % reviews.length;
+            renderReview(reviewIndex);
+          };
+        }
+
+        // Инициализация
+        if (reviewText && reviewPhoto && reviewName && reviewRole && dotsWrap) {
+          renderReview(reviewIndex);
+        }
+        // ... конец слайдера отзывов ...
     </script>
 </body>
 </html>
