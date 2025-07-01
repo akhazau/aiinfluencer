@@ -375,7 +375,8 @@
             z-index: 2999;
             background: linear-gradient(to bottom, #ff0033 60%, transparent 100%);
             filter: blur(10px);
-            opacity: 0.95;
+            opacity: 0;
+            transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
         }
         #sticky-banner .banner-btn {
             /* убраны box-shadow и border, чтобы работал стандартный hover-эффект */
@@ -1048,6 +1049,7 @@
 
             const mainBtn = document.getElementById('main-btn');
             const stickyBanner = document.getElementById('sticky-banner');
+            const stickyGlow = document.querySelector('.sticky-glow');
             function toggleBanner() {
                 if (!mainBtn || !stickyBanner) return;
                 const rect = mainBtn.getBoundingClientRect();
@@ -1055,10 +1057,16 @@
                     stickyBanner.style.opacity = '1';
                     stickyBanner.style.transform = 'translateY(0)';
                     stickyBanner.style.pointerEvents = 'auto';
+                    if (stickyGlow) {
+                        stickyGlow.style.opacity = '0.95';
+                    }
                 } else {
                     stickyBanner.style.opacity = '0';
                     stickyBanner.style.transform = 'translateY(-32px)';
                     stickyBanner.style.pointerEvents = 'none';
+                    if (stickyGlow) {
+                        stickyGlow.style.opacity = '0';
+                    }
                 }
             }
             window.addEventListener('scroll', toggleBanner);
