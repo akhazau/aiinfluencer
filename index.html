@@ -1361,6 +1361,9 @@
         function initFAQAccordion() {
           document.querySelectorAll('.faq-toggle').forEach(btn => {
             btn.onclick = () => {
+              // Сначала закрыть все ответы
+              document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
+              // Затем открыть только выбранный
               const answer = btn.nextElementSibling;
               answer.classList.toggle('hidden');
             };
