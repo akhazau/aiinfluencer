@@ -733,115 +733,82 @@
             Don't just take our word for it. Here's what early adopters think about AI-generated art.
           </p>
         </div>
-        <div id="reviews-carousel" class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory mb-16">
-          <!-- Отзывы компактно -->
-          <!-- Используем один шаблон для всех отзывов -->
-          <div class="bg-white/5 rounded-xl p-6 border border-white/10 max-w-md w-full flex-shrink-0 snap-center">
-            <div class="flex items-center mb-4">
-              <img src="media/av01.png" class="w-12 h-12 rounded-full mr-4">
-              <div><h4 class="font-semibold">Mark</h4><div class="flex text-green-400 text-lg mb-1">★★★★★</div></div>
-            </div>
-            <p class="font-bold">I made $1.2k in an hour through tips alone - thanks to this method!</p>
-          </div>
-          <div class="bg-white/5 rounded-xl p-6 border border-white/10 max-w-md w-full flex-shrink-0 snap-center">
-            <div class="flex items-center mb-4">
-              <img src="media/av02.png" class="w-12 h-12 rounded-full mr-4">
-              <div><h4 class="font-semibold">Alex</h4><div class="flex text-green-400 text-lg mb-1">★★★★★</div></div>
-            </div>
-            <p class="font-semibold mb-2">After failing with dropshipping and Amazon FBA, their Fanvue optimization strategies helped me earn $6.5K part-time in just one month of joining the program.</p>
-          </div>
-          <div class="bg-white/5 rounded-xl p-6 border border-white/10 max-w-md w-full flex-shrink-0 snap-center">
-            <div class="flex items-center mb-4">
-              <img src="media/av03.png" class="w-12 h-12 rounded-full mr-4">
-              <div><h4 class="font-semibold">James</h4><div class="flex text-green-400 text-lg mb-1">★★★★★</div></div>
-            </div>
-            <p class="font-semibold mb-2">As a complete beginner with no technical background, their simple Genfluence tutorials and Discord community helped me make $500 in my first week.</p>
-          </div>
-          <div class="bg-white/5 rounded-xl p-6 border border-white/10 max-w-md w-full flex-shrink-0 snap-center">
-            <div class="flex items-center mb-4">
-              <img src="media/av04.png" class="w-12 h-12 rounded-full mr-4">
-              <div><h4 class="font-semibold">Pav</h4><div class="flex text-green-400 text-lg mb-1">★★★★★</div></div>
-            </div>
-            <p class="font-semibold mb-2">I scaled to $16.6K in less than 2 months through AI Models!</p>
-          </div>
-          <div class="bg-white/5 rounded-xl p-6 border border-white/10 max-w-md w-full flex-shrink-0 snap-center">
-            <div class="flex items-center mb-4">
-              <img src="media/av00.png" class="w-12 h-12 rounded-full mr-4">
-              <div><h4 class="font-semibold">Ayşe</h4><div class="flex text-green-400 text-lg mb-1">★★★★★</div></div>
-            </div>
-            <p class="font-semibold mb-2">"My followers can't believe my influencer isn't real."</p>
-            <span class="text-white/60 text-sm">Social Media Manager</span>
-          </div>
-          <div class="bg-white/5 rounded-xl p-6 border border-white/10 max-w-md w-full flex-shrink-0 snap-center">
-            <div class="flex items-center mb-4">
-              <img src="media/av00.png" class="w-12 h-12 rounded-full mr-4">
-              <div><h4 class="font-semibold">Murat</h4><div class="flex text-green-400 text-lg mb-1">★★★★★</div></div>
-            </div>
-            <p class="font-semibold mb-2">"Running full ad campaigns with AI models now—clients love it."</p>
-            <span class="text-white/60 text-sm">Creative Producer</span>
-          </div>
-        </div>
-        <div class="max-w-3xl mx-auto px-6" id="faq">
-          <h2 class="text-3xl font-bold mb-8 text-white" id="faq-title">Frequently Asked Questions</h2>
-          <div class="space-y-4">
-            <!-- FAQ Item 1 -->
-            <div class="border border-white/20 rounded-lg overflow-hidden">
-              <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
-                <span id="faq-q1">I have no experience with neural networks. Is this for me?</span>
-                <span class="text-xl">+</span>
-              </button>
-              <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a1">
-                Yes, everything is explained with live examples. The main thing is your desire to learn.
+        <div class="relative">
+          <div class="flex flex-col items-center mb-16" id="reviews-slider-wrap">
+            <div class="relative w-full max-w-2xl mx-auto">
+              <button id="reviews-prev" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"><i class="fas fa-chevron-left"></i></button>
+              <div id="review-slide" class="flex flex-col items-center text-center bg-white/5 rounded-xl p-8 border border-white/10 min-h-[260px]">
+                <p class="text-xl font-normal mb-6" id="review-text">I made $1.2k in an hour through tips alone - thanks to this method!</p>
+                <img src="media/av01.png" class="w-16 h-16 rounded-full mx-auto mb-2" id="review-photo">
+                <div class="font-semibold" id="review-name">Mark</div>
+                <div class="text-sm text-white/60" id="review-role">AI Creator</div>
               </div>
+              <button id="reviews-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black/40 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <!-- FAQ Item 2 -->
-            <div class="border border-white/20 rounded-lg overflow-hidden">
-              <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
-                <span id="faq-q2">Does it really look like a real person?</span>
-                <span class="text-xl">+</span>
-              </button>
-              <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a2">
-                Yes. The key is the right technique. You'll get specific prompts and methodology.
+            <div class="flex gap-2 justify-center mt-6" id="reviews-dots"></div>
+          </div>
+          <div class="max-w-3xl mx-auto px-6" id="faq">
+            <h2 class="text-3xl font-bold mb-8 text-white" id="faq-title">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+              <!-- FAQ Item 1 -->
+              <div class="border border-white/20 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+                  <span id="faq-q1">I have no experience with neural networks. Is this for me?</span>
+                  <span class="text-xl">+</span>
+                </button>
+                <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a1">
+                  Yes, everything is explained with live examples. The main thing is your desire to learn.
+                </div>
               </div>
-            </div>
-            <!-- FAQ Item 3 -->
-            <div class="border border-white/20 rounded-lg overflow-hidden">
-              <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
-                <span id="faq-q3">Can I use the character for personal or private purposes?</span>
-                <span class="text-xl">+</span>
-              </button>
-              <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a3">
-                You get a tool that can be adapted for any format—from a visual blog to more private and closed projects. Everything remains under your control.
+              <!-- FAQ Item 2 -->
+              <div class="border border-white/20 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+                  <span id="faq-q2">Does it really look like a real person?</span>
+                  <span class="text-xl">+</span>
+                </button>
+                <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a2">
+                  Yes. The key is the right technique. You'll get specific prompts and methodology.
+                </div>
               </div>
-            </div>
-            <!-- FAQ Item 4 -->
-            <div class="border border-white/20 rounded-lg overflow-hidden">
-              <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
-                <span id="faq-q4">Is there support if something doesn't work?</span>
-                <span class="text-xl">+</span>
-              </button>
-              <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a4">
-                Yes, you can ask a question about the course topic and get help.
+              <!-- FAQ Item 3 -->
+              <div class="border border-white/20 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+                  <span id="faq-q3">Can I use the character for personal or private purposes?</span>
+                  <span class="text-xl">+</span>
+                </button>
+                <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a3">
+                  You get a tool that can be adapted for any format—from a visual blog to more private and closed projects. Everything remains under your control.
+                </div>
               </div>
-            </div>
-            <!-- FAQ Item 5 -->
-            <div class="border border-white/20 rounded-lg overflow-hidden">
-              <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
-                <span id="faq-q5">Are neural networks paid?</span>
-                <span class="text-xl">+</span>
-              </button>
-              <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a5">
-                Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments. <br><br>💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.
+              <!-- FAQ Item 4 -->
+              <div class="border border-white/20 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+                  <span id="faq-q4">Is there support if something doesn't work?</span>
+                  <span class="text-xl">+</span>
+                </button>
+                <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a4">
+                  Yes, you can ask a question about the course topic and get help.
+                </div>
               </div>
-            </div>
-            <!-- FAQ Item 6 -->
-            <div class="border border-white/20 rounded-lg overflow-hidden">
-              <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
-                <span id="faq-q6">What if I already have some skills—will it be interesting for me?</span>
-                <span class="text-xl">+</span>
-              </button>
-              <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a6">
-                Absolutely. You'll learn how to create realistic, consistent images and train a neural network for yourself. This is a higher level.
+              <!-- FAQ Item 5 -->
+              <div class="border border-white/20 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+                  <span id="faq-q5">Are neural networks paid?</span>
+                  <span class="text-xl">+</span>
+                </button>
+                <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a5">
+                  Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments. <br><br>💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.
+                </div>
+              </div>
+              <!-- FAQ Item 6 -->
+              <div class="border border-white/20 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+                  <span id="faq-q6">What if I already have some skills—will it be interesting for me?</span>
+                  <span class="text-xl">+</span>
+                </button>
+                <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a6">
+                  Absolutely. You'll learn how to create realistic, consistent images and train a neural network for yourself. This is a higher level.
+                </div>
               </div>
             </div>
           </div>
