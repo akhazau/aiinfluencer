@@ -1041,9 +1041,15 @@
                 if(rect.top < 28) {
                     console.log('[DEBUG] Показываю шторку');
                     stickyBanner.classList.add('visible');
+                    stickyBanner.style.setProperty('opacity', '1', 'important');
+                    stickyBanner.style.setProperty('transform', 'none', 'important');
+                    stickyBanner.style.setProperty('pointer-events', 'auto', 'important');
                 } else {
                     console.log('[DEBUG] Скрываю шторку');
                     stickyBanner.classList.remove('visible');
+                    stickyBanner.style.setProperty('opacity', '0', 'important');
+                    stickyBanner.style.setProperty('transform', 'translateY(-32px)', 'important');
+                    stickyBanner.style.setProperty('pointer-events', 'none', 'important');
                 }
             }
             window.addEventListener('scroll', toggleBanner);
