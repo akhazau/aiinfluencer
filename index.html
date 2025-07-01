@@ -367,20 +367,19 @@
         }
         .sticky-glow {
             position: fixed;
-            top: 74px;
+            top: 75px;
             left: 0;
             width: 100vw;
-            height: 16px;
+            height: 8px;
             pointer-events: none;
             z-index: 2999;
             background: linear-gradient(
                 to bottom,
                 #ff0033 0%,
-                #ff0033cc 25%,
-                #ff003380 40%,
+                #ff0033cc 40%,
                 transparent 100%
             );
-            filter: blur(10px);
+            filter: blur(6px);
             opacity: 0;
             transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
         }
