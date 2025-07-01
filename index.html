@@ -556,16 +556,6 @@
                         </div>
                       </div>
                     </div>
-                    
-                    <!-- Sticky-панель -->
-                    <div id="sticky-panel" style="display:none; position:fixed; top:0; left:0; width:100%; z-index:3000; background:#181a2a; box-shadow:0 2px 16px #a855f7cc;">
-                      <div style="max-width:370px; margin:0 auto; display:flex; align-items:center; gap:16px; padding:8px 0;">
-                        <button class="bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-3 px-6 rounded-full shadow-lg w-full" style="width: 100%;">
-                          GET – $27 NOW
-                        </button>
-                        <div id="timer" style="color:#ffe066; font-weight:bold; font-size:1.1rem;">00:59:12</div>
-                      </div>
-                    </div>
                 </div>
                 
                 <div class="lg:w-1/2 relative">
@@ -999,8 +989,6 @@
     </footer>
     <!-- /ArtAI footer -->
 
-    <!-- Удалить финальный футер AI Character Creation -->
-
     <script>
         window.addEventListener('error', function(e) {
             console.error('Глобальная ошибка JS:', e.message, e);
@@ -1288,52 +1276,11 @@
         const savedLang = localStorage.getItem('selectedLang') || 'en';
         changeLanguage(savedLang);
 
-        // Form submission
-        document.getElementById('email-form-2').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email-2').value;
-            if(email) {
-                console.log('Email submitted:', email);
-                document.getElementById('success-modal').classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-        
-        // Close modal
-        document.getElementById('close-modal').addEventListener('click', function() {
-            document.getElementById('success-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-        
-        document.getElementById('modal-close-btn').addEventListener('click', function() {
-            document.getElementById('success-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-        
         // Countdown timer (example)
-        function updateCountdown() {
-            const days = document.querySelector('.countdown-number:nth-child(1)');
-            const hours = document.querySelector('.countdown-number:nth-child(2)');
-            const minutes = document.querySelector('.countdown-number:nth-child(3)');
-            
-            if(Math.random() > 0.7) {
-                const current = parseInt(minutes.textContent);
-                if(current > 0) minutes.textContent = (current - 1).toString().padStart(2, '0');
-                else {
-                    minutes.textContent = '59';
-                    const currentHours = parseInt(hours.textContent);
-                    if(currentHours > 0) hours.textContent = (currentHours - 1).toString().padStart(2, '0');
-                    else {
-                        hours.textContent = '23';
-                        const currentDays = parseInt(days.textContent);
-                        if(currentDays > 0) days.textContent = (currentDays - 1).toString().padStart(2, '0');
-                    }
-                }
-            }
-        }
-        
-        setInterval(updateCountdown, 1000);
-        
+        // Удалить функцию updateCountdown и setInterval для неё
+        // function updateCountdown() { ... }
+        // setInterval(updateCountdown, 1000);
+
         // Animate elements when they come into view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
