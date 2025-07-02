@@ -543,7 +543,7 @@
     </div>
 
     <!-- #1 ГЛАВНАЯ-->
-    <section id="hero-section" class="snap-section min-h-screen flex items-center justify-center relative pt-12 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section id="hero-section" class="snap-section min-h-screen flex items-center justify-center relative pt-12 bg-gradient-to-b from-slate-900 to-slate-800" style="padding-top: 100px;">
         <!-- Animated background elements -->
         <div class="absolute inset-0">
             <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-purple-500 opacity-20 blur-3xl animate-pulse"></div>
@@ -955,10 +955,11 @@
             const stickyGlow = document.querySelector('.sticky-glow');
             const stickyGlowLine = document.querySelector('.sticky-glow-line');
             let bannerForceHidden = false;
+            let heroVisible = false;
             
             function toggleBanner() {
                 if (!mainBtn || !stickyBanner) return;
-                if (bannerForceHidden) {
+                if (bannerForceHidden || heroVisible) {
                     stickyBanner.style.opacity = '0';
                     stickyBanner.style.transform = 'translateY(-32px)';
                     stickyBanner.style.pointerEvents = 'none';
@@ -988,6 +989,15 @@
                     }
                 }, { threshold: 0.7 });
                 ctaObserver.observe(finalCta);
+            }
+            // Observer для hero-секции
+            const heroSection = document.getElementById('hero-section');
+            if (heroSection) {
+                const heroObserver = new IntersectionObserver(entries => {
+                    heroVisible = entries[0].isIntersecting;
+                    toggleBanner();
+                }, { threshold: 0.7 });
+                heroObserver.observe(heroSection);
             }
 
             window.addEventListener('scroll', toggleBanner);
