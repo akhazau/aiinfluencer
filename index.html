@@ -405,10 +405,15 @@
             border: none;
         }
         #banner-timer {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            z-index: 3;
         }
         .timer-row {
             display: flex;
@@ -486,22 +491,22 @@
                 <span class="font-bold text-white">NOW</span>
             </button>
             <a href="mailto:support@aiinfluencer.site" class="support-mail-btn">support</a>
-        </div>
-        <div id="banner-timer">
-          <div class="timer-row timer-row-numbers">
-            <span class="timer-value">03</span>
-            <span class="blinking-colon">:</span>
-            <span class="timer-value">00</span>
-            <span class="blinking-colon">:</span>
-            <span class="timer-value">00</span>
-          </div>
-          <div class="timer-row timer-row-labels">
-            <span class="timer-label">h</span>
-            <span class="timer-label"></span>
-            <span class="timer-label">m</span>
-            <span class="timer-label"></span>
-            <span class="timer-label">s</span>
-          </div>
+            <div id="banner-timer">
+              <div class="timer-row timer-row-numbers">
+                <span class="timer-value">03</span>
+                <span class="blinking-colon">:</span>
+                <span class="timer-value">00</span>
+                <span class="blinking-colon">:</span>
+                <span class="timer-value">00</span>
+              </div>
+              <div class="timer-row timer-row-labels">
+                <span class="timer-label">h</span>
+                <span class="timer-label"></span>
+                <span class="timer-label">m</span>
+                <span class="timer-label"></span>
+                <span class="timer-label">s</span>
+              </div>
+            </div>
         </div>
         <div class="sticky-glow-line"></div>
         <div class="sticky-glow"></div>
