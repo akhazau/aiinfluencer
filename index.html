@@ -546,7 +546,7 @@
     </div>
 
     <!-- #1 ГЛАВНАЯ-->
-    <section id="hero-section" class="snap-section min-h-screen flex items-center justify-center relative pt-12 bg-gradient-to-b from-slate-900 to-slate-800" style="padding-top: 100px;">
+    <section id="hero-section" class="snap-section min-h-screen flex items-center justify-center relative pt-0 bg-gradient-to-b from-slate-900 to-slate-800">
         <!-- Animated background elements -->
         <div class="absolute inset-0">
             <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-purple-500 opacity-20 blur-3xl animate-pulse"></div>
@@ -999,7 +999,7 @@
                 const heroObserver = new IntersectionObserver(entries => {
                     heroVisible = entries[0].isIntersecting;
                     toggleBanner();
-                }, { threshold: 0.7 });
+                }, { threshold: 0.1 });
                 heroObserver.observe(heroSection);
             }
 
