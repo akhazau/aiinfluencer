@@ -1015,20 +1015,42 @@
             const stickyBanner = document.getElementById('sticky-banner');
             const stickyGlow = document.querySelector('.sticky-glow');
             const stickyGlowLine = document.querySelector('.sticky-glow-line');
+            let bannerForceHidden = false;
             
             function toggleBanner() {
                 if (!mainBtn || !stickyBanner) return;
+                if (bannerForceHidden) {
+                    stickyBanner.style.opacity = '0';
+                    stickyBanner.style.transform = 'translateY(-32px)';
+                    stickyBanner.style.pointerEvents = 'none';
+                    if (stickyGlow) stickyGlow.style.opacity = '0';
+                    if (stickyGlowLine) stickyGlowLine.style.opacity = '0';
+                    return;
+                }
                 const rect = mainBtn.getBoundingClientRect();
                 const isVisible = rect.top < 28;
-                
                 stickyBanner.style.opacity = isVisible ? '1' : '0';
                 stickyBanner.style.transform = isVisible ? 'translateY(0)' : 'translateY(-32px)';
                 stickyBanner.style.pointerEvents = isVisible ? 'auto' : 'none';
-                
                 if (stickyGlow) stickyGlow.style.opacity = isVisible ? '0.95' : '0';
                 if (stickyGlowLine) stickyGlowLine.style.opacity = isVisible ? '1' : '0';
             }
-            
+
+            // Observer для финального CTA
+            const finalCta = document.getElementById('final-cta');
+            if (finalCta) {
+                const ctaObserver = new IntersectionObserver(entries => {
+                    if (entries[0].isIntersecting) {
+                        bannerForceHidden = true;
+                        toggleBanner();
+                    } else {
+                        bannerForceHidden = false;
+                        toggleBanner();
+                    }
+                }, { threshold: 0.01 });
+                ctaObserver.observe(finalCta);
+            }
+
             window.addEventListener('scroll', toggleBanner);
             window.addEventListener('resize', toggleBanner);
             toggleBanner();
