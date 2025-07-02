@@ -340,8 +340,8 @@
                 #ffe06622 32%,
                 transparent 60%
             );
-            filter: blur(14px);
-            opacity: 0;
+            filter: blur(10px);
+            opacity: 1 !important;
             transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
         }
         #sticky-banner .banner-inner {
@@ -442,30 +442,30 @@
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <!-- Sticky-баннер (шторка) -->
-    <div id="sticky-banner" style="position: fixed; top: 0; left: 0; width: 100vw; height: 74px; z-index: 3000; background: #181a2a; box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25); opacity: 0; transform: translateY(-32px); pointer-events: none; transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);">
-        <div class="banner-inner" style="display: flex; align-items: center; justify-content: space-between; width: 100vw; max-width: 1000px; height: 74px; padding: 0 32px; margin: 0 auto; position: relative; z-index: 2;">
-            <button class="animated-gradient-btn text-white font-extrabold banner-btn max-w-xs w-full" style="width: 100%; height: 45px; border-radius: 18px; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0;">
+    <div id="sticky-banner">
+        <div class="banner-inner">
+            <button class="animated-gradient-btn text-white font-extrabold banner-btn max-w-xs">
                 <span>GET – </span>
                 <span class="line-through text-gray-200 font-normal">$127</span>
                 <span class="text-yellow-300">$27</span>
                 <span class="font-bold text-white">NOW</span>
             </button>
-            <div class="support-mail" style="margin-left: 32px;">support@aiinfluencer.site</div>
+            <div class="support-mail">support@aiinfluencer.site</div>
         </div>
-        <div id="banner-timer" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 0; z-index: 3;">
-            <div class="timer-block" style="display: flex; flex-direction: column; align-items: center; background: none; min-width: 0; padding: 0;">
-                <span class="timer-value" style="background: none; color: #ff4fa3; font-weight: bold; font-size: 1.8rem; border-radius: 0; padding: 0; min-width: 0; text-align: center; margin-bottom: 0; line-height: 1;">03</span>
-                <span class="timer-label" style="color: #b5b4b4; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.04em; background: none; padding: 0; margin: 0; line-height: 1.1;">h</span>
+        <div id="banner-timer">
+            <div class="timer-block">
+                <span class="timer-value">03</span>
+                <span class="timer-label">h</span>
             </div>
             <span class="blinking-colon">:</span>
-            <div class="timer-block" style="display: flex; flex-direction: column; align-items: center; background: none; min-width: 0; padding: 0;">
-                <span class="timer-value" style="background: none; color: #ff4fa3; font-weight: bold; font-size: 1.8rem; border-radius: 0; padding: 0; min-width: 0; text-align: center; margin-bottom: 0; line-height: 1;">00</span>
-                <span class="timer-label" style="color: #b5b4b4; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.04em; background: none; padding: 0; margin: 0; line-height: 1.1;">m</span>
+            <div class="timer-block">
+                <span class="timer-value">00</span>
+                <span class="timer-label">m</span>
             </div>
             <span class="blinking-colon">:</span>
-            <div class="timer-block" style="display: flex; flex-direction: column; align-items: center; background: none; min-width: 0; padding: 0;">
-                <span class="timer-value" style="background: none; color: #ff4fa3; font-weight: bold; font-size: 1.8rem; border-radius: 0; padding: 0; min-width: 0; text-align: center; margin-bottom: 0; line-height: 1;">00</span>
-                <span class="timer-label" style="color: #b5b4b4; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.04em; background: none; padding: 0; margin: 0; line-height: 1.1;">s</span>
+            <div class="timer-block">
+                <span class="timer-value">00</span>
+                <span class="timer-label">s</span>
             </div>
         </div>
     </div>
