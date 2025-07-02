@@ -308,18 +308,18 @@
             }
         }
         #sticky-banner {
-            background: #181a2a !important;
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
+            height: 74px;
             z-index: 3000;
+            background: #181a2a;
             box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25);
             opacity: 0;
             transform: translateY(-32px);
             pointer-events: none;
             transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
-            padding: 0;
         }
         #sticky-banner::after, #sticky-banner::before {
             display: none !important;
@@ -344,74 +344,6 @@
             opacity: 1 !important;
             transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
         }
-        #sticky-banner .banner-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100vw;
-            max-width: 1000px;
-            height: 74px;
-            padding: 0 32px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        #sticky-banner .banner-btn {
-            width: 320px !important;
-            min-width: 320px !important;
-            max-width: 320px !important;
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-        #sticky-banner .banner-btn:hover {
-            box-shadow: 0 10px 24px -4px #b983ffcc;
-            transform: translateY(-2.5px) scale(1.01);
-        }
-        .support-mail {
-            color: #f8fafc;
-            font-size: 1.1rem;
-            font-weight: 400;
-            text-align: right;
-            margin-left: 32px;
-            opacity: 0.85;
-            letter-spacing: 0.01em;
-            white-space: nowrap;
-        }
-        #banner-timer {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            align-items: center;
-            gap: 0;
-            z-index: 3;
-        }
-        .blinking-colon {
-            display: inline-block;
-            width: 1.3rem;
-            text-align: center;
-            color: #ff4fa3;
-            font-size: 1.3rem;
-            font-weight: bold;
-            vertical-align: middle;
-            margin: 0 0.2rem;
-            animation: blink-colon 1s steps(1, start) infinite;
-        }
-        @media (max-width: 700px) {
-            #sticky-banner .banner-inner {
-                padding: 0 8px;
-                max-width: 100vw;
-            }
-            #sticky-banner .banner-btn {
-                width: 98vw !important;
-                min-width: 0 !important;
-                max-width: 98vw !important;
-            }
-            .support-mail {
-                margin-left: 8px;
-                font-size: 0.95rem;
-            }
-        }
         .sticky-glow-line {
             position: fixed;
             top: 74px;
@@ -420,23 +352,38 @@
             height: 0.5px;
             background: #ffe066;
             z-index: 3000;
-            opacity: 0;
-            transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+            opacity: 1;
             pointer-events: none;
         }
-        .blinking-colon {
-            display: inline-block;
-            width: 1.5rem;
-            text-align: center;
-            color: #ff4fa3;
-            font-size: 2rem;
-            font-weight: bold;
-            vertical-align: middle;
-            animation: blink-colon 1s steps(1, start) infinite;
+        .banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+            max-width: 100vw;
+            height: 74px;
+            padding: 0 32px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
-        @keyframes blink-colon {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.2; }
+        .banner-btn {
+            width: 320px;
+            min-width: 320px;
+            max-width: 320px;
+            height: 45px;
+            border-radius: 18px;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .banner-btn:hover {
+            box-shadow: 0 10px 24px -4px #b983ffcc;
+            transform: translateY(-2.5px) scale(1.01);
         }
         .support-mail-btn {
             padding: 4px 18px;
@@ -457,7 +404,63 @@
             color: #fff;
             border: none;
         }
+        #banner-timer {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            gap: 0;
+            z-index: 3;
+        }
+        #banner-timer .timer-value {
+            background: none;
+            color: #ff4fa3;
+            font-weight: bold;
+            font-size: 2rem;
+            border-radius: 0;
+            padding: 0;
+            min-width: 0;
+            text-align: center;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        #banner-timer .timer-label {
+            color: #b5b4b4;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            background: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1.1;
+        }
+        .blinking-colon {
+            display: inline-block;
+            width: 1.1rem;
+            text-align: center;
+            color: #ff4fa3;
+            font-size: 1.1rem;
+            font-weight: bold;
+            vertical-align: middle;
+            margin: 0 0.1rem 0 0.1rem;
+            animation: blink-colon 1s steps(1, start) infinite;
+        }
+        @keyframes blink-colon {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
         @media (max-width: 700px) {
+            .banner-inner {
+                padding: 0 8px;
+                max-width: 100vw;
+            }
+            .banner-btn {
+                width: 98vw !important;
+                min-width: 0 !important;
+                max-width: 98vw !important;
+            }
             .support-mail-btn {
                 margin-left: 8px;
                 font-size: 0.95rem;
@@ -470,7 +473,7 @@
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
         <div class="banner-inner">
-            <button class="animated-gradient-btn text-white font-extrabold banner-btn max-w-xs">
+            <button class="animated-gradient-btn text-white font-extrabold banner-btn">
                 <span>GET – </span>
                 <span class="line-through text-gray-200 font-normal">$127</span>
                 <span class="text-yellow-300">$27</span>
