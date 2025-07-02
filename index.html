@@ -438,6 +438,32 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.2; }
         }
+        .support-mail-btn {
+            padding: 4px 18px;
+            border: 1.5px solid #fff;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            background: transparent;
+            color: #fff;
+            font-family: inherit;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            cursor: pointer;
+            outline: none;
+            margin-left: 32px;
+        }
+        .support-mail-btn:hover, .support-mail-btn:focus {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            color: #fff;
+            border: none;
+        }
+        @media (max-width: 700px) {
+            .support-mail-btn {
+                margin-left: 8px;
+                font-size: 0.95rem;
+                padding: 4px 10px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
@@ -450,7 +476,7 @@
                 <span class="text-yellow-300">$27</span>
                 <span class="font-bold text-white">NOW</span>
             </button>
-            <div class="support-mail">support@aiinfluencer.site</div>
+            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn">support</a>
         </div>
         <div id="banner-timer">
             <div class="timer-block">
