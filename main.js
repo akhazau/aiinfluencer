@@ -130,7 +130,7 @@
             en: {
                 "hero-title-1": "AI Influencer 3.0",
                 "hero-title-2": "ALREADY EASY.",
-                "hero-subtitle": "Master the tools in couple of the days\nAI MAGIC is now available for you!\nBUILD A LOYAL FANBASE ON INSTAGRAM",
+                "hero-subtitle": "Master the tools in couple of the days<br>AI MAGIC is now available for you!<br>BUILD A LOYAL FANBASE ON INSTAGRAM",
                 "join-text": "Join",
                 "members-text": "digital creators already inside",
                 "rating-text": "4.9 (300+ reviews)",
@@ -220,6 +220,8 @@
                 if (translations[language][id]) {
                     if (element.placeholder !== undefined) {
                         element.placeholder = translations[language][id];
+                    } else if (id === "hero-subtitle") {
+                        element.innerHTML = translations[language][id];
                     } else {
                         element.textContent = translations[language][id];
                     }
