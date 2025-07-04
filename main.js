@@ -123,18 +123,6 @@
             
             document.querySelectorAll('.art-card, .flex.items-start').forEach(el => observer.observe(el));
 
-            // Pull-to-refresh: обновление страницы при скролле в самый верх
-            let lastScrollTop = 0;
-            // window.addEventListener('scroll', function() {
-            //   if (window.scrollY === 0 && lastScrollTop === 0) {
-            //     if (!window.__justRefreshed) {
-            //       window.__justRefreshed = true;
-            //       setTimeout(() => window.__justRefreshed = false, 1500);
-            //       location.reload();
-            //     }
-            //   }
-            //   lastScrollTop = window.scrollY;
-            // });
         });
 
         // Переводы
