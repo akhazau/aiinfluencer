@@ -130,7 +130,7 @@
             en: {
                 "hero-title-1": "AI Influencer 3.0",
                 "hero-title-2": "ALREADY EASY.",
-                "hero-subtitle": "AI Magic is now available for you! Master the tools in couple of the days. Create your AI Model. GATHER AN ARMY OF FANS ON INSTAGRAM",
+                "hero-subtitle": "Master the tools in couple of the days\nAI MAGIC is now available for you!\nBUILD A LOYAL FANBASE ON INSTAGRAM",
                 "join-text": "Join",
                 "members-text": "digital creators already inside",
                 "rating-text": "4.9 (300+ reviews)",
