@@ -812,7 +812,7 @@
       </div>
     </section>
 
-    <!-- #5 ОТЗЫВЫ + FAQ -->
+    <!-- #5 ОТЗЫВЫ  -->
     <section class="snap-section py-20 text-white relative bg-gradient-to-b from-slate-900 to-slate-800" id="testimonials">
       <!-- Animated dots -->
       <div class="absolute top-10 left-1/2 w-8 h-8 rounded-full bg-pink-500 opacity-20 blur-2xl animate-pulse"></div>
@@ -850,8 +850,38 @@
             </div>
           </div>
     </section>
-    <!-- FAQ отдельной секцией -->
-    <section class="snap-section bg-gradient-to-b from-slate-800 to-slate-900" id="faq-section" style="scroll-snap-align:unset;">
+
+        <!-- #6 ОБ АВТОРЕ / ABOUT THE AUTHOR (фото инструктора из media/av00.png слева) -->
+        <section class="snap-section py-20 bg-gradient-to-b from-slate-900 to-slate-800" id="about-section">
+          <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+              <div class="md:w-1/2 flex justify-center">
+                <img src="media/av00.png" alt="About Author" class="rounded-2xl shadow-lg object-cover w-80 h-96" id="about-photo">
+              </div>
+              <div class="md:w-1/2 flex flex-col items-start">
+                <h2 class="text-4xl font-bold mb-4" id="about-title-text">Meet Your <span class="gradient-text">Instructor</span></h2>
+                <div class="text-lg text-gray-300 mb-4" id="about-role">AI Visual Creator & Media Innovator</div>
+                <div class="text-white mb-6" id="about-desc">For the past 3 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</div>
+                <div class="flex flex-wrap gap-4 mb-6">
+                  <span class="bg-pink-500/20 text-pink-400 px-4 py-1 rounded-full text-sm font-semibold" id="about-exp-pill">3 years experience</span>
+                  <span class="bg-blue-500/20 text-blue-400 px-4 py-1 rounded-full text-sm font-semibold" id="about-fact-1-title">100+ projects</span>
+                  <span class="bg-purple-500/20 text-purple-400 px-4 py-1 rounded-full text-sm font-semibold" id="about-fact-2-title">Certified instructor</span>
+                </div>
+                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-4">
+                  <li id="about-fact-1-desc">Realistic AI characters built for clients</li>
+                  <li id="about-fact-2-desc">AI tools & digital identity workflows</li>
+                  <li id="about-fact-3-title">10,000+ followers</li>
+                  <li id="about-fact-3-desc">Sharing creative AI techniques online</li>
+                  <li id="about-fact-4-title">Global impact</li>
+                  <li id="about-fact-4-desc">Students from over 20 countries</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+    <!-- #7 FAQ отдельной секцией -->
+    <section class="snap-section bg-gradient-to-b from-slate-800 to-slate-900" id="faq-section">
         <div class="max-w-3xl mx-auto px-6" id="faq">
           <h2 class="text-3xl font-bold mb-8 text-white" id="faq-title">Frequently Asked Questions</h2>
           <div class="space-y-4">
@@ -919,36 +949,7 @@
       </div>
     </section>
 
-    <!-- #6 ОБ АВТОРЕ / ABOUT THE AUTHOR (фото инструктора из media/av00.png слева) -->
-    <section class="snap-section py-20 bg-gradient-to-b from-slate-900 to-slate-800" id="about-section" style="scroll-snap-align:unset;">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="md:w-1/2 flex justify-center">
-            <img src="media/av00.png" alt="About Author" class="rounded-2xl shadow-lg object-cover w-80 h-96" id="about-photo">
-          </div>
-          <div class="md:w-1/2 flex flex-col items-start">
-            <h2 class="text-4xl font-bold mb-4" id="about-title-text">Meet Your <span class="gradient-text">Instructor</span></h2>
-            <div class="text-lg text-gray-300 mb-4" id="about-role">AI Visual Creator & Media Innovator</div>
-            <div class="text-white mb-6" id="about-desc">For the past 3 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</div>
-            <div class="flex flex-wrap gap-4 mb-6">
-              <span class="bg-pink-500/20 text-pink-400 px-4 py-1 rounded-full text-sm font-semibold" id="about-exp-pill">3 years experience</span>
-              <span class="bg-blue-500/20 text-blue-400 px-4 py-1 rounded-full text-sm font-semibold" id="about-fact-1-title">100+ projects</span>
-              <span class="bg-purple-500/20 text-purple-400 px-4 py-1 rounded-full text-sm font-semibold" id="about-fact-2-title">Certified instructor</span>
-            </div>
-            <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-4">
-              <li id="about-fact-1-desc">Realistic AI characters built for clients</li>
-              <li id="about-fact-2-desc">AI tools & digital identity workflows</li>
-              <li id="about-fact-3-title">10,000+ followers</li>
-              <li id="about-fact-3-desc">Sharing creative AI techniques online</li>
-              <li id="about-fact-4-title">Global impact</li>
-              <li id="about-fact-4-desc">Students from over 20 countries</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- #7 FINAL CTA + FOOTER (оригинальная версия) -->
+    <!-- #8 FINAL CTA + FOOTER -->
     <section class="snap-section relative text-white min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-slate-800 to-slate-900" id="final-cta">
       <div class="container mx-auto px-6 py-20 flex flex-col items-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center" id="final-cta-title">AI Models Will Be A <span class="gradient-text" id="final-cta-title-highlight">$1B Industry</span></h2>
