@@ -1176,6 +1176,8 @@
                 if (translations[language][id]) {
                     if (element.placeholder !== undefined) {
                         element.placeholder = translations[language][id];
+                    } else if (id === "hero-subtitle") {
+                        element.innerHTML = translations[language][id];
                     } else {
                         element.textContent = translations[language][id];
                     }
