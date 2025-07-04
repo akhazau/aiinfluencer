@@ -60,3 +60,7 @@ p {
   border: 2px solid #fff;
   box-shadow: none;
 }
+
+#live-viewers-row {
+  margin-top: 4px !important;
+}

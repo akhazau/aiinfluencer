@@ -259,6 +259,9 @@
             btn.addEventListener('click', () => changeLanguage(btn.dataset.lang))
         );
 
+        // Вызов перевода по умолчанию при загрузке страницы
+        changeLanguage('en');
+
         // --- Слайдер отзывов ---
         const reviews = [
           {
