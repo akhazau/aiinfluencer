@@ -379,7 +379,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin-left: 80px;
             transition: box-shadow 0.3s, transform 0.3s;
         }
@@ -426,18 +426,21 @@
             gap: 0;
         }
         .timer-row-numbers .timer-value {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: bold;
             color: #ff4fa3;
             min-width: 2.7rem;
             text-align: center;
         }
         .timer-row-numbers .blinking-colon {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #ff4fa3;
             width: 1.1rem;
             text-align: top;
             animation: blink-colon 1s steps(1, start) infinite;
+            vertical-align: middle;
+            display: inline-block;
+            transform: translateY(-5px);
         }
         .timer-row-labels .timer-label {
             font-size: 0.85rem;
@@ -515,12 +518,11 @@
     <div id="sticky-banner">
         <div class="banner-inner">
             <button class="animated-gradient-btn text-white font-extrabold banner-btn">
-            <span>Claim Course </span>
-            <span class="line-through text-gray-200 font-normal">$127</span>
+            <span>Claim Course Now</span>
+            <span class="line-through text-gray-100 font-normal">$127</span>
             <span class="text-yellow-300">$27</span>
-            <span class="font-bold text-white">NOW</span>
         </button>
-            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn">support</a>
+            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn" style="margin-right:auto;">support</a>
             <div id="banner-timer">
               <div class="timer-row timer-row-numbers">
                 <span class="timer-value">03</span>
