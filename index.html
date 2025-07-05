@@ -850,12 +850,12 @@
           </div>
     </section>
 
-        <!-- #6 ОБ АВТОРЕ / ABOUT THE AUTHOR (фото инструктора из media/av00.png слева) -->
+        <!-- #6 ABOUT THE AUTHOR -->
         <section class="snap-section py-20 bg-gradient-to-b from-slate-900 to-slate-800" id="about-section">
           <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
               <div class="md:w-1/2 flex justify-center items-center relative">
-                <img src="media/av00.png" alt="About Author" class="rounded-2xl shadow-lg object-cover w-80 h-96" id="about-photo">
+                <img src="media/av00.png" alt="About Author" class="rounded-2xl shadow-lg object-cover" id="about-photo">
                 <div style="position:absolute;left:10px;bottom:16px;z-index:2;">
                   <span style="display:inline-block;background:#111c22e6;color:#fff;font-weight:600;font-size:0.98rem;padding:4px 14px;border-radius:22px;border:2.5px solid #fff;letter-spacing:0.01em;">3 years experience</span>
                 </div>
@@ -890,62 +890,75 @@
           </div>
         </section>
     
-    <!-- #7 FAQ отдельной секцией -->
+    <!-- #7 FAQ -->
     <section class="snap-section bg-gradient-to-b from-slate-800 to-slate-900" id="faq-section">
-      <div class="max-w-3xl mx-auto px-6" id="faq">
-        <h2 class="text-3xl font-bold mb-8 text-white" id="faq-title">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-          <div class="border border-white/20 rounded-lg overflow-hidden">
-            <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+      <div class="max-w-4xl mx-auto px-6" id="faq">
+        <h2 class="text-4xl font-bold mb-8 gradient-text text-center" id="faq-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent;">FAQ</h2>
+        <div class="bg-white/5 rounded-2xl p-6 space-y-4">
+          <!-- FAQ items -->
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:700; font-size:1.15rem;">
               <span id="faq-q1">I have no experience with neural networks. Is this for me?</span>
-              <span class="text-xl">+</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
             </button>
-            <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a1">
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a1">
               Yes, everything is explained with live examples. The main thing is your desire to learn.
             </div>
           </div>
-          <div class="border border-white/20 rounded-lg overflow-hidden">
-            <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:700; font-size:1.15rem;">
               <span id="faq-q2">Does it really look like a real person?</span>
-              <span class="text-xl">+</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
             </button>
-            <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a2">
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a2">
               Yes. The key is the right technique. You'll get specific prompts and methodology.
             </div>
           </div>
-          <div class="border border-white/20 rounded-lg overflow-hidden">
-            <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:700; font-size:1.15rem;">
               <span id="faq-q3">Can I use the character for personal or private purposes?</span>
-              <span class="text-xl">+</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
             </button>
-            <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a3">
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a3">
               You get a tool that can be adapted for any format—from a visual blog to more private and closed projects. Everything remains under your control.
             </div>
           </div>
-          <div class="border border-white/20 rounded-lg overflow-hidden">
-            <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:700; font-size:1.15rem;">
               <span id="faq-q4">Is there support if something doesn't work?</span>
-              <span class="text-xl">+</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
             </button>
-            <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a4">
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a4">
               Yes, you can ask a question about the course topic and get help.
             </div>
           </div>
-          <div class="border border-white/20 rounded-lg overflow-hidden">
-            <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:700; font-size:1.15rem;">
               <span id="faq-q5">Are neural networks paid?</span>
-              <span class="text-xl">+</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
             </button>
-            <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a5">
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a5">
               Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments. <br><br>💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.
             </div>
           </div>
-          <div class="border border-white/20 rounded-lg overflow-hidden">
-            <button class="w-full text-left px-4 py-3 bg-white/5 hover:bg-white/10 transition flex justify-between items-center faq-toggle">
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:700; font-size:1.15rem;">
               <span id="faq-q6">What if I already have some skills—will it be interesting for me?</span>
-              <span class="text-xl">+</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
             </button>
-            <div class="px-4 py-3 text-sm text-white hidden faq-answer" id="faq-a6">
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a6">
               Absolutely. You'll learn how to create realistic, consistent images and train a neural network for yourself. This is a higher level.
             </div>
           </div>
@@ -1085,8 +1098,18 @@
             function initFAQ() {
                 document.querySelectorAll('.faq-toggle').forEach(btn => {
                     btn.onclick = () => {
+                        const item = btn.closest('.faq-item');
+                        const answer = item.querySelector('.faq-answer');
+                        const arrow = btn.querySelector('.faq-arrow');
+                        const isOpen = !answer.classList.contains('hidden');
+                        // Закрыть все
                         document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
-                        btn.nextElementSibling.classList.toggle('hidden');
+                        document.querySelectorAll('.faq-arrow').forEach(a => a.style.transform = 'rotate(0deg)');
+                        // Открыть выбранный
+                        if (!isOpen) {
+                            answer.classList.remove('hidden');
+                            arrow.style.transform = 'rotate(90deg)';
+                        }
                     };
                 });
             }
