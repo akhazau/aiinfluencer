@@ -532,6 +532,10 @@
           position: relative;
           z-index: 2;
         }
+        .faq-item { min-height: 80px; }
+        .faq-answer { transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s; max-height: 400px; overflow: hidden; }
+        .faq-answer.hidden { max-height: 0; opacity: 0; padding-bottom: 0 !important; }
+        .faq-answer:not(.hidden) { opacity: 1; }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
@@ -948,7 +952,7 @@
               </span>
             </button>
             <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a5">
-              Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments. <br><br>💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.
+              Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments. <span style="display:block;margin-top:8px;">💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.</span>
             </div>
           </div>
           <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
@@ -1172,7 +1176,7 @@
                 "faq-q4": "Is there support if something doesn't work?",
                 "faq-a4": "Yes, you can ask a question about the course topic and get help.",
                 "faq-q5": "Are neural networks paid?",
-                "faq-a5": "Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments. <br><br>💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.",
+                "faq-a5": "Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments. <span style=\"display:block;margin-top:8px;\">💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.</span>",
                 "faq-q6": "What if I already have some skills—will it be interesting for me?",
                 "faq-a6": "Absolutely. You'll learn how to create realistic, consistent images and train a neural network for yourself. This is a higher level.",
                 "final-cta-title": "AI Models Will Be A ",
@@ -1213,7 +1217,7 @@
                 "faq-q4": "Есть ли поддержка, если что-то не получится?",
                 "faq-a4": "Да, ты можешь задать вопрос по теме курса и получить помощь.",
                 "faq-q5": "Нейросети платные?",
-                "faq-a5": "Да, нейросети, с которыми мы будем работать, платные — к примеру Midjourney. Другие используют микроплатежи. <br><br>💡 В среднем, ты потратишь в десятки раз меньше, чем на одну профессиональную фотосессию — и получишь инструмент, который можно использовать снова и снова.",
+                "faq-a5": "Да, нейросети, с которыми мы будем работать, платные — к примеру Midjourney. Другие используют микроплатежи. <span style=\"display:block;margin-top:8px;\">💡 В среднем, ты потратишь в десятки раз меньше, чем на одну профессиональную фотосессию — и получишь инструмент, который можно использовать снова и снова.</span>",
                 "faq-q6": "А если я уже что-то умею — будет ли мне интересно?",
                 "faq-a6": "Безусловно. Ты узнаешь, как делать реалистичные, консистентные образы и обучать нейросеть под себя. Это уровень выше.",
                 "final-cta-title": "AI-модели станут ",
