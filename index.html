@@ -660,7 +660,7 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight text-center" style="font-size:3rem;margin-bottom:27px;">
                 Tired of <span class="gradient-text">Plastic AI faces?</span>
             </h2>
-            <p class="text-base text-center mb-8" style="transform: translateY(-6px) !important;">
+            <p class="text-base text-center mb-8" style="transform: translateY(-5px) !important;">
               You see what models they make and you know what you can do better<br>when the technology gets into your hands!
             </p>
         </div>
@@ -976,15 +976,64 @@
     <!-- #8 FINAL CTA + FOOTER -->
     <section class="snap-section relative text-white min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-[#2a0a16] to-[#1a0a0a]" id="final-cta" style="background: linear-gradient(0deg, #2a0a16 0%, #1a0a0a 60%, transparent 100%);">
       <div class="container mx-auto px-6 py-20 flex flex-col items-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center gradient-text" id="final-cta-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent;">AI Models Will Be A <span id="final-cta-title-highlight">$1B Industry</span></h2>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center gradient-text" id="final-cta-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent;">
+          AI Models Will Be A <b style="font-weight:700;">$1B Industry</b> By 2030.
+        </h2>
         <div class="text-lg text-gray-300 max-w-2xl mx-auto text-center mb-8" id="final-cta-subtitle">
           Seize This Golden Opportunity While It's Still Here... Or Watch Others Get Rich While You Kept Waiting...
         </div>
-        <button class="animated-gradient-btn text-white font-extrabold mt-2 mb-8 px-10 py-4 rounded-lg text-lg flex items-center justify-center gap-2.5 overflow-hidden h-[50px]">
+        <!-- Таймер -->
+        <div class="flex flex-col items-center mb-8" id="final-cta-timer-wrap">
+          <div class="timer-row timer-row-numbers" style="justify-content:center;">
+            <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">03</span>
+            <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+            <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+            <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+            <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+          </div>
+          <div class="timer-row timer-row-labels" style="justify-content:center;">
+            <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
+            <span class="timer-label" style="min-width:1.1rem;"></span>
+            <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">m</span>
+            <span class="timer-label" style="min-width:1.1rem;"></span>
+            <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">s</span>
+          </div>
+        </div>
+        <!-- Кнопка -->
+        <button class="animated-gradient-btn text-white font-extrabold mt-2 mb-8 px-6 py-2 rounded-lg text-lg flex items-center justify-center gap-2.5 overflow-hidden h-[44px]">
           <span>CLAIM YOUR SPECIAL OFFER NOW!</span>
           <span class="line-through text-gray-400 font-normal">$127</span>
           <span class="text-yellow-300">$27</span>
         </button>
+        <!-- Блок с продажами -->
+        <div class="flex items-center bg-[#f5f6fa] rounded-xl border border-[#bfc6e0] px-6 py-3 mb-6" style="box-shadow:0 2px 8px #0001;max-width:340px;">
+          <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#bfc6e0;border-radius:50%;margin-right:16px;">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#bfc6e0"/><text x="12" y="16" text-anchor="middle" font-size="14" fill="#fff" font-family="Arial, sans-serif">i</text></svg>
+          </span>
+          <span style="font-weight:700;font-size:1.5rem;color:#222;">169,214</span>
+          <span style="color:#222;font-size:1.1rem;margin-left:8px;">sales</span>
+        </div>
+        <!-- Блок с аватарками и рейтингом -->
+        <div class="flex items-center space-x-4 mt-2 mb-8">
+          <div class="flex -space-x-2">
+            <img src="media/av_1.png" style="object-fit:contain; transform: scale(1.2); width:36px; height:36px; border-radius:50%; border:2px solid #fff;" alt="Live viewers">
+            <img src="media/av_1.png" style="object-fit:contain; transform: scale(1.2); width:36px; height:36px; border-radius:50%; border:2px solid #fff;" alt="Live viewers">
+            <img src="media/av_1.png" style="object-fit:contain; transform: scale(1.2); width:36px; height:36px; border-radius:50%; border:2px solid #fff;" alt="Live viewers">
+          </div>
+          <div>
+            <p class="text-sm font-medium"><span class="whitespace-nowrap"><span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">creators already inside</span></span></p>
+            <div class="flex items-center">
+              <div class="flex text-yellow-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+              </div>
+              <span style="margin-left:10px;" class="text-sm font-medium" id="rating-text">4.9 (300+ reviews)</span>
+            </div>
+          </div>
+        </div>
         <div class="text-sm text-gray-400 mt-6 text-center" id="final-cta-legal">
           By joining, you agree to our <a href="#" class="underline" id="final-cta-privacy-link">Privacy Policy</a> and <a href="#" class="underline" id="final-cta-terms-link">Terms</a>. We will not spam or sell your data.
         </div>
@@ -993,6 +1042,30 @@
         </footer>
       </div>
     </section>
+
+    <footer class="bg-[#0c0f1f] text-white py-10 px-6 text-sm">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between gap-6">
+        <div>
+          <h3 class="text-lg font-semibold gradient-text" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent;">AI Character Studio</h3>
+          <p class="mt-2 text-gray-400 max-w-xs">Build hyper-realistic AI models and generate next-gen content. Transform your visuals and launch your creator journey.</p>
+          <div class="mt-4 space-y-2 text-sm">
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M21 8V7l-3 2-2-2-4 3-3-3-6 5v2l6-5 3 3 4-3 2 2 3-2z"/></svg>
+              <a href="mailto:aiphoto.supp@gmail.com" class="hover:underline">aiphoto.supp@gmail.com</a>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6.5a8.38 8.38 0 0 1-2.36.65A4.13 4.13 0 0 0 20.5 5a8.27 8.27 0 0 1-2.6.99A4.11 4.11 0 0 0 16.5 4a4.13 4.13 0 0 0-4.12 4.12c0 .32.03.64.1.94A11.7 11.7 0 0 1 3.1 5a4.13 4.13 0 0 0 1.27 5.5A4.06 4.06 0 0 1 2.8 10v.05a4.13 4.13 0 0 0 3.3 4.04 4.1 4.1 0 0 1-1.08.14c-.26 0-.51-.02-.76-.07a4.13 4.13 0 0 0 3.86 2.87A8.26 8.26 0 0 1 2 19.54a11.66 11.66 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.34 8.34 0 0 0 21 6.5z"/></svg>
+              <a href="https://instagram.com/rakilon.tennis" class="hover:underline">@rakilon.tennis</a>
+            </p>
+            <p class="text-gray-500">Mykola Yeremeev e.K.<br>116/290/00277</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 border-t border-gray-700 pt-6 text-xs text-gray-500 max-w-6xl mx-auto">
+        <p>&copy; 2025 Mykola Yeremeev. All rights reserved.</p>
+        <p class="mt-2">This course is for educational purposes only. Results are not guaranteed. By using this site, you accept our terms and assume full responsibility for your decisions and actions. No refunds on digital content.</p>
+      </div>
+    </footer>
 
     <script>
         // Инициализация при загрузке DOM
