@@ -513,6 +513,24 @@
           display: block;
           margin-bottom: 5px;
         }
+        #final-cta {
+          position: relative;
+          overflow: hidden;
+        }
+        #final-cta::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 1;
+          background: radial-gradient(circle at 60% 40%, rgba(255, 40, 80, 0.22) 0%, rgba(255,0,60,0.13) 40%, transparent 80%);
+          filter: blur(18px);
+          opacity: 1;
+        }
+        #final-cta > .container {
+          position: relative;
+          z-index: 2;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
@@ -924,7 +942,7 @@
     </section>
 
     <!-- #8 FINAL CTA + FOOTER -->
-    <section class="snap-section relative text-white min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-red-900 to-red-800" id="final-cta">
+    <section class="snap-section relative text-white min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-[#2a0a16] to-[#1a0a0a]" id="final-cta">
       <div class="container mx-auto px-6 py-20 flex flex-col items-center">
         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center" id="final-cta-title">AI Models Will Be A <span class="gradient-text" id="final-cta-title-highlight">$1B Industry</span></h2>
         <p class="text-lg text-gray-300 max-w-2xl mx-auto text-center mb-8" id="final-cta-subtitle">
@@ -1093,7 +1111,7 @@
             en: {
                 "hero-title-1": "AI Influencer 3.0",
                 "hero-title-2": "ALREADY EASY.",
-                "hero-subtitle": "BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master the tools in couple of the days. Unleash the AI MAGIC today !",
+                "hero-subtitle": "BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master the tools in couple of the days. Unleash the AI MAGIC today!",
                 "join-text": "Join",
                 "members-text": "creators already inside",
                 "rating-text": "4.9 (300+ reviews)",
