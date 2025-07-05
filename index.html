@@ -541,29 +541,31 @@
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
-        <div class="banner-inner" style="position:relative;">
-            <button class="animated-gradient-btn text-white font-extrabold banner-btn" style="margin-left: 70px;">
+        <div class="banner-inner" style="display:flex;align-items:center;justify-content:space-between;position:relative;gap:0;">
+            <button class="animated-gradient-btn text-white font-extrabold banner-btn">
             <span>Enroll Now</span>
-            <span class="line-through text-gray-100 font-normal">$127</span>
-            <span class="text-yellow-300">$27</span>
+            <span class="line-through text-gray-200 font-normal">$127</span>
+            <span class="text-yellow-400">$27</span>
         </button>
-            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn" style="margin-left:150px;">support</a>
-            <div id="banner-timer">
-              <div class="timer-row timer-row-numbers">
-                <span class="timer-value">03</span>
-                <span class="blinking-colon">:</span>
-                <span class="timer-value">00</span>
-                <span class="blinking-colon">:</span>
-                <span class="timer-value">00</span>
-            </div>
-              <div class="timer-row timer-row-labels">
-                <span class="timer-label">h</span>
-                <span class="timer-label"></span>
-                <span class="timer-label">m</span>
-                <span class="timer-label"></span>
-                <span class="timer-label">s</span>
-            </div>
+            <div style="flex:1;display:flex;justify-content:center;align-items:center;">
+              <div id="banner-timer">
+                <div class="timer-row timer-row-numbers">
+                  <span class="timer-value">03</span>
+                  <span class="blinking-colon">:</span>
+                  <span class="timer-value">00</span>
+                  <span class="blinking-colon">:</span>
+                  <span class="timer-value">00</span>
+              </div>
+                <div class="timer-row timer-row-labels">
+                  <span class="timer-label">h</span>
+                  <span class="timer-label"></span>
+                  <span class="timer-label">m</span>
+                  <span class="timer-label"></span>
+                  <span class="timer-label">s</span>
+              </div>
+          </div>
         </div>
+            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn">support</a>
     </div>
     <div class="sticky-glow-line"></div>
     <div class="sticky-glow"></div>
