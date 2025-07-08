@@ -665,53 +665,7 @@
           </p>
         </div>
         <div style="height: 20px;"></div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="margin-top:0;">
-          <!-- Art Card 1 -->
-          <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
-            <div class="h-64 overflow-hidden">
-              <img src="media/av01.png" alt="AI Art 1" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-pink-400">Edutainment</h3>
-              <div class="text-gray-200 text-sm mb-2">Learn & Enjoy — education meets entertainment.</div>
-              <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                <li>Daily creative boost</li>
-                <li>Fast & simple</li>
-                <li>Inspires masterpiece thinking</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Art Card 2 -->
-          <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
-            <div class="h-64 overflow-hidden">
-              <img src="media/av01.png" alt="AI Art 2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-yellow-300">Hyper-Realism</h3>
-              <div class="text-gray-200 text-sm mb-2">Look Real. Feel Real.</div>
-              <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                <li>Emotion-rich, photo-grade quality</li>
-                <li>No AI-fake look</li>
-                <li>Fast, affordable, on-brand</li>
-              </ul>
-            </div>
-          </div>
-          <!-- Art Card 3 -->
-          <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
-            <div class="h-64 overflow-hidden">
-              <img src="media/av01.png" alt="AI Art 3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 text-purple-400">Studio Quality</h3>
-              <div class="text-gray-200 text-sm mb-2">Shoot Without a Studio</div>
-              <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                <li>Fashion-level realism</li>
-                <li>Perfect skin, tone & light</li>
-                <li>Built for ads, stores, socials</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="art-cards-row" style="margin-top:0;"></div>
       </div>
     </section>
 
@@ -749,7 +703,7 @@
             <li class="flex items-start gap-2"><span class="text-green-400">✔</span> Private community</li>
             <li class="flex items-start gap-2"><span class="text-green-400">✔</span> Personal feedback 1–2×</li>
           </ul>
-          <button class="animated-gradient-btn text-white font-extrabold w-full mt-6" style="border-radius:18px; font-size:1.15rem; display:flex; align-items:center; justify-content:center; gap:10px; overflow: hidden; background-size: 120% 120%; background-position: center; height: 50px;">
+          <button class="animated-gradient-btn text-white font-extrabold w-full mt-6" style="border-radius:18px; font-size:1.15rem; display:flex; align-items:center; justify-content:center; gap:6px; overflow: hidden; background-size: 120% 120%; background-position: center; height: 50px;">
             <span>GET – </span>
             <span class="line-through text-gray-200 font-normal">$127</span>
             <span class="text-yellow-300">$27</span>
@@ -800,16 +754,7 @@
               <button id="reviews-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-transparent rounded-full w-12 h-12 flex items-center justify-center" style="left:-24px;">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 8L12 16L20 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
-              <div id="review-slide" class="flex flex-col items-center text-center bg-white/5 rounded-xl p-10 border border-white/10 w-full overflow-hidden gap-6 h-[290px] justify-center">
-                <div class="w-full">
-                  <p class="text-lg font-normal w-full" id="review-text">I made $1.2k in an hour through tips alone - thanks to this method!</p>
-              </div>
-                <div class="flex flex-col items-center">
-                  <img src="media/av01.png" class="w-24 h-24 rounded-full mx-auto mb-2" id="review-photo">
-                  <div class="font-semibold" id="review-name">Mark</div>
-                  <div class="text-sm text-white/60" id="review-role">AI Creator</div>
-            </div>
-          </div>
+              <div id="review-slide" class="flex flex-col items-center text-center bg-white/5 rounded-xl p-10 border border-white/10 w-full overflow-hidden gap-6 h-[290px] justify-center"></div>
               <button id="reviews-next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-transparent rounded-full w-12 h-12 flex items-center justify-center" style="right:-24px;">
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
@@ -1164,6 +1109,130 @@
               }
               lastScrollTop = window.scrollY;
             });
+
+            // --- Динамический рендер карточек преимуществ ---
+            const artCards = [
+              {
+                img: 'media/av01.png',
+                title: 'Edutainment',
+                titleClass: 'text-pink-400',
+                desc: 'Learn & Enjoy — education meets entertainment.',
+                features: ['Daily creative boost', 'Fast & simple', 'Inspires masterpiece thinking']
+              },
+              {
+                img: 'media/av01.png',
+                title: 'Hyper-Realism',
+                titleClass: 'text-yellow-300',
+                desc: 'Look Real. Feel Real.',
+                features: ['Emotion-rich, photo-grade quality', 'No AI-fake look', 'Fast, affordable, on-brand']
+              },
+              {
+                img: 'media/av01.png',
+                title: 'Studio Quality',
+                titleClass: 'text-purple-400',
+                desc: 'Shoot Without a Studio',
+                features: ['Fashion-level realism', 'Perfect skin, tone & light', 'Built for ads, stores, socials']
+              }
+            ];
+            const artCardsRow = document.getElementById('art-cards-row');
+            if (artCardsRow) {
+              artCardsRow.innerHTML = artCards.map(card => `
+                <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
+                  <div class="h-64 overflow-hidden">
+                    <img src="${card.img}" alt="AI Art" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 ${card.titleClass}">${card.title}</h3>
+                    <div class="text-gray-200 text-sm mb-2">${card.desc}</div>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                      ${card.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                  </div>
+                </div>
+              `).join('');
+            }
+            // --- Динамический рендер отзывов ---
+            const reviews = [
+              {
+                text: "I made $1.2k in an hour through tips alone - thanks to this method!",
+                photo: "media/av01.png",
+                name: "Mark",
+                role: "AI Creator"
+              },
+              {
+                text: "After failing with dropshipping and Amazon FBA, their Fanvue optimization strategies helped me earn $6.5K part-time in just one month of joining the program.",
+                photo: "media/av02.png",
+                name: "Alex",
+                role: "Digital Marketer"
+              },
+              {
+                text: "As a complete beginner with no technical background, their simple Genfluence tutorials and Discord community helped me make $500 in my first week.",
+                photo: "media/av03.png",
+                name: "James",
+                role: "Community Member"
+              },
+              {
+                text: "I scaled to $16.6K in less than 2 months through AI Models!",
+                photo: "media/av04.png",
+                name: "Pav",
+                role: "Entrepreneur"
+              },
+              {
+                text: "My followers can't believe my influencer isn't real.",
+                photo: "media/av00.png",
+                name: "Ayşe",
+                role: "Social Media Manager"
+              },
+              {
+                text: "Running full ad campaigns with AI models now—clients love it.",
+                photo: "media/av00.png",
+                name: "Murat",
+                role: "Creative Producer"
+              }
+            ];
+            let reviewIndex = 0;
+            const reviewSlide = document.getElementById('review-slide');
+            const dotsWrap = document.getElementById('reviews-dots');
+            function renderReview(idx) {
+              const r = reviews[idx];
+              if (reviewSlide) {
+                reviewSlide.innerHTML = `
+                  <div class="w-full">
+                    <p class="text-lg font-normal w-full" id="review-text">${r.text}</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <img src="${r.photo}" class="w-24 h-24 rounded-full mx-auto mb-2" id="review-photo">
+                    <div class="font-semibold" id="review-name">${r.name}</div>
+                    <div class="text-sm text-white/60" id="review-role">${r.role}</div>
+                  </div>
+                `;
+              }
+              if (dotsWrap) {
+                dotsWrap.innerHTML = '';
+                reviews.forEach((_, i) => {
+                  const dot = document.createElement('button');
+                  dot.className = 'w-3 h-3 rounded-full ' + (i === idx ? 'bg-purple-400' : 'bg-white/20') + ' transition';
+                  dot.style.outline = 'none';
+                  dot.onclick = () => { reviewIndex = i; renderReview(reviewIndex); };
+                  dotsWrap.appendChild(dot);
+                });
+              }
+            }
+            const prevBtn = document.getElementById('reviews-prev');
+            const nextBtn = document.getElementById('reviews-next');
+            if (prevBtn && nextBtn) {
+              prevBtn.onclick = () => {
+                reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
+                renderReview(reviewIndex);
+              };
+              nextBtn.onclick = () => {
+                reviewIndex = (reviewIndex + 1) % reviews.length;
+                renderReview(reviewIndex);
+              };
+            }
+            if (reviewSlide && dotsWrap) {
+              renderReview(reviewIndex);
+            }
         });
 
         // Переводы
@@ -1301,90 +1370,6 @@
         document.querySelectorAll('.lang-btn').forEach(btn =>
             btn.addEventListener('click', () => changeLanguage(btn.dataset.lang))
         );
-
-        // --- Слайдер отзывов ---
-        const reviews = [
-          {
-            text: "I made $1.2k in an hour through tips alone - thanks to this method!",
-            photo: "media/av01.png",
-            name: "Mark",
-            role: "AI Creator"
-          },
-          {
-            text: "After failing with dropshipping and Amazon FBA, their Fanvue optimization strategies helped me earn $6.5K part-time in just one month of joining the program.",
-            photo: "media/av02.png",
-            name: "Alex",
-            role: "Digital Marketer"
-          },
-          {
-            text: "As a complete beginner with no technical background, their simple Genfluence tutorials and Discord community helped me make $500 in my first week.",
-            photo: "media/av03.png",
-            name: "James",
-            role: "Community Member"
-          },
-          {
-            text: "I scaled to $16.6K in less than 2 months through AI Models!",
-            photo: "media/av04.png",
-            name: "Pav",
-            role: "Entrepreneur"
-          },
-          {
-            text: "My followers can't believe my influencer isn't real.",
-            photo: "media/av00.png",
-            name: "Ayşe",
-            role: "Social Media Manager"
-          },
-          {
-            text: "Running full ad campaigns with AI models now—clients love it.",
-            photo: "media/av00.png",
-            name: "Murat",
-            role: "Creative Producer"
-          }
-        ];
-
-        let reviewIndex = 0;
-        const reviewText = document.getElementById('review-text');
-        const reviewPhoto = document.getElementById('review-photo');
-        const reviewName = document.getElementById('review-name');
-        const reviewRole = document.getElementById('review-role');
-        const dotsWrap = document.getElementById('reviews-dots');
-
-        function renderReview(idx) {
-          const r = reviews[idx];
-          reviewText.textContent = r.text;
-          reviewPhoto.src = r.photo;
-          reviewName.textContent = r.name;
-          reviewRole.textContent = r.role;
-          // Обновить индикатор
-          dotsWrap.innerHTML = '';
-          reviews.forEach((_, i) => {
-            const dot = document.createElement('button');
-            dot.className = 'w-3 h-3 rounded-full ' + (i === idx ? 'bg-purple-400' : 'bg-white/20') + ' transition';
-            dot.style.outline = 'none';
-            dot.onclick = () => { reviewIndex = i; renderReview(reviewIndex); };
-            dotsWrap.appendChild(dot);
-          });
-        }
-
-        // Стрелки
-        const prevBtn = document.getElementById('reviews-prev');
-        const nextBtn = document.getElementById('reviews-next');
-        if (prevBtn && nextBtn) {
-          prevBtn.onclick = () => {
-            reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
-            renderReview(reviewIndex);
-          };
-          nextBtn.onclick = () => {
-            reviewIndex = (reviewIndex + 1) % reviews.length;
-            renderReview(reviewIndex);
-          };
-        }
-
-        // Инициализация
-        if (reviewText && reviewPhoto && reviewName && reviewRole && dotsWrap) {
-          renderReview(reviewIndex);
-        }
-        // ... конец слайдера отзывов ...
     </script>
 </body>
 </html>
