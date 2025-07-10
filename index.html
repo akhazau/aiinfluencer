@@ -966,7 +966,7 @@
           </div>
           <!-- Блок с аватарками и рейтингом -->
           <div class="flex -space-x-2">
-            <img src="media/av_1.png" style="object-fit:contain; transform: scale(1.2);" alt="Live viewers">
+            <img src="media/av_1.png" style="object-fit:contain;" alt="Live viewers">
           </div>
           <div>
             <p class="text-sm font-medium"><span class="whitespace-nowrap"><span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">creators already inside</span></span></p>
@@ -1094,7 +1094,7 @@
             "footer-copyright": "© 2025 Лео Лаваро. Все права защищены.",
             "footer-legal": "Этот курс предназначен только для образовательных целей. Результаты не гарантируются. Используя этот сайт, вы принимаете наши условия и берёте на себя полную ответственность за свои решения и действия. Возвратов за цифровой контент нет."
           },
-        });
+        };
         function changeLanguage(lang) {
           document.documentElement.lang = lang;
           Object.entries(translations[lang]).forEach(([id, val]) => {
@@ -1140,6 +1140,7 @@
         function toggleBanner() {
           if (!mainBtn || !stickyBanner) return;
           const show = !(bannerForceHidden || heroVisible) && mainBtn.getBoundingClientRect().top < 28;
+          console.log('toggleBanner called', {show, bannerForceHidden, heroVisible, mainBtnTop: mainBtn.getBoundingClientRect().top});
           stickyBanner.style.opacity = show ? '1' : '0';
           stickyBanner.style.transform = show ? 'translateY(0)' : 'translateY(-32px)';
           stickyBanner.style.pointerEvents = show ? 'auto' : 'none';
