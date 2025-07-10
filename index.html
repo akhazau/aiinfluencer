@@ -739,7 +739,22 @@
           <div class="bg-white/10 rounded-2xl p-8 text-center">
             <p class="text-white text-xl mb-3">⏳ Time left to join with discount:</p>
             <div class="flex justify-center gap-6 text-pink-400 text-3xl font-bold">
-              <span>03</span><span>:</span><span>00</span><span>:</span><span>00</span>
+              <div class="flex flex-col items-center mb-6" id="final-cta-timer-wrap">
+                <div class="timer-row timer-row-numbers" style="justify-content:center;">
+                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">03</span>
+                  <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+                  <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+                </div>
+                <div class="timer-row timer-row-labels" style="justify-content:center;">
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
+                  <span class="timer-label" style="min-width:1.1rem;"></span>
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">m</span>
+                  <span class="timer-label" style="min-width:1.1rem;"></span>
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">s</span>
+                </div>
+              </div>
             </div>
             <p class="text-base text-white/60 mt-3">Then the price goes up</p>
           </div>
@@ -822,7 +837,7 @@
         </section>
     
     <!-- #7 FAQ -->
-    <section class="snap-section bg-gradient-to-b from-slate-800 to-slate-900" id="faq-section">
+    <section class="snap-section py-20 bg-gradient-to-b from-slate-800 to-slate-900" id="faq-section">
       <div class="max-w-4xl mx-auto px-6" id="faq">
         <h2 class="text-4xl font-bold mb-8 gradient-text text-center" id="faq-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent;">FAQ</h2>
         <div class="bg-white/5 rounded-2xl p-6 space-y-4" style="width:1100px;max-width:100%;margin:0 auto;">
@@ -899,14 +914,16 @@
     </section>
 
     <!-- #8 CTA + FOOTER -->
-    <section class="snap-section relative text-white flex flex-col justify-center items-center bg-gradient-to-b from-[#2a0a16] to-[#1a0a0a]" id="final-cta" style="background: linear-gradient(0deg, #2a0a16 0%, #1a0a0a 60%, transparent 100%); padding-top: 40px; padding-bottom: 32px;">
-      <div class="container mx-auto px-6 py-10 flex flex-col items-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center" id="final-cta-title">
+    <section class="snap-section py-20 flex flex-col min-h-screen bg-gradient-to-b from-[#2a0a16] to-[#1a0a0a]" id="final-cta" style="background: linear-gradient(0deg, #2a0a16 0%, #1a0a0a 60%, transparent 100%); padding-top: 40px; padding-bottom: 32px;">
+      <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
+        <div class="section-header mt-12">
+        <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center" id="final-cta-title">
           AI Models Will Be A <span class="gradient-text">$1B Industry</span> By 2030.
         </h2>
-        <div class="text-lg text-gray-300 max-w-2xl mx-auto text-center mb-6" id="final-cta-subtitle">
-          Seize This Golden Opportunity While It's Still Here... Or Watch Others Get Rich While You Kept Waiting...
+        <div class=" text-base text-center mb-2 text-gray-300 max-w-xl mx-auto" id="final-cta-subtitle">
+          This Hype Looks Like the Bitcoin Gold Rush in 2012!
         </div>
+        <div class="section-content mt-auto mb-12"></div>
         <!-- Таймер -->
         <div class="flex flex-col items-center mb-6" id="final-cta-timer-wrap">
           <div class="timer-row timer-row-numbers" style="justify-content:center;">
@@ -957,8 +974,9 @@
             </div>
           </div>
         </div>
-      </div> <!-- closes .container mx-auto px-6 py-10 flex flex-col items-center -->
-    </section>
+      </div>
+    </div>
+  </section>
 
     <footer class="w-full mt-16 text-center text-gray-500 text-sm" id="footer-tagline">
       <div class="mb-4">Exploring the intersection of art and artificial intelligence</div>
@@ -978,6 +996,7 @@
         </div>
       </div>
     </footer>
+  </section>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
