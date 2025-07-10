@@ -964,11 +964,28 @@
             <span style="font-weight:700;font-size:1.5rem;color:#222;">3,214</span>
             <span style="color:#222;font-size:1.1rem;margin-left:8px;">course sales</span>
           </div>
-          <!-- Аватарки -->
-          <div class="flex flex-row justify-center gap-8 mt-12 mb-4">
-            <img src="media/av01.png" alt="Avatar 1" style="width:120px;height:120px;object-fit:cover;border-radius:1.5rem;box-shadow:0 4px 32px #a8324a55;">
-            <img src="media/av02.png" alt="Avatar 2" style="width:120px;height:120px;object-fit:cover;border-radius:1.5rem;box-shadow:0 4px 32px #a8324a55;">
-            <img src="media/av03.png" alt="Avatar 3" style="width:120px;height:120px;object-fit:cover;border-radius:1.5rem;box-shadow:0 4px 32px #a8324a55;">
+          <!-- Блок с аватарками, текстом и рейтингом -->
+          <div class="flex flex-row items-center justify-center gap-6 mt-12 mb-4">
+            <div class="flex -space-x-4">
+              <img src="media/av01.png" style="object-fit:cover;width:56px;height:56px;border-radius:999px;border:3px solid #23243a;box-shadow:0 2px 8px #0002;" alt="Avatar 1">
+              <img src="media/av02.png" style="object-fit:cover;width:56px;height:56px;border-radius:999px;border:3px solid #23243a;box-shadow:0 2px 8px #0002;" alt="Avatar 2">
+              <img src="media/av03.png" style="object-fit:cover;width:56px;height:56px;border-radius:999px;border:3px solid #23243a;box-shadow:0 2px 8px #0002;" alt="Avatar 3">
+            </div>
+            <div class="flex flex-col items-start justify-center">
+              <div class="text-lg md:text-2xl font-bold text-white" style="line-height:1.2;">
+                <span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">creators already inside</span>
+              </div>
+              <div class="flex items-center mt-1">
+                <div class="flex text-yellow-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                </div>
+                <span style="margin-left:10px;" class="text-base font-medium text-white" id="rating-text">4.9 (300+ reviews)</span>
+              </div>
+            </div>
           </div>
         </div>
         <footer class="w-full mt-auto text-left text-gray-300 text-sm items-start justify-start">
