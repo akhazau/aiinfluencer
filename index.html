@@ -525,18 +525,18 @@
         #final-cta::before {
           content: '';
           position: absolute;
-          inset: 0;
-          pointer-events: none;
+          left: 0; right: 0; top: 0;
+          height: 120px;
           z-index: 1;
-          background: radial-gradient(circle at 60% 40%, rgba(120, 20, 40, 0.15) 0%, rgba(80,0,20,0.11) 40%, transparent 80%);
-          filter: blur(22px);
-          opacity: 0.85;
-          mix-blend-mode: multiply;
+          pointer-events: none;
+          background: linear-gradient(
+            to bottom,
+            #181a2a 0%,
+            rgba(24,26,42,0.85) 60%,
+            rgba(24,26,42,0.0) 100%
+          );
         }
-        #final-cta > .container {
-          position: relative;
-          z-index: 2;
-        }
+        #final-cta > .container { position: relative; z-index: 2; }
         .faq-item { min-height: 80px; }
         .faq-answer { transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s; max-height: 400px; overflow: hidden; }
         .faq-answer.hidden { max-height: 0; opacity: 0; padding-bottom: 0 !important; }
@@ -557,7 +557,6 @@
             rgba(74,26,44,0.52) 100%
           );
         }
-        #final-cta > .container { position: relative; z-index: 1; }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
