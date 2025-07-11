@@ -976,29 +976,24 @@
             </div>
           </div>
           <!-- Кнопка -->
-          <button class="animated-gradient-btn w-[500px] min-w-[200px] max-w-full">
+          <button class="animated-gradient-btn w-[500px] min-w-[200px] max-w-full mx-auto rounded-[18px]">
             <span>CLAIM YOUR SPECIAL OFFER NOW!</span>
             <span class="line-through text-yellow-500 font-normal">$127</span>
             <span class="text-yellow-300 text-xl font-extrabold">$27</span>
           </button>
-          <!-- Блок с продажами -->
-          <div class="flex items-center bg-[#f5f6fa] rounded-xl border border-[#bfc6e0] px-4 py-3 mb-8 mx-auto" style="box-shadow:0 2px 8px #0001;max-width:340px;">
-            <span style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#bfc6e0;border-radius:50%;margin-right:16px;">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#bfc6e0"/><text x="12" y="16" text-anchor="middle" font-size="14" fill="#fff" font-family="Arial, sans-serif">i</text></svg>
-            </span>
-            <span style="font-weight:700;font-size:1.5rem;color:#222;">1,214</span>
+              <!-- Новый счётчик продаж -->
+    <div class="flex justify-center my-6">
+      <span id="sales-counter" class="text-white text-2xl font-bold">607</span>
             <span style="color:#222;font-size:1.1rem;margin-left:8px;">course sales</span>
           </div>
           <!-- Блок с аватарками, текстом и рейтингом -->
-          <div class="flex flex-row items-center justify-center gap-4 mt-6 mb-2">
-            <div class="flex -space-x-2">
-              <img src="media/av_1.png" style="object-fit:contain; transform: scale(0.2);" alt="Live viewers">
-            </div>
-            <div class="flex flex-col items-start justify-center">
-              <div class="text-base md:text-xl font-bold text-white leading-tight">
+          <div class="flex flex-col items-center justify-center gap-3 mt-6 mb-2">
+            <img src="media/av_1.png" class="object-cover w-24 h-24 rounded-full shadow mb-2" alt="Live viewers">
+            <div class="text-center">
+              <div class="text-xl font-bold text-white leading-tight">
                 <span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">creators already inside</span>
               </div>
-              <div class="flex items-center mt-1">
+              <div class="flex items-center justify-center mt-2">
                 <div class="flex text-yellow-400">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
@@ -1030,10 +1025,7 @@
       </div>
     </section>
 
-    <!-- Новый счётчик продаж -->
-    <div class="flex justify-center my-6">
-      <span id="sales-counter" class="text-white text-2xl font-bold">607</span>
-    </div>
+
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
