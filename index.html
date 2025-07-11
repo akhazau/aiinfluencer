@@ -8,79 +8,605 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-      /* Минимальный набор кастомных анимаций и эффектов, не реализуемых Tailwind */
-      .gradient-text {
-        background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .gradient-text-inverse {
-        background: linear-gradient(90deg, #ec4899, #a855f7, #6366f1);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      @keyframes floating { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-      .floating { animation: floating 6s ease-in-out infinite; }
-      @keyframes float1 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-18px);} }
-      .floating-photo { animation: float1 10s ease-in-out infinite; }
-      @keyframes gradient-move {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      .animated-gradient-btn {
-        animation: gradient-move 4s ease-in-out infinite;
-      }
-      @keyframes blink-colon { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
-      .blinking-colon { animation: blink-colon 1s steps(1, start) infinite; }
-      @keyframes blink-dot { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
-      .live-dot { animation: blink-dot 1.1s infinite; }
-      @keyframes pulse-zoom { 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
-      .live-viewers { animation: pulse-zoom 2.5s ease-in-out infinite; }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #f8fafc;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-text-inverse {
+            background: linear-gradient(90deg, #ec4899, #a855f7, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .art-card, .animated-gradient-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .art-card {
+            transform-style: preserve-3d;
+        }
+        
+        .art-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+        }
+        
+        .floating { animation: floating 6s ease-in-out infinite; }
+        
+        @keyframes floating {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .lang-btn {
+            padding: 4px 12px;
+            border: 1px solid #fff;
+            border-radius: 6px;
+            font-size: 14px;
+            background: transparent;
+            color: #fff;
+            font-family: inherit;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899) !important;
+            color: #fff !important;
+            font-weight: 400 !important;
+            border: none !important;
+        }
+        
+        .floating-photo { animation: float1 10s ease-in-out infinite; }
+        
+        @keyframes float1 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-18px);} }
+        
+        @keyframes float2 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(12px);} }
+        
+        @keyframes float3 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animated-gradient-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 32px;
+            height: 50px;
+            min-width: 120px;
+            border: none;
+            background: linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #7c3aed);
+            background-size: 100% 100%;
+            background-position: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1;
+            vertical-align: middle;
+            animation: gradient-move 4s ease-in-out infinite;
+        }
+        
+        .animated-gradient-btn:hover {
+            transform: translateY(-2.5px) scale(1.01);
+            box-shadow: 0 10px 24px -4px rgba(236, 72, 153, 0.35);
+        }
+        
+        .animated-gradient-btn span { position: relative; z-index: 2; white-space: nowrap; font-weight: 600; }
+        
+        .animated-gradient-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: inherit;
+            background-size: 300% 300%;
+            z-index: 1;
+            animation: gradient-move 16s ease-in-out infinite;
+            opacity: 1;
+        }
+        
+        .animated-gradient-btn:focus {
+            outline: none;
+            box-shadow: 0 0 32px 12px #a855f7cc, 0 0 60px 20px #6ee7f799;
+        }
+
+        .live-viewers {
+            color: #ffe066;
+            font-size: 0.95rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            animation: pulse-zoom 2.5s ease-in-out infinite;
+            margin-top: 0.5em;
+            transform-origin: center;
+        }
+        
+        .live-dot {
+            width: 0.8em;
+            height: 0.8em;
+            border-radius: 50%;
+            background: #ffe066;
+            display: inline-block;
+            margin-right: 0.4em;
+            animation: blink-dot 1.1s infinite;
+        }
+        
+        @keyframes pulse-zoom { 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
+        
+        @keyframes blink-dot { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+
+        .gradient-border-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 2px;
+            background: linear-gradient(90deg, #6ee7f7, #a855f7, #ec4899, #6ee7f7);
+            background-size: 300% 300%;
+            animation: gradient-move 16s ease-in-out infinite;
+            max-width: 540px;
+            width: 100%;
+        }
+        
+        .gradient-border-wrap input, .gradient-border-input {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            width: 100%;
+            padding: 0 24px;
+            height: 50px;
+            font-size: 1.25rem;
+            border-radius: 999px;
+            z-index: 1;
+        }
+        
+        .gradient-border-wrap input::placeholder, .gradient-border-input::placeholder {
+            color: #888b90; 
+            opacity: 1;
+        }
+
+        .gradient-border-input {
+            border: 2px solid transparent;
+            background: linear-gradient(#1e293b, #1e293b) padding-box, linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #7c3aed) border-box;
+            background-size: 300% 300%;
+            animation: gradient-move 16s ease-in-out infinite;
+            font-size: 0.95rem;
+            min-width: 320px;
+            max-width: 1100px;
+        }
+        
+        .gradient-border-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px #a855f755;
+        }
+
+        /* --- Sticky Button & Timer --- */
+        #sticky-lead-block {
+            position: relative;
+            z-index: 50;
+            transition: none;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #sticky-lead-block.sticky-mode {
+            position: fixed;
+            top: 0 !important;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            background: #181a2a;
+            box-shadow: 0 2px 16px 0 #a855f7cc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 !important;
+            margin-top: 0 !important;
+            z-index: 1002;
+            transition: box-shadow 0.4s;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #lead-form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px !important;
+            margin-bottom: 0;
+        }
+        #lead-btn {
+            transition: width 0.5s, left 0.5s, border-radius 0.5s, font-size 0.5s;
+            min-width: 160px;
+            max-width: 220px;
+            width: 200px;
+            font-size: 1.1rem;
+        }
+        #sticky-lead-block.sticky-mode #lead-btn {
+            width: 200px;
+            font-size: 1.3rem;
+            border-radius: 999px;
+            min-width: 160px;
+            max-width: 220px;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        #lead-timer {
+            display: none;
+            margin-right: 2rem;
+            transition: opacity 0.5s;
+        }
+        #sticky-lead-block.sticky-mode #lead-timer {
+            display: flex !important;
+            opacity: 1;
+        }
+        #lead-email {
+            transition: opacity 0.4s;
+        }
+        #sticky-lead-block.sticky-mode #lead-email {
+            opacity: 0;
+            pointer-events: none;
+            width: 0;
+            min-width: 0;
+            padding: 0;
+            margin: 0;
+        }
+        .sticky-btn {
+            position: sticky;
+            top: 8px;
+            left: 0;
+            z-index: 2000;
+        }
+        .fixed-sticky-btn {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 8px;
+            width: 370px;
+            z-index: 3000;
+            margin-left: 0;
+        }
+        .fixed-sticky-btn.visible {
+            display: flex;
+        }
+        @media (max-width: 500px) {
+            .fixed-sticky-btn {
+                width: 98vw;
+                left: 1vw;
+            }
+        }
+        .is-sticky {
+            position: fixed !important;
+            top: 8px;
+            left: 0;
+            width: 370px;
+            z-index: 2000;
+        }
+        @media (max-width: 500px) {
+            .is-sticky {
+                width: 98vw;
+                left: 1vw;
+            }
+        }
+        #sticky-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 74px;
+            z-index: 3000;
+            background: #181a2a;
+            box-shadow: 0 16px 40px -12px rgba(236,72,153,0.25);
+            opacity: 0;
+            transform: translateY(-32px);
+            pointer-events: none;
+            transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+        }
+        #sticky-banner::after, #sticky-banner::before {
+            display: none !important;
+        }
+        .sticky-glow {
+            position: fixed;
+            top: 75px;
+            left: 0;
+            width: 100vw;
+            height: 12px;
+            pointer-events: none;
+            z-index: 2999;
+            background: linear-gradient(
+                to bottom,
+                #ffe066 0%,
+                #ffe066cc 8%,
+                #ffe06666 18%,
+                #ffe06622 32%,
+                transparent 60%
+            );
+            filter: blur(10px);
+            opacity: 1 !important;
+            transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+        }
+        .sticky-glow-line {
+            position: fixed;
+            top: 74px;
+            left: 0;
+            width: 100vw;
+            height: 0.5px;
+            background: #ffe066;
+            z-index: 3000;
+            opacity: 1;
+            pointer-events: none;
+        }
+        .banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+            max-width: 100vw;
+            height: 74px;
+            padding: 0 32px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            padding-left: 130px;
+            padding-right: 130px;
+        }
+        .banner-btn {
+            width: 320px;
+            min-width: 320px;
+            max-width: 320px;
+            height: 45px;
+            border-radius: 18px;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-left: 80px;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .banner-btn:hover {
+            box-shadow: 0 10px 24px -4px #b983ffcc;
+            transform: translateY(-2.5px) scale(1.01);
+        }
+        .support-mail-btn {
+            padding: 4px 18px;
+            border: 1.5px solid #fff;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            background: transparent;
+            color: #fff;
+            font-family: inherit;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s, border 0.2s;
+            cursor: pointer;
+            outline: none;
+            margin-left: 32px;
+            margin-right: 0;
+        }
+        .support-mail-btn:hover, .support-mail-btn:focus {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            color: #fff;
+            border: none;
+        }
+        #banner-timer {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+        .timer-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 0;
+        }
+        .timer-row-numbers .timer-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4fa3;
+            min-width: 2.7rem;
+            text-align: center;
+        }
+        .timer-row-numbers .blinking-colon {
+            font-size: 1.4rem;
+            color: #ff4fa3;
+            width: 1.1rem;
+            text-align: top;
+            animation: blink-colon 1s steps(1, start) infinite;
+            vertical-align: middle;
+            display: inline-block;
+            transform: translateY(-6px);
+        }
+        .timer-row-labels .timer-label {
+            font-size: 0.85rem;
+            color: #b5b4b4;
+            min-width: 2.7rem;
+            text-align: center;
+            margin-top: 0.1rem;
+            line-height: 1;
+            display: inline-block;
+            transform: translateY(-6px);
+        }
+        .timer-row-labels .timer-label:empty {
+            min-width: 1.1rem;
+        }
+        .blinking-colon {
+            display: inline-block;
+            width: 1.1rem;
+            text-align: center;
+            color: #ff4fa3;
+            font-size: 1.1rem;
+            font-weight: bold;
+            vertical-align: middle;
+            margin: 0 0.1rem 0 0.1rem;
+            animation: blink-colon 1s steps(1, start) infinite;
+        }
+        @keyframes blink-colon {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+        @media (max-width: 700px) {
+            .banner-inner {
+                padding: 0 8px;
+                max-width: 100vw;
+            }
+            .banner-btn {
+                width: 98vw !important;
+                min-width: 0 !important;
+                max-width: 98vw !important;
+            }
+            .support-mail-btn {
+                margin-left: 8px;
+                font-size: 0.95rem;
+                padding: 4px 10px;
+            }
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow-y: scroll;
+        }
+        body {
+            scroll-snap-type: y mandatory;
+        }
+        section.snap-section:not(#hero-section) {
+            padding-top: 74px;
+        }
+        section.snap-section {
+            min-height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2.5rem;
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+        #hero-title-1 {
+          display: block;
+          margin-bottom: 4px;
+        }
+        #final-cta {
+          position: relative;
+          overflow: hidden;
+          /* background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%) !important; */
+        }
+        #final-cta::before {
+          content: '';
+          position: absolute;
+          left: 0; right: 0; top: 0;
+          height: 120px;
+          z-index: 1;
+          pointer-events: none;
+          background: linear-gradient(
+            to bottom,
+            #181a2a 0%,
+            rgba(24,26,42,0.85) 60%,
+            rgba(24,26,42,0.0) 100%
+          );
+        }
+        #final-cta > .container { position: relative; z-index: 2; }
+        .faq-item { min-height: 80px; }
+        .faq-answer { transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s; max-height: 400px; overflow: hidden; }
+        .faq-answer.hidden { max-height: 0; opacity: 0; padding-bottom: 0 !important; }
+        .faq-answer:not(.hidden) { opacity: 1; }
+        #final-cta::after {
+          content: '';
+          position: absolute;
+          left: 0; right: 0; bottom: 0;
+          height: 85vh;
+          pointer-events: none;
+          z-index: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(168,50,74,0.00) 0%,
+            rgba(168,50,74,0.18) 10%,
+            rgba(168,50,74,0.32) 30%,
+            rgba(168,50,74,0.44) 60%,
+            rgba(74,26,44,0.52) 100%
+          );
+        }
+        footer.w-full.mt-auto {
+          background: rgba(24, 26, 42, 0.55);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border-radius: 18px;
+          box-shadow: 0 2px 24px 0 #0002;
+          padding: 2rem 2.5rem;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-b from-slate-900 to-slate-800 font-[Poppins,sans-serif] text-slate-50">
+<body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <!-- Sticky-баннер (шторка) -->
-    <div id="sticky-banner" class="fixed top-0 left-0 w-screen h-[74px] z-[3000] bg-[#181a2a] shadow-[0_16px_40px_-12px_rgba(236,72,153,0.25)] opacity-0 -translate-y-8 pointer-events-none transition-all duration-350">
-        <div class="flex items-center justify-between w-screen max-w-full h-[74px] px-8 md:px-32 mx-auto relative z-2">
+    <div id="sticky-banner">
+        <div class="banner-inner" style="display:flex;align-items:center;justify-content:space-between;position:relative;gap:-1;">
             <button class="animated-gradient-btn text-white font-extrabold rounded-[14px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] ml-16">
                 <span>Get started –</span>
                 <span class="line-through text-yellow-500 font-normal">$127 </span>
                 <span class="text-yellow-300 text-xl font-extrabold">$27</span>
             </button>
-            <div class="flex-1 flex justify-center items-center">
-              <div id="banner-timer" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center z-3">
-                <div class="flex flex-row items-end justify-center gap-0">
-                  <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">03</span>
-                  <span class="blinking-colon text-[1.4rem] text-[#ff4fa3] w-[1.1rem] align-top inline-block -translate-y-1.5">:</span>
-                  <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">00</span>
-                  <span class="blinking-colon text-[1.4rem] text-[#ff4fa3] w-[1.1rem] align-top inline-block -translate-y-1.5">:</span>
-                  <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">00</span>
-                </div>
-                <div class="flex flex-row items-end justify-center gap-0">
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">h</span>
-                  <span class="timer-label min-w-[1.1rem]"></span>
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">m</span>
-                  <span class="timer-label min-w-[1.1rem]"></span>
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">s</span>
-                </div>
+            <div style="flex:1;display:flex;justify-content:center;align-items:center;">
+              <div id="banner-timer">
+                <div class="timer-row timer-row-numbers">
+                  <span class="timer-value">03</span>
+                  <span class="blinking-colon">:</span>
+                  <span class="timer-value">00</span>
+                  <span class="blinking-colon">:</span>
+                  <span class="timer-value">00</span>
               </div>
-            </div>
-            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn ml-36 border border-white rounded-lg px-4 py-1.5 text-base text-white font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:via-fuchsia-500 hover:to-pink-500 transition">support</a>
+                <div class="timer-row timer-row-labels">
+                  <span class="timer-label">h</span>
+                  <span class="timer-label"></span>
+                  <span class="timer-label">m</span>
+                  <span class="timer-label"></span>
+                  <span class="timer-label">s</span>
+              </div>
+          </div>
         </div>
-        <div class="sticky-glow-line fixed top-[74px] left-0 w-screen h-px bg-[#ffe066] z-[3000] opacity-100 pointer-events-none"></div>
-        <div class="sticky-glow fixed top-[75px] left-0 w-screen h-3 pointer-events-none z-[2999] bg-gradient-to-b from-[#ffe066] via-[#ffe066cc] via-8% via-[#ffe06666] via-18% via-[#ffe06622] via-32% to-transparent to-60% blur-md opacity-95 transition"></div>
+            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn" style="margin-right:150px;">support</a>
+    </div>
+    <div class="sticky-glow-line"></div>
+    <div class="sticky-glow"></div>
     </div>
 
     <!-- #1 HERO -->
-    <section id="hero-section" class="snap-section min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 relative">
+    <section id="hero-section" class="snap-section min-h-screen bg-gradient-to-b from-slate-900 to-slate-800" style="position: relative;">
       <!-- Language selector -->
-      <div class="absolute top-8 right-32 z-10">
+      <div style="position: absolute; top: 32px; right: 118px; z-index: 100;">
         <div class="space-x-2" id="language-selector">
-          <button class="lang-btn active gradient-text bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-pink-500 text-white border-none" data-lang="en">EN</button>
-          <button class="lang-btn bg-transparent text-white border border-white" data-lang="ru">RU</button>
+          <button class="lang-btn active gradient-text" data-lang="en" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); color: #fff; border: none;">EN</button>
+          <button class="lang-btn" data-lang="ru" style="background: transparent; color: #fff; border: 1px solid #fff;">RU</button>
         </div>
       </div>
       <!-- Animated background elements -->
@@ -89,19 +615,21 @@
         <div class="absolute top-3/4 right-1/4 w-40 h-40 rounded-full bg-pink-500 opacity-20 blur-3xl animate-pulse delay-300"></div>
         <div class="absolute bottom-1/4 right-2/3 w-26 h-26 rounded-full bg-indigo-500 opacity-20 blur-3xl animate-pulse delay-700"></div>
       </div>
-      <div class="container mx-auto px-6 z-10 mt-40">
+      <div class="container mx-auto px-6 z-10" style="margin-top: 160px;">
         <div class="flex flex-col lg:flex-row items-center">
-          <div class="lg:w-1/2 mb-12 lg:mb-0 -translate-y-4">
+          <div class="lg:w-1/2 mb-12 lg:mb-0" style="transform: translateY(-15px);">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">
-              <span class="gradient-text text-6xl block mb-1" id="hero-title-1"></span>
-              <span id="hero-title-2" class="block text-white font-bold text-3xl md:text-5xl font-extrabold"></span>
+              <span class="gradient-text text-6xl" id="hero-title-1" style="display:block; margin-bottom:3px;">AI Influencer 3.0</span>
+              <span id="hero-title-2" class="block text-white font-bold text-3xl md:text-5xl" style="font-weight:800; display:block;">ALREADY EASY.</span>
             </h1>
-            <p class="text-lg text-gray-300 mb-6 max-w-2xl" id="hero-subtitle"></p>
+            <p class="text-lg text-gray-300 mb-6 max-w-lg" id="hero-subtitle" style="max-width:44rem; margin-bottom: 20px;">
+              BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master the tools in couple of the days. Unleash the AI MAGIC today!
+            </p>
             <!-- Форма компактно -->
             <div id="hero-form-wrap" class="w-[370px]">
-              <form id="lead-form" class="flex flex-col gap-2 w-full">
-                <div class="rounded-[18px] bg-gradient-to-r from-fuchsia-500 via-pink-500 to-indigo-500 p-0.5 w-[370px]">
-                  <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px] bg-[#171e2f] border-none outline-none text-gray-400 text-base w-full px-5 h-12" />
+              <form id="lead-form" class="flex flex-col gap-[7px] w-full">
+                <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
+                  <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px]" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#646464; font-size:1rem; width: 366px; padding: 0 20px;" />
                 </div>
                 <button id="main-btn" class="animated-gradient-btn text-white font-extrabold w-full rounded-[18px] text-lg flex items-center justify-center gap-2.5 overflow-hidden h-[50px]">
                   <span>Get started –</span>
@@ -109,27 +637,26 @@
                   <span class="text-yellow-300 text-xl font-extrabold">$27</span>
                 </button>
               </form>
-              <div class="live-viewers flex items-center gap-2 mx-auto mb-2 ml-6 mt-3 text-[#ffe066] text-base font-normal" id="live-viewers-row">
-                <span class="live-dot w-3 h-3 rounded-full bg-[#ffe066] inline-block mr-2"></span>
+              <!-- В hero-секции -->
+              <div class="live-viewers mx-auto mb-2 ml-6" id="live-viewers-row" style="margin-top: 13px;">
+                <span class="live-dot"></span>
                 <span id="live-viewers-count">21</span> people currently viewing this page
               </div>
-              <div class="flex items-center space-x-4 mt-5">
+              <div class="flex items-center space-x-4" style="margin-top:20px;">
                 <div class="flex -space-x-2">
-                  <img src="media/av_1.png" class="object-contain scale-120" alt="Live viewers">
+                  <img src="media/av_1.png" style="object-fit:contain; transform: scale(1.2);" alt="Live viewers">
                 </div>
                 <div>
-                  <p class="text-sm font-medium"><span class="whitespace-nowrap"><span id="join-text"></span> <span class="text-purple-300">2,130+</span> <span id="members-text"></span></span></p>
+                  <p class="text-sm font-medium"><span class="whitespace-nowrap"><span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">creators already inside</span></span></p>
                   <div class="flex items-center">
                     <div class="flex text-yellow-400">
-                      <!-- SVG stars -->
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                     </div>
-                    <span class="ml-2 text-sm font-medium" id="rating-text"></span>
+                    <span style="margin-left:10px;" class="text-sm font-medium" id="rating-text">4.9 (300+ reviews)</span>
                   </div>
                 </div>
               </div>
@@ -138,12 +665,12 @@
           <div class="lg:w-1/2 relative">
             <div class="relative floating">
               <div class="relative">
-                <img src="media/av01.png" alt="AI Art Example" class="floating-photo scale-90 rounded-xl shadow-lg border-2 border-white/10 block mx-auto" />
-                <div class="absolute -bottom-12 -left-10 w-28 h-28 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl z-20"></div>
-                <div class="absolute -top-10 -right-8 w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl -z-10"></div>
+                <img src="media/av01.png" alt="AI Art Example" class="floating-photo" style="transform: scale(0.9); border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.2); border: 2px solid rgba(255,255,255,0.1); display: block; margin-left: auto; margin-right: auto;">
+                <!-- Исходное положение -->
+                <div class="absolute -bottom-[48px] -left-[39px] w-[108px] h-[108px] bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl z-20 floating-purple"></div>
+                <div class="absolute -top-[40px] -right-[34px] w-[81px] h-[81px] bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl -z-10 floating-blue"></div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -151,7 +678,7 @@
     <!-- #2 PAIN -->
     <section class="snap-section py-20 bg-gradient-to-b from-slate-800 to-slate-900 flex flex-col min-h-screen">
       <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
-        <div class="mt-12">
+        <div class="section-header mt-12">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center">
             Tired of <span class="gradient-text">Plastic AI faces?</span>
           </h2>
@@ -159,7 +686,7 @@
             You see what models they make and you know what you can do better<br>when the technology gets into your hands?
           </p>
         </div>
-        <div class="mt-auto mb-12">
+        <div class="section-content mt-auto mb-12">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="art-cards-row"></div>
         </div>
       </div>
@@ -167,40 +694,43 @@
 
     <!-- #3 BENEFITS -->
     <section class="snap-section py-20 bg-gradient-to-b from-slate-900 to-slate-800 flex flex-col min-h-screen">
-      <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
-        <div class="mt-12">
-          <h2 class="text-3xl md:text-5xl font-bold leading-tight text-center mb-3"><span class="gradient-text-inverse">AI Models</span> Are Your Creative <span class="gradient-text">Superpower</span></h2>
-          <p class="text-base text-center mb-2 text-gray-300 max-w-2xl mx-auto">AI Characters create parasocial relationships — where followers feel a genuine emotional connection to your media persona.</p>
-        </div>
-        <div class="mt-auto mb-12">
-          <div class="flex flex-row gap-12 justify-center items-center">
-            <div class="max-w-lg text-left">
-              <h3 class="text-2xl font-bold mb-4 text-pink-400">Start Feeling Like a Creator</h3>
-              <p class="mb-4">After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.</p>
-              <p class="mb-4">More than tools — creative control.<br>This is about owning a unique identity, building trust through realism, and standing out in a sea of "plastic" AI faces.</p>
-              <div class="my-6 border-t border-gray-600 w-16"></div>
-              <h4 class="text-xl font-semibold mb-3">Why It's Different</h4>
-              <ul class="space-y-2 text-base">
-                <li><span class="text-green-400">✔</span> Build studio-level visuals with no gear</li>
-                <li><span class="text-green-400">✔</span> Create content with personality, not filters</li>
-                <li><span class="text-green-400">✔</span> No need to show your face or speak on camera</li>
-                <li><span class="text-green-400">✔</span> Make images that feel emotional, alive, real</li>
-                <li><span class="text-green-400">✔</span> Learn a mindset, not just tools</li>
-              </ul>
-            </div>
-            <div>
-              <img src="media/av01.png" alt="Preview" class="rounded-2xl shadow-lg object-cover max-w-xs aspect-[10/16] h-auto">
+        <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
+          <div class="section-header mt-12">
+            <h2 class="text-3xl md:text-5xl font-bold leading-tight text-center mb-3"><span class="gradient-text-inverse">AI Models</span> Are Your Creative <span class="gradient-text">Superpower</span></h2>
+            <p class="text-base text-center mb-2 text-gray-300 max-w-2xl mx-auto">AI Characters create parasocial relationships — where followers feel a genuine emotional connection to your media persona.</p>
+          </div>
+          <div class="section-content mt-auto mb-12">
+            <div class="flex flex-row gap-12 justify-center items-center">
+              <div class="max-w-lg text-left">
+                <h3 class="text-2xl font-bold mb-4 text-pink-400">Start Feeling Like a Creator</h3>
+                <p class="mb-4">After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.</p>
+                <p class="mb-4">More than tools — creative control.<br>
+                This is about owning a unique identity, building trust through realism, and standing out in a sea of "plastic" AI faces.</p>
+                <div class="my-6 border-t border-gray-600 w-16"></div>
+                <h4 class="text-xl font-semibold mb-3">Why It's Different</h4>
+                <ul class="space-y-2 text-base">
+                  <li><span class="text-green-400">✔</span> Build studio-level visuals with no gear</li>
+                  <li><span class="text-green-400">✔</span> Create content with personality, not filters</li>
+                  <li><span class="text-green-400">✔</span> No need to show your face or speak on camera</li>
+                  <li><span class="text-green-400">✔</span> Make images that feel emotional, alive, real</li>
+                  <li><span class="text-green-400">✔</span> Learn a mindset, not just tools</li>
+                </ul>
+              </div>
+              <div>
+                <img src="media/av01.png" alt="Preview" class="rounded-2xl shadow-lg object-cover max-w-xs aspect-[10/16] h-auto">
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- #4 PRICE -->
     <section id="price-section" class="snap-section text-white py-20 px-8 md:px-28 max-w-full mx-auto relative bg-gradient-to-b from-slate-800 to-slate-900">
+      <!-- Animated dots -->
       <div class="absolute top-4 right-1/4 w-8 h-8 rounded-full bg-purple-400 opacity-20 blur-2xl animate-pulse"></div>
       <div class="absolute bottom-8 left-1/3 w-6 h-6 rounded-full bg-pink-400 opacity-30 blur-2xl animate-pulse delay-500"></div>
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <!-- LEFT: Offer card -->
         <div class="bg-black/40 rounded-3xl p-10 shadow-lg border border-white/10">
           <h2 class="text-2xl font-semibold text-yellow-300 mb-3">AI Influencer 3.0 Course</h2>
           <div class="text-5xl md:text-6xl font-bold text-white mb-2">$27</div>
@@ -222,6 +752,7 @@
             <span class="font-bold text-white">NOW</span>
           </button>
         </div>
+        <!-- RIGHT: Bonuses + urgency -->
         <div class="space-y-10">
           <div class="bg-white/10 rounded-2xl p-8">
             <h3 class="text-pink-400 font-semibold mb-5 text-xl">Bonuses if you join now</h3>
@@ -235,208 +766,232 @@
             <p class="text-white text-xl mb-3">⏳ Time left to join with discount:</p>
             <div class="flex justify-center gap-6 text-pink-400 text-3xl font-bold">
               <div class="flex flex-col items-center mb-6" id="final-cta-timer-wrap">
-                <div class="flex flex-row items-end justify-center gap-0">
-                  <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">03</span>
-                  <span class="blinking-colon text-[1.4rem] text-[#ff4fa3] w-[1.1rem] align-top inline-block -translate-y-1.5">:</span>
-                  <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">00</span>
-                  <span class="blinking-colon text-[1.4rem] text-[#ff4fa3] w-[1.1rem] align-top inline-block -translate-y-1.5">:</span>
-                  <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">00</span>
+                <div class="timer-row timer-row-numbers" style="justify-content:center;">
+                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">03</span>
+                  <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+                  <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
                 </div>
-                <div class="flex flex-row items-end justify-center gap-0">
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">h</span>
-                  <span class="timer-label min-w-[1.1rem]"></span>
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">m</span>
-                  <span class="timer-label min-w-[1.1rem]"></span>
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">s</span>
+                <div class="timer-row timer-row-labels" style="justify-content:center;">
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
+                  <span class="timer-label" style="min-width:1.1rem;"></span>
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">m</span>
+                  <span class="timer-label" style="min-width:1.1rem;"></span>
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">s</span>
                 </div>
               </div>
             </div>
             <p class="text-base text-white/60 mt-3">Then the price goes up</p>
           </div>
-          <div class="live-viewers flex items-center gap-2 mx-auto mb-2 ml-6 mt-3 text-[#ffe066] text-base font-normal" id="live-viewers-row">
-            <span class="live-dot w-3 h-3 rounded-full bg-[#ffe066] inline-block mr-2"></span>
-            <span id="live-viewers-count">21</span> people currently viewing this page
-          </div>
+            <div class="live-viewers mx-auto mb-2 ml-6" id="live-viewers-row" style="margin-top: 13px;">
+              <span class="live-dot"></span>
+              <span id="live-viewers-count">21</span> people currently viewing this page
+            </div>
         </div>
       </div>
     </section>
 
     <!-- #5 REVIEWS -->
     <section class="snap-section py-20 text-white relative bg-gradient-to-b from-slate-900 to-slate-800" id="testimonials">
+      <!-- Animated dots -->
       <div class="absolute top-10 left-1/2 w-8 h-8 rounded-full bg-pink-500 opacity-20 blur-2xl animate-pulse"></div>
       <div class="absolute bottom-8 right-1/4 w-6 h-6 rounded-full bg-indigo-400 opacity-30 blur-2xl animate-pulse delay-300"></div>
       <div class="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-blue-400 opacity-20 blur-2xl animate-pulse delay-700"></div>
-      <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
-        <div class="mt-12">
+        <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
+          <div class="section-header mt-12">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 text-center"><span id="testimonial-title">What</span> <span class="gradient-text">People Say</span></h2>
-          <p class="text-base text-center mb-2 text-gray-300 max-w-xl mx-auto" id="testimonial-subtitle"></p>
+          <p class="text-base text-center mb-2 text-gray-300 max-w-xl mx-auto" id="testimonial-subtitle">
+            Don't just take our word for it.<br>Here's what early adopters think about AI-generated art.
+          </p>
         </div>
-        <div class="mt-auto mb-12">
-          <div class="relative">
-            <div class="flex flex-col items-center mb-16" id="reviews-slider-wrap">
-              <div class="relative w-full max-w-3xl mx-auto">
-                <button id="reviews-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-transparent rounded-full w-12 h-12 flex items-center justify-center -left-6">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 8L12 16L20 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div id="review-slide" class="flex flex-col items-center text-center bg-white/5 rounded-xl p-10 border border-white/10 w-full overflow-hidden gap-6 h-[290px] justify-center"></div>
-                <button id="reviews-next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-transparent rounded-full w-12 h-12 flex items-center justify-center -right-6">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
+        <div class="section-content mt-auto mb-12">
+        <div class="relative">
+          <div class="flex flex-col items-center mb-16" id="reviews-slider-wrap">
+            <div class="relative w-full max-w-3xl mx-auto">
+              <button id="reviews-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 bg-transparent rounded-full w-12 h-12 flex items-center justify-center" style="left:-24px;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 8L12 16L20 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="review-slide" class="flex flex-col items-center text-center bg-white/5 rounded-xl p-10 border border-white/10 w-full overflow-hidden gap-6 h-[290px] justify-center"></div>
+              <button id="reviews-next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 bg-transparent rounded-full w-12 h-12 flex items-center justify-center" style="right:-24px;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
               </div>
-              <div class="flex gap-2 justify-center mt-6" id="reviews-dots"></div>
+            <div class="flex gap-2 justify-center mt-6" id="reviews-dots"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- #6 ABOUT -->
-    <section class="snap-section py-20 bg-gradient-to-b from-slate-900 to-slate-800" id="about-section">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="md:w-1/2 flex justify-center items-center relative">
-            <img src="media/av00.png" alt="About Author" class="rounded-2xl shadow-lg object-cover" id="about-photo">
-            <div class="absolute left-2.5 bottom-4 z-20">
-              <span class="inline-block bg-[#111c22e6] text-white font-semibold text-base px-4 py-1.5 rounded-full border-2.5 border-white tracking-wide" id="about-exp-pill"></span>
+        <!-- #6 ABOUT -->
+        <section class="snap-section py-20 bg-gradient-to-b from-slate-900 to-slate-800" id="about-section">
+          <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+              <div class="md:w-1/2 flex justify-center items-center relative">
+                <img src="media/av00.png" alt="About Author" class="rounded-2xl shadow-lg object-cover" id="about-photo">
+                <div style="position:absolute;left:10px;bottom:16px;z-index:2;">
+                  <span style="display:inline-block;background:#111c22e6;color:#fff;font-weight:600;font-size:0.98rem;padding:4px 14px;border-radius:22px;border:2.5px solid #fff;letter-spacing:0.01em;">3 years experience</span>
+                </div>
+              </div>
+              <div class="md:w-1/2 flex flex-col items-start justify-center">
+                <h2 class="text-4xl font-bold mb-2 flex items-end" id="about-title-text">Meet Your <span class="gradient-text"> Instructor</span></h2>
+                <div class="flex items-baseline gap-2 mb-1">
+                  <span class="text-pink-400 font-bold text-lg" id="about-name">Leo Lawaro</span><br>
+                  <span class="text-gray-400 text-base" id="about-role">AI Visual Creator & Media Innovator</span>
+                </div>
+                <div class="text-white mb-4 text-base leading-relaxed" id="about-desc" style="margin-top:0;">For the past 3 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</div>
+                <div class="grid grid-cols-2 gap-x-5 gap-y-7 w-full max-w-xl mb-4">
+                  <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
+                    <span class="font-bold text-pink-400 text-base mb-1" id="about-fact-1-title">100+ projects</span>
+                    <span class="text-gray-200 text-sm" id="about-fact-1-desc">Realistic AI characters built for clients</span>
+                  </div>
+                  <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
+                    <span class="font-bold text-cyan-300 text-base mb-1" id="about-fact-2-title">Certified instructor</span>
+                    <span class="text-gray-200 text-sm" id="about-fact-2-desc">AI tools & digital identity workflows</span>
+                  </div>
+                  <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
+                    <span class="font-bold text-purple-400 text-base mb-1" id="about-fact-3-title">10,000+ followers</span>
+                    <span class="text-gray-200 text-sm" id="about-fact-3-desc">Sharing creative AI techniques online</span>
+                  </div>
+                  <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
+                    <span class="font-bold text-yellow-300 text-base mb-1" id="about-fact-4-title">Global impact</span>
+                    <span class="text-gray-200 text-sm" id="about-fact-4-desc">Students from over 20 countries</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="md:w-1/2 flex flex-col items-start justify-center">
-            <h2 class="text-4xl font-bold mb-2 flex items-end" id="about-title-text"></h2>
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="text-pink-400 font-bold text-lg" id="about-name"></span><br>
-              <span class="text-gray-400 text-base" id="about-role"></span>
-            </div>
-            <div class="text-white mb-4 text-base leading-relaxed" id="about-desc"></div>
-            <div class="grid grid-cols-2 gap-x-5 gap-y-7 w-full max-w-xl mb-4">
-              <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
-                <span class="font-bold text-pink-400 text-base mb-1" id="about-fact-1-title"></span>
-                <span class="text-gray-200 text-sm" id="about-fact-1-desc"></span>
-              </div>
-              <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
-                <span class="font-bold text-cyan-300 text-base mb-1" id="about-fact-2-title"></span>
-                <span class="text-gray-200 text-sm" id="about-fact-2-desc"></span>
-              </div>
-              <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
-                <span class="font-bold text-purple-400 text-base mb-1" id="about-fact-3-title"></span>
-                <span class="text-gray-200 text-sm" id="about-fact-3-desc"></span>
-              </div>
-              <div class="bg-[#181f2a] rounded-xl p-4 flex flex-col justify-center text-left">
-                <span class="font-bold text-yellow-300 text-base mb-1" id="about-fact-4-title"></span>
-                <span class="text-gray-200 text-sm" id="about-fact-4-desc"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+        </section>
+    
     <!-- #7 FAQ -->
     <section class="snap-section py-20 bg-gradient-to-b from-slate-800 to-slate-900" id="faq-section">
       <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
-        <div class="mt-12">
+        <div class="section-header mt-12">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center">
             <span class="gradient-text">FAQ</span>
           </h2>
         </div>
-        <div class="mt-auto mb-12">
-          <div class="bg-white/5 rounded-2xl p-6 space-y-4 w-[1100px] max-w-full mx-auto">
-            <!-- FAQ items (динамически) -->
-            <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
-              <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle font-semibold text-[1.15rem]">
-                <span id="faq-q1" class="pl-1"></span>
-                <span class="faq-arrow transition-transform duration-300 flex items-center">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </button>
-              <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a1"></div>
-            </div>
-            <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
-              <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle font-semibold text-[1.15rem]">
-                <span id="faq-q2" class="pl-1"></span>
-                <span class="faq-arrow transition-transform duration-300 flex items-center">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </button>
-              <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a2"></div>
-            </div>
-            <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
-              <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle font-semibold text-[1.15rem]">
-                <span id="faq-q3" class="pl-1"></span>
-                <span class="faq-arrow transition-transform duration-300 flex items-center">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </button>
-              <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a3"></div>
-            </div>
-            <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
-              <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle font-semibold text-[1.15rem]">
-                <span id="faq-q4" class="pl-1"></span>
-                <span class="faq-arrow transition-transform duration-300 flex items-center">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </button>
-              <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a4"></div>
-            </div>
-            <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
-              <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle font-semibold text-[1.15rem]">
-                <span id="faq-q5" class="pl-1"></span>
-                <span class="faq-arrow transition-transform duration-300 flex items-center">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </button>
-              <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a5"></div>
-            </div>
-            <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
-              <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle font-semibold text-[1.15rem]">
-                <span id="faq-q6" class="pl-1"></span>
-                <span class="faq-arrow transition-transform duration-300 flex items-center">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-              </button>
-              <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a6"></div>
+        <div class="section-content mt-auto mb-12">
+        <div class="bg-white/5 rounded-2xl p-6 space-y-4" style="width:1100px;max-width:100%;margin:0 auto;">
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:600; font-size:1.15rem;">
+              <span id="faq-q1" style="padding-left:4px;">I have no experience with neural networks. Is this for me?</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a1">
+              Yes, everything is explained with live examples. The main thing is your desire to learn.
             </div>
           </div>
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:600; font-size:1.15rem;">
+              <span id="faq-q2" style="padding-left:4px;">Does it really look like a real person?</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a2">
+              Yes. The key is the right technique. You'll get specific prompts and methodology.
+            </div>
+          </div>
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:600; font-size:1.15rem;">
+              <span id="faq-q3" style="padding-left:4px;">Can I use the character for personal or private purposes?</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a3">
+              You get a tool that can be adapted for any format—from a visual blog to more private and closed projects. Everything remains under your control.
+            </div>
+          </div>
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:600; font-size:1.15rem;">
+              <span id="faq-q4" style="padding-left:4px;">Is there support if something doesn't work?</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a4">
+              Yes, you can ask a question about the course topic and get help.
+            </div>
+          </div>
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:600; font-size:1.15rem;">
+              <span id="faq-q5" style="padding-left:4px;">Are neural networks paid?</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a5">
+              <p>Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments.</p>
+              <p style="margin-top:10px;">💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.</p>
+            </div>
+          </div>
+          <div class="faq-item bg-white/10 rounded-xl overflow-hidden">
+            <button class="w-full text-left px-6 py-4 flex justify-between items-center faq-toggle" style="font-weight:600; font-size:1.15rem;">
+              <span id="faq-q6" style="padding-left:4px;">What if I already have some skills—will it be interesting for me?</span>
+              <span class="faq-arrow transition-transform duration-300" style="display:flex;align-items:center;">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+            <div class="px-6 pb-4 text-base text-white hidden faq-answer" id="faq-a6">
+              Absolutely. You'll learn how to create realistic, consistent images and train a neural network for yourself. This is a higher level.
+            </div>
+          </div>
+        </div>
+        </div>
         </div>
       </div>
     </section>
 
     <!-- #8 CTA + FOOTER -->
-    <section id="final-cta" class="snap-section min-h-screen flex flex-col bg-gradient-to-b from-slate-900 to-red-900 relative overflow-hidden">
-      <div class="container mx-auto px-6 flex flex-col flex-1 min-h-0 pt-16 relative z-10">
-        <div class="text-center items-center justify-center">
-          <h2 class="text-2xl md:text-5xl font-bold leading-tight text-center" id="final-cta-title" style="color:#fff;text-shadow:0 2px 16px #a8324a99,0 1px 0 #000; margin-bottom: 1.5rem;"></h2>
-          <div class="text-base text-center mb-6 text-gray-200 max-w-xl mx-auto text-[1.25rem]" id="final-cta-subtitle"></div>
-          <div class="mb-12 text-center items-center justify-center"></div>
+    <section id="final-cta" class="snap-section min-h-screen flex flex-col bg-gradient-to-b from-slate-900 to-red-900">
+      <div class="container mx-auto px-6 flex flex-col flex-1 min-h-0 pt-16">
+        <div class="section-header text-center items-center justify-center">
+          <h2 class="text-2xl md:text-5xl font-bold leading-tight text-center" id="final-cta-title" style="color:#fff;text-shadow:0 2px 16px #a8324a99,0 1px 0 #000; margin-bottom: 1.5rem;">
+            AI Models Will Be A<span class="gradient-text"> $1B Industry</span> By 2030
+          </h2>
+          <div class="text-base text-center mb-6 text-gray-200 max-w-xl mx-auto" id="final-cta-subtitle" style="font-size:1.25rem; color:#f3f3f3;">
+            This Hype Looks Like The Bitcoin Gold Rush In 2012 And SMMA In 2016!
+          </div>
+          <div class="section-content mb-12 text-center items-center justify-center"></div>
+          <!-- Таймер -->
           <div class="flex flex-col items-center mb-8" id="final-cta-timer-wrap">
-            <div class="flex flex-row items-end justify-center gap-0">
-              <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">03</span>
-              <span class="blinking-colon text-[1.4rem] text-[#ff4fa3] w-[1.1rem] align-top inline-block -translate-y-1.5">:</span>
-              <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">00</span>
-              <span class="blinking-colon text-[1.4rem] text-[#ff4fa3] w-[1.1rem] align-top inline-block -translate-y-1.5">:</span>
-              <span class="timer-value text-[1.8rem] font-bold text-[#ff4fa3] min-w-[2.7rem] text-center">00</span>
+            <div class="timer-row timer-row-numbers" style="justify-content:center;">
+              <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">03</span>
+              <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+              <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+              <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+              <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
             </div>
-            <div class="flex flex-row items-end justify-center gap-0">
-              <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">h</span>
-              <span class="timer-label min-w-[1.1rem]"></span>
-              <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">m</span>
-              <span class="timer-label min-w-[1.1rem]"></span>
-              <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-1.5">s</span>
+            <div class="timer-row timer-row-labels" style="justify-content:center;">
+              <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
+              <span class="timer-label" style="min-width:1.1rem;"></span>
+              <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">m</span>
+              <span class="timer-label" style="min-width:1.1rem;"></span>
+              <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">s</span>
             </div>
           </div>
+          <!-- Кнопка -->
           <button class="animated-gradient-btn w-[450px] min-w-[200px] max-w-full mx-auto rounded-[18px]">
             <span>CLAIM YOUR SPECIAL OFFER NOW!</span>
             <span class="line-through text-yellow-500 font-normal">$127</span>
             <span class="text-yellow-300 text-xl font-extrabold">$27</span>
           </button>
-          <div class="flex justify-center my-6">
-            <span id="sales-counter" class="text-white text-2xl font-bold">607</span>
-            <span class="text-[#222] text-[1.1rem] ml-2">course sales</span>
+              <!-- Новый счётчик продаж -->
+    <div class="flex justify-center my-6">
+      <span id="sales-counter" class="text-white text-2xl font-bold">607</span>
+            <span style="color:#222;font-size:1.1rem;margin-left:8px;">course sales</span>
           </div>
+          <!-- Блок с аватарками, текстом и рейтингом -->
           <div class="flex flex-col items-center justify-center gap-3 mt-6 mb-2">
             <img src="media/av_1.png" class="object-cover w-24 h-24 rounded-full shadow mb-2" alt="Live viewers">
             <div class="text-center">
               <div class="text-xl font-bold text-white leading-tight">
-                <span id="join-text"></span> <span class="text-purple-300">2,130+</span> <span id="members-text"></span>
+                <span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">creators already inside</span>
               </div>
               <div class="flex items-center justify-center mt-2">
                 <div class="flex text-yellow-400">
@@ -445,32 +1000,29 @@
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                 </div>
-                <span class="ml-2 text-sm font-medium text-white" id="rating-text"></span>
+                <span class="ml-2 text-sm font-medium text-white" id="rating-text">4.9 (300+ reviews)</span>
               </div>
             </div>
           </div>
         </div>
-        <footer class="w-full mt-auto text-left text-gray-300 text-sm items-start justify-start bg-[#181a2a8c] backdrop-blur-lg rounded-2xl shadow p-8">
+        <footer class="w-full mt-auto text-left text-gray-300 text-sm items-start justify-start">
           <div class="mt-4 flex flex-col items-start gap-2">
-            <h3 class="text-lg font-semibold gradient-text text-left" id="footer-title"></h3>
-            <p class="text-gray-400 text-left" id="footer-desc"></p>
+            <h3 class="text-lg font-semibold gradient-text text-left" id="footer-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;">AI Influencer 3.0</h3>
+            <p class="text-gray-400 text-left" id="footer-desc">Build hyper-realistic AI models and generate next-gen content.<br>Transform your visuals and launch your creator journey.</p>
             <div class="space-y-2 text-sm items-start">
               <p class="flex items-center justify-start gap-2">
                 <svg class="w-4 h-4 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M21 8V7l-3 2-2-2-4 3-3-3-6 5v2l6-5 3 3 4-3 2 2 3-2z"/></svg>
-                <a href="mailto:support@aiinfluencer.site" class="hover:underline text-left" id="footer-email"></a>
+                <a href="mailto:support@aiinfluencer.site" class="hover:underline text-left" id="footer-email">support@aiinfluencer.site</a>
               </p>
             </div>
             <div class="mt-4 border-t border-gray-700 pt-6 text-xs text-gray-300 max-w-2xl mx-0 text-left">
-              <p id="footer-copyright"></p>
-              <p class="mt-2 text-left" id="footer-legal"></p>
+              <p id="footer-copyright">© AI Influencer 3.0. All rights reserved.</p>
+              <p class="mt-2 text-left" id="footer-legal">This course is for educational purposes only. Results are not guaranteed. By using this site, you accept our terms and assume full responsibility for your decisions and actions. No refunds on digital content.</p>
             </div>
           </div>
         </footer>
       </div>
-      <div class="absolute left-0 right-0 top-0 h-32 z-10 pointer-events-none bg-gradient-to-b from-[#181a2a] via-[#181a2add] to-transparent"></div>
-      <div class="absolute left-0 right-0 bottom-0 h-[85vh] pointer-events-none z-0 bg-gradient-to-b from-transparent via-[#a8324a2e] via-10% via-[#a8324a52] via-30% via-[#a8324a70] via-60% to-[#4a1a2c85] to-100%"></div>
     </section>
 
     <script>
