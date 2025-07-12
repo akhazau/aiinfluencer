@@ -553,7 +553,7 @@
           z-index: 0;
 
         }
-        footer.w-full. {
+        footer.w-full {
           background: rgba(24, 26, 42, 0.55);
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
@@ -563,18 +563,24 @@
         }
 
         /* Стили только для последней страницы */
-        #final-cta .container {
-          padding-bottom: 0; /* убираем нижний padding */
-          margin-bottom: 0;  /* убираем нижний margin */
+        #final-cta {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
         }
 
-        #final-cta .section-footer {
-          margin-top: 0;     /* убираем отступ у футера */
-          margin-bottom: 0;  /* убираем нижний отступ */
+        #final-cta .container {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
         }
 
         #final-cta .section-content {
-          margin-bottom: 0;  /* убираем нижний отступ у контента */
+          flex: 1;
+        }
+
+        #final-cta .section-footer {
+          margin-top: auto;
         }
     </style>
 </head>
@@ -1000,7 +1006,7 @@
           </div>
           <!-- Блок с аватарками и рейтингом -->
           <div class="flex items-center justify-center mt-8" style="margin-top:20px;">
-            <img src="media/av_1.png" style="width:120px; height:auto; display:block;" class="mr-4" alt="Live viewers">
+            <img src="media/av_1.png" style="width:150px; height:auto; display:block;" class="mr-4" alt="Live viewers">
             <div class="text-left">
               <div class="flex flex-col items-center">
                 <div class="flex text-yellow-400">
@@ -1016,7 +1022,7 @@
           </div>
           </div>
      <!-- Футтер -->
-        <div class="section-footer -mb-16">
+        <div class="section-footer mt-auto">
           <footer class="w-full text-left text-gray-300 text-sm items-start justify-start bg-[rgba(24,26,42,0.55)] backdrop-blur-[8px] rounded-[18px] shadow-[0_2px_24px_0_#0002] p-8 md:p-10">
             <div class="flex flex-col items-start gap-2">
               <h3 class="text-lg font-semibold gradient-text text-left" id="footer-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;">AI Influencer 3.0</h3>
