@@ -142,8 +142,8 @@
         }
         
         .live-dot {
-            width: 0.8em;
-            height: 0.8em;
+            width: 0.6em;
+            height: 0.6em;
             border-radius: 50%;
             background: #ffe066;
             display: inline-block;
@@ -154,6 +154,11 @@
         @keyframes pulse-zoom { 0%,100%{transform:scale(1);} 50%{transform:scale(1.06);} }
         
         @keyframes blink-dot { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+
+        .sales-counter-pulse {
+            animation: pulse-zoom 2.5s ease-in-out infinite;
+            transform-origin: center;
+        }
 
         .gradient-border-wrap {
             position: relative;
@@ -201,7 +206,6 @@
             box-shadow: 0 0 0 3px #a855f755;
         }
 
-        /* --- Sticky Button & Timer --- */
         #sticky-lead-block {
             position: relative;
             z-index: 50;
@@ -545,7 +549,7 @@
           z-index: 0;
 
         }
-        footer.w-full.mt-auto {
+        footer.w-full. {
           background: rgba(24, 26, 42, 0.55);
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
@@ -970,31 +974,30 @@
             <span class="text-yellow-300 text-xl font-extrabold"> $27</span>
           </button>
               <!-- Счётчик продаж курса -->
-          <div class="flex justify-center items-center my-6 mt-8" style="margin-top: 20px;">
-                         <span class="live-dot" style="background: #c084fc; margin-right: 8px;"></span>
+          <div class="flex justify-center items-center my-6 mt-8 sales-counter-pulse" style="margin-top: 20px;">
+                         <span class="live-dot" style="background: #c084fc; margin-right: 12px;"></span>
             <span class="text-white text-xl font-bold" id="course-sales-counter"><span class="text-purple-300">3</span></span>
             <span class="text-white text-lg ml-2" style="font-size: 1rem;"><span class="text-purple-300">course sales today</span></span>
           </div>
-          <!-- Блок с аватарками, текстом и рейтингом -->
+          <!-- Блок с аватарками и рейтингом -->
           <div class="flex items-center justify-center mt-8" style="margin-top:20px;">
             <img src="media/av_1.png" style="width:120px; height:auto; display:block;" class="mr-4" alt="Live viewers">
             <div class="text-left">
-              <p class="text-sm font-medium"><span class="whitespace-nowrap"><span id="join-text">Join</span> <span class="text-purple-300">2,130+</span> <span id="members-text">creators already inside</span></span></p>
-              <div class="flex items-center justify-center mt-1">
+              <div class="flex items-center">
                 <div class="flex text-yellow-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-5 h-5"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                 </div>
-                <span class="ml-2 text-sm font-medium text-white" id="rating-text"> 4.9 (300+ reviews)</span>
+                <span class="ml-2 text-sm font-medium text-white" id="rating-text">4.9 (300+ reviews)</span>
               </div>
             </div>
           </div>
           </div>
      <!-- Футтер -->
-        <div class="section-footer -mt-16">
+        <div class="section-footer -mt-24">
           <footer class="w-full text-left text-gray-300 text-sm items-start justify-start bg-[rgba(24,26,42,0.55)] backdrop-blur-[8px] rounded-[18px] shadow-[0_2px_24px_0_#0002] p-8 md:p-10">
             <div class="flex flex-col items-start gap-2">
               <h3 class="text-lg font-semibold gradient-text text-left" id="footer-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;">AI Influencer 3.0</h3>
