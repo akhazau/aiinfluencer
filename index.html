@@ -942,7 +942,7 @@
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center" id="final-cta-title"> 
             AI Models Will Be A<span class="gradient-text"> $1B Industry</span> By 2030
           </h2>
-          <div class="text-base text-center mb-6 text-gray-200 mx-auto" id="final-cta-subtitle">
+          <div class="text-base text-center mb-32 text-gray-200 mx-auto" id="final-cta-subtitle">
             This Hype Looks Like The Bitcoin Gold Rush In 2012 And SMMA In 2016!
           </div>
           <div class="section-content flex-1 flex flex-col mb-32 text-center items-center justify-center">
@@ -969,10 +969,10 @@
             <span class="line-through text-yellow-500 font-normal"> $127 </span>
             <span class="text-yellow-300 text-xl font-extrabold"> $27</span>
           </button>
-              <!-- Новый счётчик продаж -->
-    <div class="flex justify-center my-6">
-      <span id="sales-counter" class="text-white text-2xl font-bold">607</span>
-            <span style="color:#222;font-size:1.1rem;margin-left:8px;">course sales</span>
+              <!-- Счётчик продаж курса -->
+          <div class="flex justify-center items-center my-6" style="margin-top: 20px;">
+            <span class="text-white text-2xl font-bold" id="course-sales-counter">3</span>
+            <span class="text-white text-lg ml-2" style="font-size: 1.1rem;">course sales today</span>
           </div>
           <!-- Блок с аватарками, текстом и рейтингом -->
           <div class="flex items-center justify-center mt-8" style="margin-top:20px;">
@@ -993,7 +993,7 @@
           </div>
           </div>
      <!-- Футтер -->
-        <div class="section-footer mt-auto">
+        <div class="section-footer -mt-10">
           <footer class="w-full text-left text-gray-300 text-sm items-start justify-start bg-[rgba(24,26,42,0.55)] backdrop-blur-[8px] rounded-[18px] shadow-[0_2px_24px_0_#0002] p-8 md:p-10">
             <div class="flex flex-col items-start gap-2">
               <h3 class="text-lg font-semibold gradient-text text-left" id="footer-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;">AI Influencer 3.0</h3>
@@ -1250,13 +1250,25 @@
         const finalCtaTitle = document.getElementById('final-cta-title');
         if (finalCtaTitle) finalCtaTitle.innerHTML = translations[lang]['final-cta-title'];
 
-        let salesCount = 607; // 1214 / 2, округлено вниз
-        const salesCounterEl = document.getElementById('sales-counter');
-        if (salesCounterEl) {
-          setInterval(() => {
-            salesCount++;
-            salesCounterEl.textContent = salesCount;
-          }, 600000); // 10 минут = 600000 мс
+        // Счётчик продаж курса - от 3 утром до 48 вечером
+        const courseSalesCounterEl = document.getElementById('course-sales-counter');
+        if (courseSalesCounterEl) {
+          function updateSalesCounter() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            
+            // Начинаем с 3 в 00:00, доходим до 48 в 23:59
+            // 45 продаж за 24 часа = 1.875 продажи в час
+            const totalMinutes = hours * 60 + minutes;
+            const salesToday = Math.floor(3 + (totalMinutes * 45 / 1440)); // 1440 минут в сутках
+            
+            courseSalesCounterEl.textContent = Math.min(salesToday, 48);
+          }
+          
+          // Обновляем каждую минуту
+          updateSalesCounter();
+          setInterval(updateSalesCounter, 60000); // 1 минута
         }
       });
     </script>
