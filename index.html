@@ -865,9 +865,9 @@
                 </div>
               </div>
               <div class="md:w-1/2 flex flex-col items-start justify-center">
-                <h2 class="text-5xl font-bold mb-2 flex items-end" id="about-title-text">Meet Your <span class="gradient-text">Instructor</span></h2>
+                <h2 class="text-6xl font-bold mb-4 flex items-end" id="about-title-text">Meet Your <span class="gradient-text">Instructor</span></h2>
                 <div class="flex flex-col items-start gap-0 mb-1">
-                  <span class="text-pink-400 text-2xl font-bold" id="about-name">Leo Lawaro</span>
+                  <span class="text-pink-400 text-3xl font-bold" id="about-name">Leo Lawaro</span>
                   <span class="text-gray-400 text-base" id="about-role">AI Visual Creator & Media Innovator</span>
                 </div>
                 <div class="text-white mb-4 text-base leading-relaxed" id="about-desc" style="margin-top:0;">For the past 3 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</div>
@@ -1170,8 +1170,7 @@
           const aboutTitle = translations[lang]["about-title"];
           const aboutTitleText = document.getElementById("about-title-text");
           if (aboutTitleText && aboutTitle) {
-            const match = aboutTitle.match(/(.+)(Instructor|инструктор|профессиональным инструктором)(.*)/i);
-            aboutTitleText.innerHTML = match ? `${match[1]}<span class='gradient-text'>${match[2]}</span>${match[3]}` : aboutTitle;
+            aboutTitleText.innerHTML = aboutTitle;
           }
         }
         document.getElementById('language-selector').onclick = e => {
