@@ -665,18 +665,18 @@
             <div style="flex:1;display:flex;justify-content:center;align-items:center;">
               <div id="banner-timer">
                 <div class="timer-row timer-row-numbers">
-                  <span class="timer-value">03</span>
-                  <span class="blinking-colon">:</span>
-                  <span class="timer-value">00</span>
-                  <span class="blinking-colon">:</span>
-                  <span class="timer-value">00</span>
+                  <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">03</span>
+                  <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
+                  <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
               </div>
                 <div class="timer-row timer-row-labels">
-                  <span class="timer-label">h</span>
-                  <span class="timer-label"></span>
-                  <span class="timer-label">m</span>
-                  <span class="timer-label"></span>
-                  <span class="timer-label">s</span>
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
+                  <span class="timer-label" style="min-width:1.1rem;"></span>
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">m</span>
+                  <span class="timer-label" style="min-width:1.1rem;"></span>
+                  <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">s</span>
               </div>
           </div>
         </div>
@@ -852,11 +852,11 @@
             <div class="flex justify-center gap-6 text-pink-400 text-3xl font-bold">
               <div class="flex flex-col items-center mb-6" id="final-cta-timer-wrap">
                 <div class="timer-row timer-row-numbers" style="justify-content:center;">
-                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">03</span>
-                  <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
-                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
-                  <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
-                  <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+                  <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">03</span>
+                  <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
+                  <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+                  <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
                 </div>
                 <div class="timer-row timer-row-labels" style="justify-content:center;">
                   <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
@@ -869,7 +869,7 @@
             </div>
             <p class="text-base text-white/60 mt-3">Then the price goes up</p>
           </div>
-            <div class="live-viewers mx-auto mb-2 ml-6" id="live-viewers-row" style="margin-top: 13px;">
+            <div class="live-viewers mx-auto mb-2" id="live-viewers-row" style="margin-top: 13px;">
               <span class="live-dot"></span>
               <span id="live-viewers-count">21</span> people currently viewing this page
             </div>
@@ -963,9 +963,9 @@
         </div>
         <div class="section-content mt-auto mb-12">
         <div class="relative">
-          <div id="faq-scroll-list" class="space-y-5 w-full max-w-2xl mx-auto max-h-[600px] md:max-h-[500px] overflow-y-auto pr-2">
+          <div id="faq-scroll-list" class="space-y-5 w-full max-w-[800px] mx-auto max-h-[700px] md:max-h-[600px] overflow-y-auto pr-2">
             <!-- Вопрос 1 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>What if I'm new to AI?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -977,7 +977,7 @@
               </div>
             </div>
             <!-- Вопрос 2 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>How much time do I need to invest in the courses to see results?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -989,7 +989,7 @@
               </div>
             </div>
             <!-- Вопрос 3 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>Will I receive any support or guidance while taking the courses?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1001,7 +1001,7 @@
               </div>
             </div>
             <!-- Вопрос 4 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>What makes your courses different from other AI courses available online?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1013,7 +1013,7 @@
               </div>
             </div>
             <!-- Вопрос 5 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>Do I need prior programming experience?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1025,7 +1025,7 @@
               </div>
             </div>
             <!-- Вопрос 6 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>Are the courses self-paced?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1037,7 +1037,7 @@
               </div>
             </div>
             <!-- Вопрос 7 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>Will I get a certificate after completing the course?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1049,7 +1049,7 @@
               </div>
             </div>
             <!-- Вопрос 8 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>What if I have questions during the course?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1061,7 +1061,7 @@
               </div>
             </div>
             <!-- Вопрос 9 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>Can I access the course materials after completion?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1073,7 +1073,7 @@
               </div>
             </div>
             <!-- Вопрос 10 -->
-            <div class="faq-item rounded-2xl border border-gray-700/60 bg-[#23232b]">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
                 <span>Is there a refund policy?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1085,36 +1085,31 @@
               </div>
             </div>
           </div>
-          <!-- Pager dots -->
-          <div id="faq-pager" class="flex justify-center gap-2 mt-6">
-            <button class="w-3 h-3 rounded-full bg-gray-400 opacity-60" aria-label="Page 1"></button>
-            <button class="w-3 h-3 rounded-full bg-gray-400 opacity-60" aria-label="Page 2"></button>
-            <button class="w-3 h-3 rounded-full bg-gray-400 opacity-60" aria-label="Page 3"></button>
-          </div>
+          <!-- Pager dots удалён -->
         </div>
         </div>
       </div>
     </section>
 
     <!-- #8 CTA + FOOTER -->
-    <section id="final-cta" class="snap-section bg-gradient-to-b from-slate-900 to-rose-950 flex flex-col min-h-screen">
+    <section id="final-cta" class="snap-section py-20 bg-gradient-to-b from-slate-900 to-rose-950 flex flex-col min-h-screen">
       <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
         <div class="section-header text-center items-center justify-center -mt-4">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center" id="final-cta-title"> 
             AI Models Will Be a<span class="gradient-text"> $1B Industry</span> by 2030
           </h2>
           <div class="text-base text-center mb-8 md:mb-16 lg:mb-32 text-gray-200 mx-auto" id="final-cta-subtitle">
-            This Hype Looks Like The Bitcoin Gold Rush In 2012 And SMMA In 2016!
+            This hype looks like the Bitcoin gold rush in 2012 and SMMA in 2016!
           </div>
           <div class="section-content flex-1 flex flex-col mb-8 md:mb-12 lg:mb-20 text-center items-center justify-center">
           <!-- Таймер -->
           <div class="flex flex-col items-center mb-4" id="final-cta-timer-wrap">
             <div class="timer-row timer-row-numbers" style="justify-content:center;">
-              <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">03</span>
-              <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
-              <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
-              <span class="blinking-colon" style="font-size:1.4rem;color:#ff4fa3;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
-              <span class="timer-value" style="font-size:1.8rem;font-weight:bold;color:#ff4fa3;min-width:2.7rem;text-align:center;">00</span>
+              <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">03</span>
+              <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+              <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
+              <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
+              <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
             </div>
             <div class="timer-row timer-row-labels" style="justify-content:center;">
               <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
