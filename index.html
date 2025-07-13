@@ -521,6 +521,24 @@
             padding-top: 48px;
             padding-bottom: 48px;
         }
+
+        /* Адаптация snap-section для планшетов */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            section.snap-section {
+                gap: 2rem;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+
+        /* Адаптация snap-section для мобильных */
+        @media (max-width: 767px) {
+            section.snap-section {
+                gap: 1.5rem;
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
+        }
         #hero-title-1 {
           display: block;
           margin-bottom: 4px;
@@ -570,13 +588,15 @@
         }
 
         #final-cta .container {
-          flex: 1;
+          flex: 1 1 0%;
+          min-height: 0;
           display: flex;
           flex-direction: column;
         }
 
         #final-cta .section-content {
-          flex: 1;
+          flex: 1 1 0%;
+          min-height: 0;
         }
 
         #final-cta .section-footer {
@@ -594,6 +614,42 @@
 
         #final-cta .timer-label {
           font-size: 1.12rem !important; /* 1.02rem * 1.1 = 1.12rem */
+        }
+
+        /* Адаптация для iPad и планшетов */
+        @media (max-width: 1024px) and (min-width: 768px) {
+          #final-cta .section-header {
+            margin-bottom: 1.2rem;
+          }
+          #final-cta .section-content {
+            gap: 1rem;
+          }
+          #final-cta .section-content > * {
+            margin-bottom: 1rem !important;
+          }
+        }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 767px) {
+          #final-cta .section-header {
+            margin-bottom: 1.5rem;
+          }
+          
+          #final-cta .section-content {
+            gap: 1rem;
+          }
+          
+          #final-cta .timer-value {
+            font-size: 1.8rem !important;
+          }
+          
+          #final-cta .blinking-colon {
+            font-size: 1.4rem !important;
+          }
+          
+          #final-cta .timer-label {
+            font-size: 0.85rem !important;
+          }
         }
     </style>
 </head>
@@ -984,10 +1040,10 @@
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center" id="final-cta-title"> 
             AI Models Will Be A<span class="gradient-text"> $1B Industry</span> By 2030
           </h2>
-          <div class="text-base text-center mb-32 text-gray-200 mx-auto" id="final-cta-subtitle">
+          <div class="text-base text-center mb-8 md:mb-16 lg:mb-32 text-gray-200 mx-auto" id="final-cta-subtitle">
             This Hype Looks Like The Bitcoin Gold Rush In 2012 And SMMA In 2016!
           </div>
-          <div class="section-content flex-1 flex flex-col mb-20 text-center items-center justify-center">
+          <div class="section-content flex-1 flex flex-col mb-8 md:mb-12 lg:mb-20 text-center items-center justify-center">
           <!-- Таймер -->
           <div class="flex flex-col items-center mb-4" id="final-cta-timer-wrap">
             <div class="timer-row timer-row-numbers" style="justify-content:center;">
@@ -1018,16 +1074,16 @@
             <span class="text-white text-base ml-2"><span class="text-green-300">course sales today</span></span>
           </div>
           <!-- Блок с аватарками и рейтингом -->
-          <div class="flex items-center justify-center mb-20">
-                          <img src="media/av_1.png" class="w-[150px] h-auto block mr-1" alt="Live viewers">
+          <div class="flex items-center justify-center mb-8 md:mb-12 lg:mb-20">
+                          <img src="media/av_1.png" class="w-[120px] md:w-[150px] h-auto block mr-1" alt="Live viewers">
             <div class="text-left">
               <div class="flex flex-col items-center">
                 <div class="flex text-yellow-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-7 h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-7 h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-7 h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-7 h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-7 h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                 </div>
                 <span class="text-sm font-medium text-white mt-1" id="rating-text">4.9 (300+ reviews)</span>
               </div>
@@ -1036,7 +1092,7 @@
           </div>
      <!-- Футтер -->
         <div class="section-footer mt-auto">
-          <footer class="w-full text-left text-gray-300 text-sm items-start justify-start bg-[rgba(24,26,42,0.55)] backdrop-blur-[8px] rounded-[18px] shadow-[0_2px_24px_0_#0002] p-8 md:p-10">
+          <footer class="w-full text-left text-gray-300 text-sm items-start justify-start bg-[rgba(24,26,42,0.55)] backdrop-blur-[8px] rounded-[18px] shadow-[0_2px_24px_0_#0002] p-6 md:p-8 lg:p-10">
             <div class="flex flex-col items-start gap-2">
               <h3 class="text-lg font-semibold gradient-text text-left" id="footer-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;">AI Influencer 3.0</h3>
               <p class="text-gray-400 text-left" id="footer-desc">Build hyper-realistic AI models and generate next-gen content.<br>Transform your visuals and launch your creator journey.</p>
