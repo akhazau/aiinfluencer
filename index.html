@@ -699,6 +699,9 @@
           background: #a855f7 !important;
           border-radius: 8px;
           opacity: 1 !important;
+          min-height: 24px;
+          height: 33% !important;
+          top: 33% !important;
         }
         [data-simplebar] .simplebar-track.simplebar-vertical {
           width: 8px !important;
@@ -1062,7 +1065,7 @@
         </div>
         <div class="section-content mt-auto mb-12">
         <div class="relative">
-          <div id="faq-scroll-list" data-simplebar class="space-y-5 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-2">
+          <div id="faq-scroll-list" data-simplebar class="space-y-2 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-2">
             <!-- Вопрос 1 -->
             <div class="faq-item w-[90%] mx-auto overflow-hidden">
               <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
@@ -1076,7 +1079,7 @@
               </div>
             </div>
             <!-- Вопрос 2 -->
-            <div class="faq-item w-[50%] mx-auto overflow-hidden">
+            <div class="faq-item w-[90%] mx-auto overflow-hidden">
               <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>How much time do I need to invest in the courses to see results?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1088,7 +1091,7 @@
               </div>
             </div>
             <!-- Вопрос 3 -->
-            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 overflow-hidden">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl border overflow-hidden">
               <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>Will I receive any support or guidance while taking the courses?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1100,7 +1103,7 @@
               </div>
             </div>
             <!-- Вопрос 4 -->
-            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 overflow-hidden">
+            <div class="faq-item w-[90%] mx-auto rounded-2xl overflow-hidden">
               <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>What makes your courses different from other AI courses available online?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1112,7 +1115,7 @@
               </div>
             </div>
             <!-- Вопрос 5 -->
-            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 overflow-hidden">
+            <div class="faq-item w-[90%] mx-auto border border-gray-700/60 overflow-hidden">
               <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>Do I need prior programming experience?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1124,7 +1127,7 @@
               </div>
             </div>
             <!-- Вопрос 6 -->
-            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 overflow-hidden">
+            <div class="faq-item w-[90%] mx-auto border-gray-700/60 overflow-hidden">
               <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>Are the courses self-paced?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
@@ -1439,12 +1442,14 @@
         // FAQ аккордеон
         document.querySelectorAll('.faq-toggle').forEach(btn => {
           btn.addEventListener('click', function() {
-            const answer = btn.parentElement.querySelector('.faq-answer');
+            const item = btn.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer');
             const isOpen = answer.classList.contains('open');
             // Закрыть все
             document.querySelectorAll('.faq-answer').forEach(a => {
               a.classList.remove('open');
               a.classList.add('hidden');
+              a.closest('.faq-item').classList.add('rounded-b-2xl');
             });
             document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
             // Открыть выбранный
@@ -1452,6 +1457,7 @@
               answer.classList.add('open');
               answer.classList.remove('hidden');
               btn.classList.add('open');
+              item.classList.remove('rounded-b-2xl');
             }
           });
         });
