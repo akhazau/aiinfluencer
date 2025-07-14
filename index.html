@@ -698,8 +698,9 @@
         [data-simplebar] .simplebar-scrollbar:before {
           background: #a855f7 !important;
           border-radius: 8px;
-          opacity: 1 !important;
+          opacity: 0.5 !important;
           min-height: 24px;
+          transition: opacity 0.2s;
         }
         [data-simplebar] .simplebar-track.simplebar-vertical {
           width: 6px !important;
@@ -743,6 +744,11 @@
         }
         .faq-toggle.open .faq-arrow svg {
           transform: rotate(90deg);
+        }
+        /* При скролле или наведении — яркий */
+        [data-simplebar] .simplebar-scrollbar:hover:before,
+        [data-simplebar] .simplebar-scrollbar.simplebar-visible:before {
+          opacity: 1 !important;
         }
     </style>
 </head>
@@ -1066,7 +1072,7 @@
           <div id="faq-scroll-list" data-simplebar class="space-y-3 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-2">
             <!-- Вопрос 1 -->
             <div class="faq-item w-[90%] mx-auto overflow-hidden">
-              <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
+              <button class="w-full flex justify-between items-center py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>What if I'm new to AI?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
                   <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1090,7 +1096,7 @@
             </div>
             <!-- Вопрос 3 -->
             <div class="faq-item w-[90%] mx-auto rounded-2xl border overflow-hidden">
-              <button class="w-full flex justify-between items-center px-8 py-8 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
+              <button class="w-full flex justify-between items-center px-4 py-4 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>Will I receive any support or guidance while taking the courses?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
                   <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
