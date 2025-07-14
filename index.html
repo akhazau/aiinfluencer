@@ -1452,8 +1452,7 @@
             document.querySelectorAll('.faq-answer').forEach((a, i) => {
               a.classList.remove('open');
               a.classList.add('hidden');
-              // Только для первого вопроса
-              if (i === 0) a.closest('.faq-item').classList.add('rounded-b-2xl');
+              a.closest('.faq-item').classList.add('rounded-b-2xl');
             });
             document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
             // Открыть выбранный
@@ -1461,8 +1460,7 @@
               answer.classList.add('open');
               answer.classList.remove('hidden');
               btn.classList.add('open');
-              // Только для первого вопроса
-              if (idx === 0) item.classList.remove('rounded-b-2xl');
+              item.classList.remove('rounded-b-2xl');
             }
           });
         });
