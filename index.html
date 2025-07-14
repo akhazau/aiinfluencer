@@ -679,7 +679,7 @@
         #faq-scroll-list::-webkit-scrollbar-track {
           background: transparent;
         }
-        .faq-item { border-radius: 0; overflow: hidden; }
+        .faq-item { border-radius: 1rem; overflow: hidden; }
         .faq-answer.hidden {
           max-height: 0;
           opacity: 0;
@@ -698,7 +698,7 @@
         [data-simplebar] .simplebar-scrollbar:before {
           background: #a855f7 !important;
           border-radius: 8px;
-          opacity: 0.5 !important;
+          opacity: 0.25 !important;
           min-height: 24px;
           transition: opacity 0.2s;
         }
@@ -730,15 +730,15 @@
           background: #2F3544;
           color: #fff;
           border-top: 1px solid #444;
-          border-bottom-left-radius: 1rem;
-          border-bottom-right-radius: 1rem;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
           font-size: 1rem;
         }
         .faq-answer.open {
           max-height: 400px;
           opacity: 1;
           padding: 1rem 2rem 1.5rem 2rem;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
         }
         .faq-arrow svg {
           transition: transform 0.3s;
@@ -1068,7 +1068,7 @@
             Results depend on your effort and use of recommended tools.
           </p>
         </div>
-        <div class="section-content mt-auto mb-12">
+        <div class="section-content mt-auto mb-10">
         <div class="relative">
           <div id="faq-scroll-list" data-simplebar class="space-y-6 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-1">
             <!-- Вопрос 1 -->
