@@ -1067,13 +1067,10 @@
                 </button>
                 <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
               </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- #8 CTA + FOOTER -->
@@ -1329,11 +1326,15 @@
             const answer = btn.parentElement.querySelector('.faq-answer');
             const isOpen = answer.classList.contains('open');
             // Закрыть все
-            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-answer').forEach(a => {
+              a.classList.remove('open');
+              a.classList.add('hidden');
+            });
             document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
             // Открыть выбранный
             if (!isOpen) {
               answer.classList.add('open');
+              answer.classList.remove('hidden');
               btn.classList.add('open');
             }
           });
