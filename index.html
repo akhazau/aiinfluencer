@@ -1042,7 +1042,7 @@
             <div id="faq-scroll-list" data-simplebar class="space-y-5 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-2">
               <!-- FAQ item template -->
               <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 overflow-hidden">
-                <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
+                <button class="faq-toggle w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
                   <span>What if I'm new to AI?</span>
                   <span class="faq-arrow transition-transform duration-300 flex items-center">
                     <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1304,27 +1304,10 @@
         }, 1800);
 
         // FAQ аккордеон
-        document.querySelectorAll('.faq-toggle').forEach(btn => btn.onclick = () => {
-          const item = btn.closest('.faq-item');
-          const answer = item.querySelector('.faq-answer');
-          const arrow = btn.querySelector('.faq-arrow');
-          const isOpen = !answer.classList.contains('hidden');
-          // Свернуть все остальные
-          document.querySelectorAll('.faq-answer').forEach(ans => {
-            if (ans !== answer) ans.classList.add('hidden');
-          });
-          document.querySelectorAll('.faq-arrow').forEach(a => {
-            if (a !== arrow) a.style.transform = 'rotate(0deg)';
-          });
-          // Переключить текущий
-          if (isOpen) {
-            answer.classList.add('hidden');
-            arrow.style.transform = 'rotate(0deg)';
-          } else {
-            answer.classList.remove('hidden');
-            arrow.style.transform = 'rotate(90deg)';
-          }
-        });
+        document.querySelectorAll('.faq-toggle').forEach(btn => btn.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          answer.classList.toggle('hidden');
+        }));
 
         // Анимации появления
         const observer = new IntersectionObserver(entries => {
