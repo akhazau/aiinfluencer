@@ -711,14 +711,28 @@
           display: none !important;
         }
         .faq-answer {
-          display: block;
-          padding: 1rem 2rem 1.5rem 2rem;
+          transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s, padding 0.25s;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          padding: 0 2rem;
           background: #2F3544;
           color: #fff;
           border-top: 1px solid #444;
           border-bottom-left-radius: 1rem;
           border-bottom-right-radius: 1rem;
           font-size: 1rem;
+        }
+        .faq-answer.open {
+          max-height: 400px;
+          opacity: 1;
+          padding: 1rem 2rem 1.5rem 2rem;
+        }
+        .faq-arrow svg {
+          transition: transform 0.3s;
+        }
+        .faq-toggle.open .faq-arrow svg {
+          transform: rotate(90deg);
         }
     </style>
 </head>
@@ -1041,7 +1055,7 @@
           <div class="relative">
             <div id="faq-scroll-list"
                  data-simplebar
-                 class="space-y-5 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-2"
+                 class="space-y-2 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-2"
                  style="overflow-y: auto;">
               <!-- FAQ item template -->
               <div class="faq-item w-[90%] mx-auto overflow-hidden">
@@ -1178,6 +1192,62 @@
                   </span>
                 </button>
                 <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
+              </div>
+              <div class="faq-item w-[90%] mx-auto overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
+                  <span>What if I'm new to AI?</span>
+                  <span class="faq-arrow transition-transform duration-300 flex items-center">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+                <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
+              </div>
+              <div class="faq-item w-[90%] mx-auto overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
+                  <span>What if I'm new to AI?</span>
+                  <span class="faq-arrow transition-transform duration-300 flex items-center">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+                <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
+              </div>
+              <div class="faq-item w-[90%] mx-auto overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
+                  <span>What if I'm new to AI?</span>
+                  <span class="faq-arrow transition-transform duration-300 flex items-center">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+                <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
+              </div>
+              <div class="faq-item w-[90%] mx-auto overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
+                  <span>What if I'm new to AI?</span>
+                  <span class="faq-arrow transition-transform duration-300 flex items-center">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+                <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
+              </div>
+              <div class="faq-item w-[90%] mx-auto overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
+                  <span>What if I'm new to AI?</span>
+                  <span class="faq-arrow transition-transform duration-300 flex items-center">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+                <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
+              </div>
+              <div class="faq-item w-[90%] mx-auto overflow-hidden">
+                <button class="faq-toggle w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none rounded-2xl border border-gray-700/60" style="background:#19192A;">
+                  <span>What if I'm new to AI?</span>
+                  <span class="faq-arrow transition-transform duration-300 flex items-center">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                </button>
+                <div class="faq-answer hidden rounded-b-2xl">Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.</div>
+              </div>
+              </div>
               </div>
               </div>
               </div>
@@ -1437,21 +1507,14 @@
         document.querySelectorAll('.faq-toggle').forEach(btn => {
           btn.addEventListener('click', function() {
             const answer = btn.parentElement.querySelector('.faq-answer');
-            const isOpen = !answer.classList.contains('hidden');
-            // Закрываем все ответы
-            document.querySelectorAll('.faq-answer').forEach(a => {
-              a.classList.add('hidden');
-              a.classList.remove('rounded-b-2xl');
-            });
-            document.querySelectorAll('.faq-toggle').forEach(b => {
-              b.classList.remove('rounded-t-2xl');
-              b.classList.add('rounded-2xl');
-            });
+            const isOpen = answer.classList.contains('open');
+            // Закрыть все
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
+            // Открыть выбранный
             if (!isOpen) {
-              answer.classList.remove('hidden');
-              answer.classList.add('rounded-b-2xl');
-              btn.classList.remove('rounded-2xl');
-              btn.classList.add('rounded-t-2xl');
+              answer.classList.add('open');
+              btn.classList.add('open');
             }
           });
         });
