@@ -698,14 +698,22 @@
         [data-simplebar] .simplebar-scrollbar:before {
           background: #a855f7 !important;
           border-radius: 8px;
+          opacity: 1 !important;
         }
         [data-simplebar] .simplebar-track.simplebar-vertical {
           width: 8px !important;
-          right: 2px;
           background: transparent;
+          opacity: 1 !important;
         }
-        [data-simplebar] .simplebar-track {
-          border-radius: 8px;
+        [data-simplebar] .simplebar-scrollbar {
+          opacity: 1 !important;
+        }
+        #faq-scroll-list::-webkit-scrollbar-thumb {
+          background: #a855f7 !important;
+        }
+        #faq-scroll-list::-webkit-scrollbar {
+          background: transparent;
+          width: 8px;
         }
         .faq-answer.hidden {
           display: none !important;
@@ -1055,7 +1063,7 @@
         <div class="relative">
           <div id="faq-scroll-list" class="space-y-5 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] overflow-y-scroll pr-2">
             <!-- Вопрос 1 -->
-            <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 overflow-hidden">
+            <div class="faq-item w-[90%] mx-auto overflow-hidden">
               <button class="w-full flex justify-between items-center px-8 py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>What if I'm new to AI?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
