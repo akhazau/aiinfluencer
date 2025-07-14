@@ -560,8 +560,8 @@
         #final-cta > .container { position: relative; z-index: 2; }
         .faq-item { min-height: 80px; }
         .faq-answer { transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s; max-height: 400px; overflow: hidden; }
-        .faq-answer.hidden { max-height: 0; opacity: 0; padding-bottom: 0 !important; }
-        .faq-answer:not(.hidden) { opacity: 1; }
+        .faq-answer.hidden { max-height: 0; opacity: 0; padding-bottom: 0 !important; padding-top: 0 !important; }
+        .faq-answer:not(.hidden) { opacity: 1; padding-bottom: 1.5rem !important; padding-top: 1rem !important; }
         #final-cta::after {
           content: '';
           position: absolute;
@@ -650,6 +650,24 @@
           #final-cta .timer-label {
             font-size: 0.85rem !important;
           }
+        }
+
+        #faq-scroll-list {
+          scrollbar-width: thin;
+          scrollbar-color: #a855f7 #23232b;
+        }
+        #faq-scroll-list::-webkit-scrollbar {
+          width: 10px;
+          background: #23232b;
+        }
+        #faq-scroll-list::-webkit-scrollbar-thumb {
+          background: #a855f7;
+          border-radius: 8px;
+          border: 2px solid #23232b;
+        }
+        #faq-scroll-list::-webkit-scrollbar-track {
+          background: #23232b;
+          border-radius: 8px;
         }
     </style>
 </head>
@@ -815,9 +833,10 @@
       <div class="absolute top-4 right-1/4 w-8 h-8 rounded-full bg-purple-400 opacity-20 blur-2xl animate-pulse"></div>
       <div class="absolute bottom-8 left-1/3 w-6 h-6 rounded-full bg-pink-400 opacity-30 blur-2xl animate-pulse delay-500"></div>
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div class="section-header mt-12">
+        <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
+          <div class="section-header mt-12">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center">
-            Your <span class="gradient-text">AI Era</span> Starts Now — For the Price of a T-Shirt
+            Your <span class="gradient-text-inverse">AI Era</span>Starts Now — For the <span class="gradient-text">Price of a T-Shirt</span> 
           </h2>
           <p class="text-base text-center mb-2 text-gray-300 max-w-xl mx-auto">
             You don't need experience. You just need to start.
@@ -967,7 +986,7 @@
         </div>
         <div class="section-content mt-auto mb-12">
         <div class="relative">
-          <div id="faq-scroll-list" class="space-y-5 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] overflow-y-auto pr-2">
+          <div id="faq-scroll-list" class="space-y-5 w-full max-w-[800px] mx-auto max-h-[490px] md:max-h-[420px] overflow-y-scroll pr-2">
             <!-- Вопрос 1 -->
             <div class="faq-item w-[90%] mx-auto rounded-2xl border border-gray-700/60 bg-[#23232b]">
               <button class="w-full flex justify-between items-center rounded-t-2xl bg-[#18181f] px-8 py-2.5 text-left font-semibold text-white text-lg focus:outline-none faq-toggle">
