@@ -679,21 +679,21 @@
         #faq-scroll-list::-webkit-scrollbar-track {
           background: transparent;
         }
-        .faq-item { border-radius: 0.5rem; overflow: hidden; }
+        .faq-item { border-radius: 0; overflow: hidden; }
         .faq-answer.hidden {
           max-height: 0;
           opacity: 0;
           padding-bottom: 0 !important;
           padding-top: 0 !important;
-          border-bottom-left-radius: 0 !important;
-          border-bottom-right-radius: 0 !important;
+          border-bottom-left-radius: 1rem !important;
+          border-bottom-right-radius: 1rem !important;
         }
         .faq-answer:not(.hidden) {
           opacity: 1;
           padding-bottom: 1.5rem !important;
           padding-top: 1rem !important;
-          border-bottom-left-radius: 1rem !important;
-          border-bottom-right-radius: 1rem !important;
+          border-bottom-left-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
         }
         [data-simplebar] .simplebar-scrollbar:before {
           background: #a855f7 !important;
@@ -1069,7 +1069,7 @@
         </div>
         <div class="section-content mt-auto mb-12">
         <div class="relative">
-          <div id="faq-scroll-list" data-simplebar class="space-y-3 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-2">
+          <div id="faq-scroll-list" data-simplebar class="space-y-5 w-full max-w-[1000px] mx-auto max-h-[490px] md:max-h-[520px] pr-1">
             <!-- Вопрос 1 -->
             <div class="faq-item w-[90%] mx-auto overflow-hidden">
               <button class="w-full flex justify-between items-center py-3 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
@@ -1095,8 +1095,8 @@
               </div>
             </div>
             <!-- Вопрос 3 -->
-            <div class="faq-item w-[90%] mx-auto rounded-2xl border overflow-hidden">
-              <button class="w-full flex justify-between items-center px-4 py-4 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
+            <div class="faq-item w-[90%] h-[90%] mx-auto rounded-2xl border overflow-hidden">
+              <button class="w-full flex justify-between items-center px-8 py-4 text-left font-normal text-white text-lg focus:outline-none faq-toggle rounded-t-2xl" style="background:#19192A;">
                 <span>Will I receive any support or guidance while taking the courses?</span>
                 <span class="faq-arrow transition-transform duration-300 flex items-center">
                   <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
