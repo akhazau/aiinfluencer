@@ -676,9 +676,14 @@
         #faq-scroll-list::-webkit-scrollbar-track {
           background: transparent;
         }
-        .faq-item { 
-          overflow: hidden; 
-          margin-bottom: 0.5rem;
+        .faq-item {
+          overflow: hidden;
+          margin-bottom: 0.75rem;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .faq-item:hover {
+          transform: translateY(-2.5px) scale(1.01);
+          box-shadow: 0 10px 24px -4px rgba(236, 72, 153, 0.35);
         }
         .faq-item:last-child {
           margin-bottom: 0;
@@ -742,7 +747,7 @@
           max-height: 400px;
           opacity: 1;
           padding: 1rem 2rem 1.5rem 2rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
         }
         .faq-arrow svg {
           transition: transform 0.3s;
