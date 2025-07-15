@@ -677,7 +677,25 @@
         #faq-scroll-list::-webkit-scrollbar-track {
           background: transparent;
         }
-        .faq-item { overflow: hidden; }
+        .faq-item { 
+          overflow: hidden; 
+        }
+        .faq-item {
+          --border-radius: 0px;
+          border-bottom-left-radius: var(--border-radius) !important;
+          border-bottom-right-radius: var(--border-radius) !important;
+        }
+        .faq-item.rounded-b-2xl {
+          --border-radius: 1rem;
+        }
+        .faq-answer {
+          --border-radius: 0px;
+          border-bottom-left-radius: var(--border-radius) !important;
+          border-bottom-right-radius: var(--border-radius) !important;
+        }
+        .faq-answer.rounded-b-2xl {
+          --border-radius: 1rem;
+        }
         .faq-answer.hidden {
           max-height: 0;
           opacity: 0;
@@ -1437,11 +1455,26 @@
         }, 1800);
 
         // FAQ аккордеон
+        // Инициализация - убеждаемся, что все закрытые элементы имеют скругленные углы
+        document.querySelectorAll('.faq-item').forEach((item) => {
+          const answer = item.querySelector('.faq-answer');
+          if (answer.classList.contains('hidden')) {
+            item.classList.add('rounded-b-2xl');
+            answer.classList.remove('rounded-b-2xl');
+          }
+        });
+        
         document.querySelectorAll('.faq-toggle').forEach((btn, idx) => {
           btn.addEventListener('click', function() {
             const item = btn.closest('.faq-item');
             const answer = item.querySelector('.faq-answer');
             const isOpen = answer.classList.contains('open');
+            
+            console.log('FAQ click - before:', { 
+              itemClasses: item.className, 
+              answerClasses: answer.className,
+              isOpen 
+            });
             
             // Закрыть все
             document.querySelectorAll('.faq-answer').forEach((a, i) => {
@@ -1451,6 +1484,8 @@
               faqItem.classList.add('rounded-b-2xl');
               // Убираем скругление с ответа при закрытии
               a.classList.remove('rounded-b-2xl');
+              
+              console.log('Closed item:', faqItem.className);
             });
             document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
             
@@ -1462,7 +1497,15 @@
               item.classList.remove('rounded-b-2xl');
               // Добавляем скругление к ответу при открытии
               answer.classList.add('rounded-b-2xl');
+              
+              console.log('Opened item:', item.className);
+              console.log('Opened answer:', answer.className);
             }
+            
+            console.log('FAQ click - after:', { 
+              itemClasses: item.className, 
+              answerClasses: answer.className 
+            });
           });
         });
 
