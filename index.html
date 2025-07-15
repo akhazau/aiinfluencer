@@ -1450,6 +1450,7 @@
           const answer = item.querySelector('.faq-answer');
           if (answer.classList.contains('hidden')) {
             item.classList.add('rounded-2xl');
+            item.classList.remove('rounded-t-2xl');
             answer.classList.remove('rounded-b-2xl');
           }
         });
@@ -1460,22 +1461,15 @@
             const answer = item.querySelector('.faq-answer');
             const isOpen = answer.classList.contains('open');
             
-            console.log('FAQ click - before:', { 
-              itemClasses: item.className, 
-              answerClasses: answer.className,
-              isOpen 
-            });
-            
             // Закрыть все
             document.querySelectorAll('.faq-answer').forEach((a, i) => {
               a.classList.remove('open');
               a.classList.add('hidden');
               const faqItem = a.closest('.faq-item');
               faqItem.classList.add('rounded-2xl');
+              faqItem.classList.remove('rounded-t-2xl');
               // Убираем скругление с ответа при закрытии
               a.classList.remove('rounded-b-2xl');
-              
-              console.log('Closed item:', faqItem.className);
             });
             document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
             
@@ -1485,17 +1479,10 @@
               answer.classList.remove('hidden');
               btn.classList.add('open');
               item.classList.remove('rounded-2xl');
+              item.classList.add('rounded-t-2xl');
               // Добавляем скругление к ответу при открытии
               answer.classList.add('rounded-b-2xl');
-              
-              console.log('Opened item:', item.className);
-              console.log('Opened answer:', answer.className);
             }
-            
-            console.log('FAQ click - after:', { 
-              itemClasses: item.className, 
-              answerClasses: answer.className 
-            });
           });
         });
 
