@@ -569,8 +569,6 @@
           padding-bottom: 1.5rem !important;
           padding-top: 1rem !important;
           background: #2F3544 !important;
-          border-bottom-left-radius: 1rem !important;
-          border-bottom-right-radius: 1rem !important;
         }
         #final-cta::after {
           content: '';
@@ -685,8 +683,6 @@
           opacity: 0;
           padding-bottom: 0 !important;
           padding-top: 0 !important;
-          border-bottom-left-radius: 1rem !important;
-          border-bottom-right-radius: 1rem !important;
         }
         .faq-answer:not(.hidden) {
           opacity: 1;
@@ -728,8 +724,6 @@
           background: #2F3544;
           color: #fff;
           border-top: 1px solid #444;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
           font-size: 1rem;
         }
         .faq-answer.open {
@@ -1448,13 +1442,16 @@
             const item = btn.closest('.faq-item');
             const answer = item.querySelector('.faq-answer');
             const isOpen = answer.classList.contains('open');
+            
             // Закрыть все
             document.querySelectorAll('.faq-answer').forEach((a, i) => {
               a.classList.remove('open');
               a.classList.add('hidden');
-              a.closest('.faq-item').classList.add('rounded-b-2xl');
+              const faqItem = a.closest('.faq-item');
+              faqItem.classList.add('rounded-b-2xl');
             });
             document.querySelectorAll('.faq-toggle').forEach(b => b.classList.remove('open'));
+            
             // Открыть выбранный
             if (!isOpen) {
               answer.classList.add('open');
