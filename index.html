@@ -815,7 +815,7 @@
       <div class="container mx-auto px-6 z-10" style="margin-top: 160px;">
         <div class="flex flex-col lg:flex-row items-center">
           <div class="lg:w-1/2 mb-12 lg:mb-0" style="transform: translateY(-15px);">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            <h1 class="text-2xl md:text-6xl font-bold mb-4">
               <span class="gradient-text text-7xl" id="hero-title-1" style="display:block; margin-bottom:3px;">AI Influencer 3.0</span>
               <span id="hero-title-2" class="block text-white font-bold text-3xl md:text-5xl" style="font-weight:800; display:block;">ALREADY EASY.</span>
             </h1>
@@ -897,7 +897,8 @@
             <p class="text-base text-center mb-2 text-gray-300 max-w-2xl mx-auto">AI Characters create parasocial relationships — where followers feel a genuine emotional connection to your media persona.</p>
           </div>
           <div class="section-content mt-auto mb-12">
-            <div class="flex flex-row gap-12 justify-center items-center">
+            <!-- Десктоп: сетка карточек -->
+            <div class="hidden md:flex flex-row gap-12 justify-center items-center" id="benefits-desktop">
               <div class="max-w-lg text-left">
                 <h3 class="text-2xl font-normal mb-4 text-pink-400">Start Feeling Like a Creator</h3>
                 <p class="mb-4">After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.</p>
@@ -914,6 +915,42 @@
               </div>
               <div>
                 <img src="media/av01.png" alt="Preview" class="rounded-2xl shadow-lg object-cover max-w-xs aspect-[10/16] h-auto">
+              </div>
+            </div>
+            <!-- MOBILE: Карусель карточек на мобильных -->
+            <div class="block md:hidden" id="benefits-mobile-carousel">
+              <!-- MOBILE: Swiper.js слайдер -->
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="max-w-lg text-left mx-auto">
+                      <h3 class="text-2xl font-normal mb-4 text-pink-400">Start Feeling Like a Creator</h3>
+                      <p class="mb-4">After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.</p>
+                      <p class="mb-4">This is about owning a unique identity, building trust through realism, and standing out in a sea of "plastic" AI faces.</p>
+                      <div class="my-6 border-t border-gray-600 w-16"></div>
+                      <h4 class="text-xl font-semibold mb-3">Why It's Different</h4>
+                      <ul class="space-y-2 text-base">
+                        <li><span class="text-green-400">✔</span> Build studio-level visuals with no gear</li>
+                        <li><span class="text-green-400">✔</span> Create content with personality, not filters</li>
+                        <li><span class="text-green-400">✔</span> No need to show your face or speak on camera</li>
+                        <li><span class="text-green-400">✔</span> Make images that feel emotional, alive, real</li>
+                        <li><span class="text-green-400">✔</span> Learn a mindset, not just tools</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="swiper-slide flex justify-center items-center">
+                    <img src="media/av01.png" alt="Preview" class="rounded-2xl shadow-lg object-cover max-w-xs aspect-[10/16] h-auto mx-auto">
+                  </div>
+                  <div class="swiper-slide flex justify-center items-center">
+                    <!-- MOBILE: Можно добавить дополнительную карточку или повторить одну из существующих -->
+                    <div class="max-w-lg text-left mx-auto">
+                      <h3 class="text-2xl font-normal mb-4 text-pink-400">Studio Quality</h3>
+                      <p class="mb-4">Shoot Without a Studio. Fashion-level realism, perfect skin, tone & light. Built for ads, stores, socials.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Пагинация (точки) -->
+                <div class="swiper-pagination"></div>
               </div>
             </div>
           </div>
@@ -1581,5 +1618,21 @@
       });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
+    <!-- Swiper.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script>
+      // MOBILE: Инициализация слайдера только на мобильных
+      if (window.innerWidth < 768) {
+        new Swiper('.swiper', {
+          slidesPerView: 1,
+          spaceBetween: 16,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      }
+    </script>
 </body>
 </html>
