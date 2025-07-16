@@ -71,3 +71,13 @@ p {
     background-clip: text;
     color: transparent;
 }
+
+/* MOBILE: уменьшаем размер заголовка hero и паддинг карточки на мобильных устройствах */
+@media (max-width: 767px) {
+  #hero-title-1 {
+    font-size: 1.5rem !important; /* MOBILE: уменьшили размер заголовка hero */
+  }
+  .card {
+    padding: 8px; /* MOBILE: уменьшили внутренний отступ карточки */
+  }
+}
