@@ -769,9 +769,9 @@
     <div id="sticky-banner">
         <div class="banner-inner" style="display:flex;align-items:center;justify-content:space-between;position:relative;gap:-1;">
             <button class="animated-gradient-btn text-white rounded-[14px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] ml-16">
-                <span>Get started –</span>
-                <span class="line-through text-yellow-500 font-normal">$127 </span>
-                <span class="text-yellow-300 text-xl font-bold">$27</span>
+                <span id="sticky-btn-text">Get started –</span>
+                <span class="line-through text-yellow-500 font-normal" id="sticky-btn-price-old">$127 </span>
+                <span class="text-yellow-300 text-xl font-bold" id="sticky-btn-price-new">$27</span>
             </button>
             <div style="flex:1;display:flex;justify-content:center;align-items:center;">
               <div id="banner-timer">
@@ -791,7 +791,7 @@
               </div>
           </div>
         </div>
-            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn" style="margin-right:150px;">support</a>
+            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn" style="margin-right:150px;" id="support-btn">support</a>
     </div>
     <div class="sticky-glow-line"></div>
     <div class="sticky-glow"></div>
@@ -829,15 +829,15 @@
                   <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px]" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#646464; font-size:1rem; width: 366px; padding: 0 20px;" />
                 </div>
                 <button id="main-btn" class="animated-gradient-btn text-white w-full rounded-[18px] text-lg flex items-center justify-center gap-2.5 overflow-hidden h-[50px]">
-                  <span>Get started –</span>
-                  <span class="line-through text-yellow-500 font-normal">$127 </span>
-                  <span class="text-yellow-300 text-xl font-bold">$27</span>
+                  <span id="main-btn-text">Get started –</span>
+                  <span class="line-through text-yellow-500 font-normal" id="main-btn-price-old">$127 </span>
+                  <span class="text-yellow-300 text-xl font-bold" id="main-btn-price-new">$27</span>
                 </button>
               </form>
               <!-- В hero-секции -->
               <div class="live-viewers mx-auto mb-2 ml-6" id="live-viewers-row" style="margin-top: 13px;">
                 <span class="live-dot"></span>
-                <span id="live-viewers-count">21</span> people currently viewing this page
+                <span id="live-viewers-count">21</span> <span id="live-viewers-text">people currently viewing this page</span>
               </div>
               <div class="flex items-center" style="margin-top:20px;">
                 <div class="flex -space-x-4">
@@ -876,8 +876,8 @@
     <section class="snap-section py-20 bg-gradient-to-b from-slate-800 to-slate-900 flex flex-col min-h-screen">
       <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
         <div class="section-header mt-12">
-          <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center" id="pain-title">
-            Tired of <span class="gradient-text" id="pain-title-gradient">Plastic AI faces?</span>
+          <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center">
+            <span id="pain-title">Tired of</span> <span class="gradient-text" id="pain-title-gradient">Plastic AI faces?</span>
           </h2>
           <p class="text-base text-center mb-2 text-gray-300 max-w-xl mx-auto" id="pain-desc">
             You see what models they make and you know what you can do better<br>when the technology gets into your hands?
@@ -893,7 +893,7 @@
     <section class="snap-section py-20 bg-gradient-to-b from-slate-900 to-slate-800 flex flex-col min-h-screen">
         <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
           <div class="section-header mt-12">
-            <h2 class="text-3xl md:text-5xl font-bold leading-tight text-center mb-3" id="benefits-title"><span class="gradient-text-inverse" id="benefits-title-inverse">AI Models</span> Are Your Creative <span class="gradient-text" id="benefits-title-gradient">Superpower</span></h2>
+            <h2 class="text-3xl md:text-5xl font-bold leading-tight text-center mb-3" id="benefits-title"><span class="gradient-text-inverse" id="benefits-title-inverse">AI Models</span> <span id="benefits-title-middle">Are Your Creative</span> <span class="gradient-text" id="benefits-title-gradient">Superpower</span></h2>
             <p class="text-base text-center mb-2 text-gray-300 max-w-2xl mx-auto" id="benefits-desc">AI Characters create parasocial relationships — where followers feel a genuine emotional connection to your media persona.</p>
           </div>
           <div class="section-content mt-auto mb-12">
@@ -964,37 +964,37 @@
       <div class="container mx-auto px-6 flex flex-col items-center flex-1 pt-16">
         <div class="section-header w-full text-center mt-10">
           <h2 class="text-2xl md:text-5xl font-bold mb-3 leading-tight">
-            Ambition & <span class="gradient-text-inverse">AI Tools</span> = Successful<span class="gradient-text" id="price-title-gradient"> AI Influencer</span> 
+            <span id="price-title-start">Ambition &</span> <span class="gradient-text-inverse" id="price-title-gradient">AI Tools</span> <span id="price-title-middle">= Successful</span><span class="gradient-text" id="price-title-end"> AI Influencer</span> 
           </h2>
-          <p class="text-base text-gray-300 max-w-xl mx-auto">
-            No studio, no makeup, no crew, no shooting — all for the price of a T-shirt. 
-          </p>
+                      <p class="text-base text-gray-300 max-w-xl mx-auto" id="price-subtitle">
+              No studio, no makeup, no crew, no shooting — all for the price of a T-shirt. 
+            </p>
         </div>
         <div class="section-content w-full max-w-5xl mx-auto mt-auto">
           <div class="grid md:grid-cols-2 gap-20 items-start">
             <div>
               <!-- Оффер -->
               <div class="bg-black/40 rounded-3xl p-10 shadow-lg border border-white/10 w-5/7">
-                <h2 class="text-2xl font-semibold text-yellow-300 mb-3">AI Influencer 3.0 Course</h2>
-                <div class="text-5xl md:text-6xl font-bold text-white mb-2">$27</div>
-                <div class="line-through text-gray-400 text-base mb-3">Regular Price: $127</div>
+                <h2 class="text-2xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
+                <div class="text-5xl md:text-6xl font-bold text-white mb-2" id="price-current">$27</div>
+                <div class="line-through text-gray-400 text-base mb-3" id="price-regular">Regular Price: $127</div>
                 <div class="inline-block bg-green-600 text-black text-sm font-semibold px-4 py-1.5 rounded-full mb-8" id="price-discount">
                   79% OFF — Limited Time
                 </div>
                 <ul class="space-y-2 text-base leading-relaxed text-white/90" id="price-features-list">
-                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Instant access after payment</li>
-                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Watch anytime, at your own pace</li>
-                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> 2.5h of step-by-step video lessons</li>
-                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Essential AI tools only</li>
-                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> No-code AI model training</li>
-                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Ready-made visual framework</li>
-                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Face-swapping explained</li>
+                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-1">Instant access after payment</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-2">Watch anytime, at your own pace</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-3">2.5h of step-by-step video lessons</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-4">Essential AI tools only</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-5">No-code AI model training</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-6">Ready-made visual framework</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-7">Face-swapping explained</span></li>
                 </ul>
                 <button class="animated-gradient-btn text-white rounded-[14px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] mt-8">
-                  <span>Get started –</span>
-                  <span class="line-through text-yellow-500 font-normal">$127 </span>
-                  <span class="text-yellow-300 text-xl font-bold">$27</span>
-                  <span class="font-bold text-white">NOW</span>
+                  <span id="price-btn-text">Get started –</span>
+                  <span class="line-through text-yellow-500 font-normal" id="price-btn-price-old">$127 </span>
+                  <span class="text-yellow-300 text-xl font-bold" id="price-btn-price-new">$27</span>
+                  <span class="font-bold text-white" id="price-btn-now">NOW</span>
                 </button>
               </div>
             </div>
@@ -1003,10 +1003,10 @@
               <div class="bg-white/10 rounded-2xl pl-8 pr-5 py-5 w-3/4 mt-12 flex flex-col items-start">
                 <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="bonuses-title">🎁 Bonuses</h3>
                 <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="bonuses-list">
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>Big Realism Prompt Pack</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>Lifetime Access Anytime</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>Waitlisted to Secret Platform</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>No Bots Email Support</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-1">Big Realism Prompt Pack</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-2">Lifetime Access Anytime</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-3">Waitlisted to Secret Platform</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-4">No Bots Email Support</span></div>
                 </div>
               </div>
               <div class="border-t border-gray-700 w-4/5 my-1"></div>
@@ -1014,11 +1014,11 @@
               <div class="bg-white/10 rounded-2xl pl-8 pr-5 py-5 w-full flex flex-col items-start">
                 <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="learnmap-title">Learn Map</h3>
                 <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="learnmap-list">
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>Character setup with pose & style</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>Realism + image prep for clean angles & details</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>AI training with no code needed</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>Visual control for emotion & outfit</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span>Final touch to merge & publish</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-1">Character setup with pose & style</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-2">Realism + image prep for clean angles & details</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-3">AI training with no code needed</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-4">Visual control for emotion & outfit</span></div>
+                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-5">Final touch to merge & publish</span></div>
                 </div>
               </div>
             </div>
@@ -1295,9 +1295,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
               </div>
                 <span class="text-sm font-medium text-white mt-1" id="rating-text">4.9 (300+ reviews)</span>
               </div>
@@ -1331,17 +1329,91 @@
         // Языковой переключатель и перевод
         const translations = {
           en: {
+            // Sticky Banner
+            "sticky-btn-text": "Get started –",
+            "sticky-btn-price-old": "$127",
+            "sticky-btn-price-new": "$27",
+            "support-btn": "support",
+            
+            // Hero Section
             "hero-title-1": "AI Influencer 3.0",
             "hero-title-2": "ALREADY EASY.",
             "hero-subtitle": "BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master the tools in couple of the days. Unleash the AI MAGIC today!",
+            "main-btn-text": "Get started –",
+            "main-btn-price-old": "$127",
+            "main-btn-price-new": "$27",
+            "live-viewers-text": "people currently viewing this page",
             "join-text": "Join",
             "members-text": "creators already inside",
             "rating-text": "4.9 (300+ reviews)",
-            "about-title": "Meet Your <span class=\"gradient-text\">Instructor</span>",
+            
+            // Pain Section
+            "pain-title": "Tired of",
+            "pain-title-gradient": "Plastic AI faces?",
+            "pain-desc": "You see what models they make and you know what you can do better<br>when the technology gets into your hands?",
+            
+            // Benefits Section
+            "benefits-title-inverse": "AI Models",
+            "benefits-title-middle": "Are Your Creative",
+            "benefits-title-gradient": "Superpower",
+            "benefits-desc": "AI Characters create parasocial relationships — where followers feel a genuine emotional connection to your media persona.",
+            "benefits-card-1-title": "Start Feeling Like a Creator",
+            "benefits-card-1-desc-1": "After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.",
+            "benefits-card-1-desc-2": "This is about owning a unique identity, building trust through realism, and standing out in a sea of \"plastic\" AI faces.",
+            "benefits-card-1-why-title": "Why It's Different",
+            "benefits-card-1-feature-1": "Build studio-level visuals with no gear",
+            "benefits-card-1-feature-2": "Create content with personality, not filters",
+            "benefits-card-1-feature-3": "No need to show your face or speak on camera",
+            "benefits-card-1-feature-4": "Make images that feel emotional, alive, real",
+            "benefits-card-1-feature-5": "Learn a mindset, not just tools",
+            "benefits-card-2-title-mobile": "Studio Quality",
+            "benefits-card-2-desc-1-mobile": "Shoot Without a Studio. Fashion-level realism, perfect skin, tone & light. Built for ads, stores, socials.",
+            
+            // Price Section
+            "price-title-start": "Ambition &",
+            "price-title-gradient": "AI Tools",
+            "price-title-middle": "= Successful",
+            "price-title-end": "AI Influencer",
+            "price-subtitle": "No studio, no makeup, no crew, no shooting — all for the price of a T-shirt.",
+            "price-course-title": "AI Influencer 3.0 Course",
+            "price-current": "$27",
+            "price-regular": "Regular Price: $127",
+            "price-discount": "79% OFF — Limited Time",
+            "price-feature-1": "Instant access after payment",
+            "price-feature-2": "Watch anytime, at your own pace",
+            "price-feature-3": "2.5h of step-by-step video lessons",
+            "price-feature-4": "Essential AI tools only",
+            "price-feature-5": "No-code AI model training",
+            "price-feature-6": "Ready-made visual framework",
+            "price-feature-7": "Face-swapping explained",
+            "price-btn-text": "Get started –",
+            "price-btn-price-old": "$127",
+            "price-btn-price-new": "$27",
+            "price-btn-now": "NOW",
+            "bonuses-title": "🎁 Bonuses",
+            "bonus-1": "Big Realism Prompt Pack",
+            "bonus-2": "Lifetime Access Anytime",
+            "bonus-3": "Waitlisted to Secret Platform",
+            "bonus-4": "No Bots Email Support",
+            "learnmap-title": "Learn Map",
+            "learnmap-1": "Character setup with pose & style",
+            "learnmap-2": "Realism + image prep for clean angles & details",
+            "learnmap-3": "AI training with no code needed",
+            "learnmap-4": "Visual control for emotion & outfit",
+            "learnmap-5": "Final touch to merge & publish",
+            
+            // Reviews Section
+            "testimonial-title": "What",
+            "reviews-title-gradient": "People Say",
+            "testimonial-subtitle": "Don't just take our word for it.<br>Here's what early adopters think about AI-generated art.",
+            
+            // About Section
+            "about-title-text": "Meet Your",
+            "about-title-gradient": "Instructor",
             "about-name": "Leo Lawaro",
             "about-role": "AI Visual Creator & Media Innovator",
-            "about-desc": "For the past 3 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.",
-            "about-exp-pill": "3 years experience",
+            "about-desc": "For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.",
+            "about-exp-pill": "6 years experience",
             "about-fact-1-title": "100+ projects",
             "about-fact-1-desc": "Realistic AI characters built for clients",
             "about-fact-2-title": "Certified instructor",
@@ -1350,19 +1422,33 @@
             "about-fact-3-desc": "Sharing creative AI techniques online",
             "about-fact-4-title": "Global impact",
             "about-fact-4-desc": "Students from over 20 countries",
-            "faq-title": "FAQ",
-            "faq-q1": "I have no experience with neural networks. Is this for me?",
-            "faq-a1": "Yes, everything is explained with live examples. The main thing is your desire to learn.",
-            "faq-q2": "Does it really look like a real person?",
-            "faq-a2": "Yes. The key is the right technique. You'll get specific prompts and methodology.",
-            "faq-q3": "Can I use the character for personal or private purposes?",
-            "faq-a3": "You get a tool that can be adapted for any format—from a visual blog to more private and closed projects. Everything remains under your control.",
-            "faq-q4": "Is there support if something doesn't work?",
-            "faq-a4": "Yes, you can ask a question about the course topic and get help.",
-            "faq-q5": "Are neural networks paid?",
-            "faq-a5": "Yes, the neural networks we will work with are paid—for example, Midjourney. Others use micropayments.<br><br>💡 On average, you'll spend dozens of times less than on a single professional photoshoot—and get a tool you can use again and again.",
-            "faq-q6": "What if I already have some skills—will it be interesting for me?",
-            "faq-a6": "Absolutely. You'll learn how to create realistic, consistent images and train a neural network for yourself. This is a higher level.",
+            
+            // FAQ Section
+            "faq-title": "Frequently Asked",
+            "faq-title-gradient": "Questions",
+            "faq-desc": "Results depend on your effort and use of recommended tools.",
+            "faq-q1": "What if I'm new to AI?",
+            "faq-a1": "Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.",
+            "faq-q2": "How much time do I need to invest in the courses to see results?",
+            "faq-a2": "Our courses are designed to be flexible, allowing you to learn at your own pace. The time investment required will depend on your individual learning speed and goals. However, we recommend setting aside regular time each week to work through the course material and complete the hands-on exercises. Consistency is key to seeing results and mastering the concepts.",
+            "faq-q3": "Will I receive any support or guidance while taking the courses?",
+            "faq-a3": "Yes! We pride ourselves on offering a supportive learning community where you can collaborate with fellow learners and ask questions. Our team of experts is also available to provide guidance and answer any questions you may have about the course material.<br><br>We also have a Whatsapp group with over 400+ AI-CV developers.",
+            "faq-q4": "What makes your courses different from other AI courses available online?",
+            "faq-a4": "Our courses stand out due to our expert-led content, up-to-date curriculum, hands-on learning approach, and supportive learning community. We focus on providing practical, real-world examples and projects that help you apply your knowledge and gain valuable experience.<br><br>Furthermore, our commitment to staying current with the latest AI and Computer Vision trends ensures you receive a cutting-edge education that keeps you competitive in the industry.<br><br>Together with VIP tech support and community, you will ensure that you learn optimally.",
+            "faq-q5": "Do I need prior programming experience?",
+            "faq-a5": "No prior programming experience is required for our beginner courses. We start with the basics and gradually build up your skills. For advanced courses, some familiarity with Python is helpful but not mandatory.",
+            "faq-q6": "Are the courses self-paced?",
+            "faq-a6": "Yes, all our courses are self-paced. You can start anytime and progress at your own speed. There are no strict deadlines, so you can fit learning into your schedule.",
+            "faq-q7": "Will I get a certificate after completing the course?",
+            "faq-a7": "Yes, upon successful completion of the course and all required assignments, you will receive a certificate that you can share with employers or on your LinkedIn profile.",
+            "faq-q8": "What if I have questions during the course?",
+            "faq-a8": "You can ask questions in our community forum or reach out to our support team at any time. We are here to help you succeed!",
+            "faq-q9": "Can I access the course materials after completion?",
+            "faq-a9": "Yes, you will have lifetime access to all course materials, including updates and new content added in the future.",
+            "faq-q10": "Is there a refund policy?",
+            "faq-a10": "Please refer to our refund policy page for details. If you are not satisfied with the course, contact us within the specified period for a possible refund.",
+            
+            // Final CTA Section
             "final-cta-title": "AI Models Will Be A<span class=\"gradient-text\"> $1B Industry</span> By 2030",
             "final-cta-subtitle": "This Hype Looks Like The Bitcoin Gold Rush In 2012 And SMMA In 2016!",
             "final-cta-form-title": "Join The Waitlist Now",
@@ -1375,17 +1461,91 @@
             "footer-legal": "This course is for educational purposes only. Results are not guaranteed. By using this site, you accept our terms and assume full responsibility for your decisions and actions. No refunds on digital content."
           },
           ru: {
+            // Sticky Banner
+            "sticky-btn-text": "Начать –",
+            "sticky-btn-price-old": "$127",
+            "sticky-btn-price-new": "$27",
+            "support-btn": "поддержка",
+            
+            // Hero Section
             "hero-title-1": "AI Influencer 3.0",
             "hero-title-2": "Это будущее?",
             "hero-subtitle": "Присоединяйтесь к листу ожидания, чтобы помочь проверить рынок AI-арта. Ранние подписчики получат доступ и скидки.",
+            "main-btn-text": "Начать –",
+            "main-btn-price-old": "$127",
+            "main-btn-price-new": "$27",
+            "live-viewers-text": "человек сейчас просматривают эту страницу",
             "join-text": "Присоединились",
             "members-text": "креаторов уже внутри",
             "rating-text": "4.9 (300+ отзывов)",
-            "about-title": "Познакомьтесь с вашим <span class=\"gradient-text\">инструктором</span>",
+            
+            // Pain Section
+            "pain-title": "Устали от",
+            "pain-title-gradient": "пластиковых AI лиц?",
+            "pain-desc": "Вы видите, какие модели они делают, и знаете, что можете сделать лучше<br>когда технология попадёт в ваши руки?",
+            
+            // Benefits Section
+            "benefits-title-inverse": "AI Модели",
+            "benefits-title-middle": "Ваша Творческая",
+            "benefits-title-gradient": "Суперсила",
+            "benefits-desc": "AI Персонажи создают парасоциальные отношения — где подписчики чувствуют настоящую эмоциональную связь с вашей медиа-личностью.",
+            "benefits-card-1-title": "Начните Чувствовать Себя Креатором",
+            "benefits-card-1-desc-1": "После этого курса вы почувствуете себя визуальным архитектором, цифровым дизайнером, креативным продюсером и AI-инфлюенсером — всё в одном.",
+            "benefits-card-1-desc-2": "Это о владении уникальной идентичностью, построении доверия через реализм и выделении из моря \"пластиковых\" AI лиц.",
+            "benefits-card-1-why-title": "Почему Это По-Другому",
+            "benefits-card-1-feature-1": "Создавайте студийные визуалы без оборудования",
+            "benefits-card-1-feature-2": "Создавайте контент с личностью, а не фильтрами",
+            "benefits-card-1-feature-3": "Не нужно показывать лицо или говорить в камеру",
+            "benefits-card-1-feature-4": "Создавайте изображения, которые чувствуются эмоциональными, живыми, реальными",
+            "benefits-card-1-feature-5": "Изучите мышление, а не просто инструменты",
+            "benefits-card-2-title-mobile": "Студийное Качество",
+            "benefits-card-2-desc-1-mobile": "Снимайте Без Студии. Модный реализм, идеальная кожа, тон и свет. Создано для рекламы, магазинов, соцсетей.",
+            
+            // Price Section
+            "price-title-start": "Амбиции и",
+            "price-title-gradient": "AI Инструменты",
+            "price-title-middle": "= Успешный",
+            "price-title-end": "AI Инфлюенсер",
+            "price-subtitle": "Никакой студии, макияжа, команды, съёмок — всё по цене футболки.",
+            "price-course-title": "Курс AI Influencer 3.0",
+            "price-current": "$27",
+            "price-regular": "Обычная цена: $127",
+            "price-discount": "79% СКИДКА — Ограниченное время",
+            "price-feature-1": "Мгновенный доступ после оплаты",
+            "price-feature-2": "Смотрите в любое время, в своём темпе",
+            "price-feature-3": "2.5ч пошаговых видеоуроков",
+            "price-feature-4": "Только необходимые AI инструменты",
+            "price-feature-5": "Обучение AI модели без кода",
+            "price-feature-6": "Готовая визуальная структура",
+            "price-feature-7": "Объяснение замены лиц",
+            "price-btn-text": "Начать –",
+            "price-btn-price-old": "$127",
+            "price-btn-price-new": "$27",
+            "price-btn-now": "СЕЙЧАС",
+            "bonuses-title": "🎁 Бонусы",
+            "bonus-1": "Большой пакет промптов для реализма",
+            "bonus-2": "Пожизненный доступ в любое время",
+            "bonus-3": "В листе ожидания секретной платформы",
+            "bonus-4": "Поддержка по email без ботов",
+            "learnmap-title": "Карта Обучения",
+            "learnmap-1": "Настройка персонажа с позой и стилем",
+            "learnmap-2": "Реализм + подготовка изображений для чистых углов и деталей",
+            "learnmap-3": "AI обучение без необходимости в коде",
+            "learnmap-4": "Визуальный контроль эмоций и нарядов",
+            "learnmap-5": "Финальные штрихи для объединения и публикации",
+            
+            // Reviews Section
+            "testimonial-title": "Что",
+            "reviews-title-gradient": "Говорят Люди",
+            "testimonial-subtitle": "Не верьте нам на слово.<br>Вот что думают ранние последователи об AI-генерированном искусстве.",
+            
+            // About Section
+            "about-title-text": "Познакомьтесь с Вашим",
+            "about-title-gradient": "Инструктором",
             "about-name": "Лео Лаваро",
-            "about-role": "AI-визуальный креатор и медиа-новатор",
-            "about-desc": "За последние 3 года Лео превратил высокобюджетное производство контента в доступные AI-решения. С опытом в визуальном сторителлинге, он помогает креаторам создавать гиперреалистичный медиа-контент — без дорогого оборудования и технических барьеров.",
-            "about-exp-pill": "3 года опыта",
+            "about-role": "AI Визуальный Креатор и Медиа-Новатор",
+            "about-desc": "За последние 6 лет Лео превратил высокобюджетное производство контента в доступные AI-решения. С опытом в визуальном сторителлинге, он помогает креаторам создавать гиперреалистичный медиа-контент — без дорогого оборудования и технических барьеров.",
+            "about-exp-pill": "6 лет опыта",
             "about-fact-1-title": "100+ проектов",
             "about-fact-1-desc": "Реалистичные AI-персонажи для клиентов",
             "about-fact-2-title": "Сертифицированный инструктор",
@@ -1394,19 +1554,33 @@
             "about-fact-3-desc": "Делится AI-техниками онлайн",
             "about-fact-4-title": "Глобальное влияние",
             "about-fact-4-desc": "Студенты из более чем 20 стран",
-            "faq-title": "FAQ",
-            "faq-q1": "У меня нет опыта в нейросетях. Мне подойдёт?",
-            "faq-a1": "Да, всё объясняется на живых примерах. Главное — желание учиться.",
-            "faq-q2": "Это реально выглядит как живой человек?",
-            "faq-a2": "Да. Главное — правильная техника. Ты получишь конкретные промпты и методику.",
-            "faq-q3": "Можно ли использовать персонажа в личных или приватных целях?",
-            "faq-a3": "Ты получаешь инструмент, который можно адаптировать под любые форматы — от визуального блога до приватных проектов. Всё остаётся под твоим контролем.",
-            "faq-q4": "Есть ли поддержка, если что-то не получится?",
-            "faq-a4": "Да, ты можешь задать вопрос по теме курса и получить помощь.",
-            "faq-q5": "Нейросети платные?",
-            "faq-a5": "Да, нейросети, с которыми мы будем работать, платные — например, Midjourney. Другие используют микроплатежи.<br><br>💡 В среднем, ты потратишь в десятки раз меньше, чем на одну профессиональную фотосессию — и получишь инструмент, который можно использовать снова и снова.",
-            "faq-q6": "А если я уже что-то умею — будет ли мне интересно?",
-            "faq-a6": "Безусловно. Ты узнаешь, как делать реалистичные, консистентные образы и обучать нейросеть под себя. Это уровень выше.",
+            
+            // FAQ Section
+            "faq-title": "Часто Задаваемые",
+            "faq-title-gradient": "Вопросы",
+            "faq-desc": "Результаты зависят от ваших усилий и использования рекомендуемых инструментов.",
+            "faq-q1": "Что если я новичок в AI?",
+            "faq-a1": "Абсолютно! Наш Стартовый Набор разработан для учащихся всех уровней, включая начинающих. Мы охватываем фундаментальные концепции в AI и Компьютерном Зрении, предоставляя идеальную отправную точку для тех, кто новичок в этой области. По мере продвижения наши курсы помогут вам развить навыки и знания.<br><br>Всё, что вам нужно — базовые навыки программирования на Python.",
+            "faq-q2": "Сколько времени мне нужно инвестировать в курсы, чтобы увидеть результаты?",
+            "faq-a2": "Наши курсы разработаны быть гибкими, позволяя вам учиться в своём темпе. Необходимые временные инвестиции будут зависеть от вашей индивидуальной скорости обучения и целей. Однако мы рекомендуем выделять регулярное время каждую неделю для работы с материалами курса и выполнения практических упражнений. Постоянство — ключ к результатам и освоению концепций.",
+            "faq-q3": "Получу ли я поддержку или руководство во время прохождения курсов?",
+            "faq-a3": "Да! Мы гордимся тем, что предлагаем поддерживающее обучающее сообщество, где вы можете сотрудничать с другими учащимися и задавать вопросы. Наша команда экспертов также доступна для предоставления руководства и ответов на любые вопросы по материалам курса.<br><br>У нас также есть группа в WhatsApp с более чем 400+ AI-CV разработчиками.",
+            "faq-q4": "Что делает ваши курсы отличными от других AI курсов, доступных онлайн?",
+            "faq-a4": "Наши курсы выделяются благодаря экспертному контенту, актуальной программе, практическому подходу к обучению и поддерживающему обучающему сообществу. Мы фокусируемся на предоставлении практических, реальных примеров и проектов, которые помогают вам применять знания и получать ценный опыт.<br><br>Кроме того, наша приверженность актуальности последним трендам AI и Компьютерного Зрения обеспечивает получение передового образования, которое держит вас конкурентоспособным в индустрии.<br><br>Вместе с VIP технической поддержкой и сообществом вы обеспечите оптимальное обучение.",
+            "faq-q5": "Нужен ли предварительный опыт программирования?",
+            "faq-a5": "Предварительный опыт программирования не требуется для наших начальных курсов. Мы начинаем с основ и постепенно развиваем ваши навыки. Для продвинутых курсов некоторое знакомство с Python полезно, но не обязательно.",
+            "faq-q6": "Самостоятельные ли курсы?",
+            "faq-a6": "Да, все наши курсы самостоятельные. Вы можете начать в любое время и прогрессировать в своём темпе. Нет строгих дедлайнов, так что вы можете вписать обучение в свой график.",
+            "faq-q7": "Получу ли я сертификат после завершения курса?",
+            "faq-a7": "Да, при успешном завершении курса и всех требуемых заданий вы получите сертификат, которым можете поделиться с работодателями или в своём профиле LinkedIn.",
+            "faq-q8": "Что если у меня есть вопросы во время курса?",
+            "faq-a8": "Вы можете задавать вопросы в нашем форуме сообщества или обращаться к нашей команде поддержки в любое время. Мы здесь, чтобы помочь вам добиться успеха!",
+            "faq-q9": "Могу ли я получить доступ к материалам курса после завершения?",
+            "faq-a9": "Да, у вас будет пожизненный доступ ко всем материалам курса, включая обновления и новый контент, добавленный в будущем.",
+            "faq-q10": "Есть ли политика возврата?",
+            "faq-a10": "Пожалуйста, обратитесь к странице нашей политики возврата для деталей. Если вы не удовлетворены курсом, свяжитесь с нами в течение указанного периода для возможного возврата.",
+            
+            // Final CTA Section
             "final-cta-title": "AI-модели станут<span class=\"gradient-text\"> индустрией на $1 млрд</span> к 2030 году",
             "final-cta-subtitle": "Воспользуйся этим золотым шансом, пока он есть... Или смотри, как другие зарабатывают, пока ты ждёшь...",
             "final-cta-form-title": "Запишись в лист ожидания",
