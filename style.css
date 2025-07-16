@@ -72,10 +72,11 @@ p {
     color: transparent;
 }
 
-/* MOBILE: уменьшаем размер заголовка hero и паддинг карточки на мобильных устройствах */
+/* MOBILE: уменьшаем размер заголовка hero с максимальной специфичностью */
 @media (max-width: 767px) {
-  #hero-title-1 {
-    font-size: 1.5rem !important; /* MOBILE: уменьшили размер заголовка hero */
+  h1 .gradient-text#hero-title-1 {
+    font-size: 1.5rem !important;
+    line-height: 1.1 !important;
   }
   .card {
     padding: 8px; /* MOBILE: уменьшили внутренний отступ карточки */
