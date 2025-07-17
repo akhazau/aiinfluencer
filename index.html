@@ -762,6 +762,22 @@
         [data-simplebar] .simplebar-scrollbar.simplebar-visible:before {
           opacity: 1 !important;
         }
+
+        /* Переопределение позиционирования таймера только для sticky-баннера */
+        .banner-inner #banner-timer {
+          position: static !important;
+          left: auto !important;
+          top: auto !important;
+          transform: none !important;
+        }
+        @media (min-width: 768px) {
+          .banner-inner #banner-timer {
+            position: absolute !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+          }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
