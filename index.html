@@ -768,14 +768,13 @@
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
         <div class="banner-inner flex flex-row items-center justify-between w-full max-w-full h-[74px] px-4 md:px-[130px] relative z-2">
-          <!-- Кнопка: ширина увеличена на мобиле, max-width больше на десктопе -->
-          <button class="animated-gradient-btn text-white rounded-[14px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] w-full max-w-[400px] md:w-[320px] ml-0 md:ml-16">
-            <span id="sticky-btn-text">Get started –</span>
+          <button class="animated-gradient-btn text-white rounded-[14px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] w-[140px] md:w-[320px] ml-0 md:ml-16">
+            <span class="block md:hidden">Get</span>
+            <span class="hidden md:block">Get started –</span>
             <span class="line-through text-yellow-500 font-normal" id="sticky-btn-price-old">$127 </span>
             <span class="text-yellow-300 text-xl font-bold" id="sticky-btn-price-new">$27</span>
           </button>
-          <!-- Таймер: на мобиле смещён вправо, на десктопе по центру -->
-          <div class="flex-1 flex justify-end md:justify-center items-center">
+          <div class="flex-1 flex justify-end items-center">
             <div id="banner-timer">
               <div class="timer-row timer-row-numbers justify-center">
                 <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">03</span>
@@ -793,7 +792,6 @@
               </div>
             </div>
           </div>
-          <!-- Support-кнопка: скрыта на мобиле, видна только на md+ -->
           <a href="mailto:support@aiinfluencer.site" class="support-mail-btn mr-0 md:mr-40 ml-2 md:ml-0 hidden md:inline-block" id="support-btn">support</a>
         </div>
         <div class="sticky-glow-line"></div>
