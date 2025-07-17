@@ -775,14 +775,14 @@
             </button>
             <div style="flex:1;display:flex;justify-content:center;align-items:center;">
               <div id="banner-timer">
-                <div class="timer-row timer-row-numbers">
+                <div class="timer-row timer-row-numbers justify-center">
                   <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">03</span>
                   <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
                   <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
                   <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
                   <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
                 </div>
-                <div class="timer-row timer-row-labels">
+                <div class="timer-row timer-row-labels justify-center">
                   <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">h</span>
                   <span class="timer-label min-w-[1.1rem]"></span>
                   <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">m</span>
@@ -1258,21 +1258,21 @@
           <!-- Таймер -->
           <div class="flex flex-col items-center mb-4" id="final-cta-timer-wrap">
             <p class="text-white text-xl mb-3" id="final-cta-timer-label">⏳ Time left to join with discount:</p>
-            <div class="timer-row timer-row-numbers" style="justify-content:center;">
-              <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">03</span>
-              <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
-              <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
-              <span class="blinking-colon text-pink-400" style="font-size:1.4rem;width:1.1rem;text-align:top;animation:blink-colon 1s steps(1, start) infinite;vertical-align:middle;display:inline-block;transform:translateY(-6px);">:</span>
-              <span class="timer-value text-pink-400" style="font-size:1.8rem;font-weight:bold;min-width:2.7rem;text-align:center;">00</span>
-              </div>
-            <div class="timer-row timer-row-labels" style="justify-content:center;">
-              <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">h</span>
-              <span class="timer-label" style="min-width:1.1rem;"></span>
-              <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">m</span>
-              <span class="timer-label" style="min-width:1.1rem;"></span>
-              <span class="timer-label" style="font-size:0.85rem;color:#b5b4b4;min-width:2.7rem;text-align:center;margin-top:0.1rem;line-height:1;display:inline-block;transform:translateY(-5px);">s</span>
-              </div>
-              </div>
+            <div class="timer-row timer-row-numbers justify-center">
+              <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">03</span>
+              <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
+              <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
+              <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
+              <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
+            </div>
+            <div class="timer-row timer-row-labels justify-center">
+              <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">h</span>
+              <span class="timer-label min-w-[1.1rem]"></span>
+              <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">m</span>
+              <span class="timer-label min-w-[1.1rem]"></span>
+              <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">s</span>
+            </div>
+            </div>
           <!-- Кнопка -->
           <button class="animated-gradient-btn mx-auto rounded-[18px] gap-1.5 overflow-hidden text-lg">
             <span>CLAIM SPECIAL OFFER NOW! </span>
@@ -1812,6 +1812,5 @@
         });
       }
     </script>
-    <script type="module" src="./stagewise.js"></script>
 </body>
 </html>
