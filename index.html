@@ -767,34 +767,37 @@
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
-        <div class="banner-inner" style="display:flex;align-items:center;justify-content:space-between;position:relative;gap:-1;">
-            <button class="animated-gradient-btn text-white rounded-[14px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] ml-16">
-                <span id="sticky-btn-text">Get started –</span>
-                <span class="line-through text-yellow-500 font-normal" id="sticky-btn-price-old">$127 </span>
-                <span class="text-yellow-300 text-xl font-bold" id="sticky-btn-price-new">$27</span>
-            </button>
-            <div style="flex:1;display:flex;justify-content:center;align-items:center;">
-              <div id="banner-timer">
-                <div class="timer-row timer-row-numbers justify-center">
-                  <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">03</span>
-                  <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
-                  <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
-                  <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
-                  <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
-                </div>
-                <div class="timer-row timer-row-labels justify-center">
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">h</span>
-                  <span class="timer-label min-w-[1.1rem]"></span>
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">m</span>
-                  <span class="timer-label min-w-[1.1rem]"></span>
-                  <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">s</span>
-                </div>
+        <div class="banner-inner flex flex-row items-center justify-between w-full max-w-full h-[74px] px-4 md:px-[130px] relative z-2">
+          <!-- Кнопка: ширина увеличена на мобиле, max-width больше на десктопе -->
+          <button class="animated-gradient-btn text-white rounded-[14px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] w-full max-w-[400px] md:w-[320px] ml-0 md:ml-16">
+            <span id="sticky-btn-text">Get started –</span>
+            <span class="line-through text-yellow-500 font-normal" id="sticky-btn-price-old">$127 </span>
+            <span class="text-yellow-300 text-xl font-bold" id="sticky-btn-price-new">$27</span>
+          </button>
+          <!-- Таймер: на мобиле смещён вправо, на десктопе по центру -->
+          <div class="flex-1 flex justify-end md:justify-center items-center">
+            <div id="banner-timer">
+              <div class="timer-row timer-row-numbers justify-center">
+                <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">03</span>
+                <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
+                <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
+                <span class="blinking-colon text-pink-400 text-[1.4rem] w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[6px]">:</span>
+                <span class="timer-value text-pink-400 text-[1.8rem] font-bold min-w-[2.7rem] text-center">00</span>
+              </div>
+              <div class="timer-row timer-row-labels justify-center">
+                <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">h</span>
+                <span class="timer-label min-w-[1.1rem]"></span>
+                <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">m</span>
+                <span class="timer-label min-w-[1.1rem]"></span>
+                <span class="timer-label text-[0.85rem] text-[#b5b4b4] min-w-[2.7rem] text-center mt-[0.1rem] leading-none inline-block -translate-y-[5px]">s</span>
               </div>
             </div>
-            <a href="mailto:support@aiinfluencer.site" class="support-mail-btn mr-40" id="support-btn">support</a>
-    </div>
-    <div class="sticky-glow-line"></div>
-    <div class="sticky-glow"></div>
+          </div>
+          <!-- Support-кнопка: скрыта на мобиле, видна только на md+ -->
+          <a href="mailto:support@aiinfluencer.site" class="support-mail-btn mr-0 md:mr-40 ml-2 md:ml-0 hidden md:inline-block" id="support-btn">support</a>
+        </div>
+        <div class="sticky-glow-line"></div>
+        <div class="sticky-glow"></div>
     </div>
 
     <!-- #1 HERO -->
