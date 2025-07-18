@@ -42,11 +42,21 @@
         
         .art-card {
             transform-style: preserve-3d;
+            /* Небольшое постоянное свечение на мобиле */
+            box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.10);
         }
-        
-        .art-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+        @media (min-width: 768px) {
+          .art-card:hover {
+              transform: translateY(-10px) scale(1.03);
+              box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+          }
+        }
+        /* На мобильных убираем hover-эффект */
+        @media (max-width: 767px) {
+          .art-card:hover {
+            transform: none;
+            box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.10);
+          }
         }
         
         .floating { animation: floating 6s ease-in-out infinite; }
