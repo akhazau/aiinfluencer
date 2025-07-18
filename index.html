@@ -1327,7 +1327,7 @@
             // Hero Section
             "hero-title-1": "AI Influencer 3.0",
             "hero-title-2": "ALREADY EASY.",
-            "hero-subtitle": "BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master the tools in couple of the days. Unleash the AI MAGIC today!",
+            "hero-subtitle": "BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master AI in days — unleash <span class=\"text-purple-300\">MAGIC</span> today!",
             "main-btn-text": "Get started –",
             "main-btn-price-old": "$127",
             "main-btn-price-new": "$27",
@@ -1414,7 +1414,7 @@
             
             // FAQ Section
             "faq-title": "Frequently Asked",
-            "faq-title-gradient": "Questions",
+            "faq-title-gradient": "<span class=\"gradient-text\">Questions</span>",
             "faq-desc": "Results depend on your effort and use of recommended tools.",
             "faq-q1": "What if I'm new to AI?",
             "faq-a1": "Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.",
@@ -1709,7 +1709,7 @@
         ];
         const artCardsRow = document.getElementById('art-cards-row');
         if (artCardsRow) artCardsRow.innerHTML = artCards.map(card => `
-          <div class="art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
+          <div class="flex-shrink-0 w-[80vw] max-w-xs snap-center md:w-auto art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
             <div class="h-64 overflow-hidden"><img src="${card.img}" alt="AI Art" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
             <div class="p-6"><h3 class="text-xl font-semibold mb-2 ${card.titleClass}">${card.title}</h3><div class="text-gray-200 text-sm mb-2">${card.desc}</div><ul class="list-disc list-inside text-gray-300 text-sm space-y-1">${card.features.map(f=>`<li>${f}</li>`).join('')}</ul></div>
           </div>`).join('');
