@@ -861,7 +861,7 @@
     <!-- #2 PAIN -->
     <section class="snap-section py-20 bg-gradient-to-b from-slate-800 to-slate-900 flex flex-col min-h-screen">
       <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
-        <div class="section-header mt-12">
+        <div class="section-header mt-0 md:mt-12">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center">
             <span id="pain-title">Tired of</span> <span class="gradient-text" id="pain-title-gradient">Plastic AI faces?</span>
           </h2>
@@ -870,7 +870,10 @@
           </p>
         </div>
         <div class="section-content mt-auto mb-10">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="art-cards-row"></div>
+          <div
+            id="art-cards-row"
+            class="flex overflow-x-auto gap-x-4 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8"
+          ></div>
         </div>
       </div>
     </section>
