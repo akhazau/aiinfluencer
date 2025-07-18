@@ -861,7 +861,7 @@
     <!-- #2 PAIN -->
     <section class="snap-section py-20 bg-gradient-to-b from-slate-800 to-slate-900 flex flex-col min-h-screen">
       <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
-        <div class="section-header mt-0 md:mt-12">
+        <div class="section-header -mt-4 md:mt-12">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center">
             <span id="pain-title">Tired of</span> <span class="gradient-text" id="pain-title-gradient">Plastic AI faces?</span>
           </h2>
@@ -903,6 +903,32 @@
               </div>
               <div>
                 <img src="media/av01.png" alt="Preview" class="rounded-2xl shadow-lg object-cover max-w-xs aspect-[10/16] h-auto">
+              </div>
+            </div>
+            <!-- Мобильный свайпер -->
+            <div class="flex md:hidden w-full">
+              <div class="swiper w-full">
+                <div class="swiper-wrapper">
+                  <!-- Слайд 1: Текст -->
+                  <div class="swiper-slide flex flex-col items-start px-6 py-8 gap-4 bg-white/5 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-2 text-pink-400" id="benefits-card-1-title-mobile">Start Feeling Like a Creator</h3>
+                    <p class="text-gray-200 text-sm mb-2" id="benefits-card-1-desc-1-mobile">After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.</p>
+                    <p class="text-gray-200 text-sm mb-2" id="benefits-card-1-desc-2-mobile">This is about owning a unique identity, building trust through realism, and standing out in a sea of "plastic" AI faces.</p>
+                    <h4 class="text-base font-semibold mb-2" id="benefits-card-1-why-title-mobile">Why It's Different</h4>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1" id="benefits-card-1-features-mobile">
+                      <li>Build studio-level visuals with no gear</li>
+                      <li>Create content with personality, not filters</li>
+                      <li>No need to show your face or speak on camera</li>
+                      <li>Make images that feel emotional, alive, real</li>
+                      <li>Learn a mindset, not just tools</li>
+                    </ul>
+                  </div>
+                  <!-- Слайд 2: Картинка -->
+                  <div class="swiper-slide flex flex-col items-center justify-center px-6 py-8 gap-4 bg-white/5 rounded-xl">
+                    <img src="media/av01.png" alt="Preview" class="rounded-2xl shadow-lg object-cover w-4/5 max-w-xs aspect-[10/16] h-auto mx-auto">
+                  </div>
+                </div>
+                <div class="swiper-pagination mt-4"></div>
               </div>
             </div>
         </div>
