@@ -20,26 +20,27 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
             color: #f8fafc;
-            overflow-x: hidden; /* Предотвращает горизонтальный скролл */
             width: 100%;
             position: relative;
         }
         
         html {
-            overflow-x: hidden; /* Предотвращает горизонтальный скролл на уровне html */
             width: 100%;
+        }
+        
+        /* Предотвращаем горизонтальный скролл только на мобильной версии */
+        @media (max-width: 767px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            html {
+                overflow-x: hidden;
+            }
         }
         
         /* === PREVENT HORIZONTAL SCROLL === */
-        .container {
-            max-width: 100vw;
-            overflow-x: hidden;
-        }
-        
-        .snap-section {
-            overflow-x: hidden;
-            width: 100%;
-        }
+        /* Убираем ограничения для контейнеров, чтобы не влиять на высоту */
         
         /* Скрываем скроллбар для горизонтального скролла */
         .overflow-x-auto::-webkit-scrollbar {
@@ -1257,7 +1258,7 @@
 
     <!-- #8 CTA + FOOTER -->
     <section id="final-cta" class="snap-section py-12 md:py-16 bg-gradient-to-b from-slate-900 to-rose-950 flex flex-col min-h-screen">
-      <div class="container mx-auto px-6 flex flex-col flex-1 pt-8 md:pt-12">
+      <div class="container mx-auto px-6 flex flex-col flex-1 pt-8 md:pt-12 pb-8 md:pb-12">
         <div class="section-header text-center items-center justify-center -mt-4">
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight text-center" id="final-cta-title"> 
             AI Models Will Be a<span class="gradient-text" id="final-cta-title-gradient"> $1.5B Industry</span> by 2030
@@ -1314,7 +1315,7 @@
               </div>
               </div>
      <!-- Футтер -->
-        <div class="section-footer mt-auto">
+        <div class="section-footer mt-auto pt-8 md:pt-12">
           <footer class="w-full text-left text-gray-300 text-sm items-start justify-start bg-[rgba(24,26,42,0.55)] backdrop-blur-[8px] rounded-[18px] shadow-[0_2px_24px_0_#0002] p-4 md:p-6 lg:p-8">
             <div class="flex flex-col items-start gap-2">
               <h3 class="text-lg font-semibold gradient-text text-left" id="footer-title" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;">AI Influencer 3.0</h3>
