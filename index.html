@@ -798,12 +798,19 @@
           .review-item {
             display: flex !important;
             flex-direction: column !important;
-            min-height: 420px !important;
+            height: 370px !important;
+            min-height: 370px !important;
+            max-height: 370px !important;
             align-items: center;
           }
           .review-text-wrap {
-            flex: none;
             width: 100%;
+            max-height: 135px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
           }
           .review-avatar-wrap {
             margin-top: auto !important;
@@ -1491,7 +1498,7 @@
             "price-title-gradient": "AI Tools",
             "price-title-middle": "= Successful ",
             "price-title-end": "AI Influencer",
-            "price-subtitle": "No studio, no makeup, no crew, no shooting — all for the price of a T-shirt. ",
+            "price-subtitle": "No studio, no makeup, no crew — all for the price of a T-shirt. ",
             "price-course-title": "AI Influencer 3.0 Course",
             "price-current": "$27",
             "price-regular": "Regular Price: $127",
