@@ -1398,6 +1398,8 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Определяем язык до первого использования
+        let lang = localStorage.getItem('selectedLang') || 'en';
         // Языковой переключатель и перевод
         const translations = {
           en: {
