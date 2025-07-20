@@ -928,7 +928,7 @@
             <span id="pain-title">Tired of</span> <span class="gradient-text" id="pain-title-gradient">Plastic AI faces?</span>
           </h2>
           <p class="text-base text-center mb-2 text-gray-300 max-w-xl mx-auto" id="pain-desc">
-            See another models; imagine what you'll create with AI in your hands!
+            See another models - imagine what you'll create with AI in your hands!
           </p>
         </div>
         <div class="section-content mt-auto mb-10">
@@ -1082,7 +1082,7 @@
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 8L12 16L20 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
               <div id="review-slide" class="flex flex-col items-center text-center w-full max-w-[72rem] overflow-hidden gap-6 justify-center px-4 md:px-0 min-h-[200px] md:min-h-[350px]">
-                <div class="review-item w-full flex flex-col items-center">
+                <div class="review-item w-full flex flex-col items-center block">
                   <p class="font-normal w-full text-lg md:text-2xl" id="review-text-1">I made $1.2k in an hour through tips alone - thanks to this method!</p>
                   <div class="flex flex-col items-center mt-4">
                     <img src="media/av01.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-1">
@@ -1090,7 +1090,7 @@
                     <div class="text-xs md:text-base text-white/60" id="review-role-1">AI Creator</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center">
+                <div class="review-item w-full flex flex-col items-center hidden">
                   <p class="font-normal w-full text-lg md:text-2xl" id="review-text-2">After failing with dropshipping and Amazon FBA, their Fanvue optimization strategies helped me earn $6.5K part-time in just one month of joining the program.</p>
                   <div class="flex flex-col items-center mt-4">
                     <img src="media/av02.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-2">
@@ -1098,7 +1098,7 @@
                     <div class="text-xs md:text-base text-white/60" id="review-role-2">Digital Marketer</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center">
+                <div class="review-item w-full flex flex-col items-center hidden">
                   <p class="font-normal w-full text-lg md:text-2xl" id="review-text-3">As a complete beginner with no technical background, their simple Genfluence tutorials and Discord community helped me make $500 in my first week.</p>
                   <div class="flex flex-col items-center mt-4">
                     <img src="media/av03.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-3">
@@ -1106,7 +1106,7 @@
                     <div class="text-xs md:text-base text-white/60" id="review-role-3">Community Member</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center">
+                <div class="review-item w-full flex flex-col items-center hidden">
                   <p class="font-normal w-full text-lg md:text-2xl" id="review-text-4">I scaled to $16.6K in less than 2 months through AI Models!</p>
                   <div class="flex flex-col items-center mt-4">
                     <img src="media/av04.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-4">
@@ -1114,7 +1114,7 @@
                     <div class="text-xs md:text-base text-white/60" id="review-role-4">Entrepreneur</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center">
+                <div class="review-item w-full flex flex-col items-center hidden">
                   <p class="font-normal w-full text-lg md:text-2xl" id="review-text-5">My followers can't believe my influencer isn't real.</p>
                   <div class="flex flex-col items-center mt-4">
                     <img src="media/av00.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-5">
@@ -1122,7 +1122,7 @@
                     <div class="text-xs md:text-base text-white/60" id="review-role-5">Social Media Manager</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center">
+                <div class="review-item w-full flex flex-col items-center hidden">
                   <p class="font-normal w-full text-lg md:text-2xl" id="review-text-6">Running full ad campaigns with AI models now—clients love it.</p>
                   <div class="flex flex-col items-center mt-4">
                     <img src="media/av00.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-6">
@@ -1872,6 +1872,36 @@
           updateSalesCounter();
           setInterval(updateSalesCounter, 60000); // 1 минута
         }
+
+        // --- Отзывы: простая логика перелистывания ---
+        (function() {
+          const items = Array.from(document.querySelectorAll('#review-slide .review-item'));
+          const dotsWrap = document.getElementById('reviews-dots');
+          let idx = 0;
+          function show(idxToShow) {
+            items.forEach((el, i) => {
+              el.classList.toggle('block', i === idxToShow);
+              el.classList.toggle('hidden', i !== idxToShow);
+            });
+            if (dotsWrap) {
+              dotsWrap.innerHTML = '';
+              items.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'w-3 h-3 rounded-full ' + (i === idxToShow ? 'bg-purple-400' : 'bg-white/20') + ' transition';
+                dot.onclick = () => { idx = i; show(idx); };
+                dotsWrap.appendChild(dot);
+              });
+            }
+          }
+          show(idx);
+          // Стрелки
+          const prevBtn = document.getElementById('reviews-prev');
+          const nextBtn = document.getElementById('reviews-next');
+          if (prevBtn && nextBtn) {
+            prevBtn.onclick = () => { idx = (idx - 1 + items.length) % items.length; show(idx); };
+            nextBtn.onclick = () => { idx = (idx + 1) % items.length; show(idx); };
+          }
+        })();
       });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
