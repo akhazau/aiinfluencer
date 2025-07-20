@@ -800,42 +800,63 @@
           .review-item {
             display: flex !important;
             flex-direction: column !important;
-            height: 370px !important;
-            min-height: 370px !important;
-            max-height: 370px !important;
             align-items: stretch !important;
             width: 100% !important;
             margin: 0 auto !important;
             box-sizing: border-box !important;
             background: none !important;
+            height: 350px !important;
+            min-height: 350px !important;
+            max-height: 350px !important;
+            justify-content: flex-start !important;
           }
-          .review-text-wrap {
+          .review-text-card {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 150px !important;
             width: 100% !important;
-            max-height: 135px !important;
+            text-align: center !important;
             overflow: hidden !important;
-            text-overflow: ellipsis !important;
+          }
+          .review-text {
+            font-size: 2.1em !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
             display: -webkit-box !important;
             -webkit-line-clamp: 3 !important;
             -webkit-box-orient: vertical !important;
-            box-sizing: border-box !important;
-            margin: 0 !important;
-            padding: 0 !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            line-height: 1.2 !important;
           }
-          .review-avatar-wrap {
-            margin-top: auto !important;
-            width: 100% !important;
+          .review-avatar-card {
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            box-sizing: border-box !important;
-            margin-bottom: 0 !important;
+            justify-content: center !important;
+            height: 180px !important;
+            width: 100% !important;
+            margin-top: 0 !important;
           }
-          .review-item p {
-            font-size: 2.3em !important;
-          }
-          .review-item img {
+          .review-avatar-img {
             width: 8.05rem !important;
             height: 8.05rem !important;
+            border-radius: 9999px !important;
+            margin-bottom: 0.5rem !important;
+            object-fit: cover !important;
+          }
+          .review-avatar-name {
+            font-size: 1.2em !important;
+            font-weight: 600 !important;
+            margin-bottom: 0.2em !important;
+            text-align: center !important;
+          }
+          .review-avatar-role {
+            font-size: 1em !important;
+            color: #bdbdbd !important;
+            text-align: center !important;
           }
         }
         .review-item img {
@@ -1121,64 +1142,64 @@
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 8L12 16L20 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
               <div id="review-slide">
-                <div class="review-item w-full flex flex-col items-center block">
-                  <div class="review-text-wrap w-full">
-                    <p class="font-normal w-full text-lg md:text-2xl" id="review-text-1">I made $1.2k in an hour through tips alone - thanks to this method!</p>
+                <div class="review-item block">
+                  <div class="review-text-card">
+                    <p class="review-text">I made $1.2k in an hour through tips alone - thanks to this method!</p>
                   </div>
-                  <div class="review-avatar-wrap flex flex-col items-center mt-4">
-                    <img src="media/av01.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-1">
-                    <div class="font-semibold text-base md:text-lg" id="review-name-1">Mark</div>
-                    <div class="text-xs md:text-base text-white/60" id="review-role-1">AI Creator</div>
-                  </div>
-                </div>
-                <div class="review-item w-full flex flex-col items-center hidden">
-                  <div class="review-text-wrap w-full">
-                    <p class="font-normal w-full text-lg md:text-2xl" id="review-text-2">After failing with dropshipping and Amazon FBA, their Fanvue optimization strategies helped me earn $6.5K part-time in just one month of joining the program.</p>
-                  </div>
-                  <div class="review-avatar-wrap flex flex-col items-center mt-4">
-                    <img src="media/av02.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-2">
-                    <div class="font-semibold text-base md:text-lg" id="review-name-2">Alex</div>
-                    <div class="text-xs md:text-base text-white/60" id="review-role-2">Digital Marketer</div>
+                  <div class="review-avatar-card">
+                    <img src="media/av01.png" class="review-avatar-img" id="review-photo-1">
+                    <div class="review-avatar-name" id="review-name-1">Mark</div>
+                    <div class="review-avatar-role" id="review-role-1">AI Creator</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center hidden">
-                  <div class="review-text-wrap w-full">
-                    <p class="font-normal w-full text-lg md:text-2xl" id="review-text-3">As a complete beginner with no technical background, their simple Genfluence tutorials and Discord community helped me make $500 in my first week.</p>
+                <div class="review-item hidden">
+                  <div class="review-text-card">
+                    <p class="review-text">After failing with dropshipping and Amazon FBA, their Fanvue optimization strategies helped me earn $6.5K part-time in just one month of joining the program.</p>
                   </div>
-                  <div class="review-avatar-wrap flex flex-col items-center mt-4">
-                    <img src="media/av03.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-3">
-                    <div class="font-semibold text-base md:text-lg" id="review-name-3">James</div>
-                    <div class="text-xs md:text-base text-white/60" id="review-role-3">Community Member</div>
-                  </div>
-                </div>
-                <div class="review-item w-full flex flex-col items-center hidden">
-                  <div class="review-text-wrap w-full">
-                    <p class="font-normal w-full text-lg md:text-2xl" id="review-text-4">I scaled to $16.6K in less than 2 months through AI Models!</p>
-                  </div>
-                  <div class="review-avatar-wrap flex flex-col items-center mt-4">
-                    <img src="media/av04.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-4">
-                    <div class="font-semibold text-base md:text-lg" id="review-name-4">Pav</div>
-                    <div class="text-xs md:text-base text-white/60" id="review-role-4">Entrepreneur</div>
+                  <div class="review-avatar-card">
+                    <img src="media/av02.png" class="review-avatar-img" id="review-photo-2">
+                    <div class="review-avatar-name" id="review-name-2">Alex</div>
+                    <div class="review-avatar-role" id="review-role-2">Digital Marketer</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center hidden">
-                  <div class="review-text-wrap w-full">
-                    <p class="font-normal w-full text-lg md:text-2xl" id="review-text-5">My followers can't believe my influencer isn't real.</p>
+                <div class="review-item hidden">
+                  <div class="review-text-card">
+                    <p class="review-text">As a complete beginner with no technical background, their simple Genfluence tutorials and Discord community helped me make $500 in my first week.</p>
                   </div>
-                  <div class="review-avatar-wrap flex flex-col items-center mt-4">
-                    <img src="media/av00.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-5">
-                    <div class="font-semibold text-base md:text-lg" id="review-name-5">Ayşe</div>
-                    <div class="text-xs md:text-base text-white/60" id="review-role-5">Social Media Manager</div>
+                  <div class="review-avatar-card">
+                    <img src="media/av03.png" class="review-avatar-img" id="review-photo-3">
+                    <div class="review-avatar-name" id="review-name-3">James</div>
+                    <div class="review-avatar-role" id="review-role-3">Community Member</div>
                   </div>
                 </div>
-                <div class="review-item w-full flex flex-col items-center hidden">
-                  <div class="review-text-wrap w-full">
-                    <p class="font-normal w-full text-lg md:text-2xl" id="review-text-6">Running full ad campaigns with AI models now—clients love it.</p>
+                <div class="review-item hidden">
+                  <div class="review-text-card">
+                    <p class="review-text">I scaled to $16.6K in less than 2 months through AI Models!</p>
                   </div>
-                  <div class="review-avatar-wrap flex flex-col items-center mt-4">
-                    <img src="media/av00.png" class="w-20 h-20 md:w-28 md:h-28 rounded-full mx-auto mb-2" id="review-photo-6">
-                    <div class="font-semibold text-base md:text-lg" id="review-name-6">Murat</div>
-                    <div class="text-xs md:text-base text-white/60" id="review-role-6">Creative Producer</div>
+                  <div class="review-avatar-card">
+                    <img src="media/av04.png" class="review-avatar-img" id="review-photo-4">
+                    <div class="review-avatar-name" id="review-name-4">Pav</div>
+                    <div class="review-avatar-role" id="review-role-4">Entrepreneur</div>
+                  </div>
+                </div>
+                <div class="review-item hidden">
+                  <div class="review-text-card">
+                    <p class="review-text">My followers can't believe my influencer isn't real.</p>
+                  </div>
+                  <div class="review-avatar-card">
+                    <img src="media/av00.png" class="review-avatar-img" id="review-photo-5">
+                    <div class="review-avatar-name" id="review-name-5">Ayşe</div>
+                    <div class="review-avatar-role" id="review-role-5">Social Media Manager</div>
+                  </div>
+                </div>
+                <div class="review-item hidden">
+                  <div class="review-text-card">
+                    <p class="review-text">Running full ad campaigns with AI models now—clients love it.</p>
+                  </div>
+                  <div class="review-avatar-card">
+                    <img src="media/av00.png" class="review-avatar-img" id="review-photo-6">
+                    <div class="review-avatar-name" id="review-name-6">Murat</div>
+                    <div class="review-avatar-role" id="review-role-6">Creative Producer</div>
                   </div>
                 </div>
               </div>
