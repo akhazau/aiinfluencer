@@ -1837,6 +1837,12 @@
         const dotsWrap = document.getElementById('reviews-dots');
         let reviewIdx = 0;
 
+        // Явная инициализация классов отзывов
+        reviewItems.forEach((el, i) => {
+          el.classList.toggle('block', i === 0);
+          el.classList.toggle('hidden', i !== 0);
+        });
+
         function showReview(idxToShow) {
           reviewItems.forEach((el, i) => {
             el.classList.toggle('block', i === idxToShow);
@@ -1855,6 +1861,8 @@
               };
               dotsWrap.appendChild(dot);
             });
+            // Показываем точки даже если отзыв один
+            dotsWrap.style.display = reviewItems.length > 1 ? 'flex' : 'block';
           }
         }
 
@@ -1866,12 +1874,14 @@
           const prevBtn = document.getElementById('reviews-prev');
           const nextBtn = document.getElementById('reviews-next');
           if (prevBtn) {
+            prevBtn.style.display = 'flex';
             prevBtn.onclick = () => {
               reviewIdx = (reviewIdx - 1 + reviewItems.length) % reviewItems.length;
               showReview(reviewIdx);
             };
           }
           if (nextBtn) {
+            nextBtn.style.display = 'flex';
             nextBtn.onclick = () => {
               reviewIdx = (reviewIdx + 1) % reviewItems.length;
               showReview(reviewIdx);
