@@ -1833,53 +1833,51 @@
 
         // --- Отзывы: простая логика перелистывания ---
         // --- Reviews: simple slider logic (fixed for robustness and clarity) ---
-        document.addEventListener('DOMContentLoaded', function() {
-          const items = Array.from(document.querySelectorAll('#review-slide .review-item'));
-          const dotsWrap = document.getElementById('reviews-dots');
-          let idx = 0;
+        const reviewItems = Array.from(document.querySelectorAll('#review-slide .review-item'));
+        const dotsWrap = document.getElementById('reviews-dots');
+        let reviewIdx = 0;
 
-          function show(idxToShow) {
-            items.forEach((el, i) => {
-              el.classList.toggle('block', i === idxToShow);
-              el.classList.toggle('hidden', i !== idxToShow);
+        function showReview(idxToShow) {
+          reviewItems.forEach((el, i) => {
+            el.classList.toggle('block', i === idxToShow);
+            el.classList.toggle('hidden', i !== idxToShow);
+          });
+          if (dotsWrap) {
+            dotsWrap.innerHTML = '';
+            reviewItems.forEach((_, i) => {
+              const dot = document.createElement('button');
+              dot.type = 'button';
+              dot.className = 'w-3 h-3 rounded-full mx-1 ' + (i === idxToShow ? 'bg-purple-400' : 'bg-white/20') + ' transition';
+              dot.setAttribute('aria-label', 'Show review ' + (i + 1));
+              dot.onclick = () => {
+                reviewIdx = i;
+                showReview(reviewIdx);
+              };
+              dotsWrap.appendChild(dot);
             });
-            if (dotsWrap) {
-              dotsWrap.innerHTML = '';
-              items.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.type = 'button';
-                dot.className = 'w-3 h-3 rounded-full mx-1 ' + (i === idxToShow ? 'bg-purple-400' : 'bg-white/20') + ' transition';
-                dot.setAttribute('aria-label', 'Show review ' + (i + 1));
-                dot.onclick = () => {
-                  idx = i;
-                  show(idx);
-                };
-                dotsWrap.appendChild(dot);
-              });
-            }
           }
+        }
 
-          // Ensure at least one review exists
-          if (items.length > 0) {
-            show(idx);
+        // Ensure at least one review exists
+        if (reviewItems.length > 0) {
+          showReview(reviewIdx);
 
-            // Arrows
-            const prevBtn = document.getElementById('reviews-prev');
-            const nextBtn = document.getElementById('reviews-next');
-            if (prevBtn) {
-              prevBtn.onclick = () => {
-                idx = (idx - 1 + items.length) % items.length;
-                show(idx);
-              };
-            }
-            if (nextBtn) {
-              nextBtn.onclick = () => {
-                idx = (idx + 1) % items.length;
-                show(idx);
-              };
-            }
+          // Arrows
+          const prevBtn = document.getElementById('reviews-prev');
+          const nextBtn = document.getElementById('reviews-next');
+          if (prevBtn) {
+            prevBtn.onclick = () => {
+              reviewIdx = (reviewIdx - 1 + reviewItems.length) % reviewItems.length;
+              showReview(reviewIdx);
+            };
           }
-        });
+          if (nextBtn) {
+            nextBtn.onclick = () => {
+              reviewIdx = (reviewIdx + 1) % reviewItems.length;
+              showReview(reviewIdx);
+            };
+          }
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
     <!-- Swiper.js CDN -->
@@ -1899,4 +1897,4 @@
       }
     </script>
 </body>
-</html>
+</html> 
