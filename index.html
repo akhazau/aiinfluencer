@@ -970,8 +970,7 @@
             <div class="flex overflow-x-auto gap-x-1 snap-x snap-mandatory px-0 py-8 md:overflow-x-visible md:grid md:grid-cols-2 md:gap-8 lg:flex lg:flex-row lg:gap-x-16">
               <div class="shrink-0 w-4 md:hidden"></div>
               <!-- Текст без карточки -->
-              <div class="flex-shrink-0 w-[70vw] max-w-xs snap-center md:w-auto md:max-w-none flex flex-col justify-center
-                lg:max-w-2xl lg:text-left lg:pr-12 lg:pl-2 lg:mx-0">
+              <div class="flex-shrink-0 snap-center flex flex-col justify-center lg:max-w-2xl lg:w-full lg:text-left lg:pr-12 lg:pl-2 lg:mx-0">
                 <h3 class="font-bold mb-2 text-pink-400 text-lg flex items-center gap-2 leading-tight lg:text-left" id="benefits-card-1-title">Start Feeling Like a Creator</h3>
                 <p class="text-gray-200 text-sm mb-2" id="benefits-card-1-desc-1">After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.</p>
                 <p class="text-gray-200 text-sm mb-2" id="benefits-card-1-desc-2">This is about owning a unique identity, building trust through realism, and standing out in a sea of \"plastic\" AI faces.</p>
@@ -1136,8 +1135,11 @@
                   </div>
                 </div>
               </div>
-              <div class="flex gap-2 justify-center mt-6" id="reviews-dots"></div>
+              <button id="reviews-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-transparent rounded-full w-12 h-12 flex items-center justify-center md:translate-x-1/2 md:right-[-80px] right-2">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
+            <div class="flex gap-2 justify-center mt-6" id="reviews-dots"></div>
           </div>
         </div>
       </div>
