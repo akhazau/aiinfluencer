@@ -1897,5 +1897,20 @@
         });
       }
     </script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.38/bundled/lenis.min.js"></script>
+    <script>
+      // Плавный скролл для всей страницы с помощью Lenis
+      const lenis = new window.Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        smoothTouch: true,
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
 </body>
 </html> 
