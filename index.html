@@ -991,12 +991,12 @@
           <h2 class="text-3xl md:text-5xl font-bold mb-3 leading-tight">
             <span id="price-title-start">Ambition &</span> <span class="gradient-text-inverse" id="price-title-gradient">AI Tools</span> <span id="price-title-middle">= Successful </span><span class="gradient-text" id="price-title-end"> AI Influencer</span> 
           </h2>
-                      <p class="text-base text-gray-300 max-w-2xl mx-auto" id="price-subtitle">
+            <p class="text-base text-gray-300 max-w-2xl mx-auto" id="price-subtitle">
               No studio, no makeup, no crew, no shooting — all for the price of a T-shirt. 
             </p>
         </div>
-        <div class="section-content w-full max-w-5xl mx-auto mt-auto">
-          <div class="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
+        <div class="section-content max-w-5xl mx-auto mt-auto">
+          <div class="grid md:grid-cols-2 items-start">
             <div>
               <!-- Оффер -->
               <div class="bg-black/40 rounded-3xl p-4 md:p-10 shadow-lg border border-white/10 w-full max-w-sm md:w-5/7 md:max-w-xl mx-auto md:mx-0">
@@ -1871,23 +1871,11 @@
         if (reviewItems.length > 0) {
           showReview(reviewIdx);
 
-          // Arrows
-          const prevBtn = document.getElementById('reviews-prev');
-          const nextBtn = document.getElementById('reviews-next');
-          if (prevBtn) {
-            prevBtn.style.display = 'flex';
-            prevBtn.onclick = () => {
-              reviewIdx = (reviewIdx - 1 + reviewItems.length) % reviewItems.length;
-              showReview(reviewIdx);
-            };
-          }
-          if (nextBtn) {
-            nextBtn.style.display = 'flex';
-            nextBtn.onclick = () => {
-              reviewIdx = (reviewIdx + 1) % reviewItems.length;
-              showReview(reviewIdx);
-            };
-          }
+          // Автоперелистывание
+          setInterval(() => {
+            reviewIdx = (reviewIdx + 1) % reviewItems.length;
+            showReview(reviewIdx);
+          }, 4000);
         }
       });
     </script>
