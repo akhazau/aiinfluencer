@@ -996,7 +996,7 @@
             </p>
         </div>
         <div class="section-content max-w-5xl mx-auto mt-auto">
-          <div class="grid md:grid-cols-2 items-start">
+          <div class="grid md:grid-cols-2 gap-10 md:gap-10 items-start">
             <div>
               <!-- Оффер -->
               <div class="bg-black/40 rounded-3xl p-4 md:p-10 shadow-lg border border-white/10 w-full max-w-sm md:w-5/7 md:max-w-xl mx-auto md:mx-0">
@@ -1119,9 +1119,6 @@
                 </div>
               </div>
             </div>
-            <button id="reviews-next" class="bg-transparent rounded-full w-12 h-12 flex items-center justify-center ml-2 md:ml-4">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#a855f7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
           </div>
           <div class="flex gap-2 justify-center mt-6" id="reviews-dots"></div>
         </div>
@@ -1875,7 +1872,7 @@
           setInterval(() => {
             reviewIdx = (reviewIdx + 1) % reviewItems.length;
             showReview(reviewIdx);
-          }, 4000);
+          }, 5000);
         }
       });
     </script>
