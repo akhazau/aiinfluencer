@@ -1049,52 +1049,55 @@
         </p>
       </div>
       <!-- MOBILE STACK SCROLL (только для мобильных, только карточки) -->
-      <section id="scroll-stack-section" class="relative md:hidden block min-h-[1200px]">
-        <div id="scroll-stack" class="sticky top-0 flex flex-col items-center justify-center">
-          <!-- Offer Card -->
-          <div class="stack-card min-h-[340px] w-[90vw] max-w-xs bg-black/60 backdrop-blur-md rounded-3xl p-4 mb-[-30px] z-30 flex flex-col">
-            <h2 class="text-xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
-            <div class="text-4xl font-bold text-white mb-2" id="price-current">$27</div>
-            <div class="line-through text-gray-400 text-sm mb-3" id="price-regular">Regular Price: $127</div>
-            <div class="inline-block bg-green-600 text-black text-xs font-semibold px-3 py-1 rounded-full mb-6" id="price-discount">79% OFF — Limited Time</div>
-            <ul class="space-y-2 text-sm leading-relaxed text-white/90" id="price-features-list">
-              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-1">Instant access after payment</span></li>
-              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-2">Watch anytime, at your own pace</span></li>
-              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-3">2.5h of step-by-step video lessons</span></li>
-              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-5">No-code AI model training</span></li>
-              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-6">Ready-made visual framework</span></li>
-              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-7">Face-swapping explained</span></li>
-            </ul>
-            <button class="animated-gradient-btn text-white rounded-[14px] text-base flex items-center justify-center gap-2 overflow-hidden h-[40px] w-full mt-6">
-              <span class="block">Get Now</span>
-              <span class="line-through text-yellow-500 font-normal" id="price-btn-price-old">$127</span>
-              <span class="text-yellow-300 text-xl font-bold" id="price-btn-price-new">$27</span>
-              <span class="font-bold text-white" id="price-btn-now">NOW</span>
-            </button>
-          </div>
-          <!-- Bonuses Card -->
-          <div class="stack-card min-h-[340px] w-[90vw] max-w-xs bg-black/60 backdrop-blur-md rounded-3xl p-4 mb-[-30px] z-20 flex flex-col">
-            <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="bonuses-title">🎁 Bonuses</h3>
-            <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="bonuses-list">
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-1">Big Realism Prompt Pack</span></div>
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-2">Lifetime Access Anytime</span></div>
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-3">Waitlisted to Secret Platform</span></div>
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-4">No Bots Email Support</span></div>
+      <div class="md:hidden block">
+        <div class="scroll-stack-scroller w-full max-w-full mx-auto" style="height: 100vh; overflow-y: auto;">
+          <div class="scroll-stack-inner flex flex-col items-center">
+            <!-- Offer Card -->
+            <div class="scroll-stack-card min-h-[260px] w-[92vw] max-w-sm bg-black/90 rounded-3xl p-6 mb-[-18px] z-30 flex flex-col shadow-2xl border border-yellow-400/20">
+              <h2 class="text-xl font-bold text-yellow-300 mb-3">AI Influencer 3.0 Course</h2>
+              <div class="text-4xl font-bold text-white mb-2">$27</div>
+              <div class="line-through text-gray-400 text-sm mb-3">Regular Price: $127</div>
+              <div class="inline-block bg-green-600 text-black text-xs font-semibold px-3 py-1 rounded-full mb-6">79% OFF — Limited Time</div>
+              <ul class="space-y-2 text-sm leading-relaxed text-white/90">
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Instant access after payment</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Watch anytime, at your own pace</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> 2.5h of step-by-step video lessons</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> No-code AI model training</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Ready-made visual framework</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Face-swapping explained</li>
+              </ul>
+              <button class="animated-gradient-btn text-white rounded-[14px] text-base flex items-center justify-center gap-2 overflow-hidden h-[40px] w-full mt-6">
+                <span class="block">GET NOW</span>
+                <span class="line-through text-yellow-500 font-normal">$127</span>
+                <span class="text-yellow-300 text-xl font-bold">$27</span>
+                <span class="font-bold text-white">NOW</span>
+              </button>
             </div>
-          </div>
-          <!-- Learn Map Card -->
-          <div class="stack-card min-h-[340px] w-[90vw] max-w-xs bg-black/60 backdrop-blur-md rounded-3xl p-4 z-10 flex flex-col">
-            <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="learnmap-title">Learn Map</h3>
-            <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="learnmap-list">
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-1">Character setup with pose & style</span></div>
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-2">Realism + image prep for clean angles & details</span></div>
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-3">AI training with no code needed</span></div>
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-4">Visual control for emotion & outfit</span></div>
-              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-5">Final touch to merge & publish</span></div>
+            <!-- Bonuses Card -->
+            <div class="scroll-stack-card min-h-[180px] w-[92vw] max-w-sm bg-white/10 rounded-2xl p-6 mb-[-18px] z-20 flex flex-col shadow-xl border border-pink-400/20">
+              <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2">🎁 Bonuses</h3>
+              <ul class="space-y-2 text-base text-white/90">
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Big Realism Prompt Pack</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Lifetime Access Anytime</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Waitlisted to Secret Platform</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> No Bots Email Support</li>
+              </ul>
             </div>
+            <!-- Learn Map Card -->
+            <div class="scroll-stack-card min-h-[180px] w-[92vw] max-w-sm bg-pink-900/20 rounded-2xl p-6 z-10 flex flex-col shadow-lg border border-pink-400/10">
+              <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2">Learn Map</h3>
+              <ul class="space-y-2 text-base text-white/90">
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Character setup with pose & style</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Realism + image prep for clean angles & details</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> AI training with no code needed</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Visual control for emotion & outfit</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Final touch to merge & publish</li>
+              </ul>
+            </div>
+            <div class="scroll-stack-end"></div>
           </div>
         </div>
-      </section>
+      </div>
       <!-- DESKTOP/DEFAULT GRID (как было) -->
       <div class="hidden md:block">
         <div class="container mx-auto px-2 md:px-6 flex flex-col items-center flex-1 pt-16">
@@ -1159,56 +1162,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- Новый мобильный stack scroll (без GSAP, только кастомный JS) -->
-      <div class="md:hidden block">
-        <div class="scroll-stack-scroller w-full max-w-full mx-auto" style="height: 100vh; overflow-y: auto;">
-          <div class="scroll-stack-inner flex flex-col items-center">
-            <!-- Offer Card -->
-            <div class="scroll-stack-card min-h-[260px] w-[92vw] max-w-sm bg-black/90 rounded-3xl p-6 mb-[-18px] z-30 flex flex-col shadow-2xl border border-yellow-400/20">
-              <h2 class="text-xl font-bold text-yellow-300 mb-3">AI Influencer 3.0 Course</h2>
-              <div class="text-4xl font-bold text-white mb-2">$27</div>
-              <div class="line-through text-gray-400 text-sm mb-3">Regular Price: $127</div>
-              <div class="inline-block bg-green-600 text-black text-xs font-semibold px-3 py-1 rounded-full mb-6">79% OFF — Limited Time</div>
-              <ul class="space-y-2 text-sm leading-relaxed text-white/90">
-                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Instant access after payment</li>
-                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Watch anytime, at your own pace</li>
-                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> 2.5h of step-by-step video lessons</li>
-                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> No-code AI model training</li>
-                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Ready-made visual framework</li>
-                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Face-swapping explained</li>
-              </ul>
-              <button class="animated-gradient-btn text-white rounded-[14px] text-base flex items-center justify-center gap-2 overflow-hidden h-[40px] w-full mt-6">
-                <span class="block">GET NOW</span>
-                <span class="line-through text-yellow-500 font-normal">$127</span>
-                <span class="text-yellow-300 text-xl font-bold">$27</span>
-                <span class="font-bold text-white">NOW</span>
-              </button>
-            </div>
-            <!-- Bonuses Card -->
-            <div class="scroll-stack-card min-h-[180px] w-[92vw] max-w-sm bg-white/10 rounded-2xl p-6 mb-[-18px] z-20 flex flex-col shadow-xl border border-pink-400/20">
-              <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2">🎁 Bonuses</h3>
-              <ul class="space-y-2 text-base text-white/90">
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Big Realism Prompt Pack</li>
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Lifetime Access Anytime</li>
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Waitlisted to Secret Platform</li>
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> No Bots Email Support</li>
-              </ul>
-            </div>
-            <!-- Learn Map Card -->
-            <div class="scroll-stack-card min-h-[180px] w-[92vw] max-w-sm bg-pink-900/20 rounded-2xl p-6 z-10 flex flex-col shadow-lg border border-pink-400/10">
-              <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2">Learn Map</h3>
-              <ul class="space-y-2 text-base text-white/90">
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Character setup with pose & style</li>
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Realism + image prep for clean angles & details</li>
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> AI training with no code needed</li>
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Visual control for emotion & outfit</li>
-                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Final touch to merge & publish</li>
-              </ul>
-            </div>
-            <div class="scroll-stack-end"></div>
           </div>
         </div>
       </div>
