@@ -797,6 +797,57 @@
             height: 7rem !important;
           }
         }
+
+        /* MOBILE STACK SCROLL (только для мобильных, только карточки) */
+        .scroll-stack-container {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          padding: 32px;
+        }
+        .scroll-stack-card {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 16px;
+          padding: 24px;
+          transition: transform 0.25s cubic-bezier(.4,0,.2,1);
+          box-shadow: 0 2px 12px 0 #0001;
+          overflow: hidden;
+        }
+        .scroll-stack-card h2 {
+          font-size: 1.5rem;
+          margin-bottom: 16px;
+          color: #ff4fa3;
+        }
+        .scroll-stack-card ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .scroll-stack-card li {
+          margin-bottom: 12px;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+        .scroll-stack-card li svg {
+          width: 24px;
+          height: 24px;
+          color: #ff4fa3;
+        }
+        .scroll-stack-card button {
+          background-color: #ff4fa3;
+          color: #1e293b;
+          border: none;
+          border-radius: 8px;
+          padding: 12px 24px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+        .scroll-stack-card button:hover {
+          background-color: #e04f99;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
@@ -997,10 +1048,10 @@
           No studio, no makeup, no crew, no shooting — all for the price of a T-shirt.
         </p>
       </div>
-      <!-- MOBILE STACK SCROLL (только для мобильных) -->
-      <div class="md:hidden block relative overflow-y-auto snap-y snap-mandatory">
+      <!-- MOBILE STACK SCROLL (только для мобильных, только карточки) -->
+      <div class="md:hidden block relative scroll-stack-container overflow-y-auto snap-y snap-mandatory" style="height: 100vh;">
         <!-- Offer Card -->
-        <div class="snap-start sticky top-0 z-10 bg-black/40 rounded-3xl p-6 mb-[-60px] mx-2 mt-8">
+        <div class="scroll-stack-card bg-black/40 rounded-3xl p-6 mb-[-60px] mx-2 mt-8 min-h-[70vw] flex flex-col">
           <h2 class="text-xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
           <div class="text-4xl font-bold text-white mb-2" id="price-current">$27</div>
           <div class="line-through text-gray-400 text-sm mb-3" id="price-regular">Regular Price: $127</div>
@@ -1021,7 +1072,7 @@
           </button>
         </div>
         <!-- Bonuses Card -->
-        <div class="snap-start sticky top-0 z-20 bg-white/10 rounded-2xl p-6 mb-[-60px] mx-2">
+        <div class="scroll-stack-card bg-white/10 rounded-2xl p-6 mb-[-60px] mx-2 min-h-[70vw] flex flex-col">
           <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="bonuses-title">🎁 Bonuses</h3>
           <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="bonuses-list">
             <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-1">Big Realism Prompt Pack</span></div>
@@ -1031,7 +1082,7 @@
           </div>
         </div>
         <!-- Learn Map Card -->
-        <div class="snap-start sticky top-0 z-30 bg-white/10 rounded-2xl p-6 mx-2">
+        <div class="scroll-stack-card bg-white/10 rounded-2xl p-6 mx-2 min-h-[70vw] flex flex-col">
           <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="learnmap-title">Learn Map</h3>
           <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="learnmap-list">
             <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-1">Character setup with pose & style</span></div>
@@ -1970,6 +2021,40 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
+    </script>
+
+    <!-- STACK SCROLL JS (только для мобильных) -->
+    <script>
+    (function() {
+      if (window.innerWidth >= 768) return; // Только для мобильных
+      const container = document.querySelector('.scroll-stack-container');
+      if (!container) return;
+      const cards = Array.from(container.querySelectorAll('.scroll-stack-card'));
+      const cardGap = 32; // px, расстояние между карточками
+      const minScale = 0.88; // минимальный scale для нижних карточек
+      const maxOffset = 80; // максимальное смещение вниз
+
+      function updateStack() {
+        const scrollTop = container.scrollTop;
+        cards.forEach((card, i) => {
+          // Карточка появляется, когда скролл доходит до неё
+          const cardTop = card.offsetTop;
+          const nextCardTop = cards[i+1]?.offsetTop || Infinity;
+          // Прогресс появления карточки (0 — не видно, 1 — полностью сверху)
+          const progress = Math.min(1, Math.max(0, (scrollTop - cardTop + card.offsetHeight) / card.offsetHeight));
+          // Scale и offset для эффекта stack
+          const scale = 1 - (1 - minScale) * progress;
+          const offset = Math.min(maxOffset, cardGap * i - progress * maxOffset);
+          card.style.transform = `translateY(${offset}px) scale(${scale})`;
+          card.style.zIndex = 10 + i;
+          card.style.transition = 'transform 0.25s cubic-bezier(.4,0,.2,1)';
+          card.style.boxShadow = i === 0 ? '0 8px 32px 0 #0002' : '0 2px 12px 0 #0001';
+        });
+      }
+      container.addEventListener('scroll', updateStack);
+      window.addEventListener('resize', updateStack);
+      setTimeout(updateStack, 100); // Первый запуск
+    })();
     </script>
 </body>
 </html> 
