@@ -1168,8 +1168,8 @@
       <!-- Stack-scroll только для карточек, скроллится только внутри себя -->
       <div id="price-stack-scroll" class="md:hidden w-full max-w-full mx-auto relative" style="height: 90vh; overflow-y: auto;">
         <div class="scroll-stack-inner flex flex-col items-center">
-          <!-- Offer Card -->
-          <div class="scroll-stack-card min-h-[400px] w-[92vw] max-w-sm bg-black/90 rounded-3xl p-6 mb-[-60px] relative z-30 shadow-2xl border border-yellow-400/20">
+          <!-- Offer Card (самая нижняя, видна первой) -->
+          <div class="scroll-stack-card min-h-[400px] w-[92vw] max-w-sm bg-black/90 rounded-3xl p-6 mb-[-60px] relative z-10 shadow-2xl border border-yellow-400/20">
             <h2 class="text-xl font-bold text-yellow-300 mb-3">AI Influencer 3.0 Course</h2>
             <div class="text-4xl font-bold text-white mb-2">$27</div>
             <div class="line-through text-gray-400 text-sm mb-3">Regular Price: $127</div>
@@ -1189,7 +1189,7 @@
               <span class="font-bold text-white">NOW</span>
             </button>
           </div>
-          <!-- Bonuses Card -->
+          <!-- Bonuses Card (средняя, появляется второй) -->
           <div class="scroll-stack-card min-h-[320px] w-[92vw] max-w-sm bg-white/10 rounded-2xl p-6 mb-[-60px] relative z-20 shadow-xl border border-pink-400/20">
             <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2">🎁 Bonuses</h3>
             <ul class="space-y-2 text-base text-white/90">
@@ -1199,8 +1199,8 @@
               <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> No Bots Email Support</li>
             </ul>
           </div>
-          <!-- Learn Map Card -->
-          <div class="scroll-stack-card min-h-[320px] w-[92vw] max-w-sm bg-pink-900/20 rounded-2xl p-6 relative z-10 shadow-lg border border-pink-400/10">
+          <!-- Learn Map Card (самая верхняя, появляется последней) -->
+          <div class="scroll-stack-card min-h-[320px] w-[92vw] max-w-sm bg-pink-900/20 rounded-2xl p-6 relative z-30 shadow-lg border border-pink-400/10">
             <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2">Learn Map</h3>
             <ul class="space-y-2 text-base text-white/90">
               <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Character setup with pose & style</li>
