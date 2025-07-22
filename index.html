@@ -999,56 +999,101 @@
           </p>
         </div>
         <div class="section-content max-w-5xl mx-auto mt-auto w-full">
-          <div id="price-stack-scroll" class="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10 items-start w-full">
-            <!-- Offer Card -->
-            <div class="scroll-stack-card min-h-[260px] w-full max-w-sm bg-black/90 rounded-3xl p-6 md:p-10 mb-[-18px] z-10 flex flex-col shadow-2xl border border-yellow-400/20 mx-auto md:mx-0">
-              <h2 class="text-xl md:text-2xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
-              <div class="text-4xl md:text-6xl font-bold text-white mb-2" id="price-current">$27</div>
-              <div class="line-through text-gray-400 text-sm md:text-base mb-3" id="price-regular">Regular Price: $127</div>
-              <div class="inline-block bg-green-600 text-black text-xs md:text-sm font-semibold px-3 md:px-4 py-1 md:py-1.5 rounded-full mb-6 md:mb-8" id="price-discount">
-                79% OFF — Limited Time
-              </div>
-              <ul class="space-y-2 text-sm md:text-base leading-relaxed text-white/90" id="price-features-list">
-                <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-1">Instant access after payment</span></li>
-                <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-2">Watch anytime, at your own pace</span></li>
-                <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-3">2.5h of step-by-step video lessons</span></li>
-                <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-5">No-code AI model training</span></li>
-                <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-6">Ready-made visual framework</span></li>
-                <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-7">Face-swapping explained</span></li>
+          <!-- Мобильный scroll-stack -->
+          <div id="price-stack-scroll" class="relative h-[100vh] overflow-y-auto md:hidden">
+            <div class="scroll-stack-card absolute left-0 top-0 w-full transition-all duration-500 z-10" id="mobile-offer-card">
+              <h2 class="text-xl font-bold text-yellow-300 mb-3">AI Influencer 3.0 Course</h2>
+              <div class="text-4xl font-bold text-white mb-2">$27</div>
+              <div class="line-through text-gray-400 text-sm mb-3">Regular Price: $127</div>
+              <div class="inline-block bg-green-600 text-black text-xs font-semibold px-3 py-1 rounded-full mb-6">79% OFF — Limited Time</div>
+              <ul class="space-y-2 text-sm leading-relaxed text-white/90">
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Instant access after payment</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Watch anytime, at your own pace</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> 2.5h of step-by-step video lessons</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> No-code AI model training</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Ready-made visual framework</li>
+                <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Face-swapping explained</li>
               </ul>
-              <button class="animated-gradient-btn text-white rounded-[14px] text-base md:text-lg flex items-center justify-center gap-2 overflow-hidden h-[40px] md:h-[44px] mt-6 md:mt-8 w-full">
-                <span class="block md:hidden" id="price-btn-text-mobile">Get Now</span>
-                <span class="hidden md:block" id="price-btn-text-desktop">Get started –</span>
-                <span class="line-through text-yellow-500 font-normal" id="price-btn-price-old">$127</span>
-                <span class="text-yellow-300 text-xl font-bold" id="price-btn-price-new">$27</span>
-                <span class="hidden md:inline font-bold text-white" id="price-btn-now">NOW</span>
+              <button class="animated-gradient-btn text-white rounded-[14px] text-base flex items-center justify-center gap-2 overflow-hidden h-[40px] w-full mt-6">
+                <span class="block">GET NOW</span>
+                <span class="line-through text-yellow-500 font-normal">$127</span>
+                <span class="text-yellow-300 text-xl font-bold">$27</span>
+                <span class="font-bold text-white">NOW</span>
               </button>
             </div>
-            <div class="flex flex-col gap-6 w-full">
-              <!-- Бонусы -->
-              <div class="scroll-stack-card bg-white/10 rounded-2xl pl-8 pr-5 py-5 w-full mt-6 md:mt-12 flex flex-col items-start">
-                <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="bonuses-title">🎁 Bonuses</h3>
-                <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="bonuses-list">
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-1">Big Realism Prompt Pack</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-2">Lifetime Access Anytime</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-3">Waitlisted to Secret Platform</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-4">No Bots Email Support</span></div>
-                </div>
-              </div>
-              <div class="border-t border-gray-700 w-3/5 my-1"></div>
-              <!-- Map of Learn -->
-              <div class="scroll-stack-card bg-white/10 rounded-2xl pl-8 pr-5 py-5 w-full flex flex-col items-start">
-                <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="learnmap-title">Learn Map</h3>
-                <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="learnmap-list">
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-1">Character setup with pose & style</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-2">Realism + image prep for clean angles & details</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-3">AI training with no code needed</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-4">Visual control for emotion & outfit</span></div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-5">Final touch to merge & publish</span></div>
-                </div>
-              </div>
+            <div class="scroll-stack-card absolute left-0 top-0 w-full transition-all duration-500 z-20" id="mobile-bonuses-card">
+              <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2">🎁 Bonuses</h3>
+              <ul class="space-y-2 text-base text-white/90">
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Big Realism Prompt Pack</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Lifetime Access Anytime</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Waitlisted to Secret Platform</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> No Bots Email Support</li>
+              </ul>
             </div>
-            <div class="scroll-stack-end"></div>
+            <div class="scroll-stack-card absolute left-0 top-0 w-full transition-all duration-500 z-30" id="mobile-learnmap-card">
+              <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2">Learn Map</h3>
+              <ul class="space-y-2 text-base text-white/90">
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Character setup with pose & style</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Realism + image prep for clean angles & details</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> AI training with no code needed</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Visual control for emotion & outfit</li>
+                <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Final touch to merge & publish</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Десктопная версия ниже, hidden на мобилках -->
+          <div class="hidden md:block">
+            <div id="price-stack-scroll" class="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10 items-start w-full">
+              <!-- Offer Card -->
+              <div class="scroll-stack-card min-h-[260px] w-full max-w-sm bg-black/90 rounded-3xl p-6 md:p-10 mb-[-18px] z-10 flex flex-col shadow-2xl border border-yellow-400/20 mx-auto md:mx-0">
+                <h2 class="text-xl md:text-2xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
+                <div class="text-4xl md:text-6xl font-bold text-white mb-2" id="price-current">$27</div>
+                <div class="line-through text-gray-400 text-sm md:text-base mb-3" id="price-regular">Regular Price: $127</div>
+                <div class="inline-block bg-green-600 text-black text-xs md:text-sm font-semibold px-3 md:px-4 py-1 md:py-1.5 rounded-full mb-6 md:mb-8" id="price-discount">
+                  79% OFF — Limited Time
+                </div>
+                <ul class="space-y-2 text-sm md:text-base leading-relaxed text-white/90" id="price-features-list">
+                  <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-1">Instant access after payment</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-2">Watch anytime, at your own pace</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-3">2.5h of step-by-step video lessons</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-5">No-code AI model training</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-6">Ready-made visual framework</span></li>
+                  <li class="flex items-start gap-3"><span class="text-green-400" style="color: #4ade80;">✔</span> <span id="price-feature-7">Face-swapping explained</span></li>
+                </ul>
+                <button class="animated-gradient-btn text-white rounded-[14px] text-base md:text-lg flex items-center justify-center gap-2 overflow-hidden h-[40px] md:h-[44px] mt-6 md:mt-8 w-full">
+                  <span class="block md:hidden" id="price-btn-text-mobile">Get Now</span>
+                  <span class="hidden md:block" id="price-btn-text-desktop">Get started –</span>
+                  <span class="line-through text-yellow-500 font-normal" id="price-btn-price-old">$127</span>
+                  <span class="text-yellow-300 text-xl font-bold" id="price-btn-price-new">$27</span>
+                  <span class="hidden md:inline font-bold text-white" id="price-btn-now">NOW</span>
+                </button>
+              </div>
+              <div class="flex flex-col gap-6 w-full">
+                <!-- Бонусы -->
+                <div class="scroll-stack-card bg-white/10 rounded-2xl pl-8 pr-5 py-5 w-full mt-6 md:mt-12 flex flex-col items-start">
+                  <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="bonuses-title">🎁 Bonuses</h3>
+                  <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="bonuses-list">
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-1">Big Realism Prompt Pack</span></div>
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-2">Lifetime Access Anytime</span></div>
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-3">Waitlisted to Secret Platform</span></div>
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-4">No Bots Email Support</span></div>
+                  </div>
+                </div>
+                <div class="border-t border-gray-700 w-3/5 my-1"></div>
+                <!-- Map of Learn -->
+                <div class="scroll-stack-card bg-white/10 rounded-2xl pl-8 pr-5 py-5 w-full flex flex-col items-start">
+                  <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="learnmap-title">Learn Map</h3>
+                  <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="learnmap-list">
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-1">Character setup with pose & style</span></div>
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-2">Realism + image prep for clean angles & details</span></div>
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-3">AI training with no code needed</span></div>
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-4">Visual control for emotion & outfit</span></div>
+                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-5">Final touch to merge & publish</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="scroll-stack-end"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1362,6 +1407,7 @@
             <div class="text-left">
               <div class="flex flex-col items-center">
                 <div class="flex text-yellow-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
@@ -1961,5 +2007,89 @@
       setTimeout(updateCardTransforms, 100);
     });
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Scroll-stack только для мобильных
+  const stack = document.getElementById('price-stack-scroll');
+  if (!stack || window.innerWidth >= 768) return;
+
+  const offer = document.getElementById('mobile-offer-card');
+  const bonuses = document.getElementById('mobile-bonuses-card');
+  const learnmap = document.getElementById('mobile-learnmap-card');
+  const cards = [offer, bonuses, learnmap];
+
+  // Высота одной карточки (можно подстроить под реальный размер)
+  const cardHeight = offer.offsetHeight;
+  // Пороговые значения скролла
+  const thresholds = [0, cardHeight * 0.7, cardHeight * 1.4];
+
+  // Сбросить стили
+  function reset() {
+    offer.style.transform = 'translateY(0)';
+    offer.style.zIndex = 10;
+    bonuses.style.transform = 'translateY(0)';
+    bonuses.style.zIndex = 20;
+    learnmap.style.transform = 'translateY(0)';
+    learnmap.style.zIndex = 30;
+    offer.style.boxShadow = bonuses.style.boxShadow = learnmap.style.boxShadow = '';
+  }
+
+  function updateStack() {
+    const scroll = stack.scrollTop;
+    // 1. Только Offer сверху
+    if (scroll < thresholds[1]) {
+      offer.style.transform = 'translateY(0)';
+      offer.style.zIndex = 30;
+      bonuses.style.transform = 'translateY(0)';
+      bonuses.style.zIndex = 20;
+      learnmap.style.transform = 'translateY(0)';
+      learnmap.style.zIndex = 10;
+      offer.style.boxShadow = '0 8px 32px -8px #ec489988';
+      bonuses.style.boxShadow = '';
+      learnmap.style.boxShadow = '';
+    }
+    // 2. Bonuses накрывает Offer
+    else if (scroll < thresholds[2]) {
+      offer.style.transform = `translateY(-${cardHeight * 0.15}px) scale(0.97)`;
+      offer.style.zIndex = 10;
+      bonuses.style.transform = 'translateY(0)';
+      bonuses.style.zIndex = 30;
+      learnmap.style.transform = 'translateY(0)';
+      learnmap.style.zIndex = 20;
+      bonuses.style.boxShadow = '0 8px 32px -8px #ec489988';
+      offer.style.boxShadow = '';
+      learnmap.style.boxShadow = '';
+    }
+    // 3. LearnMap накрывает всё
+    else {
+      offer.style.transform = `translateY(-${cardHeight * 0.25}px) scale(0.95)`;
+      offer.style.zIndex = 10;
+      bonuses.style.transform = `translateY(-${cardHeight * 0.10}px) scale(0.98)`;
+      bonuses.style.zIndex = 20;
+      learnmap.style.transform = 'translateY(0)';
+      learnmap.style.zIndex = 30;
+      learnmap.style.boxShadow = '0 8px 32px -8px #ec489988';
+      offer.style.boxShadow = '';
+      bonuses.style.boxShadow = '';
+    }
+  }
+
+  stack.addEventListener('scroll', updateStack);
+  window.addEventListener('resize', reset);
+  reset();
+  updateStack();
+
+  // Автопрокрутка к следующей секции после полного скролла
+  stack.addEventListener('scroll', function() {
+    if (stack.scrollTop > cardHeight * 2.1) {
+      // Найти следующую секцию
+      const nextSection = stack.closest('section').nextElementSibling;
+      if (nextSection) {
+        nextSection.scrollIntoView({behavior: 'smooth'});
+      }
+    }
+  });
+});
+</script>
 </body>
 </html> 
