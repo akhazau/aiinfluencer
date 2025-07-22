@@ -2224,7 +2224,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-// Управление видимостью popover на мобильном snap scroll
+// Управление видимостью popover на мобильном snap scroll (фиксированная логика)
 (function() {
   if (window.innerWidth >= 768) return;
   function updatePopovers() {
@@ -2233,16 +2233,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const snapBonuses = document.getElementById('snap-bonuses');
     const snapLearnmap = document.getElementById('snap-learnmap');
     const scrollY = window.scrollY;
-    const bonusesRect = snapBonuses ? snapBonuses.getBoundingClientRect() : null;
-    const learnmapRect = snapLearnmap ? snapLearnmap.getBoundingClientRect() : null;
-    // Показываем Bonuses, если второй snap-section в viewport
-    if (bonuses && bonusesRect && bonusesRect.top < window.innerHeight/2 && bonusesRect.bottom > 0) {
+    const vh = window.innerHeight;
+    // Получаем top относительно документа
+    const bonusesTop = snapBonuses ? snapBonuses.getBoundingClientRect().top + scrollY : 0;
+    const learnmapTop = snapLearnmap ? snapLearnmap.getBoundingClientRect().top + scrollY : 0;
+    // Показываем Bonuses, если скролл находится во втором snap-section
+    if (bonuses && scrollY + vh/2 >= bonusesTop && scrollY + vh/2 < learnmapTop) {
       bonuses.classList.remove('hidden');
     } else if (bonuses) {
       bonuses.classList.add('hidden');
     }
-    // Показываем Learn Map, если третий snap-section в viewport
-    if (learnmap && learnmapRect && learnmapRect.top < window.innerHeight/2 && learnmapRect.bottom > 0) {
+    // Показываем Learn Map, если скролл находится в третьем snap-section
+    if (learnmap && scrollY + vh/2 >= learnmapTop) {
       learnmap.classList.remove('hidden');
     } else if (learnmap) {
       learnmap.classList.add('hidden');
