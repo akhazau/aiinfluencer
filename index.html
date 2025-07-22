@@ -1165,6 +1165,54 @@
           </div>
         </div>
       </div>
+      <!-- Stack-scroll только для карточек, скроллится только внутри себя -->
+      <div id="price-stack-scroll" class="md:hidden w-full max-w-full mx-auto relative" style="height: 90vh; overflow-y: auto;">
+        <div class="scroll-stack-inner flex flex-col items-center">
+          <!-- Offer Card -->
+          <div class="scroll-stack-card min-h-[400px] w-[92vw] max-w-sm bg-black/90 rounded-3xl p-6 mb-[-60px] relative z-30 shadow-2xl border border-yellow-400/20">
+            <h2 class="text-xl font-bold text-yellow-300 mb-3">AI Influencer 3.0 Course</h2>
+            <div class="text-4xl font-bold text-white mb-2">$27</div>
+            <div class="line-through text-gray-400 text-sm mb-3">Regular Price: $127</div>
+            <div class="inline-block bg-green-600 text-black text-xs font-semibold px-3 py-1 rounded-full mb-6">79% OFF — Limited Time</div>
+            <ul class="space-y-2 text-sm leading-relaxed text-white/90">
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Instant access after payment</li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Watch anytime, at your own pace</li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> 2.5h of step-by-step video lessons</li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> No-code AI model training</li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Ready-made visual framework</li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> Face-swapping explained</li>
+            </ul>
+            <button class="animated-gradient-btn text-white rounded-[14px] text-base flex items-center justify-center gap-2 overflow-hidden h-[40px] w-full mt-6">
+              <span class="block">GET NOW</span>
+              <span class="line-through text-yellow-500 font-normal">$127</span>
+              <span class="text-yellow-300 text-xl font-bold">$27</span>
+              <span class="font-bold text-white">NOW</span>
+            </button>
+          </div>
+          <!-- Bonuses Card -->
+          <div class="scroll-stack-card min-h-[320px] w-[92vw] max-w-sm bg-white/10 rounded-2xl p-6 mb-[-60px] relative z-20 shadow-xl border border-pink-400/20">
+            <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2">🎁 Bonuses</h3>
+            <ul class="space-y-2 text-base text-white/90">
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Big Realism Prompt Pack</li>
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Lifetime Access Anytime</li>
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Waitlisted to Secret Platform</li>
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> No Bots Email Support</li>
+            </ul>
+          </div>
+          <!-- Learn Map Card -->
+          <div class="scroll-stack-card min-h-[320px] w-[92vw] max-w-sm bg-pink-900/20 rounded-2xl p-6 relative z-10 shadow-lg border border-pink-400/10">
+            <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2">Learn Map</h3>
+            <ul class="space-y-2 text-base text-white/90">
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Character setup with pose & style</li>
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Realism + image prep for clean angles & details</li>
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> AI training with no code needed</li>
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Visual control for emotion & outfit</li>
+              <li class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Final touch to merge & publish</li>
+            </ul>
+          </div>
+          <div class="scroll-stack-end"></div>
+        </div>
+      </div>
     </section>
 
     <!-- #5 REVIEWS -->
@@ -2033,6 +2081,51 @@
     document.addEventListener('DOMContentLoaded', function() {
       if (window.innerWidth >= 768) return;
       const scroller = document.querySelector('.scroll-stack-scroller');
+      const cards = Array.from(scroller.querySelectorAll('.scroll-stack-card'));
+      const itemDistance = 100;
+      const itemScale = 0.03;
+      const baseScale = 0.85;
+      const itemStackDistance = 30;
+      function updateCardTransforms() {
+        const scrollTop = scroller.scrollTop;
+        const containerHeight = scroller.clientHeight;
+        const stackPositionPx = 0.2 * containerHeight;
+        const scaleEndPositionPx = 0.1 * containerHeight;
+        const endElement = scroller.querySelector('.scroll-stack-end');
+        const endElementTop = endElement ? endElement.offsetTop : 0;
+        cards.forEach((card, i) => {
+          const cardTop = card.offsetTop;
+          const triggerStart = cardTop - stackPositionPx - (itemStackDistance * i);
+          const triggerEnd = cardTop - scaleEndPositionPx;
+          const pinStart = cardTop - stackPositionPx - (itemStackDistance * i);
+          const pinEnd = endElementTop - containerHeight / 2;
+          let scaleProgress = 0;
+          if (scrollTop < triggerStart) scaleProgress = 0;
+          else if (scrollTop > triggerEnd) scaleProgress = 1;
+          else scaleProgress = (scrollTop - triggerStart) / (triggerEnd - triggerStart);
+          const targetScale = baseScale + (i * itemScale);
+          const scale = 1 - scaleProgress * (1 - targetScale);
+          let translateY = 0;
+          const isPinned = scrollTop >= pinStart && scrollTop <= pinEnd;
+          if (isPinned) {
+            translateY = scrollTop - cardTop + stackPositionPx + (itemStackDistance * i);
+          } else if (scrollTop > pinEnd) {
+            translateY = pinEnd - cardTop + stackPositionPx + (itemStackDistance * i);
+          }
+          card.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+          card.style.zIndex = cards.length - i;
+        });
+      }
+      scroller.addEventListener('scroll', updateCardTransforms);
+      window.addEventListener('resize', updateCardTransforms);
+      setTimeout(updateCardTransforms, 100);
+    });
+    </script>
+    <!-- Кастомная анимация стопки карточек (только внутри price-stack-scroll) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scroller = document.getElementById('price-stack-scroll');
+      if (!scroller) return;
       const cards = Array.from(scroller.querySelectorAll('.scroll-stack-card'));
       const itemDistance = 100;
       const itemScale = 0.03;
