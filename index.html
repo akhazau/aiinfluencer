@@ -798,6 +798,44 @@
           }
         }
 
+        @media (max-width: 767px) {
+          #price-stack-scroll {
+            position: relative;
+            height: calc(100vh - 70px); /* 70px — примерная высота header/баннера, скорректируйте при необходимости */
+            min-height: 350px;
+            max-height: 100vh;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            background: transparent;
+          }
+          .scroll-stack-card {
+            position: absolute;
+            left: 0; top: 0; width: 100%;
+            transition: transform 0.5s, opacity 0.4s, z-index 0s;
+            will-change: transform, opacity;
+            pointer-events: none;
+            opacity: 0;
+          }
+          .scroll-stack-card.active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 30;
+          }
+          .scroll-stack-card.below {
+            opacity: 0.5;
+            z-index: 20;
+            pointer-events: none;
+            filter: blur(1.5px) brightness(0.95);
+            transform: scale(0.97) translateY(12px);
+          }
+          .scroll-stack-card.under {
+            opacity: 0.3;
+            z-index: 10;
+            pointer-events: none;
+            filter: blur(2.5px) brightness(0.92);
+            transform: scale(0.94) translateY(24px);
+          }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
@@ -2009,80 +2047,57 @@
     </script>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Scroll-stack только для мобильных
+  // Scroll-stack только для мобильных (и мобильного режима браузера)
   const stack = document.getElementById('price-stack-scroll');
-  if (!stack || window.innerWidth >= 768) return;
+  if (!stack) return;
 
   const offer = document.getElementById('mobile-offer-card');
   const bonuses = document.getElementById('mobile-bonuses-card');
   const learnmap = document.getElementById('mobile-learnmap-card');
   const cards = [offer, bonuses, learnmap];
 
-  // Высота одной карточки (можно подстроить под реальный размер)
-  const cardHeight = offer.offsetHeight;
-  // Пороговые значения скролла
-  const thresholds = [0, cardHeight * 0.7, cardHeight * 1.4];
-
-  // Сбросить стили
-  function reset() {
-    offer.style.transform = 'translateY(0)';
-    offer.style.zIndex = 10;
-    bonuses.style.transform = 'translateY(0)';
-    bonuses.style.zIndex = 20;
-    learnmap.style.transform = 'translateY(0)';
-    learnmap.style.zIndex = 30;
-    offer.style.boxShadow = bonuses.style.boxShadow = learnmap.style.boxShadow = '';
+  function getCardHeight() {
+    // Берём высоту первой карточки, fallback 350px
+    return offer ? offer.offsetHeight || 350 : 350;
   }
 
   function updateStack() {
     const scroll = stack.scrollTop;
+    const cardHeight = getCardHeight();
+    // Пороговые значения скролла
+    const thresholds = [0, cardHeight * 0.7, cardHeight * 1.4];
+    // Сброс классов
+    cards.forEach(card => {
+      card.classList.remove('active', 'below', 'under');
+    });
     // 1. Только Offer сверху
     if (scroll < thresholds[1]) {
-      offer.style.transform = 'translateY(0)';
-      offer.style.zIndex = 30;
-      bonuses.style.transform = 'translateY(0)';
-      bonuses.style.zIndex = 20;
-      learnmap.style.transform = 'translateY(0)';
-      learnmap.style.zIndex = 10;
-      offer.style.boxShadow = '0 8px 32px -8px #ec489988';
-      bonuses.style.boxShadow = '';
-      learnmap.style.boxShadow = '';
+      offer.classList.add('active');
+      bonuses.classList.add('below');
+      learnmap.classList.add('under');
     }
     // 2. Bonuses накрывает Offer
     else if (scroll < thresholds[2]) {
-      offer.style.transform = `translateY(-${cardHeight * 0.15}px) scale(0.97)`;
-      offer.style.zIndex = 10;
-      bonuses.style.transform = 'translateY(0)';
-      bonuses.style.zIndex = 30;
-      learnmap.style.transform = 'translateY(0)';
-      learnmap.style.zIndex = 20;
-      bonuses.style.boxShadow = '0 8px 32px -8px #ec489988';
-      offer.style.boxShadow = '';
-      learnmap.style.boxShadow = '';
+      offer.classList.add('under');
+      bonuses.classList.add('active');
+      learnmap.classList.add('below');
     }
     // 3. LearnMap накрывает всё
     else {
-      offer.style.transform = `translateY(-${cardHeight * 0.25}px) scale(0.95)`;
-      offer.style.zIndex = 10;
-      bonuses.style.transform = `translateY(-${cardHeight * 0.10}px) scale(0.98)`;
-      bonuses.style.zIndex = 20;
-      learnmap.style.transform = 'translateY(0)';
-      learnmap.style.zIndex = 30;
-      learnmap.style.boxShadow = '0 8px 32px -8px #ec489988';
-      offer.style.boxShadow = '';
-      bonuses.style.boxShadow = '';
+      offer.classList.add('under');
+      bonuses.classList.add('under');
+      learnmap.classList.add('active');
     }
   }
 
   stack.addEventListener('scroll', updateStack);
-  window.addEventListener('resize', reset);
-  reset();
-  updateStack();
+  window.addEventListener('resize', updateStack);
+  setTimeout(updateStack, 100);
 
   // Автопрокрутка к следующей секции после полного скролла
   stack.addEventListener('scroll', function() {
+    const cardHeight = getCardHeight();
     if (stack.scrollTop > cardHeight * 2.1) {
-      // Найти следующую секцию
       const nextSection = stack.closest('section').nextElementSibling;
       if (nextSection) {
         nextSection.scrollIntoView({behavior: 'smooth'});
