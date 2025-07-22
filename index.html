@@ -1049,50 +1049,52 @@
         </p>
       </div>
       <!-- MOBILE STACK SCROLL (только для мобильных, только карточки) -->
-      <div class="md:hidden block relative scroll-stack-container overflow-y-auto snap-y snap-mandatory" style="height: 100vh;">
-        <!-- Offer Card -->
-        <div class="scroll-stack-card bg-black/40 rounded-3xl p-6 mb-[-60px] mx-2 mt-8 min-h-[70vw] flex flex-col">
-          <h2 class="text-xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
-          <div class="text-4xl font-bold text-white mb-2" id="price-current">$27</div>
-          <div class="line-through text-gray-400 text-sm mb-3" id="price-regular">Regular Price: $127</div>
-          <div class="inline-block bg-green-600 text-black text-xs font-semibold px-3 py-1 rounded-full mb-6" id="price-discount">79% OFF — Limited Time</div>
-          <ul class="space-y-2 text-sm leading-relaxed text-white/90" id="price-features-list">
-            <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-1">Instant access after payment</span></li>
-            <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-2">Watch anytime, at your own pace</span></li>
-            <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-3">2.5h of step-by-step video lessons</span></li>
-            <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-5">No-code AI model training</span></li>
-            <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-6">Ready-made visual framework</span></li>
-            <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-7">Face-swapping explained</span></li>
-          </ul>
-          <button class="animated-gradient-btn text-white rounded-[14px] text-base flex items-center justify-center gap-2 overflow-hidden h-[40px] w-full mt-6">
-            <span class="block">Get Now</span>
-            <span class="line-through text-yellow-500 font-normal" id="price-btn-price-old">$127</span>
-            <span class="text-yellow-300 text-xl font-bold" id="price-btn-price-new">$27</span>
-            <span class="font-bold text-white" id="price-btn-now">NOW</span>
-          </button>
-        </div>
-        <!-- Bonuses Card -->
-        <div class="scroll-stack-card bg-white/10 rounded-2xl p-6 mb-[-60px] mx-2 min-h-[70vw] flex flex-col">
-          <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="bonuses-title">🎁 Bonuses</h3>
-          <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="bonuses-list">
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-1">Big Realism Prompt Pack</span></div>
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-2">Lifetime Access Anytime</span></div>
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-3">Waitlisted to Secret Platform</span></div>
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-4">No Bots Email Support</span></div>
+      <section id="scroll-stack-section" class="relative md:hidden block">
+        <div id="scroll-stack" class="sticky top-0 flex flex-col items-center justify-center">
+          <!-- Offer Card -->
+          <div class="stack-card h-64 w-[90vw] max-w-xs bg-black/40 rounded-3xl p-6 mb-[-60px] z-30 flex flex-col">
+            <h2 class="text-xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
+            <div class="text-4xl font-bold text-white mb-2" id="price-current">$27</div>
+            <div class="line-through text-gray-400 text-sm mb-3" id="price-regular">Regular Price: $127</div>
+            <div class="inline-block bg-green-600 text-black text-xs font-semibold px-3 py-1 rounded-full mb-6" id="price-discount">79% OFF — Limited Time</div>
+            <ul class="space-y-2 text-sm leading-relaxed text-white/90" id="price-features-list">
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-1">Instant access after payment</span></li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-2">Watch anytime, at your own pace</span></li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-3">2.5h of step-by-step video lessons</span></li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-5">No-code AI model training</span></li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-6">Ready-made visual framework</span></li>
+              <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-7">Face-swapping explained</span></li>
+            </ul>
+            <button class="animated-gradient-btn text-white rounded-[14px] text-base flex items-center justify-center gap-2 overflow-hidden h-[40px] w-full mt-6">
+              <span class="block">Get Now</span>
+              <span class="line-through text-yellow-500 font-normal" id="price-btn-price-old">$127</span>
+              <span class="text-yellow-300 text-xl font-bold" id="price-btn-price-new">$27</span>
+              <span class="font-bold text-white" id="price-btn-now">NOW</span>
+            </button>
+          </div>
+          <!-- Bonuses Card -->
+          <div class="stack-card h-64 w-[90vw] max-w-xs bg-white/10 rounded-2xl p-6 mb-[-60px] z-20 flex flex-col">
+            <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="bonuses-title">🎁 Bonuses</h3>
+            <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="bonuses-list">
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-1">Big Realism Prompt Pack</span></div>
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-2">Lifetime Access Anytime</span></div>
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-3">Waitlisted to Secret Platform</span></div>
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="bonus-4">No Bots Email Support</span></div>
+            </div>
+          </div>
+          <!-- Learn Map Card -->
+          <div class="stack-card h-64 w-[90vw] max-w-xs bg-white/10 rounded-2xl p-6 z-10 flex flex-col">
+            <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="learnmap-title">Learn Map</h3>
+            <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="learnmap-list">
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-1">Character setup with pose & style</span></div>
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-2">Realism + image prep for clean angles & details</span></div>
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-3">AI training with no code needed</span></div>
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-4">Visual control for emotion & outfit</span></div>
+              <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-5">Final touch to merge & publish</span></div>
+            </div>
           </div>
         </div>
-        <!-- Learn Map Card -->
-        <div class="scroll-stack-card bg-white/10 rounded-2xl p-6 mx-2 min-h-[70vw] flex flex-col">
-          <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight" id="learnmap-title">Learn Map</h3>
-          <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed" id="learnmap-list">
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-1">Character setup with pose & style</span></div>
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-2">Realism + image prep for clean angles & details</span></div>
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-3">AI training with no code needed</span></div>
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-4">Visual control for emotion & outfit</span></div>
-            <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> <span id="learnmap-5">Final touch to merge & publish</span></div>
-          </div>
-        </div>
-      </div>
+      </section>
       <!-- DESKTOP/DEFAULT GRID (как было) -->
       <div class="hidden md:block">
         <div class="container mx-auto px-2 md:px-6 flex flex-col items-center flex-1 pt-16">
@@ -1475,6 +1477,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
               </div>
                 <span class="text-sm font-medium text-white mt-1" id="rating-text">4.9 (300+ reviews)</span>
               </div>
@@ -1502,6 +1505,40 @@
               </div>
               </div>
     </section>
+
+    <!-- GSAP Scroll-Stack для мобильных -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.innerWidth >= 768) return; // Только для мобильных
+      gsap.registerPlugin(ScrollTrigger);
+      const cards = document.querySelectorAll('#scroll-stack .stack-card');
+      const stackSection = document.getElementById('scroll-stack-section');
+      const stack = document.getElementById('scroll-stack');
+      const cardCount = cards.length;
+      const cardHeight = cards[0].offsetHeight;
+      const offset = 60; // px, насколько выезжает каждая карточка
+      // Высота секции = высота sticky блока + (cardCount-1)*offset + запас
+      stackSection.style.height = (cardHeight + (cardCount-1)*offset + 100) + 'px';
+      stack.style.height = (cardHeight + (cardCount-1)*offset) + 'px';
+      cards.forEach((card, i) => {
+        gsap.to(card, {
+          y: -offset * i,
+          scale: 1 - i*0.04,
+          zIndex: cardCount - i,
+          scrollTrigger: {
+            trigger: stackSection,
+            start: "top top",
+            end: "+=" + ((cardCount-1)*offset),
+            scrub: true,
+            pin: stack,
+            pinSpacing: false,
+          }
+        });
+      });
+    });
+    </script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -2021,40 +2058,6 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
-    </script>
-
-    <!-- STACK SCROLL JS (только для мобильных) -->
-    <script>
-    (function() {
-      if (window.innerWidth >= 768) return; // Только для мобильных
-      const container = document.querySelector('.scroll-stack-container');
-      if (!container) return;
-      const cards = Array.from(container.querySelectorAll('.scroll-stack-card'));
-      const cardGap = 32; // px, расстояние между карточками
-      const minScale = 0.88; // минимальный scale для нижних карточек
-      const maxOffset = 80; // максимальное смещение вниз
-
-      function updateStack() {
-        const scrollTop = container.scrollTop;
-        cards.forEach((card, i) => {
-          // Карточка появляется, когда скролл доходит до неё
-          const cardTop = card.offsetTop;
-          const nextCardTop = cards[i+1]?.offsetTop || Infinity;
-          // Прогресс появления карточки (0 — не видно, 1 — полностью сверху)
-          const progress = Math.min(1, Math.max(0, (scrollTop - cardTop + card.offsetHeight) / card.offsetHeight));
-          // Scale и offset для эффекта stack
-          const scale = 1 - (1 - minScale) * progress;
-          const offset = Math.min(maxOffset, cardGap * i - progress * maxOffset);
-          card.style.transform = `translateY(${offset}px) scale(${scale})`;
-          card.style.zIndex = 10 + i;
-          card.style.transition = 'transform 0.25s cubic-bezier(.4,0,.2,1)';
-          card.style.boxShadow = i === 0 ? '0 8px 32px 0 #0002' : '0 2px 12px 0 #0001';
-        });
-      }
-      container.addEventListener('scroll', updateStack);
-      window.addEventListener('resize', updateStack);
-      setTimeout(updateStack, 100); // Первый запуск
-    })();
     </script>
 </body>
 </html> 
