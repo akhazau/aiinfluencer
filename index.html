@@ -2158,7 +2158,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (startY !== null && e.touches.length === 1) {
       const dy = e.touches[0].clientY - startY;
       if (Math.abs(dy) > 10) {
-        if (!(current === 2 && dy < 0)) {
+        // Блокируем скролл если не на Learn Map (вверх) и не на первом блоке (вниз)
+        if (!((current === 2 && dy < 0) || (current === 0 && dy > 0))) {
           isSwiping = true;
           e.preventDefault();
         }
