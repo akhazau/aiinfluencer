@@ -2168,7 +2168,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const center = document.getElementById('offer-center-scroll');
   const blocks = center ? Array.from(center.querySelectorAll('.offer-center-content')) : [];
   let current = 0;
-  let startX = null;
+  let lastScroll = window.scrollY;
   function showBlock(idx) {
     blocks.forEach((el, i) => {
       if (i === idx) {
@@ -2182,25 +2182,24 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  function onTouchStart(e) {
-    if (e.touches.length === 1) startX = e.touches[0].clientX;
-  }
-  function onTouchEnd(e) {
-    if (startX === null) return;
-    const endX = e.changedTouches[0].clientX;
-    const dx = endX - startX;
-    if (Math.abs(dx) > 50) {
-      if (dx < 0 && current < 2) current++;
-      if (dx > 0 && current > 0) current--;
-      showBlock(current);
+  function onScroll() {
+    const offer = document.getElementById('mobile-offer-overlays');
+    if (!offer) return;
+    const rect = offer.getBoundingClientRect();
+    // Если карточка в центре экрана
+    if (rect.top < window.innerHeight / 3 && rect.bottom > window.innerHeight / 2) {
+      const scroll = window.scrollY;
+      if (scroll > lastScroll && current < 2) { // скролл вниз
+        current++;
+        showBlock(current);
+      } else if (scroll < lastScroll && current > 0) { // скролл вверх
+        current--;
+        showBlock(current);
+      }
+      lastScroll = scroll;
     }
-    startX = null;
   }
-  const container = document.getElementById('mobile-offer-overlays');
-  if (container) {
-    container.addEventListener('touchstart', onTouchStart);
-    container.addEventListener('touchend', onTouchEnd);
-  }
+  window.addEventListener('scroll', onScroll);
   showBlock(current);
 })();
 </script>
