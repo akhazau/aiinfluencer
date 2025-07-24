@@ -1038,48 +1038,50 @@
         </div>
         <div class="section-content max-w-5xl mx-auto mt-auto w-full">
           <div id="mobile-offer-overlays" class="md:hidden w-full relative" style="height: 100vw; min-height: 400px;">
-            <!-- Оффер (всегда виден) -->
             <div class="absolute inset-0 z-10 flex flex-col items-center justify-center px-4">
               <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 my-8">
                 <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
                 <div class="text-3xl font-bold text-white mb-1">$27</div>
                 <div class="line-through text-gray-400 text-xs mb-2">Regular Price: $127</div>
                 <div class="inline-block bg-green-500 text-black text-xs font-semibold px-3 py-1 rounded-full mb-4">79% OFF — Limited Time</div>
-                <ul class="space-y-2 text-sm text-gray-100 mb-4">
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Instant access after payment</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Watch anytime, at your own pace</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> 2.5h of step-by-step video lessons</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Essential AI tools only</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> No-code AI model training</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Ready-made visual framework</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
-                </ul>
+                <!-- Центральная часть, которая меняется -->
+                <div id="offer-center-scroll" class="relative min-h-[180px]">
+                  <div class="offer-center-content fadein" data-index="0">
+                    <ul class="space-y-2 text-sm text-gray-100 mb-4">
+                      <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Instant access after payment</li>
+                      <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Watch anytime, at your own pace</li>
+                      <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> 2.5h of step-by-step video lessons</li>
+                      <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Essential AI tools only</li>
+                      <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> No-code AI model training</li>
+                      <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Ready-made visual framework</li>
+                      <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
+                    </ul>
+                  </div>
+                  <div class="offer-center-content absolute inset-0 opacity-0 pointer-events-none fadein" data-index="1">
+                    <div class="bg-white/10 rounded-2xl pl-4 pr-4 py-5 w-full flex flex-col items-start text-white">
+                      <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight">🎁 Bonuses</h3>
+                      <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed">
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Big Realism Prompt Pack</div>
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Lifetime Access Anytime</div>
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Waitlisted to Secret Platform</div>
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> No Bots Email Support</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offer-center-content absolute inset-0 opacity-0 pointer-events-none fadein" data-index="2">
+                    <div class="bg-white/10 rounded-2xl pl-4 pr-4 py-5 w-full flex flex-col items-start text-white">
+                      <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight">Learn Map</h3>
+                      <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed">
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Character setup with pose & style</div>
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Realism + image prep for clean angles & details</div>
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> AI training with no code needed</div>
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Visual control for emotion & outfit</div>
+                        <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Final touch to merge & publish</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
-              </div>
-            </div>
-            <!-- Бонусы (overlay) -->
-            <div id="bonuses-overlay" class="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-300">
-              <div class="bg-white/10 rounded-2xl pl-4 pr-4 py-5 w-full max-w-full flex flex-col items-start mt-8 mb-8 text-white">
-                <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight">🎁 Bonuses</h3>
-                <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed">
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Big Realism Prompt Pack</div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Lifetime Access Anytime</div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Waitlisted to Secret Platform</div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> No Bots Email Support</div>
-                </div>
-              </div>
-            </div>
-            <!-- Learn Map (overlay) -->
-            <div id="learnmap-overlay" class="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-300">
-              <div class="bg-white/10 rounded-2xl pl-4 pr-4 py-5 w-full max-w-full flex flex-col items-start mt-8 mb-8 text-white">
-                <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight">Learn Map</h3>
-                <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed">
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Character setup with pose & style</div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Realism + image prep for clean angles & details</div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> AI training with no code needed</div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Visual control for emotion & outfit</div>
-                  <div class="flex items-start gap-2"><span class="text-pink-300 text-xl">•</span> Final touch to merge & publish</div>
-                </div>
               </div>
             </div>
           </div>
@@ -2157,5 +2159,50 @@ document.addEventListener('DOMContentLoaded', function() {
     showOverlay(current);
   })();
   </script>
+  <style>
+.fadein { transition: opacity 0.3s; }
+</style>
+<script>
+(function() {
+  if (window.innerWidth >= 768) return;
+  const center = document.getElementById('offer-center-scroll');
+  const blocks = center ? Array.from(center.querySelectorAll('.offer-center-content')) : [];
+  let current = 0;
+  let startX = null;
+  function showBlock(idx) {
+    blocks.forEach((el, i) => {
+      if (i === idx) {
+        el.style.opacity = '1';
+        el.style.pointerEvents = 'auto';
+        el.style.position = i === 0 ? 'static' : 'absolute';
+      } else {
+        el.style.opacity = '0';
+        el.style.pointerEvents = 'none';
+        el.style.position = i === 0 ? 'static' : 'absolute';
+      }
+    });
+  }
+  function onTouchStart(e) {
+    if (e.touches.length === 1) startX = e.touches[0].clientX;
+  }
+  function onTouchEnd(e) {
+    if (startX === null) return;
+    const endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+    if (Math.abs(dx) > 50) {
+      if (dx < 0 && current < 2) current++;
+      if (dx > 0 && current > 0) current--;
+      showBlock(current);
+    }
+    startX = null;
+  }
+  const container = document.getElementById('mobile-offer-overlays');
+  if (container) {
+    container.addEventListener('touchstart', onTouchStart);
+    container.addEventListener('touchend', onTouchEnd);
+  }
+  showBlock(current);
+})();
+</script>
 </body>
 </html> 
