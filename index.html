@@ -1490,7 +1490,7 @@
       <section class="snap-section min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-slate-800 to-slate-900">
         <div class="w-full flex flex-col items-center">
           <!-- Оффер-карточка -->
-          <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 mt-6 mb-8">
+          <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 mt-6 mb-8 relative">
             <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
             <div class="text-3xl font-bold text-white mb-1">$27</div>
             <div class="line-through text-gray-400 text-xs mb-2">Regular Price: $127</div>
@@ -1509,9 +1509,8 @@
         </div>
       </section>
       <!-- 2 STEP: оффер + Bonuses -->
-      <section class="snap-section min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-slate-800 to-slate-900 relative">
+      <section class="snap-section min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-slate-800 to-slate-900 relative" id="snap-bonuses">
         <div class="w-full flex flex-col items-center">
-          <!-- Оффер-карточка (та же, что выше) -->
           <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 mt-6 mb-8 relative">
             <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
             <div class="text-3xl font-bold text-white mb-1">$27</div>
@@ -1527,8 +1526,8 @@
               <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
             </ul>
             <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
-            <!-- Bonuses popover -->
-            <div class="absolute left-1/2 -translate-x-1/2 top-8 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90%] max-w-xs p-5 z-30 animate-fadeIn">
+            <!-- Bonuses popover (мобильный, появляется только на этой секции) -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-8 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90%] max-w-xs p-5 z-30 animate-fadeIn" id="mobile-bonuses-popover">
               <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🎁</span><span class="text-pink-400 font-bold text-lg">Bonuses</span></div>
               <ul class="space-y-2 text-base text-pink-100">
                 <li>Big Realism Prompt Pack</li>
@@ -1541,9 +1540,8 @@
         </div>
       </section>
       <!-- 3 STEP: оффер + Bonuses + Learn Map -->
-      <section class="snap-section min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-slate-800 to-slate-900 relative">
+      <section class="snap-section min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-slate-800 to-slate-900 relative" id="snap-learnmap">
         <div class="w-full flex flex-col items-center">
-          <!-- Оффер-карточка (та же, что выше) -->
           <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 mt-6 mb-8 relative">
             <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
             <div class="text-3xl font-bold text-white mb-1">$27</div>
@@ -1559,26 +1557,18 @@
               <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
             </ul>
             <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
-            <!-- Bonuses popover -->
-            <div class="absolute left-1/2 -translate-x-1/2 top-8 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90%] max-w-xs p-5 z-30 animate-fadeIn">
-              <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🎁</span><span class="text-pink-400 font-bold text-lg">Bonuses</span></div>
-              <ul class="space-y-2 text-base text-pink-100 mb-3">
-                <li>Big Realism Prompt Pack</li>
-                <li>Lifetime Access Anytime</li>
-                <li>Waitlisted to Secret Platform</li>
-                <li>No Bots Email Support</li>
+            <!-- Bonuses popover (скрыт на этом шаге, только Learn Map виден) -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-8 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90%] max-w-xs p-5 z-30 animate-fadeIn hidden" id="mobile-bonuses-popover-learnmap"></div>
+            <!-- Learn Map popover (мобильный, появляется только на этой секции) -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-32 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90%] max-w-xs p-5 z-40 animate-fadeIn" id="mobile-learnmap-popover">
+              <div class="text-pink-300 font-bold mb-2">Learn Map</div>
+              <ul class="space-y-2 text-base text-pink-100">
+                <li>Character setup with pose & style</li>
+                <li>Realism + image prep for clean angles & details</li>
+                <li>AI training with no code needed</li>
+                <li>Visual control for emotion & outfit</li>
+                <li>Final touch to merge & publish</li>
               </ul>
-              <!-- Learn Map popover -->
-              <div class="mt-4">
-                <div class="text-pink-300 font-bold mb-2">Learn Map</div>
-                <ul class="space-y-2 text-base text-pink-100">
-                  <li>Character setup with pose & style</li>
-                  <li>Realism + image prep for clean angles & details</li>
-                  <li>AI training with no code needed</li>
-                  <li>Visual control for emotion & outfit</li>
-                  <li>Final touch to merge & publish</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
