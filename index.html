@@ -1026,7 +1026,7 @@
       <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 md:bottom-8 md:left-1/3 md:w-6 md:h-6 rounded-full bg-pink-400 opacity-30 blur-2xl animate-pulse delay-500"></div>
       <div class="container mx-auto px-2 md:px-6 flex flex-col items-center flex-1 pt-16">  
         <div class="section-header w-full text-center -mt-4 md:mt-10 mb-0 md:mb-0">
-          <h2 class="text-[1.99rem] md:text-5xl font-bold mb-3 leading-tight">
+          <h2 class="text-[1.98rem] md:text-5xl font-bold mb-3 leading-tight">
             <span id="price-title-start">Ambition &</span>
             <span class="gradient-text-inverse" id="price-title-gradient">AI Tools</span>
             <span id="price-title-middle">→ Successful </span>
@@ -1037,27 +1037,29 @@
           </p>
         </div>
         <div class="section-content max-w-5xl mx-auto mt-auto w-full">
-          <div class="md:hidden w-full relative">
-            <!-- Оффер-карточка (НЕ фиксированная, просто обычный блок) -->
-            <div id="mobile-offer-card" class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 mt-6 mb-8">
-              <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
-              <div class="text-3xl font-bold text-white mb-1">$27</div>
-              <div class="line-through text-gray-400 text-xs mb-2">Regular Price: $127</div>
-              <div class="inline-block bg-green-500 text-black text-xs font-semibold px-3 py-1 rounded-full mb-4">79% OFF — Limited Time</div>
-              <ul class="space-y-2 text-sm text-gray-100 mb-4">
-                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Instant access after payment</li>
-                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Watch anytime, at your own pace</li>
-                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> 2.5h of step-by-step video lessons</li>
-                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Essential AI tools only</li>
-                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> No-code AI model training</li>
-                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Ready-made visual framework</li>
-                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
-              </ul>
-              <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
+          <div class="md:hidden w-full overflow-x-auto flex flex-nowrap snap-x snap-mandatory scroll-smooth" style="scroll-snap-type: x mandatory;">
+            <!-- Оффер -->
+            <div class="min-w-full snap-center flex flex-col items-center justify-center px-4">
+              <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 my-8">
+                <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
+                <div class="text-3xl font-bold text-white mb-1">$27</div>
+                <div class="line-through text-gray-400 text-xs mb-2">Regular Price: $127</div>
+                <div class="inline-block bg-green-500 text-black text-xs font-semibold px-3 py-1 rounded-full mb-4">79% OFF — Limited Time</div>
+                <ul class="space-y-2 text-sm text-gray-100 mb-4">
+                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Instant access after payment</li>
+                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Watch anytime, at your own pace</li>
+                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> 2.5h of step-by-step video lessons</li>
+                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Essential AI tools only</li>
+                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> No-code AI model training</li>
+                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Ready-made visual framework</li>
+                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
+                </ul>
+                <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
+              </div>
             </div>
-            <!-- Snap-section для popover -->
-            <section class="snap-section min-h-screen" id="snap-bonuses">
-              <div id="mobile-bonuses-popover" class="fixed left-1/2 -translate-x-1/2 bottom-32 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90vw] max-w-xs p-5 z-50 animate-fadeIn hidden">
+            <!-- Бонусы -->
+            <div class="min-w-full snap-center flex flex-col items-center justify-center px-4">
+              <div class="bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 max-w-xs w-full mx-auto p-5 my-8">
                 <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🎁</span><span class="text-pink-400 font-bold text-lg">Bonuses</span></div>
                 <ul class="space-y-2 text-base text-pink-100">
                   <li>Big Realism Prompt Pack</li>
@@ -1066,9 +1068,10 @@
                   <li>No Bots Email Support</li>
                 </ul>
               </div>
-            </section>
-            <section class="snap-section min-h-screen" id="snap-learnmap">
-              <div id="mobile-learnmap-popover" class="fixed left-1/2 -translate-x-1/2 bottom-32 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90vw] max-w-xs p-5 z-50 animate-fadeIn hidden">
+            </div>
+            <!-- Learn Map -->
+            <div class="min-w-full snap-center flex flex-col items-center justify-center px-4">
+              <div class="bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 max-w-xs w-full mx-auto p-5 my-8">
                 <div class="text-pink-300 font-bold mb-2">Learn Map</div>
                 <ul class="space-y-2 text-base text-pink-100">
                   <li>Character setup with pose & style</li>
@@ -1078,13 +1081,12 @@
                   <li>Final touch to merge & publish</li>
                 </ul>
               </div>
-            </section>
+            </div>
           </div>
-            <!-- Snap scroll логика: 3 snap-section, которые только переключают видимость popover -->
-            <section class="snap-section min-h-screen"></section>
-            <section class="snap-section min-h-screen" id="snap-bonuses"></section>
-            <section class="snap-section min-h-screen" id="snap-learnmap"></section>
-          </div>
+          <!-- Snap scroll логика: 3 snap-section, которые только переключают видимость popover -->
+          <section class="snap-section min-h-screen"></section>
+          <section class="snap-section min-h-screen" id="snap-bonuses"></section>
+          <section class="snap-section min-h-screen" id="snap-learnmap"></section>
         </div>
       </div>
       <!-- Десктопная версия (md:block) остаётся без изменений -->
