@@ -1038,28 +1038,25 @@
         </div>
         <div class="section-content max-w-5xl mx-auto mt-auto w-full">
           <div class="md:hidden w-full relative">
-            <!-- Фиксированный оффер -->
-            <div id="mobile-offer-fixed" class="fixed bottom-0 left-0 w-full flex justify-center z-40 pointer-events-none">
-              <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 mb-4 relative pointer-events-auto">
-                <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
-                <div class="text-3xl font-bold text-white mb-1">$27</div>
-                <div class="line-through text-gray-400 text-xs mb-2">Regular Price: $127</div>
-                <div class="inline-block bg-green-500 text-black text-xs font-semibold px-3 py-1 rounded-full mb-4">79% OFF — Limited Time</div>
-                <ul class="space-y-2 text-sm text-gray-100 mb-4">
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Instant access after payment</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Watch anytime, at your own pace</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> 2.5h of step-by-step video lessons</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Essential AI tools only</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> No-code AI model training</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Ready-made visual framework</li>
-                  <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
-                </ul>
-                <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
-              </div>
+            <!-- Оффер-карточка (НЕ фиксированная, просто обычный блок) -->
+            <div id="mobile-offer-card" class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 mt-6 mb-8">
+              <h2 class="text-lg font-bold text-yellow-300 mb-2">AI Influencer 3.0 Course</h2>
+              <div class="text-3xl font-bold text-white mb-1">$27</div>
+              <div class="line-through text-gray-400 text-xs mb-2">Regular Price: $127</div>
+              <div class="inline-block bg-green-500 text-black text-xs font-semibold px-3 py-1 rounded-full mb-4">79% OFF — Limited Time</div>
+              <ul class="space-y-2 text-sm text-gray-100 mb-4">
+                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Instant access after payment</li>
+                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Watch anytime, at your own pace</li>
+                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> 2.5h of step-by-step video lessons</li>
+                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Essential AI tools only</li>
+                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> No-code AI model training</li>
+                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Ready-made visual framework</li>
+                <li class="flex items-start gap-2"><span class="text-gray-400">✔</span> Face-swapping explained</li>
+              </ul>
+              <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
             </div>
-            <!-- Snap-section только для popover -->
+            <!-- Snap-section для popover -->
             <section class="snap-section min-h-screen" id="snap-bonuses">
-              <!-- Popover Bonuses -->
               <div id="mobile-bonuses-popover" class="fixed left-1/2 -translate-x-1/2 bottom-32 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90vw] max-w-xs p-5 z-50 animate-fadeIn hidden">
                 <div class="flex items-center gap-2 mb-2"><span class="text-2xl">🎁</span><span class="text-pink-400 font-bold text-lg">Bonuses</span></div>
                 <ul class="space-y-2 text-base text-pink-100">
@@ -1071,7 +1068,6 @@
               </div>
             </section>
             <section class="snap-section min-h-screen" id="snap-learnmap">
-              <!-- Popover Learn Map -->
               <div id="mobile-learnmap-popover" class="fixed left-1/2 -translate-x-1/2 bottom-32 bg-[#23272f] rounded-2xl shadow-2xl border border-pink-400/30 w-[90vw] max-w-xs p-5 z-50 animate-fadeIn hidden">
                 <div class="text-pink-300 font-bold mb-2">Learn Map</div>
                 <ul class="space-y-2 text-base text-pink-100">
@@ -1455,6 +1451,7 @@
             <div class="text-left">
               <div class="flex flex-col items-center">
                 <div class="flex text-yellow-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 md:w-7 md:h-7"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.175 0l-3.385 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118l-3.385-2.46c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.967z"/></svg>
