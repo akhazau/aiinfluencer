@@ -1036,7 +1036,8 @@
             No studio, no makeup, no crew, no shooting — all for the price of a T-shirt.
           </p>
         </div>
-        <div class="section-content max-w-5xl mx-auto mt-auto w-full">
+        <div class="section-content max-w-5xl mx-auto mt-auto w-full" style="position: relative;">
+          <div id="swipe-overlay" style="position:absolute;inset:0;z-index:30;"></div>
           <div id="mobile-offer-overlays" class="md:hidden w-full relative" style="height: 100vw; min-height: 400px;">
             <div class="absolute inset-0 z-10 flex flex-col items-center justify-center px-4">
               <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 max-w-[340px] w-full mx-auto p-6 my-8">
@@ -2128,7 +2129,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 (function() {
   if (window.innerWidth >= 768) return;
-  const swipezone = document.querySelector('.section-content.max-w-5xl');
+  const swipezone = document.getElementById('swipe-overlay');
   const center = document.getElementById('offer-center-scroll');
   const blocks = center ? Array.from(center.querySelectorAll('.offer-center-content')) : [];
   let current = 0;
@@ -2156,9 +2157,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function onTouchMove(e) {
     if (startY !== null && e.touches.length === 1) {
       const dy = e.touches[0].clientY - startY;
-      // Блокируем скролл только если не на последнем блоке или свайп вниз
       if (Math.abs(dy) > 10) {
-        if (!(current === 2 && dy < 0)) { // если не на Learn Map и не свайп вверх
+        if (!(current === 2 && dy < 0)) {
           isSwiping = true;
           e.preventDefault();
         }
