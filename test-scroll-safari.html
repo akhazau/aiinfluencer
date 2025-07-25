@@ -23,6 +23,27 @@
       font-size: 1.2rem;
       z-index: 1000;
     }
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding: 16px;
+      background: #f3e8ff;
+      margin-bottom: 24px;
+      scroll-snap-type: x mandatory;
+    }
+    .h-card {
+      min-width: 180px;
+      height: 100px;
+      background: #c4b5fd;
+      border-radius: 12px;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      scroll-snap-align: start;
+    }
     section {
       min-height: 100vh;
       background: #eee;
@@ -37,7 +58,14 @@
 </head>
 <body>
   <div class="fixed-banner">Fixed Banner</div>
-  <section>Step 3: fixed banner</section>
+  <div class="horizontal-scroll">
+    <div class="h-card">Card 1</div>
+    <div class="h-card">Card 2</div>
+    <div class="h-card">Card 3</div>
+    <div class="h-card">Card 4</div>
+    <div class="h-card">Card 5</div>
+  </div>
+  <section>Step 4: horizontal scroll</section>
   <section>Section 2</section>
   <section>Section 3</section>
   <section>Section 4</section>
