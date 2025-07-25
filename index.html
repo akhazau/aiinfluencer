@@ -2038,7 +2038,12 @@
           } else if (scrollTop > pinEnd) {
             translateY = pinEnd - cardTop + stackPositionPx + (itemStackDistance * i);
           }
-          card.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+          // Только для мобильных (ширина < 768px)
+          if (window.innerWidth < 768) {
+            card.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+          } else {
+            card.style.transform = '';
+          }
           card.style.zIndex = cards.length - i;
         });
       }
