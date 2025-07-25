@@ -870,7 +870,34 @@
             scroll-snap-type: none;
           }
         }
+
+        /* DEBUG UI DISABLE STYLES */
+        body.debug-disable-ui {
+          scroll-snap-type: none !important;
+        }
+        body.debug-disable-ui .sticky-banner,
+        body.debug-disable-ui .sticky-glow,
+        body.debug-disable-ui .sticky-glow-line,
+        body.debug-disable-ui .fixed-sticky-btn,
+        body.debug-disable-ui .support-mail-btn {
+          display: none !important;
+        }
+        body.debug-disable-ui [data-simplebar] {
+          overflow: auto !important;
+          scrollbar-width: auto !important;
+        }
+        /* Можно добавить другие элементы для отключения */
     </style>
+    <script>
+      window.DEBUG_DISABLE_UI = true; // Смените на false для возврата эффектов
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.DEBUG_DISABLE_UI) {
+          document.body.classList.add('debug-disable-ui');
+          // Удалить data-simplebar
+          document.querySelectorAll('[data-simplebar]').forEach(el => el.removeAttribute('data-simplebar'));
+        }
+      });
+    </script>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <!-- Sticky-баннер (шторка) -->
