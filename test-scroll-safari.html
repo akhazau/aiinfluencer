@@ -7,6 +7,21 @@
     body { 
       margin: 0;
       scroll-snap-type: y mandatory;
+      padding-top: 60px;
+    }
+    .fixed-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 60px;
+      background: #a855f7;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 1000;
     }
     section {
       min-height: 100vh;
@@ -21,7 +36,8 @@
   </style>
 </head>
 <body>
-  <section>Step 2: min-height 100vh</section>
+  <div class="fixed-banner">Fixed Banner</div>
+  <section>Step 3: fixed banner</section>
   <section>Section 2</section>
   <section>Section 3</section>
   <section>Section 4</section>
