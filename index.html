@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>AI Influencer 3.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -20,6 +20,7 @@
         html, body {
             margin: 0;
             padding: 0;
+            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
         }
         
         html {
@@ -29,17 +30,46 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
             color: #f8fafc;
             width: 100%;
             position: relative;
             scroll-snap-type: y mandatory;
         }
         
-        /* Предотвращаем горизонтальный скролл только на мобильной версии */
+        /* Специальные стили для iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+            html, body {
+                background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+                min-height: 100vh;
+                min-height: 100dvh;
+                min-height: 100svh;
+            }
+        }
+        
+        /* Стили для области статус-бара и home indicator */
+        @supports (padding: max(0px)) {
+            html, body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+        }
+        
+        /* Убираем отступы для мобильных браузеров */
         @media (max-width: 767px) {
             html {
                 overflow-x: hidden;
+                background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+                min-height: 100vh;
+                min-height: 100dvh;
+            }
+            body {
+                background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+                min-height: 100vh;
+                min-height: 100dvh;
+                margin: 0;
+                padding: 0;
             }
         }
         
