@@ -12,7 +12,9 @@
         /* === BASE & GLOBAL === */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
         
-
+        :root {
+            --button-width: 0.64; /* Параметр только для ширины кнопки (1.0 = нормальная ширина) */
+        }
         
         body {
             font-family: 'Poppins', sans-serif;
@@ -22,9 +24,7 @@
             position: relative;
         }
         
-        html {
-            width: 100%;
-        }
+
         
         /* Предотвращаем горизонтальный скролл только на мобильной версии */
         @media (max-width: 767px) {
