@@ -21,6 +21,7 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            scroll-behavior: auto; /* Отключаем smooth scroll для принудительного скролла */
         }
         
         html {
@@ -890,6 +891,22 @@
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
+    <script>
+        // Принудительно прокручиваем в начало при загрузке страницы
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+        });
+        
+        // Также прокручиваем при DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+            
+            // Дополнительно прокручиваем после небольшой задержки
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+    </script>
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
         <div class="banner-inner flex flex-row items-center w-full max-w-full h-[74px] px-4 md:px-[130px] relative z-2">
