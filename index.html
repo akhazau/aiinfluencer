@@ -33,14 +33,11 @@
             color: #f8fafc;
             width: 100%;
             position: relative;
+            scroll-snap-type: y proximity;
         }
         
         /* Предотвращаем горизонтальный скролл только на мобильной версии */
         @media (max-width: 767px) {
-            body {
-                overflow-x: hidden;
-            }
-            
             html {
                 overflow-x: hidden;
             }
