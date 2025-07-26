@@ -16,20 +16,12 @@
             --button-width: 0.64; /* Параметр только для ширины кнопки (1.0 = нормальная ширина) */
         }
         
-        /* === BASE HTML & BODY STYLES === */
-        html, body {
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-        
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
             color: #f8fafc;
             width: 100%;
             position: relative;
-            scroll-snap-type: y mandatory;
         }
         
         html {
@@ -518,6 +510,16 @@
                 font-size: 0.95rem;
                 padding: 4px 10px;
             }
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow-y: scroll;
+        }
+        body {
+            scroll-snap-type: y mandatory;
         }
         section.snap-section:not(#hero-section) {
             padding-top: 74px;
