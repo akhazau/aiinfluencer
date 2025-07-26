@@ -459,7 +459,91 @@
             color: #fff;
             border: none;
         }
+        #banner-timer {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+        .timer-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 0;
+        }
+        .blinking-colon {
+            display: inline-block;
+            width: 1.1rem;
+            text-align: center;
+            color: #ff4fa3;
+            font-size: 1.1rem;
+            font-weight: bold;
+            vertical-align: middle;
+            margin: 0 0.1rem 0 0.1rem;
+            animation: blink-colon 1s steps(1, start) infinite;
+        }
+        @keyframes blink-colon {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+        @media (max-width: 700px) {
+            .banner-inner {
+                padding: 0 8px;
+                max-width: 100vw;
+            }
+            .banner-btn {
+                width: 98vw !important;
+                min-width: 0 !important;
+                max-width: 98vw !important;
+            }
+            .support-mail-btn {
+                margin-left: 8px;
+                font-size: 0.95rem;
+                padding: 4px 10px;
+            }
+        }
 
+        section.snap-section:not(#hero-section) {
+            padding-top: 74px;
+        }
+        section.snap-section {
+            min-height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2.5rem;
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+
+        /* Адаптация snap-section для планшетов */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            section.snap-section {
+                gap: 2rem;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+
+        /* Адаптация snap-section для мобильных */
+        @media (max-width: 767px) {
+            section.snap-section {
+                gap: 1.5rem;
+                padding-top: 32px;
+                padding-bottom: 32px;
+                min-height: calc(100dvh + 60px);
+            }
+            section.snap-section:last-child {
+                padding-bottom: 80px;
+            }
+        }
         #hero-title-1 {
           display: block;
         }
