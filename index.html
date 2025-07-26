@@ -50,10 +50,10 @@
         /* Стили для области статус-бара и home indicator */
         @supports (padding: max(0px)) {
             html, body {
-                padding-top: env(safe-area-inset-top);
-                padding-bottom: env(safe-area-inset-bottom);
-                padding-left: env(safe-area-inset-left);
-                padding-right: env(safe-area-inset-right);
+                background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+                min-height: 100vh;
+                min-height: 100dvh;
+                min-height: 100svh;
             }
         }
         
@@ -64,13 +64,18 @@
                 background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
                 min-height: 100vh;
                 min-height: 100dvh;
+                min-height: 100svh;
+                margin: 0;
+                padding: 0;
             }
             body {
                 background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
                 min-height: 100vh;
                 min-height: 100dvh;
+                min-height: 100svh;
                 margin: 0;
                 padding: 0;
+                overflow-x: hidden;
             }
         }
         
@@ -559,6 +564,11 @@
             padding-bottom: 24px;
             margin: 0;
         }
+        
+        /* Первая секция должна быть точно в начале */
+        section.snap-section:first-child {
+            scroll-snap-align: start;
+        }
 
         /* Адаптация snap-section для планшетов */
         @media (max-width: 1024px) and (min-width: 768px) {
@@ -893,19 +903,28 @@
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <script>
         // Принудительно прокручиваем в начало при загрузке страницы
-        window.addEventListener('load', function() {
+        function scrollToTop() {
             window.scrollTo(0, 0);
-        });
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        }
         
-        // Также прокручиваем при DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', function() {
-            window.scrollTo(0, 0);
-            
-            // Дополнительно прокручиваем после небольшой задержки
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-            }, 100);
-        });
+        // Прокручиваем при загрузке
+        window.addEventListener('load', scrollToTop);
+        
+        // Прокручиваем при DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', scrollToTop);
+        
+        // Прокручиваем сразу
+        scrollToTop();
+        
+        // Дополнительно прокручиваем с задержками
+        setTimeout(scrollToTop, 50);
+        setTimeout(scrollToTop, 100);
+        setTimeout(scrollToTop, 500);
+        
+        // Прокручиваем при изменении размера окна
+        window.addEventListener('resize', scrollToTop);
     </script>
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
