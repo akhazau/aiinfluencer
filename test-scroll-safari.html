@@ -49,84 +49,31 @@
             scrollbar-width: none;
         }
         
-        /* === GRADIENT TEXT & BUTTONS === */
-        .gradient-text {
-            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .gradient-text-inverse {
-            background: linear-gradient(90deg, #ec4899, #a855f7, #6366f1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+
         
-        .art-card, .animated-gradient-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .art-card {
-            transition: all 0.3s ease;
-            transform-style: preserve-3d;
-            /* Небольшое постоянное свечение на мобиле и для всех карточек */
-            box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.10);
-        }
-        @media (min-width: 768px) {
-          .art-card:hover {
-              transform: translateY(-10px) scale(1.03);
-              box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
-          }
-        }
-        @media (max-width: 767px) {
-          .art-card:hover {
-            transform: none;
-            box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.10);
-          }
-        }
-        
-        .floating { animation: floating 6s ease-in-out infinite; }
-        
-        @keyframes floating {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .lang-btn {
-            padding: 4px 12px;
-            border: 1px solid #fff;
-            border-radius: 6px;
-            font-size: 14px;
-            background: transparent;
+        .animated-gradient-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 32px;
+            height: 50px;
+            min-width: calc(120px * var(--button-width));
+            border: none;
+            background: linear-gradient(90deg, #7c3aed, #a855f7, #ec4899, #7c3aed);
+            background-size: 100% 100%;
+            background-position: center;
             color: #fff;
-            font-family: inherit;
-            font-weight: 500;
-            transition: background 0.2s, color 0.2s;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1;
+            vertical-align: middle;
+            animation: gradient-move 4s ease-in-out infinite;
         }
-        
-        .lang-btn.active {
-            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899) !important;
-            color: #fff !important;
-            font-weight: 400 !important;
-            border: none !important;
-        }
-        
-        .floating-photo { animation: float1 10s ease-in-out infinite; }
-        
-        @keyframes float1 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-18px);} }
-        
-        @keyframes float2 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(12px);} }
-        
-        @keyframes float3 { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
-
-        @keyframes gradient-move {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-
         
         .animated-gradient-btn:hover {
             transform: translateY(-2.5px) scale(1.01);
