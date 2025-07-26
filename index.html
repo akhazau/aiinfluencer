@@ -27,6 +27,10 @@
         html {
             width: 100%;
             scroll-snap-type: y mandatory;
+            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            min-height: 100dvh;
+            min-height: 100svh;
         }
         
         body {
@@ -35,6 +39,12 @@
             width: 100%;
             position: relative;
             scroll-snap-type: y mandatory;
+            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            min-height: 100dvh;
+            min-height: 100svh;
+            margin: 0;
+            padding: 0;
         }
         
         /* Специальные стили для iOS Safari */
@@ -44,6 +54,8 @@
                 min-height: 100vh;
                 min-height: 100dvh;
                 min-height: 100svh;
+                margin: 0;
+                padding: 0;
             }
         }
         
@@ -54,6 +66,8 @@
                 min-height: 100vh;
                 min-height: 100dvh;
                 min-height: 100svh;
+                margin: 0;
+                padding: 0;
             }
         }
         
@@ -898,33 +912,51 @@
           .hero-img-container {
           }
         }
+        /* Дополнительные стили для закрашивания белых полосок */
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Специфичные стили для закрашивания белых полосок */
+        html[lang="en"], 
+        body.bg-gradient-to-b {
+            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+        }
+        
+        /* Стили для мобильных браузеров */
+        @media (max-width: 767px) {
+            html[lang="en"], 
+            body.bg-gradient-to-b {
+                background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+                min-height: 100vh;
+                min-height: 100dvh;
+                min-height: 100svh;
+            }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <script>
-        // Принудительно прокручиваем в начало при загрузке страницы
+        // Принудительно прокручиваем в начало только при загрузке страницы
         function scrollToTop() {
             window.scrollTo(0, 0);
             document.documentElement.scrollTop = 0;
             document.body.scrollTop = 0;
         }
         
-        // Прокручиваем при загрузке
+        // Прокручиваем только при загрузке страницы
         window.addEventListener('load', scrollToTop);
         
         // Прокручиваем при DOMContentLoaded
         document.addEventListener('DOMContentLoaded', scrollToTop);
         
-        // Прокручиваем сразу
+        // Прокручиваем сразу при загрузке
         scrollToTop();
         
-        // Дополнительно прокручиваем с задержками
+        // Дополнительно прокручиваем с задержками только при загрузке
         setTimeout(scrollToTop, 50);
         setTimeout(scrollToTop, 100);
         setTimeout(scrollToTop, 500);
-        
-        // Прокручиваем при изменении размера окна
-        window.addEventListener('resize', scrollToTop);
     </script>
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
