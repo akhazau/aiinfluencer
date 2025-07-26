@@ -9,18 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css" />
     <style>
-
+        /* === BASE & GLOBAL === */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
         
-        /* Предотвращаем горизонтальный скролл только на мобильной версии */
-        @media (max-width: 767px) {
-            body {
-                overflow-x: hidden;
-            }
-            
-            html {
-                overflow-x: hidden;
-            }
+        :root {
+            --button-width: 0.64; /* Параметр только для ширины кнопки (1.0 = нормальная ширина) */
         }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #f8fafc;
+            width: 100%;
+            position: relative;
+        }
+        
+        html {
+            width: 100%;
+        }
+        
+
         
         /* Скрываем скроллбар для горизонтального скролла */
         .overflow-x-auto::-webkit-scrollbar {
