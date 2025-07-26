@@ -28,17 +28,18 @@
             width: 100%;
         }
         
+        /* Предотвращаем горизонтальный скролл только на мобильной версии */
+        @media (max-width: 767px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            html {
+                overflow-x: hidden;
+            }
+        }
+        
 
-        
-        /* Скрываем скроллбар для горизонтального скролла */
-        .overflow-x-auto::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .overflow-x-auto {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
         
         /* === GRADIENT TEXT & BUTTONS === */
         .gradient-text {
