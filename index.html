@@ -81,6 +81,9 @@
                 min-height: 100svh;
                 margin: 0;
                 padding: 0;
+                /* Добавляем поддержку для мобильных браузеров */
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: none;
             }
             body {
                 background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
@@ -90,6 +93,9 @@
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
+                /* Добавляем поддержку для мобильных браузеров */
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: none;
             }
         }
         
@@ -598,6 +604,13 @@
                 padding-top: 16px;
                 padding-bottom: 16px;
                 min-height: 100vh;
+                min-height: 100dvh;
+                min-height: 100svh;
+                /* Улучшенная поддержка snap скролла для мобильных */
+                scroll-snap-align: start;
+                /* Предотвращаем проблемы с отображением */
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
             }
             section.snap-section:last-child {
                 padding-bottom: 80px;
