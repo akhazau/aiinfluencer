@@ -32,31 +32,5 @@
         <div class="text-3xl font-bold text-white">Section 8</div>
     </section>
     <div class="h-px"></div>
-    <script>
-    // Компромиссное решение: жёсткий snap + скрытие адресной строки
-    let isScrolling = false;
-    let scrollTimeout;
-    
-    window.addEventListener('scroll', function() {
-        if (!isScrolling) {
-            isScrolling = true;
-        }
-        
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(function() {
-            isScrolling = false;
-            
-            // Триггер микросдвига для скрытия адресной строки на iOS
-            if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-                setTimeout(() => {
-                    window.scrollBy(0, 1);
-                    setTimeout(() => {
-                        window.scrollBy(0, -1);
-                    }, 10);
-                }, 100);
-            }
-        }, 150);
-    });
-    </script>
 </body>
 </html> 
