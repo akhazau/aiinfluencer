@@ -24,7 +24,7 @@
 <body class="bg-black">
     <div class="scroll-container">
         <section class="bg-gradient-to-b from-slate-900 to-slate-800">
-            <div class="text-3xl font-bold text-white">SDWIG</div>
+            <div class="text-3xl font-bold text-white">SCROLLINTOVIEW TRICK</div>
         </section>
         <section class="bg-gradient-to-b from-slate-800 to-slate-900">
             <div class="text-3xl font-bold text-white">Section 2</div>
@@ -50,18 +50,29 @@
         <div class="h-px"></div>
     </div>
     <script>
-    // Простой микросдвиг для скрытия тулбара на iOS
+    // Хитрость с scrollIntoView для скрытия тулбара на iOS
     let timeout;
     document.querySelector('.scroll-container').addEventListener('scroll', function() {
         clearTimeout(timeout);
         timeout = setTimeout(function() {
             if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-                document.body.scrollTop += 1;
-                setTimeout(() => {
-                    document.body.scrollTop -= 1;
-                }, 50);
+                // Найти текущую секцию и сделать scrollIntoView
+                const sections = document.querySelectorAll('section');
+                const container = document.querySelector('.scroll-container');
+                const scrollTop = container.scrollTop;
+                const containerHeight = container.clientHeight;
+                
+                for (let section of sections) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
+                        section.scrollIntoView({ behavior: 'auto', block: 'start' });
+                        break;
+                    }
+                }
             }
-        }, 200);
+        }, 300);
     });
     </script>
 </body>
