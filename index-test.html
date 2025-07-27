@@ -517,6 +517,7 @@
         body {
             scroll-snap-type: y mandatory;
             -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
         }
         
         section.snap-section {
@@ -1549,55 +1550,14 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-                // Улучшенная поддержка snap-скроллинга для десктопа
+                // Простая поддержка клавиш для десктопа (без перехвата скролла)
         if (window.innerWidth >= 768) {
-          const sections = document.querySelectorAll('.snap-section');
-          let isScrolling = false;
-          
-          // Функция для определения текущей секции
-          function getCurrentSection() {
-            const scrollTop = window.pageYOffset;
-            for (let section of sections) {
-              const rect = section.getBoundingClientRect();
-              if (rect.top <= 100 && rect.bottom >= 100) {
-                return section;
-              }
-            }
-            return sections[0];
-          }
-          
-          // Обработка колесика мыши
-          document.addEventListener('wheel', function(e) {
-            if (isScrolling) {
-              e.preventDefault();
-              return;
-            }
-            
-            const currentSection = getCurrentSection();
-            const currentIndex = Array.from(sections).indexOf(currentSection);
-            const direction = e.deltaY > 0 ? 1 : -1;
-            const nextIndex = Math.max(0, Math.min(sections.length - 1, currentIndex + direction));
-            
-            if (nextIndex !== currentIndex) {
-              e.preventDefault();
-              isScrolling = true;
-              
-              sections[nextIndex].scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-              
-              setTimeout(() => {
-                isScrolling = false;
-              }, 1000);
-            }
-          }, { passive: false });
-          
-          // Обработка клавиш
           document.addEventListener('keydown', function(e) {
-            if (isScrolling) return;
+            const sections = document.querySelectorAll('.snap-section');
+            const currentSection = document.querySelector('.snap-section:target') || sections[0];
             
-            const currentSection = getCurrentSection();
+            if (!currentSection) return;
+            
             const currentIndex = Array.from(sections).indexOf(currentSection);
             let nextIndex = currentIndex;
             
@@ -1611,16 +1571,10 @@
             
             if (nextIndex !== currentIndex) {
               e.preventDefault();
-              isScrolling = true;
-              
               sections[nextIndex].scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
               });
-              
-              setTimeout(() => {
-                isScrolling = false;
-              }, 1000);
             }
           });
         }
