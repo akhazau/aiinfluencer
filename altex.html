@@ -34,7 +34,7 @@
 </head>
 <body class="bg-black">
     <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">JS FIX</div>
+        <div class="text-3xl font-bold text-white">JS FIX 2</div>
     </section>
     <section class="snap-start flex items-center justify-center bg-slate-800">
         <div class="text-3xl font-bold text-white">Section 2</div>
@@ -60,18 +60,25 @@
     <div style="height:1px"></div>
 
     <script>
-        // 1. Отключаем встроенное «запомнить позицию»
-        history.scrollRestoration = 'manual';
-    
-        // 2. Функция для сброса
-        const toTop = () => scrollTo(0, 0);
-    
-        // срабатывает при обычной загрузке, pull-to-refresh и выходе из bfcache
-        addEventListener('load',          () => requestAnimationFrame(toTop));
-        addEventListener('pageshow', e => e.persisted && toTop());
-    
-        // срабатывает перед уходом со страницы (чтобы iOS не кэшировала смещение)
-        addEventListener('beforeunload',  toTop);
+        history.scrollRestoration = 'manual';   // отключаем встроенный restore
+      
+        const forceTop = () => {                // двойной сброс
+          scrollTo(0, 0);
+          setTimeout(() => scrollTo(0, 0), 0);
+        };
+      
+        /* 1) нормальный reload  +  pull-to-refresh */
+        addEventListener('load', () => {
+          requestAnimationFrame(forceTop);      // ждём, пока Safari «допрыгнет»
+        });
+      
+        /* 2) возврат из bfcache (iOS держит старый offset) */
+        addEventListener('pageshow', e => {
+          if (e.persisted) forceTop();
+        });
+      
+        /* 3) уходим со страницы — обнуляем, чтобы в кэш не попало смещение */
+        addEventListener('beforeunload', forceTop);
       </script>
 </body>
 </html> 
