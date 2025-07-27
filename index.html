@@ -199,17 +199,19 @@
         }
         section.snap-section {
             scroll-snap-align: start;
-            min-height: 100vh;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
         }
-        section.snap-section:not(#hero-section) { padding-top: 24px; }
+        section.snap-section:not(#hero-section) { padding-top: 0; }
         section.snap-section:first-child { scroll-snap-align: start; }
         
-        @media (max-width: 1024px) and (min-width: 768px) { section.snap-section { padding: 20px 0; } }
+        @media (max-width: 1024px) and (min-width: 768px) { section.snap-section { padding: 0; } }
         @media (max-width: 767px) {
-            section.snap-section { padding: 16px 0; min-height: 100vh; }
-            section.snap-section:last-child { padding-bottom: 80px; }
+            section.snap-section { padding: 0; height: 100vh; }
+            section.snap-section:last-child { padding-bottom: 0; }
             @supports (-webkit-touch-callout: none) {
-                section.snap-section { min-height: 100vh; -webkit-transform: translateZ(0); transform: translateZ(0); }
+                section.snap-section { height: 100vh; -webkit-transform: translateZ(0); transform: translateZ(0); }
             }
         }
         #hero-title-1 { display: block; }
@@ -1649,6 +1651,29 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   showBlock(current);
 })();
+</script>
+<!-- Минимальный snap scroll для мобильных -->
+<script>
+if (window.innerWidth < 768) {
+  let timeout;
+  window.addEventListener('scroll', function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      const sections = Array.from(document.querySelectorAll('.snap-section'));
+      const scroll = window.scrollY;
+      let closest = sections[0];
+      let minDist = Math.abs(sections[0].offsetTop - scroll);
+      for (const sec of sections) {
+        const dist = Math.abs(sec.offsetTop - scroll);
+        if (dist < minDist) {
+          minDist = dist;
+          closest = sec;
+        }
+      }
+      closest.scrollIntoView({behavior: 'smooth'});
+    }, 80);
+  });
+}
 </script>
 </body>
 </html> 
