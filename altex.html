@@ -34,7 +34,7 @@
 </head>
 <body class="bg-black">
     <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">JS FIX 6</div>
+        <div class="text-3xl font-bold text-white">JS FIX 7</div>
     </section>
     <section class="snap-start flex items-center justify-center bg-slate-800">
         <div class="text-3xl font-bold text-white">Section 2</div>
@@ -60,39 +60,40 @@
     <div style="height:1px"></div>
 
     <script>
-        const root = document.documentElement;
+        /* =====  Всегда начинаем с 1-й секции  ===== */
         history.scrollRestoration = 'manual';
-        
-        let pulled = false;     // была отрицательная прокрутка
-        let jump  = false;      // зафиксировали рывок Safari
-        
-        const forceTop = () => {
-          root.style.scrollSnapType = 'none';
-          scrollTo(0,0);
-          requestAnimationFrame(()=>{
-            scrollTo(0,0);
-            root.style.scrollSnapType = 'y mandatory';
-            pulled = jump = false;           // сброс флагов
-          });
-        };
-        
-        addEventListener('scroll', () => {
-          const y = scrollY;
-        
-          // 1) фиксируем, что пользователь тянул вниз
-          if (y < 0) pulled = true;
-        
-          // 2) Safari дал «рывок» вперёд после того, как было 0 px
-          if (pulled && !jump && y > 40) {   // порог-фильтр 40 px
-            jump = true;
-            forceTop();
-          }
-        }, {passive:true});
-        
-        // Первая загрузка / выход из bfcache
-        addEventListener('DOMContentLoaded',   () => scrollTo(0,0));
         addEventListener('pageshow', e => e.persisted && scrollTo(0,0));
-        addEventListener('beforeunload',       () => scrollTo(0,0));
+        addEventListener('DOMContentLoaded',          () => scrollTo(0,0));
+        
+        /* =====  Ловим pull-to-refresh в Safari  ===== */
+        (() => {
+          const root   = document.documentElement;
+          let pulled   = false;   // тянули вниз (<0)
+          let rebound  = false;   // Safari рывок вперёд (>0)
+        
+          /* ставим флаг, что экран тянули вниз */
+          addEventListener('touchstart', () => pulled = false , {passive:true});
+          addEventListener('scroll',     () => {
+              const y = scrollY;
+        
+              if (y <  0) pulled = true;           // ушли в минус
+              if (pulled && !rebound && y > 40) {  // Safari «откинул» вперёд
+                  rebound = true;
+        
+                  // временно убираем snap, чтобы не дёргало
+                  const prev = root.style.scrollSnapType;
+                  root.style.scrollSnapType = 'none';
+        
+                  requestAnimationFrame(() => {
+                      scrollTo(0,0);               // вернули наверх
+                      requestAnimationFrame(() => {
+                          root.style.scrollSnapType = prev || 'y mandatory';
+                          pulled = rebound = false; // сброс флагов
+                      });
+                  });
+              }
+          }, {passive:true});
+        })();
         </script>
 
 </body>
