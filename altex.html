@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full overflow-y-auto snap-y snap-mandatory">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Snap Scroll Tailwind Test</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        html {
+        /* 1. Браузер не должен скроллить body */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overscroll-behavior-y: none;
+        }
+        body {
+            overflow: hidden;
+        }
+        
+        /* 2. Скроллим внутренний wrapper */
+        .scroll {
             height: 100%;
             overflow-y: auto;
             scroll-snap-type: y mandatory;
             -webkit-overflow-scrolling: touch;
         }
-        body {
-            min-height: 100%;
-            margin: 0;
-        }
+        
+        /* 3. Секции на полный экран */
         section {
             height: 100svh;
             scroll-snap-align: start;
-            scroll-snap-stop: always;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
         @supports (height: 100dvh) {
             section {
                 height: 100dvh;
@@ -33,68 +40,31 @@
     </style>
 </head>
 <body class="bg-black">
-    <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">JS FIX 7</div>
-    </section>
-    <section class="snap-start flex items-center justify-center bg-slate-800">
-        <div class="text-3xl font-bold text-white">Section 2</div>
-    </section>
-    <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">Section 3</div>
-    </section>
-    <section class="snap-start flex items-center justify-center bg-slate-800">
-        <div class="text-3xl font-bold text-white">Section 4</div>
-    </section>
-    <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">Section 5</div>
-    </section>
-    <section class="snap-start flex items-center justify-center bg-slate-800">
-        <div class="text-3xl font-bold text-white">Section 6</div>
-    </section>
-    <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">Section 7</div>
-    </section>
-    <section class="snap-start flex items-center justify-center bg-slate-800">
-        <div class="text-3xl font-bold text-white">Section 8</div>
-    </section>
-    <div style="height:1px"></div>
-
-    <script>
-        /* =====  Всегда начинаем с 1-й секции  ===== */
-        history.scrollRestoration = 'manual';
-        addEventListener('pageshow', e => e.persisted && scrollTo(0,0));
-        addEventListener('DOMContentLoaded',          () => scrollTo(0,0));
-        
-        /* =====  Ловим pull-to-refresh в Safari  ===== */
-        (() => {
-          const root   = document.documentElement;
-          let pulled   = false;   // тянули вниз (<0)
-          let rebound  = false;   // Safari рывок вперёд (>0)
-        
-          /* ставим флаг, что экран тянули вниз */
-          addEventListener('touchstart', () => pulled = false , {passive:true});
-          addEventListener('scroll',     () => {
-              const y = scrollY;
-        
-              if (y <  0) pulled = true;           // ушли в минус
-              if (pulled && !rebound && y > 40) {  // Safari «откинул» вперёд
-                  rebound = true;
-        
-                  // временно убираем snap, чтобы не дёргало
-                  const prev = root.style.scrollSnapType;
-                  root.style.scrollSnapType = 'none';
-        
-                  requestAnimationFrame(() => {
-                      scrollTo(0,0);               // вернули наверх
-                      requestAnimationFrame(() => {
-                          root.style.scrollSnapType = prev || 'y mandatory';
-                          pulled = rebound = false; // сброс флагов
-                      });
-                  });
-              }
-          }, {passive:true});
-        })();
-        </script>
-
+    <main class="scroll">
+        <section class="bg-slate-900">
+            <div class="text-3xl font-bold text-white">PURE CSS</div>
+        </section>
+        <section class="bg-slate-800">
+            <div class="text-3xl font-bold text-white">Section 2</div>
+        </section>
+        <section class="bg-slate-900">
+            <div class="text-3xl font-bold text-white">Section 3</div>
+        </section>
+        <section class="bg-slate-800">
+            <div class="text-3xl font-bold text-white">Section 4</div>
+        </section>
+        <section class="bg-slate-900">
+            <div class="text-3xl font-bold text-white">Section 5</div>
+        </section>
+        <section class="bg-slate-800">
+            <div class="text-3xl font-bold text-white">Section 6</div>
+        </section>
+        <section class="bg-slate-900">
+            <div class="text-3xl font-bold text-white">Section 7</div>
+        </section>
+        <section class="bg-slate-800">
+            <div class="text-3xl font-bold text-white">Section 8</div>
+        </section>
+    </main>
 </body>
 </html> 
