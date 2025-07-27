@@ -31,6 +31,9 @@
             min-height: 100vh;
             min-height: 100dvh;
             min-height: 100svh;
+            /* Добавляем поддержку для мобильных браузеров */
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
         }
         
         body {
@@ -45,6 +48,9 @@
             min-height: 100svh;
             margin: 0;
             padding: 0;
+            /* Добавляем поддержку для мобильных браузеров */
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
         }
         
         /* Специальные стили для iOS Safari */
@@ -56,6 +62,10 @@
                 min-height: 100svh;
                 margin: 0;
                 padding: 0;
+                /* Улучшенная поддержка snap скролла для iOS */
+                scroll-snap-type: y mandatory;
+                -webkit-overflow-scrolling: touch;
+                overflow-x: hidden;
             }
         }
         
@@ -68,6 +78,10 @@
                 min-height: 100svh;
                 margin: 0;
                 padding: 0;
+                /* Улучшенная поддержка snap скролла */
+                scroll-snap-type: y mandatory;
+                -webkit-overflow-scrolling: touch;
+                overflow-x: hidden;
             }
         }
         
@@ -81,9 +95,6 @@
                 min-height: 100svh;
                 margin: 0;
                 padding: 0;
-                /* Добавляем поддержку для мобильных браузеров */
-                -webkit-overflow-scrolling: touch;
-                overscroll-behavior: none;
             }
             body {
                 background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
@@ -93,9 +104,6 @@
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
-                /* Добавляем поддержку для мобильных браузеров */
-                -webkit-overflow-scrolling: touch;
-                overscroll-behavior: none;
             }
         }
         
@@ -583,6 +591,10 @@
             padding-top: 24px;
             padding-bottom: 24px;
             margin: 0;
+            /* Улучшенная поддержка snap скролла */
+            position: relative;
+            /* Предотвращаем проблемы с высотой на мобильных */
+            box-sizing: border-box;
         }
         
         /* Первая секция должна быть точно в начале */
@@ -604,16 +616,20 @@
                 padding-top: 16px;
                 padding-bottom: 16px;
                 min-height: 100vh;
-                min-height: 100dvh;
-                min-height: 100svh;
-                /* Улучшенная поддержка snap скролла для мобильных */
-                scroll-snap-align: start;
-                /* Предотвращаем проблемы с отображением */
-                transform: translateZ(0);
-                -webkit-transform: translateZ(0);
             }
             section.snap-section:last-child {
                 padding-bottom: 80px;
+            }
+            /* Специальные стили для iOS Safari */
+            @supports (-webkit-touch-callout: none) {
+                section.snap-section {
+                    min-height: 100vh;
+                    min-height: 100dvh;
+                    min-height: 100svh;
+                    /* Дополнительная поддержка для iOS */
+                    -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+                }
             }
         }
         #hero-title-1 {
@@ -945,6 +961,50 @@
                 min-height: 100dvh;
                 min-height: 100svh;
             }
+            
+            /* Дополнительные стили для улучшения snap скролла на мобильных */
+            .snap-section {
+                /* Обеспечиваем правильную высоту на мобильных */
+                height: 100vh;
+                height: 100dvh;
+                height: 100svh;
+                /* Улучшенная поддержка snap */
+                scroll-snap-align: start;
+                /* Предотвращаем проблемы с отображением */
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
+                /* Обеспечиваем правильное позиционирование */
+                position: relative;
+                /* Убираем возможные отступы */
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Специальные стили для iOS Safari */
+            @supports (-webkit-touch-callout: none) {
+                .snap-section {
+                    /* Дополнительная поддержка для iOS */
+                    -webkit-overflow-scrolling: touch;
+                    /* Предотвращаем проблемы с высотой на iOS */
+                    min-height: 100vh;
+                    min-height: 100dvh;
+                    min-height: 100svh;
+                    /* Улучшенная поддержка snap */
+                    scroll-snap-align: start;
+                }
+            }
+            
+            /* Стили для Android Chrome */
+            @media screen and (-webkit-min-device-pixel-ratio: 0) {
+                .snap-section {
+                    /* Дополнительная поддержка для Android */
+                    -webkit-overflow-scrolling: touch;
+                    /* Предотвращаем проблемы с высотой на Android */
+                    min-height: 100vh;
+                    min-height: 100dvh;
+                    min-height: 100svh;
+                }
+            }
         }
     </style>
 </head>
@@ -957,11 +1017,82 @@
             document.body.scrollTop = 0;
         }
         
+        // Улучшенная поддержка snap скролла для мобильных устройств
+        function initMobileSnapScroll() {
+            if (window.innerWidth <= 767) {
+                // Отключаем smooth scroll для лучшего snap скролла на мобильных
+                document.documentElement.style.scrollBehavior = 'auto';
+                document.body.style.scrollBehavior = 'auto';
+                
+                // Добавляем обработчик для предотвращения bounce эффекта на iOS
+                let startY = 0;
+                let startScrollTop = 0;
+                
+                document.addEventListener('touchstart', function(e) {
+                    startY = e.touches[0].clientY;
+                    startScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                }, { passive: true });
+                
+                document.addEventListener('touchmove', function(e) {
+                    const currentY = e.touches[0].clientY;
+                    const deltaY = currentY - startY;
+                    
+                    // Предотвращаем bounce эффект на iOS
+                    if ((startScrollTop <= 0 && deltaY > 0) || 
+                        (startScrollTop >= document.documentElement.scrollHeight - window.innerHeight && deltaY < 0)) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+                
+                // Улучшенная поддержка snap скролла
+                let isScrolling = false;
+                let scrollTimeout;
+                
+                window.addEventListener('scroll', function() {
+                    if (!isScrolling) {
+                        isScrolling = true;
+                    }
+                    
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(function() {
+                        isScrolling = false;
+                        
+                        // Находим ближайшую секцию для snap
+                        const sections = document.querySelectorAll('.snap-section');
+                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        const windowHeight = window.innerHeight;
+                        
+                        sections.forEach((section, index) => {
+                            const sectionTop = section.offsetTop;
+                            const sectionHeight = section.offsetHeight;
+                            const sectionCenter = sectionTop + sectionHeight / 2;
+                            
+                            // Если секция находится в центре экрана, snap к ней
+                            if (Math.abs(currentScroll + windowHeight / 2 - sectionCenter) < windowHeight / 3) {
+                                setTimeout(() => {
+                                    section.scrollIntoView({ 
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                    });
+                                }, 100);
+                            }
+                        });
+                    }, 150);
+                });
+            }
+        }
+        
         // Прокручиваем только при загрузке страницы
-        window.addEventListener('load', scrollToTop);
+        window.addEventListener('load', function() {
+            scrollToTop();
+            initMobileSnapScroll();
+        });
         
         // Прокручиваем при DOMContentLoaded
-        document.addEventListener('DOMContentLoaded', scrollToTop);
+        document.addEventListener('DOMContentLoaded', function() {
+            scrollToTop();
+            initMobileSnapScroll();
+        });
         
         // Прокручиваем сразу при загрузке
         scrollToTop();
@@ -970,6 +1101,39 @@
         setTimeout(scrollToTop, 50);
         setTimeout(scrollToTop, 100);
         setTimeout(scrollToTop, 500);
+        
+        // Инициализируем snap скролл при изменении размера окна
+        window.addEventListener('resize', function() {
+            initMobileSnapScroll();
+        });
+        
+        // Дополнительная инициализация для мобильных устройств
+        if (window.innerWidth <= 767) {
+            // Принудительно устанавливаем правильную высоту для всех секций
+            function setSectionHeights() {
+                const sections = document.querySelectorAll('.snap-section');
+                const viewportHeight = window.innerHeight;
+                
+                sections.forEach(section => {
+                    section.style.height = viewportHeight + 'px';
+                    section.style.minHeight = viewportHeight + 'px';
+                });
+            }
+            
+            // Устанавливаем высоту при загрузке и изменении размера
+            setSectionHeights();
+            window.addEventListener('resize', setSectionHeights);
+            
+            // Дополнительная поддержка для iOS Safari
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Принудительно пересчитываем высоту на iOS
+                    setTimeout(setSectionHeights, 100);
+                    setTimeout(setSectionHeights, 500);
+                    setTimeout(setSectionHeights, 1000);
+                });
+            }
+        }
     </script>
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
