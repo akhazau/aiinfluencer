@@ -15,7 +15,7 @@
         :root {
             --button-width: 0.64;
             --bg-gradient: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            --min-height: 100vh, 100dvh, 100svh;
+            --min-height: 100vh;
         }
         
         /* === BASE HTML & BODY STYLES === */
@@ -23,11 +23,10 @@
             margin: 0;
             padding: 0;
             background: var(--bg-gradient);
-            scroll-behavior: auto;
+            scroll-behavior: smooth;
             scroll-snap-type: y mandatory;
-            -webkit-overflow-scrolling: touch;
             overflow-x: hidden;
-            min-height: var(--min-height);
+            min-height: 100vh;
         }
         
         html { width: 100%; }
@@ -199,8 +198,8 @@
             .support-mail-btn { margin-left: 8px; font-size: 0.95rem; padding: 4px 10px; }
         }
         section.snap-section {
-            min-height: 100vh; scroll-snap-align: start; display: flex; flex-direction: column;
-            justify-content: flex-start; padding: 24px 0; margin: 0; position: relative; box-sizing: border-box;
+            scroll-snap-align: start;
+            min-height: 100vh;
         }
         section.snap-section:not(#hero-section) { padding-top: 24px; }
         section.snap-section:first-child { scroll-snap-align: start; }
@@ -210,7 +209,7 @@
             section.snap-section { padding: 16px 0; min-height: 100vh; }
             section.snap-section:last-child { padding-bottom: 80px; }
             @supports (-webkit-touch-callout: none) {
-                section.snap-section { min-height: 100vh, 100dvh, 100svh; -webkit-transform: translateZ(0); transform: translateZ(0); }
+                section.snap-section { min-height: 100vh; -webkit-transform: translateZ(0); transform: translateZ(0); }
             }
         }
         #hero-title-1 { display: block; }
@@ -305,58 +304,7 @@
 </head>
 <body class="bg-gradient-to-b from-slate-900 to-slate-800">
     <script>
-        function scrollToTop() { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }
-        
-        function initMobileSnapScroll() {
-            if (window.innerWidth <= 767) {
-                document.documentElement.style.scrollBehavior = document.body.style.scrollBehavior = 'auto';
-                
-                let startY = 0, startScrollTop = 0;
-                document.addEventListener('touchstart', e => { startY = e.touches[0].clientY; startScrollTop = window.pageYOffset || document.documentElement.scrollTop; }, { passive: true });
-                document.addEventListener('touchmove', e => {
-                    const deltaY = e.touches[0].clientY - startY;
-                    if ((startScrollTop <= 0 && deltaY > 0) || (startScrollTop >= document.documentElement.scrollHeight - window.innerHeight && deltaY < 0)) e.preventDefault();
-                }, { passive: false });
-                
-                let isScrolling = false, scrollTimeout;
-                window.addEventListener('scroll', () => {
-                    if (!isScrolling) isScrolling = true;
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
-                        isScrolling = false;
-                        const sections = document.querySelectorAll('.snap-section');
-                        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                        const windowHeight = window.innerHeight;
-                        
-                        sections.forEach(section => {
-                            const sectionCenter = section.offsetTop + section.offsetHeight / 2;
-                            if (Math.abs(currentScroll + windowHeight / 2 - sectionCenter) < windowHeight / 3) {
-                                setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-                            }
-                        });
-                    }, 150);
-                });
-            }
-        }
-        
-        [window.addEventListener('load', () => { scrollToTop(); initMobileSnapScroll(); }),
-         document.addEventListener('DOMContentLoaded', () => { scrollToTop(); initMobileSnapScroll(); }),
-         window.addEventListener('resize', initMobileSnapScroll)].forEach(fn => fn);
-        
-        scrollToTop(); [50, 100, 500].forEach(delay => setTimeout(scrollToTop, delay));
-        
-        if (window.innerWidth <= 767) {
-            const setSectionHeights = () => {
-                const sections = document.querySelectorAll('.snap-section');
-                const viewportHeight = window.innerHeight;
-                sections.forEach(section => { section.style.height = section.style.minHeight = viewportHeight + 'px'; });
-            };
-            setSectionHeights(); window.addEventListener('resize', setSectionHeights);
-            
-            if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-                document.addEventListener('DOMContentLoaded', () => [100, 500, 1000].forEach(delay => setTimeout(setSectionHeights, delay)));
-            }
-        }
+        // Удалён кастомный JS для snap scroll (initMobileSnapScroll и scrollToTop)
     </script>
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
