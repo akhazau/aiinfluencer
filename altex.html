@@ -34,7 +34,7 @@
 </head>
 <body class="bg-black">
     <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">JS FIX 4</div>
+        <div class="text-3xl font-bold text-white">JS FIX 5</div>
     </section>
     <section class="snap-start flex items-center justify-center bg-slate-800">
         <div class="text-3xl font-bold text-white">Section 2</div>
@@ -61,38 +61,40 @@
 
     <script>
         const root = document.documentElement;
-      
-        // временно выключаем snap, ставим offset = 0, возвращаем snap
-        function hardTop() {
+        
+        // быстрая функция «вернуть на 0 и включить snap»
+        const goTop = () => {
           root.style.scrollSnapType = 'none';
-          // два кадра подряд - чтобы перекрыть ленивую подгрузку шрифтов
-          requestAnimationFrame(()=>scrollTo(0,0));
+          scrollTo(0, 0);
           requestAnimationFrame(()=>{
-            scrollTo(0,0);
+            scrollTo(0, 0);
             root.style.scrollSnapType = 'y mandatory';
           });
-        }
-      
-        /* ───── три случая, когда нужен принудительный возврат ───── */
-        // 1) обычная загрузка страницы
-        addEventListener('load', hardTop);
-      
+        };
+        
+        // 1) первая загрузка
+        addEventListener('DOMContentLoaded', () => requestAnimationFrame(goTop));
+        
         // 2) возврат из bfcache
-        addEventListener('pageshow', e=> e.persisted && hardTop());
-      
-        // 3) подскок после pull-to-refresh
-        let timer;
+        addEventListener('pageshow', e => e.persisted && goTop());
+        
+        // 3) pull-to-refresh: ждём, пока палец отпустят и инерция стихнет
+        let lock = false, idle;
         addEventListener('scroll', () => {
-          // если находимся в «серой зоне» –20…+40 px
-          if (scrollY > -20 && scrollY < 40) {
-            clearTimeout(timer);
-            timer = setTimeout(hardTop, 50);     // ждём, пока скролл успокоится
-          }
+          clearTimeout(idle);
+          idle = setTimeout(()=>{
+            // если находимся в пределах 0 ± 80 px → выравниваем
+            if (scrollY > -20 && scrollY < 80 && !lock) {
+              lock = true;          // блокируем повторную активацию
+              goTop();
+              setTimeout(()=>lock = false, 300);  // разблокировка
+            }
+          }, 120);                  // дольше, чем рывок Safari
         }, { passive:true });
-      
-        // 4) уходим со страницы – чистим offset, чтобы Safari не кэшировал
-        addEventListener('beforeunload', () => scrollTo(0,0));
-      </script>
+        
+        // 4) перед уходом сбрасываем позицию
+        addEventListener('beforeunload', ()=>scrollTo(0,0));
+        </script>
 
 </body>
 </html> 
