@@ -24,7 +24,7 @@
 <body class="bg-black">
     <div class="scroll-container">
         <section class="bg-gradient-to-b from-slate-900 to-slate-800">
-            <div class="text-3xl font-bold text-white">SDWIG SNAP</div>
+            <div class="text-3xl font-bold text-white">SDWIG</div>
         </section>
         <section class="bg-gradient-to-b from-slate-800 to-slate-900">
             <div class="text-3xl font-bold text-white">Section 2</div>
@@ -50,21 +50,18 @@
         <div class="h-px"></div>
     </div>
     <script>
-    // Микросдвиг для скрытия тулбара на iOS
-    let scrollTimeout;
+    // Простой микросдвиг для скрытия тулбара на iOS
+    let timeout;
     document.querySelector('.scroll-container').addEventListener('scroll', function() {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(function() {
-            // Триггер микросдвига для скрытия адресной строки на iOS
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
             if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                document.body.scrollTop += 1;
                 setTimeout(() => {
-                    window.scrollBy(0, 1);
-                    setTimeout(() => {
-                        window.scrollBy(0, -1);
-                    }, 10);
-                }, 100);
+                    document.body.scrollTop -= 1;
+                }, 50);
             }
-        }, 150);
+        }, 200);
     });
     </script>
 </body>
