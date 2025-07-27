@@ -1,37 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full overflow-y-auto snap-y snap-mandatory">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Snap Scroll Tailwind Test</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 1. Браузер не должен скроллить body */
-        html, body {
-            height: 100%;
-            margin: 0;
-            overscroll-behavior-y: none;
-        }
-        body {
-            overflow: hidden;
-        }
-        
-        /* 2. Скроллим внутренний wrapper */
-        .scroll {
+        html {
             height: 100%;
             overflow-y: auto;
             scroll-snap-type: y mandatory;
             -webkit-overflow-scrolling: touch;
         }
-        
-        /* 3. Секции на полный экран */
+        body {
+            min-height: 100%;
+            margin: 0;
+        }
         section {
             height: 100svh;
             scroll-snap-align: start;
+            scroll-snap-stop: always;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+        
         @supports (height: 100dvh) {
             section {
                 height: 100dvh;
@@ -40,31 +33,68 @@
     </style>
 </head>
 <body class="bg-black">
-    <main class="scroll">
-        <section class="bg-slate-900">
-            <div class="text-3xl font-bold text-white">PURE CSS</div>
-        </section>
-        <section class="bg-slate-800">
-            <div class="text-3xl font-bold text-white">Section 2</div>
-        </section>
-        <section class="bg-slate-900">
-            <div class="text-3xl font-bold text-white">Section 3</div>
-        </section>
-        <section class="bg-slate-800">
-            <div class="text-3xl font-bold text-white">Section 4</div>
-        </section>
-        <section class="bg-slate-900">
-            <div class="text-3xl font-bold text-white">Section 5</div>
-        </section>
-        <section class="bg-slate-800">
-            <div class="text-3xl font-bold text-white">Section 6</div>
-        </section>
-        <section class="bg-slate-900">
-            <div class="text-3xl font-bold text-white">Section 7</div>
-        </section>
-        <section class="bg-slate-800">
-            <div class="text-3xl font-bold text-white">Section 8</div>
-        </section>
-    </main>
+    <section class="snap-start flex items-center justify-center bg-slate-900">
+        <div class="text-3xl font-bold text-white">FIX</div>
+    </section>
+    <section class="snap-start flex items-center justify-center bg-slate-800">
+        <div class="text-3xl font-bold text-white">Section 2</div>
+    </section>
+    <section class="snap-start flex items-center justify-center bg-slate-900">
+        <div class="text-3xl font-bold text-white">Section 3</div>
+    </section>
+    <section class="snap-start flex items-center justify-center bg-slate-800">
+        <div class="text-3xl font-bold text-white">Section 4</div>
+    </section>
+    <section class="snap-start flex items-center justify-center bg-slate-900">
+        <div class="text-3xl font-bold text-white">Section 5</div>
+    </section>
+    <section class="snap-start flex items-center justify-center bg-slate-800">
+        <div class="text-3xl font-bold text-white">Section 6</div>
+    </section>
+    <section class="snap-start flex items-center justify-center bg-slate-900">
+        <div class="text-3xl font-bold text-white">Section 7</div>
+    </section>
+    <section class="snap-start flex items-center justify-center bg-slate-800">
+        <div class="text-3xl font-bold text-white">Section 8</div>
+    </section>
+    <div style="height:1px"></div>
+
+    <script>
+        const root = document.documentElement;
+        
+        // быстрая функция «вернуть на 0 и включить snap»
+        const goTop = () => {
+          root.style.scrollSnapType = 'none';
+          scrollTo(0, 0);
+          requestAnimationFrame(()=>{
+            scrollTo(0, 0);
+            root.style.scrollSnapType = 'y mandatory';
+          });
+        };
+        
+        // 1) первая загрузка
+        addEventListener('DOMContentLoaded', () => requestAnimationFrame(goTop));
+        
+        // 2) возврат из bfcache
+        addEventListener('pageshow', e => e.persisted && goTop());
+        
+        // 3) pull-to-refresh: ждём, пока палец отпустят и инерция стихнет
+        let lock = false, idle;
+        addEventListener('scroll', () => {
+          clearTimeout(idle);
+          idle = setTimeout(()=>{
+            // если находимся в пределах 0 ± 80 px → выравниваем
+            if (scrollY > -20 && scrollY < 80 && !lock) {
+              lock = true;          // блокируем повторную активацию
+              goTop();
+              setTimeout(()=>lock = false, 300);  // разблокировка
+            }
+          }, 120);                  // дольше, чем рывок Safari
+        }, { passive:true });
+        
+        // 4) перед уходом сбрасываем позицию
+        addEventListener('beforeunload', ()=>scrollTo(0,0));
+        </script>
+
 </body>
 </html> 
