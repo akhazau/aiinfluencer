@@ -516,33 +516,10 @@
         }
         body {
             scroll-snap-type: y mandatory;
-            -webkit-overflow-scrolling: touch;
         }
         
         section.snap-section {
             scroll-snap-align: start;
-            scroll-snap-stop: always;
-        }
-        
-        /* Поддержка для браузеров без snap-скроллинга */
-        @supports not (scroll-snap-type: y mandatory) {
-            body {
-                scroll-behavior: smooth;
-            }
-            section.snap-section {
-                scroll-margin-top: 0;
-            }
-        }
-        
-        /* Дополнительная поддержка для Safari */
-        @supports (-webkit-scroll-snap-type: y mandatory) {
-            body {
-                -webkit-scroll-snap-type: y mandatory;
-            }
-            section.snap-section {
-                -webkit-scroll-snap-align: start;
-                -webkit-scroll-snap-stop: always;
-            }
         }
         section.snap-section:not(#hero-section) {
             padding-top: 74px;
@@ -1561,34 +1538,7 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-                // Простая поддержка клавиш для десктопа (без перехвата скролла)
-        if (window.innerWidth >= 768) {
-          document.addEventListener('keydown', function(e) {
-            const sections = document.querySelectorAll('.snap-section');
-            const currentSection = document.querySelector('.snap-section:target') || sections[0];
-            
-            if (!currentSection) return;
-            
-            const currentIndex = Array.from(sections).indexOf(currentSection);
-            let nextIndex = currentIndex;
-            
-            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-              nextIndex = Math.min(currentIndex + 1, sections.length - 1);
-            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-              nextIndex = Math.max(currentIndex - 1, 0);
-            } else {
-              return;
-            }
-            
-            if (nextIndex !== currentIndex) {
-              e.preventDefault();
-              sections[nextIndex].scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          });
-        }
+        
         
         // Определяем язык до первого использования
         let lang = localStorage.getItem('selectedLang') || 'en';
