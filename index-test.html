@@ -517,7 +517,6 @@
         body {
             scroll-snap-type: y mandatory;
             -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
         }
         
         section.snap-section {
@@ -534,12 +533,24 @@
                 scroll-margin-top: 0;
             }
         }
+        
+        /* Дополнительная поддержка для Safari */
+        @supports (-webkit-scroll-snap-type: y mandatory) {
+            body {
+                -webkit-scroll-snap-type: y mandatory;
+            }
+            section.snap-section {
+                -webkit-scroll-snap-align: start;
+                -webkit-scroll-snap-stop: always;
+            }
+        }
         section.snap-section:not(#hero-section) {
             padding-top: 74px;
         }
         section.snap-section {
             min-height: 100vh;
             scroll-snap-align: start;
+            scroll-snap-stop: always;
             display: flex;
             flex-direction: column;
             justify-content: center;
