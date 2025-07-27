@@ -519,6 +519,11 @@
             -webkit-overflow-scrolling: touch;
         }
         
+        section.snap-section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+        
         /* Поддержка для браузеров без snap-скроллинга */
         @supports not (scroll-snap-type: y mandatory) {
             body {
@@ -526,17 +531,6 @@
             }
             section.snap-section {
                 scroll-margin-top: 0;
-            }
-        }
-        
-        /* Дополнительная поддержка для десктопа */
-        @media (min-width: 768px) {
-            body {
-                scroll-snap-type: y mandatory;
-            }
-            section.snap-section {
-                scroll-snap-align: start;
-                scroll-snap-stop: always;
             }
         }
         section.snap-section:not(#hero-section) {
@@ -551,6 +545,13 @@
             gap: 2.5rem;
             padding-top: 48px;
             padding-bottom: 48px;
+        }
+        
+        /* Убираем лишние отступы для десктопа */
+        @media (min-width: 768px) {
+            section.snap-section {
+                padding-bottom: 24px;
+            }
         }
 
         /* Адаптация snap-section для планшетов */
@@ -1194,7 +1195,7 @@
                   </div>
                 </div>
               </div>
-              <div class="scroll-stack-end"></div>
+
             </div>
           </div>
         </div>
@@ -1548,15 +1549,55 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-                // Простая поддержка snap-скроллинга для десктопа
+                // Улучшенная поддержка snap-скроллинга для десктопа
         if (window.innerWidth >= 768) {
-          // Добавляем поддержку клавиш для навигации
+          const sections = document.querySelectorAll('.snap-section');
+          let isScrolling = false;
+          
+          // Функция для определения текущей секции
+          function getCurrentSection() {
+            const scrollTop = window.pageYOffset;
+            for (let section of sections) {
+              const rect = section.getBoundingClientRect();
+              if (rect.top <= 100 && rect.bottom >= 100) {
+                return section;
+              }
+            }
+            return sections[0];
+          }
+          
+          // Обработка колесика мыши
+          document.addEventListener('wheel', function(e) {
+            if (isScrolling) {
+              e.preventDefault();
+              return;
+            }
+            
+            const currentSection = getCurrentSection();
+            const currentIndex = Array.from(sections).indexOf(currentSection);
+            const direction = e.deltaY > 0 ? 1 : -1;
+            const nextIndex = Math.max(0, Math.min(sections.length - 1, currentIndex + direction));
+            
+            if (nextIndex !== currentIndex) {
+              e.preventDefault();
+              isScrolling = true;
+              
+              sections[nextIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              
+              setTimeout(() => {
+                isScrolling = false;
+              }, 1000);
+            }
+          }, { passive: false });
+          
+          // Обработка клавиш
           document.addEventListener('keydown', function(e) {
-            const sections = document.querySelectorAll('.snap-section');
-            const currentSection = document.querySelector('.snap-section:target') || sections[0];
+            if (isScrolling) return;
             
-            if (!currentSection) return;
-            
+            const currentSection = getCurrentSection();
             const currentIndex = Array.from(sections).indexOf(currentSection);
             let nextIndex = currentIndex;
             
@@ -1570,10 +1611,16 @@
             
             if (nextIndex !== currentIndex) {
               e.preventDefault();
+              isScrolling = true;
+              
               sections[nextIndex].scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
               });
+              
+              setTimeout(() => {
+                isScrolling = false;
+              }, 1000);
             }
           });
         }
