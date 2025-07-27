@@ -5,30 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Snap Scroll Tailwind Test</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            scroll-snap-type: y mandatory;
+            overflow-y: auto;
+        }
+        section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body class="bg-black snap-y snap-mandatory">
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800">
-        <div class="text-3xl font-bold text-white">TAILWIND SNAP</div>
+<body class="bg-black">
+    <section class="bg-gradient-to-b from-slate-900 to-slate-800">
+        <div class="text-3xl font-bold text-white">CUSTOM CSS SNAP</div>
     </section>
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-800 to-slate-900">
+    <section class="bg-gradient-to-b from-slate-800 to-slate-900">
         <div class="text-3xl font-bold text-white">Section 2</div>
     </section>
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800">
+    <section class="bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="text-3xl font-bold text-white">Section 3</div>
     </section>
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-800 to-slate-900">
+    <section class="bg-gradient-to-b from-slate-800 to-slate-900">
         <div class="text-3xl font-bold text-white">Section 4</div>
     </section>
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800">
+    <section class="bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="text-3xl font-bold text-white">Section 5</div>
     </section>
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-800 to-slate-900">
+    <section class="bg-gradient-to-b from-slate-800 to-slate-900">
         <div class="text-3xl font-bold text-white">Section 6</div>
     </section>
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800">
+    <section class="bg-gradient-to-b from-slate-900 to-slate-800">
         <div class="text-3xl font-bold text-white">Section 7</div>
     </section>
-    <section class="h-screen snap-start flex items-center justify-center bg-gradient-to-b from-slate-900 to-rose-950">
+    <section class="bg-gradient-to-b from-slate-900 to-rose-950">
         <div class="text-3xl font-bold text-white">Section 8</div>
     </section>
     <div class="h-px"></div>
