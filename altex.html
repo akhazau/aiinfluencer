@@ -33,8 +33,30 @@
     </style>
 </head>
 <body class="bg-black">
+
+    <script>
+        (function () {
+          // Safari 15+ поддерживает Navigation Timing L2
+          const nav = performance.getEntriesByType('navigation')[0];
+          if (!nav) return;                         // старые браузеры: ничего не делаем
+        
+          const isReload = nav.type === 'reload';   // жест PTR или клик по 🔄
+          const alreadyFixed = sessionStorage.getItem('ptrFixed');
+        
+          if (isReload && !alreadyFixed) {
+            // 1-й проход после pull-to-refresh → перезагружаем «по-чистому»
+            sessionStorage.setItem('ptrFixed', '1');
+            location.replace(window.location.href); // без добавления в историю
+          } else {
+            // обычная загрузка или 2-й проход → снимаем флаг и гарантированно наверх
+            sessionStorage.removeItem('ptrFixed');
+            requestAnimationFrame(() => scrollTo(0, 0));
+          }
+        })();
+        </script>
+
     <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">FI</div>
+        <div class="text-3xl font-bold text-white">FIX 1</div>
     </section>
     <section class="snap-start flex items-center justify-center bg-slate-800">
         <div class="text-3xl font-bold text-white">Section 2</div>
