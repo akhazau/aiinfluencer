@@ -1,40 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full overflow-y-auto snap-y snap-mandatory">
+<html lang="en" class="h-full snap-y snap-mandatory">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Snap Scroll Tailwind Test</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        html {
-            height: 100%;
-            overflow-y: auto;
-            scroll-snap-type: y mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        body {
-            min-height: 100%;
-            margin: 0;
-        }
-        section {
-            height: 100svh;
-            scroll-snap-align: start;
-            scroll-snap-stop: always;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        @supports (height: 100dvh) {
-            section {
-                height: 100dvh;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Snap Scroll demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ---------- базовый фон, перекрывающий всё ---------- */
+    :root{
+      --safe-bg:#0f172a;           /* самый тёмный из ваших градиентов */
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--safe-bg);  /* виден в оверскролле и safe-area */
+      overflow-y:auto;
+      scroll-snap-type:y mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
+    /* «подложка», на случай когда секция короче safe-area */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:var(--safe-bg);
+      z-index:-1;
+    }
+
+    /* ---------- секции ---------- */
+    section{
+      height:100svh;              /* надёжнее, чем 100vh на iOS */
+      scroll-snap-align:start;
+      scroll-snap-stop:always;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    @supports (height:100dvh){
+      section{height:100dvh;}
+    }
+  </style>
 </head>
-<body class="m-0">
+
+<body class="text-white font-bold">
     <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">NO BLACK BARS</div>
+        <div class="text-3xl font-bold text-white">NO BARS</div>
     </section>
     <section class="snap-start flex items-center justify-center bg-slate-800">
         <div class="text-3xl font-bold text-white">Section 2</div>
@@ -59,76 +71,53 @@
     </section>
     <div style="height:1px"></div>
 
-    <script>
-        const root = document.documentElement;
-        
-        // быстрая функция «вернуть на 0 и включить snap»
-        const goTop = () => {
-          root.style.scrollSnapType = 'none';
-          scrollTo(0, 0);
-          requestAnimationFrame(()=>{
-            scrollTo(0, 0);
-            root.style.scrollSnapType = 'y mandatory';
-          });
-        };
-        
-        // 1) первая загрузка
-        addEventListener('DOMContentLoaded', () => requestAnimationFrame(goTop));
-        
-        // 2) возврат из bfcache
-        addEventListener('pageshow', e => e.persisted && goTop());
-        
-        // 3) pull-to-refresh: ждём, пока палец отпустят и инерция стихнет
-        let lock = false, idle;
-        addEventListener('scroll', () => {
-          clearTimeout(idle);
-          idle = setTimeout(()=>{
-            // если находимся в пределах 0 ± 80 px → выравниваем
-            if (scrollY > -20 && scrollY < 80 && !lock) {
-              lock = true;          // блокируем повторную активацию
-              goTop();
-              setTimeout(()=>lock = false, 300);  // разблокировка
-            }
-          }, 120);                  // дольше, чем рывок Safari
-        }, { passive:true });
-        
-        // 4) перед уходом сбрасываем позицию
-        addEventListener('beforeunload', ()=>scrollTo(0,0));
-        </script>
+  <!-- ---------- JS-фиксы ---------- -->
+  <script>
+    const root = document.documentElement;
 
-        <script>
-            // ---------- блокировка pull-to-refresh ----------
-            let startY = 0, pulling = false;
-            
-            function onTouchStart(e) {
-            if (scrollY === 0) {
-                startY = e.touches[0].clientY;   // запоминаем, где начали
-                pulling = true;
-            }
-            }
-            
-            function onTouchMove(e) {
-            if (!pulling) return;
-            const y = e.touches[0].clientY;
-            const dy = y - startY;
-            
-            // тащим вниз (dy > 0) и всё ещё в самом верху
-            if (dy > 0 && scrollY === 0) {
-                e.preventDefault();              // глушим PTR
-            } else if (dy < 0) {
-                // пошёл скролл вверх — снимаем блок
-                pulling = false;
-            }
-            }
-            
-            function onTouchEnd() {
-            pulling = false;
-            }
-            
-            addEventListener('touchstart', onTouchStart, {passive: false});
-            addEventListener('touchmove',  onTouchMove,  {passive: false});
-            addEventListener('touchend',   onTouchEnd,   {passive: true});
-            </script>
+    // выравнивание + временное отключение snap, чтобы не дёргало
+    const goTop = () => {
+      root.style.scrollSnapType = 'none';
+      scrollTo(0,0);
+      requestAnimationFrame(()=>{
+        scrollTo(0,0);
+        root.style.scrollSnapType = 'y mandatory';
+      });
+    };
 
+    /* 1. первая загрузка */
+    addEventListener('DOMContentLoaded', () => requestAnimationFrame(goTop));
+
+    /* 2. возврат из bfcache */
+    addEventListener('pageshow', e => e.persisted && goTop());
+
+    /* 3. pull-to-refresh — ловим инерцию и выравниваем, если почти вверху */
+    let lock=false, idle;
+    addEventListener('scroll', () => {
+      clearTimeout(idle);
+      idle=setTimeout(()=>{
+        if (scrollY>-20 && scrollY<80 && !lock){
+          lock=true;
+          goTop();
+          setTimeout(()=>lock=false,300);
+        }
+      },120);
+    }, {passive:true});
+
+    /* 4. перед уходом обнуляем позицию, чтобы iOS не кэшировала смещение */
+    addEventListener('beforeunload', ()=>scrollTo(0,0));
+
+    /* 5. блокируем системный pull-to-refresh (по желанию) */
+    let startY=0, pulling=false;
+    addEventListener('touchstart', e=>{
+      if (scrollY===0){ startY=e.touches[0].clientY; pulling=true; }
+    },{passive:false});
+    addEventListener('touchmove', e=>{
+      if(!pulling) return;
+      const dy=e.touches[0].clientY-startY;
+      if(dy>0 && scrollY===0){ e.preventDefault(); } else if(dy<0){ pulling=false; }
+    },{passive:false});
+    addEventListener('touchend',()=>pulling=false,{passive:true});
+  </script>
 </body>
-</html> 
+</html>
