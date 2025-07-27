@@ -34,7 +34,7 @@
 </head>
 <body class="bg-black">
     <section class="snap-start flex items-center justify-center bg-slate-900">
-        <div class="text-3xl font-bold text-white">JS FIX 2</div>
+        <div class="text-3xl font-bold text-white">JS FIX 3</div>
     </section>
     <section class="snap-start flex items-center justify-center bg-slate-800">
         <div class="text-3xl font-bold text-white">Section 2</div>
@@ -60,25 +60,28 @@
     <div style="height:1px"></div>
 
     <script>
-        history.scrollRestoration = 'manual';   // отключаем встроенный restore
+        history.scrollRestoration = 'manual';
       
-        const forceTop = () => {                // двойной сброс
+        // функция-сброс с временным отключением snap
+        const forceTop = () => {
+          const root = document.documentElement;
+      
+          // 1. Временно убираем snap
+          const prevSnap = root.style.scrollSnapType;
+          root.style.scrollSnapType = 'none';
+      
+          // 2. Двойной scrollTo — на случай отложенной верстки
           scrollTo(0, 0);
-          setTimeout(() => scrollTo(0, 0), 0);
+          requestAnimationFrame(() => scrollTo(0, 0));
+      
+          // 3. Возвращаем snap через пару кадров
+          setTimeout(() => { root.style.scrollSnapType = prevSnap || 'y mandatory'; }, 40);
         };
       
-        /* 1) нормальный reload  +  pull-to-refresh */
-        addEventListener('load', () => {
-          requestAnimationFrame(forceTop);      // ждём, пока Safari «допрыгнет»
-        });
-      
-        /* 2) возврат из bfcache (iOS держит старый offset) */
-        addEventListener('pageshow', e => {
-          if (e.persisted) forceTop();
-        });
-      
-        /* 3) уходим со страницы — обнуляем, чтобы в кэш не попало смещение */
-        addEventListener('beforeunload', forceTop);
+        /* ───────── события ───────── */
+        addEventListener('load',       () => forceTop());              // обычная загрузка + pull-to-refresh
+        addEventListener('pageshow', e => e.persisted && forceTop());  // возврат из bfcache
+        addEventListener('beforeunload', forceTop);                    // уходим--> чистим offset
       </script>
 </body>
 </html> 
