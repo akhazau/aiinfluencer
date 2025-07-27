@@ -61,39 +61,38 @@
 
     <script>
         const root = document.documentElement;
+        history.scrollRestoration = 'manual';
         
-        // быстрая функция «вернуть на 0 и включить snap»
-        const goTop = () => {
+        let pulled = false;     // была отрицательная прокрутка
+        let jump  = false;      // зафиксировали рывок Safari
+        
+        const forceTop = () => {
           root.style.scrollSnapType = 'none';
-          scrollTo(0, 0);
+          scrollTo(0,0);
           requestAnimationFrame(()=>{
-            scrollTo(0, 0);
+            scrollTo(0,0);
             root.style.scrollSnapType = 'y mandatory';
+            pulled = jump = false;           // сброс флагов
           });
         };
         
-        // 1) первая загрузка
-        addEventListener('DOMContentLoaded', () => requestAnimationFrame(goTop));
-        
-        // 2) возврат из bfcache
-        addEventListener('pageshow', e => e.persisted && goTop());
-        
-        // 3) pull-to-refresh: ждём, пока палец отпустят и инерция стихнет
-        let lock = false, idle;
         addEventListener('scroll', () => {
-          clearTimeout(idle);
-          idle = setTimeout(()=>{
-            // если находимся в пределах 0 ± 80 px → выравниваем
-            if (scrollY > -20 && scrollY < 80 && !lock) {
-              lock = true;          // блокируем повторную активацию
-              goTop();
-              setTimeout(()=>lock = false, 300);  // разблокировка
-            }
-          }, 120);                  // дольше, чем рывок Safari
-        }, { passive:true });
+          const y = scrollY;
         
-        // 4) перед уходом сбрасываем позицию
-        addEventListener('beforeunload', ()=>scrollTo(0,0));
+          // 1) фиксируем, что пользователь тянул вниз
+          if (y < 0) pulled = true;
+        
+          // 2) Safari дал «рывок» вперёд после того, как было 0 px
+          if (pulled && !jump && y > 40) {   // порог-фильтр 40 px
+            jump = true;
+            forceTop();
+          }
+        }, {passive:true});
+        
+        // Первая загрузка / выход из bfcache
+        addEventListener('DOMContentLoaded',   () => scrollTo(0,0));
+        addEventListener('pageshow', e => e.persisted && scrollTo(0,0));
+        addEventListener('beforeunload',       () => scrollTo(0,0));
         </script>
 
 </body>
