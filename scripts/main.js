@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   changeLanguage(localStorage.getItem("selectedLang") || "en");
 
-  // Слайдер изображений (final-cta)
+  // Слайдер изображений (HERO)
   const sliderImages = [
     "media/av01.png",
     "media/av02.png",
