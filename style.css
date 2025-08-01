@@ -87,6 +87,11 @@ section.snap-section {
     max-width: 105% !important;
     transform: scale(0.95) !important;
   }
+  
+  /* Скрываем scroll-stack-spacer на десктопе */
+  .scroll-stack-spacer {
+    display: none !important;
+  }
 }
 
 /* Скрываем скроллбар для горизонтального скролла */
