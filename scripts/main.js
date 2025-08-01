@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Price Section
       "price-title-start": "Ambition &",
       "price-title-gradient": "AI Tools",
-      "price-title-middle": "> Successful ",
+      "price-title-middle": "› Successful ",
       "price-title-end": "AI Influencer",
       "price-subtitle":
         "No studio, no makeup, no crew, no shooting — all for the price of a T-shirt. ",
