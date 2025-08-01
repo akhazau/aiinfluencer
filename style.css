@@ -82,6 +82,13 @@ section.snap-section {
   section.snap-section:last-child {
     padding-bottom: 80px;
   }
+  
+  /* Увеличение изображения на 5% только на мобильной версии */
+  .mobile-hero-img {
+    height: 95% !important;
+    max-width: 105% !important;
+    transform: scale(0.95) !important;
+  }
 }
 
 /* Скрываем скроллбар для горизонтального скролла */
