@@ -50,7 +50,6 @@ section.snap-section {
   
   /* Исправление для PRICE секции на десктопе */
   #price-section.snap-section {
-    min-height: 100vh;
     height: auto;
     padding-bottom: 48px;
   }
