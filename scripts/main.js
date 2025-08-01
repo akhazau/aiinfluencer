@@ -584,7 +584,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const totalMinutes = hours * 60 + minutes;
       const salesToday = Math.floor(3 + (totalMinutes * 45) / 1440); // 1440 минут в сутках
 
-      courseSalesCounterEl.textContent = Math.min(salesToday, 48);
+      courseSalesCounterEl.innerHTML = `<span class="text-green-300">${Math.min(salesToday, 48)}</span>`;
     }
 
     // Обновляем каждую минуту
