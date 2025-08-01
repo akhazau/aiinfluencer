@@ -55,6 +55,11 @@ section.snap-section {
     justify-content: flex-start !important;
     padding-bottom: 48px;
   }
+  
+  /* Скрываем scroll-stack-spacer на десктопе */
+  .scroll-stack-spacer {
+    display: none !important;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -86,11 +91,6 @@ section.snap-section {
     height: 95% !important;
     max-width: 105% !important;
     transform: scale(0.95) !important;
-  }
-  
-  /* Скрываем scroll-stack-spacer на десктопе */
-  .scroll-stack-spacer {
-    display: none !important;
   }
 }
 
