@@ -54,12 +54,9 @@ section.snap-section {
     padding-bottom: 48px;
   }
   
-            /* Исправление для футера на десктопе */
-          footer {
-            width: 100%;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-          }
+
+  
+  
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
