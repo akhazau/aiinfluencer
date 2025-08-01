@@ -47,6 +47,12 @@ section.snap-section {
   section.snap-section {
     padding-bottom: 24px;
   }
+  
+  /* Исправление для PRICE секции на десктопе */
+  #price-section.snap-section {
+    min-height: 100vh;
+    height: auto;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
