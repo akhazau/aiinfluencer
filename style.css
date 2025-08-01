@@ -54,12 +54,12 @@ section.snap-section {
     padding-bottom: 48px;
   }
   
-  /* Исправление для футера на десктопе */
-  footer {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-  }
+            /* Исправление для футера на десктопе */
+          footer {
+            width: 100%;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+          }
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -278,12 +278,12 @@ section.snap-section {
 }
 
 .live-dot {
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.6em;
+  height: 0.6em;
   border-radius: 50%;
   background: #ffe066;
   display: inline-block;
-  margin-right: 0.5em;
+  margin-right: 0.4em;
   animation: blink-dot 1.1s infinite;
 }
 
@@ -597,7 +597,7 @@ section.snap-section {
   text-align: center;
   color: #ff4fa3;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: normal;
   vertical-align: middle;
   margin: 0 0.1rem 0 0.1rem;
   animation: blink-colon 1s steps(1, start) infinite;
