@@ -945,16 +945,43 @@ footer.w-full {
     width: 80vw !important;
   }
   
-  /* Стили для мобильного слайдера бонусов */
-  .scroll-stack-card {
-    position: relative;
-    transition: all 0.5s ease-in-out;
+  /* Стили для карточек бонусов и карты обучения */
+  .bonus-card,
+  .learnmap-card {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/* Плавность для десктопных карточек */
+@media (min-width: 768px) {
+  .bonus-card,
+  .learnmap-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    will-change: transform, opacity;
   }
   
-  .scroll-stack-card:not(:first-child) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  /* Эффект при наведении */
+  .bonus-card:hover,
+  .learnmap-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Плавное появление */
+  .bonus-card,
+  .learnmap-card {
+    animation: cardFadeIn 0.8s ease-out;
+  }
+  
+  @keyframes cardFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 }
