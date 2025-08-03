@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // About Section
       "about-title-text": "Meet Your",
       "about-title-gradient": "Instructor",
-      "about-name": "Leo Lawaro",
+      "about-name": "Leo Lewaro",
       "about-role": "AI Visual Creator & Media Innovator",
 
       "about-exp-pill": "6 years experience",
