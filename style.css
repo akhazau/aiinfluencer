@@ -627,16 +627,33 @@ section.snap-section {
   .banner-inner {
     padding: 0 8px;
     max-width: 100vw;
+    justify-content: space-between;
+    gap: 8px;
   }
   .banner-btn {
-    width: 98vw !important;
+    width: auto !important;
     min-width: 0 !important;
-    max-width: 98vw !important;
+    max-width: 45% !important;
+    font-size: 0.9rem !important;
+    padding: 0 12px !important;
   }
   .support-mail-btn {
     margin-left: 8px;
     font-size: 0.95rem;
     padding: 4px 10px;
+  }
+  #banner-timer {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    flex-shrink: 0;
+  }
+  .timer-value {
+    font-size: 1.2rem !important;
+  }
+  .blinking-colon {
+    font-size: 0.8rem !important;
   }
 }
 
