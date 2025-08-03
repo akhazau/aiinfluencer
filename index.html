@@ -53,8 +53,8 @@
       <!-- Language selector -->
       <div class="absolute top-[32px] right-[30px] md:right-[118px] z-[100]">
         <div class="space-x-2" id="language-selector">
-          <button class="lang-btn active gradient-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white border-none" data-lang="en">EN</button>
-          <button class="lang-btn bg-transparent text-white border border-white" data-lang="ru">RU</button>
+          <button class="lang-btn active gradient-text" data-lang="en" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); color: #fff; border: none;">EN</button>
+          <button class="lang-btn" data-lang="ru" style="background: transparent; color: #fff; border: 1px solid #fff;">RU</button>
         </div>
       </div>
       <!-- Animated background elements -->
@@ -91,8 +91,8 @@
             <!-- Форма компактно -->
             <div id="hero-form-wrap" class="w-[370px]">
               <form id="lead-form" class="flex flex-col gap-[7px] w-full">
-                <div class="gradient-border-wrap rounded-[18px] bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-[length:300%_300%] w-[370px]">
-                  <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px] bg-[#171e2f] border-none outline-none text-[#646464] text-base w-[366px] px-5 py-0" />
+                <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
+                  <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px]" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#646464; font-size:1rem; width: 366px; padding: 0 20px;" />
                 </div>
                 <button id="main-btn" class="animated-gradient-btn text-white w-full rounded-[18px] text-lg flex items-center justify-center gap-2.5 overflow-hidden h-[50px]">
                   <span id="main-btn-text">Get started –</span>
@@ -101,7 +101,7 @@
                 </button>
               </form>
               <!-- В hero-секции -->
-              <div class="live-viewers mx-auto mb-2 ml-6 mt-[13px]" id="live-viewers-row">
+              <div class="live-viewers mx-auto mb-2 ml-6" id="live-viewers-row" style="margin-top: 13px;">
                 <span class="live-dot"></span>
                 <span id="live-viewers-count">21</span> <span id="live-viewers-text">people currently viewing this page</span>
               </div>
@@ -472,8 +472,8 @@
                        id="about-photo">
                 </div>
                   <div class="absolute inset-0 pointer-events-none rounded-2xl"></div>
-                <div class="absolute left-[230px] md:-left-[100px] bottom-4 z-[2]">
-                  <span class="inline-block bg-[#111c22e6] text-white font-semibold text-sm md:text-base px-3.5 py-1 rounded-[22px] border-2.5 border-[#d17dc0] tracking-[0.01em]">6 years experience</span>
+                <div class="absolute left-[240px] md:-left-[130px] bottom-4 z-[2]">
+                  <span style="display:inline-block;background:#111c22e6;color:#fff;font-weight:600;font-size:0.98rem;padding:4px 14px;border-radius:22px;border:2.5px solid #d17dc0;letter-spacing:0.01em;">6 years experience</span>
                 </div>
               </div>
               <div class="md:w-1/2 flex flex-col items-start justify-center">
