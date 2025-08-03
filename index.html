@@ -424,11 +424,22 @@
                   <span class="text-gray-400 text-base mb-4" id="about-role">AI Visual Creator & Media Innovator</span>
                 </div>
                 <div class="text-white mb-8 text-base leading-relaxed sm-test-sm" id="about-desc" style="margin-top:0;">
-                  <span class="block md:inline">For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows.</span>
-                  <span class="hidden md:inline"> With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</span>
-                  <span class="block md:hidden about-desc-mobile-full"> With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</span>
-                  <button class="block md:hidden text-purple-400 hover:text-purple-300 mt-2 text-sm font-medium about-more-btn">more</button>
-                  <button class="hidden md:hidden text-purple-400 hover:text-purple-300 mt-2 text-sm font-medium about-less-btn">less</button>
+                  <!-- Мобильная версия с ограничением в 3 строчки -->
+                  <div class="block md:hidden">
+                    <div class="line-clamp-3" id="about-desc-mobile-short">
+                      For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.
+                    </div>
+                    <div class="hidden" id="about-desc-mobile-full">
+                      For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.
+                    </div>
+                    <button class="text-purple-400 hover:text-purple-300 mt-2 text-sm font-medium about-more-btn">more</button>
+                    <button class="hidden text-purple-400 hover:text-purple-300 mt-2 text-sm font-medium about-less-btn">less</button>
+                  </div>
+                  <!-- Десктопная версия -->
+                  <div class="hidden md:block">
+                    <span>For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows.</span>
+                    <span> With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</span>
+                  </div>
                 </div>
                 <div class="grid grid-cols-2 gap-x-5 gap-y-7 w-full max-w-xl mt-0 md:mt-4">
                   <div class="bg-[#181f2a] rounded-xl p-2 md:p-4 flex flex-col text-left">
