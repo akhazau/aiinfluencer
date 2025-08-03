@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "about-name": "Leo Lawaro",
       "about-role": "AI Visual Creator & Media Innovator",
       "about-desc":
-        "For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.",
+        '<span>For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows.</span><span class="hidden md:block"> With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</span>',
       "about-exp-pill": "6 years experience",
       "about-fact-1-title": "100+ projects",
       "about-fact-1-desc": "Realistic AI characters built for clients",
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "about-name": "Лео Лаваро",
       "about-role": "AI Визуальный Креатор и Медиа-Новатор",
       "about-desc":
-        "За последние 6 лет Лео превратил высокобюджетное производство контента в доступные AI-решения. С опытом в визуальном сторителлинге, он помогает креаторам создавать гиперреалистичный медиа-контент — без дорогого оборудования и технических барьеров.",
+        '<span>За последние 6 лет Лео превратил высокобюджетное производство контента в доступные AI-решения.</span><span class="hidden md:block"> С опытом в визуальном сторителлинге, он помогает креаторам создавать гиперреалистичный медиа-контент — без дорогого оборудования и технических барьеров.</span>',
       "about-exp-pill": "6 лет опыта",
       "about-fact-1-title": "100+ проектов",
       "about-fact-1-desc": "Реалистичные AI-персонажи для клиентов",
