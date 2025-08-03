@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (scrollTop > pinEnd) {
         translateY = pinEnd - cardTop + stackPositionPx + itemStackDistance * i;
       }
-      // Только для мобильных (ширина < 768px)
-      if (window.innerWidth < 768) {
+      // Только для мобильных (ширина < 768px) и только если карточка видима
+      if (window.innerWidth < 768 && card.style.display !== 'none') {
         card.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
-      } else {
+      } else if (window.innerWidth >= 768) {
         card.style.transform = "";
       }
       card.style.zIndex = cards.length - i;
