@@ -610,19 +610,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function showReview(idxToShow) {
-    // Сначала скрываем все отзывы
+    // Сначала скрываем все отзывы с анимацией fade-out
     reviewItems.forEach((el, i) => {
       if (i !== idxToShow) {
-        el.classList.remove("opacity-100", "translate-x-0", "z-10");
-        el.classList.add("opacity-0", "translate-x-full", "z-0");
+        el.classList.add("fade-out");
+        el.classList.remove("fade-in");
+        setTimeout(() => {
+          el.classList.add("hidden");
+          el.classList.remove("block");
+        }, 250); // Половина времени анимации
       }
     });
 
-    // Показываем нужный отзыв с анимацией справа
+    // Показываем нужный отзыв с анимацией fade-in
     const targetReview = reviewItems[idxToShow];
     if (targetReview) {
-      targetReview.classList.remove("opacity-0", "translate-x-full", "z-0");
-      targetReview.classList.add("opacity-100", "translate-x-0", "z-10");
+      targetReview.classList.remove("hidden", "fade-out");
+      targetReview.classList.add("block", "fade-in");
     }
 
     // Обновляем точки
