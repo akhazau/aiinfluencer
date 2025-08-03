@@ -600,15 +600,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Явная инициализация классов отзывов
   reviewItems.forEach((el, i) => {
-    el.classList.toggle("block", i === 0);
-    el.classList.toggle("hidden", i !== 0);
+    if (i === 0) {
+      el.classList.add("block", "fade-in");
+      el.classList.remove("hidden", "fade-out");
+    } else {
+      el.classList.add("hidden");
+      el.classList.remove("block", "fade-in", "fade-out");
+    }
   });
 
   function showReview(idxToShow) {
+    // Сначала скрываем все отзывы с анимацией fade-out
     reviewItems.forEach((el, i) => {
-      el.classList.toggle("block", i === idxToShow);
-      el.classList.toggle("hidden", i !== idxToShow);
+      if (i !== idxToShow) {
+        el.classList.add("fade-out");
+        el.classList.remove("fade-in");
+        setTimeout(() => {
+          el.classList.add("hidden");
+          el.classList.remove("block");
+        }, 250); // Половина времени анимации
+      }
     });
+
+    // Показываем нужный отзыв с анимацией fade-in
+    const targetReview = reviewItems[idxToShow];
+    if (targetReview) {
+      targetReview.classList.remove("hidden", "fade-out");
+      targetReview.classList.add("block", "fade-in");
+    }
+
+    // Обновляем точки
     if (dotsWrap) {
       dotsWrap.innerHTML = "";
       reviewItems.forEach((_, i) => {
