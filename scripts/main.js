@@ -657,4 +657,52 @@ document.addEventListener("DOMContentLoaded", function () {
       showReview(reviewIdx);
     }, 7000);
   }
+
+  // --- Таймер обратного отсчета ---
+  function startTimer() {
+    // Устанавливаем время окончания (3 часа от текущего времени)
+    const now = new Date();
+    const endTime = new Date(now.getTime() + (3 * 60 * 60 * 1000)); // 3 часа
+    
+    function updateTimer() {
+      const currentTime = new Date();
+      const timeLeft = endTime - currentTime;
+      
+      if (timeLeft <= 0) {
+        // Таймер истек, перезапускаем на 3 часа
+        endTime.setTime(endTime.getTime() + (3 * 60 * 60 * 1000));
+        return;
+      }
+      
+      // Вычисляем часы, минуты, секунды
+      const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      
+      // Обновляем все таймеры на странице
+      const timerValues = document.querySelectorAll('.timer-value');
+      timerValues.forEach((el, index) => {
+        if (index % 3 === 0) {
+          el.textContent = hours.toString().padStart(2, '0');
+        } else if (index % 3 === 1) {
+          el.textContent = minutes.toString().padStart(2, '0');
+        } else if (index % 3 === 2) {
+          el.textContent = seconds.toString().padStart(2, '0');
+        }
+      });
+      
+      // Добавляем отладочную информацию
+      console.log(`Timer: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+    }
+    
+    // Обновляем таймер каждую секунду
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+    
+    // Сохраняем интервал для возможной остановки
+    window.timerInterval = timerInterval;
+  }
+  
+  // Запускаем таймер
+  startTimer();
 });
