@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Final CTA Section
       "final-cta-title":
-        'AI Models Will Be a<span class="gradient-text"> $2.5B Industry</span> by 2030',
+        'AI Models Will Be a<span class="gradient-text-inverse"> $2.5B Industry</span> by 2030',
       "final-cta-subtitle":
         "This hype looks like the bitcoin gold rush in 2012!",
       "final-cta-form-title": "Join The Waitlist Now",
