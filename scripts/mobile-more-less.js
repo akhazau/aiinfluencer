@@ -1,6 +1,7 @@
 // MOBILE: Функционал More/Less для текста
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Mobile more/less script loaded");
+  console.log("Window width:", window.innerWidth);
   
   // Проверяем, что мы на мобильном устройстве
   if (window.innerWidth >= 768) {
@@ -52,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Инициализация - скрываем полный текст
   console.log("Initializing more/less functionality");
-  hideFullText();
-  console.log("Initialization complete");
+  
+  // Добавляем небольшую задержку для уверенности, что DOM полностью загружен
+  setTimeout(() => {
+    hideFullText();
+    console.log("Initialization complete");
+  }, 100);
 }); 
