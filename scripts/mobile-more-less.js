@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("More button found:", !!moreBtn);
   console.log("Less button found:", !!lessBtn);
   console.log("Full text found:", !!fullText);
+  
+  if (moreBtn) console.log("More button text:", moreBtn.textContent);
+  if (lessBtn) console.log("Less button text:", lessBtn.textContent);
+  if (fullText) console.log("Full text content:", fullText.textContent);
 
   if (!moreBtn || !lessBtn || !fullText) {
     console.log("Elements not found, exiting");
@@ -42,5 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   lessBtn.addEventListener('click', hideFullText);
 
   // Инициализация - скрываем полный текст
+  console.log("Initializing more/less functionality");
   hideFullText();
+  console.log("Initialization complete");
 }); 
