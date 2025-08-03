@@ -261,12 +261,12 @@
                     </div>
                   </div>
                 </div>
-                <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">GET STARTED – <span class="line-through text-yellow-200 font-normal">$127</span> <span class="text-yellow-300">$27</span></button>
               </div>
             </div>
           </div>
-          <div class="hidden md:block">
-            <div id="price-stack-scroll" class="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10 items-start w-full">
+            <!-- Десктопная версия карточек -->
+            <div class="hidden md:block">
+              <div id="price-stack-scroll" class="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10 items-start w-full">
               <!-- Offer Card -->
               <div class="offer-card bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 w-full max-w-[450px] mx-auto p-8 my-6 flex flex-col">        
                 <h2 class="text-xl md:text-2xl font-semibold text-yellow-300 mb-3" id="price-course-title">AI Influencer 3.0 Course</h2>
@@ -283,10 +283,10 @@
                   <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-6">Ready-made visual framework</span></li>
                   <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-7">Face-swapping explained</span></li>
                 </ul>
-                <button class="animated-gradient-btn hidden md:block text-white rounded-[16px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] mt-8 w-full">
+                <button class="animated-gradient-btn text-white rounded-[16px] text-lg flex items-center justify-center gap-2 overflow-hidden h-[44px] mt-8 w-full">
                   <span id="price-btn-text-desktop">Get started –</span>
                   <span class="line-through text-yellow-500 font-normal" id="price-btn-price-old">$127</span>
-                  <span class="text-yellow-300 text-xl font-bold" id="price-btn-price-new">$27</span>
+                  <span class="text-yellow-300 text-3xl font-bold" id="price-btn-price-new">$27</span>
                   <span class="text-white" id="price-btn-now">NOW</span>
                 </button>
               </div>
@@ -421,7 +421,13 @@
                   <span class="text-purple-300 text-3xl font-bold" id="about-name">Leo Lawaro</span>
                   <span class="text-gray-400 text-base mb-4" id="about-role">AI Visual Creator & Media Innovator</span>
                 </div>
-                <div class="text-white mb-8 text-base leading-relaxed sm-test-sm" id="about-desc" style="margin-top:0;">For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows. With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</div>
+                <div class="text-white mb-8 text-base leading-relaxed sm-test-sm" id="about-desc" style="margin-top:0;">
+                  <span class="block md:inline">For the past 6 years, Leo has been turning high-budget content production into accessible, AI-powered workflows.</span>
+                  <span class="hidden md:inline"> With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</span>
+                  <span class="block md:hidden about-desc-mobile-full"> With a background in visual storytelling, he helps creators produce hyper-realistic media—without expensive equipment or technical barriers.</span>
+                  <button class="block md:hidden text-purple-400 hover:text-purple-300 mt-2 text-sm font-medium about-more-btn">more</button>
+                  <button class="hidden md:hidden text-purple-400 hover:text-purple-300 mt-2 text-sm font-medium about-less-btn">less</button>
+                </div>
                 <div class="grid grid-cols-2 gap-x-5 gap-y-7 w-full max-w-xl mt-0 md:mt-4">
                   <div class="bg-[#181f2a] rounded-xl p-2 md:p-4 flex flex-col text-left">
                     <span class="font-bold text-yellow-500 text-base mb-1" id="about-fact-1-title">100+ projects</span>
@@ -664,5 +670,6 @@
     <script src="scripts/scroll-stack.js"></script>
     <script src="scripts/swipe-overlay.js"></script>
     <script src="scripts/mobile-bonus-slider.js"></script>
+    <script src="scripts/mobile-more-less.js"></script>
 </body>
 </html> 
