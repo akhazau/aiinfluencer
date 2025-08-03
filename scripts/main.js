@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "bonus-4": "No Bots Email Support",
       "learnmap-title": "Learn Map",
       "learnmap-1": "Character setup with pose & style",
-      "learnmap-2": "Realism + image prep for clean angles & details",
+      "learnmap-2": "Realism + image prep for cool angles",
       "learnmap-3": "AI training with no code needed",
       "learnmap-4": "Visual control for emotion & outfit",
       "learnmap-5": "Final touch to merge & publish",
