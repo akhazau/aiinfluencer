@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "hero-title-1": "AI Influencer 3.0",
       "hero-title-2": "ALREADY EASY.",
       "hero-subtitle":
-        'BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master <span class="text-purple-300 font-semibold">AI</span> in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
+        'BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master AI in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
       "main-btn-text": "Get started –",
       "main-btn-price-old": "$127",
       "main-btn-price-new": "$27",
