@@ -1019,3 +1019,18 @@ footer.w-full {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* === PLACEHOLDER FOCUS STYLES === */
+.gradient-border-wrap input::placeholder {
+  color: #646464;
+  transition: color 0.3s ease;
+}
+
+.gradient-border-wrap input:focus::placeholder {
+  color: #10b981; /* Зеленый цвет при фокусе */
+}
+
+/* Альтернативный вариант с более ярким зеленым */
+.gradient-border-wrap input:focus::placeholder {
+  color: #22c55e; /* Более яркий зеленый */
+}
