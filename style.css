@@ -1027,10 +1027,21 @@ footer.w-full {
 }
 
 .gradient-border-wrap input:focus::placeholder {
-  color: #10b981; /* Зеленый цвет при фокусе */
+  color: #16a34a; /* Приглушенный зеленый цвет при фокусе */
 }
 
-/* Альтернативный вариант с более ярким зеленым */
+/* === INPUT TEXT FOCUS STYLES === */
+.gradient-border-wrap input {
+  color: #646464;
+  transition: color 0.3s ease;
+}
+
+.gradient-border-wrap input:focus {
+  color: #3b82f6; /* Яркий синеватый цвет при вводе */
+}
+
+/* === TYPEWRITER EFFECT FOR PLACEHOLDER === */
 .gradient-border-wrap input:focus::placeholder {
-  color: #22c55e; /* Более яркий зеленый */
+  color: #16a34a; /* Приглушенный зеленый цвет при фокусе */
+  transition: color 0.3s ease;
 }
