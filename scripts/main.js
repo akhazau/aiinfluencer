@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "benefits-title-gradient": "Superpower",
       "benefits-desc":
         "AI creates parasocial relationships — people feel emotional connected with media personalities.",
-      "benefits-card-1-title": "Start Feeling Like a Creator",
+      "benefits-card-1-title": "Feeling Like a Artist",
       "benefits-card-1-desc-1":
         "After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.",
       "benefits-card-1-desc-2": 'standing out in a sea of "plastic" AI faces.',
