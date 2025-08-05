@@ -88,14 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
       "learnmap-5": "Final touch to merge & publish",
 
       // Reviews Section
-      "reviews-title": "What",
-      "reviews-title-gradient": "People Say",
+      "reviews-title": "What Our",
+      "reviews-title-gradient": "Students Say",
       "testimonial-subtitle":
         "Why do our AI model-makers keep sharing the course with friends?",
 
       // About Section
       "about-title-text": "Meet Your",
-      "about-title-gradient": "Instructor",
+      "about-title-gradient": "Mentor",
       "about-name": "Leo Lewaro",
       "about-role": "AI Visual Creator & Media Innovator",
 
@@ -113,21 +113,21 @@ document.addEventListener("DOMContentLoaded", function () {
       "faq-title": "Frequently Asked",
       "faq-title-gradient": "Questions",
       "faq-desc": "Results depend on your effort and use of recommended tools.",
-      "faq-q1": "<em>Max asked…</em> <strong>How long does it take to see results?</strong>",
+      "faq-q1": "<span class=\"italic text-sm text-white/50\">Max asked…</span> <span class=\"text-white\">How long does it take to see results?</span>",
       "faq-a1": "First photo-real shots on the very first evening; a full feed in 4-7 days with 1–2 h of daily practice.",
-      "faq-q2": "<em>Isabelle asked…</em> <strong>Can I do this alongside my job or school?</strong>",
+      "faq-q2": "<span class=\"italic text-sm text-white/50\">Isabelle asked…</span> <span class=\"text-white\">Can I do this alongside my job or school?</span>",
       "faq-a2": "Yes. Lessons are under 20 min and on-demand 24/7 — watch in the evenings or on weekends.",
-      "faq-q3": "<em>Anika asked…</em> <strong>How much time do I need to dedicate to this business?</strong>",
+      "faq-q3": "<span class=\"italic text-sm text-white/50\">Anika asked…</span> <span class=\"text-white\">How much time do I need to dedicate to this business?</span>",
       "faq-a3": "1–2 h per day is enough to launch content and scale the project.",
-      "faq-q4": "<em>Hassan asked…</em> <strong>What tools will I need to purchase?</strong>",
+      "faq-q4": "<span class=\"italic text-sm text-white/50\">Hassan asked…</span> <span class=\"text-white\">What tools will I need to purchase?</span>",
       "faq-a4": "Just Midjourney — Basic $10/mo to start or Standard $30/mo for speed. Other services are cheap pay-as-you-go — pennies versus one pro shoot.",
-      "faq-q5": "<em>Sara asked…</em> <strong>How do you keep every shot consistent?</strong>",
+      "faq-q5": "<span class=\"italic text-sm text-white/50\">Sara asked…</span> <span class=\"text-white\">How do you keep every shot consistent?</span>",
       "faq-a5": "The course includes a Face-Lock Consistency System — ready prompts & settings that lock facial features so every frame feels from the same shoot.",
-      "faq-q6": "<em>Sophie asked…</em> <strong>Will people know my model is AI, and do I have to show my face?</strong>",
+      "faq-q6": "<span class=\"italic text-sm text-white/50\">Sophie asked…</span> <span class=\"text-white\">Will people know my model is AI, and do I have to show my face?</span>",
       "faq-a6": "With our workflow images look like real photos. Showing your own face is optional — use a fictional persona or an upgraded you.",
-      "faq-q7": "<em>Alex asked…</em> <strong>Can I use my character for private or personal projects?</strong>",
+      "faq-q7": "<span class=\"italic text-sm text-white/50\">Alex asked…</span> <span class=\"text-white\">Can I use my character for private or personal projects?</span>",
       "faq-a7": "Absolutely. Your trained model is yours — use it in blogs, ads or closed content with no restrictions.",
-      "faq-q8": "<em>Bella asked…</em> <strong>What makes this course different, and can I learn at my own pace?</strong>",
+      "faq-q8": "<span class=\"italic text-sm text-white/50\">Bella asked…</span> <span class=\"text-white\">What makes this course different, and can I learn at my own pace?</span>",
       "faq-a8": "2.5 h of distilled step-by-step video, ready templates, check-lists and support. Learn at your own speed; lifetime access and updates.",
 
       // Final CTA Section
