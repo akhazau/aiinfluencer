@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "benefits-title-middle": "Are Your Creative",
       "benefits-title-gradient": "Superpower",
       "benefits-desc":
-        "AI creates parasocial relationships — people feel emotional connected with media personalities.",
-      "benefits-card-1-title": "Feeling Like a Artist",
+        "Build a strong visual identity for content on social media to enhance your digital presence.",
+      "benefits-card-1-title": "Feeling Like an Artist",
       "benefits-card-1-desc-1":
-        "After this course, you'll feel like a visual architect, digital designer, creative producer, and AI influencer — all in one.",
+        "After this course you’ll be a **visual architect, digital designer, creative producer and AI-influencer — all rolled into one.<br><br>Unlock the secrets of building your own AI influencer — and turn it into a business.",
       "benefits-card-1-desc-2": 'standing out in a sea of "plastic" AI faces.',
       "benefits-card-1-why-title": "Why It's Different",
       "benefits-card-1-feature-1": "Build studio-level visuals with no gear",
