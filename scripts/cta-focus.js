@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('#final-cta .animated-gradient-btn')
   ];
   
+  // Переменная для отслеживания интервала
+  let typewriterInterval = null;
+  
   // Функция для эффекта печатания placeholder
   function typewriterEffect(input, text, speed = 100) {
     let i = 0;
@@ -30,14 +33,23 @@ document.addEventListener("DOMContentLoaded", function () {
         i++;
         setTimeout(type, speed);
       } else {
-        // После завершения печатания возвращаем оригинальный placeholder
+        // После завершения печатания ждем 2 секунды и повторяем
         setTimeout(() => {
-          input.placeholder = originalPlaceholder;
-        }, 2000); // Показываем 2 секунды
+          input.placeholder = '';
+          i = 0;
+          type(); // Запускаем заново
+        }, 2000); // 2 секунды паузы
       }
     }
     
     type();
+  }
+  
+  // Функция для остановки эффекта печатания
+  function stopTypewriterEffect() {
+    if (emailInput) {
+      emailInput.placeholder = 'Your email address';
+    }
   }
   
   // Функция для фокуса на поле email с эффектом печатания
@@ -84,6 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (emailInput) {
     emailInput.addEventListener('focus', function() {
       typewriterEffect(this, 'Your email address', 80);
+    });
+    
+    // Останавливаем эффект при потере фокуса
+    emailInput.addEventListener('blur', function() {
+      stopTypewriterEffect();
     });
   }
   
