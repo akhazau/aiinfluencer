@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // FAQ Section
       "faq-title": "Frequently Asked",
       "faq-title-gradient": "Questions",
-      "faq-desc": "Results depend on your effort and use of recommended tools.",
+      "faq-desc": "Build parasocial bonds — let fans feel truly connected.",
       "faq-q1": "<span class=\"italic text-sm text-white/50\">Max asked…</span> <span class=\"text-white\">How long does it take to see results?</span>",
       "faq-a1": "First photo-real shots on the very first evening; a full feed in 4-7 days with 1–2 h of daily practice.",
       "faq-q2": "<span class=\"italic text-sm text-white/50\">Isabelle asked…</span> <span class=\"text-white\">Can I do this alongside my job or school?</span>",
