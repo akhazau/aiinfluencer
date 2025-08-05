@@ -113,39 +113,22 @@ document.addEventListener("DOMContentLoaded", function () {
       "faq-title": "Frequently Asked",
       "faq-title-gradient": "Questions",
       "faq-desc": "Results depend on your effort and use of recommended tools.",
-      "faq-q1": "What if I'm new to AI?",
-      "faq-a1":
-        "Absolutely! Our Starter Kit is designed to cater to learners of all levels, including beginners. We cover foundational concepts in AI and Computer Vision, providing the perfect starting point for those who are new to the field. As you progress, our courses will help you advance your skills and knowledge.<br><br>All you need is basic python programming skills.",
-      "faq-q2":
-        "How much time do I need to invest in the courses to see results?",
-      "faq-a2":
-        "Our courses are designed to be flexible, allowing you to learn at your own pace. The time investment required will depend on your individual learning speed and goals. However, we recommend setting aside regular time each week to work through the course material and complete the hands-on exercises. Consistency is key to seeing results and mastering the concepts.",
-      "faq-q3":
-        "Will I receive any support or guidance while taking the courses?",
-      "faq-a3":
-        "Yes! We pride ourselves on offering a supportive learning community where you can collaborate with fellow learners and ask questions. Our team of experts is also available to provide guidance and answer any questions you may have about the course material.<br><br>We also have a Whatsapp group with over 400+ AI-CV developers.",
-      "faq-q4":
-        "What makes your courses different from other AI courses available online?",
-      "faq-a4":
-        "Our courses stand out due to our expert-led content, up-to-date curriculum, hands-on learning approach, and supportive learning community. We focus on providing practical, real-world examples and projects that help you apply your knowledge and gain valuable experience.<br><br>Furthermore, our commitment to staying current with the latest AI and Computer Vision trends ensures you receive a cutting-edge education that keeps you competitive in the industry.<br><br>Together with VIP tech support and community, you will ensure that you learn optimally.",
-      "faq-q5": "Do I need prior programming experience?",
-      "faq-a5":
-        "No prior programming experience is required for our beginner courses. We start with the basics and gradually build up your skills. For advanced courses, some familiarity with Python is helpful but not mandatory.",
-      "faq-q6": "Are the courses self-paced?",
-      "faq-a6":
-        "Yes, all our courses are self-paced. You can start anytime and progress at your own speed. There are no strict deadlines, so you can fit learning into your schedule.",
-      "faq-q7": "Will I get a certificate after completing the course?",
-      "faq-a7":
-        "Yes, upon successful completion of the course and all required assignments, you will receive a certificate that you can share with employers or on your LinkedIn profile.",
-      "faq-q8": "What if I have questions during the course?",
-      "faq-a8":
-        "You can ask questions in our community forum or reach out to our support team at any time. We are here to help you succeed!",
-      "faq-q9": "Can I access the course materials after completion?",
-      "faq-a9":
-        "Yes, you will have lifetime access to all course materials, including updates and new content added in the future.",
-      "faq-q10": "Is there a refund policy?",
-      "faq-a10":
-        "Please refer to our refund policy page for details. If you are not satisfied with the course, contact us within the specified period for a possible refund.",
+      "faq-q1": "Max asked… How long does it take to see results?",
+      "faq-a1": "First photo-real shots on the very first evening; a full feed in 4-7 days with 1–2 h of daily practice.",
+      "faq-q2": "Isabelle asked… Can I do this alongside my job or school?",
+      "faq-a2": "Yes. Lessons are under 20 min and on-demand 24/7 — watch in the evenings or on weekends.",
+      "faq-q3": "Anika asked… How much time do I need to dedicate to this business?",
+      "faq-a3": "1–2 h per day is enough to launch content and scale the project.",
+      "faq-q4": "Hassan asked… What tools will I need to purchase?",
+      "faq-a4": "Just Midjourney — Basic $10/mo to start or Standard $30/mo for speed. Other services are cheap pay-as-you-go — pennies versus one pro shoot.",
+      "faq-q5": "Sara asked… How do you keep every shot consistent?",
+      "faq-a5": "The course includes a Face-Lock Consistency System — ready prompts & settings that lock facial features so every frame feels from the same shoot.",
+      "faq-q6": "Sophie asked… Will people know my model is AI, and do I have to show my face?",
+      "faq-a6": "With our workflow images look like real photos. Showing your own face is optional — use a fictional persona or an upgraded you.",
+      "faq-q7": "Alex asked… Can I use my character for private or personal projects?",
+      "faq-a7": "Absolutely. Your trained model is yours — use it in blogs, ads or closed content with no restrictions.",
+      "faq-q8": "Bella asked… What makes this course different, and can I learn at my own pace?",
+      "faq-a8": "2.5 h of distilled step-by-step video, ready templates, check-lists and support. Learn at your own speed; lifetime access and updates.",
 
       // Final CTA Section
       "final-cta-title":
