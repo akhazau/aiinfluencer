@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "final-cta-title":
         'AI Models Will Be a<span class="gradient-text-inverse"> $2.5B Industry</span> by 2030',
       "final-cta-subtitle":
-        "This hype looks like the bitcoin gold rush in 2012!",
+        "The AI-influencer hype feels like Bitcoin’s 2012 gold rush.",
       "final-cta-form-title": "Join The Waitlist Now",
       "final-cta-spots": "Only 250 spots remaining",
       "final-cta-legal":
