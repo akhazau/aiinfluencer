@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "review-text-5": "❝ Thank you, Leo! Your explanations are crystal-clear. Halfway through the course I launched my first AI project—and it's already getting results. You're one of my favorite instructors. ❞",
               "review-name-5": "Elif S. <span class=\"text-gray-500\">29</span>",
         "review-role-5": "Motion Designer",
-      "review-text-6": "❝ I always wanted an Instagram feed for the shop but worried about photo quality. Turns out AI can create a portrait mascot almost indistinguishable from a real person. One evening of work, and people snap selfies with him more than with the mirror! ❞",
+      "review-text-6": "❝ I always wanted an Instagram feed for the shop but worried about photo quality. Turns out AI can create a portrait mascot almost indistinguishable from a real person. People snap selfies with him more than with the mirror! ❞",
               "review-name-6": "Murat K. <span class=\"text-gray-500\">31</span>",
       "review-role-6": "Barbershop Owner",
       "review-text-7": "❝ I thought I'd be the oldest student, but the course breaks everything into bite-size steps. By lesson three I had a studio-grade shot with ultra-detailed skin. Fantastic experience, Leo! ❞",
