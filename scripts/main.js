@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const el = document.getElementById(id);
       if (el) {
         if (el.placeholder !== undefined) el.placeholder = val;
-        else if (id === "hero-subtitle" || id === "final-cta-title")
+        else if (id === "hero-subtitle" || id === "final-cta-title" || id.startsWith("review-name-"))
           el.innerHTML = val;
         else el.textContent = val;
       }
