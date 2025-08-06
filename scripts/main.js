@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "testimonial-subtitle":
         "Why do our AI model-makers keep sharing the course with friends?",
       "review-text-1": "❝ AI is finally simple and accessible. The ready-made tools are a joy to use—I'm glad I just decided to try! ❞",
-              "review-name-1": "Mark R. <span class=\"text-gray-500\">28</span>",
+              "review-name-1": "Mark R. <span class=\"text-purple-500\">28</span>",
         "review-role-1": "AI Creator & Startup SMM",
       "review-text-2": "❝ My wife and I needed a \"face\" for a new line with a zero budget. We trained an AI model with flawless yet natural skin. Followers think she's a real top model—and foundation sales jumped 17 % in the first week. ❞",
               "review-name-2": "David K. <span class=\"text-gray-500\">33</span>",
