@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "review-role-3": "Travel Blogger",
       "review-text-4": "❝ I feared nothing would work, but now I run an Instagram page for an influencer I built from scratch. Followers can't believe it's AI. ❞",
               "review-name-4": "21 yo Huata A.",
-        "review-role-4": "Media-Studies Student",
+        "review-role-4": "Student",
       "review-text-5": "❝ Thank you, Leo! Your explanations are crystal-clear. Halfway through the course I launched my first AI project—and it's already getting results. You're one of my favorite instructors. ❞",
               "review-name-5": "29 yo Elif S.",
         "review-role-5": "Motion Designer",
