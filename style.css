@@ -319,9 +319,7 @@ section.snap-section {
   }
 }
 
-.review-age {
-  color: rgba(255, 224, 102, 0.7);
-}
+
 
 .sales-counter-pulse {
   animation: pulse-zoom 2.5s ease-in-out infinite;
@@ -694,7 +692,7 @@ section.snap-section {
   opacity: 1;
   padding-bottom: 1.5rem !important;
   padding-top: 1rem !important;
-  background: #3e08490c !important;
+  background: #2b07330c !important;
 }
 #final-cta::after {
   content: "";
@@ -867,7 +865,7 @@ footer.w-full {
   opacity: 0;
   overflow: hidden;
   padding: 0;
-  background: #3e08490c;
+  background: #2b07330c;
   color: #fff;
   border-top: 1px solid #444;
   font-size: 1rem;

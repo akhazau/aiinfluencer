@@ -110,28 +110,28 @@ document.addEventListener("DOMContentLoaded", function () {
       "testimonial-subtitle":
         "Why do our AI model-makers keep sharing the course with friends?",
       "review-text-1": "❝ AI is finally simple and accessible. The ready-made tools are a joy to use—I'm glad I just decided to try! ❞",
-              "review-name-1": "<span class=\"text-purple-400/50\">28 yo</span><br>Mark R.",
+              "review-name-1": "28 yo Mark R.",
         "review-role-1": "AI Creator & Startup SMM",
       "review-text-2": "❝ My wife and I needed a \"face\" for a new line with a zero budget. We trained an AI model with flawless yet natural skin. Followers think she's a real top model—and foundation sales jumped 17 % in the first week. ❞",
-              "review-name-2": "<span class=\"text-purple-400/50\">33 yo</span><br>David K.",
+              "review-name-2": "33 yo David K.",
         "review-role-2": "Brand Manager",
       "review-text-3": "❝ I used to worry about my looks. Now I have an upgraded AI version of myself—editorial-quality shots, growing audience, no paid ads. I stay off-camera while the good-looking persona racks up likes. ❞",
-              "review-name-3": "<span class=\"text-purple-400/50\">26 yo</span><br>Tony Jr.",
+              "review-name-3": "26 yo Tony Jr.",
         "review-role-3": "Travel Blogger",
       "review-text-4": "❝ I feared nothing would work, but now I run an Instagram page for an influencer I built from scratch. Followers can't believe it's AI. ❞",
-              "review-name-4": "<span class=\"text-purple-400/50\">21 yo</span><br>Huata A.",
+              "review-name-4": "21 yo Huata A.",
         "review-role-4": "Media-Studies Student",
       "review-text-5": "❝ Thank you, Leo! Your explanations are crystal-clear. Halfway through the course I launched my first AI project—and it's already getting results. You're one of my favorite instructors. ❞",
-              "review-name-5": "<span class=\"text-purple-400/50\">29 yo</span><br>Elif S.",
+              "review-name-5": "29 yo Elif S.",
         "review-role-5": "Motion Designer",
       "review-text-6": "❝ Always wanted an IG feed for the shop but feared photo quality. AI built a portrait mascot that looks real—customers snap selfies with him more than with the mirror! ❞",
-              "review-name-6": "<span class=\"text-purple-400/50\">31 yo</span><br>Murat K.",
+              "review-name-6": "31 yo Murat K.",
       "review-role-6": "Barbershop Owner",
       "review-text-7": "❝ I thought I'd be the oldest student, but the course breaks everything into bite-size steps. By lesson three I had a studio-grade shot with ultra-detailed skin. Fantastic experience, Leo! ❞",
-              "review-name-7": "<span class=\"text-purple-400/50\">50 yo</span><br>Pav Williams L.",
+              "review-name-7": "50 yo Pav Williams L.",
       "review-role-7": "Entrepreneur",
       "review-text-8": "❝ I tested the course skeptically, sure AI couldn't replace real lighting. It didn't—it helped. Now I generate skin-realistic references, show couples, and they get the vision instantly. Shoots run faster, images feel more emotional. ❞",
-              "review-name-8": "<span class=\"text-purple-400/50\">42 yo</span><br>Denis T.",
+              "review-name-8": "42 yo Denis T.",
       "review-role-8": "Wedding Photographer",
 
       // About Section
@@ -298,28 +298,28 @@ document.addEventListener("DOMContentLoaded", function () {
       "testimonial-subtitle":
         "Не верьте нам на слово.<br>Вот что думают ранние последователи об AI-генерированном искусстве.",
       "review-text-1": "❝ AI наконец-то стал простым и доступным. Готовые инструменты — удовольствие в использовании, рад что просто решил попробовать! ❞",
-              "review-name-1": "<span class=\"text-purple-400/50\">28 лет</span><br>Марк Р.",
+              "review-name-1": "28 лет Марк Р.",
               "review-role-1": "AI Creator & Startup SMM",
       "review-text-2": "❝ Мы с женой нуждались в \"лице\" для новой линейки с нулевым бюджетом. Мы обучили AI модель с безупречной, но естественной кожей. Подписчики думают, что она настоящая топ-модель — и продажи тонального крема выросли на 17% в первую неделю. ❞",
-              "review-name-2": "<span class=\"text-purple-400/50\">33 года</span><br>Дэвид К.",
+              "review-name-2": "33 года Дэвид К.",
               "review-role-2": "Brand Manager, Cosmetic Products",
       "review-text-3": "❝ Раньше я беспокоился о своей внешности. Теперь у меня есть улучшенная AI версия себя — снимки редакционного качества, растущая аудитория, без платной рекламы. Я остаюсь за кадром, пока привлекательная персона набирает лайки. ❞",
-              "review-name-3": "<span class=\"text-purple-400/50\">26 лет</span><br>Тони мл.",
+              "review-name-3": "26 лет Тони мл.",
               "review-role-3": "Travel Blogger",
       "review-text-4": "❝ Я боялся, что ничего не сработает, но теперь я веду Instagram страницу для инфлюенсера, которого создал с нуля. Подписчики не верят, что это AI. На занятии я запустил Face-Lock и создал полную съемку за 30 минут — мой профессор спросил, какую студию я забронировал! ❞",
-              "review-name-4": "<span class=\"text-purple-400/50\">21 год</span><br>Хуата А.",
+              "review-name-4": "21 год Хуата А.",
               "review-role-4": "Media-Studies Student",
       "review-text-5": "❝ Спасибо, Лео! Твои объяснения кристально ясны. На полпути курса я запустил свой первый AI проект — и он уже дает результаты. Ты один из моих любимых инструкторов. ❞",
-              "review-name-5": "<span class=\"text-purple-400/50\">29 лет</span><br>Элиф С.",
+              "review-name-5": "29 лет Элиф С.",
               "review-role-5": "Motion Designer",
       "review-text-6": "❝ Я всегда хотел Instagram ленту для салона, но беспокоился о качестве фото. Оказывается, AI может создать портретный талисман, почти неотличимый от реального человека. Один вечер работы, и теперь персонаж приветствует клиентов на наших экранах — люди делают селфи с ним чаще, чем с зеркалом! ❞",
-              "review-name-6": "<span class=\"text-purple-400/50\">31 год</span><br>Мурат К.",
+              "review-name-6": "31 год Мурат К.",
               "review-role-6": "Barbershop Owner",
       "review-text-7": "❝ Я думал, что буду самым старым студентом, но курс разбивает все на простые шаги. К третьему уроку у меня был снимок студийного качества с ультра-детальной кожей — без камеры или осветительного оборудования. Четкий темп, увлекательный контент — фантастический опыт, Лео! ❞",
-              "review-name-7": "<span class=\"text-purple-400/50\">50 лет</span><br>Pav Williams L.",
+              "review-name-7": "50 лет Pav Williams L.",
               "review-role-7": "Entrepreneur",
       "review-text-8": "❝ Я тестировал курс скептически, уверенный, что AI не может заменить настоящее освещение. Он не заменил — он помог. Теперь я генерирую реалистичные референсы кожи, показываю парам, и они мгновенно понимают видение. Съемки проходят быстрее, изображения кажутся более эмоциональными, не как обычное AI искусство. ❞",
-              "review-name-8": "<span class=\"text-purple-400/50\">42 года</span><br>Denis T.",
+              "review-name-8": "42 года Denis T.",
               "review-role-8": "Wedding Photographer",
 
       // About Section
@@ -404,9 +404,21 @@ document.addEventListener("DOMContentLoaded", function () {
       const el = document.getElementById(id);
       if (el) {
         if (el.placeholder !== undefined) el.placeholder = val;
-        else if (id === "hero-subtitle" || id === "final-cta-title" || id.startsWith("review-name-"))
+        else if (id === "hero-subtitle" || id === "final-cta-title") {
           el.innerHTML = val;
-        else el.textContent = val;
+        } else if (id.startsWith("review-name-")) {
+          // Разделяем возраст и имя для правильного стилизования
+          const match = val.match(/^(\d+\s+(?:yo|лет|года))\s+(.+)$/);
+          if (match) {
+            const age = match[1];
+            const name = match[2];
+            el.innerHTML = `<span class="text-purple-400/50 text-sm">${age}</span><br><span class="font-semibold">${name}</span>`;
+          } else {
+            el.innerHTML = val;
+          }
+        } else {
+          el.textContent = val;
+        }
       }
     });
     document.querySelectorAll(".lang-btn").forEach((btn) => {
