@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Build a strong visual identity for content on social media to enhance your digital presence.",
       "benefits-card-1-title": "Feeling Like an Artist",
       "benefits-card-1-desc-1":
-        "After this course you'll be a architect, digital designer, sculptor, producer and influencer — all rolled into one.",
+        "After this course you'll be a architect, designer, sculptor, producer and influencer — all rolled into one.",
       "benefits-card-1-desc-1-2":
         "Unlock the secrets of building your own AI influencer — and turn it into a business.",
       "benefits-card-1-desc-2": 'standing out in a sea of "plastic" AI faces.',
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "pain-card2-point2": "Никакого AI-подделочного вида",
       "pain-card2-point3": "Быстро, доступно, в стиле бренда",
       "pain-card3-title": "Студийное Качество",
-      "pain-card3-desc": "Снимайте без студии",
+      "pain-card3-desc": "Снимайте без студии.",
       "pain-card3-point1": "Реализм модного уровня",
       "pain-card3-point2": "Идеальная кожа, тон и свет",
       "pain-card3-point3": "Создано для рекламы, магазинов, соцсетей",
@@ -608,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function () {
       img: "media/av01.png",
       title: "Studio Quality",
       titleClass: "text-purple-400",
-      desc: "Shoot Without a Studio",
+      desc: "Shoot Without a Studio.",
       features: [
         "Fashion-level realism",
         "Perfect skin, tone & light",
