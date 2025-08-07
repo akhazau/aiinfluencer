@@ -28,6 +28,25 @@ document.addEventListener("DOMContentLoaded", function () {
       "pain-title-gradient": "Plastic AI faces?",
       "pain-desc":
         "See another models - imagine what you'll create with AI in your hands!",
+      
+      // Pain Cards
+      "pain-card1-title": "Edutainment",
+      "pain-card1-desc": "Learn & Enjoy — education meets entertainment.",
+      "pain-card1-point1": "Daily creative boost",
+      "pain-card1-point2": "Fast & simple",
+      "pain-card1-point3": "Inspires masterpiece thinking",
+      
+      "pain-card2-title": "Hyper-Realism",
+      "pain-card2-desc": "Look Real. Feel Real.",
+      "pain-card2-point1": "Emotion-rich, photo-grade quality",
+      "pain-card2-point2": "No AI-fake look",
+      "pain-card2-point3": "Fast, affordable, on-brand",
+      
+      "pain-card3-title": "Studio Quality",
+      "pain-card3-desc": "Shoot Without a Studio",
+      "pain-card3-point1": "Fashion-level realism",
+      "pain-card3-point2": "Perfect skin, tone & light",
+      "pain-card3-point3": "Built for ads, stores, socials",
 
       // Benefits Section
       "benefits-title-inverse": "AI Models",
@@ -127,14 +146,14 @@ document.addEventListener("DOMContentLoaded", function () {
       "about-desc-p1": "Former Dubai Future Labs AI researcher turned content-creation strategist. Together with his wife, Leo built AI Influencer 3.0, a flagship system that has helped 2,130-plus creators launch AI-powered brands and triple their reach—without studio-level budgets.",
       "about-desc-p2": "Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market 3×.",
       "about-exp-pill": "2,130+ Students",
-      "about-fact-1-title": "100+ projects",
-      "about-fact-1-desc": "Realistic AI characters built for clients",
+      "about-fact-1-title": "100+ client projects",
+      "about-fact-1-desc": "Hyper-real AI characters delivered for global brands",
       "about-fact-2-title": "Certified instructor",
-      "about-fact-2-desc": "AI tools & digital identity workflows",
-      "about-fact-3-title": "10,000+ followers",
-      "about-fact-3-desc": "Sharing creative AI techniques online",
-      "about-fact-4-title": "Global impact",
-      "about-fact-4-desc": "Students from over 20 countries",
+      "about-fact-2-desc": "Teaches AI tools & digital-identity pipelines",
+      "about-fact-3-title": "500 k + followers",
+      "about-fact-3-desc": "Learners from 20 + countries use his methods",
+      "about-fact-4-title": "Featured in",
+      "about-fact-4-desc": "Forbes, TechCrunch",
 
       // FAQ Section
       "faq-title": "Frequently Asked",
@@ -199,6 +218,21 @@ document.addEventListener("DOMContentLoaded", function () {
       "pain-title-gradient": "пластиковых AI лиц?",
       "pain-desc":
         "Вы видите, какие модели они делают, и знаете, что можете сделать лучше<br>когда технология попадёт в ваши руки?",
+      "pain-card1-title": "Обучение-Развлечение",
+      "pain-card1-desc": "Учитесь и получайте удовольствие — образование встречается с развлечением.",
+      "pain-card1-point1": "Ежедневный творческий заряд",
+      "pain-card1-point2": "Быстро и просто",
+      "pain-card1-point3": "Вдохновляет на шедевральное мышление",
+      "pain-card2-title": "Гипер-Реализм",
+      "pain-card2-desc": "Выглядит реально. Ощущается реально.",
+      "pain-card2-point1": "Эмоционально насыщенное, фото-качество",
+      "pain-card2-point2": "Никакого AI-подделочного вида",
+      "pain-card2-point3": "Быстро, доступно, в стиле бренда",
+      "pain-card3-title": "Студийное Качество",
+      "pain-card3-desc": "Снимайте без студии",
+      "pain-card3-point1": "Реализм модного уровня",
+      "pain-card3-point2": "Идеальная кожа, тон и свет",
+      "pain-card3-point3": "Создано для рекламы, магазинов, соцсетей",
 
       // Benefits Section
       "benefits-title-inverse": "AI Модели",
@@ -301,14 +335,14 @@ document.addEventListener("DOMContentLoaded", function () {
       "about-desc-p2": "Его подход сочетает технические знания с творческим видением, что делает сложные AI-инструменты доступными для всех.",
       "about-desc-p3": "Лео — эксперт в Midjourney, Omnisphere и рабочих процессах face-lock, обучая студентов создавать фотореалистичные изображения, которые выглядят профессионально и аутентично.",
       "about-exp-pill": "6 лет опыта",
-      "about-fact-1-title": "100+ проектов",
-      "about-fact-1-desc": "Реалистичные AI-персонажи для клиентов",
+      "about-fact-1-title": "100+ клиентских проектов",
+      "about-fact-1-desc": "Гипер-реалистичные AI-персонажи для глобальных брендов",
       "about-fact-2-title": "Сертифицированный инструктор",
-      "about-fact-2-desc": "AI-инструменты и цифровые рабочие процессы",
-      "about-fact-3-title": "10 000+ подписчиков",
-      "about-fact-3-desc": "Делится AI-техниками онлайн",
-      "about-fact-4-title": "Глобальное влияние",
-      "about-fact-4-desc": "Студенты из более чем 20 стран",
+      "about-fact-2-desc": "Обучает AI-инструментам и цифровым пайплайнам",
+      "about-fact-3-title": "500 тыс+ подписчиков",
+      "about-fact-3-desc": "Ученики из 20+ стран используют его методы",
+      "about-fact-4-title": "Упоминания в",
+      "about-fact-4-desc": "Forbes, TechCrunch",
 
       // FAQ Section
       "faq-title": "Часто Задаваемые",
