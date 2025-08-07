@@ -28,22 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
       "pain-title-gradient": "Plastic AI faces?",
       "pain-desc":
         "See another models - imagine what you'll create with AI in your hands!",
-      
-      // Pain Cards
       "pain-card1-title": "Edutainment",
       "pain-card1-desc": "Learn & Enjoy — education meets entertainment.",
       "pain-card1-point1": "Daily creative boost",
       "pain-card1-point2": "Fast & simple",
       "pain-card1-point3": "Inspires masterpiece thinking",
-      
       "pain-card2-title": "Hyper-Realism",
       "pain-card2-desc": "Look Real. Feel Real.",
       "pain-card2-point1": "Emotion-rich, photo-grade quality",
       "pain-card2-point2": "No AI-fake look",
       "pain-card2-point3": "Fast, affordable, on-brand",
-      
       "pain-card3-title": "Studio Quality",
-      "pain-card3-desc": "Shoot Without a Studio",
+      "pain-card3-desc": "Shoot Without a Studio.",
       "pain-card3-point1": "Fashion-level realism",
       "pain-card3-point2": "Perfect skin, tone & light",
       "pain-card3-point3": "Built for ads, stores, socials",
@@ -56,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Build a strong visual identity for content on social media to enhance your digital presence.",
       "benefits-card-1-title": "Feeling Like an Artist",
       "benefits-card-1-desc-1":
-        "After this course you'll be a architect, digital designer, creative producer and AI-influencer — all rolled into one.",
+        "After this course you'll be a architect, digital designer, sculptor, producer and influencer — all rolled into one.",
       "benefits-card-1-desc-1-2":
         "Unlock the secrets of building your own AI influencer — and turn it into a business.",
       "benefits-card-1-desc-2": 'standing out in a sea of "plastic" AI faces.',
@@ -143,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "about-title-gradient": "Mentor",
       "about-name": "Leo Lewaro",
       "about-role": "AI Creator & Media Innovator",
-      "about-desc-p1": "Former Dubai Future Labs AI researcher turned content-creation strategist. Together with his wife, Leo built AI Influencer 3.0, a flagship system that has helped 2,130-plus creators launch AI-powered brands and triple their reach—without studio-level budgets.",
+      "about-desc-p1": "Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0—a system that’s helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.",
       "about-desc-p2": "Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market 3×.",
       "about-exp-pill": "2,130+ Students",
       "about-fact-1-title": "100+ client projects",
