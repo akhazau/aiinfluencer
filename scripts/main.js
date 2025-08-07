@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "review-role-1": "AI Creator & Startup SMM",
       "review-text-2": "❝ My wife and I needed a \"face\" for a new line with a zero budget. We trained an AI model with flawless yet natural skin. Followers think she's a real top model—and foundation sales jumped 17 % in the first week. ❞",
               "review-name-2": "<span class=\"text-purple-400/50\">33 yo</span><br>David K.",
-        "review-role-2": "Brand Manager, Cosmetic Products",
+        "review-role-2": "Brand Manager",
       "review-text-3": "❝ I used to worry about my looks. Now I have an upgraded AI version of myself—editorial-quality shots, growing audience, no paid ads. I stay off-camera while the good-looking persona racks up likes. ❞",
               "review-name-3": "<span class=\"text-purple-400/50\">26 yo</span><br>Tony Jr.",
         "review-role-3": "Travel Blogger",
