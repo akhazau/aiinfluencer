@@ -422,6 +422,63 @@ document.addEventListener("DOMContentLoaded", function () {
            } else {
              el.innerHTML = val;
            }
+         } else if (id === "about-desc-p1") {
+          // Специальная обработка для about-desc-p1 с more/less функциональностью
+          const shortTextEl = document.getElementById('about-desc-short');
+          const fullTextEl = document.getElementById('about-desc-full');
+          const desktopTextEl = el.querySelector('.hidden.md\\:block');
+          
+          if (lang === 'ru') {
+            if (shortTextEl) shortTextEl.textContent = 'Лео имеет опыт в исследованиях AI и создании контента. Он соавтор AI Influencer 3.0';
+            if (fullTextEl) fullTextEl.textContent = ', помогая создателям контента и брендам создавать реалистичных виртуальных персонажей.';
+            if (desktopTextEl) desktopTextEl.textContent = val;
+            // Обновляем текст кнопки "more" на русский
+            const moreBtn = document.getElementById('about-more-btn');
+            if (moreBtn) moreBtn.textContent = 'больше';
+          } else {
+            if (shortTextEl) shortTextEl.textContent = 'Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0';
+            if (fullTextEl) fullTextEl.textContent = '—a system that\'s helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.';
+            if (desktopTextEl) desktopTextEl.textContent = val;
+            // Обновляем текст кнопки "more" на английский
+            const moreBtn = document.getElementById('about-more-btn');
+            if (moreBtn) moreBtn.textContent = 'more';
+          }
+         } else if (id === "about-desc-p2") {
+          // Специальная обработка для about-desc-p2
+          const p2FullTextEl = document.getElementById('about-desc-p2-full');
+          const desktopTextEl = el.querySelector('.hidden.md\\:block');
+          
+          if (lang === 'ru') {
+            if (p2FullTextEl) {
+              p2FullTextEl.innerHTML = 'Его подход сочетает технические знания с творческим видением, что делает сложные AI-инструменты доступными для всех. <button id="about-less-btn" class="text-purple-400 ml-1 underline">меньше</button>';
+              // Переназначаем обработчик события для новой кнопки
+              const newLessBtn = document.getElementById('about-less-btn');
+              if (newLessBtn) {
+                newLessBtn.addEventListener('click', function() {
+                  document.getElementById('about-desc-dots').classList.remove('hidden');
+                  document.getElementById('about-more-btn').classList.remove('hidden');
+                  document.getElementById('about-desc-full').classList.add('hidden');
+                  p2FullTextEl.classList.add('hidden');
+                });
+              }
+            }
+            if (desktopTextEl) desktopTextEl.textContent = val;
+          } else {
+            if (p2FullTextEl) {
+              p2FullTextEl.innerHTML = 'Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>. <button id="about-less-btn" class="text-purple-400 ml-1 underline">less</button>';
+              // Переназначаем обработчик события для новой кнопки
+              const newLessBtn = document.getElementById('about-less-btn');
+              if (newLessBtn) {
+                newLessBtn.addEventListener('click', function() {
+                  document.getElementById('about-desc-dots').classList.remove('hidden');
+                  document.getElementById('about-more-btn').classList.remove('hidden');
+                  document.getElementById('about-desc-full').classList.add('hidden');
+                  p2FullTextEl.classList.add('hidden');
+                });
+              }
+            }
+            if (desktopTextEl) desktopTextEl.textContent = val;
+          }
          } else {
           el.textContent = val;
         }
@@ -789,4 +846,22 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Запускаем таймер
   startTimer();
+  
+  // About section more/less functionality
+  const moreBtn = document.getElementById('about-more-btn');
+  const shortText = document.getElementById('about-desc-short');
+  const dots = document.getElementById('about-desc-dots');
+  const fullText = document.getElementById('about-desc-full');
+  const p2FullText = document.getElementById('about-desc-p2-full');
+  
+  if (moreBtn && shortText && dots && fullText && p2FullText) {
+    moreBtn.addEventListener('click', function() {
+      dots.classList.add('hidden');
+      moreBtn.classList.add('hidden');
+      fullText.classList.remove('hidden');
+      p2FullText.classList.remove('hidden');
+    });
+    
+    // Обработчик для кнопки less будет добавлен динамически в changeLanguage
+  }
 });

@@ -513,12 +513,12 @@
                 <div class="about-img-container flex items-center justify-center mt-4 md:mt-0">
                   <img src="media/av0.png"
                        alt="About Author"
-                       class="rounded-2xl shadow-lg object-cover w-[420px] md:w-[680px] h-[250px] md:h-[540px] max-w-full"
+                       class="rounded-2xl shadow-lg object-cover w-[480px] md:w-[680px] h-[250px] md:h-[540px] max-w-full"
                        id="about-photo">
                 </div>
                   <div class="absolute inset-0 pointer-events-none rounded-2xl"></div>
-                <div class="absolute left-[240px] md:left-[30px] bottom-4 z-[2]">
-                  <span class="inline-block bg-gradient-to-br from-indigo-500 to-blue-500 text-white font-bold text-lg p-2 rounded-2xl shadow-lg tracking-[0.01em] min-w-[120px] text-center flex flex-col items-center justify-center leading-tight scale-90">
+                <div class="absolute left-[270px] md:left-[30px] bottom-4 z-[2]">
+                  <span class="inline-block bg-gradient-to-br from-indigo-500 to-blue-500 text-white font-bold text-base p-1.5 rounded-xl shadow-lg tracking-[0.01em] min-w-[100px] text-center flex flex-col items-center justify-center leading-tight scale-75">
                     <div class="text-2xl font-extrabold">2,130+</div>
                     <div>Students</div>
                   </span>
@@ -532,9 +532,20 @@
                   <span class="text-gray-400 text-base mb-4" id="about-role">AI Creator & Media Innovator</span>
                 </div>
                 <div class="text-white mb-4 md:mb-4 text-base leading-relaxed" id="about-desc">
-                  <p class="mb-4" id="about-desc-p1">Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0—a system that’s helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.</p>
+                  <p class="mb-4" id="about-desc-p1">
+                    <span class="md:hidden">
+                      <span id="about-desc-short">Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0</span><span id="about-desc-dots">...</span><button id="about-more-btn" class="text-purple-400 ml-1 underline">more</button>
+                      <span id="about-desc-full" class="hidden">—a system that's helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.</span>
+                    </span>
+                    <span class="hidden md:block">Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0—a system that's helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.</span>
+                  </p>
 
-                  <p id="about-desc-p2">Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>.</p>
+                  <p id="about-desc-p2">
+                    <span class="md:hidden">
+                      <span id="about-desc-p2-full" class="hidden">Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>. <button id="about-less-btn" class="text-purple-400 ml-1 underline">less</button></span>
+                    </span>
+                    <span class="hidden md:block">Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>.</span>
+                  </p>
                 </div>
                 <div class="grid grid-cols-2 gap-x-4 gap-y-4 w-full max-w-2xl mt-0 md:mt-4">
                   <div class="bg-[#181f2a] rounded-xl p-2 md:p-4 flex flex-col text-left">
@@ -545,11 +556,11 @@
                     <span class="font-bold text-cyan-600 text-base mb-1" id="about-fact-2-title">Certified instructor</span>
                     <span class="text-gray-200 text-sm" id="about-fact-2-desc">AI tools & digital identity workflows</span>
                   </div>
-                  <div class="bg-[#181f2a] rounded-xl p-2 md:p-4 flex flex-col text-left">
+                  <div class="bg-[#181f2a] rounded-xl p-2 md:p-4 flex flex-col text-left hidden md:flex">
                     <span class="font-bold text-blue-300 text-base mb-1" id="about-fact-3-title">10,000+ followers</span>
                     <span class="text-gray-200 text-sm" id="about-fact-3-desc">Sharing creative AI techniques online</span>
                   </div>
-                  <div class="bg-[#181f2a] rounded-xl p-2 md:p-4 flex flex-col text-left">
+                  <div class="bg-[#181f2a] rounded-xl p-2 md:p-4 flex flex-col text-left hidden md:flex">
                     <span class="font-bold text-rose-200 text-base mb-1" id="about-fact-4-title">Global impact</span>
                     <span class="text-gray-200 text-sm" id="about-fact-4-desc">Students from over 20 countries</span>
                   </div>
