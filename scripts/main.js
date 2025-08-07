@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Build a strong visual identity for content on social media to enhance your digital presence.",
       "benefits-card-1-title": "Feeling Like an Artist",
       "benefits-card-1-desc-1":
-        "After this course you'll be a **visual architect, digital designer, creative producer and AI-influencer — all rolled into one.",
+        "After this course you'll be a architect, digital designer, creative producer and AI-influencer — all rolled into one.",
       "benefits-card-1-desc-1-2":
         "Unlock the secrets of building your own AI influencer — and turn it into a business.",
       "benefits-card-1-desc-2": 'standing out in a sea of "plastic" AI faces.',
