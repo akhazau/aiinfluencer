@@ -412,11 +412,17 @@ document.addEventListener("DOMContentLoaded", function () {
           if (match) {
             const age = match[1];
             const name = match[2];
-            el.innerHTML = `<span class="text-purple-400/50 text-sm">${age}</span><br><span class="font-semibold">${name}</span>`;
-          } else {
-            el.innerHTML = val;
-          }
-        } else {
+            // Обновляем возраст в предыдущем элементе
+            const ageElement = el.previousElementSibling;
+            if (ageElement && ageElement.classList.contains('text-purple-400/70')) {
+              ageElement.textContent = age;
+            }
+            // Обновляем имя в текущем элементе
+              el.innerHTML = `<span class="font-bold">${name}</span>`;
+           } else {
+             el.innerHTML = val;
+           }
+         } else {
           el.textContent = val;
         }
       }
