@@ -322,6 +322,11 @@ section.snap-section {
 .sales-counter-pulse {
   animation: pulse-zoom 2.5s ease-in-out infinite;
   transform-origin: center;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+  background-size: 300% 300%;
+  animation: pulse-zoom 2.5s ease-in-out infinite, gradient-move 16s ease-in-out infinite;
+  border-radius: 18px;
+  padding: 4px 12px;
 }
 
 .gradient-border-wrap {
@@ -799,7 +804,7 @@ footer.w-full {
 }
 .faq-item {
   overflow: hidden;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .faq-item:not(.rounded-t-2xl):hover {
