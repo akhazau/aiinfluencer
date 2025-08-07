@@ -319,10 +319,16 @@ section.snap-section {
   }
 }
 
+.review-age {
+  color: rgba(255, 224, 102, 0.7);
+}
+
 .sales-counter-pulse {
   animation: pulse-zoom 2.5s ease-in-out infinite;
   transform-origin: center;
+  border-radius: 18px;
   padding: 4px 12px;
+  background: transparent;
 }
 
 .gradient-border-wrap {
@@ -688,7 +694,7 @@ section.snap-section {
   opacity: 1;
   padding-bottom: 1.5rem !important;
   padding-top: 1rem !important;
-  background: #082f49 !important;
+  background: #082f4965 !important;
 }
 #final-cta::after {
   content: "";
@@ -861,7 +867,7 @@ footer.w-full {
   opacity: 0;
   overflow: hidden;
   padding: 0;
-  background: #082f49;
+  background: #082f4965;
   color: #fff;
   border-top: 1px solid #444;
   font-size: 1rem;
