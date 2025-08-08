@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "benefits-card-1-why-title": "Why It's Different",
       "benefits-card-1-feature-1": "Build studio-level visuals with no gear",
       "benefits-card-1-feature-2":
-        "Create content with personality, not filters",
+        "Create with personality, not filters",
       "benefits-card-1-feature-3":
-        "No need to show your face or speak on camera",
+        "No need to show face or speak on camera",
       "benefits-card-1-feature-4":
-        "Make images that feel emotional, alive, real",
+        "Make images feel emotional, alive, real",
       "benefits-card-1-feature-5": "Learn a mindset, not just tools",
       "benefits-card-2-title-mobile": "Studio Quality",
       "benefits-card-2-desc-1-mobile":
