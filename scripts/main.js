@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "about-title-gradient": "Mentor",
       "about-name": "Leo Lewaro",
       "about-role": "AI Creator & Media Innovator",
-      "about-desc-p1": "Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0—a system that’s helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.",
+      "about-desc-p1": "Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0— a system that’s helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.",
       "about-desc-p2": "Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market 3×.",
       "about-exp-pill": "2,130+ Students",
       "about-fact-1-title": "100+ client projects",
