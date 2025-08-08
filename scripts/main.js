@@ -230,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "pain-card3-point3": "Создано для рекламы, магазинов, соцсетей",
 
       // Benefits Section
+      "benefits-title": "AI Модели Ваша Творческая",
       "benefits-title-inverse": "AI Модели",
       "benefits-title-middle": "Ваша Творческая",
       "benefits-title-gradient": "Superpower",

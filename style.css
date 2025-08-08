@@ -5,6 +5,28 @@
   --button-width: 0.64; /* Параметр только для ширины кнопки (1.0 = нормальная ширина) */
 }
 
+/* Класс для управления шириной блока контента */
+.content-container {
+  width: 105vw;
+  max-width: 105vw;
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    max-width: 64rem; /* md:max-w-4xl */
+  }
+}
+
+.content-text {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .content-text {
+    max-width: 70%;
+  }
+}
+
 html {
   height: 100%;
   overflow-y: auto;
