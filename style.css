@@ -653,9 +653,6 @@ section.snap-section {
     transform: none !important;
     flex-shrink: 0;
   }
-  .timer-value {
-    font-size: 1.2rem !important;
-  }
   .blinking-colon {
     font-size: 0.8rem !important;
   }
