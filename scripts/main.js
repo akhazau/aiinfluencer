@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "benefits-card-1-feature-2":
         "Create with personality, not filters",
       "benefits-card-1-feature-3":
-        "No need to show face or speak on camera",
+        "No need to show face on camera",
       "benefits-card-1-feature-4":
         "Make images feel emotional, alive, real",
       "benefits-card-1-feature-5": "Learn a mindset, not just tools",
