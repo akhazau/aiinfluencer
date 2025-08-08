@@ -90,7 +90,6 @@ section.snap-section {
   .mobile-hero-img {
     height: 95% !important;
     max-width: 105% !important;
-    transform: scale(0.95) !important;
   }
   
   .hero-img-container img {
@@ -964,7 +963,7 @@ footer.w-full {
 }
 @media (max-width: 767px) {
   .about-img-container img {
-    width: 80vw !important;
+    width: 95vw !important;
   }
   
   /* Стили для карточек бонусов и карты обучения */

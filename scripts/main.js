@@ -459,6 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   document.getElementById('about-more-btn').classList.remove('hidden');
                   document.getElementById('about-desc-full').classList.add('hidden');
                   p2FullTextEl.classList.add('hidden');
+                  document.getElementById('about-facts-grid').classList.remove('hidden');
                 });
               }
             }
@@ -474,6 +475,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   document.getElementById('about-more-btn').classList.remove('hidden');
                   document.getElementById('about-desc-full').classList.add('hidden');
                   p2FullTextEl.classList.add('hidden');
+                  document.getElementById('about-facts-grid').classList.remove('hidden');
                 });
               }
             }
@@ -853,13 +855,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const dots = document.getElementById('about-desc-dots');
   const fullText = document.getElementById('about-desc-full');
   const p2FullText = document.getElementById('about-desc-p2-full');
+  const factsGrid = document.getElementById('about-facts-grid');
   
-  if (moreBtn && shortText && dots && fullText && p2FullText) {
+  if (moreBtn && shortText && dots && fullText && p2FullText && factsGrid) {
     moreBtn.addEventListener('click', function() {
       dots.classList.add('hidden');
       moreBtn.classList.add('hidden');
       fullText.classList.remove('hidden');
       p2FullText.classList.remove('hidden');
+      factsGrid.classList.add('hidden');
     });
     
     // Обработчик для кнопки less будет добавлен динамически в changeLanguage
