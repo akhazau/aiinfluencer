@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Final CTA Section
       "final-cta-title":
-        'AI Models Will Be a<span class="gradient-text-inverse"> $2.5B Industry</span> by 2030',
+        'AI Models Will Be a <span class="gradient-text-inverse">$2.5B Industry</span> by 2030',
       "final-cta-subtitle":
         "The AI-influencer hype feels like Bitcoin’s 2012 gold rush.",
       "final-cta-form-title": "Join The Waitlist Now",
@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Final CTA Section
       "final-cta-title":
-        'AI-модели станут<span class="gradient-text"> индустрией на $1 млрд</span> к 2030 году',
+        'AI-модели станут <span class="gradient-text">индустрией на $1 млрд</span> к 2030 году',
       "final-cta-subtitle":
         "Воспользуйся этим золотым шансом, пока он есть... Или смотри, как другие зарабатывают, пока ты ждёшь...",
       "final-cta-form-title": "Запишись в лист ожидания",
