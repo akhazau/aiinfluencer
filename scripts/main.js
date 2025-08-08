@@ -45,8 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "pain-card3-point3": "Built for ads, stores, socials",
 
       // Benefits Section
-      "benefits-title-inverse": "AI Models",
-      "benefits-title-middle": "Are Your Creative",
+      "benefits-title": "AI Model Makers Are Your",
       "benefits-title-gradient": "Superpower",
       "benefits-desc":
         "Build a strong visual identity for content on social media to enhance your digital presence.",
