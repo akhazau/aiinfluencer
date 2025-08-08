@@ -99,12 +99,44 @@ document.addEventListener("DOMContentLoaded", function () {
   showBlock(current);
   updateDots();
 
-  // Автоперелистывание каждые 8 секунд
-  setInterval(() => {
-    if (isAutoPlaying) {
-      current = (current + 1) % blocks.length;
-      showBlock(current);
-      updateDots();
+  // Переменная для хранения интервала
+  let autoSlideInterval = null;
+
+  // Функция запуска автоперелистывания
+  function startAutoSlide() {
+    if (autoSlideInterval) return; // Уже запущено
+    autoSlideInterval = setInterval(() => {
+      if (isAutoPlaying) {
+        current = (current + 1) % blocks.length;
+        showBlock(current);
+        updateDots();
+      }
+    }, 8000);
+  }
+
+  // Функция остановки автоперелистывания
+  function stopAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
     }
-  }, 8000);
-}); 
+  }
+
+  // Intersection Observer для запуска автоперелистывания при попадании в область видимости
+  const priceSection = document.getElementById('price-section');
+  if (priceSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startAutoSlide();
+        } else {
+          stopAutoSlide();
+        }
+      });
+    }, {
+      threshold: 0.3 // Запускаем когда 30% секции видно
+    });
+    
+    observer.observe(priceSection);
+  }
+});
