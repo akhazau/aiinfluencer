@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Benefits Section
       "benefits-title-inverse": "AI Модели",
       "benefits-title-middle": "Ваша Творческая",
-      "benefits-title-gradient": "Суперсила",
+      "benefits-title-gradient": "Superpower",
       "benefits-desc":
         "AI Персонажи создают парасоциальные отношения — где подписчики чувствуют настоящую эмоциональную связь с вашей медиа-личностью.",
       "benefits-card-1-title": "Начните Чувствовать Себя Креатором",
@@ -405,6 +405,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (el.placeholder !== undefined) el.placeholder = val;
         else if (id === "hero-subtitle" || id === "final-cta-title") {
           el.innerHTML = val;
+        } else if (id === "benefits-title") {
+          // Специальная обработка для benefits-title - обновляем только первый span с сохранением br
+          const firstSpan = el.querySelector('span:first-child');
+          if (firstSpan) {
+            firstSpan.innerHTML = val.replace('Are Your', '<br class="md:hidden">Are Your') + ' ';
+          } else {
+            el.innerHTML = `<span>${val.replace('Are Your', '<br class="md:hidden">Are Your')} </span><span class="gradient-text" id="benefits-title-gradient">Superpower</span>`;
+          }
         } else if (id.startsWith("review-name-")) {
           // Разделяем возраст и имя для правильного стилизования
           const match = val.match(/^(\d+\s+(?:yo|лет|года))\s+(.+)$/);

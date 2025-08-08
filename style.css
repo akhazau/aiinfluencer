@@ -969,6 +969,12 @@ footer.w-full {
     transition: all 0.3s ease-in-out;
   }
   
+  /* Уменьшение ширины карточки оффера на мобильных устройствах */
+  .bg-\[\#181c22\] {
+    max-width: 380px !important;
+  }
+  
+
 
 }
 
