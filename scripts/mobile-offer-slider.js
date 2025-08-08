@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showBlock(current);
         updateDots();
       }
-    }, 8000);
+    }, 6000);
   }
 
   // Функция остановки автоперелистывания

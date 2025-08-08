@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'By joining, you agree to our <a href="#" class="underline" id="final-cta-privacy-link">Privacy Policy</a> and <a href="#" class="underline" id="final-cta-terms-link">Terms</a>. We will not spam or sell your data.',
       "footer-title": "AI Influencer 3.0",
       "footer-desc":
-        "Build hyper-realistic AI models and generate next-gen content. Transform your visuals and launch your creator journey.",
+        "Jump into the AI game — your guide starts here. Master modern tools fast.",
       "footer-email": "support@aiinfluencer.site",
       "footer-copyright": "© 2025 AI Influencer 3.0. All rights reserved.",
       "footer-legal":
