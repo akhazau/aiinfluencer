@@ -1079,6 +1079,40 @@ footer.w-full {
   background: #ffffff25 !important; /* Более светлый фон для ответов FAQ */
 }
 
+/* === PAIN SECTION MOBILE HORIZONTAL SCROLL === */
+@media (max-width: 767px) {
+  #art-cards-row {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 1.5rem !important;
+    padding: 1rem 1rem 1rem 1.5rem !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  #art-cards-row .art-card {
+    flex: 0 0 300px !important;
+    scroll-snap-align: start;
+    height: auto !important;
+  }
+  
+  /* Скрываем скроллбар */
+  #art-cards-row::-webkit-scrollbar {
+    display: none;
+  }
+  
+  #art-cards-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Добавляем отступ справа для последней карточки */
+  #art-cards-row .art-card:last-child {
+    margin-right: 1.5rem;
+  }
+}
+
 /* === FOOTER LEGAL TEXT === */
 @media (min-width: 768px) {
   #footer-legal {
