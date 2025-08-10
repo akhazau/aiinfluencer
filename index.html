@@ -53,9 +53,9 @@
       <!-- Language selector -->
       <div class="absolute top-[32px] right-[30px] md:right-[118px] z-[100]">
         <div class="space-x-2" id="language-selector">
-          <button class="lang-btn active gradient-text" data-lang="en" onclick="changeLanguage('en')" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); color: #fff; border: none;">EN</button>
-          <button class="lang-btn" data-lang="tr" onclick="changeLanguage('tr')" style="background: transparent; color: #fff; border: 1px solid #fff;">TR</button>
-          <button class="lang-btn" data-lang="ru" onclick="changeLanguage('ru')" style="background: transparent; color: #fff; border: 1px solid #fff;">RU</button>
+          <button class="lang-btn active gradient-text" data-lang="en" style="background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899); color: #fff; border: none;">EN</button>
+          <button class="lang-btn" data-lang="tr" style="background: transparent; color: #fff; border: 1px solid #fff;">TR</button>
+          <button class="lang-btn" data-lang="ru" style="background: transparent; color: #fff; border: 1px solid #fff;">RU</button>
         </div>
       </div>
       <!-- Animated background elements -->
@@ -135,9 +135,9 @@
       <div class="container mx-auto px-6 flex flex-col flex-1 pt-16">
         <div class="section-header mt-16 md:mt-12">
           <h2 class="text-3xl md:text-5xl font-bold mb-2 leading-tight text-center">
-            <span data-translate="pain-title">Tired of</span> <span class="gradient-text" data-translate="pain-title-gradient">Plastic AI faces?</span>
+            <span id="pain-title">Tired of</span> <span class="gradient-text" id="pain-title-gradient">Plastic AI faces?</span>
           </h2>
-          <p class="text-base text-center mb-6 text-gray-300 max-w-xl mx-auto" data-translate="pain-desc">
+          <p class="text-base text-center mb-6 text-gray-300 max-w-xl mx-auto" id="pain-desc">
           See other models — imagine what you'll create with AI in your hands!
         </p>
         </div>
@@ -149,12 +149,12 @@
                 <img src="media/av01.png" alt="AI Art" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2 text-pink-400" data-translate="pain-card1-title">Edutainment</h3>
-                <div class="text-gray-200 text-base mb-2" data-translate="pain-card1-desc">Learn & Enjoy — education meets entertainment.</div>
-                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                  <li data-translate="pain-card1-point1">Daily idea spark</li>
-                  <li data-translate="pain-card1-point2">Fun + skill boost</li>
-                  <li data-translate="pain-card1-point3">Create like a pro</li>
+                <h3 class="text-xl font-semibold mb-2 text-pink-400" id="pain-card1-title">Edutainment</h3>
+              <div class="text-gray-200 text-base mb-2" id="pain-card1-desc">Learn & Enjoy — education meets entertainment.</div>
+              <ul class="text-sm text-gray-300 space-y-1">
+                <li id="pain-card1-point1">Daily idea spark</li>
+                <li id="pain-card1-point2">Fun + skill boost</li>
+                <li id="pain-card1-point3">Create like a pro</li>
                 </ul>
               </div>
             </div>
@@ -163,12 +163,12 @@
                 <img src="media/av02.png" alt="AI Art" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2 text-yellow-300" data-translate="pain-card2-title">Hyper-Realism</h3>
-                <div class="text-gray-200 text-base mb-2" data-translate="pain-card2-desc">Look Real. Feel Real.</div>
-                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                  <li data-translate="pain-card2-point1">Human emotion</li>
-                  <li data-translate="pain-card2-point2">No AI-fake look</li>
-                  <li data-translate="pain-card2-point3">Photo-grade detail</li>
+                <h3 class="text-xl font-semibold mb-2 text-yellow-300" id="pain-card2-title">Hyper-Realism</h3>
+              <div class="text-gray-200 text-base mb-2" id="pain-card2-desc">Look Real. Feel Real.</div>
+              <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                <li id="pain-card2-point1">Human emotion</li>
+                <li id="pain-card2-point2">No AI-fake look</li>
+                <li id="pain-card2-point3">Photo-grade detail</li>
                 </ul>
               </div>
             </div>
@@ -177,12 +177,12 @@
                 <img src="media/av03.png" alt="AI Art" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2 text-purple-400" data-translate="pain-card3-title">Studio-Ready</h3>
-                <div class="text-gray-200 text-base mb-2" data-translate="pain-card3-desc">Shoot Without a Studio.</div>
+                <h3 class="text-xl font-semibold mb-2 text-purple-400" id="pain-card3-title">Studio-Ready</h3>
+                <div class="text-gray-200 text-base mb-2" id="pain-card3-desc">Shoot Without a Studio.</div>
                 <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                  <li data-translate="pain-card3-point1">Fashion-level realism</li>
-                  <li data-translate="pain-card3-point2">Perfect light & tone</li>
-                  <li data-translate="pain-card3-point3">Ready for ads</li>
+                  <li id="pain-card3-point1">Fashion-level realism</li>
+                  <li id="pain-card3-point2">Perfect light & tone</li>
+                  <li id="pain-card3-point3">Ready for ads</li>
                 </ul>
               </div>
             </div>
@@ -196,8 +196,7 @@
       <div class="container mx-auto px-4 flex flex-col flex-1 pt-16">
         <div class="section-header mt-4 md:mt-12">
           <h2 class="text-3xl md:text-5xl font-bold leading-tight text-center mb-2 md:mb-3" id="benefits-title">
-            <span>AI Model Makers <br class="md:hidden">Are Your </span>
-            <span class="gradient-text" id="benefits-title-gradient">Superpower</span>
+            <span>AI Model Makers Are Your <span class="gradient-text" id="benefits-title-gradient">Superpower</span>
           </h2>
                       <p class="text-base text-center mb-12 md:mb-4 text-gray-300" id="benefits-desc">
             Build a strong visual identity for content on social media to enhance your digital presence.

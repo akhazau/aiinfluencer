@@ -115,6 +115,25 @@ section.snap-section {
     width: 90vw !important;
     max-width: 100vw;
   }
+  
+  /* Приподнимаем заголовок секции pain на мобильных */
+  .section-header {
+    margin-top: -20px !important;
+    width: 100% !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Исправляем отображение заголовка benefits на мобильных */
+  #benefits-title {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+    word-wrap: break-word;
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+  }
+  
+
 }
 
 /* Скрываем скроллбар для горизонтального скролла */
@@ -160,8 +179,13 @@ section.snap-section {
 }
 @media (max-width: 767px) {
   .art-card:hover {
-    transform: none;
-    box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.1);
+    transform: none !important;
+    box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.1) !important;
+  }
+  
+  /* Полностью отключаем hover эффекты для мобильных */
+  .art-card {
+    transform: none !important;
   }
 }
 
