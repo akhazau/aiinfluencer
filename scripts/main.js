@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     en: {
       // Sticky Banner
-      "sticky-btn-text": "Get started –",
+      "sticky-btn-text": "Start now –",
       "sticky-btn-price-old": "$127",
       "sticky-btn-price-new": "$27",
       "support-btn": "support",
@@ -14,122 +14,118 @@ document.addEventListener("DOMContentLoaded", function () {
       "hero-title-1": "AI Influencer 3.0",
       "hero-title-2": "ALREADY EASY.",
       "hero-subtitle":
-        'BUILD A LOYAL FANBASE ON INSTAGRAM<br>Master AI in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
-      "main-btn-text": "Get started –",
+        'GROW A LOYAL INSTAGRAM FANBASE<br><br>Master AI in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
+      "main-btn-text": "Start now –",
       "main-btn-price-old": "$127",
       "main-btn-price-new": "$27",
       "live-viewers-text": "people currently viewing this page",
-      "join-text": "Join",
-      "members-text": "creators inside",
+      "join-members-text": "Join 2,132+ creators inside",
       "rating-text": "4.9 (300+ reviews)",
 
       // Pain Section
       "pain-title": "Tired of",
       "pain-title-gradient": "Plastic AI faces?",
       "pain-desc":
-        "See another models - imagine what you'll create with AI in your hands!",
+        "See other models — imagine what you'll create with AI in your hands!",
       "pain-card1-title": "Edutainment",
       "pain-card1-desc": "Learn & Enjoy — education meets entertainment.",
-      "pain-card1-point1": "Daily creative boost",
-      "pain-card1-point2": "Fast & simple",
-      "pain-card1-point3": "Inspires masterpiece thinking",
+      "pain-card1-point1": "Daily idea spark",
+      "pain-card1-point2": "Fun + skill boost",
+      "pain-card1-point3": "Create like a pro",
       "pain-card2-title": "Hyper-Realism",
       "pain-card2-desc": "Look Real. Feel Real.",
-      "pain-card2-point1": "Emotion-rich, photo-grade quality",
+      "pain-card2-point1": "Human emotion",
       "pain-card2-point2": "No AI-fake look",
-      "pain-card2-point3": "Fast, affordable, on-brand",
-      "pain-card3-title": "Studio Quality",
+      "pain-card2-point3": "Photo-grade detail",
+      "pain-card3-title": "Studio-Ready",
       "pain-card3-desc": "Shoot Without a Studio.",
       "pain-card3-point1": "Fashion-level realism",
-      "pain-card3-point2": "Perfect skin, tone & light",
-      "pain-card3-point3": "Built for ads, stores, socials",
+      "pain-card3-point2": "Perfect light & tone",
+      "pain-card3-point3": "Ready for ads",
 
       // Benefits Section
       "benefits-title": "AI Model Makers Are Your",
       "benefits-title-gradient": "Superpower",
       "benefits-desc":
         "Build a strong visual identity for content on social media to enhance your digital presence.",
-      "benefits-card-1-title": "Feeling Like an Artist",
+      "benefits-card-1-title": "Feeling Like a Artist",
       "benefits-card-1-desc-1":
-        "YOU’LL BECOME the architect, designer, sculptor, producer — the influencer behind it all.",
-      "benefits-card-1-desc-1-2":
-        "Unlock the secrets of building your own AI influencer — and turn it into a business.",
-      "benefits-card-1-why-title": "Why It's Different",
-      "benefits-card-1-feature-1": "Build studio-level visuals with no gear",
-      "benefits-card-1-feature-2":
-        "Create with personality, not filters",
-      "benefits-card-1-feature-3":
-        "No need to show face on camera",
-      "benefits-card-1-feature-4":
-        "Make images feel emotional, alive, real",
-      "benefits-card-1-feature-5": "Learn a mindset, not just tools",
+        "YOU'LL BECOME the architect, designer, sculptor, art director, producer, owner — the influencer superhero behind it all.",
+      "benefits-card-1-why-title": "Why this course?",
+      "benefits-card-1-feature-1": "No need to show your face on camera",
+      "benefits-card-1-feature-2": "Build studio-level visuals, zero gear",
+      "benefits-card-1-feature-3": "Personality-first content",
+      "benefits-card-1-feature-4": "Mindset over tools",
       "benefits-card-2-title-mobile": "Studio Quality",
       "benefits-card-2-desc-1-mobile":
         "Shoot Without a Studio. Fashion-level realism, perfect skin, tone & light. Built for ads, stores, socials.",
 
       // Price Section
       "price-title-start": "Ambition &",
-      "price-title-gradient": "AI Tools",
-      "price-title-middle": "› Successful ",
-      "price-title-end": "AI Influencer",
+      "price-title-gradient": "AI tools",
+      "price-title-middle": " >",
+      "price-title-end": " Instant Influencer",
       "price-subtitle":
-        "No studio, no makeup, no crew, no shooting — all for the price of a T-shirt. ",
-      "price-course-title": "AI Influencer 3.0 Course",
+        "No studio, no makeup, no crew, no shooting — all for the price of a T-shirt.",
+      "price-course-title": "AI Influencer 3.0 course",
       "price-current": "$27",
       "price-regular": "Regular Price: $127",
-      "price-discount": "79% OFF — Limited Time",
+      "price-discount": "79% OFF — Only Today!",
       "price-feature-1": "Instant access after payment",
       "price-feature-2": "Watch anytime, at your own pace",
-      "price-feature-3": "2.5h of step-by-step video lessons",
-      "price-feature-5": "No-code AI model training",
-      "price-feature-6": "Ready-made visual framework",
-      "price-feature-7": "Face-swapping explained",
-      "price-btn-text": "Get started –",
-      "price-btn-text-mobile": "Get Now",
-      "price-btn-text-desktop": "Get started –",
-      "price-btn-price-old": "$127",
-      "price-btn-price-new": "$27",
-      "price-btn-now": "NOW",
+      "price-feature-3": "2.5 h of step-by-step video lessons",
+      "price-feature-4": "No-code AI model training",
+      "price-feature-5": "Ready-made visual framework",
+      "price-feature-6": "Face-swapping explained",
+      "price-btn-text": "Start now –",
       "bonuses-title": "🎁 Bonuses",
       "bonus-1": "Big Realism Prompt Pack",
       "bonus-2": "Lifetime Access Anytime",
-      "bonus-3": "Waitlisted to Secret Platform",
-      "bonus-4": "No Bots Email Support",
+      "bonus-3": "Waitlisted to Secret Platform soon",
+      "bonus-4": "Human email support",
       "learnmap-title": "Learn Map",
-      "learnmap-1": "Character setup with pose & style",
-      "learnmap-2": "Realism + image prep for cool angles",
-      "learnmap-3": "AI training with no code needed",
-      "learnmap-4": "Visual control for emotion & outfit",
-      "learnmap-5": "Final touch to merge & publish",
+      "learnmap-1": "Pose & style setup",
+      "learnmap-2": "Angles & realism tips",
+      "learnmap-3": "Face-Lock AI Lora training",
+      "learnmap-4": "Visual control & outfit",
+      "learnmap-5": "Merge & publish fast",
 
       // Reviews Section
       "reviews-title": "What Our",
       "reviews-title-gradient": "Students Say",
       "testimonial-subtitle":
         "Why do our AI model-makers keep sharing the course with friends?",
-      "review-text-1": "❝ AI is finally simple and accessible. The ready-made tools are a joy to use—I'm glad I just decided to try! ❞",
-              "review-name-1": "28 yo Mark R.",
-        "review-role-1": "AI Creator & Startup SMM",
-      "review-text-2": "❝ My wife and I needed a \"face\" for a new line with a zero budget. We trained an AI model with flawless yet natural skin. Followers think she's a real top model—and foundation sales jumped 17 % in the first week. ❞",
-              "review-name-2": "33 yo David K.",
-        "review-role-2": "Brand Manager",
-      "review-text-3": "❝ I used to worry about my looks. Now I have an upgraded AI version of myself—editorial-quality shots, growing audience, no paid ads. I stay off-camera while the good-looking persona racks up likes. ❞",
-              "review-name-3": "26 yo Tony Jr.",
-        "review-role-3": "Travel Blogger",
-      "review-text-4": "❝ I feared nothing would work, but now I run an Instagram page for an influencer I built from scratch. Followers can't believe it's AI. ❞",
-              "review-name-4": "21 yo Huata A.",
-        "review-role-4": "Student",
-      "review-text-5": "❝ Thank you, Leo! Your explanations are crystal-clear. Halfway through the course I launched my first AI project—and it's already getting results. You're one of my favorite instructors. ❞",
-              "review-name-5": "29 yo Elif S.",
-        "review-role-5": "Motion Designer",
-      "review-text-6": "❝ Always wanted an IG feed for the shop but feared photo quality. AI built a portrait mascot that looks real—customers snap selfies with him more than with the mirror! ❞",
-              "review-name-6": "31 yo Murat K.",
+      "review-text-1":
+        "❝ AI is finally simple and accessible. The ready-made tools are a joy to use—I'm glad I just decided to try! ❞",
+      "review-name-1": "28 yo Mark R.",
+      "review-role-1": "Fouder of Startup",
+      "review-text-2":
+        "❝ My wife and I needed a face for a new line with a zero budget. We trained an AI model with flawless yet natural skin. Followers think she's a real top model—and foundation sales jumped 17% in the first week. ❞",
+      "review-name-2": "33 yo David K.",
+      "review-role-2": "Brand Manager",
+      "review-text-3":
+        "❝ I used to worry about my looks. Now I have an upgraded AI version of myself—editorial-quality shots, growing audience, no paid ads. I stay off-camera while the good-looking persona racks up likes. ❞",
+      "review-name-3": "26 yo Tony Jr.",
+      "review-role-3": "Travel Blogger",
+      "review-text-4":
+        "❝ I feared nothing would work, but now I run an Instagram page for an influencer I built from scratch. Followers can't believe it's AI. ❞",
+      "review-name-4": "21 yo Huata A.",
+      "review-role-4": "Student",
+      "review-text-5":
+        "❝ Thank you, Leo! Your explanations are crystal-clear. Halfway through the course I launched my first AI project—and it's already getting results. You're one of my favorite instructors. ❞",
+      "review-name-5": "29 yo Elif S.",
+      "review-role-5": "Motion Designer",
+      "review-text-6":
+        "❝ Always wanted an IG feed for the shop but feared photo quality. AI built a portrait mascot that looks real—customers snap selfies with him more than with the mirror! ❞",
+      "review-name-6": "31 yo Murat K.",
       "review-role-6": "Barbershop Owner",
-      "review-text-7": "❝ I thought I'd be the oldest student, but the course breaks everything into bite-size steps. By lesson three I had a studio-grade shot with ultra-detailed skin. Fantastic experience, Leo! ❞",
-              "review-name-7": "50 yo Pav Williams L.",
+      "review-text-7":
+        "❝ I thought I'd be the oldest student, but the course breaks everything into bite-size steps. By lesson three I had a studio-grade shot with ultra-detailed skin. Fantastic experience, Leo! ❞",
+      "review-name-7": "50 yo Pav Williams L.",
       "review-role-7": "Entrepreneur",
-      "review-text-8": "❝ I tested the course skeptically, sure AI couldn't replace real lighting. It didn't—it helped. Now I generate skin-realistic references, show couples, and they get the vision instantly. Shoots run faster, images feel more emotional. ❞",
-              "review-name-8": "42 yo Denis T.",
+      "review-text-8":
+        "❝ I tested the course skeptically, sure AI couldn't replace real lighting. It didn't—it helped. Now I generate skin-realistic references, show couples, and they get the vision instantly. Shoots run faster, images feel more emotional. ❞",
+      "review-name-8": "42 yo Denis T.",
       "review-role-8": "Wedding Photographer",
 
       // About Section
@@ -137,742 +133,711 @@ document.addEventListener("DOMContentLoaded", function () {
       "about-title-gradient": "Mentor",
       "about-name": "Leo Lewaro",
       "about-role": "AI Creator & Media Innovator",
-      "about-desc-p1": "Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0— a system that’s helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.",
-      "about-desc-p2": "Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market 3×.",
+      "about-desc-p1":
+        "Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0— a system that's helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.",
+      "about-desc-p2":
+        "Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market 3×.",
       "about-exp-pill": "2,130+ Students",
-      "about-fact-1-title": "100+ client projects",
+      "about-fact-1-title": "100+ viral projects",
       "about-fact-1-desc": "Hyper-real AI characters delivered for global brands",
       "about-fact-2-title": "Certified instructor",
       "about-fact-2-desc": "Teaches AI tools & digital-identity pipelines",
-      "about-fact-3-title": "500 k + followers",
+      "about-fact-3-title": "50k + followers",
       "about-fact-3-desc": "Learners from 20 + countries use his methods",
       "about-fact-4-title": "Featured in",
       "about-fact-4-desc": "Forbes, TechCrunch",
+      "about-more-btn": "more",
+      "about-less-btn": "less",
 
       // FAQ Section
       "faq-title": "Frequently Asked",
       "faq-title-gradient": "Questions",
-      "faq-desc": "Build parasocial bonds — let fans feel truly connected.",
-      "faq-q1": "<span class=\"italic text-sm text-white/50\">Max asked…</span> <span class=\"text-white\">How long does it take to see results?</span>",
-      "faq-a1": "First photo-real shots on the very first evening; a full feed in 4-7 days with 1–2 h of daily practice.",
-      "faq-q2": "<span class=\"italic text-sm text-white/50\">Isabelle asked…</span> <span class=\"text-white\">Can I do this alongside my job or school?</span>",
-      "faq-a2": "Yes. Lessons are under 20 min and on-demand 24/7 — watch in the evenings or on weekends.",
-      "faq-q3": "<span class=\"italic text-sm text-white/50\">Anika asked…</span> <span class=\"text-white\">How much time do I need to dedicate to this business?</span>",
-      "faq-a3": "1–2 h per day is enough to launch content and scale the project.",
-      "faq-q4": "<span class=\"italic text-sm text-white/50\">Hassan asked…</span> <span class=\"text-white\">What tools will I need to purchase?</span>",
-      "faq-a4": "Just Midjourney — Basic $10/mo to start or Standard $30/mo for speed. Other services are cheap pay-as-you-go — pennies versus one pro shoot.",
-      "faq-q5": "<span class=\"italic text-sm text-white/50\">Sara asked…</span> <span class=\"text-white\">How do you keep every shot consistent?</span>",
-      "faq-a5": "The course includes a Face-Lock Consistency System — ready prompts & settings that lock facial features so every frame feels from the same shoot.",
-      "faq-q6": "<span class=\"italic text-sm text-white/50\">Sophie asked…</span> <span class=\"text-white\">Will people know my model is AI, and do I have to show my face?</span>",
-      "faq-a6": "With our workflow images look like real photos. Showing your own face is optional — use a fictional persona or an upgraded you.",
-      "faq-q7": "<span class=\"italic text-sm text-white/50\">Alex asked…</span> <span class=\"text-white\">Can I use my character for private or personal projects?</span>",
-      "faq-a7": "Absolutely. Your trained model is yours — use it in blogs, ads or closed content with no restrictions.",
-      "faq-q8": "<span class=\"italic text-sm text-white/50\">Bella asked…</span> <span class=\"text-white\">What makes this course different, and can I learn at my own pace?</span>",
-      "faq-a8": "2.5 h of distilled step-by-step video, ready templates, check-lists and support. Learn at your own speed; lifetime access and updates.",
+      "faq-desc":
+        "Build parasocial bonds — let fans feel truly connected.",
+      "faq-q1":
+        "Max asked… How long does it take to see results?",
+      "faq-a1":
+        "First photo-real shots on the very first evening; a full feed in 4–7 days with 1–2 h of daily practice.",
+      "faq-q2":
+        "Isabelle asked… Can I do this alongside my job or school?",
+      "faq-a2":
+        "Yes. Lessons are under 20 min and on-demand 24/7 — watch in the evenings or on weekends.",
+      "faq-q3":
+        "Anika asked… How much time do I need to dedicate to this business?",
+      "faq-a3":
+        "1–2 h per day is enough to launch content and scale the project.",
+      "faq-q4":
+        "Hassan asked… What tools will I need to purchase?",
+      "faq-a4":
+        "Just Midjourney — Basic $10/mo to start or Standard $30/mo for speed. Other services are cheap pay-as-you-go — pennies versus one pro shoot.",
+      "faq-q5":
+        "Sara asked… How do you keep every shot consistent?",
+      "faq-a5":
+        "The course includes a Face-Lock Consistency System — ready prompts & settings that lock facial features so every frame feels from the same shoot.",
+      "faq-q6":
+        "Sophie asked… Will people know my model is AI, and do I have to show my face?",
+      "faq-a6":
+        "With our workflow images look like real photos. Showing your own face is optional — use a fictional persona or an upgraded you.",
+      "faq-q7":
+        "Alex asked… Can I use my character for private or personal projects?",
+      "faq-a7":
+        "Absolutely. Your trained model is yours — use it in blogs, ads or closed content with no restrictions.",
+      "faq-q8":
+        "Bella asked… What makes this course different, and can I learn at my own pace?",
+      "faq-a8":
+        "2.5 h of distilled step-by-step video, ready templates, check-lists and support. Learn at your own speed; lifetime access and updates.",
 
       // Final CTA Section
       "final-cta-title":
         'AI Models Will Be a <span class="gradient-text-inverse">$2.5B Industry</span> by 2030',
       "final-cta-subtitle":
-        "The AI-influencer hype feels like Bitcoin’s 2012 gold rush.",
-      "final-cta-form-title": "Join The Waitlist Now",
-      "final-cta-spots": "Only 250 spots remaining",
-      "final-cta-legal":
-        'By joining, you agree to our <a href="#" class="underline" id="final-cta-privacy-link">Privacy Policy</a> and <a href="#" class="underline" id="final-cta-terms-link">Terms</a>. We will not spam or sell your data.',
+        "The AI-influencer hype feels like Bitcoin's 2012 gold rush and NFTs boom 2021.",
+      "final-cta-save": "Save $98.00 Today!",
+      "final-cta-btn-text":
+        "Grab The Course For",
+      "course-sales-label": "course sales today",
       "footer-title": "AI Influencer 3.0",
       "footer-desc":
         "Jump into the AI game — your guide starts here. Master modern tools fast.",
       "footer-email": "support@aiinfluencer.site",
-      "footer-copyright": "© 2025 AI Influencer 3.0. All rights reserved.",
+      "footer-copyright":
+        "© 2025 AI Influencer 3.0. All rights reserved.",
       "footer-legal":
-        "This course is for educational purposes only. Results are not guaranteed. By using this site, you accept our terms and assume full responsibility for your decisions and actions. No refunds on digital content.",
+        "This course is for educational purposes only. Results are not guaranteed and may vary based on individual effort, experience, and market conditions. By purchasing and using this course, you acknowledge that you have read and agree to our terms of service and privacy policy. You assume full responsibility for your decisions, actions, and any outcomes resulting from the application of the course materials. Digital products are non-refundable due to their immediate accessibility and downloadable nature. All content is protected by copyright and intellectual property laws.",
     },
+
     ru: {
       // Sticky Banner
-      "sticky-btn-text": "Начать –",
+      "sticky-btn-text": "Начни сейчас –",
       "sticky-btn-price-old": "$127",
       "sticky-btn-price-new": "$27",
       "support-btn": "поддержка",
 
       // Hero Section
-      "hero-title-1": "AI Influencer 3.0",
-      "hero-title-2": "Это будущее?",
+      "hero-title-1": "AI-Инфлюенсер 3.0",
+      "hero-title-2": "ЭТО УЖЕ ПРОСТО.",
       "hero-subtitle":
-        "Присоединяйтесь к листу ожидания, чтобы помочь проверить рынок AI-арта. Ранние подписчики получат доступ и скидки.",
-      "main-btn-text": "Начать –",
+        'Растите верную IG-аудиторию<br><br>Освойте ИИ за дни — запустите <span class="text-purple-300 font-semibold">МАГИЮ</span> уже сегодня!',
+      "main-btn-text": "Начни сейчас –",
       "main-btn-price-old": "$127",
       "main-btn-price-new": "$27",
       "live-viewers-text": "человек сейчас просматривают эту страницу",
-      "join-text": "Присоединились",
-      "members-text": "креаторов уже внутри",
+      "join-members-text": "Присоединяйтесь к 2,132+ креаторам",
       "rating-text": "4.9 (300+ отзывов)",
 
       // Pain Section
       "pain-title": "Устали от",
-      "pain-title-gradient": "пластиковых AI лиц?",
+      "pain-title-gradient": "пластиковых AI-лиц?",
       "pain-desc":
-        "Вы видите, какие модели они делают, и знаете, что можете сделать лучше<br>когда технология попадёт в ваши руки?",
-      "pain-card1-title": "Обучение-Развлечение",
-      "pain-card1-desc": "Учитесь и получайте удовольствие — образование встречается с развлечением.",
-      "pain-card1-point1": "Ежедневный творческий заряд",
-      "pain-card1-point2": "Быстро и просто",
-      "pain-card1-point3": "Вдохновляет на шедевральное мышление",
-      "pain-card2-title": "Гипер-Реализм",
+        "Посмотрите на чужие модели — представьте, что создадите сами, когда ИИ будет в ваших руках!",
+      "pain-card1-title": "Учись играючи",
+      "pain-card1-desc": "Учитесь и наслаждайтесь — образование встречается с развлечением.",
+      "pain-card1-point1": "Ежедневное вдохновение",
+      "pain-card1-point2": "Весело и полезно",
+      "pain-card1-point3": "Твори как профи",
+      "pain-card2-title": "Гиперреализм",
       "pain-card2-desc": "Выглядит реально. Ощущается реально.",
-      "pain-card2-point1": "Эмоционально насыщенное, фото-качество",
-      "pain-card2-point2": "Никакого AI-подделочного вида",
-      "pain-card2-point3": "Быстро, доступно, в стиле бренда",
-      "pain-card3-title": "Студийное Качество",
+      "pain-card2-point1": "Живые эмоции",
+      "pain-card2-point2": "Без искусственного вида",
+      "pain-card2-point3": "Фотореалистичная детализация",
+      "pain-card3-title": "Студийное качество",
       "pain-card3-desc": "Снимайте без студии.",
-      "pain-card3-point1": "Реализм модного уровня",
-      "pain-card3-point2": "Идеальная кожа, тон и свет",
-      "pain-card3-point3": "Создано для рекламы, магазинов, соцсетей",
+      "pain-card3-point1": "Реализм уровня fashion",
+      "pain-card3-point2": "Идеальный свет и тон",
+      "pain-card3-point3": "Готово для рекламы",
 
       // Benefits Section
-      "benefits-title": "AI Модели Ваша Творческая",
-      "benefits-title-inverse": "AI Модели",
-      "benefits-title-middle": "Ваша Творческая",
-      "benefits-title-gradient": "Superpower",
+      "benefits-title": "Создатели AI-моделей — ваша",
+      "benefits-title-gradient": "суперсила",
       "benefits-desc":
-        "AI Персонажи создают парасоциальные отношения — где подписчики чувствуют настоящую эмоциональную связь с вашей медиа-личностью.",
-      "benefits-card-1-title": "Начните Чувствовать Себя Креатором",
+        "Постройте сильную визуальную идентичность для соцсетей и усиливайте цифровое присутствие.",
+      "benefits-card-1-title": "Почувствуйте себя художником",
       "benefits-card-1-desc-1":
-        "После этого курса вы почувствуете себя визуальным архитектором, цифровым дизайнером, креативным продюсером и AI-инфлюенсером — всё в одном.",
-      "benefits-card-1-desc-2":
-        'Это о владении уникальной идентичностью, построении доверия через реализм и выделении из моря "пластиковых" AI лиц.',
-      "benefits-card-1-why-title": "Почему Это По-Другому",
-      "benefits-card-1-feature-1":
-        "Создавайте студийные визуалы без оборудования",
-      "benefits-card-1-feature-2":
-        "Создавайте контент с личностью, а не фильтрами",
-      "benefits-card-1-feature-3":
-        "Не нужно показывать лицо или говорить в камеру",
-      "benefits-card-1-feature-4":
-        "Создавайте изображения, которые чувствуются эмоциональными, живыми, реальными",
-      "benefits-card-1-feature-5": "Изучите мышление, а не просто инструменты",
-      "benefits-card-2-title-mobile": "Студийное Качество",
+        "ВЫ СТАНЕТЕ архитектором, дизайнером, скульптором, арт-директором, продюсером, владельцем — супергероем-инфлюенсером, стоящим за всем этим.",
+      "benefits-card-1-why-title": "Почему этот курс?",
+      "benefits-card-1-feature-1": "Без лица в кадре и речи на камеру",
+      "benefits-card-1-feature-2": "Студийные визуалы без оборудования",
+      "benefits-card-1-feature-3": "Контент с характером",
+      "benefits-card-1-feature-4": "Мышление важнее инструментов",
+      "benefits-card-2-title-mobile": "Студийное качество",
       "benefits-card-2-desc-1-mobile":
-        "Снимайте Без Студии. Модный реализм, идеальная кожа, тон и свет. Создано для рекламы, магазинов, соцсетей.",
+        "Снимайте без студии. Модный реализм, идеальная кожа, свет и тон. Готово для рекламы, магазинов, соцсетей.",
 
       // Price Section
       "price-title-start": "Амбиции и",
-      "price-title-gradient": "AI Инструменты",
-      "price-title-middle": "= Успешный",
-      "price-title-end": "AI Инфлюенсер",
+      "price-title-gradient": "инструменты ИИ",
+      "price-title-middle": " >",
+      "price-title-end": " моментальный инфлюенсер",
       "price-subtitle":
-        "Никакой студии, макияжа, команды, съёмок — всё по цене футболки.",
-      "price-course-title": "Курс AI Influencer 3.0",
+        "Без студии, макияжа, команды и съёмок — всё по цене футболки.",
+      "price-course-title": "Курс «AI Influencer 3.0»",
       "price-current": "$27",
       "price-regular": "Обычная цена: $127",
-      "price-discount": "79% СКИДКА — Ограниченное время",
-      "price-feature-1": "Мгновенный доступ после оплаты",
+      "price-discount": "Скидка 79% — только сегодня!",
+      "price-feature-1": "Доступ сразу после оплаты",
       "price-feature-2": "Смотрите в любое время, в своём темпе",
-      "price-feature-3": "2.5ч пошаговых видеоуроков",
-      "price-feature-4": "Только необходимые AI инструменты",
-      "price-feature-5": "Обучение AI модели без кода",
-      "price-feature-6": "Готовая визуальная структура",
-      "price-feature-7": "Объяснение замены лиц",
-      "price-btn-text": "Начать –",
-      "price-btn-text-mobile": "Купить сейчас",
-      "price-btn-text-desktop": "Начать –",
-      "price-btn-price-old": "$127",
-      "price-btn-price-new": "$27",
-      "price-btn-now": "СЕЙЧАС",
+      "price-feature-3": "2,5 часа пошаговых видеоуроков",
+      "price-feature-4": "Обучение модели без кода",
+      "price-feature-5": "Готовый визуальный каркас",
+      "price-feature-6": "Face-swap — простым языком",
+      "price-btn-text": "Начни сейчас –",
       "bonuses-title": "🎁 Бонусы",
-      "bonus-1": "Большой пакет промптов для реализма",
-      "bonus-2": "Пожизненный доступ в любое время",
+      "bonus-1": "Большой пакет реалистичных промптов",
+      "bonus-2": "Пожизненный доступ",
       "bonus-3": "В листе ожидания секретной платформы",
-      "bonus-4": "Поддержка по email без ботов",
-      "learnmap-title": "Карта Обучения",
-      "learnmap-1": "Настройка персонажа с позой и стилем",
-      "learnmap-2":
-        "Реализм + подготовка изображений для чистых углов и деталей",
-      "learnmap-3": "AI обучение без необходимости в коде",
-      "learnmap-4": "Визуальный контроль эмоций и нарядов",
-      "learnmap-5": "Финальные штрихи для объединения и публикации",
+      "bonus-4": "Живая email-поддержка",
+      "learnmap-title": "Карта обучения",
+      "learnmap-1": "Поза и стиль персонажа",
+      "learnmap-2": "Ракурсы и советы по реалистичности",
+      "learnmap-3": "Face-Lock AI Lora-обучение",
+      "learnmap-4": "Визуальный контроль и образы",
+      "learnmap-5": "Быстро объединить и опубликовать",
 
       // Reviews Section
-      "testimonial-title": "Что",
-      "reviews-title-gradient": "Говорят Люди",
+      "reviews-title": "Что",
+      "reviews-title-gradient": "говорят студенты",
       "testimonial-subtitle":
-        "Не верьте нам на слово.<br>Вот что думают ранние последователи об AI-генерированном искусстве.",
-      "review-text-1": "❝ AI наконец-то стал простым и доступным. Готовые инструменты — удовольствие в использовании, рад что просто решил попробовать! ❞",
-              "review-name-1": "28 лет Марк Р.",
-              "review-role-1": "AI Creator & Startup SMM",
-      "review-text-2": "❝ Мы с женой нуждались в \"лице\" для новой линейки с нулевым бюджетом. Мы обучили AI модель с безупречной, но естественной кожей. Подписчики думают, что она настоящая топ-модель — и продажи тонального крема выросли на 17% в первую неделю. ❞",
-              "review-name-2": "33 года Дэвид К.",
-              "review-role-2": "Brand Manager, Cosmetic Products",
-      "review-text-3": "❝ Раньше я беспокоился о своей внешности. Теперь у меня есть улучшенная AI версия себя — снимки редакционного качества, растущая аудитория, без платной рекламы. Я остаюсь за кадром, пока привлекательная персона набирает лайки. ❞",
-              "review-name-3": "26 лет Тони мл.",
-              "review-role-3": "Travel Blogger",
-      "review-text-4": "❝ Я боялся, что ничего не сработает, но теперь я веду Instagram страницу для инфлюенсера, которого создал с нуля. Подписчики не верят, что это AI. На занятии я запустил Face-Lock и создал полную съемку за 30 минут — мой профессор спросил, какую студию я забронировал! ❞",
-              "review-name-4": "21 год Хуата А.",
-              "review-role-4": "Media-Studies Student",
-      "review-text-5": "❝ Спасибо, Лео! Твои объяснения кристально ясны. На полпути курса я запустил свой первый AI проект — и он уже дает результаты. Ты один из моих любимых инструкторов. ❞",
-              "review-name-5": "29 лет Элиф С.",
-              "review-role-5": "Motion Designer",
-      "review-text-6": "❝ Я всегда хотел Instagram ленту для салона, но беспокоился о качестве фото. Оказывается, AI может создать портретный талисман, почти неотличимый от реального человека. Один вечер работы, и теперь персонаж приветствует клиентов на наших экранах — люди делают селфи с ним чаще, чем с зеркалом! ❞",
-              "review-name-6": "31 год Мурат К.",
-              "review-role-6": "Barbershop Owner",
-      "review-text-7": "❝ Я думал, что буду самым старым студентом, но курс разбивает все на простые шаги. К третьему уроку у меня был снимок студийного качества с ультра-детальной кожей — без камеры или осветительного оборудования. Четкий темп, увлекательный контент — фантастический опыт, Лео! ❞",
-              "review-name-7": "50 лет Pav Williams L.",
-              "review-role-7": "Entrepreneur",
-      "review-text-8": "❝ Я тестировал курс скептически, уверенный, что AI не может заменить настоящее освещение. Он не заменил — он помог. Теперь я генерирую реалистичные референсы кожи, показываю парам, и они мгновенно понимают видение. Съемки проходят быстрее, изображения кажутся более эмоциональными, не как обычное AI искусство. ❞",
-              "review-name-8": "42 года Denis T.",
-              "review-role-8": "Wedding Photographer",
+        "Почему наши создатели AI-моделей советуют курс друзьям?",
+      "review-text-1":
+        "❝ ИИ наконец стал простым и доступным. Готовые инструменты — одно удовольствие, рад, что просто решился попробовать! ❞",
+      "review-name-1": "Марк Р., 28",
+      "review-role-1": "Основатель стартапа",
+      "review-text-2":
+        "❝ Нам с женой нужно было «лицо» новой линейки с нулевым бюджетом. Обучили модель с безупречной, но естественной кожей. Подписчики уверены — это топ-модель; продажи тона +17% за первую неделю. ❞",
+      "review-name-2": "Дэвид К., 33",
+      "review-role-2": "Бренд-менеджер",
+      "review-text-3":
+        "❝ Раньше переживал из-за внешности. Теперь у меня прокачанная AI-версия — кадры уровня редакции, рост аудитории, без рекламы. Я за кадром, а персона собирает лайки. ❞",
+      "review-name-3": "Тони Jr., 26",
+      "review-role-3": "Тревел-блогер",
+      "review-text-4":
+        "❝ Боялся, что ничего не выйдет, а теперь веду IG-страницу инфлюенсера, созданного с нуля. Подписчики не верят, что это ИИ. ❞",
+      "review-name-4": "Хуата А., 21",
+      "review-role-4": "Студент",
+      "review-text-5":
+        "❝ Спасибо, Лео! Объяснения кристально ясные. На середине курса запустил первый AI-проект — уже есть результат. Ты — в топе моих преподавателей. ❞",
+      "review-name-5": "Элиф С., 29",
+      "review-role-5": "Motion-дизайнер",
+      "review-text-6":
+        "❝ Хотел ленту салона, но боялся качества фото. ИИ сделал портрет-маскота как живого — с ним фоткаются чаще, чем с зеркалом! ❞",
+      "review-name-6": "Мурат К., 31",
+      "review-role-6": "Владелец барбершопа",
+      "review-text-7":
+        "❝ Думал, буду самым возрастным, но курс — по шагам. К третьему уроку — снимок студийного уровня с ультра-деталями кожи. Отличный опыт, Лео! ❞",
+      "review-name-7": "Pav Williams L., 50",
+      "review-role-7": "Предприниматель",
+      "review-text-8":
+        "❝ Скептически тестил — думал, свет не заменить. ИИ не заменил — помог. Делаю skin-референсы, показываю парам — картинка понятна мгновенно. Съёмки быстрее, эмоций больше. ❞",
+      "review-name-8": "Денис Т., 42",
+      "review-role-8": "Свадебный фотограф",
 
       // About Section
-      "about-title-text": "Познакомьтесь с Вашим",
-      "about-title-gradient": "Инструктором",
-      "about-name": "Лео Лаваро",
-      "about-role": "AI Визуальный Креатор и Медиа-Новатор",
-      "about-desc-p1": "Лео имеет опыт в исследованиях AI и создании контента. Он соавтор AI Influencer 3.0, помогая создателям контента и брендам создавать реалистичных виртуальных персонажей.",
-      "about-desc-p2": "Его подход сочетает технические знания с творческим видением, что делает сложные AI-инструменты доступными для всех.",
-      "about-desc-p3": "Лео — эксперт в Midjourney, Omnisphere и рабочих процессах face-lock, обучая студентов создавать фотореалистичные изображения, которые выглядят профессионально и аутентично.",
-      "about-exp-pill": "6 лет опыта",
-      "about-fact-1-title": "100+ клиентских проектов",
-      "about-fact-1-desc": "Гипер-реалистичные AI-персонажи для глобальных брендов",
+      "about-title-text": "Познакомьтесь с",
+      "about-title-gradient": "наставником",
+      "about-name": "Лео Леваро",
+      "about-role": "AI-креатор и медиановатор",
+      "about-desc-p1":
+        "Бывший исследователь Dubai Future Labs, ныне контент-стратег. Вместе с женой создал AI Influencer 3.0 — систему, которая помогла 2,130+ авторам запускать AI-бренды и утраивать охваты без студийных бюджетов.",
+      "about-desc-p2":
+        "Лео превращает идеи в доход: Midjourney, Omnisphere и face-lock-пайплайны снижают затраты и ускоряют вывод контента в 3 раза.",
+      "about-exp-pill": "2,130+ студентов",
+      "about-fact-1-title": "100+ вирусных проектов",
+      "about-fact-1-desc": "Гиперреальные AI-персонажи для глобальных брендов",
       "about-fact-2-title": "Сертифицированный инструктор",
-      "about-fact-2-desc": "Обучает AI-инструментам и цифровым пайплайнам",
-      "about-fact-3-title": "500 тыс+ подписчиков",
-      "about-fact-3-desc": "Ученики из 20+ стран используют его методы",
-      "about-fact-4-title": "Упоминания в",
+      "about-fact-2-desc": "Обучает AI-инструментам и цифровой идентичности",
+      "about-fact-3-title": "50k+ подписчиков",
+      "about-fact-3-desc": "Ученики из 20+ стран применяют методики",
+      "about-fact-4-title": "Публикации",
       "about-fact-4-desc": "Forbes, TechCrunch",
+      "about-more-btn": "ещё",
+      "about-less-btn": "свернуть",
 
       // FAQ Section
-      "faq-title": "Часто Задаваемые",
-      "faq-title-gradient": "Вопросы",
+      "faq-title": "Часто задаваемые",
+      "faq-title-gradient": "вопросы",
       "faq-desc":
-        "Результаты зависят от ваших усилий и использования рекомендуемых инструментов.",
-      "faq-q1": "Что если я новичок в AI?",
+        "Стройте парасоциальные связи — пусть фанаты чувствуют настоящую вовлечённость.",
+      "faq-q1": "Макс: Сколько ждать первых результатов?",
       "faq-a1":
-        "Абсолютно! Наш Стартовый Набор разработан для учащихся всех уровней, включая начинающих. Мы охватываем фундаментальные концепции в AI и Компьютерном Зрении, предоставляя идеальную отправную точку для тех, кто новичок в этой области. По мере продвижения наши курсы помогут вам развить навыки и знания.</p><p>Всё, что вам нужно — базовые навыки программирования на Python.",
-      "faq-q2":
-        "Сколько времени мне нужно инвестировать в курсы, чтобы увидеть результаты?",
+        "Первые фотореальные кадры — уже в первый вечер; полноценная лента — за 4–7 дней при 1–2 ч в день.",
+      "faq-q2": "Изабель: Совмещается с работой или учёбой?",
       "faq-a2":
-        "Наши курсы разработаны быть гибкими, позволяя вам учиться в своём темпе. Необходимые временные инвестиции будут зависеть от вашей индивидуальной скорости обучения и целей. Однако мы рекомендуем выделять регулярное время каждую неделю для работы с материалами курса и выполнения практических упражнений. Постоянство — ключ к результатам и освоению концепций.",
-      "faq-q3":
-        "Получу ли я поддержку или руководство во время прохождения курсов?",
+        "Да. Уроки до 20 минут и доступны 24/7 — смотрите вечером или на выходных.",
+      "faq-q3": "Аника: Сколько времени уделять проекту?",
       "faq-a3":
-        "Да! Мы гордимся тем, что предлагаем поддерживающее обучающее сообщество, где вы можете сотрудничать с другими учащимися и задавать вопросы. Наша команда экспертов также доступна для предоставления руководства и ответов на любые вопросы по материалам курса.</p><p>У нас также есть группа в WhatsApp с более чем 400+ AI-CV разработчиками.",
-      "faq-q4":
-        "Что делает ваши курсы отличными от других AI курсов, доступных онлайн?",
+        "1–2 часа в день достаточно, чтобы запустить контент и масштабироваться.",
+      "faq-q4": "Хассан: Какие инструменты покупать?",
       "faq-a4":
-        "Наши курсы выделяются благодаря экспертному контенту, актуальной программе, практическому подходу к обучению и поддерживающему обучающему сообществу. Мы фокусируемся на предоставлении практических, реальных примеров и проектов, которые помогают вам применять знания и получать ценный опыт.</p><p>Кроме того, наша приверженность актуальности последним трендам AI и Компьютерного Зрения обеспечивает получение передового образования, которое держит вас конкурентоспособным в индустрии.</p><p>Вместе с VIP технической поддержкой и сообществом вы обеспечите оптимальное обучение.",
-      "faq-q5": "Нужен ли предварительный опыт программирования?",
+        "Только Midjourney — Basic $10/мес для старта или Standard $30/мес быстрее. Остальное — дешёвая поминутная оплата, копейки против одного профи-съёма.",
+      "faq-q5": "Сара: Как держать постоянство кадров?",
       "faq-a5":
-        "Предварительный опыт программирования не требуется для наших начальных курсов. Мы начинаем с основ и постепенно развиваем ваши навыки. Для продвинутых курсов некоторое знакомство с Python полезно, но не обязательно.",
-      "faq-q6": "Самостоятельные ли курсы?",
+        "Внутри — Face-Lock Consistency System: готовые промпты и настройки, фиксирующие черты лица, чтобы каждый кадр был «из одной съёмки».",
+      "faq-q6": "Софи: Поймут ли, что модель — ИИ? Нужна ли моя внешность?",
       "faq-a6":
-        "Да, все наши курсы самостоятельные. Вы можете начать в любое время и прогрессировать в своём темпе. Нет строгих дедлайнов, так что вы можете вписать обучение в свой график.",
-      "faq-q7": "Получу ли я сертификат после завершения курса?",
+        "Наш пайплайн делает кадры «как фото». Показывать своё лицо не обязательно — используйте вымышленного персонажа или «прокачанную» версию себя.",
+      "faq-q7": "Алекс: Можно для личных/частных проектов?",
       "faq-a7":
-        "Да, при успешном завершении курса и всех требуемых заданий вы получите сертификат, которым можете поделиться с работодателями или в своём профиле LinkedIn.",
-      "faq-q8": "Что если у меня есть вопросы во время курса?",
+        "Да. Обученная модель — ваша. Используйте в блогах, рекламе и закрытом контенте без ограничений.",
+      "faq-q8": "Белла: Чем этот курс отличается? Учиться в своём темпе?",
       "faq-a8":
-        "Вы можете задавать вопросы в нашем форуме сообщества или обращаться к нашей команде поддержки в любое время. Мы здесь, чтобы помочь вам добиться успеха!",
-      "faq-q9":
-        "Могу ли я получить доступ к материалам курса после завершения?",
-      "faq-a9":
-        "Да, у вас будет пожизненный доступ ко всем материалам курса, включая обновления и новый контент, добавленный в будущем.",
-      "faq-q10": "Есть ли политика возврата?",
-      "faq-a10":
-        "Пожалуйста, обратитесь к странице нашей политики возврата для деталей. Если вы не удовлетворены курсом, свяжитесь с нами в течение указанного периода для возможного возврата.",
+        "2,5 часа выжимки, шаблоны, чек-листы и поддержка. Учитесь в своём темпе; пожизненный доступ и обновления.",
 
-      // Final CTA Section
+      // Final CTA
       "final-cta-title":
-        'AI-модели станут <span class="gradient-text">индустрией на $1 млрд</span> к 2030 году',
+        'AI-модели станут <span class="gradient-text">рынком $2.5B</span> к 2030',
       "final-cta-subtitle":
-        "Воспользуйся этим золотым шансом, пока он есть... Или смотри, как другие зарабатывают, пока ты ждёшь...",
-      "final-cta-form-title": "Запишись в лист ожидания",
-      "final-cta-spots": "Осталось только 250 мест",
-      "final-cta-legal":
-        'Регистрируясь, вы соглашаетесь с <a href="#" class="underline" id="final-cta-privacy-link">Политикой конфиденциальности</a> и <a href="#" class="underline" id="final-cta-terms-link">Условиями</a>. Мы не спамим и не продаём ваши данные.',
-      "footer-title": "AI Character Studio",
+        "Хайп вокруг AI-инфлюенсеров — как золотая лихорадка Bitcoin 2012 и бум NFT 2021.",
+      "final-cta-save": "Сэкономьте $98 сегодня!",
+      "final-cta-btn-text": "Забрать курс за",
+      "course-sales-label": "покупок курса сегодня",
+      "footer-title": "AI Influencer 3.0",
       "footer-desc":
-        "Создавайте гиперреалистичные AI-модели и генерируйте контент нового поколения. Преобразите свои визуалы и начните путь креатора.",
+        "Включайтесь в AI-игру — старт здесь. Быстро осваивайте современные инструменты.",
       "footer-email": "support@aiinfluencer.site",
-      "footer-copyright": "© 2025 Лео Лаваро. Все права защищены.",
+      "footer-copyright":
+        "© 2025 AI Influencer 3.0. Все права защищены.",
       "footer-legal":
-        "Этот курс предназначен только для образовательных целей. Результаты не гарантируются. Используя этот сайт, вы принимаете наши условия и берёте на себя полную ответственность за свои решения и действия. Возвратов за цифровой контент нет.",
+        "Этот курс предназначен только для образовательных целей. Результаты не гарантированы и могут варьироваться в зависимости от индивидуальных усилий, опыта и рыночных условий. Покупая и используя этот курс, вы подтверждаете, что прочитали и согласны с нашими условиями обслуживания и политикой конфиденциальности. Вы берёте на себя полную ответственность за свои решения, действия и любые результаты, полученные от применения материалов курса. Цифровые продукты не подлежат возврату из-за их немедленной доступности и загружаемой природы. Весь контент защищён авторским правом и законами об интеллектуальной собственности.",
     },
+
+    tr: {
+      // Sticky Banner
+      "sticky-btn-text": "Hemen başla –",
+      "sticky-btn-price-old": "$127",
+      "sticky-btn-price-new": "$27",
+      "support-btn": "destek",
+
+      // Hero Section
+      "hero-title-1": "AI Influencer 3.0",
+      "hero-title-2": "ARTIK ÇOK KOLAY.",
+      "hero-subtitle":
+        'SADIK BİR INSTAGRAM KİTLESİ BÜYÜT<br><br>Yapay zekâyı birkaç günde öğren — <span class="text-purple-300 font-semibold">SİHİR</span>i bugün başlat!',
+      "main-btn-text": "Hemen başla –",
+      "main-btn-price-old": "$127",
+      "main-btn-price-new": "$27",
+      "live-viewers-text": "kişi şu anda bu sayfayı inceliyor",
+      "join-members-text": "İçeride 2.132+ yaratıcıya katıl",
+      "rating-text": "4.9 (300+ yorum)",
+
+      // Pain Section
+      "pain-title": "Bıktınız mı",
+      "pain-title-gradient": "sahte görünen AI yüzlerden?",
+      "pain-desc":
+        "Başkalarının modellerine bak — AI senin elindeyken neler yaratacağını hayal et!",
+      "pain-card1-title": "Eğlenceli Öğrenme",
+      "pain-card1-desc": "Öğren ve eğlen — eğitim, eğlenceyle buluşuyor.",
+      "pain-card1-point1": "Günlük fikir kıvılcımı",
+      "pain-card1-point2": "Eğlence + beceri artışı",
+      "pain-card1-point3": "Usta gibi üret",
+      "pain-card2-title": "Hiper-gerçekçilik",
+      "pain-card2-desc": "Gerçek görün. Gerçek hissettir.",
+      "pain-card2-point1": "İnsani duygu",
+      "pain-card2-point2": "Yapay görünüm yok",
+      "pain-card2-point3": "Fotoğraf seviyesinde detay",
+      "pain-card3-title": "Stüdyoya Hazır",
+      "pain-card3-desc": "Stüdyo olmadan çek.",
+      "pain-card3-point1": "Moda çekimi düzeyi gerçekçilik",
+      "pain-card3-point2": "Mükemmel ışık ve ton",
+      "pain-card3-point3": "Reklama hazır",
+
+      // Benefits Section
+      "benefits-title": "AI model üreticileri senin",
+      "benefits-title-gradient": "süper gücün",
+      "benefits-desc":
+        "Sosyal medya içeriğin için güçlü bir görsel kimlik kur; dijital varlığını büyüt.",
+      "benefits-card-1-title": "Kendini sanatçı gibi hisset",
+      "benefits-card-1-desc-1":
+        "Mimar, tasarımcı, heykeltıraş, sanat yönetmeni, yapımcı, sahip — hepsine dönüş; hepsinin arkasındaki influencer süper kahramanı ol.",
+      "benefits-card-1-why-title": "Neden bu kurs?",
+      "benefits-card-1-feature-1": "Yüzünü kameraya göstermen gerekmez",
+      "benefits-card-1-feature-2": "Ekipmansız stüdyo seviyesi görseller",
+      "benefits-card-1-feature-3": "Önce kişilik, sonra filtre",
+      "benefits-card-1-feature-4": "Araçlardan önce zihniyet",
+      "benefits-card-2-title-mobile": "Stüdyo Kalitesi",
+      "benefits-card-2-desc-1-mobile":
+        "Stüdyo olmadan çek. Moda düzeyi gerçekçilik; kusursuz cilt, ışık ve ton. Reklam, mağaza, sosyal için ideal.",
+
+      // Price Section
+      "price-title-start": "Hırs &",
+      "price-title-gradient": "AI araçları",
+      "price-title-middle": " >",
+      "price-title-end": " Anında Fenomen",
+      "price-subtitle":
+        "Stüdyo yok, makyaj yok, ekip yok, çekim yok — hepsi bir tişört fiyatına.",
+      "price-course-title": "AI Influencer 3.0 kursu",
+      "price-current": "$27",
+      "price-regular": "Normal Fiyat: $127",
+      "price-discount": "%79 İNDİRİM — Sadece Bugün!",
+      "price-feature-1": "Ödeme sonrası anında erişim",
+      "price-feature-2": "İstediğin zaman, kendi hızında izle",
+      "price-feature-3": "Adım adım 2,5 saat video ders",
+      "price-feature-4": "Kodsuz AI model eğitimi",
+      "price-feature-5": "Hazır görsel çerçeve",
+      "price-feature-6": "Yüz değiştirme açıklanıyor",
+      "price-btn-text": "Hemen başla –",
+      "bonuses-title": "🎁 Bonuslar",
+      "bonus-1": "Büyük Realism Prompt Paketi",
+      "bonus-2": "Süresiz erişim",
+      "bonus-3": "Yakında Gizli Platform bekleme listesi",
+      "bonus-4": "Gerçek kişi e-posta desteği",
+      "learnmap-title": "Öğrenim Haritası",
+      "learnmap-1": "Poz ve stil kurulumu",
+      "learnmap-2": "Açı & gerçekçilik ipuçları",
+      "learnmap-3": "Face-Lock AI Lora eğitimi",
+      "learnmap-4": "Görsel kontrol & kıyafet",
+      "learnmap-5": "Birleştir ve hızla yayınla",
+
+      // Reviews Section
+      "reviews-title": "Öğrencilerimiz",
+      "reviews-title-gradient": "ne diyor",
+      "testimonial-subtitle":
+        "Neden AI model üreticilerimiz kursu arkadaşlarıyla paylaşmaya devam ediyor?",
+      "review-text-1":
+        "❝ AI sonunda basit ve erişilebilir. Hazır araçları kullanmak çok keyifli—iyi ki denemişim! ❞",
+      "review-name-1": "28, Mark R.",
+      "review-role-1": "Startup kurucusu",
+      "review-text-2":
+        "❝ Eşimle sıfır bütçeyle yeni bir seri için 'yüz'e ihtiyacımız vardı. Kusursuz ama doğal cilde sahip bir AI model eğittik. Takipçiler onun gerçek bir top model olduğuna inanıyor—ilk haftada fondöten satışları %17 arttı. ❞",
+      "review-name-2": "33, David K.",
+      "review-role-2": "Marka Yöneticisi",
+      "review-text-3":
+        "❝ Görünüşümden endişe ederdim. Şimdi kendimin geliştirilmiş AI versiyonu var—editoryal kalite kareler, büyüyen kitle, reklamsız. Ben kameranın dışında kalıyorum, şık persona beğenileri topluyor. ❞",
+      "review-name-3": "26, Tony Jr.",
+      "review-role-3": "Seyahat Bloggerı",
+      "review-text-4":
+        "❝ Hiçbir şey işe yaramaz sanıyordum ama sıfırdan kurduğum bir influencer için IG sayfası yürütüyorum. Takipçiler bunun AI olduğuna inanamıyor. ❞",
+      "review-name-4": "21, Huata A.",
+      "review-role-4": "Öğrenci",
+      "review-text-5":
+        "❝ Teşekkürler, Leo! Açıklamaların tertemiz. Kursun ortasında ilk AI projemi başlattım—şimdiden sonuç veriyor. En sevdiğim eğitmenlerdensin. ❞",
+      "review-name-5": "29, Elif S.",
+      "review-role-5": "Motion Designer",
+      "review-text-6":
+        "❝ Mağaza için IG akışı istiyordum ama fotoğraf kalitesinden korkuyordum. AI gerçek gibi duran bir portre maskotu yaptı—müşteriler aynadan çok onunla selfie çekiyor! ❞",
+      "review-name-6": "31, Murat K.",
+      "review-role-6": "Berber Dükkanı Sahibi",
+      "review-text-7":
+        "❝ En yaşlı öğrenci ben olurum sanmıştım, ama kurs her şeyi lokma lokma ayırıyor. Üçüncü derste, ultra detaylı ciltle stüdyo seviyesinde bir karem vardı. Harika deneyim, Leo! ❞",
+      "review-name-7": "50, Pav Williams L.",
+      "review-role-7": "Girişimci",
+      "review-text-8":
+        "❝ Kursu şüpheyle denedim; gerçek ışığı AI'ın yerine koyamayacağına emindim. Yerine koymadı—yardım etti. Şimdi cilt-gerçekçi referanslar üretiyorum; çiftlere gösteriyorum ve vizyonu anında kavrıyorlar. Çekimler hızlı, kareler daha duygusal. ❞",
+      "review-name-8": "42, Denis T.",
+      "review-role-8": "Düğün Fotoğrafçısı",
+
+      // About Section
+      "about-title-text": "Eğitmeninle",
+      "about-title-gradient": "tanış",
+      "about-name": "Leo Lewaro",
+      "about-role": "AI Üreticisi & Medya Yenilikçisi",
+      "about-desc-p1":
+        "Eski Dubai Future Labs AI araştırmacısı, şimdi içerik stratejisti. Eşiyle birlikte AI Influencer 3.0'ı kurdu—2.130+ yaratıcının AI destekli marka başlatmasına ve stüdyo bütçesi olmadan erişimini üçe katlamasına yardım etti.",
+      "about-desc-p2":
+        "Leo, ham fikirleri gelire çevirir: Midjourney, Omnisphere ve özel face-lock iş akışları maliyeti düşürür ve pazara çıkışı 3× hızlandırır.",
+      "about-exp-pill": "2.130+ öğrenci",
+      "about-fact-1-title": "100+ viral proje",
+      "about-fact-1-desc": "Küresel markalara hiper-gerçek AI karakterler",
+      "about-fact-2-title": "Sertifikalı eğitmen",
+      "about-fact-2-desc": "AI araçları ve dijital kimlik hatlarını öğretir",
+      "about-fact-3-title": "50k+ takipçi",
+      "about-fact-3-desc": "20+ ülkeden öğrenciler yöntemlerini kullanıyor",
+      "about-fact-4-title": "Öne çıkanlar",
+      "about-fact-4-desc": "Forbes, TechCrunch",
+      "about-more-btn": "daha fazla",
+      "about-less-btn": "daha az",
+
+      // FAQ Section
+      "faq-title": "Sıkça Sorulan",
+      "faq-title-gradient": "Sorular",
+      "faq-desc":
+        "Parasosyal bağlar kur — hayranların gerçekten bağlı hissetsin.",
+      "faq-q1": "Max sordu… Sonuçları görmek ne kadar sürer?",
+      "faq-a1":
+        "İlk akşamda fotogerçek kareler; günde 1–2 saatle 4–7 günde tam bir akış.",
+      "faq-q2": "Isabelle sordu… Bunu iş/okulla birlikte yapabilir miyim?",
+      "faq-a2":
+        "Evet. Dersler 20 dakikanın altında ve 7/24 talep üzerine — akşamları veya hafta sonu izle.",
+      "faq-q3": "Anika sordu… Bu işe ne kadar zaman ayırmalıyım?",
+      "faq-a3":
+        "Günde 1–2 saat içerik başlatmak ve projeyi büyütmek için yeterli.",
+      "faq-q4": "Hassan sordu… Hangi araçları satın almalıyım?",
+      "faq-a4":
+        "Sadece Midjourney — başlangıç için Basic $10/ay veya hız için Standard $30/ay. Diğer servisler ucuz, kullandığın kadar öde — tek bir profesyonel çekime kıyasla kuruşlar.",
+      "faq-q5": "Sara sordu… Tutarlılığı nasıl koruyorsunuz?",
+      "faq-a5":
+        "Kursta Face-Lock Tutarlılık Sistemi var — her kare aynı çekimden gibi hissettiren, yüz özelliklerini kilitleyen hazır promptlar ve ayarlar.",
+      "faq-q6": "Sophie sordu… Modelimin AI olduğu anlaşılır mı; yüzümü göstermeli miyim?",
+      "faq-a6":
+        "İş akışımız görüntüleri gerçek fotoğraf gibi yapar. Yüzünü göstermek zorunda değilsin — kurgusal persona ya da geliştirilmiş 'sen' kullan.",
+      "faq-q7": "Alex sordu… Karakterimi özel/kişisel projelerde kullanabilir miyim?",
+      "faq-a7":
+        "Kesinlikle. Eğitilmiş model senindir — bloglarda, reklamlarda veya kapalı içerikte sınırsız kullan.",
+      "faq-q8": "Bella sordu… Bu kursu farklı kılan ne; kendi hızımda öğrenebilir miyim?",
+      "faq-a8":
+        "2,5 saat damıtılmış adım adım video, hazır şablonlar, kontrol listeleri ve destek. Kendi hızında öğren; ömür boyu erişim ve güncellemeler.",
+
+      // Final CTA
+      "final-cta-title":
+        'AI Modelleri 2030\'a kadar <span class="gradient-text-inverse">$2.5B</span>\'lık bir sektör olacak',
+      "final-cta-subtitle":
+        "AI-influencer çılgınlığı, 2012 Bitcoin altına hücumu ve 2021 NFT patlaması gibi hissettiriyor.",
+      "final-cta-save": "Bugün $98 tasarruf et!",
+      "final-cta-btn-text": "Kursu Kap",
+      "course-sales-label": "bugünkü kurs satışları",
+      "footer-title": "AI Influencer 3.0",
+      "footer-desc":
+        "AI oyununa dal — rehberin burada başlıyor. Modern araçları hızla ustalaş.",
+      "footer-email": "support@aiinfluencer.site",
+      "footer-copyright":
+        "© 2025 AI Influencer 3.0. Tüm hakları saklıdır.",
+      "footer-legal":
+        "Bu kurs yalnızca eğitim amaçlıdır. Sonuçlar garanti edilmez ve bireysel çaba, deneyim ve pazar koşullarına göre değişebilir. Bu kursu satın alarak ve kullanarak, hizmet şartlarımızı ve gizlilik politikamızı okuduğunuzu ve kabul ettiğinizi onaylarsınız. Kararlarınız, eylemleriniz ve kurs materyallerinin uygulanmasından kaynaklanan sonuçlar için tam sorumluluk üstlenirsiniz. Dijital ürünler, anında erişilebilir ve indirilebilir doğaları nedeniyle iade edilemez. Tüm içerik telif hakkı ve fikri mülkiyet yasalarıyla korunmaktadır.",
+    }
   };
-  function changeLanguage(lang) {
-    document.documentElement.lang = lang;
-    Object.entries(translations[lang]).forEach(([id, val]) => {
-      const el = document.getElementById(id);
-      if (el) {
-        if (el.placeholder !== undefined) el.placeholder = val;
-        else if (id === "hero-subtitle" || id === "final-cta-title") {
-          el.innerHTML = val;
-        } else if (id === "benefits-title") {
-          // Специальная обработка для benefits-title - обновляем только первый span с сохранением br
-          const firstSpan = el.querySelector('span:first-child');
-          if (firstSpan) {
-            firstSpan.innerHTML = val.replace('Are Your', '<br class="md:hidden">Are Your') + ' ';
-          } else {
-            el.innerHTML = `<span>${val.replace('Are Your', '<br class="md:hidden">Are Your')} </span><span class="gradient-text" id="benefits-title-gradient">Superpower</span>`;
-          }
-        } else if (id.startsWith("review-name-")) {
-          // Разделяем возраст и имя для правильного стилизования
-          const match = val.match(/^(\d+\s+(?:yo|лет|года))\s+(.+)$/);
-          if (match) {
-            const age = match[1];
-            const name = match[2];
-            // Обновляем возраст в предыдущем элементе
-            const ageElement = el.previousElementSibling;
-            if (ageElement && ageElement.classList.contains('text-purple-400/70')) {
-              ageElement.textContent = age;
-            }
-            // Обновляем имя в текущем элементе
-              el.innerHTML = `<span class="font-bold">${name}</span>`;
-           } else {
-             el.innerHTML = val;
-           }
-         } else if (id === "about-desc-p1") {
-          // Специальная обработка для about-desc-p1 с more/less функциональностью
-          const shortTextEl = document.getElementById('about-desc-short');
-          const fullTextEl = document.getElementById('about-desc-full');
-          const desktopTextEl = el.querySelector('.hidden.md\\:block');
-          
-          if (lang === 'ru') {
-            if (shortTextEl) shortTextEl.textContent = 'Лео имеет опыт в исследованиях AI и создании контента. Он соавтор AI Influencer 3.0';
-            if (fullTextEl) fullTextEl.textContent = ', помогая создателям контента и брендам создавать реалистичных виртуальных персонажей.';
-            if (desktopTextEl) desktopTextEl.textContent = val;
-            // Обновляем текст кнопки "more" на русский
-            const moreBtn = document.getElementById('about-more-btn');
-            if (moreBtn) moreBtn.textContent = 'больше';
-          } else {
-            if (shortTextEl) shortTextEl.textContent = 'Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0';
-            if (fullTextEl) fullTextEl.textContent = '—a system that\'s helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets.';
-            if (desktopTextEl) desktopTextEl.textContent = val;
-            // Обновляем текст кнопки "more" на английский
-            const moreBtn = document.getElementById('about-more-btn');
-            if (moreBtn) moreBtn.textContent = 'more';
-          }
-         } else if (id === "about-desc-p2") {
-          // Специальная обработка для about-desc-p2
-          const p2FullTextEl = document.getElementById('about-desc-p2-full');
-          const desktopTextEl = el.querySelector('.hidden.md\\:block');
-          
-          if (lang === 'ru') {
-            if (p2FullTextEl) {
-              p2FullTextEl.innerHTML = 'Его подход сочетает технические знания с творческим видением, что делает сложные AI-инструменты доступными для всех. <button id="about-less-btn" class="text-purple-400 ml-1 underline">меньше</button>';
-              // Переназначаем обработчик события для новой кнопки
-              const newLessBtn = document.getElementById('about-less-btn');
-              if (newLessBtn) {
-                newLessBtn.addEventListener('click', function() {
-                  document.getElementById('about-desc-dots').classList.remove('hidden');
-                  document.getElementById('about-more-btn').classList.remove('hidden');
-                  document.getElementById('about-desc-full').classList.add('hidden');
-                  p2FullTextEl.classList.add('hidden');
-                  document.getElementById('about-facts-grid').classList.remove('hidden');
-                });
-              }
-            }
-            if (desktopTextEl) desktopTextEl.textContent = val;
-          } else {
-            if (p2FullTextEl) {
-              p2FullTextEl.innerHTML = 'Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>. <button id="about-less-btn" class="text-purple-400 ml-1 underline">less</button>';
-              // Переназначаем обработчик события для новой кнопки
-              const newLessBtn = document.getElementById('about-less-btn');
-              if (newLessBtn) {
-                newLessBtn.addEventListener('click', function() {
-                  document.getElementById('about-desc-dots').classList.remove('hidden');
-                  document.getElementById('about-more-btn').classList.remove('hidden');
-                  document.getElementById('about-desc-full').classList.add('hidden');
-                  p2FullTextEl.classList.add('hidden');
-                  document.getElementById('about-facts-grid').classList.remove('hidden');
-                });
-              }
-            }
-            if (desktopTextEl) desktopTextEl.textContent = val;
-          }
-         } else {
-          el.textContent = val;
-        }
-      }
-    });
-    document.querySelectorAll(".lang-btn").forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.lang === lang);
-      btn.style.background = btn.classList.contains("active")
-        ? "linear-gradient(90deg, #6366f1, #a855f7, #ec4899)"
-        : "";
-      btn.style.color = btn.classList.contains("active") ? "#fff" : "";
-      btn.style.border = btn.classList.contains("active")
-        ? "none"
-        : "1px solid #fff";
-    });
+
+  function changeLanguage(selectedLang) {
+    lang = selectedLang;
     localStorage.setItem("selectedLang", lang);
-    // About title special case
-    const aboutTitle = translations[lang]["about-title"];
-    const aboutTitleText = document.getElementById("about-title-text");
-    const aboutTitleTextMobile = document.getElementById(
-      "about-title-text-mobile"
-    );
-    if (aboutTitleText && aboutTitle) {
-      aboutTitleText.innerHTML = aboutTitle;
-    }
-    if (aboutTitleTextMobile && aboutTitle) {
-      aboutTitleTextMobile.innerHTML = aboutTitle;
-    }
-  }
-  document.getElementById("language-selector").onclick = (e) => {
-    if (e.target.classList.contains("lang-btn"))
-      changeLanguage(e.target.dataset.lang);
-  };
-  changeLanguage(localStorage.getItem("selectedLang") || "en");
 
-  // Слайдер изображений (HERO)
-  const sliderImages = [
-    "media/av01.png",
-    "media/av02.png",
-    "media/av03.png",
-    "media/av04.png",
-    "media/av05.png",
-    "media/av06.png",
-    "media/av07.png",
-  ];
-  let sliderIndex = 0;
-  const sliderImg = document.querySelector('img[alt="AI Art Example"]');
-  if (sliderImg)
-    setInterval(
-      () => (sliderImg.src = sliderImages[++sliderIndex % sliderImages.length]),
-      4000
-    );
-
-  // Sticky banner
-  const mainBtn = document.getElementById("main-btn");
-  const stickyBanner = document.getElementById("sticky-banner");
-  const stickyGlow = document.querySelector(".sticky-glow");
-  const stickyGlowLine = document.querySelector(".sticky-glow-line");
-  let bannerForceHidden = false,
-    heroVisible = false;
-  function toggleBanner() {
-    if (!mainBtn || !stickyBanner) return;
-    const show =
-      !(bannerForceHidden || heroVisible) &&
-      mainBtn.getBoundingClientRect().top < 28;
-    console.log("toggleBanner called", {
-      show,
-      bannerForceHidden,
-      heroVisible,
-      mainBtnTop: mainBtn.getBoundingClientRect().top,
-    });
-    stickyBanner.style.opacity = show ? "1" : "0";
-    stickyBanner.style.transform = show ? "translateY(0)" : "translateY(-32px)";
-    stickyBanner.style.pointerEvents = show ? "auto" : "none";
-    if (stickyGlow) stickyGlow.style.opacity = show ? "0.95" : "0";
-    if (stickyGlowLine) stickyGlowLine.style.opacity = show ? "1" : "0";
-  }
-  [
-    [document.getElementById("final-cta"), 0.7, (v) => (bannerForceHidden = v)],
-    [document.getElementById("hero-section"), 0.1, (v) => (heroVisible = v)],
-  ].forEach(([el, th, set]) => {
-    if (el)
-      new IntersectionObserver(
-        (e) => {
-          set(e[0].isIntersecting);
-          toggleBanner();
-        },
-        { threshold: th }
-      ).observe(el);
-  });
-  window.addEventListener("scroll", toggleBanner);
-  window.addEventListener("resize", toggleBanner);
-  toggleBanner();
-
-  // Live viewers анимация
-  const countEls = [
-    document.getElementById("live-viewers-count"),
-    document.getElementById("live-viewers-count-price"),
-  ].filter(Boolean);
-  if (countEls.length)
-    setInterval(() => {
-      const val = Math.floor(Math.random() * 16) + 17;
-      countEls.forEach((el) => (el.textContent = val));
-    }, 1800);
-
-  // FAQ аккордеон
-  // Инициализация - убеждаемся, что все закрытые элементы имеют скругленные углы
-  document.querySelectorAll(".faq-item").forEach((item) => {
-    const answer = item.querySelector(".faq-answer");
-    if (answer.classList.contains("hidden")) {
-      item.classList.add("rounded-2xl");
-      item.classList.remove("rounded-t-2xl");
-      answer.classList.remove("rounded-b-2xl");
-    }
-  });
-
-  document.querySelectorAll(".faq-toggle").forEach((btn, idx) => {
-    btn.addEventListener("click", function () {
-      const item = btn.closest(".faq-item");
-      const answer = item.querySelector(".faq-answer");
-      const isOpen = answer.classList.contains("open");
-
-      // Закрыть все
-      document.querySelectorAll(".faq-answer").forEach((a, i) => {
-        a.classList.remove("open");
-        a.classList.add("hidden");
-        const faqItem = a.closest(".faq-item");
-        faqItem.classList.add("rounded-2xl");
-        faqItem.classList.remove("rounded-t-2xl");
-        // Убираем скругление с ответа при закрытии
-        a.classList.remove("rounded-b-2xl");
-      });
-      document
-        .querySelectorAll(".faq-toggle")
-        .forEach((b) => b.classList.remove("open"));
-
-      // Открыть выбранный
-      if (!isOpen) {
-        answer.classList.add("open");
-        answer.classList.remove("hidden");
-        btn.classList.add("open");
-        item.classList.remove("rounded-2xl");
-        item.classList.add("rounded-t-2xl");
-        // Добавляем скругление к ответу при открытии
-        answer.classList.add("rounded-b-2xl");
-      }
-    });
-  });
-
-  // Анимации появления
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(
-        (entry) =>
-          entry.isIntersecting &&
-          entry.target.classList.add("animate__animated", "animate__fadeInUp")
-      );
-    },
-    { threshold: 0.1 }
-  );
-  document
-    .querySelectorAll(".art-card, .flex.items-start")
-    .forEach((el) => observer.observe(el));
-
-  // Динамический рендер карточек преимуществ
-  const artCards = [
-    {
-      img: "media/av01.png",
-      title: "Edutainment",
-      titleClass: "text-pink-400",
-      desc: "Learn & Enjoy — education meets entertainment.",
-      features: [
-        "Daily creative boost",
-        "Fast & simple",
-        "Inspires masterpiece thinking",
-      ],
-    },
-    {
-      img: "media/av01.png",
-      title: "Hyper-Realism",
-      titleClass: "text-yellow-300",
-      desc: "Look Real. Feel Real.",
-      features: [
-        "Emotion-rich, photo-grade quality",
-        "No AI-fake look",
-        "Fast, affordable, on-brand",
-      ],
-    },
-    {
-      img: "media/av01.png",
-      title: "Studio Quality",
-      titleClass: "text-purple-400",
-      desc: "Shoot Without a Studio.",
-      features: [
-        "Fashion-level realism",
-        "Perfect skin, tone & light",
-        "Built for ads, stores, socials",
-      ],
-    },
-  ];
-  const artCardsRow = document.getElementById("art-cards-row");
-  if (artCardsRow)
-    artCardsRow.innerHTML = artCards
-      .map(
-        (card) => `
-      <div class="flex-shrink-0 w-[80vw] max-w-xs snap-center md:w-auto md:max-w-none md:flex-shrink md:snap-none art-card bg-white/5 rounded-xl overflow-hidden border border-white/10">
-        <div class="h-64 overflow-hidden"><img src="${
-          card.img
-        }" alt="AI Art" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"></div>
-        <div class="p-6"><h3 class="text-xl font-semibold mb-2 ${
-          card.titleClass
-        }">${card.title}</h3><div class="text-gray-200 text-sm mb-2">${
-          card.desc
-        }</div><ul class="list-disc list-inside text-gray-300 text-sm space-y-1">${card.features
-          .map((f) => `<li>${f}</li>`)
-          .join("")}</ul></div>
-      </div>`
-      )
-      .join("");
-
-  const countElPrice = document.getElementById("live-viewers-count-price");
-  if (countElPrice)
-    setInterval(() => {
-      countElPrice.textContent = Math.floor(Math.random() * 16) + 17;
-    }, 1800);
-
-  // Найти место, где устанавливается final-cta-title
-  const finalCtaTitle = document.getElementById("final-cta-title");
-  if (finalCtaTitle)
-    finalCtaTitle.innerHTML = translations[lang]["final-cta-title"];
-
-  // Счётчик продаж курса - от 3 утром до 48 вечером
-  const courseSalesCounterEl = document.getElementById("course-sales-counter");
-  if (courseSalesCounterEl) {
-    function updateSalesCounter() {
-      const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-
-      // Начинаем с 3 в 00:00, доходим до 48 в 23:59
-      // 45 продаж за 24 часа = 1.875 продажи в час
-      const totalMinutes = hours * 60 + minutes;
-      const salesToday = Math.floor(3 + (totalMinutes * 45) / 1440); // 1440 минут в сутках
-
-      courseSalesCounterEl.innerHTML = `<span class="text-green-300">${Math.min(salesToday, 48)}</span>`;
-    }
-
-    // Обновляем каждую минуту
-    updateSalesCounter();
-    setInterval(updateSalesCounter, 60000); // 1 минута
-  }
-
-  // --- Отзывы: простая логика перелистывания ---
-  // --- Reviews: simple slider logic (fixed for robustness and clarity) ---
-  const reviewItems = Array.from(
-    document.querySelectorAll("#review-slide .review-item")
-  );
-  const dotsWrap = document.getElementById("reviews-dots");
-  let reviewIdx = 0;
-
-  // Явная инициализация классов отзывов
-  reviewItems.forEach((el, i) => {
-    if (i === 0) {
-      el.classList.add("block", "fade-in");
-      el.classList.remove("hidden", "fade-out");
-    } else {
-      el.classList.add("hidden");
-      el.classList.remove("block", "fade-in", "fade-out");
-    }
-  });
-
-  function showReview(idxToShow) {
-    // Скрываем все отзывы
-    reviewItems.forEach((el, i) => {
-      if (i !== idxToShow) {
-        el.classList.add("hidden");
-        el.classList.remove("block");
+    // Обновляем все элементы с data-translate
+    document.querySelectorAll("[data-translate]").forEach((element) => {
+      const key = element.getAttribute("data-translate");
+      if (translations[lang] && translations[lang][key]) {
+        element.innerHTML = translations[lang][key];
       }
     });
 
-    // Показываем нужный отзыв
-    const targetReview = reviewItems[idxToShow];
-    if (targetReview) {
-      targetReview.classList.remove("hidden");
-      targetReview.classList.add("block");
-    }
+    // Обновляем активное состояние кнопок
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
 
-    // Обновляем точки
-    if (dotsWrap) {
-      dotsWrap.innerHTML = "";
-      reviewItems.forEach((_, i) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className =
-          "w-3 h-3 rounded-full mx-1 " +
-          (i === idxToShow ? "bg-purple-400" : "bg-white/20") +
-          " transition";
-        dot.setAttribute("aria-label", "Show review " + (i + 1));
-        dot.onclick = () => {
-          reviewIdx = i;
-          showReview(reviewIdx);
-        };
-        dotsWrap.appendChild(dot);
-      });
-      // Показываем точки даже если отзыв один
-      dotsWrap.style.display = reviewItems.length > 1 ? "flex" : "block";
+    // Специальная обработка для заголовка секции "О нас"
+    const aboutTitle = document.querySelector(".about-title");
+    if (aboutTitle) {
+      const titleText = aboutTitle.querySelector(".about-title-text");
+      const titleGradient = aboutTitle.querySelector(".about-title-gradient");
+      if (titleText && titleGradient) {
+        titleText.textContent = translations[lang]["about-title-text"];
+        titleGradient.textContent = translations[lang]["about-title-gradient"];
+      }
     }
   }
 
-  // Ensure at least one review exists
-  if (reviewItems.length > 0) {
-    showReview(reviewIdx);
+  // Обработчики событий для кнопок языка
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const selectedLang = btn.getAttribute("data-lang");
+      changeLanguage(selectedLang);
+    });
+  });
 
-    // Автоперелистывание
-    setInterval(() => {
-      reviewIdx = (reviewIdx + 1) % reviewItems.length;
-      showReview(reviewIdx);
-    }, 7000);
+  // Инициализация языка при загрузке страницы
+  changeLanguage(lang);
+
+  // Остальной код остается без изменений...
+  // Счетчик просмотров
+  function updateViewerCount() {
+    const viewerElement = document.getElementById("live-viewers-count");
+    if (viewerElement) {
+      const baseCount = 23;
+      const variation = Math.floor(Math.random() * 6) - 3;
+      const currentCount = baseCount + variation;
+      viewerElement.textContent = currentCount;
+    }
   }
 
-  // --- Таймер обратного отсчета ---
-  function startTimer() {
+  // Обновляем счетчик каждые 3-7 секунд
+  setInterval(updateViewerCount, Math.random() * 4000 + 3000);
+  updateViewerCount();
+
+  // Счетчик продаж курса
+  function updateSalesCount() {
+    const salesElement = document.getElementById("course-sales-count");
+    if (salesElement) {
+      const baseCount = 23;
+      const variation = Math.floor(Math.random() * 6) - 3;
+      const currentCount = Math.max(1, baseCount + variation);
+      salesElement.textContent = currentCount;
+    }
+  }
+
+  // Обновляем счетчик продаж каждые 5-10 секунд
+  setInterval(updateSalesCount, Math.random() * 5000 + 5000);
+  updateSalesCount();
+
+  // Таймер обратного отсчета
+  function startCountdownTimer() {
     // Устанавливаем время окончания (3 часа от текущего времени)
-    const now = new Date();
-    const endTime = new Date(now.getTime() + (3 * 60 * 60 * 1000)); // 3 часа
+    let endTime = new Date().getTime() + (3 * 60 * 60 * 1000);
     
     function updateTimer() {
-      const currentTime = new Date();
-      const timeLeft = endTime - currentTime;
+      const now = new Date().getTime();
+      const timeLeft = endTime - now;
       
-      if (timeLeft <= 0) {
-        // Таймер истек, перезапускаем на 3 часа
-        endTime.setTime(endTime.getTime() + (3 * 60 * 60 * 1000));
-        return;
-      }
-      
-      // Вычисляем часы, минуты, секунды
-      const hours = Math.floor(timeLeft / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-      
-      // Обновляем все таймеры на странице
-      const timerValues = document.querySelectorAll('.timer-value');
-      timerValues.forEach((el, index) => {
-        if (index % 3 === 0) {
-          el.textContent = hours.toString().padStart(2, '0');
-        } else if (index % 3 === 1) {
-          el.textContent = minutes.toString().padStart(2, '0');
-        } else if (index % 3 === 2) {
-          el.textContent = seconds.toString().padStart(2, '0');
+      if (timeLeft > 0) {
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        // Форматируем время с ведущими нулями
+        const formattedHours = hours.toString().padStart(2, '0');
+        const formattedMinutes = minutes.toString().padStart(2, '0');
+        const formattedSeconds = seconds.toString().padStart(2, '0');
+        
+        // Обновляем таймер в sticky banner
+        const bannerTimerValues = document.querySelectorAll('#banner-timer .timer-value');
+        if (bannerTimerValues.length >= 3) {
+          bannerTimerValues[0].textContent = formattedHours;
+          bannerTimerValues[1].textContent = formattedMinutes;
+          bannerTimerValues[2].textContent = formattedSeconds;
         }
-      });
-      
-      // Добавляем отладочную информацию
-      console.log(`Timer: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
+        
+        // Обновляем таймер в final CTA
+        const finalTimerValues = document.querySelectorAll('#final-cta-timer-wrap .timer-value');
+        if (finalTimerValues.length >= 3) {
+          finalTimerValues[0].textContent = formattedHours;
+          finalTimerValues[1].textContent = formattedMinutes;
+          finalTimerValues[2].textContent = formattedSeconds;
+        }
+      } else {
+        // Таймер истек, сбрасываем на 3 часа
+        const newEndTime = new Date().getTime() + (3 * 60 * 60 * 1000);
+        endTime = newEndTime;
+      }
     }
     
     // Обновляем таймер каждую секунду
-    updateTimer();
-    const timerInterval = setInterval(updateTimer, 1000);
-    
-    // Сохраняем интервал для возможной остановки
-    window.timerInterval = timerInterval;
+    updateTimer(); // Сразу обновляем
+    setInterval(updateTimer, 1000);
   }
   
   // Запускаем таймер
-  startTimer();
-  
-  // About section more/less functionality
-  const moreBtn = document.getElementById('about-more-btn');
-  const shortText = document.getElementById('about-desc-short');
-  const dots = document.getElementById('about-desc-dots');
-  const fullText = document.getElementById('about-desc-full');
-  const p2FullText = document.getElementById('about-desc-p2-full');
-  const factsGrid = document.getElementById('about-facts-grid');
-  
-  if (moreBtn && shortText && dots && fullText && p2FullText && factsGrid) {
-    moreBtn.addEventListener('click', function() {
-      dots.classList.add('hidden');
-      moreBtn.classList.add('hidden');
-      fullText.classList.remove('hidden');
-      p2FullText.classList.remove('hidden');
-      factsGrid.classList.add('hidden');
+  startCountdownTimer();
+
+  // Функция для кнопки "Больше" в секции About
+  const moreBtn = document.querySelector(".about-more-btn");
+  const lessBtn = document.querySelector(".about-less-btn");
+  const hiddenContent = document.querySelector(".about-hidden-content");
+
+  if (moreBtn && lessBtn && hiddenContent) {
+    moreBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      hiddenContent.style.display = "block";
+      moreBtn.style.display = "none";
+      lessBtn.style.display = "inline";
+
+      // Обновляем текст кнопки в зависимости от языка
+      lessBtn.textContent = translations[lang]["about-less-btn"];
     });
-    
-    // Обработчик для кнопки less будет добавлен динамически в changeLanguage
+
+    lessBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      hiddenContent.style.display = "none";
+      lessBtn.style.display = "none";
+      moreBtn.style.display = "inline";
+
+      // Обновляем текст кнопки в зависимости от языка
+      moreBtn.textContent = translations[lang]["about-more-btn"];
+    });
   }
+
+  // Smooth scroll для якорных ссылок
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    });
+  });
+
+  // Анимация появления элементов при скролле
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+      }
+    });
+  }, observerOptions);
+
+  // Наблюдаем за всеми секциями
+  document.querySelectorAll("section").forEach((section) => {
+    observer.observe(section);
+  });
+
+  // Параллакс эффект для hero секции
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector(".hero-section");
+    if (hero) {
+      hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+  });
+
+  // Липкий баннер
+  const stickyBanner = document.querySelector("#sticky-banner");
+  if (stickyBanner) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        stickyBanner.style.opacity = "1";
+        stickyBanner.style.transform = "translateY(0)";
+        stickyBanner.style.pointerEvents = "auto";
+      } else {
+        stickyBanner.style.opacity = "0";
+        stickyBanner.style.transform = "translateY(-32px)";
+        stickyBanner.style.pointerEvents = "none";
+      }
+    });
+  }
+
+  // Обработка кликов по кнопкам CTA
+  document.querySelectorAll(".cta-btn").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      // Здесь можно добавить аналитику или другую логику
+      console.log("CTA button clicked");
+    });
+  });
+
+  // Обработка FAQ аккордеона
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    const question = item.querySelector(".faq-toggle");
+    const answer = item.querySelector(".faq-answer");
+
+    if (question && answer) {
+      question.addEventListener("click", () => {
+        const isOpen = answer.classList.contains("open");
+
+        // Закрываем все остальные FAQ
+        document.querySelectorAll(".faq-item").forEach((otherItem) => {
+          const otherAnswer = otherItem.querySelector(".faq-answer");
+          const otherToggle = otherItem.querySelector(".faq-toggle");
+          if (otherAnswer && otherToggle) {
+            otherAnswer.classList.remove("open");
+            otherAnswer.classList.add("hidden");
+            otherToggle.classList.remove("open");
+          }
+        });
+
+        // Открываем/закрываем текущий FAQ
+        if (!isOpen) {
+          answer.classList.add("open");
+          answer.classList.remove("hidden");
+          question.classList.add("open");
+        }
+      });
+    }
+  });
+
 });

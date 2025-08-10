@@ -38,7 +38,7 @@ body {
   width: 100%;
 }
 
-section.snap-section:not(#hero-section) {
+section.snap-section:not(#hero-section):not(#price-section) {
   padding-top: 74px;
 }
 section.snap-section {
@@ -71,6 +71,7 @@ section.snap-section {
     height: auto !important;
     min-height: auto !important;
     justify-content: flex-start !important;
+    padding-top: 48px !important;
     padding-bottom: 48px;
   }
   
@@ -1076,4 +1077,13 @@ footer.w-full {
 /* === FAQ ANSWER BACKGROUND === */
 .faq-answer {
   background: #ffffff25 !important; /* Более светлый фон для ответов FAQ */
+}
+
+/* === FOOTER LEGAL TEXT === */
+@media (min-width: 768px) {
+  #footer-legal {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
 }
