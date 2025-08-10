@@ -1,108 +1,64 @@
-// CTA Focus Script - фокус на поле email при клике на кнопки
-document.addEventListener("DOMContentLoaded", function () {
-  
-  // Находим поле email
+document.addEventListener("DOMContentLoaded", () => {
   const emailInput = document.querySelector('input[type="email"]');
-  
-  // Находим все CTA кнопки
-  const ctaButtons = [
-    // Шторка (Sticky Banner)
-    document.querySelector('#sticky-banner .animated-gradient-btn'),
-    // Hero секция
-    document.querySelector('#main-btn'),
-    // Price секция
-    document.querySelector('#price-section .animated-gradient-btn'),
-    // Final CTA секция
-    document.querySelector('#final-cta .animated-gradient-btn')
+  const ctaSelectors = [
+    '#sticky-banner .animated-gradient-btn',
+    '#main-btn',
+    '#price-section .animated-gradient-btn', 
+    '#final-cta .animated-gradient-btn'
   ];
   
-  // Переменная для отслеживания интервала
-  let typewriterInterval = null;
+  const ctaButtons = ctaSelectors.map(sel => document.querySelector(sel)).filter(Boolean);
   
-  // Функция для эффекта печатания placeholder
-  function typewriterEffect(input, text, speed = 100) {
-    let i = 0;
-    const originalPlaceholder = input.placeholder;
+  let typewriterActive = false;
+  
+  const typewriterEffect = (input, text, speed = 80) => {
+    if (typewriterActive) return;
+    typewriterActive = true;
     
-    // Очищаем placeholder
+    let i = 0;
     input.placeholder = '';
     
-    function type() {
+    const type = () => {
       if (i < text.length) {
-        input.placeholder += text.charAt(i);
-        i++;
+        input.placeholder += text[i++];
         setTimeout(type, speed);
       } else {
-        // После завершения печатания ждем 2 секунды и повторяем
         setTimeout(() => {
           input.placeholder = '';
           i = 0;
-          type(); // Запускаем заново
-        }, 2000); // 2 секунды паузы
+          type();
+        }, 2000);
       }
-    }
-    
+    };
     type();
-  }
+  };
   
-  // Функция для остановки эффекта печатания
-  function stopTypewriterEffect() {
-    if (emailInput) {
-      emailInput.placeholder = 'Your email address';
-    }
-  }
+  const focusOnEmail = () => {
+    if (!emailInput) return;
+    emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      emailInput.focus();
+      typewriterEffect(emailInput, 'Your email address');
+    }, 300);
+  };
   
-  // Функция для фокуса на поле email с эффектом печатания
-  function focusOnEmail() {
-    if (emailInput) {
-      // Плавно прокручиваем к полю email
-      emailInput.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'center' 
-      });
-      
-      // Небольшая задержка для плавности
-      setTimeout(() => {
-        emailInput.focus();
-        // Запускаем эффект печатания
-        typewriterEffect(emailInput, 'Your email address', 80);
-      }, 300);
-    }
-  }
-  
-  // Добавляем обработчики событий для всех CTA кнопок
-  ctaButtons.forEach(button => {
-    if (button) {
-      button.addEventListener('click', function(e) {
-        e.preventDefault(); // Предотвращаем стандартное поведение
+  ctaButtons.forEach(btn => {
+    ['click', 'keydown'].forEach(event => {
+      btn.addEventListener(event, e => {
+        if (event === 'keydown' && e.key !== 'Enter') return;
+        e.preventDefault();
         focusOnEmail();
       });
-    }
-  });
-  
-  // Дополнительно можно добавить обработчик для Enter на кнопках
-  ctaButtons.forEach(button => {
-    if (button) {
-      button.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          focusOnEmail();
-        }
-      });
-    }
-  });
-  
-  // Эффект печатания при прямом клике на поле email
-  if (emailInput) {
-    emailInput.addEventListener('focus', function() {
-      typewriterEffect(this, 'Your email address', 80);
     });
-    
-    // Останавливаем эффект при потере фокуса
-    emailInput.addEventListener('blur', function() {
-      stopTypewriterEffect();
+  });
+  
+  if (emailInput) {
+    emailInput.addEventListener('focus', () => typewriterEffect(emailInput, 'Your email address'));
+    emailInput.addEventListener('blur', () => {
+      typewriterActive = false;
+      emailInput.placeholder = 'Your email address';
     });
   }
   
-  console.log('CTA Focus Script loaded -', ctaButtons.length, 'buttons found');
-}); 
+  console.log(`CTA Focus Script loaded - ${ctaButtons.length} buttons found`);
+});
