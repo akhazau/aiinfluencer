@@ -1,20 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Всегда начинаем с английского языка
-  const lang = "en";
+  // Удаляем эти строки:
+  // const lang = "en";
+  // document.addEventListener('click', (e) => { ... });
+  // i18n.apply(lang);
 
-  // Делегированный обработчик кликов для кнопок языка
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest(".lang-btn");
-    if (!btn) return;
-    
-    e.preventDefault();
-    const selectedLang = btn.dataset.lang;
-    i18n.setLang(selectedLang);
-  });
-
-  // Инициализация языка при загрузке страницы
-  i18n.apply(lang);
-
+  // Оставляем только остальную логику main.js
   // Счетчик просмотров
   function updateViewerCount() {
     const viewerElement = document.getElementById("live-viewers-count");
@@ -239,3 +229,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+// Строка 5 (закомментированная):
+// translate.apply(lang);  // ← Было: // i18n.apply(lang);
+
+// Строка 100:
+lessBtn.textContent = translate.translations[translate.getLang()]["about-less-btn"];  // ← Было: i18n
+
+// Строка 110:
+moreBtn.textContent = translate.translations[translate.getLang()]["about-more-btn"];  // ← Было: i18n
