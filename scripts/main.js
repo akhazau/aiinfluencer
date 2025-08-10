@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const translations = {
     en: {
       // Sticky Banner
-      "sticky-btn-text": "Start now –",
+      "sticky-btn-text-mobile": "now –",
+      "sticky-btn-text-desktop": "Start now –",
       "sticky-btn-price-old": "$127",
       "sticky-btn-price-new": "$27",
       "support-btn": "support",
@@ -13,8 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Hero Section
       "hero-title-1": "AI Influencer 3.0",
       "hero-title-2": "ALREADY EASY.",
-      "hero-subtitle":
-        'GROW A LOYAL INSTAGRAM FANBASE<br><br>Master AI in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
+      "hero-subtitle": 'GROW A LOYAL INSTAGRAM FANBASE Master AI in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
       "main-btn-text": "Start now –",
       "main-btn-price-old": "$127",
       "main-btn-price-new": "$27",
@@ -208,7 +208,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ru: {
       // Sticky Banner
-      "sticky-btn-text": "Начни сейчас –",
+      "sticky-btn-text-mobile": "сейчас –",
+      "sticky-btn-text-desktop": "Начни сейчас –",
       "sticky-btn-price-old": "$127",
       "sticky-btn-price-new": "$27",
       "support-btn": "поддержка",
@@ -402,7 +403,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tr: {
       // Sticky Banner
-      "sticky-btn-text": "Hemen başla –",
+      "sticky-btn-text-mobile": "şimdi –",
+      "sticky-btn-text-desktop": "Hemen başla –",
       "sticky-btn-price-old": "$127",
       "sticky-btn-price-new": "$27",
       "support-btn": "destek",
@@ -595,14 +597,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  function changeLanguage(selectedLang) {
+  // Делаем функцию глобальной
+  window.changeLanguage = function(selectedLang) {
     lang = selectedLang;
     localStorage.setItem("selectedLang", lang);
 
-    // Обновляем все элементы с data-translate
-    document.querySelectorAll("[data-translate]").forEach((element) => {
-      const key = element.getAttribute("data-translate");
-      if (translations[lang] && translations[lang][key]) {
+    // Обновляем все элементы по их id
+    Object.keys(translations[lang]).forEach((key) => {
+      const element = document.getElementById(key);
+      if (element && translations[lang][key]) {
         element.innerHTML = translations[lang][key];
       }
     });
@@ -610,8 +613,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Обновляем активное состояние кнопок
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.classList.remove("active");
+      btn.classList.remove("gradient-text");
+      btn.style.background = "transparent";
+      btn.style.border = "1px solid #fff";
     });
-    document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
+    
+    const activeBtn = document.querySelector(`[data-lang="${lang}"]`);
+    if (activeBtn) {
+      activeBtn.classList.add("active");
+      activeBtn.classList.add("gradient-text");
+      activeBtn.style.background = "linear-gradient(90deg, #6366f1, #a855f7, #ec4899)";
+      activeBtn.style.border = "none";
+    }
 
     // Специальная обработка для заголовка секции "О нас"
     const aboutTitle = document.querySelector(".about-title");
@@ -635,7 +648,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Инициализация языка при загрузке страницы
-  changeLanguage(lang);
+  window.changeLanguage(lang);
 
   // Остальной код остается без изменений...
   // Счетчик просмотров
@@ -788,9 +801,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Липкий баннер
   const stickyBanner = document.querySelector("#sticky-banner");
+  let isOnFinalSection = false;
+  
   if (stickyBanner) {
+    // Отслеживаем последнюю секцию
+    const finalSection = document.querySelector("#final-cta");
+    if (finalSection) {
+      const finalSectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isOnFinalSection = entry.isIntersecting;
+        });
+      }, {
+        threshold: 0.3 // Когда 30% секции видно
+      });
+      
+      finalSectionObserver.observe(finalSection);
+    }
+    
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
+      // Скрываем шторку на последней секции
+      if (isOnFinalSection) {
+        stickyBanner.style.opacity = "0";
+        stickyBanner.style.transform = "translateY(-32px)";
+        stickyBanner.style.pointerEvents = "none";
+      } else if (window.scrollY > 100) {
         stickyBanner.style.opacity = "1";
         stickyBanner.style.transform = "translateY(0)";
         stickyBanner.style.pointerEvents = "auto";

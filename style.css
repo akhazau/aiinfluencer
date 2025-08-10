@@ -672,8 +672,11 @@ section.snap-section {
     transform: none !important;
     flex-shrink: 0;
   }
+  #banner-timer .timer-value {
+    font-size: 1.8rem !important;
+  }
   .blinking-colon {
-    font-size: 0.8rem !important;
+    font-size: 1.0rem !important;
   }
 }
 
