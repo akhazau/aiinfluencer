@@ -839,8 +839,11 @@ footer.w-full {
 }
 
 #final-cta .section-content {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #final-cta .section-footer {
@@ -920,7 +923,7 @@ footer.w-full {
   margin-bottom: 1rem;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.faq-item:not(.rounded-t-2xl):hover {
+.faq-item:not(.rounded-t-2xl):not(:has(.faq-answer.open)):hover {
   transform: translateY(-2.5px) scale(1.01);
   box-shadow: 0 10px 24px -4px rgba(236, 72, 153, 0.175);
 }
