@@ -163,7 +163,7 @@ class Translator {
         "footer-desc": "Jump into the AI game — your guide starts here. Master modern tools fast.",
         "footer-email": "support@aiinfluencer.site",
         "footer-copyright": "© 2025 AI Influencer 3.0. All rights reserved.",
-        "footer-legal": "This course is for educational purposes only. Results are not guaranteed and may vary based on individual effort, experience, and market conditions. By purchasing and using this course, you acknowledge that you have read and agree to our terms of service and privacy policy. You assume full responsibility for your decisions, actions, and any outcomes resulting from the application of the course materials. Digital products are non-refundable due to their immediate accessibility and downloadable nature. All content is protected by copyright and intellectual property laws."
+        "footer-legal": "This course is for educational purposes only. Results are not guaranteed. By using this site, you accept our terms and assume full responsibility for your decisions and actions. No refunds on digital content."
       },
 
       ru: {
@@ -326,7 +326,7 @@ class Translator {
         "footer-desc": "Прыгайте в AI-игру — ваш гид начинается здесь. Быстро освойте современные инструменты.",
         "footer-email": "support@aiinfluencer.site",
         "footer-copyright": "© 2025 AI Influencer 3.0. Все права защищены.",
-        "footer-legal": "Этот курс предназначен только для образовательных целей. Результаты не гарантированы и могут варьироваться в зависимости от индивидуальных усилий, опыта и рыночных условий. Покупая и используя этот курс, вы подтверждаете, что прочитали и согласны с нашими условиями обслуживания и политикой конфиденциальности. Вы берёте на себя полную ответственность за свои решения, действия и любые результаты, вытекающие из применения материалов курса. Цифровые продукты не подлежат возврату из-за их немедленной доступности и загружаемой природы. Весь контент защищён авторским правом и законами об интеллектуальной собственности."
+        "footer-legal": "Курс — в образовательных целях. Результаты не гарантируются. Используя сайт, вы принимаете условия и берёте ответственность за решения и действия. Возвратов за цифровой контент нет."
       },
 
       tr: {
@@ -489,7 +489,7 @@ class Translator {
         "footer-desc": "AI oyununa atlayın — rehberiniz burada başlıyor. Modern araçları hızla öğrenin.",
         "footer-email": "support@aiinfluencer.site",
         "footer-copyright": "© 2025 AI Influencer 3.0. Tüm hakları saklıdır.",
-        "footer-legal": "Bu kurs sadece eğitim amaçlıdır. Sonuçlar garanti edilmez ve bireysel çaba, deneyim ve pazar koşullarına göre değişebilir. Bu kursu satın alarak ve kullanarak, hizmet şartlarımızı ve gizlilik politikamızı okuduğunuzu ve kabul ettiğinizi onaylarsınız. Kurs materyallerinin uygulanmasından kaynaklanan kararlarınız, eylemleriniz ve sonuçlar için tam sorumluluk üstlenirsiniz. Dijital ürünler anında erişilebilir ve indirilebilir doğaları nedeniyle iade edilemez. Tüm içerik telif hakkı ve fikri mülkiyet yasalarıyla korunmaktadır."
+        "footer-legal": "Bu kurs yalnızca eğitim amaçlıdır. Sonuçlar garanti edilmez. Bu siteyi kullanarak şartlarımızı kabul eder ve kararların ile eylemlerinin sorumluluğunu üstlenirsin. Dijital içerikte iade yoktur."
       }
     };
   }
