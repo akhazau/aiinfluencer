@@ -61,26 +61,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 4. ПЕРЕКЛЮЧАТЕЛЬ КОНТЕНТА "БОЛЬШЕ/МЕНЬШЕ"
   const initToggleContent = () => {
-    const [moreBtn, lessBtn, hiddenContent] = [
-      '.about-more-btn', '.about-less-btn', '.about-hidden-content'
-    ].map(sel => document.querySelector(sel));
+    const moreBtn = document.getElementById('about-more-btn');
+    const lessBtn = document.getElementById('about-less-btn');
+    const shortDesc = document.getElementById('about-desc-short');
+    const dots = document.getElementById('about-desc-dots');
+    const fullDesc = document.getElementById('about-desc-full');
+    const p2Short = document.getElementById('about-desc-p2-short');
+    const p2Full = document.getElementById('about-desc-p2-full');
     
-    if (!moreBtn || !lessBtn || !hiddenContent) return;
+    if (!moreBtn || !shortDesc || !fullDesc || !p2Short || !p2Full) return;
     
-    const toggle = (show) => {
-      hiddenContent.style.display = show ? 'block' : 'none';
-      moreBtn.style.display = show ? 'none' : 'inline';
-      lessBtn.style.display = show ? 'inline' : 'none';
-      
-      const key = show ? 'about-less-btn' : 'about-more-btn';
-      const btn = show ? lessBtn : moreBtn;
-      if (window.translate) {
-        btn.textContent = translate.translations[translate.getLang()][key];
-      }
+    moreBtn.onclick = (e) => {
+      e.preventDefault();
+      shortDesc.style.display = 'none';
+      dots.style.display = 'none';
+      moreBtn.style.display = 'none';
+      fullDesc.classList.remove('hidden');
+      p2Short.style.display = 'none';
+      p2Full.classList.remove('hidden');
     };
     
-    moreBtn.onclick = (e) => { e.preventDefault(); toggle(true); };
-    lessBtn.onclick = (e) => { e.preventDefault(); toggle(false); };
+    if (lessBtn) {
+      lessBtn.onclick = (e) => {
+        e.preventDefault();
+        shortDesc.style.display = 'inline';
+        dots.style.display = 'inline';
+        moreBtn.style.display = 'inline';
+        fullDesc.classList.add('hidden');
+        p2Short.style.display = 'inline';
+        p2Full.classList.add('hidden');
+      };
+    }
   };
 
   // 5. SMOOTH SCROLL ДЛЯ ЯКОРНЫХ ССЫЛОК
@@ -226,6 +237,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2000);
   };
 
+  // 8.5. АДАПТИВНАЯ ЛОГИКА ДЛЯ СТРАНИЦ 2, 4, 6
+  const initResponsiveLayout = () => {
+    const checkLayoutBreakpoint = () => {
+      const screenWidth = window.innerWidth;
+      
+      // Страница 2 (PAIN) - карточки
+      const artCardsRow = document.getElementById('art-cards-row');
+      if (artCardsRow) {
+        if (screenWidth < 1050) {
+          artCardsRow.className = 'grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-8';
+        } else {
+          artCardsRow.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8';
+        }
+      }
+      
+      // Страница 4 (PRICE) - заголовок
+      const priceTitle = document.querySelector('#price-section h2');
+      if (priceTitle) {
+        if (screenWidth < 1050) {
+          priceTitle.className = 'text-[1.7rem] md:text-4xl font-bold mb-2 leading-tight';
+        } else {
+          priceTitle.className = 'text-[1.9rem] md:text-5xl font-bold mb-2 leading-tight';
+        }
+      }
+      
+      // Страница 6 (ABOUT) - факты
+      const aboutFactsGrid = document.getElementById('about-facts-grid');
+      if (aboutFactsGrid) {
+        const hiddenFacts = aboutFactsGrid.querySelectorAll('.hidden.md\\:flex');
+        if (screenWidth < 1050) {
+          hiddenFacts.forEach(fact => {
+            fact.classList.add('hidden');
+            fact.classList.remove('md:flex');
+          });
+        } else {
+          hiddenFacts.forEach(fact => {
+            fact.classList.remove('hidden');
+            fact.classList.add('md:flex');
+          });
+        }
+      }
+    };
+    
+    // Проверка при изменении размера окна
+    window.addEventListener('resize', () => {
+      setTimeout(checkLayoutBreakpoint, 50);
+    });
+    
+    // Первоначальная проверка
+    setTimeout(checkLayoutBreakpoint, 100);
+  };
+
   // 9. ПАРАЛЛАКС ЭФФЕКТ ДЛЯ HERO СЕКЦИИ
   const initParallaxEffect = () => {
     const hero = document.querySelector('.hero-section');
@@ -282,6 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSectionAnimations();       // 6. Анимации секций
   initFinalSectionObserver();    // 7. Отслеживание финальной секции
   initStickyBanner();            // 8. Липкий баннер
+  initResponsiveLayout();        // 8.5. Адаптивная логика для страниц 2, 4, 6
   initParallaxEffect();          // 9. Параллакс эффект
   initFAQAccordion();            // 10. FAQ аккордеон
 
