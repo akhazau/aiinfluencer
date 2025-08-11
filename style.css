@@ -303,6 +303,14 @@ section.snap-section {
   white-space: nowrap;
 }
 
+#main-btn-text {
+  font-weight: 600;
+}
+
+#main-btn-price-new {
+  font-weight: 600;
+}
+
 .animated-gradient-btn::before {
   content: "";
   position: absolute;

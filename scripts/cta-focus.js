@@ -12,21 +12,31 @@ document.addEventListener("DOMContentLoaded", () => {
   let typewriterActive = false;
   
   const typewriterEffect = (input, text, speed = 80) => {
-    if (typewriterActive) return;
+    if (typewriterActive || input.value.length > 0) return;
     typewriterActive = true;
     
     let i = 0;
     input.placeholder = '';
     
     const type = () => {
+      if (input.value.length > 0) {
+        typewriterActive = false;
+        input.placeholder = text;
+        return;
+      }
       if (i < text.length) {
         input.placeholder += text[i++];
         setTimeout(type, speed);
       } else {
         setTimeout(() => {
-          input.placeholder = '';
-          i = 0;
-          type();
+          if (input.value.length === 0) {
+            input.placeholder = '';
+            i = 0;
+            type();
+          } else {
+            typewriterActive = false;
+            input.placeholder = text;
+          }
         }, 2000);
       }
     };
@@ -54,6 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
   
   if (emailInput) {
     emailInput.addEventListener('focus', () => typewriterEffect(emailInput, 'Your email address'));
+    emailInput.addEventListener('input', () => {
+      if (emailInput.value.length > 0) {
+        typewriterActive = false;
+        emailInput.placeholder = 'Your email address';
+      }
+    });
     emailInput.addEventListener('blur', () => {
       typewriterActive = false;
       emailInput.placeholder = 'Your email address';

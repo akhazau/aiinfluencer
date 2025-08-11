@@ -205,5 +205,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initStickyBanner();            // 8. Липкий баннер
   initParallaxEffect();          // 9. Параллакс эффект
   initFAQAccordion();            // 10. FAQ аккордеон
-  initCTAButtons();              // 11. CTA кнопки
+
 });

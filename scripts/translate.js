@@ -14,12 +14,12 @@ class Translator {
         // Hero Section
         "hero-title-1": "AI Influencer 3.0",
         "hero-title-2": "ALREADY EASY.",
-        "hero-subtitle": 'GROW A LOYAL INSTAGRAM FANBASE Master AI in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
+        "hero-subtitle": 'GROW A LOYAL INSTAGRAM FANBASE<br>Master AI in days — unleash <span class="text-purple-300 font-semibold">MAGIC</span> today!',
         "main-btn-text": "Start now –",
         "main-btn-price-old": "$120",
         "main-btn-price-new": "$27",
         "live-viewers-text": "people currently viewing this page",
-        "join-members-text": "Join 2,132+ creators inside",
+        "join-members-text": 'Join <span class="text-purple-300">2,132+</span> creators inside',
         "rating-text": "4.9 (300+ reviews)",
 
         // Pain Section
@@ -177,12 +177,12 @@ class Translator {
         // Hero Section
         "hero-title-1": "AI-Инфлюенсер 3.0",
         "hero-title-2": "ЭТО УЖЕ ПРОСТО.",
-        "hero-subtitle": "Растите верную IG-аудиторию<br><br>Освойте ИИ за дни — запустите <span class=\"text-purple-300 font-semibold\">МАГИЮ</span> уже сегодня!",
+        "hero-subtitle": "ВЗРОСТИТЕ ВЕРНУЮ IG-АУДИТОРИЮ<br>Освойте ИИ быстро и используйте <span class=\"text-purple-300 font-semibold\">МАГИЮ</span> уже сегодня!",
         "main-btn-text": "Начни сейчас –",
         "main-btn-price-old": "$120",
         "main-btn-price-new": "$27",
-        "live-viewers-text": "человек сейчас просматривают эту страницу",
-        "join-members-text": "Присоединяйтесь к 2,132+ креаторам",
+        "live-viewers-text": "человек сейчас на странице",
+        "join-members-text": '<span class="text-purple-300">2,132+</span> креаторов уже на борту',
         "rating-text": "4.9 (300+ отзывов)",
 
         // Pain Section
@@ -340,13 +340,13 @@ class Translator {
         // Hero Section
         "hero-title-1": "AI Influencer 3.0",
         "hero-title-2": "ARTIK KOLAY.",
-        "hero-subtitle": "SADIK BİR INSTAGRAM KİTLESİ BÜYÜTÜN<br><br>AI'yi günlerde öğrenin — <span class=\"text-purple-300 font-semibold\">BÜYÜYÜ</span> bugün serbest bırakın!",
+        "hero-subtitle": "SADIK BİR INSTAGRAM KİTLESİ BÜYÜTÜN<br>AI'yi günlerde öğrenin — <span class=\"text-purple-300 font-semibold\">BÜYÜYÜ</span> bugün serbest bırakın!",
         "main-btn-text": "Şimdi başla –",
         "main-btn-price-old": "$120",
         "main-btn-price-new": "$27",
         "live-viewers-text": "kişi şu anda bu sayfayı görüntülüyor",
-        "join-members-text": "2,132+ yaratıcıya katılın",
-        "rating-text": "4.9 (300+ değerlendirme)",
+        "join-members-text": '<span class="text-purple-300">2,132+</span> yaratıcıya katılın',
+        "rating-text": "4.9 (300+ yorumlar)",
 
         // Pain Section
         "pain-title": "Plastik AI yüzlerinden",
