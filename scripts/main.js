@@ -137,14 +137,93 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
+    // Функция проверки пересечения элементов
+    const checkElementsOverlap = () => {
+      const bannerBtn = document.querySelector('.banner-btn');
+      const bannerTimer = document.querySelector('#banner-timer');
+      const supportBtn = document.querySelector('.support-mail-btn');
+      
+      if (!bannerBtn || !bannerTimer || !supportBtn) return;
+      
+      // Проверяем видимость баннера
+      const bannerOpacity = parseFloat(stickyBanner.style.opacity || '0');
+      if (bannerOpacity < 0.5) return; // Баннер не виден
+      
+      const btnRect = bannerBtn.getBoundingClientRect();
+      const timerRect = bannerTimer.getBoundingClientRect();
+      const supportRect = supportBtn.getBoundingClientRect();
+      
+      // Проверяем пересечение кнопки с таймером или кнопкой support
+      const btnTimerOverlap = btnRect.right + 15 >= timerRect.left;
+      const btnSupportOverlap = btnRect.right + 10 >= supportRect.left;
+      const isOverlapping = btnTimerOverlap || btnSupportOverlap;
+      
+      if (isOverlapping && !supportBtn.classList.contains('force-hidden')) {
+        supportBtn.style.display = 'none';
+        supportBtn.classList.add('force-hidden');
+      } else if (!isOverlapping && supportBtn.classList.contains('force-hidden')) {
+        supportBtn.style.display = '';
+        supportBtn.classList.remove('force-hidden');
+      }
+    };
+
     window.addEventListener('scroll', () => {
       if (ticking) return;
       requestAnimationFrame(() => {
         updateBanner();
+        checkElementsOverlap();
         ticking = false;
       });
       ticking = true;
     });
+    
+    // Проверка при изменении размера окна
+    window.addEventListener('resize', () => {
+      setTimeout(checkElementsOverlap, 50);
+    });
+    
+    // Дополнительная проверка на основе ширины экрана
+    const checkScreenWidth = () => {
+      const supportBtn = document.querySelector('.support-mail-btn');
+      if (!supportBtn) return;
+      
+      const screenWidth = window.innerWidth;
+      
+      // Скрываем кнопку support на экранах меньше 1050px (раньше чем кнопка начнет уменьшаться)
+      if (screenWidth < 1050) {
+        if (!supportBtn.classList.contains('force-hidden')) {
+          supportBtn.style.display = 'none';
+          supportBtn.classList.add('force-hidden');
+        }
+      } else if (screenWidth >= 1150) {
+        // Показываем кнопку на больших экранах, если нет пересечения
+        if (supportBtn.classList.contains('force-hidden')) {
+          supportBtn.style.display = '';
+          supportBtn.classList.remove('force-hidden');
+          setTimeout(checkElementsOverlap, 50);
+        }
+      }
+    };
+    
+    // Проверка ширины экрана при изменении размера
+    window.addEventListener('resize', () => {
+      checkScreenWidth();
+      setTimeout(checkElementsOverlap, 100);
+    });
+    
+    // Первоначальные проверки
+    setTimeout(() => {
+      checkScreenWidth();
+      checkElementsOverlap();
+    }, 500);
+    
+    // Дополнительная проверка через интервал для надежности
+    setInterval(() => {
+      if (parseFloat(stickyBanner.style.opacity || '0') > 0.5) {
+        checkScreenWidth();
+        checkElementsOverlap();
+      }
+    }, 2000);
   };
 
   // 9. ПАРАЛЛАКС ЭФФЕКТ ДЛЯ HERO СЕКЦИИ
