@@ -1190,11 +1190,11 @@ footer.w-full {
 /* === PAIN SECTION STYLES === */
 /* Desktop: центрируем карточки в центре экрана */
 @media (min-width: 768px) {
-  .section-content {
+  #pain-section .section-content {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: auto;
   }
   
   #art-cards-row {
@@ -1208,8 +1208,8 @@ footer.w-full {
   }
   
   #art-cards-row .art-card {
-    width: 400px;
-    max-width: 400px;
+    width: 450px;
+    max-width: 450px;
   }
   
 

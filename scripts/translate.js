@@ -23,9 +23,9 @@ class Translator {
         "rating-text": "4.9 (300+ reviews)",
 
         // Pain Section
-        "pain-title": "Do You Think It's Still",
-        "pain-title-gradient": "Complicated?",
-        "pain-desc": "See other models — imagine what you'll create with AI in your hands!",
+        "pain-title": "Complicated?",
+        "pain-title-gradient": "Not Anymore!",
+        "pain-desc": "Taking the first step today is easier than ever before",
         "pain-card1-title": "Kill The Your Fear",
         "pain-card1-desc": "From \"I can't\" to \"Posted\" — in one evening",
         "pain-card1-point1": "Copy–paste prompts",
@@ -61,10 +61,10 @@ class Translator {
         "benefits-card-2-title-mobile": "Studio Quality",
 
         // Price Section
-        "price-title-start": "No Studio. No Stress — at",
+        "price-title-start": "No Studio<span class=\"gradient-text\">,</span> No Stress — at",
         "price-title-gradient": "T-shirt Price",
          "price-title-end": "",
-        "price-subtitle": "No studio, no makeup, no crew, no shooting — all for the price of a T-shirt",
+        "price-subtitle": "From ambition to influence — strengthen your brand and digital presence",
         "price-course-title": "AI Influencer 3.0 course",
         "price-current": "$27",
         "price-regular": "Regular Price: $120",
@@ -139,7 +139,7 @@ class Translator {
         // FAQ Section
         "faq-title": "Frequently Asked",
         "faq-title-gradient": "Questions",
-        "faq-desc": "Build parasocial bonds — let fans feel truly connected",
+        "faq-desc": "Build parasocial bonds — let fans feel connected to your Influencer",
         "faq-q1": "Max asked… How long does it take to see results?",
         "faq-a1": "First photo-real shots on the very first evening; a full feed in 4–7 days with 1–2 h of daily practice.",
         "faq-q2": "Isabelle asked… Can I do this alongside my job or school?",
@@ -158,7 +158,7 @@ class Translator {
         "faq-a8": "2.5 h of distilled step-by-step video, ready templates, check-lists and support. Learn at your own speed; lifetime access and updates.",
 
         // Final CTA Section
-        "final-cta-title": "AI Models Will Be a <span class=\"gradient-text-inverse\">$2.5B Industry</span> by 2030",
+        "final-cta-title": "AI Models Will Be a <span class=\"gradient-text-inverse\">$45,9B Industry</span> by 2030",
         "final-cta-subtitle": "The AI-influencer hype feels like Bitcoin's 2012 gold rush and NFTs boom 2021",
         "final-cta-save": "Save $98.00 Today!",
         "final-cta-btn-text": "Grab The Course For",
@@ -190,9 +190,9 @@ class Translator {
         "rating-text": "4.9 (300+ отзывов)",
 
         // Pain Section
-        "pain-title": "Думаете, это всё ещё",
-        "pain-title-gradient": "сложно?",
-        "pain-desc": "Посмотрите на чужие модели — представьте, что создадите сами, когда ИИ будет в ваших руках!",
+        "pain-title": "Сложно?",
+        "pain-title-gradient": "Больше нет!",
+        "pain-desc": "Сделать первый шаг сегодня проще, чем когда-либо прежде",
         "pain-card1-title": "Убей свой страх",
         "pain-card1-desc": "От \"Не могу\" до \"Опубликовано\" — за один вечер",
         "pain-card1-point1": "Готовые промпты",
@@ -229,10 +229,10 @@ class Translator {
         "benefits-card-2-desc-1-mobile": "Снимайте без студии. Модный реализм, идеальная кожа, свет и тон. Готово для рекламы, магазинов, соцсетей.",
 
         // Price Section
-        "price-title-start": "Никакой Студии. Никакого Стресса — по цене",
+        "price-title-start": "Никакой Студии<span class=\"gradient-text\">,</span> Никакого Стресса — по цене",
           "price-title-gradient": "Футболки",
          "price-title-end": "",
-        "price-subtitle": "Без студии, без макияжа, без команды — и по цене футболки.",
+        "price-subtitle": "От амбиций к влиянию — укрепите свой бренд и цифровое присутствие.",
         "price-course-title": "Курс «AI Influencer 3.0»",
         "price-current": "$27",
         "price-regular": "Обычная цена: $120",
@@ -307,7 +307,7 @@ class Translator {
         // FAQ Section
         "faq-title": "Часто задаваемые",
         "faq-title-gradient": "вопросы",
-        "faq-desc": "Создавайте парасоциальные связи — пусть фанаты чувствуют настоящую связь.",
+        "faq-desc": "Создавайте парасоциальные связи — пусть фанаты чувствуют связь с вашим Инфлюенсером.",
         "faq-q1": "Макс спросил… Сколько времени нужно, чтобы увидеть результаты?",
         "faq-a1": "Первые фотореалистичные кадры в первый же вечер; полная лента за 4–7 дней при 1–2 часах ежедневной практики.",
         "faq-q2": "Изабель спросила… Могу ли я совмещать это с работой или учёбой?",
@@ -326,7 +326,7 @@ class Translator {
         "faq-a8": "2,5 часа концентрированного пошагового видео, готовые шаблоны, чек-листы и поддержка. Учитесь в своём темпе; пожизненный доступ и обновления.",
 
         // Final CTA Section
-        "final-cta-title": "AI-модели станут индустрией на <span class=\"gradient-text-inverse\">$2.5B</span> к 2030 году",
+        "final-cta-title": "AI-модели станут индустрией на <span class=\"gradient-text-inverse\">$45,9B</span> к 2030 году",
         "final-cta-subtitle": "Хайп вокруг AI-инфлюенсеров напоминает золотую лихорадку Bitcoin 2012 и бум NFT 2021.",
         "final-cta-save": "Сэкономьте $98.00 сегодня!",
         "final-cta-btn-text": "Получить курс за",
@@ -358,8 +358,8 @@ class Translator {
         "rating-text": "4.9 (300+ yorumlar)",
 
         // Pain Section
-        "pain-title": "Hala Karmaşık Olduğunu",
-        "pain-title-gradient": "Düşünüyor musunuz?",
+        "pain-title": "Karmaşık mı?",
+        "pain-title-gradient": "Artık değil!",
         "pain-desc": "Diğer modellere bakın — AI elinizde olduğunda neler yaratacağınızı hayal edin!",
         "pain-card1-title": "Korkunu Öldür",
         "pain-card1-desc": "\"Yapamam\"dan \"Yayınlandı\"ya — bir akşamda",
@@ -397,10 +397,10 @@ class Translator {
         "benefits-card-2-desc-1-mobile": "Stüdyo Olmadan Çekim Yapın. Moda seviyesi gerçekçilik, mükemmel cilt, ton ve ışık. Reklamlar, mağazalar, sosyal medya için hazır.",
 
         // Price Section
-        "price-title-start": "Stüdyo Yok. Stres Yok — hepsi",
+        "price-title-start": "Stüdyo Yok<span class=\"gradient-text\">,</span> Stres Yok — hepsi",
           "price-title-gradient": "Tişört Fiyatında",
          "price-title-end": "",
-        "price-subtitle": "Stüdyo yok, makyaj yok, ekip yok, çekim yok — hepsi bir tişört fiyatına.",
+        "price-subtitle": "Hırstan etkiye — markanızı ve dijital varlığınızı güçlendirin.",
         "price-course-title": "AI Influencer 3.0 kursu",
         "price-current": "$27",
         "price-regular": "Normal Fiyat: $120",
@@ -475,7 +475,7 @@ class Translator {
         // FAQ Section
         "faq-title": "Sıkça Sorulan",
         "faq-title-gradient": "Sorular",
-        "faq-desc": "Parasosyal bağlar kurun — hayranların gerçekten bağlı hissetmelerini sağlayın.",
+        "faq-desc": "Parasosyal bağlar kurun — hayranların Influencer'ınızla bağlı hissetmelerini sağlayın.",
         "faq-q1": "Max sordu… Sonuçları görmek ne kadar sürer?",
         "faq-a1": "İlk fotoğraf-gerçek çekimler ilk akşam; günde 1-2 saatlik pratikle 4-7 günde tam beslenme.",
         "faq-q2": "Isabelle sordu… Bunu işim veya okuluyla birlikte yapabilir miyim?",
@@ -494,7 +494,7 @@ class Translator {
         "faq-a8": "2,5 saatlik damıtılmış adım adım video, hazır şablonlar, kontrol listeleri ve destek. Kendi hızınızda öğrenin; yaşam boyu erişim ve güncellemeler.",
 
         // Final CTA Section
-        "final-cta-title": "AI Modeller 2030'a Kadar <span class=\"gradient-text-inverse\">$2.5B Endüstri</span> Olacak",
+        "final-cta-title": "AI Modeller 2030'a Kadar <span class=\"gradient-text-inverse\">$45,9B Endüstri</span> Olacak",
         "final-cta-subtitle": "AI-influencer heyecanı Bitcoin'in 2012 altın hücumu ve NFT'lerin 2021 patlaması gibi hissettiriyor.",
         "final-cta-save": "Bugün $98.00 Tasarruf Edin!",
         "final-cta-btn-text": "Kursu Şu Fiyata Alın",
