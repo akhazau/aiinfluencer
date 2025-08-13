@@ -136,6 +136,23 @@ section.snap-section {
     text-align: center !important;
   }
   
+  /* Настройки для content-container на мобильных */
+  .content-container {
+    min-width: 100% !important;
+    gap: 0.5rem !important;
+  }
+  
+  .content-container .content-text {
+    min-width: auto !important;
+    flex: 1 !important;
+  }
+  
+  .content-container img {
+    width: 35vw !important;
+    height: 280px !important;
+    margin-left: 0.5rem !important;
+  }
+  
 
 
 }
@@ -556,10 +573,7 @@ section.snap-section {
   transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-#sticky-banner::after,
-#sticky-banner::before {
-  display: none !important;
-}
+
 .sticky-glow {
   position: fixed;
   top: 75px;
@@ -606,17 +620,17 @@ section.snap-section {
   padding-right: 130px;
 }
 
-/* Центрирование таймера на десктопе когда кнопка support скрыта */
+/* Центрирование таймера на десктопе */
 @media (min-width: 701px) {
   .banner-inner:has(.support-mail-btn[style*="display: none"]) .flex-1 {
-    justify-content: center !important;
+    justify-content: center;
   }
 }
 
-/* На мобиле таймер остается справа */
+/* На мобиле таймер справа как и должно быть */
 @media (max-width: 768px) {
   .banner-inner:has(.support-mail-btn[style*="display: none"]) .flex-1 {
-    justify-content: flex-end !important;
+    justify-content: flex-end;
   }
 }
 .banner-btn {
@@ -763,8 +777,7 @@ section.snap-section {
   }
   .flex-1 {
     order: 2;
-    justify-content: flex-end !important;
-    margin-left: auto !important;
+    justify-content: center;
   }
   .support-mail-btn {
     display: none !important;
@@ -1174,7 +1187,37 @@ footer.w-full {
   background: #ffffff25 !important; /* Более светлый фон для ответов FAQ */
 }
 
-/* === PAIN SECTION MOBILE HORIZONTAL SCROLL === */
+/* === PAIN SECTION STYLES === */
+/* Desktop: центрируем карточки в центре экрана */
+@media (min-width: 768px) {
+  .section-content {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  #art-cards-row {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: auto;
+    max-width: none;
+    margin-top: 3rem;
+  }
+  
+  #art-cards-row .art-card {
+    width: 400px;
+    max-width: 400px;
+  }
+  
+
+  
+
+}
+
+/* Mobile: горизонтальный скролл */
 @media (max-width: 767px) {
   #art-cards-row {
     display: flex !important;

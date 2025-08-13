@@ -105,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       };
     });
+
   };
 
   // 6. АНИМАЦИИ ПОЯВЛЕНИЯ СЕКЦИЙ
@@ -242,14 +243,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkLayoutBreakpoint = () => {
       const screenWidth = window.innerWidth;
       
-      // Страница 2 (PAIN) - карточки
+      // Страница 2 (PAIN) - карточки (теперь только 2 карточки)
       const artCardsRow = document.getElementById('art-cards-row');
       if (artCardsRow) {
-        if (screenWidth < 1050) {
-          artCardsRow.className = 'grid grid-cols-1 md:grid-cols-2 gap-6 px-4 py-8';
-        } else {
-          artCardsRow.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8';
-        }
+        // Всегда используем flex для центрирования двух карточек
+        artCardsRow.className = 'flex flex-col md:flex-row gap-8 px-4 py-8 justify-center items-center';
       }
       
       // Страница 4 (PRICE) - заголовок
