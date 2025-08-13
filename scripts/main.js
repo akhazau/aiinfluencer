@@ -66,10 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const shortDesc = document.getElementById('about-desc-short');
     const dots = document.getElementById('about-desc-dots');
     const fullDesc = document.getElementById('about-desc-full');
-    const p2Short = document.getElementById('about-desc-p2-short');
     const p2Full = document.getElementById('about-desc-p2-full');
     
-    if (!moreBtn || !shortDesc || !fullDesc || !p2Short || !p2Full) return;
+    if (!moreBtn || !shortDesc || !fullDesc || !p2Full || !lessBtn) return;
     
     moreBtn.onclick = (e) => {
       e.preventDefault();
@@ -77,21 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
       dots.style.display = 'none';
       moreBtn.style.display = 'none';
       fullDesc.classList.remove('hidden');
-      p2Short.style.display = 'none';
       p2Full.classList.remove('hidden');
+      lessBtn.classList.remove('hidden');
     };
     
-    if (lessBtn) {
-      lessBtn.onclick = (e) => {
-        e.preventDefault();
-        shortDesc.style.display = 'inline';
-        dots.style.display = 'inline';
-        moreBtn.style.display = 'inline';
-        fullDesc.classList.add('hidden');
-        p2Short.style.display = 'inline';
-        p2Full.classList.add('hidden');
-      };
-    }
+    lessBtn.onclick = (e) => {
+      e.preventDefault();
+      shortDesc.style.display = 'inline';
+      dots.style.display = 'inline';
+      moreBtn.style.display = 'inline';
+      fullDesc.classList.add('hidden');
+      p2Full.classList.add('hidden');
+      lessBtn.classList.add('hidden');
+    };
   };
 
   // 5. SMOOTH SCROLL ДЛЯ ЯКОРНЫХ ССЫЛОК
