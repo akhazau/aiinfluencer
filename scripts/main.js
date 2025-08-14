@@ -15,21 +15,29 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(update, Math.random() * 4000 + 3000); // 3-7 секунд
   };
 
-  // 2. СЧЕТЧИК ПРОДАЖ КУРСА (course sales)
-  const initSalesCounter = () => {
-    const element = document.getElementById("course-sales-count");
-    if (!element) return;
-    
-    const update = () => {
-      const baseCount = 23;
-      const variation = Math.floor(Math.random() * 6) - 3;
-      const currentCount = Math.max(1, baseCount + variation);
-      element.textContent = currentCount;
-    };
-    
-    update();
-    setInterval(update, Math.random() * 5000 + 5000); // 5-10 секунд
+// СЧЁТЧИК ПРОДАЖ: 3 → 48 за календарные сутки (локальное время)
+const initSalesCounter = () => {
+  const el = document.getElementById("course-sales-count");
+  if (!el) return;
+
+  const min = 3;
+  const max = 48;
+
+  const render = () => {
+    const now = new Date();
+    const start = new Date(now); start.setHours(0,0,0,0);          // 00:00 сегодня
+    const end = new Date(start); end.setDate(end.getDate() + 1);    // 00:00 завтра
+    const total = end - start;                                      // мс в сутках
+    const elapsed = Math.min(Math.max(now - start, 0), total);      // [0..total]
+    const progress = elapsed / total;                               // [0..1]
+
+    const value = Math.floor(min + (max - min) * progress);         // линейно
+    el.textContent = Math.max(min, Math.min(value, max));
   };
+
+  render();
+  setInterval(render, 60 * 1000); // обновлять раз в минуту
+};
 
   // 3. ТАЙМЕР ОБРАТНОГО ОТСЧЕТА
   const initCountdownTimer = () => {

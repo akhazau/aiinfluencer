@@ -38,10 +38,6 @@ body {
   scrollbar-width: none;
 }
 
-/* ========================================
-   ОБЩИЕ КОМПОНЕНТЫ
-======================================== */
-
 /* === СЕКЦИИ === */
 section.snap-section:not(#hero-section):not(#price-section) {
   padding-top: 74px;
@@ -91,6 +87,28 @@ section.snap-section {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Анимация только внутри заголовков */
+h1 .gradient-text,
+h2 .gradient-text,
+h3 .gradient-text,
+h4 .gradient-text,
+h5 .gradient-text,
+h6 .gradient-text {
+  background-size: 300% 300%;
+  animation: gradient-move 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1 .gradient-text,
+  h2 .gradient-text,
+  h3 .gradient-text,
+  h4 .gradient-text,
+  h5 .gradient-text,
+  h6 .gradient-text {
+    animation: none;
+  }
 }
 
 /* === КНОПКИ === */
@@ -232,13 +250,6 @@ section.snap-section {
   box-shadow: 0 0 0 3px #a855f755;
 }
 
-/* === КАРТОЧКИ === */
-.art-card {
-  transition: all 0.3s ease;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.1);
-}
-
 /* === АНИМАЦИИ === */
 .floating {
   animation: floating 6s ease-in-out infinite;
@@ -278,17 +289,28 @@ section.snap-section {
   background: transparent;
 }
 
-/* ========================================
-   СЕКЦИИ САЙТА
-======================================== */
-
 /* === HERO СЕКЦИЯ === */
 #hero-title-1 {
   display: block;
 }
 
 /* === PAIN СЕКЦИЯ === */
+/* === КАРТОЧКИ === */
+.art-card {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.1);
+}
+
 /* Стили для карточек в секции pain будут в медиа-запросах */
+@media (max-width: 767px) {
+  /* Отключаем дабл‑тап зум только на карточках PAIN */
+  #art-cards-row,
+  .art-card {
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+  }
+}
 
 /* === STICKY ЭЛЕМЕНТЫ === */
 #sticky-lead-block {
@@ -744,9 +766,7 @@ footer.w-full {
   padding: 1rem;
 }
 
-/* ========================================
-   KEYFRAMES АНИМАЦИИ
-======================================== */
+/* ==== KEYFRAMES АНИМАЦИИ ==== */
 
 @keyframes floating {
   0%,
@@ -1054,7 +1074,7 @@ footer.w-full {
     text-align: center;
   }
   
-  /* Контейнеры на мобильных */
+  /* Контейнеры на мобильных 
   .content-container {
     min-width: 100%;
     gap: 0.5rem;
@@ -1063,14 +1083,17 @@ footer.w-full {
   .content-container .content-text {
     min-width: auto;
     flex: 1;
-  }
-  
+  } 
+ 
+
   .content-container img {
     width: 35vw;
     height: 280px;
     margin-left: 0.5rem;
   }
   
+ */
+
   /* Карточки на мобильных */
   .art-card:hover {
     transform: none;
@@ -1104,7 +1127,7 @@ footer.w-full {
   }
   
   #art-cards-row .art-card {
-    flex: 0 0 300px;
+    flex: 0 0 350px;
     scroll-snap-align: start;
     height: auto;
   }
@@ -1222,7 +1245,6 @@ footer.w-full {
   }
   
   .flex-1 {
-    order: 2;
     justify-content: center;
   }
   

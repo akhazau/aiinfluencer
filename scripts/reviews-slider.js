@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Перезапуск автопереключения
   function restartAutoSlide() {
     stopAutoSlide();
-    setTimeout(startAutoSlide, 1000); // Пауза 1 секунда после ручного переключения
+    setTimeout(startAutoSlide, 2000); // Пауза 1 секунда после ручного переключения
   }
 
   // Обработка видимости секции отзывов
