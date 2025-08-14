@@ -1,5 +1,5 @@
 // Слайдер отзывов с автопереключением и точками навигации
-document.addEventListener("DOMContentLoaded", function () {
+function initReviewsSlider() {
   const reviewItems = document.querySelectorAll(".review-item");
   const dotsContainer = document.getElementById("reviews-dots");
   
@@ -80,11 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Перезапуск автопереключения
   function restartAutoSlide() {
     stopAutoSlide();
-    setTimeout(startAutoSlide, 2000); // Пауза 1 секунда после ручного переключения
+    setTimeout(startAutoSlide, 2000); // Пауза 2 секунды после ручного переключения
   }
 
   // Обработка видимости секции отзывов
-  const reviewsSection = document.querySelector("#reviews-section") || document.querySelector("section").parentElement.querySelector("section:nth-child(4)");
+  const reviewsSection = document.querySelector("#testimonials");
   
   if (reviewsSection) {
     const observer = new IntersectionObserver((entries) => {
@@ -123,4 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Запускаем автопереключение через небольшую задержку
   setTimeout(startAutoSlide, 2000);
-});
+}
+
+// Безопасная инициализация: сразу, если DOM уже готов, иначе по DOMContentLoaded
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initReviewsSlider);
+} else {
+  initReviewsSlider();
+}
