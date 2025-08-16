@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
     setTimeout(() => {
       emailInput.focus();
-      typewriterEffect(emailInput, 'Your email address');
+      typewriterEffect(emailInput, 'Enter your email');
     }, 300);
   };
   
@@ -56,6 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ['click', 'keydown'].forEach(event => {
       btn.addEventListener(event, e => {
         if (event === 'keydown' && e.key !== 'Enter') return;
+        
+        // Если это кнопка main-btn и email заполнен, не перехватываем событие
+        // Позволяем email-save.js обработать отправку формы
+        if (btn.id === 'main-btn' && emailInput && emailInput.value.trim()) {
+          return; // Не preventDefault, позволяем форме отправиться
+        }
+        
         e.preventDefault();
         focusOnEmail();
       });
@@ -63,18 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   if (emailInput) {
-    emailInput.addEventListener('focus', () => typewriterEffect(emailInput, 'Your email address'));
+    emailInput.addEventListener('focus', () => typewriterEffect(emailInput, 'Enter your email'));
     emailInput.addEventListener('input', () => {
       if (emailInput.value.length > 0) {
         typewriterActive = false;
-        emailInput.placeholder = 'Your email address';
+        emailInput.placeholder = 'Enter your email';
       }
     });
     emailInput.addEventListener('blur', () => {
       typewriterActive = false;
-      emailInput.placeholder = 'Your email address';
+      emailInput.placeholder = 'Enter your email';
     });
   }
   
   console.log(`CTA Focus Script loaded - ${ctaButtons.length} buttons found`);
+  console.log('CTA Focus: Compatible with email-save.js');
 });
