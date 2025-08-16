@@ -159,7 +159,7 @@ class Translator {
         // Final CTA Section
         "final-cta-title": "AI Models Will Be a <br class=\"block md:hidden\"> <span class=\"gradient-text\">$45,9B Industry</span> by 2030",
         "final-cta-subtitle": "The AI-influencer hype feels like Bitcoin's 2012 gold rush and the 2021 NFT boom",
-        "final-cta-save": "Save $98.00 Today!",
+        "final-cta-save": "⏳ Save $98.00 Today!",
         "final-cta-btn-text": "Grab The Course For",
         "course-sales-label": "course sales today",
         "footer-title": "AI Influencer 3.0",

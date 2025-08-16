@@ -91,18 +91,14 @@
             <p class="text-xl text-gray-300 mb-5 max-w-[44rem]" id="hero-subtitle">
                GROW A LOYAL INSTAGRAM FANBASE<br>Even your parents will figure it out
              </p>
-            <!-- Форма компактно -->
-            <div id="hero-form-wrap" class="w-[370px]">
-              <form id="lead-form" class="flex flex-col gap-[7px] w-full">
-                <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
-                  <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px]" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#646464; font-size:1rem; width: 366px; padding: 0 20px;" />
-                </div>
-                <button id="main-btn" class="animated-gradient-btn text-white w-full rounded-[18px] text-xl flex items-center justify-center gap-1.5 overflow-hidden h-[50px]">
-                  <span id="main-btn-text">Grab the Offer</span>
-                   <span class="line-through text-yellow-500 font-normal text-lg" id="main-btn-price-old">$120</span>
-                   <span class="text-yellow-300 text-xl font-bold" id="main-btn-price-new">$27</span>
-                </button>
-              </form>
+            <!-- Save Money Message -->
+            <div class="text-purple-400 text-lg md:text-xl mb-4 font-semibold" id="final-cta-save">⏳ Save $98.00 Today!</div>
+            <!-- CTA Button -->
+            <button class="animated-gradient-btn text-white rounded-[18px] text-xl flex items-center justify-center gap-1.5 overflow-hidden h-[50px] w-[370px]">
+              <span>Grab the Offer</span>
+               <span class="line-through text-yellow-500 font-normal text-lg">$120</span>
+               <span class="text-yellow-300 text-xl font-bold">$27</span>
+            </button>
               <!-- В hero-секции -->
               <div class="live-viewers mx-auto mb-2 ml-6" id="live-viewers-row" style="margin-top: 13px;">
                 <span class="live-dot"></span>
@@ -721,15 +717,20 @@
               <span class="blinking-colon text-yellow-400 text-[0.9rem] md:text-[1rem] w-[0.8rem] md:w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[8px]">:</span>
               <span class="timer-value text-yellow-400 text-[1.1rem] md:text-[1.8rem] font-bold min-w-0 md:min-w-[2.7rem] text-center">00</span>
             </div>
-          <!-- Save Money -->
-          <div class="text-white/60 text-sm md:text-base mb-2" id="final-cta-save">⏳ Save $93.00 Today!</div>
+          <!-- Email Form -->
+          <div id="hero-form-wrap" class="mb-2">
+            <form id="lead-form" class="flex flex-col gap-[7px] w-full max-w-[370px] mx-auto">
+              <div class="gradient-border-wrap" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%; width: 370px;">
+                <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px]" style="border-radius:18px; background:#171e2f; border:none; outline:none; color:#646464; font-size:1rem; width: 366px; padding: 0 20px; height: 50px;" />
+              </div>
+              <button id="main-btn" type="submit" class="animated-gradient-btn text-white w-full rounded-[18px] text-xl flex items-center justify-center gap-1.5 overflow-hidden h-[50px] mt-2">
+                <span id="main-btn-text">Grab The Course For</span>
+                <span class="line-through text-yellow-500 font-normal text-lg" id="main-btn-price-old">$120</span>
+                <span class="text-yellow-300 text-xl font-bold" id="main-btn-price-new"> $27</span>
+              </button>
+            </form>
           </div>
-          <!-- Кнопка -->
-          <button class="animated-gradient-btn text-white mx-auto rounded-[18px] flex items-center justify-center gap-1 overflow-hidden text-lg h-[50px] mb-0 md:mb-2 shrink-0">
-            <span id="final-cta-btn-text">Grab The Course For</span>
-            <span class="line-through text-yellow-500 font-normal">$120</span>
-            <span class="text-yellow-300 text-xl font-bold"> $27</span>
-          </button>
+          </div>
           <!-- Счётчик продаж курса -->
           <div class="sales-counter-pulse flex justify-center items-center mb-0 md:mb-2 mt-0 md:mt-2 scale-100 md:scale-[1.6]">
             <span class="live-dot bg-green-300 mr-3"></span>

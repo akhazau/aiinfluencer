@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     '#sticky-banner .animated-gradient-btn',
     '#main-btn',
     '#price-section .animated-gradient-btn', 
-    '#final-cta .animated-gradient-btn'
+    '#final-cta .animated-gradient-btn',
+    '.hero-section .animated-gradient-btn'
   ];
   
   const ctaButtons = ctaSelectors.map(sel => document.querySelector(sel)).filter(Boolean);
@@ -17,11 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let i = 0;
     input.placeholder = '';
+    input.classList.add('typewriter-active');
     
     const type = () => {
       if (input.value.length > 0) {
         typewriterActive = false;
         input.placeholder = text;
+        input.classList.remove('typewriter-active');
         return;
       }
       if (i < text.length) {
@@ -36,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             typewriterActive = false;
             input.placeholder = text;
+            input.classList.remove('typewriter-active');
           }
         }, 2000);
       }
@@ -57,12 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener(event, e => {
         if (event === 'keydown' && e.key !== 'Enter') return;
         
-        // Если это кнопка main-btn и email заполнен, не перехватываем событие
-        // Позволяем email-save.js обработать отправку формы
-        if (btn.id === 'main-btn' && emailInput && emailInput.value.trim()) {
-          return; // Не preventDefault, позволяем форме отправиться
-        }
-        
+        // Все CTA кнопки теперь просто фокусируют на email поле
         e.preventDefault();
         focusOnEmail();
       });
