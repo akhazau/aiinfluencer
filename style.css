@@ -211,7 +211,7 @@ h6 .gradient-text {
   border: none;
   outline: none;
   background: transparent;
-  color: #646464;
+  color: #e2e8f0;
   width: 100%;
   padding: 0 24px;
   height: 50px;
@@ -219,20 +219,35 @@ h6 .gradient-text {
   border-radius: 999px;
   z-index: 1;
   transition: color 0.3s ease;
+  -webkit-text-fill-color: #e2e8f0;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
 }
 
 .gradient-border-wrap input:focus {
   color: #3b82f6;
+  -webkit-text-fill-color: #3b82f6;
 }
 
 .gradient-border-wrap input::placeholder {
-  color: #646464;
+  color: #94a3b8;
   opacity: 1;
   transition: color 0.3s ease;
 }
 
 .gradient-border-wrap input:focus::placeholder {
   color: #16a34a;
+}
+
+/* Исправление автозаполнения Chrome */
+.gradient-border-wrap input:-webkit-autofill,
+.gradient-border-wrap input:-webkit-autofill:hover,
+.gradient-border-wrap input:-webkit-autofill:focus,
+.gradient-border-wrap input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #171e2f inset !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #e2e8f0 !important;
 }
 
 .gradient-border-input {
@@ -1026,6 +1041,49 @@ footer.w-full {
   body {
     scroll-snap-type: y mandatory !important;
     -webkit-overflow-scrolling: touch !important;
+    position: fixed;
+    width: 100%;
+  }
+  
+  /* Исправление дёргания в мобильном Chrome */
+  html {
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Исправление проблемы с клавиатурой */
+  #hero-form-wrap {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .gradient-border-wrap {
+    position: relative;
+  }
+  
+  /* Обеспечиваем видимость формы при появлении клавиатуры */
+  @supports (-webkit-touch-callout: none) {
+    .gradient-border-wrap input:focus {
+      transform: translateY(-50px);
+      transition: transform 0.3s ease;
+    }
+    
+    #main-btn:focus-within,
+    .gradient-border-wrap:focus-within + #main-btn {
+      transform: translateY(-50px);
+      transition: transform 0.3s ease;
+    }
   }
   
   section.snap-section {
@@ -1291,5 +1349,49 @@ footer.w-full {
   html.no-snap #price-stack-scroll {
     height: auto !important;
     max-height: none !important;
+  }
+}
+
+/* ========================================
+   LEMONSQUEEZY OVERLAY MOBILE OPTIMIZATION
+======================================== */
+
+/* Оптимизация LemonSqueezy оверлея для мобильных устройств */
+.lemonsqueezy-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 999999 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.lemonsqueezy-overlay iframe {
+  width: 90% !important;
+  max-width: 500px !important;
+  height: 90% !important;
+  max-height: 700px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+  .lemonsqueezy-overlay iframe {
+    width: 95% !important;
+    height: 95% !important;
+    border-radius: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .lemonsqueezy-overlay iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
   }
 }

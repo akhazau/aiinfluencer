@@ -1,6 +1,6 @@
 class CheckoutManager {
     constructor() {
-        this.paymentUrl = 'https://aico.lemonsqueezy.com/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933?embed=1';
+        this.paymentUrl = 'https://aico.lemonsqueezy.com/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933?embed=1&media=0&logo=0&desc=0&discount=0&enabled=67252';
         this.init();
     }
 
