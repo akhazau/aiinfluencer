@@ -133,7 +133,7 @@ h6 .gradient-text {
   overflow: hidden;
   z-index: 1;
   vertical-align: middle;
-  animation: gradient-move 2s ease-in-out infinite;
+  animation: gradient-move 8s ease-in-out infinite;
   transition: all 0.3s ease;
 }
 
@@ -157,6 +157,7 @@ h6 .gradient-text {
   z-index: 1;
   animation: gradient-move 16s ease-in-out infinite;
   opacity: 1;
+  border-radius: inherit;
 }
 
 .animated-gradient-btn:focus {
@@ -1272,5 +1273,23 @@ footer.w-full {
   .is-sticky {
     width: 98vw;
     left: 1vw;
+  }
+}
+
+/* === IDE Preview noSnap mode (scoped) === */
+@media (max-width: 767px) {
+  html.no-snap,
+  html.no-snap body {
+    scroll-snap-type: none !important;
+    -webkit-overflow-scrolling: auto !important;
+  }
+  html.no-snap section.snap-section {
+    height: auto !important;
+    min-height: auto !important;
+    scroll-snap-align: initial !important;
+  }
+  html.no-snap #price-stack-scroll {
+    height: auto !important;
+    max-height: none !important;
   }
 }
