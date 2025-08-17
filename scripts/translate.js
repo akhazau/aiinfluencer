@@ -157,7 +157,7 @@ class Translator {
         "faq-a8": "2.5 h of distilled step-by-step video, ready templates, check-lists and support. Learn at your own speed, lifetime access and updates",
 
         // Final CTA Section
-        "final-cta-title": "AI Models Will Be a <br class=\"block md:hidden\"> <span class=\"gradient-text\">$45,9B Industry</span> by 2030",
+        "final-cta-title": "AI Models Will Be a <br class=\"block md:hidden\"> <span class=\"gradient-text\">$45.9B Industry</span> by 2030",
         "final-cta-subtitle": "The AI-influencer hype feels like Bitcoin's 2012 gold rush and the 2021 NFT boom",
         "final-cta-save": "⏳ Save $98.00 Today!",
         "final-cta-btn-text": "Grab The Course For",

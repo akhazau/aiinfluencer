@@ -377,4 +377,20 @@ const initSalesCounter = () => {
     initToggleContent();
   });
 
+  // 0. PERSIST SCROLL POSITION BETWEEN RELOADS (dev helper)
+  // Saves scrollY on unload and restores it on next load. Non-invasive, easily removable.
+  try {
+    const savedY = sessionStorage.getItem('dev:lastScrollY');
+    if (savedY !== null) {
+      // Restore after next frame to avoid layout thrash with other init scripts
+      requestAnimationFrame(() => window.scrollTo(0, parseInt(savedY, 10) || 0));
+      // One-time restore
+      sessionStorage.removeItem('dev:lastScrollY');
+    }
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('dev:lastScrollY', String(window.scrollY || window.pageYOffset || 0));
+    });
+  } catch (e) {
+    console.debug('Scroll persist unavailable:', e);
+  }
 });

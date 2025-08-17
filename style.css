@@ -963,10 +963,6 @@ h6 .gradient-text {
   font-size: 1.85rem;
 }
 
-#final-cta .timer-label {
-  font-size: 1.12rem;
-}
-
 /* === FAQ СЕКЦИЯ === */
 #faq-scroll-list {
   scrollbar-color: #a855f7 transparent;
@@ -1135,17 +1131,6 @@ h6 .gradient-text {
 .review-item img {
   width: 7rem;
   height: 7rem;
-}
-
-/* === ФУТЕР === */
-footer.w-full {
-  background: rgba(24, 26, 42, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  /* disabled: unused - border radius variable not defined */
-  /* border-radius: var(--border-radius); */
-  box-shadow: 0 2px 24px 0 #0002;
-  padding: 1rem;
 }
 
 /* ==== KEYFRAMES АНИМАЦИИ ==== */
