@@ -1,14 +1,10 @@
-/* ==== ГЛОБАЛЬНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ==== */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 :root {
   --button-width: 0.64; /* Параметр только для ширины кнопки (1.0 = нормальная ширина) */
 }
 
-/* ========================================
-   БАЗОВЫЕ ЭЛЕМЕНТЫ
-======================================== */
+/* ==== БАЗОВЫЕ ЭЛЕМЕНТЫ ==== */
 
 html {
   height: 100%;
@@ -119,14 +115,14 @@ section.snap-section {
   }
 }
 
-/* === КОНТЕЙНЕРЫ === */
+/* === КОНТЕЙНЕРЫ === *
 .content-container {
   max-width: 100%;
 }
 
 .content-text {
   max-width: 100%;
-}
+} /
 
 /* === ГРАДИЕНТНЫЙ ТЕКСТ === */
 .gradient-text {
@@ -495,17 +491,30 @@ h6 .gradient-text {
     -ms-touch-action: manipulation;
   }
   
-  /* Стили для карточек на мобильных */
+  /* Стили для карточек на мобильных - горизонтальный скролл */
   #art-cards-row {
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: row;
+    gap: 1rem;
     padding: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  #art-cards-row::-webkit-scrollbar {
+    display: none;
   }
   
   .art-card {
-    width: 100% !important;
-    max-width: 350px;
-    margin: 0 auto;
+    width: 300px !important;
+    min-width: 300px;
+    max-width: 300px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    margin: 0;
   }
   
   /* Медиа-запросы для секции Pain */
