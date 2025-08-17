@@ -208,6 +208,36 @@ h6 .gradient-text {
   box-shadow: 0 0 32px 12px #a855f7cc, 0 0 60px 20px #6ee7f799;
 }
 
+/* Медиа-запросы для animated-gradient-btn */
+@media (max-width: 767px) {
+  .animated-gradient-btn {
+    padding: 0 16px;
+    height: 40px;
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+  
+  #sticky-banner .animated-gradient-btn {
+    height: 40px;
+    font-size: 0.85rem;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-gradient-btn {
+    padding: 0 12px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+  
+  #sticky-banner .animated-gradient-btn {
+    height: 36px;
+    font-size: 0.75rem;
+    padding: 0 8px;
+  }
+}
+
 #main-btn-text {
   font-weight: 600;
 }
@@ -463,6 +493,19 @@ h6 .gradient-text {
   .art-card {
     touch-action: manipulation;
     -ms-touch-action: manipulation;
+  }
+  
+  /* Стили для карточек на мобильных */
+  #art-cards-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .art-card {
+    width: 100% !important;
+    max-width: 350px;
+    margin: 0 auto;
   }
   
   /* Медиа-запросы для секции Pain */
@@ -755,19 +798,26 @@ h6 .gradient-text {
 /* Медиа-запросы для баннера */
 @media (max-width: 768px) {
   .banner-inner {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 8px;
     padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   
   .banner-btn {
     padding: 6px 12px;
     font-size: 12px;
+    margin-left: 0;
+    width: auto;
+    min-width: auto;
+    max-width: none;
   }
   
   .support-mail-btn {
     padding: 5px 10px;
     font-size: 11px;
+    margin-left: 8px;
   }
 }
 
