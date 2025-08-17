@@ -69,77 +69,94 @@ const initSalesCounter = () => {
 
   // 4. ПЕРЕКЛЮЧАТЕЛЬ КОНТЕНТА "БОЛЬШЕ/МЕНЬШЕ"
   const initToggleContent = () => {
-    // Проверяем, что мы на мобильном устройстве
-    if (window.innerWidth >= 768) {
-      console.log('Desktop detected, skipping mobile toggle');
-      return;
-    }
+    console.log('initToggleContent called, window width:', window.innerWidth);
     
-    const moreBtn = document.getElementById('about-more-btn');
-    const lessBtn = document.getElementById('about-less-btn');
-    const shortDesc = document.getElementById('about-desc-short');
-    const dots = document.getElementById('about-desc-dots');
-    const fullDesc = document.getElementById('about-desc-full');
-    const p2Full = document.getElementById('about-desc-p2-full');
-    
-    // Отладочная информация
-    console.log('Mobile toggle elements found:', {
-      moreBtn: !!moreBtn,
-      lessBtn: !!lessBtn,
-      shortDesc: !!shortDesc,
-      dots: !!dots,
-      fullDesc: !!fullDesc,
-      p2Full: !!p2Full
-    });
-    
-    if (!moreBtn || !shortDesc || !fullDesc || !p2Full || !lessBtn) {
-      console.log('Some toggle elements not found, skipping initialization');
-      return;
-    }
-    
-    // Убеждаемся, что начальное состояние правильное
-    shortDesc.style.display = 'inline';
-    dots.style.display = 'inline';
-    moreBtn.style.display = 'inline';
-    fullDesc.classList.add('hidden');
-    p2Full.classList.add('hidden');
-    lessBtn.classList.add('hidden');
-    
-    moreBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      console.log('More button clicked');
+    const setupToggle = () => {
+      console.log('setupToggle called, window width:', window.innerWidth);
+      // Проверяем, что мы на мобильном устройстве
+      if (window.innerWidth >= 768) {
+        console.log('Desktop detected, skipping mobile toggle');
+        return;
+      }
       
-      // Показываем полный текст
-      shortDesc.style.display = 'none';
-      dots.style.display = 'none';
-      moreBtn.style.display = 'none';
-      fullDesc.classList.remove('hidden');
-      fullDesc.style.display = 'inline';
-      p2Full.classList.remove('hidden');
-      p2Full.style.display = 'block';
-      lessBtn.classList.remove('hidden');
-      lessBtn.style.display = 'inline';
-    });
-    
-    lessBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      console.log('Less button clicked');
+      const moreBtn = document.getElementById('about-more-btn');
+      const lessBtn = document.getElementById('about-less-btn');
+      const shortDesc = document.getElementById('about-desc-short');
+      const dots = document.getElementById('about-desc-dots');
+      const fullDesc = document.getElementById('about-desc-full');
+      const p2Full = document.getElementById('about-desc-p2-full');
       
-      // Скрываем полный текст
-      shortDesc.style.display = 'inline';
-      dots.style.display = 'inline';
-      moreBtn.style.display = 'inline';
-      fullDesc.classList.add('hidden');
-      fullDesc.style.display = 'none';
-      p2Full.classList.add('hidden');
-      p2Full.style.display = 'none';
-      lessBtn.classList.add('hidden');
-      lessBtn.style.display = 'none';
-    });
+      // Отладочная информация
+      console.log('Mobile toggle elements found:', {
+        moreBtn: !!moreBtn,
+        lessBtn: !!lessBtn,
+        shortDesc: !!shortDesc,
+        dots: !!dots,
+        fullDesc: !!fullDesc,
+        p2Full: !!p2Full
+      });
+      
+      if (!moreBtn || !shortDesc || !fullDesc || !p2Full || !lessBtn) {
+        console.log('Some toggle elements not found, skipping initialization');
+        return;
+      }
+      
+      console.log('Initializing toggle content for mobile');
+      
+      // Убеждаемся, что начальное состояние правильное - используем !important для перекрытия Tailwind
+      shortDesc.style.setProperty('display', 'inline', 'important');
+      dots.style.setProperty('display', 'inline', 'important');
+      moreBtn.style.setProperty('display', 'inline', 'important');
+      fullDesc.style.setProperty('display', 'none', 'important');
+      p2Full.style.setProperty('display', 'none', 'important');
+      lessBtn.style.setProperty('display', 'none', 'important');
+      
+      console.log('Initial state set - short version visible');
+      
+      // Удаляем старые обработчики если есть
+      moreBtn.replaceWith(moreBtn.cloneNode(true));
+      lessBtn.replaceWith(lessBtn.cloneNode(true));
+      
+      // Получаем новые ссылки после клонирования
+      const newMoreBtn = document.getElementById('about-more-btn');
+      const newLessBtn = document.getElementById('about-less-btn');
+      
+      newMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('More button clicked');
+        
+        // Показываем полный текст
+        shortDesc.style.setProperty('display', 'none', 'important');
+        dots.style.setProperty('display', 'none', 'important');
+        newMoreBtn.style.setProperty('display', 'none', 'important');
+        fullDesc.style.setProperty('display', 'inline', 'important');
+        p2Full.style.setProperty('display', 'inline', 'important');
+        newLessBtn.style.setProperty('display', 'inline', 'important');
+      });
+      
+      newLessBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Less button clicked');
+        
+        // Скрываем полный текст
+        shortDesc.style.setProperty('display', 'inline', 'important');
+        dots.style.setProperty('display', 'inline', 'important');
+        newMoreBtn.style.setProperty('display', 'inline', 'important');
+        fullDesc.style.setProperty('display', 'none', 'important');
+        p2Full.style.setProperty('display', 'none', 'important');
+        newLessBtn.style.setProperty('display', 'none', 'important');
+      });
+      
+      console.log('Mobile toggle initialized successfully');
+    };
     
-    console.log('Mobile toggle initialized successfully');
+    // Инициализируем при загрузке
+    setupToggle();
+    
+    // Переинициализируем при изменении размера окна
+    window.addEventListener('resize', setupToggle);
   };
 
   // 5. SMOOTH SCROLL ДЛЯ ЯКОРНЫХ ССЫЛОК

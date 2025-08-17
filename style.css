@@ -1,6 +1,4 @@
-/* ========================================
-   ГЛОБАЛЬНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ
-======================================== */
+/* ==== ГЛОБАЛЬНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ==== */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
@@ -65,6 +63,62 @@ section.snap-section {
   }
 }
 
+/* Медиа-запросы для секций */
+@media (min-width: 1050px) {
+  section.snap-section {
+    padding-bottom: 24px;
+  }
+  
+  .scroll-stack-spacer {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  section.snap-section {
+    gap: 2rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    scroll-snap-type: y mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  /* Исправление дёргания в мобильном Chrome без блокировки тулбара Safari */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  section.snap-section {
+    gap: 1.5rem;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    scroll-snap-align: start !important;
+  }
+  
+  section.snap-section:last-child {
+    padding-bottom: 32px;
+  }
+  
+  @supports (height: 100dvh) {
+    section.snap-section {
+      height: 100dvh !important;
+      min-height: 100dvh !important;
+    }
+  }
+}
+
 /* === КОНТЕЙНЕРЫ === */
 .content-container {
   max-width: 100%;
@@ -98,17 +152,6 @@ h5 .gradient-text,
 h6 .gradient-text {
   background-size: 300% 300%;
   animation: gradient-move 3s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  h1 .gradient-text,
-  h2 .gradient-text,
-  h3 .gradient-text,
-  h4 .gradient-text,
-  h5 .gradient-text,
-  h6 .gradient-text {
-    animation: none;
-  }
 }
 
 /* === КНОПКИ === */
@@ -320,6 +363,92 @@ h6 .gradient-text {
 }
 
 /* === PAIN СЕКЦИЯ === */
+.pain-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pain-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(107, 107, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.pain-content {
+  position: relative;
+  z-index: 1;
+}
+
+.pain-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pain-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pain-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.pain-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pain-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.pain-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ff6b6b;
+}
+
+.pain-item p {
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
 /* === КАРТОЧКИ === */
 .art-card {
   transition: all 0.3s ease;
@@ -334,6 +463,24 @@ h6 .gradient-text {
   .art-card {
     touch-action: manipulation;
     -ms-touch-action: manipulation;
+  }
+  
+  /* Медиа-запросы для секции Pain */
+  .pain-title {
+    font-size: 2.5rem;
+  }
+  
+  .pain-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .pain-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pain-item {
+    padding: 1.5rem;
   }
 }
 
@@ -435,6 +582,65 @@ h6 .gradient-text {
 .is-sticky {
   position: fixed;
   width: 370px;
+}
+
+/* Медиа-запросы для sticky элементов */
+@media (max-width: 768px) {
+  #sticky-lead-block {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+  
+  #sticky-lead-block.sticky-mode {
+    max-width: 100vw;
+    padding: 8px 10px;
+  }
+  
+  #lead-form {
+    gap: 8px;
+  }
+  
+  #lead-btn {
+    min-width: 120px;
+    max-width: 180px;
+    width: 150px;
+    font-size: 1rem;
+  }
+  
+  #sticky-lead-block.sticky-mode #lead-btn {
+    font-size: 1.1rem;
+  }
+  
+  .fixed-sticky-btn {
+    width: calc(100vw - 20px);
+    left: 10px;
+  }
+  
+  .is-sticky {
+    width: calc(100vw - 20px);
+    left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #sticky-lead-block.sticky-mode {
+    padding: 6px 8px;
+  }
+  
+  #lead-form {
+    gap: 6px;
+  }
+  
+  #lead-btn {
+    min-width: 100px;
+    max-width: 150px;
+    width: 130px;
+    font-size: 0.9rem;
+  }
+  
+  #sticky-lead-block.sticky-mode #lead-btn {
+    font-size: 1rem;
+  }
 }
 
 /* === БАННЕР === */
@@ -546,6 +752,47 @@ h6 .gradient-text {
   border: none;
 }
 
+/* Медиа-запросы для баннера */
+@media (max-width: 768px) {
+  .banner-inner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 15px;
+  }
+  
+  .banner-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .support-mail-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  #sticky-banner {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+  
+  .banner-inner {
+    gap: 8px;
+    padding: 0 10px;
+  }
+  
+  .banner-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  
+  .support-mail-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
 /* === ТАЙМЕР === */
 #banner-timer {
   position: static;
@@ -583,6 +830,15 @@ h6 .gradient-text {
   vertical-align: middle;
   margin: 0 0.1rem 0 0.1rem;
   animation: blink-colon 1s steps(1, start) infinite;
+}
+
+/* Медиа-запросы для таймера */
+@media (max-width: 480px) {
+  #banner-timer {
+    font-size: 12px;
+    padding: 3px 6px;
+    gap: 3px;
+  }
 }
 
 /* === FINAL CTA СЕКЦИЯ === */
@@ -735,6 +991,44 @@ h6 .gradient-text {
 
 .faq-toggle.open .faq-arrow svg {
   transform: rotate(90deg);
+}
+
+/* Медиа-запросы для FAQ */
+@media (max-width: 768px) {
+  #faq-scroll-list {
+    max-height: 350px;
+    padding-right: 5px;
+  }
+  
+  .faq-item {
+    margin-bottom: 0.75rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+  
+  .faq-answer.open {
+    padding: 0.75rem 1.5rem 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #faq-scroll-list {
+    max-height: 300px;
+  }
+  
+  .faq-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.85rem;
+  }
+  
+  .faq-answer.open {
+    padding: 0.5rem 1rem 0.75rem 1rem;
+  }
 }
 
 [data-simplebar] .simplebar-scrollbar:before {
@@ -898,457 +1192,6 @@ footer.w-full {
   
   .scroll-stack-spacer {
     display: none;
-  }
-}
-
-/* === ПЛАНШЕТЫ (768px - 1024px) === */
-@media (min-width: 768px) {
-  .content-container {
-    max-width: 64rem;
-  }
-  
-  .content-text {
-    max-width: 70%;
-  }
-  
-  .art-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
-  }
-  
-  .bonus-card,
-  .learnmap-card {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
-    will-change: transform, opacity;
-    animation: cardFadeIn 0.8s ease-out;
-  }
-  
-  .bonus-card:hover,
-  .learnmap-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Pain секция на десктопе */
-  #pain-section .section-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-  }
-  
-  #art-cards-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    width: auto;
-    max-width: none;
-    margin-top: 3rem;
-  }
-  
-  #art-cards-row .art-card {
-    width: 450px;
-    max-width: 450px;
-  }
-  
-  /* Футер на десктопе */
-  #footer-legal {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 768px) {
-  section.snap-section {
-    gap: 2rem;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  
-  /* Final CTA на планшетах */
-  #final-cta .section-header {
-    margin-bottom: 1.2rem;
-  }
-  
-  #final-cta .section-content {
-    gap: 1rem;
-  }
-  
-  #final-cta .section-content > * {
-    margin-bottom: 1rem;
-  }
-}
-
-/* === БАННЕР НА ПЛАНШЕТАХ === */
-@media (max-width: 1024px) and (min-width: 701px) {
-  .banner-inner {
-    padding: 0 16px;
-  }
-  
-  .banner-btn {
-    width: 280px;
-    min-width: 180px;
-    font-size: 1.05rem;
-    margin-left: 40px;
-  }
-  
-  .support-mail-btn {
-    margin-right: 20px;
-    font-size: 1.05rem;
-  }
-}
-
-@media (max-width: 900px) and (min-width: 701px) {
-  .banner-btn {
-    width: 240px;
-    min-width: 160px;
-    font-size: 1rem;
-    margin-left: 20px;
-  }
-  
-  .support-mail-btn {
-    margin-right: 10px;
-    font-size: 1rem;
-    padding: 4px 12px;
-  }
-}
-
-@media (max-width: 800px) and (min-width: 701px) {
-  .banner-inner {
-    padding: 0 12px;
-  }
-  
-  .banner-btn {
-    width: 200px;
-    min-width: 140px;
-    font-size: 0.95rem;
-    margin-left: 10px;
-  }
-  
-  .support-mail-btn {
-    display: none;
-  }
-  
-  #banner-timer {
-    flex-shrink: 0;
-  }
-}
-
-/* Центрирование таймера на десктопе */
-@media (min-width: 701px) {
-  .banner-inner:has(.support-mail-btn[style*="display: none"]) .flex-1 {
-    justify-content: center;
-  }
-}
-
-/* === МОБИЛЬНЫЕ УСТРОЙСТВА (до 767px) === */
-@media (max-width: 767px) {
-  
-  body {
-    scroll-snap-type: y mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-  
-  /* Исправление дёргания в мобильном Chrome без блокировки тулбара Safari */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* Исправление проблемы с клавиатурой */
-  #hero-form-wrap {
-    position: relative;
-    z-index: 1000;
-  }
-  
-  .gradient-border-wrap {
-    position: relative;
-  }
-  
-  /* Обеспечиваем видимость формы при появлении клавиатуры */
-  @supports (-webkit-touch-callout: none) {
-    .gradient-border-wrap input:focus {
-      transform: translateY(-50px);
-      transition: transform 0.3s ease;
-    }
-    
-    #main-btn:focus-within,
-    .gradient-border-wrap:focus-within + #main-btn {
-      transform: translateY(-50px);
-      transition: transform 0.3s ease;
-    }
-  }
-  
-  section.snap-section {
-    gap: 1.5rem;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    height: 100vh !important;
-    min-height: 100vh !important;
-    scroll-snap-align: start !important;
-  }
-  
-  section.snap-section:last-child {
-    padding-bottom: 32px;
-  }
-  
-  @supports (height: 100dvh) {
-    section.snap-section {
-      height: 100dvh !important;
-      min-height: 100dvh !important;
-    }
-  }
-  
-  /* Hero секция на мобильных */
-  .mobile-hero-img {
-    height: 95%;
-    max-width: 105%;
-  }
-  
-  .hero-img-container img {
-    width: 90vw;
-    max-width: 100vw;
-  }
-  
-  /* Заголовки на мобильных */
-  .section-header {
-    margin-top: -20px;
-    width: 100%;
-    padding: 0 0.5rem;
-  }
-  
-  #benefits-title {
-    font-size: 1.75rem;
-    line-height: 1.25;
-    word-wrap: break-word;
-    padding: 0;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  /* Контейнеры на мобильных 
-  .content-container {
-    min-width: 100%;
-    gap: 0.5rem;
-  }
-  
-  .content-container .content-text {
-    min-width: auto;
-    flex: 1;
-  } 
- 
-
-  .content-container img {
-    width: 35vw;
-    height: 280px;
-    margin-left: 0.5rem;
-  }
-  
- */
-
-  /* Карточки на мобильных */
-  .art-card:hover {
-    transform: none;
-    box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.1);
-  }
-  
-  .art-card {
-    transform: none;
-  }
-  
-  .bonus-card,
-  .learnmap-card {
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Pain секция на мобильных - горизонтальный скролл */
-  #art-cards-row {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 1.5rem;
-    padding: 1rem 1rem 1rem 1.5rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  #art-cards-row::-webkit-scrollbar {
-    display: none;
-  }
-  
-  #art-cards-row .art-card {
-    flex: 0 0 350px;
-    scroll-snap-align: start;
-    height: auto;
-  }
-  
-  #art-cards-row .art-card:last-child {
-    margin-right: 1.5rem;
-  }
-  
-  /* Отзывы на мобильных */
-  .review-item img {
-    width: 5rem;
-    height: 5rem;
-  }
-  
-  /* About секция на мобильных */
-  .about-img-container img {
-    width: 95vw;
-  }
-  
-  .about-photo-img {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    transform: scale(0.8);
-  }
-  
-  /* Оффер карточки на мобильных */
-  .bg-\[\#181c22\] {
-    max-width: 380px;
-  }
-  
-  /* Price секция на мобильных */
-  #price-stack-scroll {
-    position: relative;
-    height: calc(100vh - 70px);
-    min-height: 350px;
-    max-height: 100vh;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    background: transparent;
-  }
-  
-  .scroll-stack-card {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    transition: transform 0.5s, opacity 0.4s, z-index 0s;
-    will-change: transform, opacity;
-    pointer-events: none;
-    opacity: 0;
-  }
-  
-  .scroll-stack-card.active {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 30;
-  }
-  
-  .scroll-stack-card.below {
-    opacity: 0.5;
-    z-index: 20;
-    pointer-events: none;
-    filter: blur(1.5px) brightness(0.95);
-    transform: scale(0.97) translateY(12px);
-  }
-  
-  .scroll-stack-card.under {
-    opacity: 0.3;
-    z-index: 10;
-    pointer-events: none;
-    filter: blur(2.5px) brightness(0.92);
-    transform: scale(0.94) translateY(24px);
-  }
-  
-  /* Final CTA на мобильных */
-  #final-cta .section-header {
-    margin-bottom: 1.5rem;
-  }
-  
-  #final-cta .section-content {
-    gap: 1rem;
-  }
-  
-  #final-cta .timer-value {
-    font-size: 1.8rem;
-  }
-  
-  #final-cta .blinking-colon {
-    font-size: 1.4rem;
-  }
-  
-  #final-cta .timer-label {
-    font-size: 0.85rem;
-  }
-}
-
-/* === БАННЕР НА МОБИЛЬНЫХ === */
-@media (max-width: 768px) {
-  .banner-inner {
-    padding: 0 8px;
-    max-width: 100vw;
-    justify-content: space-between;
-    gap: 8px;
-  }
-  
-  .banner-btn {
-    width: auto;
-    min-width: 0;
-    max-width: 45%;
-    font-size: 0.9rem;
-    padding: 0 12px;
-    margin-left: 0;
-    order: 1;
-  }
-  
-  .flex-1 {
-    justify-content: center;
-  }
-  
-  .support-mail-btn {
-    display: none;
-  }
-  
-  #banner-timer {
-    flex-shrink: 0;
-    margin-right: 0;
-  }
-  
-  .banner-inner:has(.support-mail-btn[style*="display: none"]) .flex-1 {
-    justify-content: flex-end;
-  }
-}
-
-/* === STICKY ЭЛЕМЕНТЫ НА МОБИЛЬНЫХ === */
-@media (max-width: 500px) {
-  .fixed-sticky-btn {
-    width: 98vw;
-    left: 1vw;
-  }
-  
-  .is-sticky {
-    width: 98vw;
-    left: 1vw;
-  }
-}
-
-/* === IDE Preview noSnap mode (scoped) === */
-@media (max-width: 767px) {
-  html.no-snap,
-  html.no-snap body {
-    scroll-snap-type: none !important;
-    -webkit-overflow-scrolling: auto !important;
-  }
-  html.no-snap section.snap-section {
-    height: auto !important;
-    min-height: auto !important;
-    scroll-snap-align: initial !important;
-  }
-  html.no-snap #price-stack-scroll {
-    height: auto !important;
-    max-height: none !important;
   }
 }
 
