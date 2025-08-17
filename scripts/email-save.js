@@ -13,6 +13,18 @@ class EmailSaver {
 
   async handleSubmit(e) {
     e.preventDefault();
+
+    // Открываем оплату сразу по нажатию кнопки
+    if (window.checkoutManager && typeof window.checkoutManager.openPaymentWindow === 'function') {
+      window.checkoutManager.openPaymentWindow();
+    } else {
+      // Фолбек, если checkoutManager ещё не инициализирован
+      try {
+        window.open('https://aico.lemonsqueezy.com/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933', '_blank', 'width=800,height=600');
+      } catch (err) {
+        console.error('Fallback open failed:', err);
+      }
+    }
     
     const emailInput = e.target.querySelector('input[type="email"]');
     const email = emailInput?.value?.trim();
@@ -48,11 +60,7 @@ class EmailSaver {
     savedEmails.push({ email, date, time, timestamp: now.getTime() });
     localStorage.setItem('savedEmails', JSON.stringify(savedEmails));
     
-    // Открываем окно оплаты через CheckoutManager
-    if (window.checkoutManager) {
-      window.checkoutManager.openPaymentWindow();
-    }
-    
+    // Ранее здесь открывалось окно оплаты. Перенесено в handleSubmit(), чтобы открывалось строго по клику.
     return true;
   }
 

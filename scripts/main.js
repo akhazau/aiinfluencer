@@ -69,37 +69,38 @@ const initSalesCounter = () => {
 
   // 4. ПЕРЕКЛЮЧАТЕЛЬ КОНТЕНТА "БОЛЬШЕ/МЕНЬШЕ"
   const initToggleContent = () => {
-    console.log('initToggleContent called, window width:', window.innerWidth);
-    if (window.innerWidth >= 768) {
-      console.log('Desktop detected, skipping mobile toggle');
-      return; // Только для мобильных
-    }
-    
     const moreBtn = document.getElementById('about-more-btn');
     const lessBtn = document.getElementById('about-less-btn');
     const shortDesc = document.getElementById('about-desc-short');
     const dots = document.getElementById('about-desc-dots');
     const fullDesc = document.getElementById('about-desc-full');
     const p2Full = document.getElementById('about-desc-p2-full');
-    
-    console.log('Elements found:', {
-      moreBtn: !!moreBtn,
-      lessBtn: !!lessBtn,
-      shortDesc: !!shortDesc,
-      dots: !!dots,
-      fullDesc: !!fullDesc,
-      p2Full: !!p2Full
-    });
-    
+
     if (!moreBtn || !lessBtn || !shortDesc || !dots || !fullDesc || !p2Full) {
-      console.log('Some elements missing, aborting');
       return;
     }
-    
-    console.log('Setting up click handlers');
-    
+
+    // На десктопе очищаем инлайновые стили, чтобы классы md:hidden/md:block работали как задумано
+    if (window.innerWidth >= 768) {
+      shortDesc.style.display = '';
+      dots.style.display = '';
+      moreBtn.style.display = '';
+      fullDesc.style.display = '';
+      p2Full.style.display = '';
+      lessBtn.style.display = '';
+      return; // Логика только для мобильных
+    }
+
+    // Явно задаем свернутое состояние по умолчанию на мобиле
+    shortDesc.style.display = 'inline';
+    dots.style.display = 'inline';
+    moreBtn.style.display = 'inline';
+    fullDesc.style.display = 'none';
+    p2Full.style.display = 'none';
+    lessBtn.style.display = 'none';
+
+    // Обработчики кликов (переопределяются идемпотентно)
     moreBtn.onclick = () => {
-      console.log('More button clicked');
       shortDesc.style.display = 'none';
       dots.style.display = 'none';
       moreBtn.style.display = 'none';
@@ -107,9 +108,8 @@ const initSalesCounter = () => {
       p2Full.style.display = 'block';
       lessBtn.style.display = 'inline';
     };
-    
+
     lessBtn.onclick = () => {
-      console.log('Less button clicked');
       shortDesc.style.display = 'inline';
       dots.style.display = 'inline';
       moreBtn.style.display = 'inline';

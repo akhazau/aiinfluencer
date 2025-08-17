@@ -86,6 +86,11 @@ class Translator {
         "learnmap-3": "Face-lock AI LoRA training",
         "learnmap-4": "Visual control & outfit",
         "learnmap-5": "Merge & publish fast",
+        "learnmap-1-dup": "Pose & style setup",
+        "learnmap-2-dup": "Angles & realism tips",
+        "learnmap-3-dup": "Face-lock AI LoRA training",
+        "learnmap-4-dup": "Visual control & outfit",
+        "learnmap-5-dup": "Merge & publish fast",
 
         // Reviews Section
         "reviews-title": "What Our",
@@ -166,7 +171,8 @@ class Translator {
         "footer-desc": "Jump into the AI game — your guide starts here. Master modern tools fast",
         "footer-email": "hi@aiinfluencer.site",
         "footer-copyright": "© 2025 AI Influencer 3.0. All rights reserved",
-        "footer-legal": "This course is for educational purposes only. Results are not guaranteed. By using this site, you accept our terms and assume full responsibility for your decisions and actions. No refunds on digital content"
+        "footer-legal": "All sales are final due to instant access to digital content",
+        "rating-text-footer": "4.9 (300+ reviews)"
       },
 
       ru: {
@@ -248,6 +254,11 @@ class Translator {
         "learnmap-3": "Face-Lock AI Lora-обучение",
         "learnmap-4": "Визуальный контроль и образы",
         "learnmap-5": "Все объединить и опубликовать",
+        "learnmap-1-dup": "Поза и стиль персонажа",
+        "learnmap-2-dup": "Красивые ракурсы и советы",
+        "learnmap-3-dup": "Face-Lock AI Lora-обучение",
+        "learnmap-4-dup": "Визуальный контроль и образы",
+        "learnmap-5-dup": "Все объединить и опубликовать",
 
         // Reviews Section
         "reviews-title": "Что",
@@ -305,7 +316,7 @@ class Translator {
         "faq-a1": "Первые фотореалистичные кадры в первый же вечер, полная лента за 4–7 дней при 1–2 часах ежедневной практики",
         "faq-q2": "Изабель спросила… Могу ли я совмещать это с работой или учёбой?",
         "faq-a2": "Да. Уроки длятся менее 20 минут и доступны 24/7 — смотрите вечерами или на выходных",
-        "faq-q3": "Аника спросила… Сколько времени нужно посвящать этому бизнесу?",
+        "faq-q3": "Аника спросила… Сколько времени нужно посвящать этоту бизнесу?",
         "faq-a3": "1–2 часа в день достаточно для запуска контента и масштабирования проекта",
         "faq-q4": "Хассан спросил… Какие инструменты мне нужно будет купить?",
         "faq-a4": "Только Midjourney — Basic $10/мес для старта или Standard $30/мес для скорости. Другие сервисы дешёвые pay-as-you-go — копейки против одной профессиональной съёмки",
@@ -328,7 +339,8 @@ class Translator {
         "footer-desc": "Прыгайте в AI-игру — ваш путь начинается здесь. Быстро освойте современные инструменты",
         "footer-email": "hi@aiinfluencer.site",
         "footer-copyright": "© 2025 AI Influencer 3.0. Все права защищены",
-        "footer-legal": "Курс — в образовательных целях. Результаты не гарантируются. Используя сайт, вы принимаете условия и берёте ответственность за решения и действия. Возвратов за цифровой контент нет"
+        "footer-legal": "Курс — в образовательных целях. Результаты не гарантируются. Используя сайт, вы принимаете условия и берёте ответственность за решения и действия. Возвратов за цифровой контент нет",
+        "rating-text-footer": "4.9 (300+ отзывов)"
       },
 
       tr: {
@@ -416,6 +428,12 @@ class Translator {
         "learnmap-3": "Face-Lock AI Lora eğitimi",
         "learnmap-4": "Görsel kontrol ve kıyafet",
         "learnmap-5": "Hızlı birleştir ve yayınla",
+        "learnmap-1-dup": "Poz ve stil kurulumu",
+        "learnmap-2-dup": "Açılar ve gerçekçilik ipuçları",
+        "learnmap-3-dup": "Face-Lock AI Lora eğitimi",
+        "learnmap-4-dup": "Görsel kontrol ve kıyafet",
+        "learnmap-5-dup": "Hızlı birleştir ve yayınla",
+        "rating-text-footer": "4.9 (300+ yorumlar)",
 
         // Reviews Section
         "reviews-title": "Öğrencilerimiz",
@@ -488,7 +506,7 @@ class Translator {
 
         // Final CTA Section
         "final-cta-title": "AI Modeller 2030'a Kadar <span class=\"gradient-text-inverse\">$45,9B Endüstri</span> Olacak",
-        "final-cta-subtitle": "AI-influencer heyecanı Bitcoin'in 2012 altın hücumu ve NFT'lerin 2021 patlaması gibi hissettiriyor",
+        "final-cta-subtitle": "AI-influencer hype feels like Bitcoin's 2012 gold rush and the 2021 NFT boom",
         "final-cta-save": "Bugün $98.00 Tasarruf Edin!",
         "final-cta-btn-text": "Kursu Şu Fiyata Alın",
         "course-sales-label": "bugün kurs satışı",
@@ -514,7 +532,9 @@ class Translator {
   }
 
   updateDOM() {
+    const skipIds = new Set(['about-desc-p1', 'about-desc-p2']);
     Object.keys(this.translations[this.currentLang]).forEach(key => {
+      if (skipIds.has(key)) return; // keep complex mobile DOM intact
       let el = this.cache.get(key);
       if (!el) {
         el = document.getElementById(key);

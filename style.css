@@ -205,18 +205,18 @@ h6 .gradient-text {
   box-shadow: 0 0 32px 12px #a855f7cc, 0 0 60px 20px #6ee7f799;
 }
 
-/* Медиа-запросы для animated-gradient-btn */
+/* Медиа-запросы для animated-gradient-btn *
 @media (max-width: 767px) {
   .animated-gradient-btn {
     padding: 0 16px;
     height: 40px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     min-width: auto;
   }
   
   #sticky-banner .animated-gradient-btn {
     height: 40px;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     padding: 0 12px;
   }
 }
@@ -225,12 +225,12 @@ h6 .gradient-text {
   .animated-gradient-btn {
     padding: 0 12px;
     height: 36px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   
   #sticky-banner .animated-gradient-btn {
     height: 36px;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     padding: 0 8px;
   }
 }
@@ -241,7 +241,7 @@ h6 .gradient-text {
 
 #main-btn-price-new {
   font-weight: 600;
-}
+}*/
 
 .lang-btn {
   padding: 4px 12px;
@@ -892,7 +892,7 @@ h6 .gradient-text {
   animation: blink-colon 1s steps(1, start) infinite;
 }
 
-/* Медиа-запросы для таймера */
+/* Медиа-запросы для таймера *
 @media (max-width: 480px) {
   #banner-timer {
     font-size: 12px;
@@ -901,7 +901,7 @@ h6 .gradient-text {
   }
 }
 
-/* === FINAL CTA СЕКЦИЯ === */
+/* === FINAL CTA СЕКЦИЯ === *
 #final-cta {
   position: relative;
   overflow: hidden;
@@ -1051,7 +1051,7 @@ h6 .gradient-text {
   transform: rotate(90deg);
 }
 
-/* Медиа-запросы для FAQ */
+/* Медиа-запросы для FAQ *
 @media (max-width: 768px) {
   #faq-scroll-list {
     max-height: 350px;
@@ -1087,7 +1087,7 @@ h6 .gradient-text {
   .faq-answer.open {
     padding: 0.5rem 1rem 0.75rem 1rem;
   }
-}
+} */
 
 [data-simplebar] .simplebar-scrollbar:before {
   background: #a855f7;
