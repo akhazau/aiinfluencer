@@ -95,6 +95,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const enableFocusMode = () => toggleFocusMode(true);
   const disableFocusMode = () => toggleFocusMode(false);
 
+  // Вспомогательный spacer для времени открытой клавиатуры, чтобы избежать "отпружинивания"
+  let keyboardSpacer = null;
+  const ensureKeyboardSpacer = () => {
+    if (keyboardSpacer) return keyboardSpacer;
+    keyboardSpacer = document.createElement('div');
+    keyboardSpacer.setAttribute('data-keyboard-spacer', '');
+    keyboardSpacer.style.width = '100%';
+    keyboardSpacer.style.height = '0px';
+    keyboardSpacer.style.pointerEvents = 'none';
+    keyboardSpacer.style.background = 'transparent';
+    keyboardSpacer.style.transition = 'height 0.15s ease';
+    document.body.appendChild(keyboardSpacer);
+    return keyboardSpacer;
+  };
+  const updateKeyboardSpacerHeight = () => {
+    if (!keyboardSpacer) return;
+    const vv = window.visualViewport;
+    if (vv) {
+      const keyboardHeight = Math.max(0, window.innerHeight - (vv.height + vv.offsetTop));
+      const extra = 80; // запас под панель подсказок
+      keyboardSpacer.style.height = Math.max(0, keyboardHeight + extra) + 'px';
+    } else {
+      // Фолбэк, если visualViewport недоступен
+      keyboardSpacer.style.height = '260px';
+    }
+  };
+  const removeKeyboardSpacer = () => {
+    if (keyboardSpacer && keyboardSpacer.parentNode) {
+      keyboardSpacer.parentNode.removeChild(keyboardSpacer);
+    }
+    keyboardSpacer = null;
+  };
+  
   const safeScrollIntoView = () => {
     if (!emailInput) return;
     const targets = [emailWrap, finalCtaBtn, (salesCounterWrapper || salesCounter)].filter(Boolean);
@@ -111,63 +144,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const adjustNow = () => {
       const currentScrollY = window.scrollY || window.pageYOffset;
-      // Пересчитываем union при каждом вызове (элементы могли сдвинуться)
       const r2 = targets.map(t => t.getBoundingClientRect());
       const u2 = r2.reduce((acc, r) => ({ top: Math.min(acc.top, r.top), bottom: Math.max(acc.bottom, r.bottom) }), { top: r2[0]?.top ?? 0, bottom: r2[0]?.bottom ?? 0 });
 
       let vh = window.innerHeight;
       let safeBottom = 20;
       if (vv) {
-        // Высота клавиатуры: учтём и offsetTop (iOS/Chrome двигают visual viewport)
         const keyboardHeight = Math.max(0, window.innerHeight - (vv.height + vv.offsetTop));
         vh = vv.height;
-        safeBottom = keyboardHeight + 80; // запас под панель автоподсказок
+        safeBottom = keyboardHeight + 80;
       }
 
       const availableSpace = vh - topPad - safeBottom;
       const unionHeight = u2.bottom - u2.top;
       let desiredTop = null;
 
-      // Если низ уходит под клавиатуру — поднимаем
       const allowedBottom = vh - safeBottom;
       if (u2.bottom > allowedBottom) {
         const delta = u2.bottom - allowedBottom;
         desiredTop = currentScrollY + delta;
       }
-      // Если верх слишком высоко (за topPad) — опускаем
       if (u2.top < topPad) {
-        const deltaTop = u2.top - topPad; // отрицательное
+        const deltaTop = u2.top - topPad;
         desiredTop = (desiredTop ?? currentScrollY) + deltaTop;
       }
-      // Если блок выше/ниже и он больше доступного пространства — стремимся показать его верх
       if (unionHeight > availableSpace && u2.top < topPad + 8) {
-        desiredTop = (desiredTop ?? currentScrollY) - 8; // чуть ниже, чтобы не липло к краю
+        desiredTop = (desiredTop ?? currentScrollY) - 8;
       }
 
       if (desiredTop != null) {
         desiredTop = Math.max(0, Math.min(desiredTop, document.body.scrollHeight - vh));
-        // Моментально, чтобы не отставать от появления клавиатуры
         window.scrollTo({ top: desiredTop, behavior: 'auto' });
       }
     };
 
-    // Первый прогон до фокуса/после клика
+    // Важно: сначала ставим spacer, затем корректируем скролл
+    ensureKeyboardSpacer();
+    updateKeyboardSpacerHeight();
+
     adjustNow();
 
-    // Пост-коррекции — для ступенчатого изменения viewport при открытии клавиатуры
     if (window.requestAnimationFrame) requestAnimationFrame(adjustNow);
     setTimeout(adjustNow, 100);
     setTimeout(adjustNow, 300);
     setTimeout(adjustNow, 600);
 
     if (vv) {
-      const onViewportChange = () => adjustNow();
+      const onViewportChange = () => { updateKeyboardSpacerHeight(); adjustNow(); };
       vv.addEventListener('resize', onViewportChange, { passive: true });
       vv.addEventListener('scroll', onViewportChange, { passive: true });
       const cleanup = () => {
         vv.removeEventListener('resize', onViewportChange);
         vv.removeEventListener('scroll', onViewportChange);
         emailInput.removeEventListener('blur', cleanup);
+        removeKeyboardSpacer();
       };
       emailInput.addEventListener('blur', cleanup);
     }
@@ -207,13 +237,20 @@ document.addEventListener("DOMContentLoaded", () => {
     emailInput.addEventListener('mousedown', markUserInitiated, { passive: true });
 
     emailInput.addEventListener('focus', () => {
+      // Сначала создаём/обновляем spacer, чтобы закрепить позицию
+      ensureKeyboardSpacer();
+      updateKeyboardSpacerHeight();
+
       enableFocusMode();
       safeScrollIntoView();
-      // Дополнительная коррекция сразу после появления клавиатуры
       setTimeout(() => safeScrollIntoView(), 50);
       typewriterEffect(emailInput, 'Enter your email');
       setCaretToEnd(emailInput);
     });
+
+    // На всякий случай убираем spacer при потере фокуса (если не сработал cleanup выше)
+    emailInput.addEventListener('blur', removeKeyboardSpacer);
+
     emailInput.addEventListener('input', () => {
       if (emailInput.value.length > 0) {
         typewriterActive = false;
