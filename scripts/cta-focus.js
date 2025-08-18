@@ -76,14 +76,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toggleFocusMode = (enable) => {
     if (!overlay) return;
+    const root = document.documentElement;
     if (enable) {
       overlay.classList.add('active');
+      root.classList.add('focus-mode');
       highlightTargets.forEach(el => el && el.classList.add('focus-highlight'));
       // click outside to exit
       const off = () => disableFocusMode();
       overlay.addEventListener('click', off, { once: true });
     } else {
       overlay.classList.remove('active');
+      root.classList.remove('focus-mode');
       highlightTargets.forEach(el => el && el.classList.remove('focus-highlight'));
     }
   };
@@ -105,7 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
     keyboardSpacer.style.height = '0px';
     keyboardSpacer.style.pointerEvents = 'none';
     keyboardSpacer.style.background = 'transparent';
-    keyboardSpacer.style.transition = 'height 0.15s ease';
+    // без переходов, чтобы не было дёргания
+    keyboardSpacer.style.transition = 'none';
     document.body.appendChild(keyboardSpacer);
     return keyboardSpacer;
   };
@@ -229,6 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (userInitiatedTimer) clearTimeout(userInitiatedTimer);
       userInitiatedTimer = setTimeout(() => { userInitiatedFocus = false; }, 1500);
       // Подготовительная прокрутка до появления клавиатуры
+      ensureKeyboardSpacer();
+      updateKeyboardSpacerHeight();
       setTimeout(() => safeScrollIntoView(), 0);
     };
 
@@ -236,22 +242,45 @@ document.addEventListener("DOMContentLoaded", () => {
     emailInput.addEventListener('touchstart', markUserInitiated, { passive: true });
     emailInput.addEventListener('mousedown', markUserInitiated, { passive: true });
 
+    // Защита от мусорных автоподстановок/переводов в value
+    const isGarbageEmailPrompt = (val) => {
+    if (!val) return false;
+    const s = val.toLowerCase().trim();
+    if (s.includes('@')) return false;
+    if (s.length > 40) return false;
+    const patterns = [
+    'enter your email', 'your email', 'email address',
+    'введите', 'почта', 'электрон', 'почтовый адрес',
+    'tu correo', 'correo electrónico',
+    'e-mailinizi', 'e-posta', 'メール', '메일'
+    ];
+    return patterns.some(p => s.includes(p));
+    };
+    const sanitizeEmailValue = () => {
+    if (emailInput && isGarbageEmailPrompt(emailInput.value)) {
+    emailInput.value = '';
+    }
+    };
+
     emailInput.addEventListener('focus', () => {
       // Сначала создаём/обновляем spacer, чтобы закрепить позицию
       ensureKeyboardSpacer();
       updateKeyboardSpacerHeight();
 
       enableFocusMode();
+      // Фиксированный плейсхолдер и зачистка мусора в value
+      emailInput.placeholder = PLACEHOLDER_TEXT;
+      sanitizeEmailValue();
+
       safeScrollIntoView();
       setTimeout(() => safeScrollIntoView(), 50);
-      typewriterEffect(emailInput, 'Enter your email');
+      // typewriterEffect убран, чтобы не провоцировать перевод/подстановки
       setCaretToEnd(emailInput);
     });
 
-    // На всякий случай убираем spacer при потере фокуса (если не сработал cleanup выше)
-    emailInput.addEventListener('blur', removeKeyboardSpacer);
-
+    // Усиливаем защиту на вводе
     emailInput.addEventListener('input', () => {
+      sanitizeEmailValue();
       if (emailInput.value.length > 0) {
         typewriterActive = false;
         emailInput.placeholder = 'Enter your email';
@@ -275,6 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
       emailInput.placeholder = 'Enter your email';
       userInitiatedFocus = false;
       // overlay остаётся активным, закрывается только кликом по нему
+      document.documentElement.classList.remove('focus-mode');
     });
     // Protect placeholder from external modifications (e.g., auto-translate)
     const placeholderObserver = new MutationObserver((mutations) => {
