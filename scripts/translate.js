@@ -135,8 +135,8 @@ class Translator {
         "about-fact-1-desc": "Hyper-real AI characters delivered for global brands",
         "about-fact-2-title": "Certified instructor",
         "about-fact-2-desc": "Teaches AI tools & digital-identity pipelines",
-        "about-fact-3-title": "50k + followers",
-        "about-fact-3-desc": "Learners from 20 + countries use his methods",
+        "about-fact-3-title": "50k+ followers",
+        "about-fact-3-desc": "Learners from 20+ countries use his methods",
         "about-fact-4-title": "Featured in",
         "about-fact-4-desc": "Forbes, TechCrunch",
 
