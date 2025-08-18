@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-[#181a2a]">
+  <div id="focus-overlay" aria-hidden="true"></div>
     <!-- Sticky-баннер (шторка) -->
     <div id="sticky-banner">
         <div class="banner-inner flex items-center w-full max-w-full h-[74px] px-4 md:px-[130px] relative z-2">
           <button class="animated-gradient-btn text-white rounded-[14px] text-lg flex items-center justify-center gap-0.5 md:gap-1 overflow-hidden h-[40px] md:h-[42px] w-1/2 md:w-[320px] ml-4 md:ml-16">
             <span class="block md:hidden" id="sticky-btn-text-mobile">Grab </span>
              <span class="hidden md:block" id="sticky-btn-text-desktop">Grab the Offer</span>
-             <span class="line-through text-yellow-500 font-normal" id="sticky-btn-price-old">$120 </span>
+             <span class="line-through text-yellow-500 font-normal ml-1 mr-1" id="sticky-btn-price-old"> $120 </span>
              <span class="text-yellow-300 text-xl font-bold" id="sticky-btn-price-new"> $27</span>
           </button>
           <div class="w-1/2 md:flex-1 flex justify-center items-center">
@@ -33,7 +34,7 @@
                 <span class="blinking-colon text-pink-400 text-[0.9rem] md:text-[1.4rem] w-[0.8rem] md:w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[10px]">:</span>
                 <span class="timer-value text-pink-400 text-[1.6rem] md:text-[1.9rem] font-bold min-w-0 md:min-w-[2.7rem] text-center">00</span>
               </div>
-              <div class="timer-row timer-row-labels gap-4 md:gap-[15px] justify-center">
+              <div class="timer-row timer-row-labels gap-5 md:gap-[25px] justify-center">
                 <span class="timer-label text-[0.7rem] text-[#b5b4b4] min-w-0 md:min-w-[2rem] text-center mt-[0.05rem] leading-none inline-block -translate-y-[5px]">h</span>
                 <span class="timer-label min-w-0"></span>
                 <span class="timer-label text-[0.7rem] text-[#b5b4b4] min-w-0 md:min-w-[2rem] text-center mt-[0.05rem] leading-none inline-block -translate-y-[5px]">m</span>
@@ -95,17 +96,17 @@
             <!-- CTA Button -->
             <button class="animated-gradient-btn text-white rounded-[18px] text-xl flex items-center justify-center gap-1.5 overflow-hidden h-[50px] w-[370px]">
               <span>Grab the Offer</span>
-               <span class="line-through text-yellow-500 font-normal text-lg">$120</span>
+               <span class="line-through text-yellow-500 font-normal text-lg ml-1 mr-1">$120</span>
                <span class="text-yellow-300 text-xl font-bold">$27</span>
             </button>
               <!-- В hero-секции -->
-              <div class="live-viewers md:w-max md:mx-auto mb-2 ml-6 md:ml-6 mt-[13px]" id="live-viewers-row">
+              <div class="live-viewers md:w-max md:mx-auto mb-2 ml-6 md:ml-6 mt-[18px] md:mt-[13px]" id="live-viewers-row">
                 <span class="live-dot"></span>
                 <span id="live-viewers-count" class="inline-block tabular-nums min-w-[2ch] text-center">21</span> <span id="live-viewers-text">people currently viewing this page</span>
               </div>
-              <div class="flex items-center mt-[20px] block md:flex">
+              <div class="flex items-center mt-[12px] block md:flex scale-[0.7] md:scale-[0.9]">
                 <div class="flex -space-x-4">
-                  <img src="media/av_1.png" style="width:120px; height:auto; display:block;" class="mr-3" alt="Live viewers">
+                  <img src="media/av_1.png" style="width:120px; height:auto; display:block;" class="mr-1 md:mr-3" alt="Live viewers">
                 </div>
                 <div class="text-left">
                   <p class="text-base font-medium"><span class="whitespace-nowrap"><span id="join-members-text">Join <span class="text-purple-500">2,130+</span> creators inside</span></span></p>
@@ -192,7 +193,7 @@
               <p class="text-lg text-gray-100 max-w-md mb-2" id="benefits-card-1-desc-1">YOU'LL BECOME an designer, art director, producer — one superhero creator behind it all, even if you're new</p>
               <div class="border-t border-gray-700 w-2/5 my-8"></div>
               <h4 class="text-xl font-semibold mb-4" id="benefits-card-1-why-title">Why this course?</h4>
-              <ul class="space-y-2">
+              <ul class="space-y-1">
                 <li class="flex items-start gap-2"><span class="text-green-400 text-lg">✔︎ </span> <span class="text-base md:text-lg" id="benefits-card-1-feature-1">Copy → paste → tweak → publish</span></li>
                 <li class="flex items-start gap-2"><span class="text-green-400 text-lg">✔︎ </span> <span class="text-base md:text-lg" id="benefits-card-1-feature-2">No need to show your face on camera</span></li>
                 <li class="flex items-start gap-2"><span class="text-green-400 text-lg">✔︎ </span> <span class="text-base md:text-lg" id="benefits-card-1-feature-3">Build studio-level visuals, zero gear</span></li>
@@ -211,14 +212,14 @@
     </section>
 
     <!-- #4 PRICE -->
-    <section id="price-section" class="snap-section text-white py-10 md:py-20 px-4 md:px-28 max-w-full mx-auto relative bg-gradient-to-b from-slate-800 to-slate-900">
+    <section id="price-section" class="snap-section text-white py-10 md:py-20 px-4 md:px-28 mx-auto relative bg-gradient-to-b from-slate-800 to-slate-900">
       <div class="container mx-auto px-2 md:px-4 flex flex-col items-center">  
-        <div class="section-header w-full text-center mt-6 md:mt-32 mb-20 md:mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-2 leading-tight">
-            <span id="price-title-start">No Studio, No Stress — <br class="block md:hidden">at</span>
+        <div class="section-header mt-6 md:mt-32 mb-24 md:mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-2 leading-tight text-center">
+            <span id="price-title-start">No Studio, No Stress<br class="block md:hidden"> — at</span>
             <span class="gradient-text" id="price-title-gradient">T-shirt Price</span>
           </h2>
-          <p class="text-base text-gray-300 max-w-2xl mx-auto" id="price-subtitle">
+          <p class="text-base text-gray-300 max-w-2xl mx-auto text-center" id="price-subtitle">
             From ambition to influence — strengthen your brand and digital presence
           </p>
         </div>
@@ -226,11 +227,11 @@
           <div id="mobile-offer-overlays" class="block md:hidden w-full relative" style="min-height: 420px;">
             <div id="swipe-overlay" style="position:absolute;inset:0;z-index:50;pointer-events:auto;"></div>
             <div class="absolute inset-0 z-10 flex flex-col items-center justify-center">
-              <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 w-full max-w-[410px] mx-auto px-4 py-8 my-4">
+              <div class="bg-[#181c22] rounded-3xl shadow-2xl border border-black/30 w-full max-w-[410px] mx-auto px-6 py-8 my-4">
                 <h2 class="text-2xl font-bold text-yellow-300 mb-2">AI Influencer 3.0 course</h2>
                 <div class="text-5xl font-bold text-white mb-1">$27</div>
                 <div class="line-through text-gray-400 text-base mb-2">Regular Price: $120</div>
-                <div class="inline-block bg-green-500 text-black text-xs font-semibold p-2 rounded-[14px] mb-6 w-fit">77% OFF — Only Today!</div>
+                <div class="inline-block bg-green-500 text-black text-sm font-semibold px-3 py-1.5 rounded-[12px] md:rounded-[14px] mb-4 w-fit">77% OFF — Only Today!</div>
                 <!-- Центральная часть, которая меняется -->
                 <div id="offer-center-scroll" class="relative min-h-[260px]">
                   <div class="offer-center-content fadein" data-index="0">
@@ -244,31 +245,29 @@
                     </ul>
                   </div>
                   <div class="offer-center-content absolute inset-0 opacity-0 pointer-events-none fadein" data-index="1">
-                    <div class="bg-white/10 rounded-2xl pl-4 pr-4 py-5 w-full flex flex-col items-start text-white">
-                      <h3 class="text-green-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight">🎁 Bonuses</h3>
-                      <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed">
-                        <div class="flex items-start gap-2"><span class="text-pink-300 text-2xl">•</span> I give paste-ready prompts</div>
-                        <div class="flex items-start gap-2"><span class="text-pink-300 text-2xl">•</span> Lifetime Access Anytime</div>
-                        <div class="flex items-start gap-2"><span class="text-pink-300 text-2xl">•</span> Waitlisted to AI platform</div>
-                        <div class="flex items-start gap-2"><span class="text-pink-300 text-2xl">•</span> Human email support</div>
-                      </div>
-                    </div>
+                    <ul class="text-base space-y-2 text-gray-100 mb-5">
+                      <li class="flex items-start gap-2"><span class="text-green-400 font-semibold text-lg flex items-center gap-2 leading-tight mb-[6px]">🎁 Bonuses</span></li>
+                      <li class="flex items-start gap-2"><span class="text-yellow-300 text-lg">✔︎ </span> I give paste-ready prompts</li>
+                      <li class="flex items-start gap-2"><span class="text-yellow-300 text-lg">✔︎ </span> Lifetime Access Anytime</li>
+                      <li class="flex items-start gap-2"><span class="text-yellow-300 text-lg">✔︎ </span> Waitlisted to AI platform</li>
+                      <li class="flex items-start gap-2"><span class="text-yellow-300 text-lg">✔︎ </span> Human email support</li>
+                    </ul>
                   </div>
                   <div class="offer-center-content absolute inset-0 opacity-0 pointer-events-none fadein" data-index="2">
-                    <div class="bg-white/10 rounded-2xl pl-4 pr-2 py-5 w-full flex flex-col items-start text-white">
-                      <h3 class="text-pink-400 font-semibold mb-4 text-lg flex items-center gap-2 leading-tight">Learning Path</h3>
-                      <div class="text-base space-y-1 text-white/90 flex flex-col w-full leading-relaxed">
-                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xs">1.</span> <span id="learnmap-1"> Pose & style setup</span></div>
-                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xs">2.</span> <span id="learnmap-2"> Angles & realism tips</span></div>
-                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xs">3.</span> <span id="learnmap-3"> Face-lock AI LoRA training</span></div>
-                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xs">4.</span> <span id="learnmap-4"> Visual control & outfit</span></div>
-                    <div class="flex items-start gap-2"><span class="text-pink-300 text-xs">5.</span> <span id="learnmap-5"> Merge & publish fast</span></div>
-                      </div>
-                    </div>
+                    <ul class="text-base space-y-3 text-gray-100 mb-5">
+                      <li class="flex items-start gap-3"><span class="text-pink-400 font-semibold text-lg flex items-center gap-2 leading-tight mb-[2px]">🎢 Learning Path</span></li>
+                      <li class="flex items-center gap-3"><span class="text-pink-400 text-xs text-semibold mr-1">1.</span> Pose & style setup</li>
+                      <li class="flex items-center gap-3"><span class="text-pink-400 text-xs text-semibold">2.</span> Angles & realism tips</li>
+                      <li class="flex items-center gap-3"><span class="text-pink-400 text-xs text-semibold">3.</span> Face-lock AI LoRA training</li>
+                      <li class="flex items-center gap-3"><span class="text-pink-400 text-xs text-semibold">4.</span> Visual control & outfit</li>
+                      <li class="flex items-center gap-3"><span class="text-pink-400 text-xs text-semibold">5.</span> Merge & publish fast</li>
+                    </ul>
                   </div>
                   <!-- Точки для автоперелистывания (только для мобильных) -->
-                  <div class="flex gap-2 justify-center mt-10" id="bonus-dots"></div>
+                  <div class="flex gap-2 justify-center mt-6" id="bonus-dots"></div>
                 </div>
+                            <!-- Save Money Message -->
+            <div class="text-gray-400 text-md -mb-4 flex items-center justify-center" id="final-cta-save">⏳ Save $98.00 Today!</div>
               </div>
             </div>
           </div>
@@ -292,7 +291,7 @@
                   <li class="flex items-start gap-3"><span class="text-green-400">✔</span> <span id="price-feature-6">Face-swapping explained</span></li>
                 </ul>
                 <button class="animated-gradient-btn text-white rounded-[16px] text-lg flex items-center justify-center gap-0.5 overflow-hidden h-[44px] mt-8 w-[350px]">
-                  <span id="price-btn-text">Grab the Offer</span> <span class="line-through text-yellow-500 font-normal">$120</span> <span class="text-yellow-300 text-xl font-bold">$27</span>
+                  <span id="price-btn-text">Grab the Offer</span> <span class="line-through text-yellow-500 font-normal ml-1 mr-1">$120</span> <span class="text-yellow-300 text-xl font-bold">$27</span>
                 </button>
             <!-- Save Money Message -->
             <div class="text-gray-400 text-md mt-4 -mb-4 flex items-center justify-center" id="final-cta-save">⏳ Save $98.00 Today!</div>
@@ -531,7 +530,7 @@
               </div>
               <div class="md:w-1/2 flex flex-col items-start justify-center">
                 <!-- Заголовок для десктопной версии -->
-                <h2 class="hidden md:block text-3xl md:text-5xl font-bold mb-3"><span id="about-title-text">Meet Your</span> <span class="gradient-text" id="about-title-gradient">Mentor</span></h2>
+                <h2 class="hidden md:block text-3xl md:text-5xl font-bold mb-5"><span id="about-title-text">Meet Your</span> <span class="gradient-text" id="about-title-gradient">Mentor</span></h2>
                 <div class="flex flex-col items-start gap-0 mb-1">
                   <span class="text-purple-300 text-3xl font-bold mt-5 md:mt-0" id="about-name">Leo Lewaro</span>
                   <span class="text-gray-400 text-base mb-4" id="about-role">AI Creator & Media Innovator</span>
@@ -540,17 +539,17 @@
                   <p class="mb-4" id="about-desc-p1">
                     <!-- Mobile version with toggle -->
                     <span class="block md:hidden">
-                      <span id="about-desc-short">Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0</span><span id="about-desc-dots">...</span><button id="about-more-btn" class="text-purple-400 ml-1 underline">more</button>
+                      <span id="about-desc-short">Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0 — a system that's helped 2,130+ creators</span><span id="about-desc-dots">...</span><button id="about-more-btn" class="text-purple-400 ml-1 underline">more</button>
                     </span>
-                    <span class="block md:hidden" style="display: none;" id="about-desc-full">— a system that's helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets</span>
+                    <span class="block md:hidden" style="display: none;" id="about-desc-full">Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0 — a system that's helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets</span>
                     <!-- Desktop version - always full -->
                     <span class="hidden md:block">Former Dubai Future Labs AI researcher turned content strategist, together with his wife, Leo built AI Influencer 3.0—a system that's helped 2,130+ creators launch AI-powered brands and triple their reach without studio budgets</span>
                   </p>
 
                   <p id="about-desc-p2" class="mb-2">
                     <!-- Mobile version - hidden by default -->
-                    <span class="md:hidden" style="display: none;" id="about-desc-p2-full">Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>.</span>
-                    <button class="md:hidden text-purple-400 ml-1 underline" style="display: none;" id="about-less-btn">less</button>
+                    <span class="md:hidden" style="display: none;" id="about-desc-p2-full">Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>
+                    <button class="md:hidden text-purple-400 ml-1 underline" style="display: none;" id="about-less-btn">less</button></span>
                     <!-- Desktop version - always visible -->
                     <span class="hidden md:block">Leo turns raw ideas into revenue: his mastery of Midjourney, Omnisphere, and custom face-lock workflows cuts production costs and speeds content-to-market <strong class="font-bold">3×</strong>.</span>
                   </p>
@@ -715,7 +714,7 @@
               <span class="blinking-colon text-yellow-400 text-[0.9rem] md:text-[1rem] w-[0.8rem] md:w-[1.1rem] align-top inline-block animate-[blink-colon_1s_steps(1,start)_infinite] -translate-y-[8px]">:</span>
               <span class="timer-value text-yellow-400 text-[1.1rem] md:text-[1.8rem] font-bold min-w-0 md:min-w-[2.7rem] text-center">00</span>
             </div>
-              <div class="timer-row timer-row-labels gap-8 md:gap-4 mb-4 md:mb-2 justify-center">
+              <div class="timer-row timer-row-labels gap-[30px] md:gap-4 mb-4 md:mb-2 justify-center">
                 <span class="timer-label text-[0.7rem] md:text-[0.9rem] text-[#b5b4b4] min-w-0 md:min-w-[2rem] text-center mt-[0.05rem] leading-none inline-block -translate-y-[5px]">h</span>
                 <span class="timer-label min-w-0"></span>
                 <span class="timer-label text-[0.7rem] md:text-[0.9rem] text-[#b5b4b4] min-w-0 md:min-w-[2rem] text-center mt-[0.05rem] leading-none inline-block -translate-y-[5px]">m</span>
@@ -723,24 +722,26 @@
                 <span class="timer-label text-[0.7rem] md:text-[0.9rem] text-[#b5b4b4] min-w-0 md:min-w-[2rem] text-center mt-[0.05rem] leading-none inline-block -translate-y-[5px]">s</span>
               </div>
             <!-- CTA Button -->
-          <div id="hero-form-wrap" class="mb-2">
-            <form id="lead-form" class="flex flex-col gap-[7px] w-full max-w-[380px] mx-auto">
-              <div class="gradient-border-wrap w-full" style="border-radius: 18px; background: linear-gradient(90deg, #a855f7, #ec4899, #7c3aed); background-size: 300% 300%;">
-                <input type="email" required placeholder="Your email address" name="email" class="rounded-[18px] w-full" style="border-radius:18px; background:#21101c; border:none; outline:none; color:#646464; font-size:1rem; padding: 0 20px; height: 50px;" />
+          <div id="hero-form-wrap" class="mb-3">
+            <form id="lead-form" class="flex flex-col gap-[7px] w-full max-w-[350px] md:max-w-[400px] mx-auto">
+              <div class="gradient-border-wrap w-full rounded-[19px]">
+                <input type="email" required placeholder="Your email address" name="email" translate="no" lang="en" class="rounded-[18px] w-full notranslate h-[50px] bg-[#21101c] text-[#646464] text-normal px-5 outline-none border-0" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="email" inputmode="email" />
               </div>
-              <button id="final-cta-btn" type="submit" class="animated-gradient-btn text-white w-full rounded-[18px] text-xl flex items-center justify-center gap-1 overflow-hidden h-[50px]">
+              <button id="final-cta-btn" type="submit" class="animated-gradient-btn text-white w-full rounded-[18px] text-xl flex items-center justify-center gap-0.25 md:gap-1 overflow-hidden h-[50px]">
                 <span id="final-cta-btn-text">Grab The Course</span>
-                <span class="line-through text-yellow-500 font-normal text-lg" id="main-btn-price-old">$120</span>
+                <span class="line-through text-yellow-500 font-normal text-lg ml-1 mr-1" id="main-btn-price-old"> $120 </span>
                 <span class="text-yellow-300 text-xl font-bold" id="main-btn-price-new"> $27</span>
               </button>
             </form>
           </div>
           </div>
           <!-- Счётчик продаж курса -->
-          <div class="sales-counter-pulse flex justify-center items-center mb-2 md:mb-2 scale-[1] md:scale-[5.5]">
-            <span class="live-dot bg-green-300 mr-3"></span>
-            <span class="text-white"><span class="text-green-300" id="course-sales-count">3</span></span>
-            <span class="text-green-300 ml-2" id="course-sales-label">course sales today</span>
+          <div class="scale-[1.1] md:scale-[1.5]">
+            <div class="sales-counter-pulse flex justify-center items-center mb-0 md:mb-2">
+              <span class="live-dot bg-green-300 mr-3"></span>
+              <span class="text-white"><span class="text-green-300" id="course-sales-count">3</span></span>
+              <span class="text-green-300 ml-2" id="course-sales-label">course sales today</span>
+            </div>
           </div>
           <!-- Блок с аватарками и рейтингом -->
           <div class="flex items-center justify-center mb-16 md:mb-16 lg:mb-16 scale-[0.8] md:scale-[0.8]">
@@ -760,7 +761,7 @@
           </div>
           </div>
      <!-- Футтер -->
-          <footer class="section-footer flex flex-col items-center justify-center text-center gap-2 text-sm" id="footer">
+          <footer class="section-footer flex flex-col items-center justify-center text-center gap-2 text-sm mt-auto" id="footer">
             <p>© 2025 AI Influencer 3.0 <a href="mailto:hi@aiinfluencer.site" class="inline-flex items-baseline gap-1 ml-1 align-baseline group text-purple-300 hover:text-purple-200"><svg class="w-4 h-4 translate-y-[4px] text-pink-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8V7l-3 2-2-2-4 3-3-3-6 5v2l6-5 3 3 4-3 2 2 3-2z"/></svg><span>hi@aiinfluencer.site</span></a></p>
             <p class="italic text-gray-400 text-xs" id="footer-legal">All sales are final due to instant access to digital content</p>
           </footer>

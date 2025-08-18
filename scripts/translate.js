@@ -5,10 +5,10 @@ class Translator {
     this.translations = {
       en: {
         // Sticky Banner
-        "sticky-btn-text-mobile": "Grab",
+        "sticky-btn-text-mobile": "Grab ",
         "sticky-btn-text-desktop": "Grab the Offer",
-        "sticky-btn-price-old": "$120",
-        "sticky-btn-price-new": "$27",
+        "sticky-btn-price-old": " $120 ",
+        "sticky-btn-price-new": " $27 ",
         "support-btn": "support",
 
         // Hero Section
@@ -61,7 +61,7 @@ class Translator {
         "benefits-card-2-title-mobile": "Studio Quality",
 
         // Price Section
-        "price-title-start": "No Studio, No Stress — <br class=\"block md:hidden\">at",
+        "price-title-start": "No Studio, No Stress<br class=\"block md:hidden\"> — at",
         "price-title-gradient": "T-shirt Price",
         "price-subtitle": "From ambition to influence — strengthen your brand and digital presence",
         "price-course-title": "AI Influencer 3.0 course",
@@ -165,7 +165,7 @@ class Translator {
         "final-cta-title": "AI Models Will Be a <br class=\"block md:hidden\"> <span class=\"gradient-text\">$45.9B Industry</span> by 2030",
         "final-cta-subtitle": "The AI-influencer hype feels like Bitcoin's 2012 gold rush and the 2021 NFT boom",
         "final-cta-save": "⏳ Save $98.00 Today!",
-        "final-cta-btn-text": "Grab The Course For",
+        "final-cta-btn-text": "Grab The Course",
         "course-sales-label": "course sales today",
         "footer-title": "AI Influencer 3.0",
         "footer-desc": "Jump into the AI game — your guide starts here. Master modern tools fast",
@@ -179,7 +179,7 @@ class Translator {
         // Sticky Banner
         "sticky-btn-text-mobile": "Сейчас –",
         "sticky-btn-text-desktop": "Начни сейчас –",
-        "sticky-btn-price-old": "$120",
+        "sticky-btn-price-old": " $120 ",
         "sticky-btn-price-new": "$27",
         "support-btn": "поддержка",
 

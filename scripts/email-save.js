@@ -14,29 +14,31 @@ class EmailSaver {
   async handleSubmit(e) {
     e.preventDefault();
 
-    // Открываем оплату сразу по нажатию кнопки
-    if (window.checkoutManager && typeof window.checkoutManager.openPaymentWindow === 'function') {
-      window.checkoutManager.openPaymentWindow();
-    } else {
-      // Фолбек, если checkoutManager ещё не инициализирован
-      try {
-        window.open('https://aico.lemonsqueezy.com/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933', '_blank', 'width=800,height=600');
-      } catch (err) {
-        console.error('Fallback open failed:', err);
-      }
-    }
-    
     const emailInput = e.target.querySelector('input[type="email"]');
     const email = emailInput?.value?.trim();
-    
+
     if (!email) {
       this.showMessage('Please enter your email address', 'error');
+      if (emailInput) emailInput.focus();
       return;
     }
 
     try {
       await this.saveEmail(email);
       this.showMessage('Email saved successfully!', 'success');
+
+      // Открываем оплату ТОЛЬКО после успешного сохранения email
+      if (window.checkoutManager && typeof window.checkoutManager.openPaymentWindow === 'function') {
+        window.checkoutManager.openPaymentWindow();
+      } else {
+        // Фолбек, если checkoutManager ещё не инициализирован
+        try {
+          window.open('https://aico.lemonsqueezy.com/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933', '_blank', 'width=800,height=600');
+        } catch (err) {
+          console.error('Fallback open failed:', err);
+        }
+      }
+
       emailInput.value = '';
     } catch (error) {
       console.error('Error saving email:', error);

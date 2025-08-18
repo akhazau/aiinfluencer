@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     blocks.forEach((_, i) => {
       const dot = document.createElement("button");
       dot.type = "button";
-      dot.className = "w-3 h-3 rounded-full mx-1 bg-white/20 transition";
+      dot.className = "w-2 h-2 rounded-full mx-1 bg-white/20 transition";
       dot.setAttribute("aria-label", "Show block " + (i + 1));
       dot.onclick = () => {
         current = i;
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showBlock(current);
         updateDots();
       }
-    }, 6000);
+    }, 4500);
   }
 
   // Функция остановки автоперелистывания

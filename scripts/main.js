@@ -149,6 +149,15 @@ const initSalesCounter = () => {
     const finalSection = document.querySelector('#final-cta');
     if (!finalSection) return;
 
+    // Синхронно задаём начальное состояние, чтобы баннер не мигал при перезагрузке на финальной секции
+    {
+      const rect = finalSection.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const visible = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+      const ratio = visible / Math.max(rect.height || 1, 1);
+      window.isOnFinalSection = ratio >= 0.3;
+    }
+
     const observer = new IntersectionObserver(entries => {
       window.isOnFinalSection = entries[0]?.isIntersecting || false;
     }, { threshold: 0.3 });
@@ -203,6 +212,9 @@ const initSalesCounter = () => {
         supportBtn.classList.remove('force-hidden');
       }
     };
+
+    // Применяем корректное начальное состояние сразу, без ожидания первого события scroll
+    updateBanner();
 
     window.addEventListener('scroll', () => {
       if (ticking) return;
@@ -275,7 +287,7 @@ const initSalesCounter = () => {
         artCardsRow.className = 'flex flex-col md:flex-row gap-8 px-4 py-8 justify-center items-center';
       }
       
-      // Страница 4 (PRICE) - заголовок
+     /* // Страница 4 (PRICE) - заголовок
       const priceTitle = document.querySelector('#price-section h2');
       if (priceTitle) {
         if (screenWidth < 1050) {
@@ -283,7 +295,7 @@ const initSalesCounter = () => {
         } else {
           priceTitle.className = 'text-[1.9rem] md:text-5xl font-bold mb-2 leading-tight';
         }
-      }
+      } */
       
       // Страница 6 (ABOUT) - факты
       const aboutFactsGrid = document.getElementById('about-facts-grid');
