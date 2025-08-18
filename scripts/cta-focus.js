@@ -66,12 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const emailWrap = document.querySelector('#hero-form-wrap .gradient-border-wrap');
   const finalCtaBtn = document.getElementById('final-cta-btn');
-  const salesCounter = document.querySelector('.sales-counter-pulse');
-  const salesCountNum = document.getElementById('course-sales-count');
-  const salesLabel = document.getElementById('course-sales-label');
-  const salesCounterWrapper = salesCounter ? salesCounter.parentElement : null;
+  const finalCtaTimerWrap = document.getElementById('final-cta-timer-wrap');
+  // Убрали sales-counter из подсветки, чтобы оставить ровно 3 элемента без затемнения
+  // const salesCounter = document.querySelector('.sales-counter-pulse');
+  // const salesCountNum = document.getElementById('course-sales-count');
+  // const salesLabel = document.getElementById('course-sales-label');
+  // const salesCounterWrapper = salesCounter ? salesCounter.parentElement : null;
 
-  const highlightTargets = [emailWrap, finalCtaBtn, salesCounterWrapper, salesCounter, salesCountNum, salesLabel].filter(Boolean);
+  const highlightTargets = [finalCtaTimerWrap, emailWrap, finalCtaBtn].filter(Boolean);
 
   const toggleFocusMode = (enable) => {
     if (!overlay) return;
@@ -96,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const safeScrollIntoView = () => {
     if (!emailInput) return;
-    const targets = [emailWrap, finalCtaBtn, (salesCounterWrapper || salesCounter)].filter(Boolean);
+    const targets = [finalCtaTimerWrap, emailWrap, finalCtaBtn].filter(Boolean);
     // Compute union rect
     const rects = targets.map(t => t.getBoundingClientRect());
     const union = rects.reduce((acc, r) => ({
@@ -106,41 +108,80 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const vv = window.visualViewport;
     const vh = vv ? vv.height : window.innerHeight;
-    // Чуть больше отступа сверху, чтобы кнопка точно была видна над клавиатурой
-    const offset = 16; // small padding
+    
+    // Адаптивные паддинги для мобильной клавиатуры
+    const topPad = 16;
+    const keyboardHeight = window.innerHeight - vh;
+    // Больше отступ снизу если клавиатура открыта (для панели автоподсказок iOS)
+    const bottomPad = keyboardHeight > 50 ? Math.min(keyboardHeight * 0.3, 120) : 20;
 
-    // target center Y within visual viewport
     const currentScrollY = window.scrollY || window.pageYOffset;
     const targetTopDoc = union.top + currentScrollY;
     const targetBottomDoc = union.bottom + currentScrollY;
 
-    // Aim to bring union into view with a bit of top padding
-    let desiredScroll = targetTopDoc - (vh * 0.15);
-    desiredScroll = Math.max(0, Math.min(desiredScroll, document.body.scrollHeight - vh));
+    // Проверяем, нужно ли корректировать позицию
+    const availableSpace = vh - topPad - bottomPad;
+    const unionHeight = union.bottom - union.top;
+    
+    // Если блок не помещается или выходит за границы
+    if (union.top < topPad || union.bottom > vh - bottomPad || unionHeight > availableSpace) {
+      // Целимся показать блок в верхней части доступного пространства
+      let desiredScroll = targetTopDoc - topPad - (availableSpace - unionHeight) * 0.1;
+      desiredScroll = Math.max(0, Math.min(desiredScroll, document.body.scrollHeight - vh));
+      
+      window.scrollTo({ top: desiredScroll, behavior: 'smooth' });
+    }
 
-    window.scrollTo({ top: desiredScroll, behavior: 'smooth' });
-
-    // After scroll, ensure focus and re-adjust for keyboard changes
+    // Фокус с задержкой после скролла
     setTimeout(() => {
       emailInput.focus({ preventScroll: true });
       typewriterEffect(emailInput, 'Enter your email');
     }, 200);
 
     if (vv) {
+      let resizeRetries = 0;
+      const maxRetries = 3;
+      
       const onResize = () => {
-        // When keyboard opens, keep union in view
-        const r2 = targets.map(t => t.getBoundingClientRect());
-        const u2 = r2.reduce((acc, r) => ({ top: Math.min(acc.top, r.top), bottom: Math.max(acc.bottom, r.bottom) }), { top: r2[0]?.top ?? 0, bottom: r2[0]?.bottom ?? 0 });
-        if (u2.bottom > vv.height - offset || u2.top < offset) {
-          const newDesired = (window.scrollY + u2.top) - (vv.height * 0.15);
-          window.scrollTo({ top: Math.max(0, newDesired), behavior: 'smooth' });
+        // Ретраи для iOS Safari (viewport меняется ступенчато)
+        const retryCheck = () => {
+          const r2 = targets.map(t => t.getBoundingClientRect());
+          const u2 = r2.reduce((acc, r) => ({ 
+            top: Math.min(acc.top, r.top), 
+            bottom: Math.max(acc.bottom, r.bottom) 
+          }), { top: r2[0]?.top ?? 0, bottom: r2[0]?.bottom ?? 0 });
+          
+          const newKeyboardHeight = window.innerHeight - vv.height;
+          const newBottomPad = newKeyboardHeight > 50 ? Math.min(newKeyboardHeight * 0.3, 120) : 20;
+          
+          if (u2.bottom > vv.height - newBottomPad || u2.top < topPad) {
+            const newAvailableSpace = vv.height - topPad - newBottomPad;
+            const newDesired = (window.scrollY + u2.top) - topPad - (newAvailableSpace - (u2.bottom - u2.top)) * 0.1;
+            window.scrollTo({ top: Math.max(0, newDesired), behavior: 'smooth' });
+          }
+        };
+        
+        retryCheck();
+        
+        // Дополнительные ретраи через requestAnimationFrame и setTimeout
+        if (resizeRetries < maxRetries) {
+          requestAnimationFrame(() => {
+            retryCheck();
+            setTimeout(retryCheck, 50);
+            setTimeout(retryCheck, 150);
+            setTimeout(retryCheck, 300);
+          });
+          resizeRetries++;
         }
       };
+      
       vv.addEventListener('resize', onResize, { passive: true });
-      // remove after blur
+      
+      // Cleanup после blur
       const cleanup = () => {
         vv.removeEventListener('resize', onResize);
         emailInput.removeEventListener('blur', cleanup);
+        resizeRetries = 0;
       };
       emailInput.addEventListener('blur', cleanup);
     }
@@ -180,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     emailInput.addEventListener('focus', () => {
       enableFocusMode();
+      safeScrollIntoView();  // Добавляем вызов для прямого клика в поле
       typewriterEffect(emailInput, 'Enter your email');
       setCaretToEnd(emailInput);
     });
