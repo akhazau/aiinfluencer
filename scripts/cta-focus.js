@@ -81,17 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // click outside to exit
       const off = () => disableFocusMode();
       overlay.addEventListener('click', off, { once: true });
-      document.addEventListener('keydown', escHandler);
     } else {
       overlay.classList.remove('active');
       highlightTargets.forEach(el => el && el.classList.remove('focus-highlight'));
-      document.removeEventListener('keydown', escHandler);
     }
   };
 
-  const escHandler = (e) => {
-    if (e.key === 'Escape') disableFocusMode();
-  };
+  // const escHandler = (e) => {
+  //   if (e.key === 'Escape') disableFocusMode();
+  // };
 
   const enableFocusMode = () => toggleFocusMode(true);
   const disableFocusMode = () => toggleFocusMode(false);
@@ -108,7 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const vv = window.visualViewport;
     const vh = vv ? vv.height : window.innerHeight;
-    const offset = 12; // small padding
+    // Чуть больше отступа сверху, чтобы кнопка точно была видна над клавиатурой
+    const offset = 16; // small padding
 
     // target center Y within visual viewport
     const currentScrollY = window.scrollY || window.pageYOffset;
@@ -180,22 +179,35 @@ document.addEventListener("DOMContentLoaded", () => {
     emailInput.addEventListener('mousedown', markUserInitiated, { passive: true });
 
     emailInput.addEventListener('focus', () => {
-      if (userInitiatedFocus) enableFocusMode();
+      enableFocusMode();
       typewriterEffect(emailInput, 'Enter your email');
+      setCaretToEnd(emailInput);
     });
     emailInput.addEventListener('input', () => {
       if (emailInput.value.length > 0) {
         typewriterActive = false;
         emailInput.placeholder = 'Enter your email';
+        setCaretToEnd(emailInput);
       }
     });
+    emailInput.addEventListener('change', () => {
+      setCaretToEnd(emailInput);
+    });
+    emailInput.addEventListener('select', () => {
+      setCaretToEnd(emailInput);
+    });
+    // Safari autofill hook: срабатывает при применении :-webkit-autofill
+    emailInput.addEventListener('animationstart', (e) => {
+      if (e.animationName === 'autofill-fix') {
+        setCaretToEnd(emailInput);
+      }
+    }, { passive: true });
     emailInput.addEventListener('blur', () => {
       typewriterActive = false;
       emailInput.placeholder = 'Enter your email';
       userInitiatedFocus = false;
-      disableFocusMode();
+      // overlay остаётся активным, закрывается только кликом по нему
     });
-
     // Protect placeholder from external modifications (e.g., auto-translate)
     const placeholderObserver = new MutationObserver((mutations) => {
       for (const m of mutations) {
@@ -212,3 +224,19 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(`CTA Focus Script loaded - ${ctaButtons.length} buttons found`);
   console.log('CTA Focus: Compatible with email-save.js');
 });
+
+  // СТАВИМ КАРЕТКУ В КОНЕЦ (ретраи для iOS Safari после автозаполнения)
+  const setCaretToEnd = (input) => {
+    if (!input) return;
+    const attempt = () => {
+      try {
+        const len = input.value.length;
+        input.setSelectionRange(len, len);
+      } catch (e) {}
+    };
+    attempt();
+    if (window.requestAnimationFrame) requestAnimationFrame(attempt);
+    setTimeout(attempt, 50);
+    setTimeout(attempt, 150);
+    setTimeout(attempt, 300);
+  };

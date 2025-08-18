@@ -284,7 +284,7 @@ h6 .gradient-text {
   width: 100%;
   padding: 0 24px;
   height: 50px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   z-index: 1;
   transition: color 0.3s ease;
   -webkit-text-fill-color: #646464;
@@ -301,6 +301,7 @@ h6 .gradient-text {
   -webkit-text-fill-color: #a855f7;
 }
 
+/*
 .gradient-border-wrap input::placeholder {
   color: #94a3b8;
   opacity: 1;
@@ -313,7 +314,7 @@ h6 .gradient-text {
 
 .gradient-border-wrap input.typewriter-active::placeholder {
   color: #16a34a;
-}
+} */
 
 /* Исправление автозаполнения Chrome */
 .gradient-border-wrap input:-webkit-autofill,
@@ -325,8 +326,17 @@ h6 .gradient-text {
   background-color: transparent !important;
   background-image: none !important;
   color: #a855f7 !important; /* было #e2e8f0 */
+  /* Хук для iOS Safari: запускаем короткую анимацию, чтобы поймать событие animationstart */
+  -webkit-animation-name: autofill-fix;
+  animation-name: autofill-fix;
+  -webkit-animation-duration: 0.001s;
+  animation-duration: 0.001s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 
+@-webkit-keyframes autofill-fix { from { opacity: 1; } to { opacity: 1; } }
+@keyframes autofill-fix { from { opacity: 1; } to { opacity: 1; } }
 .gradient-border-input {
   border: 2px solid transparent;
   background: linear-gradient(#1e293b, #1e293b) padding-box,
