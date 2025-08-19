@@ -326,6 +326,8 @@ h6 .gradient-text {
   background-color: transparent !important;
   background-image: none !important;
   color: #a855f7 !important; /* было #e2e8f0 */
+
+  
   /* Хук для iOS Safari: запускаем короткую анимацию, чтобы поймать событие animationstart */
   -webkit-animation-name: autofill-fix;
   animation-name: autofill-fix;
@@ -335,8 +337,6 @@ h6 .gradient-text {
   animation-iteration-count: 1;
 }
 
-@-webkit-keyframes autofill-fix { from { opacity: 1; } to { opacity: 1; } }
-@keyframes autofill-fix { from { opacity: 1; } to { opacity: 1; } }
 .gradient-border-input {
   border: 2px solid transparent;
   background: linear-gradient(#1e293b, #1e293b) padding-box,
@@ -1266,54 +1266,44 @@ h6 .gradient-text {
   
 }
 
-/* === CTA MODAL (bottom sheet) === */
-body.modal-open {
-  overflow: hidden;
-  touch-action: none;
+/* ========================================   LEMONSQUEEZY OVERLAY MOBILE OPTIMIZATION   ======================================== */
+
+/* Оптимизация LemonSqueezy оверлея для мобильных устройств */
+.lemonsqueezy-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 999999 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-#cta-modal-sheet {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(18, 18, 18, 0.98);
-  backdrop-filter: saturate(120%) blur(6px);
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
-  transform: translateY(100%);
-  transition: transform 0.25s ease;
-  z-index: 3600; /* above #focus-overlay */
-  max-height: 80vh;
-  overflow: hidden;
+.lemonsqueezy-overlay iframe {
+  width: 90% !important;
+  max-width: 500px !important;
+  height: 90% !important;
+  max-height: 700px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
-#cta-modal-sheet.active {
-  transform: translateY(0);
+@media (max-width: 768px) {
+  .lemonsqueezy-overlay iframe {
+    width: 95% !important;
+    height: 95% !important;
+    border-radius: 8px !important;
+  }
 }
 
-#cta-modal-content {
-  padding: 16px 16px 20px;
-  overflow-y: auto;
-  max-height: inherit;
-}
-
-#cta-modal-close {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
-  border-radius: 9999px;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-#cta-modal-close:active {
-  transform: scale(0.96);
+@media (max-width: 480px) {
+  .lemonsqueezy-overlay iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+  }
 }
