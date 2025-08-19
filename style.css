@@ -1266,21 +1266,54 @@ h6 .gradient-text {
   
 }
 
-/* ====== Focus Mode: минимальные отключения для мобильного ввода ====== */
-html.focus-mode, html.focus-mode body {
-  scroll-snap-type: none !important;
-  scroll-behavior: auto !important;
-}
-html.focus-mode body { overflow-anchor: none; }
-
-html.focus-mode section.snap-section {
-  height: auto !important;
-  min-height: 0 !important;
+/* === CTA MODAL (bottom sheet) === */
+body.modal-open {
+  overflow: hidden;
+  touch-action: none;
 }
 
-@supports (height: 100dvh) {
-  html.focus-mode section.snap-section {
-    height: auto !important;
-    min-height: 0 !important;
-  }
+#cta-modal-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18, 18, 18, 0.98);
+  backdrop-filter: saturate(120%) blur(6px);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+  z-index: 3600; /* above #focus-overlay */
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+#cta-modal-sheet.active {
+  transform: translateY(0);
+}
+
+#cta-modal-content {
+  padding: 16px 16px 20px;
+  overflow-y: auto;
+  max-height: inherit;
+}
+
+#cta-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#cta-modal-close:active {
+  transform: scale(0.96);
 }

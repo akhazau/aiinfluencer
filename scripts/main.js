@@ -41,20 +41,45 @@ const initSalesCounter = () => {
 
   // 3. ТАЙМЕР ОБРАТНОГО ОТСЧЕТА
   const initCountdownTimer = () => {
-    let endTime = Date.now() + 3 * 60 * 60 * 1000;
-    
-    const updateTimer = () => {
-      const timeLeft = Math.max(0, endTime - Date.now());
-      
-      if (timeLeft === 0) {
-        endTime = Date.now() + 3 * 60 * 60 * 1000;
-        return;
+    const LS_KEY = 'countdown:endTime';
+    const THREE_HOURS = 3 * 60 * 60 * 1000;
+
+    const readEndTime = () => {
+      try {
+        const v = localStorage.getItem(LS_KEY);
+        const n = v ? parseInt(v, 10) : NaN;
+        return Number.isFinite(n) ? n : null;
+      } catch (e) {
+        return null;
       }
-      
+    };
+
+    const writeEndTime = (t) => {
+      try { localStorage.setItem(LS_KEY, String(t)); } catch (e) { /* noop */ }
+    };
+
+    let endTime = readEndTime();
+    const nowInit = Date.now();
+    if (!endTime || endTime <= nowInit || endTime - nowInit > THREE_HOURS) {
+      endTime = nowInit + THREE_HOURS;
+      writeEndTime(endTime);
+    }
+
+    const updateTimer = () => {
+      const now = Date.now();
+      let timeLeft = Math.max(0, endTime - now);
+
+      // Если время вышло — запускаем новый 3-часовой цикл и сохраняем
+      if (timeLeft <= 0) {
+        endTime = now + THREE_HOURS;
+        writeEndTime(endTime);
+        timeLeft = endTime - now;
+      }
+
       const hours = Math.floor(timeLeft / 3600000).toString().padStart(2, '0');
       const minutes = Math.floor((timeLeft % 3600000) / 60000).toString().padStart(2, '0');
       const seconds = Math.floor((timeLeft % 60000) / 1000).toString().padStart(2, '0');
-      
+
       ['#banner-timer .timer-value', '#final-cta-timer-wrap .timer-value'].forEach(selector => {
         const values = document.querySelectorAll(selector);
         if (values.length >= 3) {
@@ -62,10 +87,11 @@ const initSalesCounter = () => {
         }
       });
     };
-    
+
     updateTimer();
     setInterval(updateTimer, 1000);
   };
+
 
   // 4. ПЕРЕКЛЮЧАТЕЛЬ КОНТЕНТА "БОЛЬШЕ/МЕНЬШЕ"
   const initToggleContent = () => {
@@ -75,10 +101,14 @@ const initSalesCounter = () => {
     const dots = document.getElementById('about-desc-dots');
     const fullDesc = document.getElementById('about-desc-full');
     const p2Full = document.getElementById('about-desc-p2-full');
+    const aboutFactsGrid = document.getElementById('about-facts-grid');
 
-    if (!moreBtn || !lessBtn || !shortDesc || !dots || !fullDesc || !p2Full) {
+    if (!moreBtn || !lessBtn || !shortDesc || !dots || !fullDesc || !p2Full || !aboutFactsGrid) {
       return;
     }
+
+    // Получаем первые 2 карточки в гриде
+    const firstTwoCards = Array.from(aboutFactsGrid.children).slice(0, 2);
 
     // На десктопе очищаем инлайновые стили, чтобы классы md:hidden/md:block работали как задумано
     if (window.innerWidth >= 768) {
@@ -88,6 +118,10 @@ const initSalesCounter = () => {
       fullDesc.style.display = '';
       p2Full.style.display = '';
       lessBtn.style.display = '';
+      // Показываем карточки на десктопе
+      firstTwoCards.forEach(card => {
+        card.style.display = '';
+      });
       return; // Логика только для мобильных
     }
 
@@ -98,6 +132,10 @@ const initSalesCounter = () => {
     fullDesc.style.display = 'none';
     p2Full.style.display = 'none';
     lessBtn.style.display = 'none';
+    // Показываем карточки в свернутом состоянии
+    firstTwoCards.forEach(card => {
+      card.style.display = '';
+    });
 
     // Обработчики кликов (переопределяются идемпотентно)
     moreBtn.onclick = () => {
@@ -107,6 +145,10 @@ const initSalesCounter = () => {
       fullDesc.style.display = 'block';
       p2Full.style.display = 'block';
       lessBtn.style.display = 'inline';
+      // Скрываем первые 2 карточки при развороте текста
+      firstTwoCards.forEach(card => {
+        card.style.display = 'none';
+      });
     };
 
     lessBtn.onclick = () => {
@@ -116,6 +158,10 @@ const initSalesCounter = () => {
       fullDesc.style.display = 'none';
       p2Full.style.display = 'none';
       lessBtn.style.display = 'none';
+      // Показываем карточки обратно при сворачивании
+      firstTwoCards.forEach(card => {
+        card.style.display = '';
+      });
     };
   };
 
