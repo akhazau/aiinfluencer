@@ -6,9 +6,9 @@
 
 /* ==== БАЗОВЫЕ ЭЛЕМЕНТЫ ==== */
 
-/* Эталон: iPhone 12 Pro Max (428px) = 100% (16px) */
+/* Эталон: iPhone 12 Pro Max (428px) = 16px */
 html {
-  font-size: calc(100vw / 428 * 100%);
+  font-size: calc(min(100dvw, 428px) / 428 * 16px);
   height: 100%;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
@@ -18,14 +18,14 @@ html {
 /* Минимум: iPhone SE / старые устройства */
 @media (max-width: 320px) {
   html {
-    font-size: 87.5%; /* ~14px */
+    font-size: 14px;
   }
 }
 
-/* Максимум: Macbook / десктоп */
-@media (min-width: 1440px) {
+/* Рост после 428px до 20px на 1440px */
+@media (min-width: 429px) {
   html {
-    font-size: 125%; /* 20px */
+    font-size: clamp(16px, calc(100dvw / 1440 * 20px), 20px);
   }
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 /* === СЕКЦИИ === */
-section.snap-section:not(#hero-section):not(#price-section) {
+section.snap-section:not(#hero-section):not(#faq-section) {
   padding-top: 74px;
 }
 
