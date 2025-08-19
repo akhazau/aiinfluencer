@@ -8,34 +8,46 @@
 
 /* Эталон: iPhone 12 Pro Max (428px) = 16px */
 html {
-  font-size: calc(min(100dvw, 428px) / 428 * 16px);
+ /* font-size: calc(min(100dvw, 428px) / 428 * 100%); */
   height: 100%;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Минимум: iPhone SE / старые устройства */
+/* ==== МOBILE ==== */
 @media (max-width: 320px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
   html {
     font-size: 14px;
   }
 }
 
-/* Рост после 428px до 20px на 1440px */
-@media (min-width: 429px) {
+@media (max-width: 390px) {
   html {
-    font-size: clamp(16px, calc(100dvw / 1440 * 20px), 20px);
+    font-size: 15px;
   }
 }
+
+@media (max-width: 440px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
 
 body {
   min-height: 100%;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%);
+ /* background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%); */
   color: #f8fafc;
-  width: 100%;
 }
 
 /* Скрываем скроллбар для горизонтального скролла */
@@ -76,21 +88,13 @@ section.snap-section {
 }
 
 /* Медиа-запросы для секций */
-@media (min-width: 1050px) {
+@media (orientation: landscape) {
   section.snap-section {
     padding-bottom: 24px;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 768px) {
-  section.snap-section {
-    gap: 2rem;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-}
-
-@media (max-width: 767px) {
+@media (orientation: portrait) {
   body {
     scroll-snap-type: y mandatory !important;
     -webkit-overflow-scrolling: touch !important;
@@ -372,7 +376,7 @@ h6 .gradient-text {
   box-shadow: 0 4px 16px -4px rgba(236, 72, 153, 0.1);
 }
 
-@media (max-width: 767px) {
+@media (orientation: portrait) {
   /* Стили для карточек на мобильных - горизонтальный скролл */
   #art-cards-row {
     flex-direction: row;
@@ -607,7 +611,7 @@ h6 .gradient-text {
 }
 
 /* Медиа-запросы для баннера */
-@media (max-width: 768px) {
+@media (orientation: portrait) {
   .banner-inner {
     flex-direction: row;
     gap: 8px;
@@ -939,15 +943,7 @@ h6 .gradient-text {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
-@media (max-width: 768px) {
-  .lemonsqueezy-overlay iframe {
-    width: 95% !important;
-    height: 95% !important;
-    border-radius: 8px !important;
-  }
-}
-
-@media (max-width: 480px) {
+@media (orientation: portrait) {
   .lemonsqueezy-overlay iframe {
     width: 100% !important;
     height: 100% !important;
