@@ -100,12 +100,6 @@ section.snap-section {
     -webkit-overflow-scrolling: touch !important;
   }
   
-  /* Убираем боковые отступы на мобильных */
-  .container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  
   /* Исправляем ширину для очень маленьких экранов */
   #sticky-lead-block,
   #sticky-lead-block.sticky-mode {

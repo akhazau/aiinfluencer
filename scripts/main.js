@@ -439,6 +439,15 @@ const initSalesCounter = () => {
     });
   };
 
+  // 11. СБРОС СКРОЛЛА FAQ К НАЧАЛУ
+  const initFAQScrollReset = () => {
+    const faqScrollList = document.getElementById('faq-scroll-list');
+    if (faqScrollList) {
+      // Сбрасываем скролл к началу при загрузке страницы
+      faqScrollList.scrollTop = 0;
+    }
+  };
+
   // ИНИЦИАЛИЗАЦИЯ ВСЕХ КОМПОНЕНТОВ
   initViewersCounter();          // 1. Счетчик просмотров (3-7 сек)
   initSalesCounter();            // 2. Счетчик продаж (5-10 сек)
@@ -448,6 +457,7 @@ const initSalesCounter = () => {
   initSectionAnimations();       // 6. Анимации секций
   initFinalSectionObserver();    // 7. Отслеживание финальной секции
   initStickyBanner();            // 8. Липкий баннер
+  initFAQScrollReset();          // 11. Сброс скролла FAQ
   // initResponsiveLayout();        // 8.5. Адаптивная логика для страниц 2, 4, 6 (закомментировано)
   initParallaxEffect();          // 9. Параллакс эффект
   initHeroImageRotation();       // 10. Смена изображений в Hero секции
