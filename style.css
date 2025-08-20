@@ -70,7 +70,7 @@ section.snap-section {
   scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   gap: 2.5rem;
   padding-top: 48px;
   padding-bottom: 48px;
