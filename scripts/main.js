@@ -322,59 +322,6 @@ const initSalesCounter = () => {
     }, 2000);
   };
 
-  
-  /*
-// 8.5. АДАПТИВНАЯ ЛОГИКА ДЛЯ СТРАНИЦ 2, 4, 6
-  const initResponsiveLayout = () => {
-    const checkLayoutBreakpoint = () => {
-      const screenWidth = window.innerWidth;
-      
-// Страница 2 (PAIN) - карточки (теперь только 2 карточки)
-      const artCardsRow = document.getElementById('art-cards-row');
-      if (artCardsRow) {
-        // Всегда используем flex для центрирования двух карточек
-        artCardsRow.className = 'flex flex-col md:flex-row gap-8 px-4 py-8 justify-center items-center';
-      }
-      
-// Страница 4 (PRICE) - заголовок
-      const priceTitle = document.querySelector('#price-section h2');
-      if (priceTitle) {
-        if (screenWidth < 1050) {
-          priceTitle.className = 'text-[1.7rem] md:text-4xl font-bold mb-2 leading-tight';
-        } else {
-          priceTitle.className = 'text-[1.9rem] md:text-5xl font-bold mb-2 leading-tight';
-        }
-      } 
-      
-      // Страница 6 (ABOUT) - факты
-      const aboutFactsGrid = document.getElementById('about-facts-grid');
-      if (aboutFactsGrid) {
-        const hiddenFacts = aboutFactsGrid.querySelectorAll('.hidden.md\\:flex');
-        if (screenWidth < 1050) {
-          hiddenFacts.forEach(fact => {
-            fact.classList.add('hidden');
-            fact.classList.remove('md:flex');
-          });
-        } else {
-          hiddenFacts.forEach(fact => {
-            fact.classList.remove('hidden');
-            fact.classList.add('md:flex');
-          }); 
-        }
-      }
-    }; 
-    
-    // Проверка при изменении размера окна
-    window.addEventListener('resize', () => {
-      setTimeout(checkLayoutBreakpoint, 50);
-    });
-    
-    // Первоначальная проверка
-    setTimeout(checkLayoutBreakpoint, 100);
-  };
-
-*/
-
   // 9. ПАРАЛЛАКС ЭФФЕКТ ДЛЯ HERO СЕКЦИИ
   const initParallaxEffect = () => {
     const hero = document.querySelector('.hero-section');

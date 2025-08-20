@@ -5,6 +5,24 @@ document.addEventListener("DOMContentLoaded", () => {
     emailInput.setAttribute('translate', 'no');
     emailInput.setAttribute('lang', 'en');
     emailInput.classList.add('notranslate');
+    
+    // Обработчики для автозаполнения - устанавливаем курсор в конец
+    const handleAutofill = () => {
+      if (emailInput.value) {
+        setTimeout(() => setCaretToEnd(emailInput), 10);
+        setTimeout(() => setCaretToEnd(emailInput), 100);
+        setTimeout(() => setCaretToEnd(emailInput), 300);
+      }
+    };
+    
+    emailInput.addEventListener('input', handleAutofill);
+    emailInput.addEventListener('change', handleAutofill);
+    emailInput.addEventListener('animationstart', handleAutofill);
+    
+    // Специальный обработчик для Safari автозаполнения
+    emailInput.addEventListener('blur', () => {
+      setTimeout(handleAutofill, 50);
+    });
   }
   const ctaSelectors = [
     '#sticky-banner .animated-gradient-btn',
@@ -134,22 +152,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ['click', 'keydown'].forEach(event => {
       btn.addEventListener(event, e => {
         if (event === 'keydown' && e.key !== 'Enter') return;
-        e.preventDefault();
         
-        // Если это кнопка final-cta-btn, не прокручиваем, только фокусируемся
-        if (btn.id === 'final-cta-btn') {
-          if (!emailInput) return;
-          emailInput.setAttribute('translate', 'no');
-          emailInput.setAttribute('lang', 'en');
-          emailInput.classList.add('notranslate');
-          emailInput.placeholder = PLACEHOLDER_TEXT;
-          emailInput.focus({ preventScroll: true });
-          setCaretToEnd(emailInput);
-          showOverlay();
-        } else {
-          // Для остальных кнопок - прокручиваем к email полю
-          focusOnEmail();
-        }
+        // Все CTA кнопки теперь прокручивают к email полю
+        
+        e.preventDefault();
+        // Для остальных кнопок - прокручиваем к email полю
+        focusOnEmail();
       });
     });
   });

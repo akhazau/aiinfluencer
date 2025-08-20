@@ -46,7 +46,6 @@ body {
   min-height: 100%;
   margin: 0;
   font-family: "Poppins", sans-serif;
- /* background: linear-gradient(to bottom, #0f0c29 0%, #302b63 50%, #24243e 100%); */
   color: #f8fafc;
 }
 
@@ -200,6 +199,24 @@ h6 .gradient-text {
   box-shadow: 0 10px 24px -4px rgba(236, 72, 153, 0.35);
 }
 
+/* Отключаем эффект затемнения для LemonSqueezy кнопок */
+a.lemonsqueezy-button.animated-gradient-btn:hover,
+a[href*="lemonsqueezy.com"].animated-gradient-btn:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Отключаем эффект затемнения для всех указанных кнопок */
+#hero-cta-btn:hover,
+#final-cta-btn:hover,
+button.animated-gradient-btn:hover,
+a.animated-gradient-btn:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
 .animated-gradient-btn span {
   position: relative;
   z-index: 2;
@@ -220,7 +237,7 @@ h6 .gradient-text {
 
 .animated-gradient-btn:focus {
   outline: none;
-  box-shadow: 0 0 32px 12px #a855f7cc, 0 0 60px 20px #6ee7f799;
+  box-shadow: 0 0 32px 12px #a855f7cc, 0 0 6px 2px #6ee7f799;
 }
 
 .lang-btn {
@@ -299,6 +316,11 @@ h6 .gradient-text {
   animation-duration: 0.001s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+  
+  /* Отключаем выделение текста в Safari после автозаполнения */
+  -webkit-text-fill-color: #a855f7 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #171e2f inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
 }
 
 .gradient-border-input {
@@ -465,13 +487,7 @@ h6 .gradient-text {
   padding-left: 0;
   padding-right: 0;
 }
-/*
-#lead-timer {
-  display: none;
-  margin-right: 2rem;
-  transition: opacity 0.5s;
-}
-*/
+
 #sticky-lead-block.sticky-mode #lead-timer {
   display: flex;
   opacity: 1;
@@ -496,26 +512,6 @@ h6 .gradient-text {
   left: 0;
   z-index: 2000;
 }
-
-/*
-.fixed-sticky-btn {
-  display: none;
-  position: fixed;
-  width: 370px;
-  z-index: 3000;
-  margin-left: 0;
-}
-
-.fixed-sticky-btn.visible {
-  display: flex;
-}
-
-.is-sticky {
-  position: fixed;
-  width: 370px;
-}
-
-*/
 
 /* === БАННЕР === */
 #sticky-banner {
@@ -644,15 +640,8 @@ h6 .gradient-text {
     min-width: auto;
     max-width: none;
   }
-  /*
-  .support-mail-btn {
-    padding: 5px 10px;
-    font-size: 11px;
-    margin-left: 8px;
-  }
-    */
+
 }
-  
 
 /* === ТАЙМЕР === */
 #banner-timer {

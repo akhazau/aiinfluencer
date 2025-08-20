@@ -1,6 +1,6 @@
 class CheckoutManager {
     constructor() {
-        this.paymentUrl = 'https://aico.lemonsqueezy.com/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933?embed=1&media=0&logo=0&desc=0&discount=0&enabled=67252';
+        this.paymentUrl = 'https://aiinfluencer.site/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933?discount=0';
         this.init();
     }
 
@@ -10,20 +10,12 @@ class CheckoutManager {
 
     openPaymentWindow() {
         try {
-            // Используем LemonSqueezy API для открытия окна оплаты
-            if (window.LemonSqueezy && window.LemonSqueezy.Url) {
-                window.LemonSqueezy.Url.Open(this.paymentUrl);
-            } else {
-                // Fallback: открываем в новом окне если LemonSqueezy не загружен
-                window.open(this.paymentUrl, '_blank', 'width=800,height=600');
-            }
-            
-            console.log('Payment window opened');
+            // Открываем новый URL напрямую
+            window.open(this.paymentUrl, '_blank');
+            console.log('Payment window opened:', this.paymentUrl);
             return true;
         } catch (error) {
             console.error('Error opening payment window:', error);
-            // Fallback: прямая ссылка
-            window.open('https://aico.lemonsqueezy.com/buy/37ce1a4c-91d3-4c2e-b38a-69e3d41e3933', '_blank');
             return false;
         }
     }
