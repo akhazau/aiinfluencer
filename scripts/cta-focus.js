@@ -103,29 +103,53 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
   };
 
-  const focusOnEmail = () => {
-    if (!emailInput) return;
-    emailInput.setAttribute('translate', 'no');
-    emailInput.setAttribute('lang', 'en');
-    emailInput.classList.add('notranslate');
-    emailInput.placeholder = PLACEHOLDER_TEXT;
-    emailInput.focus({ preventScroll: true });
-    setCaretToEnd(emailInput);
-    // show overlay when programmatically focusing
-    showOverlay();
+  const scrollToEmail = () => {
+    const emailSection = document.getElementById('hero-form-wrap') || emailInput?.closest('form');
+    if (emailSection) {
+      emailSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   };
 
-  // Start typewriter on load if empty and not focused
-  if (emailInput && emailInput.value.length === 0 && document.activeElement !== emailInput) {
-    typewriterEffect(emailInput, PLACEHOLDER_TEXT);
-  }
+  const focusOnEmail = () => {
+    if (!emailInput) return;
+    // Сначала прокручиваем к email полю
+    scrollToEmail();
+    // Небольшая задержка для завершения прокрутки
+    setTimeout(() => {
+      emailInput.setAttribute('translate', 'no');
+      emailInput.setAttribute('lang', 'en');
+      emailInput.classList.add('notranslate');
+      emailInput.placeholder = PLACEHOLDER_TEXT;
+      emailInput.focus({ preventScroll: true });
+      setCaretToEnd(emailInput);
+      // show overlay when programmatically focusing
+      showOverlay();
+    }, 300);
+  };
+
+  // Typewriter effect will only start when user interacts with the field
+  // No automatic typewriter on page load
   
   ctaButtons.forEach(btn => {
     ['click', 'keydown'].forEach(event => {
       btn.addEventListener(event, e => {
         if (event === 'keydown' && e.key !== 'Enter') return;
         e.preventDefault();
-        focusOnEmail();
+        
+        // Если это кнопка final-cta-btn, не прокручиваем, только фокусируемся
+        if (btn.id === 'final-cta-btn') {
+          if (!emailInput) return;
+          emailInput.setAttribute('translate', 'no');
+          emailInput.setAttribute('lang', 'en');
+          emailInput.classList.add('notranslate');
+          emailInput.placeholder = PLACEHOLDER_TEXT;
+          emailInput.focus({ preventScroll: true });
+          setCaretToEnd(emailInput);
+          showOverlay();
+        } else {
+          // Для остальных кнопок - прокручиваем к email полю
+          focusOnEmail();
+        }
       });
     });
   });

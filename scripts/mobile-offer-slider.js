@@ -1,7 +1,7 @@
 // MOBILE: Автоперелистывание карточек в offer-center-content
 document.addEventListener("DOMContentLoaded", function () {
-  // Только для мобильных
-  if (window.innerWidth >= 768) return;
+  // Только для вертикальной ориентации
+  if (window.matchMedia('(orientation: landscape)').matches) return;
 
   const center = document.getElementById("offer-center-scroll");
   const blocks = center ? Array.from(center.querySelectorAll(".offer-center-content")) : [];

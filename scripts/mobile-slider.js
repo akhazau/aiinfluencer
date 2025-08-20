@@ -1,5 +1,5 @@
-// MOBILE: Инициализация слайдера только на мобильных
-if (window.innerWidth < 768) {
+// MOBILE: Инициализация слайдера только в вертикальной ориентации
+if (window.matchMedia('(orientation: portrait)').matches) {
   new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 16,

@@ -70,7 +70,7 @@ section.snap-section {
   scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 2.5rem;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -452,13 +452,13 @@ h6 .gradient-text {
   padding-left: 0;
   padding-right: 0;
 }
-
+/*
 #lead-timer {
   display: none;
   margin-right: 2rem;
   transition: opacity 0.5s;
 }
-
+*/
 #sticky-lead-block.sticky-mode #lead-timer {
   display: flex;
   opacity: 1;
@@ -483,6 +483,7 @@ h6 .gradient-text {
   left: 0;
   z-index: 2000;
 }
+
 
 .fixed-sticky-btn {
   display: none;
@@ -628,13 +629,15 @@ h6 .gradient-text {
     min-width: auto;
     max-width: none;
   }
-  
+  /*
   .support-mail-btn {
     padding: 5px 10px;
     font-size: 11px;
     margin-left: 8px;
   }
+    */
 }
+  
 
 /* === ТАЙМЕР === */
 #banner-timer {
@@ -659,6 +662,9 @@ h6 .gradient-text {
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
+}
+
+.timer-row-numbers {
   gap: 0;
 }
 

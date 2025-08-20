@@ -110,19 +110,19 @@ const initSalesCounter = () => {
     // Получаем первые 2 карточки в гриде
     const firstTwoCards = Array.from(aboutFactsGrid.children).slice(0, 2);
 
-    // На десктопе очищаем инлайновые стили, чтобы классы md:hidden/md:block работали как задумано
-    if (window.innerWidth >= 768) {
+    // В горизонтальной ориентации очищаем инлайновые стили, чтобы классы md:hidden/md:block работали как задумано
+    if (window.matchMedia('(orientation: landscape)').matches) {
       shortDesc.style.display = '';
       dots.style.display = '';
       moreBtn.style.display = '';
       fullDesc.style.display = '';
       p2Full.style.display = '';
       lessBtn.style.display = '';
-      // Показываем карточки на десктопе
+      // Показываем карточки в горизонтальной ориентации
       firstTwoCards.forEach(card => {
         card.style.display = '';
       });
-      return; // Логика только для мобильных
+      return; // Логика только для вертикальной ориентации
     }
 
     // Явно задаем свернутое состояние по умолчанию на мобиле
@@ -284,14 +284,15 @@ const initSalesCounter = () => {
       
       const screenWidth = window.innerWidth;
       
-      // Скрываем кнопку support на экранах меньше 1050px (раньше чем кнопка начнет уменьшаться)
-      if (screenWidth < 1050) {
+      // Скрываем кнопку support в портретной ориентации
+      const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+      if (isPortrait) {
         if (!supportBtn.classList.contains('force-hidden')) {
           supportBtn.style.display = 'none';
           supportBtn.classList.add('force-hidden');
         }
-      } else if (screenWidth >= 1150) {
-        // Показываем кнопку на больших экранах, если нет пересечения
+      } else {
+        // Показываем кнопку в ландшафтной ориентации, если нет пересечения
         if (supportBtn.classList.contains('force-hidden')) {
           supportBtn.style.display = '';
           supportBtn.classList.remove('force-hidden');
@@ -321,19 +322,21 @@ const initSalesCounter = () => {
     }, 2000);
   };
 
-  // 8.5. АДАПТИВНАЯ ЛОГИКА ДЛЯ СТРАНИЦ 2, 4, 6
+  
+  /*
+// 8.5. АДАПТИВНАЯ ЛОГИКА ДЛЯ СТРАНИЦ 2, 4, 6
   const initResponsiveLayout = () => {
     const checkLayoutBreakpoint = () => {
       const screenWidth = window.innerWidth;
       
-      // Страница 2 (PAIN) - карточки (теперь только 2 карточки)
+// Страница 2 (PAIN) - карточки (теперь только 2 карточки)
       const artCardsRow = document.getElementById('art-cards-row');
       if (artCardsRow) {
         // Всегда используем flex для центрирования двух карточек
         artCardsRow.className = 'flex flex-col md:flex-row gap-8 px-4 py-8 justify-center items-center';
       }
       
-     /* // Страница 4 (PRICE) - заголовок
+// Страница 4 (PRICE) - заголовок
       const priceTitle = document.querySelector('#price-section h2');
       if (priceTitle) {
         if (screenWidth < 1050) {
@@ -341,7 +344,7 @@ const initSalesCounter = () => {
         } else {
           priceTitle.className = 'text-[1.9rem] md:text-5xl font-bold mb-2 leading-tight';
         }
-      } */
+      } 
       
       // Страница 6 (ABOUT) - факты
       const aboutFactsGrid = document.getElementById('about-facts-grid');
@@ -356,10 +359,10 @@ const initSalesCounter = () => {
           hiddenFacts.forEach(fact => {
             fact.classList.remove('hidden');
             fact.classList.add('md:flex');
-          });
+          }); 
         }
       }
-    };
+    }; 
     
     // Проверка при изменении размера окна
     window.addEventListener('resize', () => {
@@ -369,6 +372,8 @@ const initSalesCounter = () => {
     // Первоначальная проверка
     setTimeout(checkLayoutBreakpoint, 100);
   };
+
+*/
 
   // 9. ПАРАЛЛАКС ЭФФЕКТ ДЛЯ HERO СЕКЦИИ
   const initParallaxEffect = () => {
@@ -386,6 +391,23 @@ const initSalesCounter = () => {
       });
       ticking = true;
     });
+  };
+
+  // 10. СМЕНА ИЗОБРАЖЕНИЙ В HERO СЕКЦИИ
+  const initHeroImageRotation = () => {
+    const heroImg = document.querySelector('.mobile-hero-img');
+    if (!heroImg) return;
+
+    const images = ['av01.png', 'av02.png', 'av03.png', 'av04.png', 'av05.png'];
+    let currentIndex = 0;
+
+    const changeImage = () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      heroImg.src = `media/${images[currentIndex]}`;
+    };
+
+    // Смена каждые 3 секунды
+    setInterval(changeImage, 3000);
   };
 
   // 10. FAQ АККОРДЕОН
@@ -426,9 +448,10 @@ const initSalesCounter = () => {
   initSectionAnimations();       // 6. Анимации секций
   initFinalSectionObserver();    // 7. Отслеживание финальной секции
   initStickyBanner();            // 8. Липкий баннер
-  initResponsiveLayout();        // 8.5. Адаптивная логика для страниц 2, 4, 6
+  // initResponsiveLayout();        // 8.5. Адаптивная логика для страниц 2, 4, 6 (закомментировано)
   initParallaxEffect();          // 9. Параллакс эффект
-  initFAQAccordion();            // 10. FAQ аккордеон
+  initHeroImageRotation();       // 10. Смена изображений в Hero секции
+  initFAQAccordion();            // 11. FAQ аккордеон
   
   // Переинициализация при изменении размера окна
   window.addEventListener('resize', () => {
