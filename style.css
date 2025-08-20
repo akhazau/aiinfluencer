@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-  /* Базовые переменные остаются только для цветов и других не-размерных значений */
+
 }
 
 /* ==== БАЗОВЫЕ ЭЛЕМЕНТЫ ==== */
@@ -199,13 +199,7 @@ h6 .gradient-text {
   box-shadow: 0 10px 24px -4px rgba(236, 72, 153, 0.35);
 }
 
-/* Отключаем эффект затемнения для LemonSqueezy кнопок */
-a.lemonsqueezy-button.animated-gradient-btn:hover,
-a[href*="lemonsqueezy.com"].animated-gradient-btn:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
-}
+
 
 /* Отключаем эффект затемнения для всех указанных кнопок */
 #hero-cta-btn:hover,
@@ -316,11 +310,6 @@ a.animated-gradient-btn:hover {
   animation-duration: 0.001s;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
-  
-  /* Отключаем выделение текста в Safari после автозаполнения */
-  -webkit-text-fill-color: #a855f7 !important;
-  -webkit-box-shadow: 0 0 0px 1000px #171e2f inset !important;
-  transition: background-color 5000s ease-in-out 0s !important;
 }
 
 .gradient-border-input {
