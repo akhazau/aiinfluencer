@@ -100,6 +100,12 @@ section.snap-section {
     -webkit-overflow-scrolling: touch !important;
   }
   
+  /* Убираем боковые отступы на мобильных */
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
   /* Исправление дёргания в мобильном Chrome без блокировки тулбара Safari */
   html {
     scroll-behavior: smooth;
@@ -616,9 +622,9 @@ h6 .gradient-text {
   .banner-inner {
     flex-direction: row;
     gap: 8px;
-    padding: 0 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   
   .banner-btn {
