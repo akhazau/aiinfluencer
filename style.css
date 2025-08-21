@@ -337,6 +337,19 @@ a.animated-gradient-btn:hover {
   animation: float1 10s ease-in-out infinite;
 }
 
+/* Исправление для iPad и планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-img-container {
+    height: 24rem !important;
+  }
+  
+  .mobile-hero-img {
+    max-height: 22rem !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}
+
 .live-viewers {
   color: #ffe066;
   font-size: 0.95rem;
