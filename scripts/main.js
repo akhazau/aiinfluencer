@@ -345,12 +345,19 @@ const initSalesCounter = () => {
     const heroImg = document.querySelector('.mobile-hero-img');
     if (!heroImg) return;
 
-    const images = ['av01.png', 'av02.png', 'av03.png', 'av04.png', 'av05.png'];
-    let currentIndex = 0;
-
+    // Всегда начинаем с img0
+    let lastShownIndex = 0;
+    heroImg.src = 'media/img/img0.jpeg';
+    
     const changeImage = () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      heroImg.src = `media/${images[currentIndex]}`;
+      // Генерируем случайный индекс от 1 до 44, исключая последний показанный
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * 44) + 1; // от 1 до 44
+      } while (randomIndex === lastShownIndex);
+      
+      lastShownIndex = randomIndex;
+      heroImg.src = `media/img/img${randomIndex}.jpeg`;
     };
 
     // Смена каждые 3 секунды
