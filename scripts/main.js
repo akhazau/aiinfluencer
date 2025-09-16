@@ -353,7 +353,7 @@ const initSalesCounter = () => {
       // Генерируем случайный индекс от 1 до 44, исключая последний показанный
       let randomIndex;
       do {
-        randomIndex = Math.floor(Math.random() * 44) + 1; // от 1 до 44
+        randomIndex = Math.floor(Math.random() * 43) + 1; // от 1 до 44
       } while (randomIndex === lastShownIndex);
       
       lastShownIndex = randomIndex;
